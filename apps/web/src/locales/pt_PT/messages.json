@@ -48,6 +48,30 @@
   "loginCredentials": {
     "message": "Credenciais de início de sessão"
   },
+  "personalDetails": {
+    "message": "Detalhes pessoais"
+  },
+  "identification": {
+    "message": "Identificação"
+  },
+  "contactInfo": {
+    "message": "Informações de contacto"
+  },
+  "cardDetails": {
+    "message": "Detalhes do cartão"
+  },
+  "cardBrandDetails": {
+    "message": "Detalhes do $BRAND$",
+    "placeholders": {
+      "brand": {
+        "content": "$1",
+        "example": "Visa"
+      }
+    }
+  },
+  "itemHistory": {
+    "message": "Histórico do item"
+  },
   "authenticatorKey": {
     "message": "Chave de autenticação"
   },
@@ -438,6 +462,9 @@
   },
   "fullName": {
     "message": "Nome completo"
+  },
+  "address": {
+    "message": "Endereço"
   },
   "address1": {
     "message": "Endereço 1"
@@ -9025,5 +9052,8 @@
   },
   "additionalContentAvailable": {
     "message": "Estão disponíveis conteúdos adicionais"
+  },
+  "editAccess": {
+    "message": "Editar acesso"
   }
 }

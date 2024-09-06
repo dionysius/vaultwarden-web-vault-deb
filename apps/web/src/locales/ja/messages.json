@@ -48,6 +48,30 @@
   "loginCredentials": {
     "message": "ログイン情報"
   },
+  "personalDetails": {
+    "message": "個人情報"
+  },
+  "identification": {
+    "message": "ID"
+  },
+  "contactInfo": {
+    "message": "連絡先情報"
+  },
+  "cardDetails": {
+    "message": "カード情報"
+  },
+  "cardBrandDetails": {
+    "message": "$BRAND$ の詳細",
+    "placeholders": {
+      "brand": {
+        "content": "$1",
+        "example": "Visa"
+      }
+    }
+  },
+  "itemHistory": {
+    "message": "アイテム履歴"
+  },
   "authenticatorKey": {
     "message": "認証キー"
   },
@@ -438,6 +462,9 @@
   },
   "fullName": {
     "message": "フルネーム"
+  },
+  "address": {
+    "message": "住所"
   },
   "address1": {
     "message": "住所 1"
@@ -9025,5 +9052,8 @@
   },
   "additionalContentAvailable": {
     "message": "追加コンテンツが利用可能です"
+  },
+  "editAccess": {
+    "message": "編集権限"
   }
 }

@@ -48,6 +48,30 @@
   "loginCredentials": {
     "message": "Inloggningsuppgifter"
   },
+  "personalDetails": {
+    "message": "Personal details"
+  },
+  "identification": {
+    "message": "Identification"
+  },
+  "contactInfo": {
+    "message": "Contact info"
+  },
+  "cardDetails": {
+    "message": "Card details"
+  },
+  "cardBrandDetails": {
+    "message": "$BRAND$ details",
+    "placeholders": {
+      "brand": {
+        "content": "$1",
+        "example": "Visa"
+      }
+    }
+  },
+  "itemHistory": {
+    "message": "Item history"
+  },
   "authenticatorKey": {
     "message": "Autentiseringsnyckel"
   },
@@ -439,6 +463,9 @@
   "fullName": {
     "message": "Fullständigt namn"
   },
+  "address": {
+    "message": "Adress"
+  },
   "address1": {
     "message": "Adress 1"
   },
@@ -732,7 +759,7 @@
     "message": "Please restart registration or try logging in."
   },
   "youMayAlreadyHaveAnAccount": {
-    "message": "You may already have an account"
+    "message": "Du kanske redan har ett konto"
   },
   "logOutConfirmation": {
     "message": "Är du säker på att du vill logga ut?"
@@ -9025,5 +9052,8 @@
   },
   "additionalContentAvailable": {
     "message": "Additional content is available"
+  },
+  "editAccess": {
+    "message": "Redigera åtkomst"
   }
 }

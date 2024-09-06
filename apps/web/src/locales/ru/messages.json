@@ -48,6 +48,30 @@
   "loginCredentials": {
     "message": "Данные для авторизации"
   },
+  "personalDetails": {
+    "message": "Личные данные"
+  },
+  "identification": {
+    "message": "Идентификация"
+  },
+  "contactInfo": {
+    "message": "Контактная информация"
+  },
+  "cardDetails": {
+    "message": "Реквизиты карты"
+  },
+  "cardBrandDetails": {
+    "message": "Реквизиты $BRAND$",
+    "placeholders": {
+      "brand": {
+        "content": "$1",
+        "example": "Visa"
+      }
+    }
+  },
+  "itemHistory": {
+    "message": "История элемента"
+  },
   "authenticatorKey": {
     "message": "Ключ аутентификатора"
   },
@@ -438,6 +462,9 @@
   },
   "fullName": {
     "message": "Полное имя"
+  },
+  "address": {
+    "message": "Адрес"
   },
   "address1": {
     "message": "Строка адреса 1"
@@ -9025,5 +9052,8 @@
   },
   "additionalContentAvailable": {
     "message": "Дополнительный контент доступен"
+  },
+  "editAccess": {
+    "message": "Изменить доступ"
   }
 }

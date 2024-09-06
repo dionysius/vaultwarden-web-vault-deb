@@ -48,6 +48,30 @@
   "loginCredentials": {
     "message": "Giriş məlumatları"
   },
+  "personalDetails": {
+    "message": "Şəxsi detallar"
+  },
+  "identification": {
+    "message": "İdentifikasiya"
+  },
+  "contactInfo": {
+    "message": "Əlaqə məlumatı"
+  },
+  "cardDetails": {
+    "message": "Kart detalları"
+  },
+  "cardBrandDetails": {
+    "message": "$BRAND$ detalları",
+    "placeholders": {
+      "brand": {
+        "content": "$1",
+        "example": "Visa"
+      }
+    }
+  },
+  "itemHistory": {
+    "message": "Element tarixçəsi"
+  },
   "authenticatorKey": {
     "message": "Kimlik doğrulayıcı açarı"
   },
@@ -438,6 +462,9 @@
   },
   "fullName": {
     "message": "Tam ad"
+  },
+  "address": {
+    "message": "Ünvan"
   },
   "address1": {
     "message": "Ünvan 1"
@@ -965,10 +992,10 @@
     "message": "Yeni hesabınız yaradıldı! İndi giriş edə bilərsiniz."
   },
   "newAccountCreated2": {
-    "message": "Your new account has been created!"
+    "message": "Yeni hesabınız yaradıldı!"
   },
   "youHaveBeenLoggedIn": {
-    "message": "You have been logged in!"
+    "message": "Giriş etdiniz!"
   },
   "trialAccountCreated": {
     "message": "Hesab uğurla yaradıldı."
@@ -9024,6 +9051,9 @@
     "description": "The text, 'API', is an acronymn and should not be translated."
   },
   "additionalContentAvailable": {
-    "message": "Additional content is available"
+    "message": "Əlavə məzmun əlçatandır"
+  },
+  "editAccess": {
+    "message": "Müraciətə düzəliş et"
   }
 }

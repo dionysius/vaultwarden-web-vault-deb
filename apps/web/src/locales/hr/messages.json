@@ -48,6 +48,30 @@
   "loginCredentials": {
     "message": "Vjerodajnice za prijavu"
   },
+  "personalDetails": {
+    "message": "Personal details"
+  },
+  "identification": {
+    "message": "Identification"
+  },
+  "contactInfo": {
+    "message": "Contact info"
+  },
+  "cardDetails": {
+    "message": "Card details"
+  },
+  "cardBrandDetails": {
+    "message": "$BRAND$ details",
+    "placeholders": {
+      "brand": {
+        "content": "$1",
+        "example": "Visa"
+      }
+    }
+  },
+  "itemHistory": {
+    "message": "Item history"
+  },
   "authenticatorKey": {
     "message": "Kôd za provjeru"
   },
@@ -438,6 +462,9 @@
   },
   "fullName": {
     "message": "Ime i prezime"
+  },
+  "address": {
+    "message": "Address"
   },
   "address1": {
     "message": "Adresa 1"
@@ -965,10 +992,10 @@
     "message": "Tvoj novi račun je stvoren! Sada se možeš prijaviti."
   },
   "newAccountCreated2": {
-    "message": "Your new account has been created!"
+    "message": "Tvoj novi račun je stvoren!"
   },
   "youHaveBeenLoggedIn": {
-    "message": "You have been logged in!"
+    "message": "Prijava uspješna!"
   },
   "trialAccountCreated": {
     "message": "Račun je uspješno stvoren."
@@ -1689,7 +1716,7 @@
     "message": "Izuzmi"
   },
   "include": {
-    "message": "Obuhvati"
+    "message": "Uključi"
   },
   "customize": {
     "message": "Prilagodi"
@@ -4990,7 +5017,7 @@
     }
   },
   "viewSend": {
-    "message": "View Send",
+    "message": "Pogledaj Send",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "viewSendHiddenEmailWarning": {
@@ -9020,10 +9047,13 @@
     "message": "Tvoja jednogodišnja poklon pretplata na Upravitelj tajni će se nadograditi na odabrani plan. Neće biti naplate dok ne završi besplatno razdoblje."
   },
   "publicApi": {
-    "message": "Public API",
+    "message": "Javni API",
     "description": "The text, 'API', is an acronymn and should not be translated."
   },
   "additionalContentAvailable": {
-    "message": "Additional content is available"
+    "message": "Dostupan je dodatni sadržaj"
+  },
+  "editAccess": {
+    "message": "Uredi pristup"
   }
 }

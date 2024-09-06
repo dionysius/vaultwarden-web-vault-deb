@@ -48,6 +48,30 @@
   "loginCredentials": {
     "message": "Inloggegevens"
   },
+  "personalDetails": {
+    "message": "Persoonlijke gegevens"
+  },
+  "identification": {
+    "message": "Identificatie"
+  },
+  "contactInfo": {
+    "message": "Contactgegevens"
+  },
+  "cardDetails": {
+    "message": "Kaartgegevens"
+  },
+  "cardBrandDetails": {
+    "message": "$BRAND$-gegevens",
+    "placeholders": {
+      "brand": {
+        "content": "$1",
+        "example": "Visa"
+      }
+    }
+  },
+  "itemHistory": {
+    "message": "Itemgeschiedenis"
+  },
   "authenticatorKey": {
     "message": "Authenticatiesleutel"
   },
@@ -438,6 +462,9 @@
   },
   "fullName": {
     "message": "Volledige naam"
+  },
+  "address": {
+    "message": "Adres"
   },
   "address1": {
     "message": "Adres 1"
@@ -9025,5 +9052,8 @@
   },
   "additionalContentAvailable": {
     "message": "Extra inhoud beschikbaar"
+  },
+  "editAccess": {
+    "message": "Toegang bewerken"
   }
 }

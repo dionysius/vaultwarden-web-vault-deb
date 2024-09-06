@@ -37,7 +37,7 @@
     "message": "Märkmed"
   },
   "note": {
-    "message": "Note"
+    "message": "Märge"
   },
   "customFields": {
     "message": "Kohandatud väljad"
@@ -46,19 +46,43 @@
     "message": "Kaardiomaniku nimi"
   },
   "loginCredentials": {
-    "message": "Login credentials"
+    "message": "Sisselogimise andmed"
+  },
+  "personalDetails": {
+    "message": "Isikuandmed"
+  },
+  "identification": {
+    "message": "Identification"
+  },
+  "contactInfo": {
+    "message": "Contact info"
+  },
+  "cardDetails": {
+    "message": "Pangakaardi detailid"
+  },
+  "cardBrandDetails": {
+    "message": "$BRAND$ detailid",
+    "placeholders": {
+      "brand": {
+        "content": "$1",
+        "example": "Visa"
+      }
+    }
+  },
+  "itemHistory": {
+    "message": "Kirje ajalugu"
   },
   "authenticatorKey": {
-    "message": "Authenticator key"
+    "message": "Autentiteerimise võti"
   },
   "autofillOptions": {
-    "message": "Autofill options"
+    "message": "Automaatse täitmise valikud"
   },
   "websiteUri": {
-    "message": "Website (URI)"
+    "message": "Veebileht (URI)"
   },
   "websiteUriCount": {
-    "message": "Website (URI) $COUNT$",
+    "message": "Veebileht (URI) $COUNT$",
     "description": "Label for an input field that contains a website URI. The input field is part of a list of fields, and the count indicates the position of the field in the list.",
     "placeholders": {
       "count": {
@@ -68,16 +92,16 @@
     }
   },
   "websiteAdded": {
-    "message": "Website added"
+    "message": "Veebileht lisatud"
   },
   "addWebsite": {
-    "message": "Add website"
+    "message": "Lisa veebileht"
   },
   "deleteWebsite": {
-    "message": "Delete website"
+    "message": "Kustuta veebileht"
   },
   "defaultLabel": {
-    "message": "Default ($VALUE$)",
+    "message": "Vaikimisi ($VALUE$)",
     "description": "A label that indicates the default value for a field with the current default value in parentheses.",
     "placeholders": {
       "value": {
@@ -105,7 +129,7 @@
     }
   },
   "autoFillOnPageLoad": {
-    "message": "Autofill on page load?"
+    "message": "Täida automaatselt lehe laadimisel"
   },
   "number": {
     "message": "Kaardi number"
@@ -189,16 +213,16 @@
     "message": "Pr"
   },
   "mx": {
-    "message": "Mx"
+    "message": "Lp"
   },
   "dr": {
     "message": "Dr"
   },
   "cardExpiredTitle": {
-    "message": "Expired card"
+    "message": "Aegunud kaart"
   },
   "cardExpiredMessage": {
-    "message": "If you've renewed it, update the card's information"
+    "message": "Kui sa oled uuendanud seda, värskenda kaardi informatsiooni"
   },
   "expirationMonth": {
     "message": "Aegumise kuu"
@@ -207,19 +231,19 @@
     "message": "Aegumise aasta"
   },
   "authenticatorKeyTotp": {
-    "message": "Autentimise võti (TOTP)"
+    "message": "Autentiseerimise võti (TOTP)"
   },
   "totpHelperTitle": {
-    "message": "Make 2-step verification seamless"
+    "message": "Muuda 2-astmeline kinnitamine sujuvaks"
   },
   "totpHelper": {
-    "message": "Bitwarden can store and fill 2-step verification codes. Copy and paste the key into this field."
+    "message": "Bitwarden saab hoiustada ja täita 2-astmelise kinnitamise koode. Kopeeri ja kleebi võti siia."
   },
   "totpHelperWithCapture": {
-    "message": "Bitwarden can store and fill 2-step verification codes. Select the camera icon to take a screenshot of this website's authenticator QR code, or copy and paste the key into this field."
+    "message": "Bitwarden saab hoiustada ja täita 2-astmelise kinnitamise koode. Vajuta kaamera ikoonile, et teha ekraanipilt autentiteerimise QR koodist või kopeeri ja kleebi võti siia."
   },
   "learnMoreAboutAuthenticators": {
-    "message": "Learn more about authenticators"
+    "message": "Uuri lisa autentikaatorite kohta"
   },
   "folder": {
     "message": "Kaust"
@@ -243,7 +267,7 @@
     "message": "Boolean"
   },
   "cfTypeLinked": {
-    "message": "Ühenduses",
+    "message": "Seotud",
     "description": "This describes a field that is 'linked' (related) to another field."
   },
   "remove": {
@@ -267,7 +291,7 @@
     "message": "Muuda kausta"
   },
   "baseDomain": {
-    "message": "Baasdomeen",
+    "message": "Domeen",
     "description": "Domain name. Example: website.com"
   },
   "domainName": {
@@ -297,23 +321,23 @@
     "description": "Default URI match detection for auto-fill."
   },
   "never": {
-    "message": "Ära tuvasta"
+    "message": "Mitte kunagi"
   },
   "toggleVisibility": {
-    "message": "Näita sisu"
+    "message": "Näita"
   },
   "toggleCollapse": {
-    "message": "Ava",
+    "message": "Näita vähem",
     "description": "Toggling an expand/collapse state."
   },
   "generatePassword": {
     "message": "Loo parool"
   },
   "checkPassword": {
-    "message": "Vaata, kas parool on lekkinud."
+    "message": "Kontrolli, kas parool on lekkinud."
   },
   "passwordExposed": {
-    "message": "See parool on erinevates andmeleketes kokku $VALUE$ korda lekkinud. Peaksid selle ära muutma.",
+    "message": "See parool on erinevates andmeleketes $VALUE$ korda lekkinud. Peaksid selle ära muutma.",
     "placeholders": {
       "value": {
         "content": "$1",
@@ -322,7 +346,7 @@
     }
   },
   "passwordSafe": {
-    "message": "Seda parooli ei õnnestu andmeleketest leida. Parooli edasi kasutamine peaks olema turvaline."
+    "message": "Seda parooli ei õnnestunud andmeleketest leida. Parooli edasi kasutamine peaks olema ohutu."
   },
   "save": {
     "message": "Salvesta"
@@ -352,13 +376,13 @@
     "message": "Otsi kogumikku"
   },
   "searchFolder": {
-    "message": "Otsi andmeid"
+    "message": "Otsi kausta"
   },
   "searchFavorites": {
-    "message": "Otsi lemmikute hulgast"
+    "message": "Otsi lemmikutest"
   },
   "searchLogin": {
-    "message": "Otsi kirjeid",
+    "message": "Otsi kirjetest",
     "description": "Search Login type"
   },
   "searchCard": {
@@ -370,7 +394,7 @@
     "description": "Search Identity type"
   },
   "searchSecureNote": {
-    "message": "Otsi turvalisi märkmeid",
+    "message": "Otsi turvalistest märkmetest",
     "description": "Search Secure Note type"
   },
   "searchVault": {
@@ -386,7 +410,7 @@
     "message": "Otsi liikmeid"
   },
   "searchGroups": {
-    "message": "Otsi gruppe"
+    "message": "Otsi gruppidest"
   },
   "allItems": {
     "message": "Kõik kirjed"
@@ -398,7 +422,7 @@
     "message": "Tüübid"
   },
   "typeLogin": {
-    "message": "Kasutajakonto andmed"
+    "message": "Konto paroolid"
   },
   "typeCard": {
     "message": "Pangakaart"
@@ -413,7 +437,7 @@
     "message": "Kontod"
   },
   "typeCardPlural": {
-    "message": "Kaardid"
+    "message": "Pangakaardid"
   },
   "typeIdentityPlural": {
     "message": "Identiteedid"
@@ -438,6 +462,9 @@
   },
   "fullName": {
     "message": "Täisnimi"
+  },
+  "address": {
+    "message": "Aadress"
   },
   "address1": {
     "message": "Aadress 1"
@@ -482,7 +509,7 @@
     "message": "Kirje vaatamine"
   },
   "viewItemType": {
-    "message": "View $ITEMTYPE$",
+    "message": "Vaata $ITEMTYPE$",
     "placeholders": {
       "itemtype": {
         "content": "$1",
@@ -504,7 +531,7 @@
     "message": "Kirje nimi"
   },
   "cannotRemoveViewOnlyCollections": {
-    "message": "You cannot remove collections with View only permissions: $COLLECTIONS$",
+    "message": "Sa ei saa eemaldada neid kogumikke ainult vaatamisloaga: $COLLECTIONS$",
     "placeholders": {
       "collections": {
         "content": "$1",
@@ -648,7 +675,7 @@
     }
   },
   "itemsMovedToOrg": {
-    "message": "Items moved to $ORGNAME$",
+    "message": "Kirjed liigutatud $ORGNAME$",
     "placeholders": {
       "orgname": {
         "content": "$1",
@@ -657,7 +684,7 @@
     }
   },
   "itemMovedToOrg": {
-    "message": "Item moved to $ORGNAME$",
+    "message": "Kirje liigutatud $ORGNAME$",
     "placeholders": {
       "orgname": {
         "content": "$1",
@@ -723,16 +750,16 @@
     "message": "Sessioon on aegunud."
   },
   "restartRegistration": {
-    "message": "Restart registration"
+    "message": "Alusta registreerimist uuesti"
   },
   "expiredLink": {
-    "message": "Expired link"
+    "message": "Aegunud link"
   },
   "pleaseRestartRegistrationOrTryLoggingIn": {
     "message": "Please restart registration or try logging in."
   },
   "youMayAlreadyHaveAnAccount": {
-    "message": "You may already have an account"
+    "message": "Sul on võib-olla juba konto"
   },
   "logOutConfirmation": {
     "message": "Oled kindel, et soovid välja logida?"
@@ -780,13 +807,13 @@
     "message": "2FA pääsuvõtmed pole toetatud. Uuenda sisse logimiseks rakendust."
   },
   "loginWithPasskeyInfo": {
-    "message": "Use a generated passkey that will automatically log you in without a password. Biometrics, like facial recognition or fingerprint, or another FIDO2 security method will verify your identity."
+    "message": "Kasuta automaatselt genereeritud pääsuvõtit, mis logib sind ilma paroolita sisse. Enda tuvastamiseks saad kasutada biomeetriat, nagu näotuvastus, sõrmejälg või mõni teine FIDO2 turvameetod."
   },
   "newPasskey": {
     "message": "Uus pääsukood"
   },
   "learnMoreAboutPasswordless": {
-    "message": "Uuri lähemalt nullparooli kohta"
+    "message": "Uuri lähemalt paroolita sisselogimise kohta"
   },
   "creatingPasskeyLoading": {
     "message": "Loon pääsuvõtit..."
@@ -906,7 +933,7 @@
     "message": "Ülemparooli vihje (ei ole kohustuslik)"
   },
   "newMasterPassHint": {
-    "message": "New master password hint (optional)"
+    "message": "Uue ülemparooli vihje (valikuline)"
   },
   "masterPassHintLabel": {
     "message": "Ülemparooli vihje"
@@ -965,10 +992,10 @@
     "message": "Sinu konto on loodud! Saad nüüd sellesse sisse logida."
   },
   "newAccountCreated2": {
-    "message": "Your new account has been created!"
+    "message": "Uus konto loodud!"
   },
   "youHaveBeenLoggedIn": {
-    "message": "You have been logged in!"
+    "message": "Olete logitud sisse!"
   },
   "trialAccountCreated": {
     "message": "Konto on edukalt loodud."
@@ -1044,7 +1071,7 @@
     "message": "Sa ei kuulu ühessegi organisatsiooni. Organisatsioonid võimaldavad sul kirjeid turvaliselt teiste kasutajatega jagada."
   },
   "notificationSentDevice": {
-    "message": "A notification has been sent to your device."
+    "message": "Sinu seadmesse saadeti teavitus."
   },
   "versionNumber": {
     "message": "Versioon $VERSION_NUMBER$",
@@ -1113,17 +1140,17 @@
     "message": "Autentimise rakendus"
   },
   "authenticatorAppDescV2": {
-    "message": "Enter a code generated by an authenticator app like Bitwarden Authenticator.",
+    "message": "Sisesta oma autentikaatori (näiteks Bitwarden Authenticator) genereeritud kood.",
     "description": "'Bitwarden Authenticator' is a product name and should not be translated."
   },
   "yubiKeyTitleV2": {
-    "message": "Yubico OTP security key"
+    "message": "Yubico OTP turvavõti"
   },
   "yubiKeyDesc": {
     "message": "Kasuta kontole ligipääsemiseks YubiKey-d. See töötab YubiKey 4, 5 ja NEO seadmetega."
   },
   "duoDescV2": {
-    "message": "Enter a code generated by Duo Security.",
+    "message": "Sisesta Duo Security genereeritud kood.",
     "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
   "duoOrganizationDesc": {
@@ -1149,7 +1176,7 @@
     "message": "E-post"
   },
   "emailDescV2": {
-    "message": "Enter a code sent to your email."
+    "message": "Sisesta oma emailile saadetud kood."
   },
   "continue": {
     "message": "Jätka"
@@ -1179,7 +1206,7 @@
     }
   },
   "deleteSelectedCollectionsDesc": {
-    "message": "$COUNT$ collection(s) will be permanently deleted.",
+    "message": "$COUNT$ kogumikku kustutatakse jäädavalt.",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -1188,10 +1215,10 @@
     }
   },
   "deleteSelectedConfirmation": {
-    "message": "Are you sure you want to continue?"
+    "message": "Kas olete kindel?"
   },
   "moveSelectedItemsDesc": {
-    "message": "Choose a folder that you would like to add the $COUNT$ selected item(s) to.",
+    "message": "Vali kaust, kuhu soovid lisada $COUNT$ valitud kirjet.",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -1223,7 +1250,7 @@
     "message": "Kopeeri kinnituskood"
   },
   "copyUuid": {
-    "message": "Copy UUID"
+    "message": "Kopeeri UUID"
   },
   "errorRefreshingAccessToken": {
     "message": "Access Token Refresh Error"
@@ -1238,13 +1265,13 @@
     "message": "Hoidla eksportimise kinnitamine"
   },
   "confirmSecretsExport": {
-    "message": "Confirm secrets export"
+    "message": "Kinnita saladuste eksportimine"
   },
   "exportWarningDesc": {
     "message": "Eksporditav fail on krüpteeringuta ja sisaldab hoidla sisu. Seda faili ei tohiks kaua käidelda ning mitte mingil juhul ebaturvaliselt saata (näiteks e-postiga). Kustuta see koheselt pärast kasutamist."
   },
   "exportSecretsWarningDesc": {
-    "message": "This export contains your secrets data in an unencrypted format. You should not store or send the exported file over unsecure channels (such as email). Delete it immediately after you are done using it."
+    "message": "Eksporditav fail sisaldab krüpteerimata salajast informatsiooni. Seda faili ei tohiks säilitada või saata läbi ebaturvaliste kanalite (näiteks e-post). Kustuta see kohe peale kasutamist."
   },
   "encExportKeyWarningDesc": {
     "message": "Eksporditavate andmete krüpteerimiseks kasutatakse kontol olevat krüpteerimisvõtit. Kui sa peaksid seda krüpteerimise võtit roteerima, ei saa sa järgnevalt eksporditavaid andmeid enam dekrüpteerida."
@@ -1256,58 +1283,58 @@
     "message": "Ekspordi"
   },
   "exportFrom": {
-    "message": "Export from"
+    "message": "Ekspordi vorm"
   },
   "exportVault": {
     "message": "Hoidla sisu eksportimine"
   },
   "exportSecrets": {
-    "message": "Export secrets"
+    "message": "Ekspordi saladused"
   },
   "fileFormat": {
     "message": "Failivorming"
   },
   "fileEncryptedExportWarningDesc": {
-    "message": "This file export will be password protected and require the file password to decrypt."
+    "message": "See eksporditav fail on parooliga kaitstud ja nõuab dekrüpteerimiseks parooli."
   },
   "exportPasswordDescription": {
-    "message": "This password will be used to export and import this file"
+    "message": "Seda parooli kasutatakse selle faili eksportimiseks ja importimiseks"
   },
   "confirmMasterPassword": {
-    "message": "Confirm master password"
+    "message": "Kinnita ülemparool"
   },
   "confirmFormat": {
-    "message": "Confirm format"
+    "message": "Kinnita formaat"
   },
   "filePassword": {
-    "message": "File password"
+    "message": "Faili parool"
   },
   "confirmFilePassword": {
-    "message": "Confirm file password"
+    "message": "Kinnita faili parool"
   },
   "accountRestrictedOptionDescription": {
-    "message": "Use your account encryption key, derived from your account's username and Master Password, to encrypt the export and restrict import to only the current Bitwarden account."
+    "message": "Kasuta oma konto krüpteerimise võtit, mis koosneb sinu kasutajanimest ja ülemparoolist, et krüpteerida fail ja takistada selle importimine teistele kontodele."
   },
   "passwordProtectedOptionDescription": {
-    "message": "Set a file password to encrypt the export and import it to any Bitwarden account using the password for decryption."
+    "message": "Määra faili parool, et see krüpteerida ja importida teise Bitwardeni kontosse kasutates seda parooli dekrüpteerimiseks."
   },
   "exportTypeHeading": {
-    "message": "Export type"
+    "message": "Ekspordi tüüp"
   },
   "accountRestricted": {
-    "message": "Account restricted"
+    "message": "Kontosisene"
   },
   "passwordProtected": {
-    "message": "Password protected"
+    "message": "Parooliga kaitstud"
   },
   "filePasswordAndConfirmFilePasswordDoNotMatch": {
-    "message": "“File password”  and “Confirm file password“ do not match."
+    "message": "\"Faili parool\" ja \"Faili parooli kinnitus\" ei kattu."
   },
   "confirmVaultImport": {
-    "message": "Confirm vault import"
+    "message": "Kinnita hoidla importimine"
   },
   "confirmVaultImportDesc": {
-    "message": "This file is password-protected. Please enter the file password to import data."
+    "message": "Fail on parooliga kaitstud. Palun sisesta faili importimiseks selle parool."
   },
   "exportSuccess": {
     "message": "Hoidla on eksporditud."
@@ -1335,7 +1362,7 @@
     "message": "Pikkus"
   },
   "passwordMinLength": {
-    "message": "Minimum password length"
+    "message": "Parooli miinimumpikkus"
   },
   "uppercase": {
     "message": "Suurtäht (A-Z)",
@@ -1453,17 +1480,17 @@
     }
   },
   "kdfMemory": {
-    "message": "KDF memory (MB)",
+    "message": "KDF mälumaht (MB)",
     "description": "Memory refers to computer memory (RAM). MB is short for megabytes."
   },
   "argon2Warning": {
-    "message": "Setting your KDF iterations, memory, and parallelism too high could result in poor performance when logging into (and unlocking) Bitwarden on slower or older devices. We recommend changing these individually in small increments and then test all of your devices."
+    "message": "Muutes oma KDF korduste, mälumahu ja paralleelsuse liiga kõrgeks, võib tulemus väljenduda aeglases kiiruses Bitwardeni sisse logimisel (ja lahti lukustamisel) vanematel ja aeglasematel seadmetel. Me soovitame neid muuta ühekaupa väikestes ühikutes ja testida kõigil oma seadmetel."
   },
   "kdfParallelism": {
-    "message": "KDF parallelism"
+    "message": "KDF paralleelsus"
   },
   "argon2Desc": {
-    "message": "Higher KDF iterations, memory, and parallelism can help protect your master password from being brute forced by an attacker."
+    "message": "Rohkem KDF kordusi, mälumahtu ja paralleelsust aitab sul kaitsta ülemparooli toore jõuga lahti murdmisest ründaja poolt."
   },
   "changeKdf": {
     "message": "Muuda KDF-i"
@@ -1526,7 +1553,7 @@
     "message": "Konto on suletud ja kõik sellega seonduvad andmed on kustutatud."
   },
   "deleteOrganizationWarning": {
-    "message": "Deleting your organization is permanent. It cannot be undone."
+    "message": "Organisatsiooni kustutamine on lõplik. Seda ei saa taastatada."
   },
   "myAccount": {
     "message": "Minu konto"
@@ -1538,23 +1565,23 @@
     "message": "Andmete importimine"
   },
   "onboardingImportDataDetailsPartOne": {
-    "message": "If you don't have any data to import, you can create a ",
+    "message": "Kui sul ei ole mingit informatsiooni importida, võid luua ",
     "description": "This will be part of a larger sentence, that will read like this: If you don't have any data to import, you can create a new item instead. (Optional second half: You may need to wait until your administrator confirms your organization membership.)"
   },
   "onboardingImportDataDetailsLink": {
-    "message": "new item",
+    "message": "uue kirje",
     "description": "This will be part of a larger sentence, that will read like this: If you don't have any data to import, you can create a new item instead. (Optional second half: You may need to wait until your administrator confirms your organization membership.)"
   },
   "onboardingImportDataDetailsLoginLink": {
-    "message": "new login",
+    "message": "uue konto kirje",
     "description": "This will be part of a larger sentence, that will read like this: If you don't have any data to import, you can create a new login instead. (Optional second half: You may need to wait until your administrator confirms your organization membership.)"
   },
   "onboardingImportDataDetailsPartTwoNoOrgs": {
-    "message": " instead.",
+    "message": " selle asemel.",
     "description": "This will be part of a larger sentence, that will read like this: If you don't have any data to import, you can create a new item instead."
   },
   "onboardingImportDataDetailsPartTwoWithOrgs": {
-    "message": " instead. You may need to wait until your administrator confirms your organization membership.",
+    "message": " selle asemel. Sa pead võib-olla ootama, kuni su administraator kinnitab sinu liikmesuse organisatsioonis.",
     "description": "This will be part of a larger sentence, that will read like this: If you don't have any data to import, you can create a new item instead. You may need to wait until your administrator confirms your organization membership."
   },
   "importError": {
@@ -1567,7 +1594,7 @@
     "message": "Andmed on edukalt hoidlasse imporditud."
   },
   "importSuccessNumberOfItems": {
-    "message": "A total of $AMOUNT$ items were imported.",
+    "message": "Kokku imporditi $AMOUNT$ kirjet.",
     "placeholders": {
       "amount": {
         "content": "$1",
@@ -1576,7 +1603,7 @@
     }
   },
   "dataExportSuccess": {
-    "message": "Data successfully exported"
+    "message": "Andmed edukalt eksporditud"
   },
   "importWarning": {
     "message": "Impordid andmeid organisatsiooni $ORGANIZATION$. Imporditavaid andmeid võidakse jagada teiste organisatsiooni liikmetega. Soovid jätkata?",
@@ -1597,19 +1624,19 @@
     "message": "Eksporditud faili dekrüpteerimine nurjus. Sinu krüpteerimisvõti ei ühti selle võtmega, mida kasutati andmete eksportimisel."
   },
   "destination": {
-    "message": "Destination"
+    "message": "Sihtpunkt"
   },
   "learnAboutImportOptions": {
-    "message": "Learn about your import options"
+    "message": "Lisainfo impordi valikute kohta"
   },
   "selectImportFolder": {
-    "message": "Select a folder"
+    "message": "Vali kaust"
   },
   "selectImportCollection": {
-    "message": "Select a collection"
+    "message": "Vali kogumik"
   },
   "importTargetHint": {
-    "message": "Select this option if you want the imported file contents moved to a $DESTINATION$",
+    "message": "Tee siin valik, kui soovid, et imporditud faili sisu liigutatakse asukohta $DESTINATION$",
     "description": "Located as a hint under the import target. Will be appended by either folder or collection, depending if the user is importing into an individual or an organizational vault.",
     "placeholders": {
       "destination": {
@@ -1619,7 +1646,7 @@
     }
   },
   "importUnassignedItemsError": {
-    "message": "File contains unassigned items."
+    "message": "Fail sisaldab määramata kirjeid."
   },
   "selectFormat": {
     "message": "Vali imporditava faili vorming"
@@ -1779,7 +1806,7 @@
     "message": "Haldus"
   },
   "canManage": {
-    "message": "Can manage"
+    "message": "Saab muuta"
   },
   "disable": {
     "message": "Keela"
@@ -2259,7 +2286,7 @@
     "message": "1 GB ulatuses krüpteeritud salvestusruum."
   },
   "premiumSignUpTwoStepOptions": {
-    "message": "Proprietary two-step login options such as YubiKey and Duo."
+    "message": "Eraomanduses kaheastmelise logimise valikud, nagu näiteks YubiKey ja Duo."
   },
   "premiumSignUpEmergency": {
     "message": "Hädaolukorra ligipääs"
@@ -2884,7 +2911,7 @@
     "message": "Välist Id-d kasutatakse viitena või näiteks selleks, et siduda need ressursid välise süsteemiga, nagu näites kasutaja kataloog."
   },
   "nestCollectionUnder": {
-    "message": "Nest collection under"
+    "message": "Lisa kogumike jaotisesse"
   },
   "accessControl": {
     "message": "Ligipääsu haldamine"
@@ -2902,7 +2929,7 @@
     "message": "Muuda kogumikku"
   },
   "collectionInfo": {
-    "message": "Collection info"
+    "message": "Kogumiku info"
   },
   "deleteCollectionConfirmation": {
     "message": "Oled kindel, et soovid selle kogumiku kustutada?"
@@ -2911,7 +2938,7 @@
     "message": "Muuda liiget"
   },
   "fieldOnTabRequiresAttention": {
-    "message": "A field on the '$TAB$' tab requires your attention.",
+    "message": "Tekstiväli $TAB$ real vajab tähelepanu.",
     "placeholders": {
       "tab": {
         "content": "$1",
@@ -3043,7 +3070,7 @@
     "message": "Vale kood"
   },
   "incorrectPin": {
-    "message": "Incorrect PIN"
+    "message": "Vale PIN-kood"
   },
   "exportedVault": {
     "message": "Eksportis hoidla."
@@ -3091,7 +3118,7 @@
     }
   },
   "viewAllLoginOptions": {
-    "message": "View all log in options"
+    "message": "Vaata kõiki sisselogimise valikuid"
   },
   "viewedItemId": {
     "message": "Vaatas kirjet $ID$.",
@@ -3121,7 +3148,7 @@
     }
   },
   "viewedCardNumberItemId": {
-    "message": "Viewed Card Number for item $ID$.",
+    "message": "Vaatas $ID$ kirje pangakaardi numbrit.",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -3139,7 +3166,7 @@
     }
   },
   "viewCollectionWithName": {
-    "message": "View collection - $NAME$",
+    "message": "Vaata kogumikku - $NAME$",
     "placeholders": {
       "name": {
         "content": "$1",
@@ -3148,7 +3175,7 @@
     }
   },
   "editItemWithName": {
-    "message": "Edit item - $NAME$",
+    "message": "Muuda kirjet - $NAME$",
     "placeholders": {
       "name": {
         "content": "$1",
@@ -3211,7 +3238,7 @@
     }
   },
   "deletedCollections": {
-    "message": "Deleted collections"
+    "message": "Kustutatud kogumikud"
   },
   "deletedCollectionId": {
     "message": "Kustutas kollektsiooni $ID$.",
@@ -3259,7 +3286,7 @@
     }
   },
   "deletedManyGroups": {
-    "message": "Deleted $QUANTITY$ group(s).",
+    "message": "Edukalt $QUANTITY$ grupp(i) kustutatud.",
     "placeholders": {
       "quantity": {
         "content": "$1",
@@ -3286,7 +3313,7 @@
     }
   },
   "revokedUserId": {
-    "message": "Revoked organization access for $ID$.",
+    "message": "Kasutaja $ID$ ligipääs organisatsioonile eemaldatud.",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -3295,7 +3322,7 @@
     }
   },
   "restoredUserId": {
-    "message": "Restored organization access for $ID$.",
+    "message": "Kasutaja $ID$ juurdepääs organisatsioonile taastatud.",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -3304,7 +3331,7 @@
     }
   },
   "revokeUserId": {
-    "message": "Revoke $ID$ access",
+    "message": "Eemalda kasutaja $ID$ juurdepääs",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -3427,22 +3454,22 @@
     "message": "Creating account on"
   },
   "checkYourEmail": {
-    "message": "Check your email"
+    "message": "Kontrolli oma e-posti"
   },
   "followTheLinkInTheEmailSentTo": {
-    "message": "Follow the link in the email sent to"
+    "message": "Ava sulle emailiga saadetud link"
   },
   "andContinueCreatingYourAccount": {
-    "message": "and continue creating your account."
+    "message": "ja jätka konto loomist."
   },
   "noEmail": {
-    "message": "No email?"
+    "message": "Pole emaili?"
   },
   "goBack": {
-    "message": "Go back"
+    "message": "Tagasi"
   },
   "toEditYourEmailAddress": {
-    "message": "to edit your email address."
+    "message": "et muuta oma meiliaadressi."
   },
   "view": {
     "message": "Vaata"
@@ -3526,7 +3553,7 @@
     "message": "E-posti aadress on kinnitatud."
   },
   "emailVerifiedV2": {
-    "message": "Email verified"
+    "message": "Email kinnitatud"
   },
   "emailVerifiedFailed": {
     "message": "E-posti kinnitamine nurjus. Proovi uut kinnituskirja saata."
@@ -3550,7 +3577,7 @@
     "message": "Sind on kutsutud ülal oleva organisatsiooniga liituma. Liitumise kinnitamiseks pead oma Bitwardeni kontosse sisse logima. Kui sul ei ole veel kontot, saad selle luua."
   },
   "finishJoiningThisOrganizationBySettingAMasterPassword": {
-    "message": "Finish joining this organization by setting a master password."
+    "message": "Lõpeta organisatsiooniga liitumine määrates ülemparool."
   },
   "inviteAccepted": {
     "message": "Kutse on vastu võetud"
@@ -3604,13 +3631,13 @@
     "message": "Minu organisatsioon"
   },
   "organizationInfo": {
-    "message": "Organization info"
+    "message": "Organisatsiooni info"
   },
   "deleteOrganization": {
     "message": "Kustuta organisatsioon"
   },
   "deletingOrganizationContentWarning": {
-    "message": "Enter the master password to confirm deletion of $ORGANIZATION$ and all associated data. Vault data in $ORGANIZATION$ includes:",
+    "message": "Sisesta ülemparool, et kinnitada organisatsiooni $ORGANIZATION$ ja sellega seotud andmete kustutamise. $ORGANIZATION$ hoidla andmed sisaldavad:",
     "placeholders": {
       "organization": {
         "content": "$1",
@@ -3619,10 +3646,10 @@
     }
   },
   "deletingOrganizationActiveUserAccountsWarning": {
-    "message": "User accounts will remain active after deletion but will no longer be associated to this organization."
+    "message": "Kasutajate kontod jäävad aktiivseks peale kustutamist, aga pole siis enam seotud selle organisatsiooniga."
   },
   "deletingOrganizationIsPermanentWarning": {
-    "message": "Deleting $ORGANIZATION$ is permanent and irreversible.",
+    "message": "Organisatsiooni $ORGANIZATION$ kustutamine on lõplik ja pöördumatu.",
     "placeholders": {
       "organization": {
         "content": "$1",
@@ -3769,7 +3796,7 @@
     "message": "Subscription updated. You now have access to Secrets Manager."
   },
   "additionalOptions": {
-    "message": "Additional options"
+    "message": "Lisavalikud"
   },
   "additionalOptionsDesc": {
     "message": "For additional help in managing your subscription, please contact Customer Support."
@@ -3874,7 +3901,7 @@
     "message": "Uuenda krüpteerimisvõtit"
   },
   "updateEncryptionSchemeDesc": {
-    "message": "We've changed the encryption scheme to provide better security. Update your encryption key now by entering your master password below."
+    "message": "Me muutsime krüpteerimise meetodit, et tagada parem turvalisus. Uuenda oma krüpteerimisvõtit sisestades enda ülemparool."
   },
   "updateEncryptionKeyWarning": {
     "message": "Pärast krüpteerimisvõtme uuendamist pead kõikides seadmetes, kus Bitwardeni rakendust kasutad, oma kontosse uuesti sisse logima (nt nutitelefonis ja brauseris). Välja- ja sisselogimise (mis ühtlasi laadib ka uue krüpteerimisvõtme) nurjumine võib tingida andmete riknemise. Üritame sinu seadmetest ise välja logida, aga see võib võtta natukene aega."
@@ -3910,7 +3937,7 @@
     "message": "Midagi pole valitud."
   },
   "receiveMarketingEmailsV2": {
-    "message": "Get advice, announcements, and research opportunities from Bitwarden in your inbox."
+    "message": "Soovin saada nõuandeid, uudiseid ja pakkumisi Bitwardenilt oma postkasti."
   },
   "unsubscribe": {
     "message": "Lõpeta tellimus"
@@ -3946,7 +3973,7 @@
     "message": "Vali aeg, peale mida sooritatakse allpool valitud tegevus."
   },
   "vaultTimeoutLogoutDesc": {
-    "message": "Choose when your vault will be logged out."
+    "message": "Vali millal logitakse sind hoidlast välja."
   },
   "oneMinute": {
     "message": "1 minuti pärast"
@@ -3974,7 +4001,7 @@
     "description": "ex. Date this item was updated"
   },
   "dateCreated": {
-    "message": "Created",
+    "message": "Loodud",
     "description": "ex. Date this item was created"
   },
   "datePasswordUpdated": {
@@ -4049,7 +4076,7 @@
     "message": "Sellel kirjel on vanu manuseid, mille peab parandama."
   },
   "attachmentFixDescription": {
-    "message": "This attachment uses outdated encryption. Select 'Fix' to download, re-encrypt, and re-upload the attachment."
+    "message": "See manus kasutab aegunud krüpteeringut. Vajuta 'Paranda', et see fail alla laadida, uuesti krüpteerida ja üles laadida."
   },
   "fix": {
     "message": "Paranda",
@@ -4059,21 +4086,21 @@
     "message": "Hoidlas on vanu failimanuseid, mida peab enne konto krüpteerimise võtme roteerimist parandama."
   },
   "yourAccountsFingerprint": {
-    "message": "Konto sõrmejälje fraas",
+    "message": "Sinu konto unikaalne sõnajada",
     "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing."
   },
   "fingerprintEnsureIntegrityVerify": {
-    "message": "Selleks, et sinu krüpteeringu terviklikkus säiliks, pead jätkamiseks kinnitama kasutaja sõrmejälje fraasi.",
+    "message": "Selleks, et sinu krüpteerimisvõtmete terviklikkus säiliks, pead jätkamiseks kinnitama kasutaja unikaalse sõnajada.",
     "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing."
   },
   "fingerprintMatchInfo": {
-    "message": "Please make sure your vault is unlocked and Fingerprint phrase matches the other device."
+    "message": "Palun kontrolli, et sinu hoidla on avatud ja unikaalne sõnajada ühtib teise seadmega."
   },
   "fingerprintPhraseHeader": {
-    "message": "Fingerprint phrase"
+    "message": "Unikaalne sõnajada"
   },
   "dontAskFingerprintAgain": {
-    "message": "Ära enam sõrmejälje fraasi kinnitamist küsi",
+    "message": "Ära enam küsi kutsutud kasutajate unikaalse sõnajada kinnitamist (mittesoovitatav)",
     "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing."
   },
   "free": {
@@ -4362,7 +4389,7 @@
     "message": "Ühenda SSO lahti"
   },
   "unlinkSsoConfirmation": {
-    "message": "Are you sure you want to unlink SSO for this organization?"
+    "message": "Kas oled kindel, et soovid eemaldada SSO selle organisatsiooni jaoks?"
   },
   "linkSso": {
     "message": "Ühenda SSO"
@@ -4471,14 +4498,14 @@
     "message": "Keelatud"
   },
   "revoked": {
-    "message": "Revoked"
+    "message": "Eemaldatud"
   },
   "sendLink": {
     "message": "Sendi link",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "copyLink": {
-    "message": "Copy link"
+    "message": "Kopeeri link"
   },
   "copySendLink": {
     "message": "Kopeeri Sendi link",
@@ -4530,7 +4557,7 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "downloadAttachments": {
-    "message": "Download attachments"
+    "message": "Lae manused alla"
   },
   "sendAccessUnavailable": {
     "message": "Send, millele üritad ligi pääseda, ei eksisteeri või see pole enam saadaval.",
@@ -6167,7 +6194,7 @@
     }
   },
   "lastSync": {
-    "message": "Last sync",
+    "message": "Viimane sünkroniseerimine",
     "description": "Used as a prefix to indicate the last time a sync occured. Example \"Last sync 1968-11-16 00:00:00\""
   },
   "sponsorshipsSynced": {
@@ -7680,7 +7707,7 @@
     "message": "Activate Secrets Manager"
   },
   "yourOrganizationsFingerprint": {
-    "message": "Your organization's fingerprint phrase",
+    "message": "Sinu organisatsiooni unikaalne sõnajada",
     "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their organization's public key with another user, for the purposes of sharing."
   },
   "deviceApprovals": {
@@ -9025,5 +9052,8 @@
   },
   "additionalContentAvailable": {
     "message": "Additional content is available"
+  },
+  "editAccess": {
+    "message": "Edit access"
   }
 }

@@ -48,6 +48,30 @@
   "loginCredentials": {
     "message": "Login credentials"
   },
+  "personalDetails": {
+    "message": "Personiskā informācija"
+  },
+  "identification": {
+    "message": "Identifikācija"
+  },
+  "contactInfo": {
+    "message": "Saziņas informācija"
+  },
+  "cardDetails": {
+    "message": "Kartes dati"
+  },
+  "cardBrandDetails": {
+    "message": "$BRAND$ dati",
+    "placeholders": {
+      "brand": {
+        "content": "$1",
+        "example": "Visa"
+      }
+    }
+  },
+  "itemHistory": {
+    "message": "Vienuma vēsture"
+  },
   "authenticatorKey": {
     "message": "Authenticator key"
   },
@@ -439,6 +463,9 @@
   "fullName": {
     "message": "Pilnais vārds"
   },
+  "address": {
+    "message": "Adrese"
+  },
   "address1": {
     "message": "Adrese 1"
   },
@@ -723,16 +750,16 @@
     "message": "Pieteikšanās sesija ir beigusies."
   },
   "restartRegistration": {
-    "message": "Restart registration"
+    "message": "Sākt reģistrēšanos no jauna"
   },
   "expiredLink": {
-    "message": "Expired link"
+    "message": "Saitei beidzies derīgums"
   },
   "pleaseRestartRegistrationOrTryLoggingIn": {
-    "message": "Please restart registration or try logging in."
+    "message": "Lūgums sākt reģistrēšanos no jauna vai mēģināt pieteikties."
   },
   "youMayAlreadyHaveAnAccount": {
-    "message": "You may already have an account"
+    "message": "Tev jau varētu būt konts"
   },
   "logOutConfirmation": {
     "message": "Vai tiešām atteikties?"
@@ -3910,7 +3937,7 @@
     "message": "Nekas nav atlasīts."
   },
   "receiveMarketingEmailsV2": {
-    "message": "Get advice, announcements, and research opportunities from Bitwarden in your inbox."
+    "message": "Iegūt savā iesūtnē padomus, paziņojumus un izpētes iespējas no Bitwarden."
   },
   "unsubscribe": {
     "message": "Atteikt abonēšanu"
@@ -9025,5 +9052,8 @@
   },
   "additionalContentAvailable": {
     "message": "Ir pieejams papildu saturs"
+  },
+  "editAccess": {
+    "message": "Labot piekļuvi"
   }
 }

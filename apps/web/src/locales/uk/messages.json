@@ -48,6 +48,30 @@
   "loginCredentials": {
     "message": "Облікові дані для входу"
   },
+  "personalDetails": {
+    "message": "Personal details"
+  },
+  "identification": {
+    "message": "Identification"
+  },
+  "contactInfo": {
+    "message": "Contact info"
+  },
+  "cardDetails": {
+    "message": "Card details"
+  },
+  "cardBrandDetails": {
+    "message": "$BRAND$ details",
+    "placeholders": {
+      "brand": {
+        "content": "$1",
+        "example": "Visa"
+      }
+    }
+  },
+  "itemHistory": {
+    "message": "Item history"
+  },
   "authenticatorKey": {
     "message": "Ключ автентифікації"
   },
@@ -438,6 +462,9 @@
   },
   "fullName": {
     "message": "Повне ім'я"
+  },
+  "address": {
+    "message": "Address"
   },
   "address1": {
     "message": "Адреса 1"
@@ -9024,6 +9051,9 @@
     "description": "The text, 'API', is an acronymn and should not be translated."
   },
   "additionalContentAvailable": {
-    "message": "Additional content is available"
+    "message": "Доступний додатковий вміст"
+  },
+  "editAccess": {
+    "message": "Редагувати доступ"
   }
 }

@@ -48,6 +48,30 @@
   "loginCredentials": {
     "message": "Login-legitimationsoplysninger"
   },
+  "personalDetails": {
+    "message": "Personlige oplysninger"
+  },
+  "identification": {
+    "message": "Identifikation"
+  },
+  "contactInfo": {
+    "message": "Kontaktoplysninger"
+  },
+  "cardDetails": {
+    "message": "Kortoplysninger"
+  },
+  "cardBrandDetails": {
+    "message": "$BRAND$-oplysninger",
+    "placeholders": {
+      "brand": {
+        "content": "$1",
+        "example": "Visa"
+      }
+    }
+  },
+  "itemHistory": {
+    "message": "Emnehistorik"
+  },
   "authenticatorKey": {
     "message": "Godkendelsesnøgle"
   },
@@ -438,6 +462,9 @@
   },
   "fullName": {
     "message": "Fulde navn"
+  },
+  "address": {
+    "message": "Adresse"
   },
   "address1": {
     "message": "Adresse 1"
@@ -1191,7 +1218,7 @@
     "message": "Sikker på, at du vil fortsætte?"
   },
   "moveSelectedItemsDesc": {
-    "message": "Choose a folder that you would like to add the $COUNT$ selected item(s) to.",
+    "message": "Vælg en mappe som du ønsker at tilføje $COUNT$ valgte element(er) til.",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -5894,7 +5921,7 @@
     "message": "For advanced configuration, you can specify the base URL of each service independently."
   },
   "selfHostedEnvFormInvalid": {
-    "message": "You must add either the base Server URL or at least one custom environment."
+    "message": "Du skal tilføje enten den grundlæggende server URL eller mindst et brugerdefineret miljø."
   },
   "apiUrl": {
     "message": "API server URL"
@@ -8820,7 +8847,7 @@
     "description": "This will be displayed as part of a larger sentence. The whole sentence reads: 'Notice: Later this month, client vault privacy will be improved and provider members will no longer have direct access to client vault items. For questions, please contact Bitwarden support'."
   },
   "contactBitwardenSupport": {
-    "message": "contact Bitwarden support.",
+    "message": "kontakt Bitwarden support.",
     "description": "This will be displayed as part of a larger sentence. The whole sentence reads: 'Notice: Later this month, client vault privacy will be improved and provider members will no longer have direct access to client vault items. For questions, please contact Bitwarden support'. 'Bitwarden' should not be translated"
   },
   "sponsored": {
@@ -9025,5 +9052,8 @@
   },
   "additionalContentAvailable": {
     "message": "Yderligere indhold er tilgængeligt"
+  },
+  "editAccess": {
+    "message": "Redigér adgang"
   }
 }

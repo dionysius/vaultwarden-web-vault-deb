@@ -48,6 +48,30 @@
   "loginCredentials": {
     "message": "Данни за вписване"
   },
+  "personalDetails": {
+    "message": "Лични данни"
+  },
+  "identification": {
+    "message": "Идентификация"
+  },
+  "contactInfo": {
+    "message": "Информация за връзка"
+  },
+  "cardDetails": {
+    "message": "Данни за картата"
+  },
+  "cardBrandDetails": {
+    "message": "Подробности за $BRAND$",
+    "placeholders": {
+      "brand": {
+        "content": "$1",
+        "example": "Visa"
+      }
+    }
+  },
+  "itemHistory": {
+    "message": "История на елемента"
+  },
   "authenticatorKey": {
     "message": "Ключ за удостоверяване"
   },
@@ -438,6 +462,9 @@
   },
   "fullName": {
     "message": "Пълно име"
+  },
+  "address": {
+    "message": "Адрес"
   },
   "address1": {
     "message": "Адрес 1"
@@ -9025,5 +9052,8 @@
   },
   "additionalContentAvailable": {
     "message": "Има налично допълнително съдържание"
+  },
+  "editAccess": {
+    "message": "Редактиране на достъпа"
   }
 }

@@ -48,6 +48,30 @@
   "loginCredentials": {
     "message": "Bejelentkezési hitelesítések"
   },
+  "personalDetails": {
+    "message": "Személyes adatok"
+  },
+  "identification": {
+    "message": "Azonosítás"
+  },
+  "contactInfo": {
+    "message": "Kapcsolat infó"
+  },
+  "cardDetails": {
+    "message": "Kártyaadatok"
+  },
+  "cardBrandDetails": {
+    "message": "$BRAND$ adatok",
+    "placeholders": {
+      "brand": {
+        "content": "$1",
+        "example": "Visa"
+      }
+    }
+  },
+  "itemHistory": {
+    "message": "Elem előzmény"
+  },
   "authenticatorKey": {
     "message": "Hitelesítő kulcs"
   },
@@ -438,6 +462,9 @@
   },
   "fullName": {
     "message": "Teljes név"
+  },
+  "address": {
+    "message": "Postai cím"
   },
   "address1": {
     "message": "Cím 1"
@@ -9024,6 +9051,9 @@
     "description": "The text, 'API', is an acronymn and should not be translated."
   },
   "additionalContentAvailable": {
-    "message": "Additional content is available"
+    "message": "Kiegészítő tartalom érhető el."
+  },
+  "editAccess": {
+    "message": "Hozzáférés szerkesztése"
   }
 }

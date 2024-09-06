@@ -37,7 +37,7 @@
     "message": "Ghi chú"
   },
   "note": {
-    "message": "Note"
+    "message": "Ghi chú"
   },
   "customFields": {
     "message": "Trường tùy chỉnh"
@@ -48,11 +48,35 @@
   "loginCredentials": {
     "message": "Thông tin đăng nhập"
   },
+  "personalDetails": {
+    "message": "Personal details"
+  },
+  "identification": {
+    "message": "Identification"
+  },
+  "contactInfo": {
+    "message": "Contact info"
+  },
+  "cardDetails": {
+    "message": "Card details"
+  },
+  "cardBrandDetails": {
+    "message": "$BRAND$ details",
+    "placeholders": {
+      "brand": {
+        "content": "$1",
+        "example": "Visa"
+      }
+    }
+  },
+  "itemHistory": {
+    "message": "Item history"
+  },
   "authenticatorKey": {
     "message": "Khóa xác thực"
   },
   "autofillOptions": {
-    "message": "Autofill options"
+    "message": "Tùy chọn tự động điền"
   },
   "websiteUri": {
     "message": "Website (URI)"
@@ -438,6 +462,9 @@
   },
   "fullName": {
     "message": "Họ và tên"
+  },
+  "address": {
+    "message": "Address"
   },
   "address1": {
     "message": "Địa chỉ 1"
@@ -1223,7 +1250,7 @@
     "message": "Sao chép mã xác thực"
   },
   "copyUuid": {
-    "message": "Copy UUID"
+    "message": "Sao chép UUID"
   },
   "errorRefreshingAccessToken": {
     "message": "Access Token Refresh Error"
@@ -9025,5 +9052,8 @@
   },
   "additionalContentAvailable": {
     "message": "Additional content is available"
+  },
+  "editAccess": {
+    "message": "Edit access"
   }
 }

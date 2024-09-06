@@ -48,6 +48,30 @@
   "loginCredentials": {
     "message": "Kirjautumistiedot"
   },
+  "personalDetails": {
+    "message": "Henkilökohtaiset tiedot"
+  },
+  "identification": {
+    "message": "Tunnistautuminen"
+  },
+  "contactInfo": {
+    "message": "Yhteystiedot"
+  },
+  "cardDetails": {
+    "message": "Kortin tiedot"
+  },
+  "cardBrandDetails": {
+    "message": "$BRAND$-tiedot",
+    "placeholders": {
+      "brand": {
+        "content": "$1",
+        "example": "Visa"
+      }
+    }
+  },
+  "itemHistory": {
+    "message": "Kohdehistoria"
+  },
   "authenticatorKey": {
     "message": "Todennusavain"
   },
@@ -438,6 +462,9 @@
   },
   "fullName": {
     "message": "Koko nimi"
+  },
+  "address": {
+    "message": "Osoite"
   },
   "address1": {
     "message": "Osoite 1"
@@ -965,10 +992,10 @@
     "message": "Uusi käyttäjätilisi on luotu! Voit nyt kirjautua sisään."
   },
   "newAccountCreated2": {
-    "message": "Your new account has been created!"
+    "message": "Uusi tilisi on luotu!"
   },
   "youHaveBeenLoggedIn": {
-    "message": "You have been logged in!"
+    "message": "Sinut on kirjattu sisään!"
   },
   "trialAccountCreated": {
     "message": "Tilin luonti onnistui."
@@ -6120,7 +6147,7 @@
     "message": "Käytä tätä käyttäjätunnusta"
   },
   "securePasswordGenerated": {
-    "message": "Turvallinen salasana luotu! Muista myös päivittää salasana verkkosivustolla."
+    "message": "Turvallinen salasana luotiin! Muista vaihtaa se myös verkkosivuston tiliasetuksiin."
   },
   "useGeneratorHelpTextPartOne": {
     "message": "Käytä generaattoria",
@@ -7824,7 +7851,7 @@
     "message": "Kutsu käyttäjiä"
   },
   "secretsManagerForPlan": {
-    "message": "Salaisuushallinta $PLAN$ -tilaukseen",
+    "message": "Salaisuushallinta $PLAN$-tilaukselle",
     "placeholders": {
       "plan": {
         "content": "$1",
@@ -7839,10 +7866,10 @@
     "message": "Ilmainen kahden hengen organisaatioille"
   },
   "unlimitedSecrets": {
-    "message": "Rajattomasti salaisuuksia"
+    "message": "rajattomasti salaisuuksia"
   },
   "unlimitedProjects": {
-    "message": "Rajattomasti projekteja"
+    "message": "rajattomasti projekteja"
   },
   "projectsIncluded": {
     "message": "Sisältää $COUNT$ projektia",
@@ -7905,13 +7932,13 @@
     "message": "Voi hallita organisaation kokoelmien toimintaa."
   },
   "limitCollectionCreationDeletionDesc": {
-    "message": "Rajoita kokoelmien luonti ja poisto omistajille ja ylläpitäjille."
+    "message": "Rajoita kokoelmien luonti ja poisto omistajille ja ylläpitäjille"
   },
   "allowAdminAccessToAllCollectionItemsDesc": {
-    "message": "Omistajat ja ylläpitäjät voivat hallita kaikkia kokoelmia ja kohteita."
+    "message": "Omistajat ja ylläpitäjät voivat hallita kaikkia kokoelmia ja kohteita"
   },
   "updatedCollectionManagement": {
-    "message": "Kokoelman hallinta-asetusta muutettiin"
+    "message": "Kokoelmien hallinta-asetusta muutettiin"
   },
   "passwordManagerPlanPrice": {
     "message": "Salasanahallinnan tilauksen hinta"
@@ -8185,7 +8212,7 @@
     "message": "Käyttäjäpaikkojen muutokset näkyvät seuraavalla laskutuskaudella."
   },
   "unassignedSeatsDescription": {
-    "message": "Tilauksen määrittämättömät käyttäjäpaikat"
+    "message": "Määrittämättömät käyttäjäpaikat"
   },
   "purchaseSeatDescription": {
     "message": "Käyttäjäpaikkoja ostettiin lisää"
@@ -8358,7 +8385,7 @@
     "message": "Tämä mitätöi käyttöoikeutesi konetiliin."
   },
   "machineAccountsIncluded": {
-    "message": "Sisältää $COUNT$ konetiliä",
+    "message": "sisältää $COUNT$ konetiliä",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -8367,7 +8394,7 @@
     }
   },
   "additionalMachineAccountCost": {
-    "message": "Jokainen lisätty konetili kustantaa $COST$ kuukaudessa",
+    "message": "jokainen lisätty konetili kustantaa $COST$ kuukaudessa",
     "placeholders": {
       "cost": {
         "content": "$1",
@@ -8575,7 +8602,7 @@
     "message": "Aloita seitsemän päivän ilmainen Bitwarden Salaisuushallinta Enterprise -kokeilusi"
   },
   "startYour7DayFreeTrialOfBitwardenPasswordManager": {
-    "message": "Aloita seitsemän päivän ilmainen Bitwarden Salasananhallinan kokeilu"
+    "message": "Aloita seitsemän päivän ilmainen Bitwarden Salasanahallinnan kokeilu"
   },
   "startYour7DayFreeTrialOfBitwardenPasswordManagerForTeams": {
     "message": "Aloita seitsemän päivän ilmainen Bitwarden Salasanahallinta Teams -kokeilusi"
@@ -8639,10 +8666,10 @@
     "message": "Et ole valinnut yhtään kokoelmaa."
   },
   "updateName": {
-    "message": "Muuta nimi"
+    "message": "Vaihda nimi"
   },
   "updatedOrganizationName": {
-    "message": "Organisaation nimi muutettiin"
+    "message": "Organisaation nimi vaihdettiin"
   },
   "providerPlan": {
     "message": "Hallintapalvelun toimittaja"
@@ -8827,7 +8854,7 @@
     "message": "Sponsoroitu"
   },
   "licenseAndBillingManagementDesc": {
-    "message": "Ota uusimmat muutokset käyttöön lataamalla lisenssitiedostosi Bitwardenin pilvipalvelimen muutosten jälkeen."
+    "message": "Ota uusimmat muutokset käyttöön lisäämällä lisenssitiedostosi tehtyäsi Bitwardenin pilvipalvelimen muutokset."
   },
   "addToFolder": {
     "message": "Lisää kansioon"
@@ -8873,7 +8900,7 @@
     "message": "Tiedot"
   },
   "purchasedSeatsRemoved": {
-    "message": "ostetut käyttäpaikat poistettiin"
+    "message": "ostetut käyttäjäpaikat poistettiin"
   },
   "fileSends": {
     "message": "Tiedosto-Sendit"
@@ -8912,7 +8939,7 @@
     }
   },
   "includeSsoAuthenticationMessage": {
-    "message": "SSO-todennus"
+    "message": "Tunnistautuminen kertakirjautumisella"
   },
   "familiesPlanInvLimitReachedManageBilling": {
     "message": "Families-organisaatioissa voi olla enintään $SEATCOUNT$ jäsentä. Kutsu lisää jäseniä päivittämällä maksulliseen tilaukseen.",
@@ -8936,7 +8963,7 @@
     "message": "Päivitä tilauksesi kutsuaksesi lisää jäseniä ja saadaksesi käyttöösi Bitwardenin lisäominaisuuksia"
   },
   "upgradeDiscount": {
-    "message": "Säästä $AMOUNT$%",
+    "message": "Säästä $AMOUNT$ %",
     "placeholders": {
       "amount": {
         "content": "$1",
@@ -8945,10 +8972,10 @@
     }
   },
   "upgradeEnterpriseMessage": {
-    "message": "Kehittyneet ominaisuudet suuremmille yrityksille"
+    "message": "Erityisominaisuudet suuryrityksille"
   },
   "upgradeTeamsMessage": {
-    "message": "Vahvaa suojausta etsiville yrityksille"
+    "message": "Vahvaa tietoturvaa tavoitteleville yrityksille"
   },
   "teamsInviteMessage": {
     "message": "Kutsu rajattomasti jäseniä"
@@ -8957,7 +8984,7 @@
     "message": "Oikeus luoda ryhmiä"
   },
   "syncGroupsAndUsersFromDirectory": {
-    "message": "Synkronoi ryhmät ja käyttäjät hakemistosta"
+    "message": "Ryhmien ja käyttäjien synkronointi hakemistosta"
   },
   "upgradeFamilyMessage": {
     "message": "Jaa perheen ja ystävien kanssa"
@@ -8966,7 +8993,7 @@
     "message": "Premium-ominaisuuksien käyttöoikeus"
   },
   "additionalStorageGbMessage": {
-    "message": "Gt ylimääräistä tallennustilaa"
+    "message": "Gt enemmän tallennustilaa"
   },
   "premiumAccounts": {
     "message": "Kuusi premium-tiliä"
@@ -9024,6 +9051,9 @@
     "description": "The text, 'API', is an acronymn and should not be translated."
   },
   "additionalContentAvailable": {
-    "message": "Additional content is available"
+    "message": "Lisää sisältöä on saatavilla"
+  },
+  "editAccess": {
+    "message": "Muokkaa käyttöoikeuksia"
   }
 }

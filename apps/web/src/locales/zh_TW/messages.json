@@ -48,6 +48,30 @@
   "loginCredentials": {
     "message": "Login credentials"
   },
+  "personalDetails": {
+    "message": "Personal details"
+  },
+  "identification": {
+    "message": "Identification"
+  },
+  "contactInfo": {
+    "message": "Contact info"
+  },
+  "cardDetails": {
+    "message": "Card details"
+  },
+  "cardBrandDetails": {
+    "message": "$BRAND$ details",
+    "placeholders": {
+      "brand": {
+        "content": "$1",
+        "example": "Visa"
+      }
+    }
+  },
+  "itemHistory": {
+    "message": "Item history"
+  },
   "authenticatorKey": {
     "message": "Authenticator key"
   },
@@ -105,7 +129,7 @@
     }
   },
   "autoFillOnPageLoad": {
-    "message": "Autofill on page load?"
+    "message": "要在頁面載入時自動填寫嗎？"
   },
   "number": {
     "message": "號碼"
@@ -195,10 +219,10 @@
     "message": "Dr"
   },
   "cardExpiredTitle": {
-    "message": "Expired card"
+    "message": "支付卡已過期"
   },
   "cardExpiredMessage": {
-    "message": "If you've renewed it, update the card's information"
+    "message": "如果您已續卡，請更新支付卡資訊"
   },
   "expirationMonth": {
     "message": "逾期月份"
@@ -257,7 +281,7 @@
     "description": "This is the folder for uncategorized items"
   },
   "selfOwnershipLabel": {
-    "message": "You",
+    "message": "您",
     "description": "Used as a label to indicate that the user is the owner of an item."
   },
   "addFolder": {
@@ -439,6 +463,9 @@
   "fullName": {
     "message": "全名"
   },
+  "address": {
+    "message": "Address"
+  },
   "address1": {
     "message": "地址 1"
   },
@@ -482,7 +509,7 @@
     "message": "檢視項目"
   },
   "viewItemType": {
-    "message": "View $ITEMTYPE$",
+    "message": "檢視 $ITEMTYPE$",
     "placeholders": {
       "itemtype": {
         "content": "$1",
@@ -498,10 +525,10 @@
     "message": "項目"
   },
   "itemDetails": {
-    "message": "Item details"
+    "message": "項目詳細資訊"
   },
   "itemName": {
-    "message": "Item name"
+    "message": "項目名"
   },
   "cannotRemoveViewOnlyCollections": {
     "message": "You cannot remove collections with View only permissions: $COLLECTIONS$",
@@ -9025,5 +9052,8 @@
   },
   "additionalContentAvailable": {
     "message": "Additional content is available"
+  },
+  "editAccess": {
+    "message": "Edit access"
   }
 }

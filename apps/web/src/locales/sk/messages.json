@@ -48,6 +48,30 @@
   "loginCredentials": {
     "message": "Prihlasovacie údaje"
   },
+  "personalDetails": {
+    "message": "Personal details"
+  },
+  "identification": {
+    "message": "Identification"
+  },
+  "contactInfo": {
+    "message": "Contact info"
+  },
+  "cardDetails": {
+    "message": "Card details"
+  },
+  "cardBrandDetails": {
+    "message": "$BRAND$ details",
+    "placeholders": {
+      "brand": {
+        "content": "$1",
+        "example": "Visa"
+      }
+    }
+  },
+  "itemHistory": {
+    "message": "Item history"
+  },
   "authenticatorKey": {
     "message": "Kľúč overovacej aplikácie"
   },
@@ -438,6 +462,9 @@
   },
   "fullName": {
     "message": "Celé meno"
+  },
+  "address": {
+    "message": "Address"
   },
   "address1": {
     "message": "Adresa 1"
@@ -965,10 +992,10 @@
     "message": "Váš nový účet bol vytvorený! Teraz sa môžete prihlásiť."
   },
   "newAccountCreated2": {
-    "message": "Your new account has been created!"
+    "message": "Váš nový účet bol vytvorený!"
   },
   "youHaveBeenLoggedIn": {
-    "message": "You have been logged in!"
+    "message": "Boli ste prihlásený!"
   },
   "trialAccountCreated": {
     "message": "Účet bol úspešne vytvorený."
@@ -9024,6 +9051,9 @@
     "description": "The text, 'API', is an acronymn and should not be translated."
   },
   "additionalContentAvailable": {
-    "message": "Additional content is available"
+    "message": "K dispozícii je ďalší obsah"
+  },
+  "editAccess": {
+    "message": "Upraviť prístup"
   }
 }

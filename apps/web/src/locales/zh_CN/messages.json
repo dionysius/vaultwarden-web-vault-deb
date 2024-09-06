@@ -48,6 +48,30 @@
   "loginCredentials": {
     "message": "登录凭据"
   },
+  "personalDetails": {
+    "message": "个人信息"
+  },
+  "identification": {
+    "message": "Identification"
+  },
+  "contactInfo": {
+    "message": "联系信息"
+  },
+  "cardDetails": {
+    "message": "支付卡详情"
+  },
+  "cardBrandDetails": {
+    "message": "$BRAND$ 详情",
+    "placeholders": {
+      "brand": {
+        "content": "$1",
+        "example": "Visa"
+      }
+    }
+  },
+  "itemHistory": {
+    "message": "项目历史记录"
+  },
   "authenticatorKey": {
     "message": "验证器密钥"
   },
@@ -438,6 +462,9 @@
   },
   "fullName": {
     "message": "全名"
+  },
+  "address": {
+    "message": "地址"
   },
   "address1": {
     "message": "地址 1"
@@ -4884,11 +4911,11 @@
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read '**Learn more**, see how it works, or try it now. '"
   },
   "sendVaultCardSee": {
-    "message": "参见",
+    "message": "查看",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Learn more, **see** how it works, or try it now.'"
   },
   "sendVaultCardHowItWorks": {
-    "message": "工作原理",
+    "message": "它的工作原理",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Learn more, see **how it works**, or try it now.'"
   },
   "sendVaultCardOr": {
@@ -4977,7 +5004,7 @@
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Learn more about Bitwarden Send or **sign up** to try it today.'"
   },
   "sendAccessTaglineTryToday": {
-    "message": "来马上尝试。",
+    "message": "以立即体验。",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Learn more about Bitwarden Send or sign up to **try it today.**'"
   },
   "sendAccessCreatorIdentifier": {
@@ -5139,10 +5166,10 @@
     "message": "重置密码详细信息响应为空"
   },
   "trashCleanupWarning": {
-    "message": "回收站中超过 30 天的条目将会被自动删除。"
+    "message": "回收站中超过 30 天的项目将被自动删除。"
   },
   "trashCleanupWarningSelfHosted": {
-    "message": "回收站中超过一定时间的条目将会被自动删除。"
+    "message": "回收站中超过一定时间的项目将被自动删除。"
   },
   "passwordPrompt": {
     "message": "主密码重新提示"
@@ -6536,7 +6563,7 @@
     "message": "正在获取选项..."
   },
   "multiSelectNotFound": {
-    "message": "未找到任何条目"
+    "message": "未找到任何项目"
   },
   "multiSelectClearAll": {
     "message": "清除全部"
@@ -9024,6 +9051,9 @@
     "description": "The text, 'API', is an acronymn and should not be translated."
   },
   "additionalContentAvailable": {
-    "message": "Additional content is available"
+    "message": "其他内容可用"
+  },
+  "editAccess": {
+    "message": "编辑权限"
   }
 }

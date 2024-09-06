@@ -48,6 +48,30 @@
   "loginCredentials": {
     "message": "Přihlašovací údaje"
   },
+  "personalDetails": {
+    "message": "Osobní údaje"
+  },
+  "identification": {
+    "message": "Identifikace"
+  },
+  "contactInfo": {
+    "message": "Kontaktní informace"
+  },
+  "cardDetails": {
+    "message": "Podrobnosti karty"
+  },
+  "cardBrandDetails": {
+    "message": "Podrobnosti o $BRAND$",
+    "placeholders": {
+      "brand": {
+        "content": "$1",
+        "example": "Visa"
+      }
+    }
+  },
+  "itemHistory": {
+    "message": "Historie položky"
+  },
   "authenticatorKey": {
     "message": "Ověřovací klíč"
   },
@@ -438,6 +462,9 @@
   },
   "fullName": {
     "message": "Celé jméno"
+  },
+  "address": {
+    "message": "Adresa"
   },
   "address1": {
     "message": "Adresa 1"
@@ -9025,5 +9052,8 @@
   },
   "additionalContentAvailable": {
     "message": "Je k dispozici další obsah"
+  },
+  "editAccess": {
+    "message": "Upravit přístup"
   }
 }
