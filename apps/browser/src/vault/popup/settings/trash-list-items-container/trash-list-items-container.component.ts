@@ -57,6 +57,8 @@ export class TrashListItemsContainerComponent {
   async restore(cipher: CipherView) {
     try {
       await this.cipherService.restoreWithServer(cipher.id);
+
+      await this.router.navigate(["/vault"]);
       this.toastService.showToast({
         variant: "success",
         title: null,
@@ -86,10 +88,12 @@ export class TrashListItemsContainerComponent {
 
     try {
       await this.cipherService.deleteWithServer(cipher.id);
+
+      await this.router.navigate(["/vault"]);
       this.toastService.showToast({
         variant: "success",
         title: null,
-        message: this.i18nService.t("deletedItem"),
+        message: this.i18nService.t("permanentlyDeletedItem"),
       });
     } catch (e) {
       this.logService.error(e);
