@@ -101,11 +101,11 @@ export class UpdateTempPasswordComponent extends BaseChangePasswordComponent imp
 
   get masterPasswordWarningText(): string {
     if (this.reason == ForceSetPasswordReason.WeakMasterPassword) {
-      return this.i18nService.t("weakMasterPasswordWarning");
+      return this.i18nService.t("updateWeakMasterPasswordWarning");
     } else if (this.reason == ForceSetPasswordReason.TdeOffboarding) {
       return this.i18nService.t("tdeDisabledMasterPasswordRequired");
     } else {
-      return this.i18nService.t("masterPasswordWarning");
+      return this.i18nService.t("updateMasterPasswordWarning");
     }
   }
 
