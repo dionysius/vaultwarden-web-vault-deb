@@ -1,12 +1,19 @@
-import { LogService } from "../../../platform/abstractions/log.service";
-import { BraintreeServiceAbstraction } from "../../abstractions";
+import { Injectable } from "@angular/core";
 
-export class BraintreeService implements BraintreeServiceAbstraction {
+import { LogService } from "@bitwarden/common/platform/abstractions/log.service";
+
+import { BillingServicesModule } from "./billing-services.module";
+
+@Injectable({ providedIn: BillingServicesModule })
+export class BraintreeService {
   private braintree: any;
   private containerId: string;
 
   constructor(private logService: LogService) {}
 
+  /**
+   * Utilizes the Braintree SDK to create a [Braintree drop-in]{@link https://braintree.github.io/braintree-web-drop-in/docs/current/Dropin.html} instance attached to the container ID specified as part of the {@link loadBraintree} method.
+   */
   createDropin() {
     window.setTimeout(() => {
       const window$ = window as any;
@@ -37,6 +44,12 @@ export class BraintreeService implements BraintreeServiceAbstraction {
     }, 250);
   }
 
+  /**
+   * Loads the Bitwarden dropin.js script in the <head> element of the current page.
+   * This script attaches the Braintree SDK to the window.
+   * @param containerId - The ID of the HTML element where the Braintree drop-in will be loaded at.
+   * @param autoCreateDropin - Specifies whether the Braintree drop-in should be created when dropin.js loads.
+   */
   loadBraintree(containerId: string, autoCreateDropin: boolean) {
     const script = window.document.createElement("script");
     script.id = "dropin-script";
@@ -49,6 +62,10 @@ export class BraintreeService implements BraintreeServiceAbstraction {
     window.document.head.appendChild(script);
   }
 
+  /**
+   * Invokes the Braintree [requestPaymentMethod]{@link https://braintree.github.io/braintree-web-drop-in/docs/current/Dropin.html#requestPaymentMethod} method
+   * in order to generate a payment method token using the active Braintree drop-in.
+   */
   requestPaymentMethod(): Promise<string> {
     return new Promise((resolve, reject) => {
       this.braintree.requestPaymentMethod((error: any, payload: any) => {
@@ -62,6 +79,12 @@ export class BraintreeService implements BraintreeServiceAbstraction {
     });
   }
 
+  /**
+   * Removes the following elements from the <head> of the current page:
+   * - The Bitwarden dropin.js script
+   * - Any <script> elements that contain the word "paypal"
+   * - The Braintree drop-in stylesheet
+   */
   unloadBraintree() {
     const script = window.document.getElementById("dropin-script");
     window.document.head.removeChild(script);

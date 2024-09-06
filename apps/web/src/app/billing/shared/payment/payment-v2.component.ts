@@ -3,15 +3,12 @@ import { FormControl, FormGroup, Validators } from "@angular/forms";
 import { Subject } from "rxjs";
 import { takeUntil } from "rxjs/operators";
 
-import {
-  BillingApiServiceAbstraction,
-  BraintreeServiceAbstraction,
-  StripeServiceAbstraction,
-} from "@bitwarden/common/billing/abstractions";
+import { BillingApiServiceAbstraction } from "@bitwarden/common/billing/abstractions";
 import { PaymentMethodType } from "@bitwarden/common/billing/enums";
 import { TokenizedPaymentSourceRequest } from "@bitwarden/common/billing/models/request/tokenized-payment-source.request";
 
 import { SharedModule } from "../../../shared";
+import { BillingServicesModule, BraintreeService, StripeService } from "../../services";
 
 /**
  * Render a form that allows the user to enter their payment method, tokenize it against one of our payment providers and,
@@ -23,7 +20,7 @@ import { SharedModule } from "../../../shared";
   selector: "app-payment-v2",
   templateUrl: "./payment-v2.component.html",
   standalone: true,
-  imports: [SharedModule],
+  imports: [BillingServicesModule, SharedModule],
 })
 export class PaymentV2Component implements OnInit, OnDestroy {
   /** Show account credit as a payment option. */
@@ -56,8 +53,8 @@ export class PaymentV2Component implements OnInit, OnDestroy {
 
   constructor(
     private billingApiService: BillingApiServiceAbstraction,
-    private braintreeService: BraintreeServiceAbstraction,
-    private stripeService: StripeServiceAbstraction,
+    private braintreeService: BraintreeService,
+    private stripeService: StripeService,
   ) {}
 
   ngOnInit(): void {
