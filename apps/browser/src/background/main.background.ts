@@ -782,6 +782,8 @@ export default class MainBackground {
       this.authService,
     );
 
+    this.bulkEncryptService = new FallbackBulkEncryptService(this.encryptService);
+
     this.cipherService = new CipherService(
       this.cryptoService,
       this.domainSettingsService,
