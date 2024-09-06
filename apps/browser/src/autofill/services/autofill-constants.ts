@@ -90,6 +90,7 @@ export class CreditCardAutoFillConstants {
     "data-stripe",
     "htmlName",
     "htmlID",
+    "title",
     "label-tag",
     "placeholder",
     "label-left",
@@ -299,12 +300,67 @@ export class CreditCardAutoFillConstants {
     "cb-type",
   ];
 
+  static readonly CardExpiryDateDelimiters: string[] = ["/", "-", ".", " "];
+
+  // Note, these are expressions of user-guidance for the expected expiry date format to be used
+  static readonly CardExpiryDateFormats: CardExpiryDateFormat[] = [
+    // English
+    {
+      Month: "mm",
+      MonthShort: "m",
+      Year: "yyyy",
+      YearShort: "yy",
+    },
+    // Danish
+    {
+      Month: "mm",
+      MonthShort: "m",
+      Year: "åååå",
+      YearShort: "åå",
+    },
+    // German/Dutch
+    {
+      Month: "mm",
+      MonthShort: "m",
+      Year: "jjjj",
+      YearShort: "jj",
+    },
+    // French/Spanish/Italian
+    {
+      Month: "mm",
+      MonthShort: "m",
+      Year: "aa",
+      YearShort: "aa",
+    },
+    // Russian
+    {
+      Month: "мм",
+      MonthShort: "м",
+      Year: "гггг",
+      YearShort: "гг",
+    },
+    // Portuguese
+    {
+      Month: "mm",
+      MonthShort: "m",
+      Year: "rrrr",
+      YearShort: "rr",
+    },
+  ];
+
   // Each index represents a language. These three arrays should all be the same length.
   // 0: English, 1: Danish, 2: German/Dutch, 3: French/Spanish/Italian, 4: Russian, 5: Portuguese
   static readonly MonthAbbr = ["mm", "mm", "mm", "mm", "мм", "mm"];
   static readonly YearAbbrShort = ["yy", "åå", "jj", "aa", "гг", "rr"];
   static readonly YearAbbrLong = ["yyyy", "åååå", "jjjj", "aa", "гггг", "rrrr"];
 }
+
+export type CardExpiryDateFormat = {
+  Month: string;
+  MonthShort: string;
+  Year: string;
+  YearShort: string;
+};
 
 export class IdentityAutoFillConstants {
   static readonly IdentityAttributes: string[] = [
