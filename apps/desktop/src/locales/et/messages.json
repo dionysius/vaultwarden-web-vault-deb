@@ -877,11 +877,11 @@
     "message": "You can change your master password on the Bitwarden web app."
   },
   "fingerprintPhrase": {
-    "message": "Sõrmejälje fraas",
+    "message": "Unikaalne sõnajada",
     "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing."
   },
   "yourAccountsFingerprint": {
-    "message": "Konto sõrmejälje fraas",
+    "message": "Sinu konto unikaalne sõnajada",
     "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing."
   },
   "goToWebVault": {
@@ -1781,10 +1781,10 @@
     "message": "Paraku ei ole brauseri integratsioon hetkel Linuxi versioonis toetatud."
   },
   "enableBrowserIntegrationFingerprint": {
-    "message": "Nõua brauseri integratsiooni ülekinnitamist"
+    "message": "Nõua brauseri ühendamiseks kinnitust"
   },
   "enableBrowserIntegrationFingerprintDesc": {
-    "message": "See seadistus võimaldab täiendavat kaitset, küsides brauseriga liidestamisel sõrmejälje fraasi. Sisselülitamisel nõuab see seadistus igakordset kasutaja sekkumist, kui luuakse ühendus brauseri ja töölaua rakenduse vahel."
+    "message": "See seadistus võimaldab täiendavat kaitset, küsides brauseriga ühendamisel teie unikaalset sõnajada. Sisselülitamisel nõuab see seadistus iga kord kasutaja kinnitust, kui luuakse ühendus brauseri ja töölaua rakenduse vahel."
   },
   "enableHardwareAcceleration": {
     "message": "Use hardware acceleration"
@@ -1799,7 +1799,7 @@
     "message": "Brauseri ühendamise kinnitamine"
   },
   "verifyBrowserDesc": {
-    "message": "Veendu, et kuvatav sõrmejälje fraas on identne sellega, mida kuvatakse brauseri lisas."
+    "message": "Veendu, et kuvatav unikaalne sõnajada on identne sellega, mida kuvatakse brauseris."
   },
   "verifyNativeMessagingConnectionTitle": {
     "message": "$APPID$ soovib Bitwardeniga ühendust luua",
@@ -2456,10 +2456,10 @@
     "message": "Sinu seadmesse saadeti teavitus."
   },
   "fingerprintMatchInfo": {
-    "message": "Veendu, et hoidla on lahti lukustatud ja sõrmejälje fraasid seadmete vahel ühtivad."
+    "message": "Veendu, et sinu hoidla on avatud ja unikaalne sõnajada ühtib teise seadmega."
   },
   "fingerprintPhraseHeader": {
-    "message": "Sõrmejälje fraas"
+    "message": "Unikaalne sõnajada"
   },
   "needAnotherOption": {
     "message": "Bitwardeni rakenduse seadistuses peab olema konfigureeritud sisselogimine läbi seadme. Vajad teist valikut?"
