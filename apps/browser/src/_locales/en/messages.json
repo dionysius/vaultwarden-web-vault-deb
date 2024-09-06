@@ -4300,8 +4300,11 @@
   "enterprisePolicyRequirementsApplied": {
     "message": "Enterprise policy requirements have been applied to this setting"
   },
-  "additionalContentAvailable": {
-    "message": "Additional content is available"
+  "showCharacterCount": {
+    "message": "Show character count"
+  },
+  "hideCharacterCount": {
+    "message": "Hide character count"
   },
   "itemsInTrash": {
     "message": "Items in trash"
