@@ -308,7 +308,7 @@
     "message": "Όνομα φακέλου"
   },
   "folderHintText": {
-    "message": "Nest a folder by adding the parent folder's name followed by a “/”. Example: Social/Forums"
+    "message": "Φωλιάστε έναν φάκελο προσθέτοντας το όνομα του γονικού φακέλου ακολουθούμενο από ένα \"/\". Παράδειγμα: Κοινωνικά/Φόρουμ"
   },
   "noFoldersAdded": {
     "message": "Δεν προστέθηκαν φάκελοι"
@@ -400,11 +400,11 @@
     "description": "deprecated. Use specialCharactersLabel instead."
   },
   "include": {
-    "message": "Include",
+    "message": "Συμπερίληψη",
     "description": "Card header for password generator include block"
   },
   "uppercaseDescription": {
-    "message": "Include uppercase characters",
+    "message": "Συμπερίληψη κεφαλαίων χαρακτήρων",
     "description": "Tooltip for the password generator uppercase character checkbox"
   },
   "uppercaseLabel": {
@@ -412,7 +412,7 @@
     "description": "Label for the password generator uppercase character checkbox"
   },
   "lowercaseDescription": {
-    "message": "Include lowercase characters",
+    "message": "Συμπερίληψη πεζών χαρακτήρων",
     "description": "Full description for the password generator lowercase character checkbox"
   },
   "lowercaseLabel": {
@@ -420,7 +420,7 @@
     "description": "Label for the password generator lowercase character checkbox"
   },
   "numbersDescription": {
-    "message": "Include numbers",
+    "message": "Συμπερίληψη αριθμών",
     "description": "Full description for the password generator numbers checkbox"
   },
   "numbersLabel": {
@@ -428,7 +428,7 @@
     "description": "Label for the password generator numbers checkbox"
   },
   "specialCharactersDescription": {
-    "message": "Include special characters",
+    "message": "Συμπερίληψη ειδικών χαρακτήρων",
     "description": "Full description for the password generator special characters checkbox"
   },
   "specialCharactersLabel": {
@@ -459,7 +459,7 @@
     "description": "deprecated. Use avoidAmbiguous instead."
   },
   "avoidAmbiguous": {
-    "message": "Avoid ambiguous characters",
+    "message": "Αποφυγή αμφιλεγόμενων χαρακτήρων",
     "description": "Label for the avoid ambiguous characters checkbox."
   },
   "searchVault": {
@@ -684,10 +684,10 @@
     "message": "Ο λογαριασμός σας έχει δημιουργηθεί! Τώρα μπορείτε να συνδεθείτε."
   },
   "newAccountCreated2": {
-    "message": "Your new account has been created!"
+    "message": "Ο νέος σας λογαριασμός έχει δημιουργηθεί!"
   },
   "youHaveBeenLoggedIn": {
-    "message": "You have been logged in!"
+    "message": "Έχετε συνδεθεί!"
   },
   "youSuccessfullyLoggedIn": {
     "message": "Έχετε συνδεθεί επιτυχώς"
@@ -1009,7 +1009,7 @@
     "message": "Τύπος εξαγωγής"
   },
   "accountRestricted": {
-    "message": "Ο λογαριασμός περιορίστηκε"
+    "message": "Περιορισμένο στο λογαριασμό"
   },
   "filePasswordAndConfirmFilePasswordDoNotMatch": {
     "message": "“Κωδικός πρόσβασης αρχείου” και “Επιβεβαίωση κωδικού πρόσβασης αρχείου“ δεν ταιριάζουν."
@@ -1131,7 +1131,7 @@
     "message": "1 GB κρυπτογραφημένο αποθηκευτικό χώρο για συνημμένα αρχεία."
   },
   "premiumSignUpEmergency": {
-    "message": "Emergency access."
+    "message": "Πρόσβαση έκτακτης ανάγκης."
   },
   "premiumSignUpTwoStepOptions": {
     "message": "Πρόσθετες επιλογές σύνδεσης δύο βημάτων, όπως το YubiKey και το Duo."
@@ -1155,7 +1155,7 @@
     "message": "Μπορείτε να αγοράσετε συνδρομή Premium στο διαδικτυακό θησαυ/κιο του bitwarden.com. Θέλετε να επισκεφθείτε την ιστοσελίδα τώρα;"
   },
   "premiumPurchaseAlertV2": {
-    "message": "You can purchase Premium from your account settings on the Bitwarden web app."
+    "message": "Μπορείτε να αγοράσετε το Premium από τις ρυθμίσεις του λογαριασμού σας στην διαδικτυακή εφαρμογή Bitwarden."
   },
   "premiumCurrentMember": {
     "message": "Είστε Premium μέλος!"
@@ -1164,7 +1164,7 @@
     "message": "Ευχαριστούμε που υποστηρίζετε το Bitwarden."
   },
   "premiumFeatures": {
-    "message": "Upgrade to Premium and receive:"
+    "message": "Αναβαθμίστε σε Premium και λάβετε:"
   },
   "premiumPrice": {
     "message": "Όλα για μόνο $PRICE$ /έτος!",
@@ -1176,7 +1176,7 @@
     }
   },
   "premiumPriceV2": {
-    "message": "All for just $PRICE$ per year!",
+    "message": "Όλα μόνο για $PRICE$ ανά έτος!",
     "placeholders": {
       "price": {
         "content": "$1",
@@ -2135,10 +2135,10 @@
     "message": "Παρακαλώ ξεκλειδώστε αυτόν τον χρήστη στην εφαρμογή επιφάνειας εργασίας και προσπαθήστε ξανά."
   },
   "biometricsNotAvailableTitle": {
-    "message": "Biometric unlock unavailable"
+    "message": "Μη διαθέσιμο βιομετρικό ξεκλείδωμα"
   },
   "biometricsNotAvailableDesc": {
-    "message": "Biometric unlock is currently unavailable. Please try again later."
+    "message": "Το βιομετρικό ξεκλείδωμα δεν είναι διαθέσιμο προς το παρόν. Παρακαλώ προσπαθήστε ξανά αργότερα."
   },
   "biometricsFailedTitle": {
     "message": "Τα βιομετρικά απέτυχαν"
@@ -2371,11 +2371,11 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "createdSendSuccessfully": {
-    "message": "Send created successfully!",
+    "message": "Το Send δημιουργήθηκε επιτυχώς!",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendAvailability": {
-    "message": "The Send will be available to anyone with the link for the next $DAYS$ days.",
+    "message": "Το Send θα είναι διαθέσιμο σε όποιον έχει τον σύνδεσμο για τις επόμενες $DAYS$ ημέρες.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated.",
     "placeholders": {
       "days": {
@@ -2385,7 +2385,7 @@
     }
   },
   "sendLinkCopied": {
-    "message": "Send link copied",
+    "message": "Ο σύνδεσμος Send αντιγράφηκε",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "editedSend": {
@@ -3477,8 +3477,8 @@
   "passkeyFeatureIsNotImplementedForAccountsWithoutMasterPassword": {
     "message": "Απαιτείται επαλήθευση από τον ιστότοπο εκκίνησης. Αυτή η λειτουργία δεν έχει ακόμα υλοποιηθεί για λογαριασμούς χωρίς τον κύριο κωδικό πρόσβασης."
   },
-  "logInWithPasskey": {
-    "message": "Σύνδεση με κλειδί πρόσβασης;"
+  "logInWithPasskeyQuestion": {
+    "message": "Log in with passkey?"
   },
   "passkeyAlreadyExists": {
     "message": "Υπάρχει ήδη ένα κλειδί πρόσβασης για αυτήν την εφαρμογή."
@@ -3489,6 +3489,9 @@
   "noMatchingPasskeyLogin": {
     "message": "Δεν έχετε στοιχεία σύνδεσης που να συνδυάζονται με αυτόν τον ιστότοπο."
   },
+  "noMatchingLoginsForSite": {
+    "message": "No matching logins for this site"
+  },
   "confirm": {
     "message": "Επιβεβαίωση"
   },
@@ -3498,8 +3501,11 @@
   "savePasskeyNewLogin": {
     "message": "Αποθήκευση κλειδιού πρόσβασης ως νέα σύνδεση"
   },
-  "choosePasskey": {
-    "message": "Επιλέξτε μια σύνδεση στην οποία θα αποθηκεύσετε αυτό το κλειδί πρόσβασης"
+  "chooseCipherForPasskeySave": {
+    "message": "Choose a login to save this passkey to"
+  },
+  "chooseCipherForPasskeyAuth": {
+    "message": "Choose a passkey to log in with"
   },
   "passkeyItem": {
     "message": "Αντικείμενο κλειδιού πρόσβασης"
@@ -3697,7 +3703,7 @@
     "description": "Notification message for when saving credentials has succeeded."
   },
   "passwordSaved": {
-    "message": "Password saved!",
+    "message": "Ο κωδικός πρόσβασης αποθηκεύτηκε!",
     "description": "Notification message for when saving credentials has succeeded."
   },
   "updateCipherAttemptSuccess": {
@@ -3705,7 +3711,7 @@
     "description": "Notification message for when updating credentials has succeeded."
   },
   "passwordUpdated": {
-    "message": "Password updated!",
+    "message": "Ο κωδικός πρόσβασης ενημερώθηκε!",
     "description": "Notification message for when updating credentials has succeeded."
   },
   "saveCipherAttemptFailed": {
@@ -4014,7 +4020,7 @@
     }
   },
   "showMatchDetection": {
-    "message": "Show match detection $WEBSITE$",
+    "message": "Εμφάνιση ανιχνεύσεων αντιστοίχισης $WEBSITE$",
     "placeholders": {
       "website": {
         "content": "$1",
@@ -4023,7 +4029,7 @@
     }
   },
   "hideMatchDetection": {
-    "message": "Hide match detection $WEBSITE$",
+    "message": "Απόκρυψη ανιχνεύσεων αντιστοίχισης $WEBSITE$",
     "placeholders": {
       "website": {
         "content": "$1",
@@ -4035,10 +4041,10 @@
     "message": "Αυτόματη συμπλήρωση κατά τη φόρτωση της σελίδας;"
   },
   "cardExpiredTitle": {
-    "message": "Expired card"
+    "message": "Ληγμένη κάρτα"
   },
   "cardExpiredMessage": {
-    "message": "If you've renewed it, update the card's information"
+    "message": "Εάν την ανανεώσατε, ενημερώστε τα στοιχεία της κάρτας"
   },
   "cardDetails": {
     "message": "Στοιχεία κάρτας"
@@ -4053,7 +4059,7 @@
     }
   },
   "enableAnimations": {
-    "message": "Enable animations"
+    "message": "Ενεργοποίηση κινούμενων εικόνων"
   },
   "addAccount": {
     "message": "Προσθήκη λογαριασμού"
@@ -4295,6 +4301,27 @@
     "message": "Οι απαιτήσεις της πολιτικής για επιχειρήσεις έχουν εφαρμοστεί σε αυτήν τη ρύθμιση"
   },
   "additionalContentAvailable": {
-    "message": "Additional content is available"
+    "message": "Πρόσθετο περιεχόμενο είναι διαθέσιμο"
+  },
+  "itemsInTrash": {
+    "message": "Αντικείμενα στον κάδο"
+  },
+  "noItemsInTrash": {
+    "message": "Κανένα αντικείμενο στον κάδο"
+  },
+  "noItemsInTrashDesc": {
+    "message": "Τα αντικείμενα που διαγράφετε θα εμφανιστούν εδώ και θα διαγραφούν οριστικά μετά από 30 ημέρες"
+  },
+  "trashWarning": {
+    "message": "Αντικείμενα που βρίσκονται στον κάδο για περισσότερο από 30 ημέρες θα διαγράφονται αυτόματα"
+  },
+  "restore": {
+    "message": "Επαναφορά"
+  },
+  "deleteForever": {
+    "message": "Διαγραφή για πάντα"
+  },
+  "noEditPermissions": {
+    "message": "Δεν έχετε δικαίωμα να επεξεργαστείτε αυτό το αντικείμενο"
   }
 }

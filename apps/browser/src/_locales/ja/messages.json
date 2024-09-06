@@ -3477,7 +3477,7 @@
   "passkeyFeatureIsNotImplementedForAccountsWithoutMasterPassword": {
     "message": "開始サイトでの認証が必要です。この機能はマスターパスワードのないアカウントではまだ対応していません。"
   },
-  "logInWithPasskey": {
+  "logInWithPasskeyQuestion": {
     "message": "パスキーでログインしますか?"
   },
   "passkeyAlreadyExists": {
@@ -3489,6 +3489,9 @@
   "noMatchingPasskeyLogin": {
     "message": "このサイトに一致するログイン情報がありません。"
   },
+  "noMatchingLoginsForSite": {
+    "message": "このサイトに一致するログイン情報がありません"
+  },
   "confirm": {
     "message": "確認"
   },
@@ -3498,8 +3501,11 @@
   "savePasskeyNewLogin": {
     "message": "パスキーを新しいログイン情報として保存"
   },
-  "choosePasskey": {
+  "chooseCipherForPasskeySave": {
     "message": "このパスキーを保存するログイン情報を選択してください"
+  },
+  "chooseCipherForPasskeyAuth": {
+    "message": "ログインに使うパスキーを選択してください"
   },
   "passkeyItem": {
     "message": "パスキーアイテム"
@@ -4296,5 +4302,26 @@
   },
   "additionalContentAvailable": {
     "message": "追加コンテンツが利用可能です"
+  },
+  "itemsInTrash": {
+    "message": "ゴミ箱にあるアイテム"
+  },
+  "noItemsInTrash": {
+    "message": "ゴミ箱にアイテムはありません"
+  },
+  "noItemsInTrashDesc": {
+    "message": "削除したアイテムはここに表示され、30日後に完全に削除されます"
+  },
+  "trashWarning": {
+    "message": "30日以上ゴミ箱にあったアイテムは自動的に削除されます"
+  },
+  "restore": {
+    "message": "復元"
+  },
+  "deleteForever": {
+    "message": "完全に削除"
+  },
+  "noEditPermissions": {
+    "message": "このアイテムを編集する権限がありません"
   }
 }

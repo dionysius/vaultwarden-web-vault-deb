@@ -3477,8 +3477,8 @@
   "passkeyFeatureIsNotImplementedForAccountsWithoutMasterPassword": {
     "message": "تأیید توسط سایت آغازگر الزامی است. این ویژگی هنوز برای حساب‌های بدون کلمه عبور اصلی اجرا نشده است."
   },
-  "logInWithPasskey": {
-    "message": "با کلید عبور وارد می‌شوید؟"
+  "logInWithPasskeyQuestion": {
+    "message": "Log in with passkey?"
   },
   "passkeyAlreadyExists": {
     "message": "یک کلید عبور از قبل برای این برنامه وجود دارد."
@@ -3489,6 +3489,9 @@
   "noMatchingPasskeyLogin": {
     "message": "شما هیچ ورود مشابهی برای این سایت ندارید."
   },
+  "noMatchingLoginsForSite": {
+    "message": "No matching logins for this site"
+  },
   "confirm": {
     "message": "تأیید"
   },
@@ -3498,8 +3501,11 @@
   "savePasskeyNewLogin": {
     "message": "کلید عبور را به عنوان ورود جدید ذخیره کن"
   },
-  "choosePasskey": {
-    "message": "یک ورود برای ذخیره این کلید عبور انتخاب کنید"
+  "chooseCipherForPasskeySave": {
+    "message": "Choose a login to save this passkey to"
+  },
+  "chooseCipherForPasskeyAuth": {
+    "message": "Choose a passkey to log in with"
   },
   "passkeyItem": {
     "message": "مورد کلید عبور"
@@ -4296,5 +4302,26 @@
   },
   "additionalContentAvailable": {
     "message": "Additional content is available"
+  },
+  "itemsInTrash": {
+    "message": "Items in trash"
+  },
+  "noItemsInTrash": {
+    "message": "No items in trash"
+  },
+  "noItemsInTrashDesc": {
+    "message": "Items you delete will appear here and be permanently deleted after 30 days"
+  },
+  "trashWarning": {
+    "message": "Items that have been in trash more than 30 days will automatically be deleted"
+  },
+  "restore": {
+    "message": "Restore"
+  },
+  "deleteForever": {
+    "message": "Delete forever"
+  },
+  "noEditPermissions": {
+    "message": "You don't have permission to edit this item"
   }
 }

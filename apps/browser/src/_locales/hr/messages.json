@@ -400,11 +400,11 @@
     "description": "deprecated. Use specialCharactersLabel instead."
   },
   "include": {
-    "message": "Include",
+    "message": "Uključi",
     "description": "Card header for password generator include block"
   },
   "uppercaseDescription": {
-    "message": "Include uppercase characters",
+    "message": "Uključi velika slova",
     "description": "Tooltip for the password generator uppercase character checkbox"
   },
   "uppercaseLabel": {
@@ -412,7 +412,7 @@
     "description": "Label for the password generator uppercase character checkbox"
   },
   "lowercaseDescription": {
-    "message": "Include lowercase characters",
+    "message": "Uključi mala slova",
     "description": "Full description for the password generator lowercase character checkbox"
   },
   "lowercaseLabel": {
@@ -420,7 +420,7 @@
     "description": "Label for the password generator lowercase character checkbox"
   },
   "numbersDescription": {
-    "message": "Include numbers",
+    "message": "Uključi brojeve",
     "description": "Full description for the password generator numbers checkbox"
   },
   "numbersLabel": {
@@ -428,7 +428,7 @@
     "description": "Label for the password generator numbers checkbox"
   },
   "specialCharactersDescription": {
-    "message": "Include special characters",
+    "message": "Uključi posebne znakove",
     "description": "Full description for the password generator special characters checkbox"
   },
   "specialCharactersLabel": {
@@ -459,7 +459,7 @@
     "description": "deprecated. Use avoidAmbiguous instead."
   },
   "avoidAmbiguous": {
-    "message": "Avoid ambiguous characters",
+    "message": "Izbjegavaj dvosmislene znakove",
     "description": "Label for the avoid ambiguous characters checkbox."
   },
   "searchVault": {
@@ -684,10 +684,10 @@
     "message": "Tvoj novi račun je stvoren! Sada se možeš prijaviti."
   },
   "newAccountCreated2": {
-    "message": "Your new account has been created!"
+    "message": "Tvoj novi račun je stvoren!"
   },
   "youHaveBeenLoggedIn": {
-    "message": "You have been logged in!"
+    "message": "Prijava uspješna!"
   },
   "youSuccessfullyLoggedIn": {
     "message": "Prijava uspješna"
@@ -3477,8 +3477,8 @@
   "passkeyFeatureIsNotImplementedForAccountsWithoutMasterPassword": {
     "message": "Ishodišna stranica zahtijeva verifikaciju. Ova značajka još nije implementirana za račune bez glavne lozinke."
   },
-  "logInWithPasskey": {
-    "message": "Prijava pristupnim ključem?"
+  "logInWithPasskeyQuestion": {
+    "message": "Log in with passkey?"
   },
   "passkeyAlreadyExists": {
     "message": "Za ovu aplikaciju već postoji pristupni ključ."
@@ -3489,6 +3489,9 @@
   "noMatchingPasskeyLogin": {
     "message": "Nema odgovarajuće prijavu za ovu stranicu."
   },
+  "noMatchingLoginsForSite": {
+    "message": "No matching logins for this site"
+  },
   "confirm": {
     "message": "Autoriziraj"
   },
@@ -3498,8 +3501,11 @@
   "savePasskeyNewLogin": {
     "message": "Spremi pristupni ključ kao novu prijavu"
   },
-  "choosePasskey": {
-    "message": "Odaberi prijavu za spremanje ovog pristupnog ključa"
+  "chooseCipherForPasskeySave": {
+    "message": "Choose a login to save this passkey to"
+  },
+  "chooseCipherForPasskeyAuth": {
+    "message": "Choose a passkey to log in with"
   },
   "passkeyItem": {
     "message": "Stavka pristupnog ključa"
@@ -4295,6 +4301,27 @@
     "message": "Pravila tvrtke primijenjena su na ovu postavku"
   },
   "additionalContentAvailable": {
-    "message": "Additional content is available"
+    "message": "Dostupan je dodatni sadržaj"
+  },
+  "itemsInTrash": {
+    "message": "Stavke u smeću"
+  },
+  "noItemsInTrash": {
+    "message": "Nema stavki u smeću"
+  },
+  "noItemsInTrashDesc": {
+    "message": "Stavke koje obrišeš biti će premještene ovdje, a nakon 30 dana biti će trajno izbrisane"
+  },
+  "trashWarning": {
+    "message": "Stavke koje se nalaze u Smeću duže od 30 dana će biti automatski izbrisane"
+  },
+  "restore": {
+    "message": "Vrati"
+  },
+  "deleteForever": {
+    "message": "Izbriši zauvijek"
+  },
+  "noEditPermissions": {
+    "message": "Nemaš prava za uređivanje ove stavke"
   }
 }

@@ -3477,8 +3477,8 @@
   "passkeyFeatureIsNotImplementedForAccountsWithoutMasterPassword": {
     "message": "Vérification requise par le site initiateur. Cette fonctionnalité n'est pas encore implémentée pour les comptes sans mot de passe principal."
   },
-  "logInWithPasskey": {
-    "message": "Se connecter avec une clé d'identification (passkey) ?"
+  "logInWithPasskeyQuestion": {
+    "message": "Se connecter avec une clé d'accès ?"
   },
   "passkeyAlreadyExists": {
     "message": "Une clé d'identification (passkey) existe déjà pour cette application."
@@ -3489,6 +3489,9 @@
   "noMatchingPasskeyLogin": {
     "message": "Vous n'avez pas d'identifiant correspondant à ce site."
   },
+  "noMatchingLoginsForSite": {
+    "message": "Aucun identifiant correspondant pour ce site"
+  },
   "confirm": {
     "message": "Confirmer"
   },
@@ -3498,8 +3501,11 @@
   "savePasskeyNewLogin": {
     "message": "Enregistrer la clé d'identification (passkey) comme nouvel identifiant"
   },
-  "choosePasskey": {
-    "message": "Choisissez cette clé d'identification (passkey) pour l'enregistrer avec cet identifiant"
+  "chooseCipherForPasskeySave": {
+    "message": "Choisissez un identifiant ou enregistrer cette clé d'accès"
+  },
+  "chooseCipherForPasskeyAuth": {
+    "message": "Choisissez une clé d'accès pour vous connecter"
   },
   "passkeyItem": {
     "message": "Élément clé d'identification (passkey)"
@@ -4296,5 +4302,26 @@
   },
   "additionalContentAvailable": {
     "message": "Du contenu supplémentaire est disponible"
+  },
+  "itemsInTrash": {
+    "message": "Éléments dans la corbeille"
+  },
+  "noItemsInTrash": {
+    "message": "Aucun élément dans la corbeille"
+  },
+  "noItemsInTrashDesc": {
+    "message": "Les éléments que vous supprimez apparaîtront ici et seront définitivement supprimés au bout de 30 jours"
+  },
+  "trashWarning": {
+    "message": "Les éléments qui se trouvent dans la corbeille depuis plus de 30 jours sont automatiquement supprimés"
+  },
+  "restore": {
+    "message": "Restaurer"
+  },
+  "deleteForever": {
+    "message": "Supprimer définitivement"
+  },
+  "noEditPermissions": {
+    "message": "Vous n'êtes pas autorisé à modifier cet élément"
   }
 }

@@ -3477,7 +3477,7 @@
   "passkeyFeatureIsNotImplementedForAccountsWithoutMasterPassword": {
     "message": "Overenie požadované iniciujúcim webom. Táto funkcia zatiaľ nie je implementovaná pre účty bez hlavného hesla."
   },
-  "logInWithPasskey": {
+  "logInWithPasskeyQuestion": {
     "message": "Prihlásiť sa s prístupovým kľúčom?"
   },
   "passkeyAlreadyExists": {
@@ -3489,6 +3489,9 @@
   "noMatchingPasskeyLogin": {
     "message": "Pre túto stránku nemáte zodpovedajúce prihlasovacie údaje."
   },
+  "noMatchingLoginsForSite": {
+    "message": "Pre túto stránku sa nenašli prihlasovacie údaje"
+  },
   "confirm": {
     "message": "Potvrdiť"
   },
@@ -3498,8 +3501,11 @@
   "savePasskeyNewLogin": {
     "message": "Uložiť prístupový kľúč ako nové prihlasovacie údaje"
   },
-  "choosePasskey": {
+  "chooseCipherForPasskeySave": {
     "message": "Vyberte prihlasovacie údaje, do ktorých chcete uložiť prístupový kľúč"
+  },
+  "chooseCipherForPasskeyAuth": {
+    "message": "Vyberte prístupový kľúč, pomocou ktorého sa chcete prihlásiť"
   },
   "passkeyItem": {
     "message": "Položka prístupového kľúča"
@@ -4296,5 +4302,26 @@
   },
   "additionalContentAvailable": {
     "message": "K dispozícii je ďalší obsah"
+  },
+  "itemsInTrash": {
+    "message": "Položky v koši"
+  },
+  "noItemsInTrash": {
+    "message": "V koši nie sú žiadne položky"
+  },
+  "noItemsInTrashDesc": {
+    "message": "Položky, ktoré odstránite, sa zobrazia tu a po 30 dňoch sa odstránia natrvalo"
+  },
+  "trashWarning": {
+    "message": "Položky, ktoré boli v koši viac ako 30 dní budú automaticky odstránené"
+  },
+  "restore": {
+    "message": "Obnoviť"
+  },
+  "deleteForever": {
+    "message": "Natrvalo odstrániť"
+  },
+  "noEditPermissions": {
+    "message": "Na úpravu tejto položky nemáte oprávnenie"
   }
 }

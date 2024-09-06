@@ -684,10 +684,10 @@
     "message": "Felhasználódat létrehoztuk. Most már be tudsz jelentkezni."
   },
   "newAccountCreated2": {
-    "message": "Your new account has been created!"
+    "message": "Az új fiók létrrejött."
   },
   "youHaveBeenLoggedIn": {
-    "message": "You have been logged in!"
+    "message": "Megtörtént a bejelentkezés!"
   },
   "youSuccessfullyLoggedIn": {
     "message": "A bejelentkezés sikeres volt."
@@ -3477,7 +3477,7 @@
   "passkeyFeatureIsNotImplementedForAccountsWithoutMasterPassword": {
     "message": "A kezdeményező hely által megkövetelt ellenőrzés. Ez a szolgáltatás még nincs megvalósítva mesterjelszó nélküli fiókok esetén."
   },
-  "logInWithPasskey": {
+  "logInWithPasskeyQuestion": {
     "message": "Bejelentkezés hozzáférési kulccsal?"
   },
   "passkeyAlreadyExists": {
@@ -3489,6 +3489,9 @@
   "noMatchingPasskeyLogin": {
     "message": "Nincs megfelelő bejelentkezés ehhez a webhelyhez."
   },
+  "noMatchingLoginsForSite": {
+    "message": "Nincsenek egyező bejelentkezések ehhez a webhelyhez."
+  },
   "confirm": {
     "message": "Megerősítés"
   },
@@ -3498,8 +3501,11 @@
   "savePasskeyNewLogin": {
     "message": "Hozzáférési kulcs mentése új bejelentkezésként"
   },
-  "choosePasskey": {
+  "chooseCipherForPasskeySave": {
     "message": "Bejelentkezés választás a hozzáférési kulcs mentéséhez"
+  },
+  "chooseCipherForPasskeyAuth": {
+    "message": "Hozzáférési kulcs választás a bejelentkezéshez"
   },
   "passkeyItem": {
     "message": "Hozzáférési kulcs elem"
@@ -4296,5 +4302,26 @@
   },
   "additionalContentAvailable": {
     "message": "Additional content is available"
+  },
+  "itemsInTrash": {
+    "message": "elem van a lomtárban."
+  },
+  "noItemsInTrash": {
+    "message": "Nincs elem a lomtárban."
+  },
+  "noItemsInTrashDesc": {
+    "message": "A törölt elemek itt jelennek meg és 30 nap elteltével véglegesen törlődnek."
+  },
+  "trashWarning": {
+    "message": "A 30 napnál régebben lomtárba került elemek automatikusan törlésre kerülnek."
+  },
+  "restore": {
+    "message": "Visszaállítás"
+  },
+  "deleteForever": {
+    "message": "Végleges törlés"
+  },
+  "noEditPermissions": {
+    "message": "Nincs jogosulltság ezen elem szerkesztéséheu."
   }
 }

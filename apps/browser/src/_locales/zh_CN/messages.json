@@ -2586,7 +2586,7 @@
     "message": "您的会话已超时。请返回然后尝试重新登录。"
   },
   "exportingPersonalVaultTitle": {
-    "message": "导出个人密码库"
+    "message": "正在导出个人密码库"
   },
   "exportingIndividualVaultDescription": {
     "message": "仅会导出与 $EMAIL$ 关联的个人密码库项目，不包括组织密码库项目。仅会导出密码库项目信息，不包括关联的附件。",
@@ -3477,7 +3477,7 @@
   "passkeyFeatureIsNotImplementedForAccountsWithoutMasterPassword": {
     "message": "启动站点需要验证。对于没有主密码的账户，此功能尚未实现。"
   },
-  "logInWithPasskey": {
+  "logInWithPasskeyQuestion": {
     "message": "使用通行密钥登录吗？"
   },
   "passkeyAlreadyExists": {
@@ -3489,6 +3489,9 @@
   "noMatchingPasskeyLogin": {
     "message": "不存在匹配此站点的登录项目。"
   },
+  "noMatchingLoginsForSite": {
+    "message": "此站点没有匹配的登录项目"
+  },
   "confirm": {
     "message": "确认"
   },
@@ -3498,8 +3501,11 @@
   "savePasskeyNewLogin": {
     "message": "作为新的登录项目保存通行密钥"
   },
-  "choosePasskey": {
+  "chooseCipherForPasskeySave": {
     "message": "选择一个用于保存此通行密钥的登录项目"
+  },
+  "chooseCipherForPasskeyAuth": {
+    "message": "选择一个用于登录的通行密钥"
   },
   "passkeyItem": {
     "message": "通行密钥项目"
@@ -4295,6 +4301,27 @@
     "message": "企业策略要求已应用于此设置"
   },
   "additionalContentAvailable": {
-    "message": "Additional content is available"
+    "message": "其他内容可用"
+  },
+  "itemsInTrash": {
+    "message": "回收站中的项目"
+  },
+  "noItemsInTrash": {
+    "message": "回收站中没有项目"
+  },
+  "noItemsInTrashDesc": {
+    "message": "您删除的项目将显示在这里，并在 30 天后永久删除"
+  },
+  "trashWarning": {
+    "message": "回收站中超过 30 天的项目将被自动删除"
+  },
+  "restore": {
+    "message": "恢复"
+  },
+  "deleteForever": {
+    "message": "永久删除"
+  },
+  "noEditPermissions": {
+    "message": "您没有编辑此项目的权限"
   }
 }

@@ -14,7 +14,7 @@
     "message": "Identifícate o crea una nueva cuenta para acceder a tu caja fuerte."
   },
   "inviteAccepted": {
-    "message": "Invitation accepted"
+    "message": "Invitación aceptada"
   },
   "createAccount": {
     "message": "Crear cuenta"
@@ -69,10 +69,10 @@
     "message": "Pista de contraseña maestra (opcional)"
   },
   "joinOrganization": {
-    "message": "Join organization"
+    "message": "Incorporarse a la organización"
   },
   "finishJoiningThisOrganizationBySettingAMasterPassword": {
-    "message": "Finish joining this organization by setting a master password."
+    "message": "Termine de unirse a esta organización estableciendo una contraseña maestra."
   },
   "tab": {
     "message": "Pestaña"
@@ -114,19 +114,19 @@
     "message": "Copiar código de seguridad"
   },
   "copyName": {
-    "message": "Copy name"
+    "message": "Copiar nombre"
   },
   "copyCompany": {
-    "message": "Copy company"
+    "message": "Copiar empresa"
   },
   "copySSN": {
-    "message": "Copy Social Security number"
+    "message": "Copiar número de seguro social"
   },
   "copyPassportNumber": {
-    "message": "Copy passport number"
+    "message": "Copiar número de pasaporte"
   },
   "copyLicenseNumber": {
-    "message": "Copy license number"
+    "message": "Copiar número de licencia"
   },
   "autoFill": {
     "message": "Autorrellenar"
@@ -302,22 +302,22 @@
     "message": "Editar carpeta"
   },
   "newFolder": {
-    "message": "New folder"
+    "message": "Carpeta nueva"
   },
   "folderName": {
-    "message": "Folder name"
+    "message": "Nombre de carpeta"
   },
   "folderHintText": {
     "message": "Nest a folder by adding the parent folder's name followed by a “/”. Example: Social/Forums"
   },
   "noFoldersAdded": {
-    "message": "No folders added"
+    "message": "Ninguna carpeta añadida"
   },
   "createFoldersToOrganize": {
     "message": "Create folders to organize your vault items"
   },
   "deleteFolderPermanently": {
-    "message": "Are you sure you want to permanently delete this folder?"
+    "message": "¿Confirma que quiere eliminar permanentemente esta carpeta?"
   },
   "deleteFolder": {
     "message": "Eliminar carpeta"
@@ -400,11 +400,11 @@
     "description": "deprecated. Use specialCharactersLabel instead."
   },
   "include": {
-    "message": "Include",
+    "message": "Incluir",
     "description": "Card header for password generator include block"
   },
   "uppercaseDescription": {
-    "message": "Include uppercase characters",
+    "message": "Incluir letras mayúsculas",
     "description": "Tooltip for the password generator uppercase character checkbox"
   },
   "uppercaseLabel": {
@@ -412,7 +412,7 @@
     "description": "Label for the password generator uppercase character checkbox"
   },
   "lowercaseDescription": {
-    "message": "Include lowercase characters",
+    "message": "Incluir letras minúsculas",
     "description": "Full description for the password generator lowercase character checkbox"
   },
   "lowercaseLabel": {
@@ -420,7 +420,7 @@
     "description": "Label for the password generator lowercase character checkbox"
   },
   "numbersDescription": {
-    "message": "Include numbers",
+    "message": "Incluir números",
     "description": "Full description for the password generator numbers checkbox"
   },
   "numbersLabel": {
@@ -428,7 +428,7 @@
     "description": "Label for the password generator numbers checkbox"
   },
   "specialCharactersDescription": {
-    "message": "Include special characters",
+    "message": "Incluir caracteres especiales",
     "description": "Full description for the password generator special characters checkbox"
   },
   "specialCharactersLabel": {
@@ -459,7 +459,7 @@
     "description": "deprecated. Use avoidAmbiguous instead."
   },
   "avoidAmbiguous": {
-    "message": "Avoid ambiguous characters",
+    "message": "Evitar caracteres ambiguos",
     "description": "Label for the avoid ambiguous characters checkbox."
   },
   "searchVault": {
@@ -754,19 +754,19 @@
     "message": "Tu sesión ha expirado."
   },
   "logIn": {
-    "message": "Log in"
+    "message": "Acceder"
   },
   "restartRegistration": {
-    "message": "Restart registration"
+    "message": "Reiniciar registro"
   },
   "expiredLink": {
-    "message": "Expired link"
+    "message": "Enlace caducado"
   },
   "pleaseRestartRegistrationOrTryLoggingIn": {
-    "message": "Please restart registration or try logging in."
+    "message": "Reinicie el registro o pruebe a acceder a su cuenta."
   },
   "youMayAlreadyHaveAnAccount": {
-    "message": "You may already have an account"
+    "message": "Puede que ya tenga una cuenta"
   },
   "logOutConfirmation": {
     "message": "¿Estás seguro de querer cerrar la sesión?"
@@ -830,7 +830,7 @@
     "message": "Nueva URI"
   },
   "addDomain": {
-    "message": "Add domain",
+    "message": "Añadir dominio",
     "description": "'Domain' here refers to an internet domain name (e.g. 'bitwarden.com') and the message in whole described the act of putting a domain value into the context."
   },
   "addedItem": {
@@ -1131,7 +1131,7 @@
     "message": "1 GB de espacio cifrado en disco para adjuntos."
   },
   "premiumSignUpEmergency": {
-    "message": "Emergency access."
+    "message": "Acceso de emergencia."
   },
   "premiumSignUpTwoStepOptions": {
     "message": "Opciones de inicio de sesión con autenticación de dos pasos propietarios como YubiKey y Duo."
@@ -1891,16 +1891,16 @@
     "message": "Una o más políticas de la organización están afectando la configuración del generador"
   },
   "passwordGenerator": {
-    "message": "Password generator"
+    "message": "Generador de contraseñas"
   },
   "usernameGenerator": {
-    "message": "Username generator"
+    "message": "Generador de nombres de usuario"
   },
   "useThisPassword": {
-    "message": "Use this password"
+    "message": "Usar esta contraseña"
   },
   "useThisUsername": {
-    "message": "Use this username"
+    "message": "Usar este nombre de usuario"
   },
   "securePasswordGenerated": {
     "message": "Secure password generated! Don't forget to also update your password on the website."
@@ -2135,10 +2135,10 @@
     "message": "Por favor, desbloquea a este usuario en la aplicación de escritorio e inténtalo de nuevo."
   },
   "biometricsNotAvailableTitle": {
-    "message": "Biometric unlock unavailable"
+    "message": "Desbloqueo biométrico no disponible"
   },
   "biometricsNotAvailableDesc": {
-    "message": "Biometric unlock is currently unavailable. Please try again later."
+    "message": "El desbloqueo biométrico no está disponible actualmente. Inténtelo de nuevo más tarde."
   },
   "biometricsFailedTitle": {
     "message": "Fallo de biométrica"
@@ -2168,7 +2168,7 @@
     "message": "Una política organizacional ha bloqueado la importación de elementos a su caja fuerte personal."
   },
   "domainsTitle": {
-    "message": "Domains",
+    "message": "Dominios",
     "description": "A category title describing the concept of web domains"
   },
   "excludedDomains": {
@@ -2237,7 +2237,7 @@
     "message": "Protegido por contraseña"
   },
   "copyLink": {
-    "message": "Copy link"
+    "message": "Copiar enlace"
   },
   "copySendLink": {
     "message": "Copiar enlace Send",
@@ -2924,10 +2924,10 @@
     "message": "Autofill shortcut"
   },
   "autofillKeyboardShortcutUpdateLabel": {
-    "message": "Change shortcut"
+    "message": "Cambiar atajo"
   },
   "autofillKeyboardManagerShortcutsLabel": {
-    "message": "Manage shortcuts"
+    "message": "Gestionar atajos"
   },
   "autofillShortcut": {
     "message": "Atajo de teclado para autocompletar"
@@ -3280,7 +3280,7 @@
     "description": "Screen reader text (aria-label) for new card button within inline menu"
   },
   "newIdentity": {
-    "message": "New identity",
+    "message": "Identidad nueva",
     "description": "Button text to display within inline menu when there are no matching items on an identity field"
   },
   "addNewIdentityItemAria": {
@@ -3404,7 +3404,7 @@
     "message": "Contraseña de archivo no válida. Por favor utilice la contraseña que introdujo cuando creó el archivo de exportación."
   },
   "destination": {
-    "message": "Destination"
+    "message": "Destino"
   },
   "learnAboutImportOptions": {
     "message": "Aprende sobre tus opciones de importación"
@@ -3477,8 +3477,8 @@
   "passkeyFeatureIsNotImplementedForAccountsWithoutMasterPassword": {
     "message": "Verificación requerida por el sitio inicial. Esta característica aún no está implementada para cuentas sin contraseña maestra."
   },
-  "logInWithPasskey": {
-    "message": "¿Iniciar sesión con clave de acceso?"
+  "logInWithPasskeyQuestion": {
+    "message": "Log in with passkey?"
   },
   "passkeyAlreadyExists": {
     "message": "Ya existe una clave de acceso para esta aplicación."
@@ -3489,6 +3489,9 @@
   "noMatchingPasskeyLogin": {
     "message": "No tiene un inicio de sesión que coincida para este sitio."
   },
+  "noMatchingLoginsForSite": {
+    "message": "No matching logins for this site"
+  },
   "confirm": {
     "message": "Confirmar"
   },
@@ -3498,8 +3501,11 @@
   "savePasskeyNewLogin": {
     "message": "Guardar clave de acceso como nuevo inicio de sesión"
   },
-  "choosePasskey": {
-    "message": "Elija un inicio de sesión para guardar esta clave de acceso"
+  "chooseCipherForPasskeySave": {
+    "message": "Choose a login to save this passkey to"
+  },
+  "chooseCipherForPasskeyAuth": {
+    "message": "Choose a passkey to log in with"
   },
   "passkeyItem": {
     "message": "Elemento de clave de acceso"
@@ -4053,7 +4059,7 @@
     }
   },
   "enableAnimations": {
-    "message": "Enable animations"
+    "message": "Activar animaciones"
   },
   "addAccount": {
     "message": "Añadir cuenta"
@@ -4062,14 +4068,14 @@
     "message": "Cargando"
   },
   "data": {
-    "message": "Data"
+    "message": "Datos"
   },
   "passkeys": {
     "message": "Passkeys",
     "description": "A section header for a list of passkeys."
   },
   "passwords": {
-    "message": "Passwords",
+    "message": "Contraseñas",
     "description": "A section header for a list of passwords."
   },
   "logInWithPasskeyAriaLabel": {
@@ -4098,16 +4104,16 @@
     }
   },
   "addField": {
-    "message": "Add field"
+    "message": "Añadir campo"
   },
   "add": {
-    "message": "Add"
+    "message": "Añadir"
   },
   "fieldType": {
-    "message": "Field type"
+    "message": "Tipo de campo"
   },
   "fieldLabel": {
-    "message": "Field label"
+    "message": "Etiqueta de campo"
   },
   "textHelpText": {
     "message": "Use text fields for data like security questions"
@@ -4268,7 +4274,7 @@
     }
   },
   "itemLocation": {
-    "message": "Item Location"
+    "message": "Ubicación del elemento"
   },
   "fileSends": {
     "message": "File Sends"
@@ -4277,13 +4283,13 @@
     "message": "Text Sends"
   },
   "bitwardenNewLook": {
-    "message": "Bitwarden has a new look!"
+    "message": "Bitwarden tiene un aspecto nuevo."
   },
   "bitwardenNewLookDesc": {
     "message": "It's easier and more intuitive than ever to autofill and search from the Vault tab. Take a look around!"
   },
   "accountActions": {
-    "message": "Account actions"
+    "message": "Acciones de cuenta"
   },
   "showNumberOfAutofillSuggestions": {
     "message": "Show number of login autofill suggestions on extension icon"
@@ -4296,5 +4302,26 @@
   },
   "additionalContentAvailable": {
     "message": "Additional content is available"
+  },
+  "itemsInTrash": {
+    "message": "Elementos en la papelera"
+  },
+  "noItemsInTrash": {
+    "message": "Ningún elemento en la papelera"
+  },
+  "noItemsInTrashDesc": {
+    "message": "Los elementos que elimine aparecerán aquí y se eliminarán permanentemente al cabo de 30 días"
+  },
+  "trashWarning": {
+    "message": "Los elementos que permanezcan más de 30 días en la papelera se eliminarán de forma automática"
+  },
+  "restore": {
+    "message": "Restaurar"
+  },
+  "deleteForever": {
+    "message": "Eliminar para siempre"
+  },
+  "noEditPermissions": {
+    "message": "No tiene permiso de editar este elemento"
   }
 }

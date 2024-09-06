@@ -3477,7 +3477,7 @@
   "passkeyFeatureIsNotImplementedForAccountsWithoutMasterPassword": {
     "message": "De initiërende site vereist verificatie. Deze functie is nog niet geïmplementeerd voor accounts zonder hoofdwachtwoord."
   },
-  "logInWithPasskey": {
+  "logInWithPasskeyQuestion": {
     "message": "Inloggen met passkey?"
   },
   "passkeyAlreadyExists": {
@@ -3489,6 +3489,9 @@
   "noMatchingPasskeyLogin": {
     "message": "Je hebt geen overeenkomende login voor deze site."
   },
+  "noMatchingLoginsForSite": {
+    "message": "Geen overeenkomende logins voor deze site"
+  },
   "confirm": {
     "message": "Bevestigen"
   },
@@ -3498,8 +3501,11 @@
   "savePasskeyNewLogin": {
     "message": "Passkey als nieuwe login opslaan"
   },
-  "choosePasskey": {
+  "chooseCipherForPasskeySave": {
     "message": "Kies een login om deze passkey bij op te slaan"
+  },
+  "chooseCipherForPasskeyAuth": {
+    "message": "Kies een passkey om mee in te loggen"
   },
   "passkeyItem": {
     "message": "Passkey-Item"
@@ -4296,5 +4302,26 @@
   },
   "additionalContentAvailable": {
     "message": "Extra inhoud beschikbaar"
+  },
+  "itemsInTrash": {
+    "message": "Items in prullenbak"
+  },
+  "noItemsInTrash": {
+    "message": "Geen items in prullenbak"
+  },
+  "noItemsInTrashDesc": {
+    "message": "Items die je verwijdert verschijnen hier en worden na 30 dagen definitief verwijderd"
+  },
+  "trashWarning": {
+    "message": "Items die meer dan 30 dagen in de prullenbak zitten worden automatisch verwijderd"
+  },
+  "restore": {
+    "message": "Herstellen"
+  },
+  "deleteForever": {
+    "message": "Definitief verwijderen"
+  },
+  "noEditPermissions": {
+    "message": "Je hebt geen toestemming om dit item te bewerken"
   }
 }

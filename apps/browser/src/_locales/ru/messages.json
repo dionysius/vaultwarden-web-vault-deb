@@ -684,10 +684,10 @@
     "message": "Ваш аккаунт создан! Теперь вы можете войти в систему."
   },
   "newAccountCreated2": {
-    "message": "Your new account has been created!"
+    "message": "Ваш новый аккаунт создан!"
   },
   "youHaveBeenLoggedIn": {
-    "message": "You have been logged in!"
+    "message": "Вы авторизовались!"
   },
   "youSuccessfullyLoggedIn": {
     "message": "Вы успешно авторизовались"
@@ -3477,7 +3477,7 @@
   "passkeyFeatureIsNotImplementedForAccountsWithoutMasterPassword": {
     "message": "Необходима верификация со стороны инициирующего сайта. Для аккаунтов без мастер-пароля эта возможность пока не реализована."
   },
-  "logInWithPasskey": {
+  "logInWithPasskeyQuestion": {
     "message": "Войти с passkey?"
   },
   "passkeyAlreadyExists": {
@@ -3489,6 +3489,9 @@
   "noMatchingPasskeyLogin": {
     "message": "У вас нет подходящего логина для этого сайта."
   },
+  "noMatchingLoginsForSite": {
+    "message": "Нет подходящих логинов для этого сайта"
+  },
   "confirm": {
     "message": "Подтвердить"
   },
@@ -3498,8 +3501,11 @@
   "savePasskeyNewLogin": {
     "message": "Сохранить passkey как новый логин"
   },
-  "choosePasskey": {
+  "chooseCipherForPasskeySave": {
     "message": "Выберите логин, для которого будет сохранен данный passkey"
+  },
+  "chooseCipherForPasskeyAuth": {
+    "message": "Выберите passkey для авторизации"
   },
   "passkeyItem": {
     "message": "Элемент passkey"
@@ -4295,6 +4301,27 @@
     "message": "К этой настройке были применены требования корпоративной политики"
   },
   "additionalContentAvailable": {
-    "message": "Additional content is available"
+    "message": "Дополнительный контент доступен"
+  },
+  "itemsInTrash": {
+    "message": "Элементы в корзине"
+  },
+  "noItemsInTrash": {
+    "message": "Нет элементов в корзине"
+  },
+  "noItemsInTrashDesc": {
+    "message": "Элементы, которые вы удаляете, появятся здесь и будут удалены навсегда через 30 дней"
+  },
+  "trashWarning": {
+    "message": "Элементы, которые были в корзине более 30 дней, будут автоматически удалены"
+  },
+  "restore": {
+    "message": "Восстановить"
+  },
+  "deleteForever": {
+    "message": "Удалить навсегда"
+  },
+  "noEditPermissions": {
+    "message": "У вас нет разрешения на редактирование этого элемента"
   }
 }

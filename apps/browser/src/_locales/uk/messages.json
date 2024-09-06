@@ -3477,8 +3477,8 @@
   "passkeyFeatureIsNotImplementedForAccountsWithoutMasterPassword": {
     "message": "Сайт ініціює обов'язкову верифікацію. Ця функція ще не реалізована для облікових записів без головного пароля."
   },
-  "logInWithPasskey": {
-    "message": "Увійти з ключем доступу?"
+  "logInWithPasskeyQuestion": {
+    "message": "Log in with passkey?"
   },
   "passkeyAlreadyExists": {
     "message": "Ключ доступу для цієї програми вже існує."
@@ -3489,6 +3489,9 @@
   "noMatchingPasskeyLogin": {
     "message": "У вас немає відповідних записів для цього сайту."
   },
+  "noMatchingLoginsForSite": {
+    "message": "No matching logins for this site"
+  },
   "confirm": {
     "message": "Підтвердити"
   },
@@ -3498,8 +3501,11 @@
   "savePasskeyNewLogin": {
     "message": "Зберегти ключ доступу як новий запис"
   },
-  "choosePasskey": {
-    "message": "Виберіть запис для збереження цього ключа доступу"
+  "chooseCipherForPasskeySave": {
+    "message": "Choose a login to save this passkey to"
+  },
+  "chooseCipherForPasskeyAuth": {
+    "message": "Choose a passkey to log in with"
   },
   "passkeyItem": {
     "message": "Ключ доступу"
@@ -4295,6 +4301,27 @@
     "message": "До цього налаштування застосовано вимоги політики компанії"
   },
   "additionalContentAvailable": {
-    "message": "Additional content is available"
+    "message": "Доступний додатковий вміст"
+  },
+  "itemsInTrash": {
+    "message": "Записи в смітнику"
+  },
+  "noItemsInTrash": {
+    "message": "Немає записів у смітнику"
+  },
+  "noItemsInTrashDesc": {
+    "message": "Видалені записи з'являтимуться тут і будуть остаточно видалені через 30 днів"
+  },
+  "trashWarning": {
+    "message": "Записи, що знаходяться в смітнику понад 30 днів, автоматично видалятимуться"
+  },
+  "restore": {
+    "message": "Відновити"
+  },
+  "deleteForever": {
+    "message": "Видалити остаточно"
+  },
+  "noEditPermissions": {
+    "message": "Вам не дозволено редагувати цей запис"
   }
 }

@@ -3477,7 +3477,7 @@
   "passkeyFeatureIsNotImplementedForAccountsWithoutMasterPassword": {
     "message": "Verificação exigida pelo site inicial. Esta funcionalidade ainda não está implementada para contas sem palavra-passe mestra."
   },
-  "logInWithPasskey": {
+  "logInWithPasskeyQuestion": {
     "message": "Iniciar sessão com a chave de acesso?"
   },
   "passkeyAlreadyExists": {
@@ -3489,6 +3489,9 @@
   "noMatchingPasskeyLogin": {
     "message": "Não tem uma credencial correspondente para este site."
   },
+  "noMatchingLoginsForSite": {
+    "message": "Sem credenciais correspondentes para este site"
+  },
   "confirm": {
     "message": "Confirmar"
   },
@@ -3498,8 +3501,11 @@
   "savePasskeyNewLogin": {
     "message": "Guardar a chave de acesso como uma nova credencial"
   },
-  "choosePasskey": {
+  "chooseCipherForPasskeySave": {
     "message": "Escolha uma credencial para guardar esta chave de acesso"
+  },
+  "chooseCipherForPasskeyAuth": {
+    "message": "Escolha uma chave de acesso para iniciar sessão"
   },
   "passkeyItem": {
     "message": "Item da chave de acesso"
@@ -4296,5 +4302,26 @@
   },
   "additionalContentAvailable": {
     "message": "Estão disponíveis conteúdos adicionais"
+  },
+  "itemsInTrash": {
+    "message": "Itens no lixo"
+  },
+  "noItemsInTrash": {
+    "message": "Nenhum item no lixo"
+  },
+  "noItemsInTrashDesc": {
+    "message": "Os itens que eliminar aparecerão aqui e serão permanentemente eliminados após 30 dias"
+  },
+  "trashWarning": {
+    "message": "Os itens que estiverem no lixo há mais de 30 dias serão automaticamente eliminados"
+  },
+  "restore": {
+    "message": "Restaurar"
+  },
+  "deleteForever": {
+    "message": "Eliminar para sempre"
+  },
+  "noEditPermissions": {
+    "message": "Não tem permissão para editar este item"
   }
 }
