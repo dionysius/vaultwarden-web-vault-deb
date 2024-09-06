@@ -5,6 +5,9 @@ use futures::{SinkExt, StreamExt};
 use log::*;
 use tokio_util::codec::LengthDelimitedCodec;
 
+#[cfg(target_os = "macos")]
+embed_plist::embed_info_plist!("../../../resources/info.desktop_proxy.plist");
+
 fn init_logging(log_path: &Path, level: log::LevelFilter) {
     use simplelog::{ColorChoice, CombinedLogger, Config, SharedLogger, TermLogger, TerminalMode};
 
