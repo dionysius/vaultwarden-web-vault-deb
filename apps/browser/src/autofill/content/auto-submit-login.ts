@@ -2,11 +2,17 @@ import { EVENTS } from "@bitwarden/common/autofill/constants";
 
 import AutofillPageDetails from "../models/autofill-page-details";
 import AutofillScript from "../models/autofill-script";
+import { SubmitLoginButtonNames } from "../services/autofill-constants";
 import { CollectAutofillContentService } from "../services/collect-autofill-content.service";
 import DomElementVisibilityService from "../services/dom-element-visibility.service";
 import { DomQueryService } from "../services/dom-query.service";
 import InsertAutofillContentService from "../services/insert-autofill-content.service";
-import { elementIsInputElement, nodeIsFormElement, sendExtensionMessage } from "../utils";
+import {
+  elementIsInputElement,
+  getSubmitButtonKeywordsSet,
+  nodeIsFormElement,
+  sendExtensionMessage,
+} from "../utils";
 
 (function (globalContext) {
   const domQueryService = new DomQueryService();
@@ -19,17 +25,6 @@ import { elementIsInputElement, nodeIsFormElement, sendExtensionMessage } from "
     domElementVisibilityService,
     collectAutofillContentService,
   );
-  const loginKeywords = [
-    "login",
-    "log in",
-    "log-in",
-    "signin",
-    "sign in",
-    "sign-in",
-    "submit",
-    "continue",
-    "next",
-  ];
   let autoSubmitLoginTimeout: number | NodeJS.Timeout;
 
   init();
@@ -194,24 +189,39 @@ import { elementIsInputElement, nodeIsFormElement, sendExtensionMessage } from "
     element: HTMLElement,
     lastFieldIsPasswordInput = false,
   ): boolean {
-    const genericSubmitElement = domQueryService.deepQueryElements<HTMLButtonElement>(
-      element,
-      "[type='submit']",
-    );
-    if (genericSubmitElement[0]) {
-      clickSubmitElement(genericSubmitElement[0], lastFieldIsPasswordInput);
+    const genericSubmitElement = querySubmitButtonElement(element, "[type='submit']");
+    if (genericSubmitElement) {
+      clickSubmitElement(genericSubmitElement, lastFieldIsPasswordInput);
       return true;
     }
 
-    const buttons = domQueryService.deepQueryElements<HTMLButtonElement>(element, "button");
-    for (let i = 0; i < buttons.length; i++) {
-      if (isLoginButton(buttons[i])) {
-        clickSubmitElement(buttons[i], lastFieldIsPasswordInput);
-        return true;
-      }
+    const buttonElement = querySubmitButtonElement(element, "button, [type='button']");
+    if (buttonElement) {
+      clickSubmitElement(buttonElement, lastFieldIsPasswordInput);
+      return true;
     }
 
     return false;
+  }
+
+  /**
+   * Queries the element for a submit button element. If an element is found and has keywords
+   * that indicate a login action, the element is returned.
+   *
+   * @param element - The element to query for submit buttons
+   * @param selector - The selector to query for submit buttons
+   */
+  function querySubmitButtonElement(element: HTMLElement, selector: string) {
+    const submitButtonElements = domQueryService.deepQueryElements<HTMLButtonElement>(
+      element,
+      selector,
+    );
+    for (let index = 0; index < submitButtonElements.length; index++) {
+      const submitElement = submitButtonElements[index];
+      if (isLoginButton(submitElement)) {
+        return submitElement;
+      }
+    }
   }
 
   /**
@@ -236,21 +246,10 @@ import { elementIsInputElement, nodeIsFormElement, sendExtensionMessage } from "
    * @param element - The element to check
    */
   function isLoginButton(element: HTMLElement) {
-    const keywordValues = [
-      element.textContent,
-      element.getAttribute("value"),
-      element.getAttribute("aria-label"),
-      element.getAttribute("aria-labelledby"),
-      element.getAttribute("aria-describedby"),
-      element.getAttribute("title"),
-      element.getAttribute("id"),
-      element.getAttribute("name"),
-      element.getAttribute("class"),
-    ]
-      .join(",")
-      .toLowerCase();
+    const keywordsSet = getSubmitButtonKeywordsSet(element);
+    const keywordValues = Array.from(keywordsSet).join(",");
 
-    return loginKeywords.some((keyword) => keywordValues.includes(keyword));
+    return SubmitLoginButtonNames.some((keyword) => keywordValues.indexOf(keyword) > -1);
   }
 
   /**

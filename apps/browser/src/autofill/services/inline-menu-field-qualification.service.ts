@@ -1,6 +1,6 @@
 import AutofillField from "../models/autofill-field";
 import AutofillPageDetails from "../models/autofill-page-details";
-import { sendExtensionMessage } from "../utils";
+import { getSubmitButtonKeywordsSet, sendExtensionMessage } from "../utils";
 
 import {
   AutofillKeywordsMap,
@@ -1014,34 +1014,7 @@ export class InlineMenuFieldQualificationService
    */
   private getSubmitButtonKeywords(element: HTMLElement): string {
     if (!this.submitButtonKeywordsMap.has(element)) {
-      const keywords = [
-        element.textContent,
-        element.getAttribute("value"),
-        element.getAttribute("aria-label"),
-        element.getAttribute("aria-labelledby"),
-        element.getAttribute("aria-describedby"),
-        element.getAttribute("title"),
-        element.getAttribute("id"),
-        element.getAttribute("name"),
-        element.getAttribute("class"),
-      ];
-
-      const keywordsSet = new Set<string>();
-      for (let i = 0; i < keywords.length; i++) {
-        if (typeof keywords[i] === "string") {
-          keywords[i]
-            .toLowerCase()
-            .replace(/[-\s]/g, "")
-            .replace(/[^a-zA-Z0-9]+/g, "|")
-            .split("|")
-            .forEach((keyword) => {
-              if (keyword) {
-                keywordsSet.add(keyword);
-              }
-            });
-        }
-      }
-
+      const keywordsSet = getSubmitButtonKeywordsSet(element);
       this.submitButtonKeywordsMap.set(element, Array.from(keywordsSet).join(","));
     }
 
