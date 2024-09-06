@@ -1,3 +1,4 @@
+import { AllowedFeatureFlagTypes } from "../../../enums/feature-flag.enum";
 import { BaseResponse } from "../../../models/response/base.response";
 import { Region } from "../../abstractions/environment.service";
 
@@ -6,7 +7,7 @@ export class ServerConfigResponse extends BaseResponse {
   gitHash: string;
   server: ThirdPartyServerConfigResponse;
   environment: EnvironmentServerConfigResponse;
-  featureStates: { [key: string]: string } = {};
+  featureStates: { [key: string]: AllowedFeatureFlagTypes } = {};
 
   constructor(response: any) {
     super(response);

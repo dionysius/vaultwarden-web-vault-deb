@@ -2,6 +2,7 @@ import { Observable } from "rxjs";
 import { SemVer } from "semver";
 
 import { FeatureFlag, FeatureFlagValueType } from "../../../enums/feature-flag.enum";
+import { UserId } from "../../../types/guid";
 import { Region } from "../environment.service";
 
 import { ServerConfig } from "./server-config";
@@ -17,6 +18,18 @@ export abstract class ConfigService {
    * @returns An observable that emits the value of the feature flag, updates as the server config changes
    */
   getFeatureFlag$: <Flag extends FeatureFlag>(key: Flag) => Observable<FeatureFlagValueType<Flag>>;
+
+  /**
+   * Retrieves the cached feature flag value for a give user. This will NOT call to the server to get
+   * the most up to date feature flag.
+   * @param key The feature flag key to get the value for.
+   * @param userId The user id of the user to get the feature flag value for.
+   */
+  abstract userCachedFeatureFlag$<Flag extends FeatureFlag>(
+    key: Flag,
+    userId: UserId,
+  ): Observable<FeatureFlagValueType<Flag>>;
+
   /**
    * Retrieves the value of a feature flag for the currently active user
    * @param key The feature flag to retrieve

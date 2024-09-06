@@ -16,6 +16,7 @@ import {
 import { subscribeTo } from "../../../../spec/observable-tracker";
 import { AuthService } from "../../../auth/abstractions/auth.service";
 import { AuthenticationStatus } from "../../../auth/enums/authentication-status";
+import { FeatureFlag } from "../../../enums/feature-flag.enum";
 import { UserId } from "../../../types/guid";
 import { ConfigApiServiceAbstraction } from "../../abstractions/config/config-api.service.abstraction";
 import { ServerConfig } from "../../abstractions/config/server-config";
@@ -274,6 +275,48 @@ describe("ConfigService", () => {
         expect(actual).toEqual(expected);
         spy.unsubscribe();
       });
+    });
+  });
+
+  describe("userCachedFeatureFlag$", () => {
+    it("maps saved user config to a feature flag", async () => {
+      const updateFeature = (value: boolean) => {
+        return new ServerConfig(
+          new ServerConfigData({
+            featureStates: {
+              "test-feature": value,
+            },
+          }),
+        );
+      };
+
+      const configService = new DefaultConfigService(
+        configApiService,
+        environmentService,
+        logService,
+        stateProvider,
+        authService,
+      );
+
+      userState.nextState(null);
+
+      const promise = firstValueFrom(
+        configService
+          .userCachedFeatureFlag$("test-feature" as FeatureFlag, userId)
+          .pipe(bufferCount(3)),
+      );
+
+      userState.nextState(updateFeature(true));
+      userState.nextState(updateFeature(false));
+
+      const values = await promise;
+
+      // We wouldn't normally expect this to be undefined, the logic
+      // should normally return the feature flags default value but since
+      // we are faking a feature flag key, undefined is expected
+      expect(values[0]).toBe(undefined);
+      expect(values[1]).toBe(true);
+      expect(values[2]).toBe(false);
     });
   });
 

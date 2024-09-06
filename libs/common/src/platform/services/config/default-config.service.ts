@@ -115,14 +115,25 @@ export class DefaultConfigService implements ConfigService {
 
   getFeatureFlag$<Flag extends FeatureFlag>(key: Flag) {
     return this.serverConfig$.pipe(
-      map((serverConfig) => {
-        if (serverConfig?.featureStates == null || serverConfig.featureStates[key] == null) {
-          return DefaultFeatureFlagValue[key];
-        }
-
-        return serverConfig.featureStates[key] as FeatureFlagValueType<Flag>;
-      }),
+      map((serverConfig) => this.getFeatureFlagValue(serverConfig, key)),
     );
+  }
+
+  private getFeatureFlagValue<Flag extends FeatureFlag>(
+    serverConfig: ServerConfig | null,
+    flag: Flag,
+  ) {
+    if (serverConfig?.featureStates == null || serverConfig.featureStates[flag] == null) {
+      return DefaultFeatureFlagValue[flag];
+    }
+
+    return serverConfig.featureStates[flag] as FeatureFlagValueType<Flag>;
+  }
+
+  userCachedFeatureFlag$<Flag extends FeatureFlag>(key: Flag, userId: UserId) {
+    return this.stateProvider
+      .getUser(userId, USER_SERVER_CONFIG)
+      .state$.pipe(map((config) => this.getFeatureFlagValue(config, key)));
   }
 
   async getFeatureFlag<Flag extends FeatureFlag>(key: Flag) {
