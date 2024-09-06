@@ -2,7 +2,6 @@
 // eslint-disable-next-line @typescript-eslint/ban-types
 export type SharedFlags = {
   showPasswordless?: boolean;
-  enableCipherKeyEncryption?: boolean;
 };
 
 // required to avoid linting errors when there are no flags

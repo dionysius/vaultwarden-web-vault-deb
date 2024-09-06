@@ -17,7 +17,6 @@
     "proxyNotifications": "https://notifications.bitwarden.com"
   },
   "flags": {
-    "showPasswordless": true,
-    "enableCipherKeyEncryption": false
+    "showPasswordless": true
   }
 }

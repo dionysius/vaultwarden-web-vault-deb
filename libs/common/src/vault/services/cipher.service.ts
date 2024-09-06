@@ -17,7 +17,6 @@ import { CryptoService } from "../../platform/abstractions/crypto.service";
 import { EncryptService } from "../../platform/abstractions/encrypt.service";
 import { I18nService } from "../../platform/abstractions/i18n.service";
 import { StateService } from "../../platform/abstractions/state.service";
-import { flagEnabled } from "../../platform/misc/flags";
 import { sequentialize } from "../../platform/misc/sequentialize";
 import { Utils } from "../../platform/misc/utils";
 import Domain from "../../platform/models/domain/domain-base";
@@ -1662,11 +1661,10 @@ export class CipherService implements CipherServiceAbstraction {
   }
 
   private async getCipherKeyEncryptionEnabled(): Promise<boolean> {
-    return (
-      flagEnabled("enableCipherKeyEncryption") &&
-      (await firstValueFrom(
-        this.configService.checkServerMeetsVersionRequirement$(CIPHER_KEY_ENC_MIN_SERVER_VER),
-      ))
+    const featureEnabled = await this.configService.getFeatureFlag(FeatureFlag.CipherKeyEncryption);
+    const meetsServerVersion = await firstValueFrom(
+      this.configService.checkServerMeetsVersionRequirement$(CIPHER_KEY_ENC_MIN_SERVER_VER),
     );
+    return featureEnabled && meetsServerVersion;
   }
 }
