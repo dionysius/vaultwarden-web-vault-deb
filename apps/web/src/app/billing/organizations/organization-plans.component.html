@@ -428,9 +428,12 @@
       {{ paymentDesc }}
     </p>
     <app-payment
-      *ngIf="createOrganization || upgradeRequiresPaymentMethod"
+      *ngIf="!deprecateStripeSourcesAPI && (createOrganization || upgradeRequiresPaymentMethod)"
       [hideCredit]="true"
     ></app-payment>
+    <app-payment-v2
+      *ngIf="deprecateStripeSourcesAPI && (createOrganization || upgradeRequiresPaymentMethod)"
+    ></app-payment-v2>
     <app-tax-info (onCountryChanged)="changedCountry()"></app-tax-info>
     <div id="price" class="tw-my-4">
       <div class="tw-text-muted tw-text-base">

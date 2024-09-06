@@ -28,6 +28,8 @@ import { PaymentRequest } from "@bitwarden/common/billing/models/request/payment
 import { BillingResponse } from "@bitwarden/common/billing/models/response/billing.response";
 import { OrganizationSubscriptionResponse } from "@bitwarden/common/billing/models/response/organization-subscription.response";
 import { PlanResponse } from "@bitwarden/common/billing/models/response/plan.response";
+import { FeatureFlag } from "@bitwarden/common/enums/feature-flag.enum";
+import { ConfigService } from "@bitwarden/common/platform/abstractions/config/config.service";
 import { CryptoService } from "@bitwarden/common/platform/abstractions/crypto.service";
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 import { LogService } from "@bitwarden/common/platform/abstractions/log.service";
@@ -41,6 +43,7 @@ import { ToastService } from "@bitwarden/components";
 
 import { OrganizationCreateModule } from "../../admin-console/organizations/create/organization-create.module";
 import { BillingSharedModule, secretsManagerSubscribeFormFactory } from "../shared";
+import { PaymentV2Component } from "../shared/payment/payment-v2.component";
 import { PaymentComponent } from "../shared/payment/payment.component";
 import { TaxInfoComponent } from "../shared/tax-info.component";
 
@@ -63,6 +66,7 @@ const Allowed2020PlansForLegacyProviders = [
 })
 export class OrganizationPlansComponent implements OnInit, OnDestroy {
   @ViewChild(PaymentComponent) paymentComponent: PaymentComponent;
+  @ViewChild(PaymentV2Component) paymentV2Component: PaymentV2Component;
   @ViewChild(TaxInfoComponent) taxComponent: TaxInfoComponent;
 
   @Input() organizationId: string;
@@ -108,6 +112,7 @@ export class OrganizationPlansComponent implements OnInit, OnDestroy {
   singleOrgPolicyAppliesToActiveUser = false;
   isInTrialFlow = false;
   discount = 0;
+  deprecateStripeSourcesAPI: boolean;
 
   secretsManagerSubscription = secretsManagerSubscribeFormFactory(this.formBuilder);
 
@@ -152,11 +157,16 @@ export class OrganizationPlansComponent implements OnInit, OnDestroy {
     private organizationApiService: OrganizationApiServiceAbstraction,
     private providerApiService: ProviderApiServiceAbstraction,
     private toastService: ToastService,
+    private configService: ConfigService,
   ) {
     this.selfHosted = platformUtilsService.isSelfHost();
   }
 
   async ngOnInit() {
+    this.deprecateStripeSourcesAPI = await this.configService.getFeatureFlag(
+      FeatureFlag.AC2476_DeprecateStripeSourcesAPI,
+    );
+
     if (this.organizationId) {
       this.organization = await this.organizationService.get(this.organizationId);
       this.billing = await this.organizationApiService.getBilling(this.organizationId);
@@ -535,14 +545,23 @@ export class OrganizationPlansComponent implements OnInit, OnDestroy {
   }
 
   changedCountry() {
-    this.paymentComponent.hideBank = this.taxComponent.taxFormGroup?.value.country !== "US";
-    // Bank Account payments are only available for US customers
-    if (
-      this.paymentComponent.hideBank &&
-      this.paymentComponent.method === PaymentMethodType.BankAccount
-    ) {
-      this.paymentComponent.method = PaymentMethodType.Card;
-      this.paymentComponent.changeMethod();
+    if (this.deprecateStripeSourcesAPI) {
+      this.paymentV2Component.showBankAccount = this.taxComponent.country === "US";
+      if (
+        !this.paymentV2Component.showBankAccount &&
+        this.paymentV2Component.selected === PaymentMethodType.BankAccount
+      ) {
+        this.paymentV2Component.select(PaymentMethodType.Card);
+      }
+    } else {
+      this.paymentComponent.hideBank = this.taxComponent.taxFormGroup?.value.country !== "US";
+      if (
+        this.paymentComponent.hideBank &&
+        this.paymentComponent.method === PaymentMethodType.BankAccount
+      ) {
+        this.paymentComponent.method = PaymentMethodType.Card;
+        this.paymentComponent.changeMethod();
+      }
     }
   }
 
@@ -639,10 +658,18 @@ export class OrganizationPlansComponent implements OnInit, OnDestroy {
     this.buildSecretsManagerRequest(request);
 
     if (this.upgradeRequiresPaymentMethod) {
-      const tokenResult = await this.paymentComponent.createPaymentToken();
+      let type: PaymentMethodType;
+      let token: string;
+
+      if (this.deprecateStripeSourcesAPI) {
+        ({ type, token } = await this.paymentV2Component.tokenize());
+      } else {
+        [token, type] = await this.paymentComponent.createPaymentToken();
+      }
+
       const paymentRequest = new PaymentRequest();
-      paymentRequest.paymentToken = tokenResult[0];
-      paymentRequest.paymentMethodType = tokenResult[1];
+      paymentRequest.paymentToken = token;
+      paymentRequest.paymentMethodType = type;
       paymentRequest.country = this.taxComponent.taxFormGroup?.value.country;
       paymentRequest.postalCode = this.taxComponent.taxFormGroup?.value.postalCode;
       await this.organizationApiService.updatePayment(this.organizationId, paymentRequest);
@@ -679,10 +706,17 @@ export class OrganizationPlansComponent implements OnInit, OnDestroy {
     if (this.selectedPlan.type === PlanType.Free) {
       request.planType = PlanType.Free;
     } else {
-      const tokenResult = await this.paymentComponent.createPaymentToken();
+      let type: PaymentMethodType;
+      let token: string;
 
-      request.paymentToken = tokenResult[0];
-      request.paymentMethodType = tokenResult[1];
+      if (this.deprecateStripeSourcesAPI) {
+        ({ type, token } = await this.paymentV2Component.tokenize());
+      } else {
+        [token, type] = await this.paymentComponent.createPaymentToken();
+      }
+
+      request.paymentToken = token;
+      request.paymentMethodType = type;
       request.additionalSeats = this.formGroup.controls.additionalSeats.value;
       request.additionalStorageGb = this.formGroup.controls.additionalStorage.value;
       request.premiumAccessAddon =
