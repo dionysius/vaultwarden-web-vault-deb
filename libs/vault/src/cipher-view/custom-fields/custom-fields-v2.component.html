@@ -46,7 +46,7 @@
         <bit-label> {{ field.name }} </bit-label>
       </bit-form-control>
       <bit-form-field *ngIf="field.type === fieldType.Linked" [disableReadOnlyBorder]="last">
-        <bit-label> {{ "linked" | i18n }}: {{ field.name }} </bit-label>
+        <bit-label> {{ "cfTypeLinked" | i18n }}: {{ field.name }} </bit-label>
         <input
           readonly
           bitInput
