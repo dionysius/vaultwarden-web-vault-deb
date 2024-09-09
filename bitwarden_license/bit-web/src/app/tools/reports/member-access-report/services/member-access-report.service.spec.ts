@@ -10,13 +10,17 @@ describe("ImportService", () => {
   const mockOrganizationId = "mockOrgId" as OrganizationId;
   const reportApiService = mock<MemberAccessReportApiService>();
   let memberAccessReportService: MemberAccessReportService;
-  const i18nService = mock<I18nService>();
+  const i18nMock = mock<I18nService>({
+    t(key) {
+      return key;
+    },
+  });
 
   beforeEach(() => {
     reportApiService.getMemberAccessData.mockImplementation(() =>
       Promise.resolve(memberAccessReportsMock),
     );
-    memberAccessReportService = new MemberAccessReportService(reportApiService, i18nService);
+    memberAccessReportService = new MemberAccessReportService(reportApiService, i18nMock);
   });
 
   describe("generateMemberAccessReportView", () => {
@@ -92,16 +96,16 @@ describe("ImportService", () => {
           expect.objectContaining({
             email: "sjohnson@email.com",
             name: "Sarah Johnson",
-            twoStepLogin: "On",
-            accountRecovery: "On",
+            twoStepLogin: "memberAccessReportTwoFactorEnabledTrue",
+            accountRecovery: "memberAccessReportAuthenticationEnabledTrue",
             group: "Group 1",
             totalItems: "20",
           }),
           expect.objectContaining({
             email: "jlull@email.com",
             name: "James Lull",
-            twoStepLogin: "Off",
-            accountRecovery: "Off",
+            twoStepLogin: "memberAccessReportTwoFactorEnabledFalse",
+            accountRecovery: "memberAccessReportAuthenticationEnabledFalse",
             group: "Group 4",
             totalItems: "5",
           }),

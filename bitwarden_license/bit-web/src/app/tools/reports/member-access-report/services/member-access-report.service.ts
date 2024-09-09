@@ -82,7 +82,7 @@ export class MemberAccessReportService {
             : this.i18nService.t("memberAccessReportNoCollection"),
           collectionPermission: detail.collectionId
             ? this.getPermissionText(detail)
-            : this.i18nService.t("memberAccessReportNoCollection"),
+            : this.i18nService.t("memberAccessReportNoCollectionPermission"),
           totalItems: detail.itemCount.toString(),
         };
       });
