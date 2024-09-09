@@ -1796,6 +1796,15 @@
   "noPasswordsInList": {
     "message": "Nema lozinki na popisu."
   },
+  "clearHistory": {
+    "message": "Clear history"
+  },
+  "noPasswordsToShow": {
+    "message": "No passwords to show"
+  },
+  "noRecentlyGeneratedPassword": {
+    "message": "You haven't generated a password recently"
+  },
   "remove": {
     "message": "Ukloni"
   },
@@ -3478,7 +3487,7 @@
     "message": "Ishodišna stranica zahtijeva verifikaciju. Ova značajka još nije implementirana za račune bez glavne lozinke."
   },
   "logInWithPasskeyQuestion": {
-    "message": "Log in with passkey?"
+    "message": "Prijava pristupnim ključem?"
   },
   "passkeyAlreadyExists": {
     "message": "Za ovu aplikaciju već postoji pristupni ključ."
@@ -3490,7 +3499,7 @@
     "message": "Nema odgovarajuće prijavu za ovu stranicu."
   },
   "noMatchingLoginsForSite": {
-    "message": "No matching logins for this site"
+    "message": "Nema prijava za ovu web stranicu"
   },
   "confirm": {
     "message": "Autoriziraj"
@@ -3502,10 +3511,10 @@
     "message": "Spremi pristupni ključ kao novu prijavu"
   },
   "chooseCipherForPasskeySave": {
-    "message": "Choose a login to save this passkey to"
+    "message": "Odaberi za koju prijavu želiš spremiti ovaj pristupni ključ"
   },
   "chooseCipherForPasskeyAuth": {
-    "message": "Choose a passkey to log in with"
+    "message": "Odaberi pristupni ključ za prijavu"
   },
   "passkeyItem": {
     "message": "Stavka pristupnog ključa"
@@ -4300,8 +4309,11 @@
   "enterprisePolicyRequirementsApplied": {
     "message": "Pravila tvrtke primijenjena su na ovu postavku"
   },
-  "additionalContentAvailable": {
-    "message": "Dostupan je dodatni sadržaj"
+  "showCharacterCount": {
+    "message": "Show character count"
+  },
+  "hideCharacterCount": {
+    "message": "Hide character count"
   },
   "itemsInTrash": {
     "message": "Stavke u smeću"

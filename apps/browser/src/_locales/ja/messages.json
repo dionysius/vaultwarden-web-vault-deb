@@ -1796,6 +1796,15 @@
   "noPasswordsInList": {
     "message": "表示するパスワードがありません"
   },
+  "clearHistory": {
+    "message": "Clear history"
+  },
+  "noPasswordsToShow": {
+    "message": "No passwords to show"
+  },
+  "noRecentlyGeneratedPassword": {
+    "message": "You haven't generated a password recently"
+  },
   "remove": {
     "message": "削除"
   },
@@ -4300,8 +4309,11 @@
   "enterprisePolicyRequirementsApplied": {
     "message": "エンタープライズポリシー要件がこの設定に適用されました"
   },
-  "additionalContentAvailable": {
-    "message": "追加コンテンツが利用可能です"
+  "showCharacterCount": {
+    "message": "文字数を表示"
+  },
+  "hideCharacterCount": {
+    "message": "文字数を隠す"
   },
   "itemsInTrash": {
     "message": "ゴミ箱にあるアイテム"

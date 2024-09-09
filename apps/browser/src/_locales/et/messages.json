@@ -14,7 +14,7 @@
     "message": "Logi oma olemasolevasse kontosse sisse või loo uus konto."
   },
   "inviteAccepted": {
-    "message": "Invitation accepted"
+    "message": "Kutse vastu võetud"
   },
   "createAccount": {
     "message": "Konto loomine"
@@ -69,10 +69,10 @@
     "message": "Ülemparooli vihje (ei ole kohustuslik)"
   },
   "joinOrganization": {
-    "message": "Join organization"
+    "message": "Liitu organisatsiooniga"
   },
   "finishJoiningThisOrganizationBySettingAMasterPassword": {
-    "message": "Finish joining this organization by setting a master password."
+    "message": "Lõpeta organisatsiooniga liitumine määrates ülemparool."
   },
   "tab": {
     "message": "Kaart"
@@ -114,19 +114,19 @@
     "message": "Kopeeri turvakood"
   },
   "copyName": {
-    "message": "Copy name"
+    "message": "Kopeeri nimi"
   },
   "copyCompany": {
-    "message": "Copy company"
+    "message": "Kopeeri firma nimi"
   },
   "copySSN": {
-    "message": "Copy Social Security number"
+    "message": "Kopeeri isikukood"
   },
   "copyPassportNumber": {
-    "message": "Copy passport number"
+    "message": "Kopeeri passi number"
   },
   "copyLicenseNumber": {
-    "message": "Copy license number"
+    "message": "Kopeeri litsentsi number"
   },
   "autoFill": {
     "message": "Automaatne täitmine"
@@ -225,7 +225,7 @@
     "message": "Mine edasi veebilaienduste poodi?"
   },
   "continueToBrowserExtensionStoreDesc": {
-    "message": "Help others find out if Bitwarden is right for them. Visit your browser's extension store and leave a rating now."
+    "message": "Aita meil jõuda rohkemate inimesteni. Külasta enda laienduste veebipoodi ja jäta sinna positiivne hinnang."
   },
   "changeMasterPasswordOnWebConfirmation": {
     "message": "Ülemparooli saab muuta Bitwardeni veebirakenduses."
@@ -251,7 +251,7 @@
     "message": "Rakenduse info"
   },
   "moreFromBitwarden": {
-    "message": "More from Bitwarden"
+    "message": "Rohkem Bitwardeni kohta"
   },
   "continueToBitwardenDotCom": {
     "message": "Mine edasi bitwarden.com-i?"
@@ -263,25 +263,25 @@
     "message": "Bitwarden Authenticator"
   },
   "continueToAuthenticatorPageDesc": {
-    "message": "Bitwarden Authenticator allows you to store authenticator keys and generate TOTP codes for 2-step verification flows. Learn more on the bitwarden.com website"
+    "message": "Bitwardeni Autentiteerijaga saad sa hoiustada autentiteerimise võtmeid ja luua TOTP koode kaheastmeliseks kinnitamiseks. Uuri lähemalt veebilehelt bitwarden.com"
   },
   "bitwardenSecretsManager": {
     "message": "Bitwarden Secrets Manager"
   },
   "continueToSecretsManagerPageDesc": {
-    "message": "Securely store, manage, and share developer secrets with Bitwarden Secrets Manager. Learn more on the bitwarden.com website."
+    "message": "Hoiusta, halda ja jaga turvaliselt arendajate saladusi läbi Bitwarden Secrets Manageri. Uuri lähemalt veebilehelt bitwarden.com."
   },
   "passwordlessDotDev": {
     "message": "Passwordless.dev"
   },
   "continueToPasswordlessDotDevPageDesc": {
-    "message": "Create smooth and secure login experiences free from traditional passwords with Passwordless.dev. Learn more on the bitwarden.com website."
+    "message": "Loo sujuv ja turvaline kogemus sisselogimisel Passwordless.dev-iga ja ilma traditsiooniliste paroolideta. Uuri lähemalt veebilehelt bitwarden.com."
   },
   "freeBitwardenFamilies": {
     "message": "Tasuta Bitwarden Peredele"
   },
   "freeBitwardenFamiliesPageDesc": {
-    "message": "You are eligible for Free Bitwarden Families. Redeem this offer today in the web app."
+    "message": "Sul on võimalik saada endale tasuta Bitwarden Families plaan. Lunasta see pakkumine meie veebirakenduses."
   },
   "version": {
     "message": "Versioon"
@@ -302,22 +302,22 @@
     "message": "Muuda kausta"
   },
   "newFolder": {
-    "message": "New folder"
+    "message": "Uus kaust"
   },
   "folderName": {
-    "message": "Folder name"
+    "message": "Kausta nimi"
   },
   "folderHintText": {
-    "message": "Nest a folder by adding the parent folder's name followed by a “/”. Example: Social/Forums"
+    "message": "Kausta teise kasuta panemiseks lisa sihtkausta nimi, millele järgneb \"/\". Näiteks: Sotsiaalmeedia/Foorumid"
   },
   "noFoldersAdded": {
-    "message": "No folders added"
+    "message": "Ei lisanud ühtegi kausta"
   },
   "createFoldersToOrganize": {
-    "message": "Create folders to organize your vault items"
+    "message": "Loo kaustasid, et oma hoidla kirjeid organiseerida"
   },
   "deleteFolderPermanently": {
-    "message": "Are you sure you want to permanently delete this folder?"
+    "message": "Kas sa oled kindel, et soovid selle kausta jäädavalt kustutada?"
   },
   "deleteFolder": {
     "message": "Kustuta Kaust"
@@ -400,11 +400,11 @@
     "description": "deprecated. Use specialCharactersLabel instead."
   },
   "include": {
-    "message": "Include",
+    "message": "Kasuta",
     "description": "Card header for password generator include block"
   },
   "uppercaseDescription": {
-    "message": "Include uppercase characters",
+    "message": "Kasuta trükitähti",
     "description": "Tooltip for the password generator uppercase character checkbox"
   },
   "uppercaseLabel": {
@@ -412,7 +412,7 @@
     "description": "Label for the password generator uppercase character checkbox"
   },
   "lowercaseDescription": {
-    "message": "Include lowercase characters",
+    "message": "Kasuta kirjatähti",
     "description": "Full description for the password generator lowercase character checkbox"
   },
   "lowercaseLabel": {
@@ -420,7 +420,7 @@
     "description": "Label for the password generator lowercase character checkbox"
   },
   "numbersDescription": {
-    "message": "Include numbers",
+    "message": "Kasuta numbreid",
     "description": "Full description for the password generator numbers checkbox"
   },
   "numbersLabel": {
@@ -428,7 +428,7 @@
     "description": "Label for the password generator numbers checkbox"
   },
   "specialCharactersDescription": {
-    "message": "Include special characters",
+    "message": "Kasuta sümboleid",
     "description": "Full description for the password generator special characters checkbox"
   },
   "specialCharactersLabel": {
@@ -459,7 +459,7 @@
     "description": "deprecated. Use avoidAmbiguous instead."
   },
   "avoidAmbiguous": {
-    "message": "Avoid ambiguous characters",
+    "message": "Väldi raskesti eristatavaid tähti ja sümboleid",
     "description": "Label for the avoid ambiguous characters checkbox."
   },
   "searchVault": {
@@ -484,7 +484,7 @@
     "message": "Parool"
   },
   "totp": {
-    "message": "Authenticator secret"
+    "message": "Salajane autentikaatori võti"
   },
   "passphrase": {
     "message": "Paroolifraas"
@@ -538,13 +538,13 @@
     "message": "Muu"
   },
   "unlockMethods": {
-    "message": "Unlock options"
+    "message": "Avamise valikud"
   },
   "unlockMethodNeededToChangeTimeoutActionDesc": {
     "message": "Hoidla ajalõpu tegevuse muutmiseks vali esmalt lahtilukustamise meetod."
   },
   "unlockMethodNeeded": {
-    "message": "Set up an unlock method in Settings"
+    "message": "Määra avamise meetod seadetes"
   },
   "sessionTimeoutHeader": {
     "message": "Sessiooni ajalõpp"
@@ -684,10 +684,10 @@
     "message": "Konto on loodud! Võid nüüd sisse logida."
   },
   "newAccountCreated2": {
-    "message": "Your new account has been created!"
+    "message": "Uus konto loodud!"
   },
   "youHaveBeenLoggedIn": {
-    "message": "You have been logged in!"
+    "message": "Olete sisse logitud!"
   },
   "youSuccessfullyLoggedIn": {
     "message": "Sisselogimine õnnestus"
@@ -702,7 +702,7 @@
     "message": "Nõutav on kinnituskood."
   },
   "webauthnCancelOrTimeout": {
-    "message": "The authentication was cancelled or took too long. Please try again."
+    "message": "Autentimine tühistati või kestis liiga kaua aega. Palun proovi uuesti."
   },
   "invalidVerificationCode": {
     "message": "Vale kinnituskood"
@@ -724,25 +724,25 @@
     "message": "Ei õnnestunud skännida sellelt lehelt QR-kood"
   },
   "totpCaptureSuccess": {
-    "message": "Authenticator key added"
+    "message": "Autentimise võti on lisatud"
   },
   "totpCapture": {
-    "message": "Scan authenticator QR code from current webpage"
+    "message": "Skänneeri see QR-kood läbi autentikaatori"
   },
   "totpHelperTitle": {
-    "message": "Make 2-step verification seamless"
+    "message": "Muuda 2-astmeline kinnitamine sujuvaks"
   },
   "totpHelper": {
-    "message": "Bitwarden can store and fill 2-step verification codes. Copy and paste the key into this field."
+    "message": "Bitwarden saab hoiustada ja täita 2-astmelise kinnitamise koode. Kopeeri ja kleebi võti siia."
   },
   "totpHelperWithCapture": {
-    "message": "Bitwarden can store and fill 2-step verification codes. Select the camera icon to take a screenshot of this website's authenticator QR code, or copy and paste the key into this field."
+    "message": "Bitwarden saab hoiustada ja täita 2-astmelise kinnitamise koode. Vajuta kaamera ikoonile, et teha ekraanipilt autentiteerimise QR koodist või kopeeri ja kleebi võti siia."
   },
   "learnMoreAboutAuthenticators": {
-    "message": "Learn more about authenticators"
+    "message": "Uuri lähemalt autentikaatorite kohta"
   },
   "copyTOTP": {
-    "message": "Copy Authenticator key (TOTP)"
+    "message": "Kopeeri autentiteerimise võti (TOTP)"
   },
   "loggedOut": {
     "message": "Välja logitud"
@@ -754,16 +754,16 @@
     "message": "Sessioon on aegunud."
   },
   "logIn": {
-    "message": "Log in"
+    "message": "Logi sisse"
   },
   "restartRegistration": {
-    "message": "Restart registration"
+    "message": "Alusta registreerimist uuesti"
   },
   "expiredLink": {
-    "message": "Expired link"
+    "message": "Aegunud link"
   },
   "pleaseRestartRegistrationOrTryLoggingIn": {
-    "message": "Please restart registration or try logging in."
+    "message": "Palun alusta registreerimist uuesti või proovi sisse logida."
   },
   "youMayAlreadyHaveAnAccount": {
     "message": "You may already have an account"
@@ -1469,7 +1469,7 @@
     "message": "Boolean"
   },
   "cfTypeCheckbox": {
-    "message": "Checkbox"
+    "message": "Märkeruut"
   },
   "cfTypeLinked": {
     "message": "Ühenduses",
@@ -1492,7 +1492,7 @@
     "message": "Kuvab iga kirje kõrval lehekülje ikooni."
   },
   "faviconDescAlt": {
-    "message": "Show a recognizable image next to each login. Applies to all logged in accounts."
+    "message": "Näita väikest tuttavat ikooni iga kirje kõrval. Kehtib ka sisselogitud kontodele."
   },
   "enableBadgeCounter": {
     "message": "Kuva kirjete arvu"
@@ -1654,7 +1654,7 @@
     "message": "Identiteet"
   },
   "newItemHeader": {
-    "message": "New $TYPE$",
+    "message": "Uus $TYPE$",
     "placeholders": {
       "type": {
         "content": "$1",
@@ -1690,7 +1690,7 @@
     "message": "Kogumikud"
   },
   "nCollections": {
-    "message": "$COUNT$ collections",
+    "message": "$COUNT$ kogumikku",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -1743,7 +1743,7 @@
     "description": "Domain name. Ex. website.com"
   },
   "baseDomainOptionRecommended": {
-    "message": "Base domain (recommended)",
+    "message": "Serveri nimi [base domain] (soovitatav)",
     "description": "Domain name. Ex. website.com"
   },
   "domainName": {
@@ -1795,6 +1795,15 @@
   },
   "noPasswordsInList": {
     "message": "Puuduvad paroolid, mida kuvada."
+  },
+  "clearHistory": {
+    "message": "Clear history"
+  },
+  "noPasswordsToShow": {
+    "message": "No passwords to show"
+  },
+  "noRecentlyGeneratedPassword": {
+    "message": "You haven't generated a password recently"
   },
   "remove": {
     "message": "Eemalda"
@@ -1864,7 +1873,7 @@
     "message": "Vale PIN kood."
   },
   "tooManyInvalidPinEntryAttemptsLoggingOut": {
-    "message": "Too many invalid PIN entry attempts. Logging out."
+    "message": "Liiga palju ebaõnnestunud katseid. Login välja."
   },
   "unlockWithBiometrics": {
     "message": "Ava biomeetriaga"
@@ -1891,26 +1900,26 @@
     "message": "Organisatsiooni seaded mõjutavad parooli genereerija sätteid."
   },
   "passwordGenerator": {
-    "message": "Password generator"
+    "message": "Parooli genereerija"
   },
   "usernameGenerator": {
-    "message": "Username generator"
+    "message": "Kasutajanime genereerija"
   },
   "useThisPassword": {
-    "message": "Use this password"
+    "message": "Kasuta seda parooli"
   },
   "useThisUsername": {
-    "message": "Use this username"
+    "message": "Kasuta seda kasutajanime"
   },
   "securePasswordGenerated": {
-    "message": "Secure password generated! Don't forget to also update your password on the website."
+    "message": "Turvaline parool loodud! Ära unusta uuendata seda ka veebisaidil."
   },
   "useGeneratorHelpTextPartOne": {
-    "message": "Use the generator",
+    "message": "Kasuta generaatorit",
     "description": "This will be used as part of a larger sentence, broken up to include the generator icon. The full sentence will read 'Use the generator [GENERATOR_ICON] to create a strong unique password'"
   },
   "useGeneratorHelpTextPartTwo": {
-    "message": "to create a strong unique password",
+    "message": "et luua tugev ja ainulaadne parool",
     "description": "This will be used as part of a larger sentence, broken up to include the generator icon. The full sentence will read 'Use the generator [GENERATOR_ICON] to create a strong unique password'"
   },
   "vaultTimeoutAction": {
@@ -1943,7 +1952,7 @@
     "message": "Kirje on taastatud"
   },
   "alreadyHaveAccount": {
-    "message": "Already have an account?"
+    "message": "On juba konto?"
   },
   "vaultTimeoutLogOutConfirmation": {
     "message": "Väljalogimine eemaldab hoidlale ligipääsu ning nõuab pärast ajalõpu perioodi uuesti autentimist. Oled kindel, et soovid seda valikut kasutada?"
@@ -1955,7 +1964,7 @@
     "message": "Täida ja salvesta"
   },
   "fillAndSave": {
-    "message": "Fill and save"
+    "message": "Täida ja salvesta"
   },
   "autoFillSuccessAndSavedUri": {
     "message": "Kirje täideti ja URI salvestati"
@@ -2036,19 +2045,19 @@
     "message": "Uus ülemparool ei vasta eeskirjades väljatoodud tingimustele."
   },
   "receiveMarketingEmailsV2": {
-    "message": "Get advice, announcements, and research opportunities from Bitwarden in your inbox."
+    "message": "Soovin saada nõuandeid, uudiseid ja pakkumisi Bitwardenilt oma postkasti."
   },
   "unsubscribe": {
-    "message": "Unsubscribe"
+    "message": "Lõpeta tellimus"
   },
   "atAnyTime": {
-    "message": "at any time."
+    "message": "iga hetk."
   },
   "byContinuingYouAgreeToThe": {
-    "message": "By continuing, you agree to the"
+    "message": "Jätkates nõustud sa"
   },
   "and": {
-    "message": "and"
+    "message": "ja"
   },
   "acceptPolicies": {
     "message": "Märkeruudu markeerimisel nõustud järgnevaga:"
@@ -2069,10 +2078,10 @@
     "message": "Ok"
   },
   "errorRefreshingAccessToken": {
-    "message": "Access Token Refresh Error"
+    "message": "Juurdepääsukoodi Värskendamine Ebaõnnestus"
   },
   "errorRefreshingAccessTokenDesc": {
-    "message": "No refresh token or API keys found. Please try logging out and logging back in."
+    "message": "Ei leidnud värskendamise koodi või API võtit. Palun proovi logida välja ja uuesti sisse."
   },
   "desktopSyncVerificationTitle": {
     "message": "Töölaua sünkroonimise kinnitamine"
@@ -4300,8 +4309,11 @@
   "enterprisePolicyRequirementsApplied": {
     "message": "Enterprise policy requirements have been applied to this setting"
   },
-  "additionalContentAvailable": {
-    "message": "Additional content is available"
+  "showCharacterCount": {
+    "message": "Show character count"
+  },
+  "hideCharacterCount": {
+    "message": "Hide character count"
   },
   "itemsInTrash": {
     "message": "Items in trash"

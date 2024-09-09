@@ -1796,6 +1796,15 @@
   "noPasswordsInList": {
     "message": "Няма пароли за показване."
   },
+  "clearHistory": {
+    "message": "Изчистване на историята"
+  },
+  "noPasswordsToShow": {
+    "message": "Няма пароли за показване"
+  },
+  "noRecentlyGeneratedPassword": {
+    "message": "Скоро не сте генерирали пароли"
+  },
   "remove": {
     "message": "Премахване"
   },
@@ -4300,8 +4309,11 @@
   "enterprisePolicyRequirementsApplied": {
     "message": "Изискванията на политиката за големи компании бяха приложени към тази настройка"
   },
-  "additionalContentAvailable": {
-    "message": "Има налично допълнително съдържание"
+  "showCharacterCount": {
+    "message": "Показване на броя знаци"
+  },
+  "hideCharacterCount": {
+    "message": "Скриване на броя знаци"
   },
   "itemsInTrash": {
     "message": "Елементи в кошчето"

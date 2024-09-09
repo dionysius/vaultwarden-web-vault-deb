@@ -1796,6 +1796,15 @@
   "noPasswordsInList": {
     "message": "Keine Einträge zum Anzeigen vorhanden."
   },
+  "clearHistory": {
+    "message": "Clear history"
+  },
+  "noPasswordsToShow": {
+    "message": "No passwords to show"
+  },
+  "noRecentlyGeneratedPassword": {
+    "message": "You haven't generated a password recently"
+  },
   "remove": {
     "message": "Entfernen"
   },
@@ -3478,7 +3487,7 @@
     "message": "Überprüfung durch die initiierende Website erforderlich. Diese Funktion ist noch nicht für Konten ohne Master-Passwort implementiert."
   },
   "logInWithPasskeyQuestion": {
-    "message": "Log in with passkey?"
+    "message": "Mit Passkey anmelden?"
   },
   "passkeyAlreadyExists": {
     "message": "Für diese Anwendung existiert bereits ein Passkey."
@@ -3490,7 +3499,7 @@
     "message": "Du hast keinen passenden Zugangsdaten für diese Website."
   },
   "noMatchingLoginsForSite": {
-    "message": "No matching logins for this site"
+    "message": "Keine passenden Zugangsdaten für diese Seite"
   },
   "confirm": {
     "message": "Bestätigen"
@@ -3502,10 +3511,10 @@
     "message": "Passkey als neue Zugangsdaten speichern"
   },
   "chooseCipherForPasskeySave": {
-    "message": "Choose a login to save this passkey to"
+    "message": "Wähle die Zugangsdaten aus, in die dieser Passkey gespeichert werden soll"
   },
   "chooseCipherForPasskeyAuth": {
-    "message": "Choose a passkey to log in with"
+    "message": "Wähle einen Passkey zum Anmelden"
   },
   "passkeyItem": {
     "message": "Passkey-Eintrag"
@@ -4300,8 +4309,11 @@
   "enterprisePolicyRequirementsApplied": {
     "message": "Unternehmens-Richtlinienanforderungen wurden auf diese Einstellung angewandt"
   },
-  "additionalContentAvailable": {
-    "message": "Zusätzlicher Inhalt ist verfügbar"
+  "showCharacterCount": {
+    "message": "Zeichenanzahl anzeigen"
+  },
+  "hideCharacterCount": {
+    "message": "Zeichenanzahl ausblenden"
   },
   "itemsInTrash": {
     "message": "Einträge im Papierkorb"

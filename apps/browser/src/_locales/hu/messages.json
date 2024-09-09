@@ -1796,6 +1796,15 @@
   "noPasswordsInList": {
     "message": "Nincsenek listázható jelszavak."
   },
+  "clearHistory": {
+    "message": "Előzmények törlése"
+  },
+  "noPasswordsToShow": {
+    "message": "Nincsenek megjeleníthető jelszavak."
+  },
+  "noRecentlyGeneratedPassword": {
+    "message": "Mostanában nem lett jelszó generálva."
+  },
   "remove": {
     "message": "Eltávolítás"
   },
@@ -4300,8 +4309,11 @@
   "enterprisePolicyRequirementsApplied": {
     "message": "Erre a beállításra a vállalkozás rendszabály követelmények lettek alkalmazva."
   },
-  "additionalContentAvailable": {
-    "message": "Additional content is available"
+  "showCharacterCount": {
+    "message": "Karakterszámláló megjelenítése"
+  },
+  "hideCharacterCount": {
+    "message": "Karakterszámláló elrejtése"
   },
   "itemsInTrash": {
     "message": "elem van a lomtárban."

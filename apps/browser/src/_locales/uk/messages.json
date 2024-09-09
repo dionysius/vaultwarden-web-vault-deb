@@ -1796,6 +1796,15 @@
   "noPasswordsInList": {
     "message": "Немає паролів."
   },
+  "clearHistory": {
+    "message": "Clear history"
+  },
+  "noPasswordsToShow": {
+    "message": "No passwords to show"
+  },
+  "noRecentlyGeneratedPassword": {
+    "message": "You haven't generated a password recently"
+  },
   "remove": {
     "message": "Вилучити"
   },
@@ -3478,7 +3487,7 @@
     "message": "Сайт ініціює обов'язкову верифікацію. Ця функція ще не реалізована для облікових записів без головного пароля."
   },
   "logInWithPasskeyQuestion": {
-    "message": "Log in with passkey?"
+    "message": "Увійти з ключем доступу?"
   },
   "passkeyAlreadyExists": {
     "message": "Ключ доступу для цієї програми вже існує."
@@ -3490,7 +3499,7 @@
     "message": "У вас немає відповідних записів для цього сайту."
   },
   "noMatchingLoginsForSite": {
-    "message": "No matching logins for this site"
+    "message": "Немає відповідних записів для цього сайту"
   },
   "confirm": {
     "message": "Підтвердити"
@@ -3502,10 +3511,10 @@
     "message": "Зберегти ключ доступу як новий запис"
   },
   "chooseCipherForPasskeySave": {
-    "message": "Choose a login to save this passkey to"
+    "message": "Виберіть запис для збереження цього ключа доступу"
   },
   "chooseCipherForPasskeyAuth": {
-    "message": "Choose a passkey to log in with"
+    "message": "Виберіть ключ доступу для входу"
   },
   "passkeyItem": {
     "message": "Ключ доступу"
@@ -4300,8 +4309,11 @@
   "enterprisePolicyRequirementsApplied": {
     "message": "До цього налаштування застосовано вимоги політики компанії"
   },
-  "additionalContentAvailable": {
-    "message": "Доступний додатковий вміст"
+  "showCharacterCount": {
+    "message": "Показати кількість символів"
+  },
+  "hideCharacterCount": {
+    "message": "Приховати кількість символів"
   },
   "itemsInTrash": {
     "message": "Записи в смітнику"

@@ -1796,6 +1796,15 @@
   "noPasswordsInList": {
     "message": "没有可列出的密码。"
   },
+  "clearHistory": {
+    "message": "Clear history"
+  },
+  "noPasswordsToShow": {
+    "message": "No passwords to show"
+  },
+  "noRecentlyGeneratedPassword": {
+    "message": "You haven't generated a password recently"
+  },
   "remove": {
     "message": "移除"
   },
@@ -4300,8 +4309,11 @@
   "enterprisePolicyRequirementsApplied": {
     "message": "企业策略要求已应用于此设置"
   },
-  "additionalContentAvailable": {
-    "message": "其他内容可用"
+  "showCharacterCount": {
+    "message": "显示字符计数"
+  },
+  "hideCharacterCount": {
+    "message": "隐藏字符计数"
   },
   "itemsInTrash": {
     "message": "回收站中的项目"

@@ -1796,6 +1796,15 @@
   "noPasswordsInList": {
     "message": "Sadalanacaq heç bir parol yoxdur."
   },
+  "clearHistory": {
+    "message": "Clear history"
+  },
+  "noPasswordsToShow": {
+    "message": "No passwords to show"
+  },
+  "noRecentlyGeneratedPassword": {
+    "message": "You haven't generated a password recently"
+  },
   "remove": {
     "message": "Çıxart"
   },
@@ -4300,8 +4309,11 @@
   "enterprisePolicyRequirementsApplied": {
     "message": "Müəssisə siyasət tələbləri bu ayara tətbiq edildi"
   },
-  "additionalContentAvailable": {
-    "message": "Əlavə məzmun əlçatandır"
+  "showCharacterCount": {
+    "message": "Xarakter sayını göstər"
+  },
+  "hideCharacterCount": {
+    "message": "Xarakter sayını gizlət"
   },
   "itemsInTrash": {
     "message": "Tullantıdakı elementlər"

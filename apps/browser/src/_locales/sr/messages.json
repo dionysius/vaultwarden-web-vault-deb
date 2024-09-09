@@ -1796,6 +1796,15 @@
   "noPasswordsInList": {
     "message": "Нема лозинки у листи."
   },
+  "clearHistory": {
+    "message": "Clear history"
+  },
+  "noPasswordsToShow": {
+    "message": "No passwords to show"
+  },
+  "noRecentlyGeneratedPassword": {
+    "message": "You haven't generated a password recently"
+  },
   "remove": {
     "message": "Уклони"
   },
@@ -4300,8 +4309,11 @@
   "enterprisePolicyRequirementsApplied": {
     "message": "Захтеви политике предузећа су примењени на ово подешавање"
   },
-  "additionalContentAvailable": {
-    "message": "Додатни садржај је доступан"
+  "showCharacterCount": {
+    "message": "Show character count"
+  },
+  "hideCharacterCount": {
+    "message": "Hide character count"
   },
   "itemsInTrash": {
     "message": "Ставке у смећу"

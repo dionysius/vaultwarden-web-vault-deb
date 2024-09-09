@@ -1796,6 +1796,15 @@
   "noPasswordsInList": {
     "message": "Нет паролей для отображения."
   },
+  "clearHistory": {
+    "message": "Очистить историю"
+  },
+  "noPasswordsToShow": {
+    "message": "Нет паролей для отображения"
+  },
+  "noRecentlyGeneratedPassword": {
+    "message": "Нет недавно сгенерированных паролей"
+  },
   "remove": {
     "message": "Удалить"
   },
@@ -4300,8 +4309,11 @@
   "enterprisePolicyRequirementsApplied": {
     "message": "К этой настройке были применены требования корпоративной политики"
   },
-  "additionalContentAvailable": {
-    "message": "Дополнительный контент доступен"
+  "showCharacterCount": {
+    "message": "Показать количество символов"
+  },
+  "hideCharacterCount": {
+    "message": "Скрыть количество символов"
   },
   "itemsInTrash": {
     "message": "Элементы в корзине"
