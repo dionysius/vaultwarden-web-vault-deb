@@ -49,19 +49,19 @@
     "message": "Vjerodajnice za prijavu"
   },
   "personalDetails": {
-    "message": "Personal details"
+    "message": "Osobni podaci"
   },
   "identification": {
-    "message": "Identification"
+    "message": "Identifikacija"
   },
   "contactInfo": {
-    "message": "Contact info"
+    "message": "Kontakt podaci"
   },
   "cardDetails": {
-    "message": "Card details"
+    "message": "Detalji kartice"
   },
   "cardBrandDetails": {
-    "message": "$BRAND$ details",
+    "message": "$BRAND$ detalji",
     "placeholders": {
       "brand": {
         "content": "$1",
@@ -70,7 +70,7 @@
     }
   },
   "itemHistory": {
-    "message": "Item history"
+    "message": "Povijest stavke"
   },
   "authenticatorKey": {
     "message": "Kôd za provjeru"
@@ -464,7 +464,7 @@
     "message": "Ime i prezime"
   },
   "address": {
-    "message": "Address"
+    "message": "Adresa"
   },
   "address1": {
     "message": "Adresa 1"
@@ -9050,8 +9050,11 @@
     "message": "Javni API",
     "description": "The text, 'API', is an acronymn and should not be translated."
   },
-  "additionalContentAvailable": {
-    "message": "Dostupan je dodatni sadržaj"
+  "showCharacterCount": {
+    "message": "Show character count"
+  },
+  "hideCharacterCount": {
+    "message": "Hide character count"
   },
   "editAccess": {
     "message": "Uredi pristup"

@@ -49,19 +49,19 @@
     "message": "Облікові дані для входу"
   },
   "personalDetails": {
-    "message": "Personal details"
+    "message": "Особисті дані"
   },
   "identification": {
-    "message": "Identification"
+    "message": "Ідентифікація"
   },
   "contactInfo": {
-    "message": "Contact info"
+    "message": "Контактні дані"
   },
   "cardDetails": {
-    "message": "Card details"
+    "message": "Подробиці картки"
   },
   "cardBrandDetails": {
-    "message": "$BRAND$ details",
+    "message": "Подробиці $BRAND$",
     "placeholders": {
       "brand": {
         "content": "$1",
@@ -70,7 +70,7 @@
     }
   },
   "itemHistory": {
-    "message": "Item history"
+    "message": "Історія запису"
   },
   "authenticatorKey": {
     "message": "Ключ автентифікації"
@@ -464,7 +464,7 @@
     "message": "Повне ім'я"
   },
   "address": {
-    "message": "Address"
+    "message": "Адреса"
   },
   "address1": {
     "message": "Адреса 1"
@@ -9050,8 +9050,11 @@
     "message": "Відкритий API",
     "description": "The text, 'API', is an acronymn and should not be translated."
   },
-  "additionalContentAvailable": {
-    "message": "Доступний додатковий вміст"
+  "showCharacterCount": {
+    "message": "Показати кількість символів"
+  },
+  "hideCharacterCount": {
+    "message": "Приховати кількість символів"
   },
   "editAccess": {
     "message": "Редагувати доступ"

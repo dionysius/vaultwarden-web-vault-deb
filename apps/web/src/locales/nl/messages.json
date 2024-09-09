@@ -9050,8 +9050,11 @@
     "message": "Openbare API",
     "description": "The text, 'API', is an acronymn and should not be translated."
   },
-  "additionalContentAvailable": {
-    "message": "Extra inhoud beschikbaar"
+  "showCharacterCount": {
+    "message": "Aantal tekens weergeven"
+  },
+  "hideCharacterCount": {
+    "message": "Aantal tekens verbergen"
   },
   "editAccess": {
     "message": "Toegang bewerken"

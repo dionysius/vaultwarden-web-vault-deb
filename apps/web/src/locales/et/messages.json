@@ -52,10 +52,10 @@
     "message": "Isikuandmed"
   },
   "identification": {
-    "message": "Identification"
+    "message": "Tuvastamine"
   },
   "contactInfo": {
-    "message": "Contact info"
+    "message": "Kontaktinfo"
   },
   "cardDetails": {
     "message": "Pangakaardi detailid"
@@ -756,7 +756,7 @@
     "message": "Aegunud link"
   },
   "pleaseRestartRegistrationOrTryLoggingIn": {
-    "message": "Please restart registration or try logging in."
+    "message": "Palun alusta uuesti registreerimist või proovi sisse logida."
   },
   "youMayAlreadyHaveAnAccount": {
     "message": "Sul on võib-olla juba konto"
@@ -837,7 +837,7 @@
     "message": "Kasuta hoidla krüpteerimiseks"
   },
   "useForVaultEncryptionInfo": {
-    "message": "Log in and unlock on supported devices without your master password. Follow the prompts from your browser to finalize setup."
+    "message": "Kasuta toetatud seadmetel sisselogimis- ja avamisfunktsioone ilma ülemparoolita. Järgi brauseri juhiseid, et lõpetada seadistus."
   },
   "useForVaultEncryptionErrorReadingPasskey": {
     "message": "Ei õnnestunud pääsuvõtit lugeda. Proovi uuesti või tühjendage see valik."
@@ -849,7 +849,7 @@
     "message": "Seadista krüpteerimine"
   },
   "usedForEncryption": {
-    "message": "Used for encryption"
+    "message": "Kasutatakse krüpteerimiseks"
   },
   "loginWithPasskeyEnabled": {
     "message": "Logi sisse pääsuvõti sisse lülitatult"
@@ -1253,10 +1253,10 @@
     "message": "Kopeeri UUID"
   },
   "errorRefreshingAccessToken": {
-    "message": "Access Token Refresh Error"
+    "message": "Juurdepääsukoodi Värskendamine Ebaõnnestus"
   },
   "errorRefreshingAccessTokenDesc": {
-    "message": "No refresh token or API keys found. Please try logging out and logging back in."
+    "message": "Ei leidnud värskendamise koodi või API võtit. Palun proovi logida välja ja uuesti sisse."
   },
   "warning": {
     "message": "Hoiatus"
@@ -1283,7 +1283,7 @@
     "message": "Ekspordi"
   },
   "exportFrom": {
-    "message": "Ekspordi vorm"
+    "message": "Export from"
   },
   "exportVault": {
     "message": "Hoidla sisu eksportimine"
@@ -2474,7 +2474,7 @@
     "message": "Tellimuse haldamine"
   },
   "launchCloudSubscription": {
-    "message": "Launch Cloud Subscription"
+    "message": "Ühenda Tasuline Tellimus"
   },
   "storage": {
     "message": "Salvestusruum"
@@ -2573,7 +2573,7 @@
     "message": "Võta klienditoega ühendust"
   },
   "contactSupportShort": {
-    "message": "Võta kasutajatoega ühendust"
+    "message": "Klienditugi"
   },
   "updatedPaymentMethod": {
     "message": "Maksemeetod on muudetud."
@@ -3001,7 +3001,7 @@
     "message": "Anna Juurdepääs"
   },
   "addAccessFilter": {
-    "message": "Add Access Filter"
+    "message": "Piira Juurdepääsu"
   },
   "refresh": {
     "message": "Värskenda"
@@ -3451,7 +3451,7 @@
     "message": "Seade"
   },
   "creatingAccountOn": {
-    "message": "Creating account on"
+    "message": "Konto loomise asukoht"
   },
   "checkYourEmail": {
     "message": "Kontrolli oma e-posti"
@@ -3586,7 +3586,7 @@
     "message": "Pääsed organisatsiooni kirjetele ligi niipea, kui administraator sinu liikmelisuse kinnitab. Teavitame sind sellest e-posti teel."
   },
   "inviteInitAcceptedDesc": {
-    "message": "You can now access this organization."
+    "message": "Sul on nüüd ligipääs sellele organisatsioonile."
   },
   "inviteAcceptFailed": {
     "message": "Kutse vastuvõtmine nurjus. Palu organisatsiooni administraatoril uus kutse saata."
@@ -3625,7 +3625,7 @@
     "message": "Oled avaldanud soovi oma Bitwardeni konto kustutamiseks. Selle kinnitamiseks kliki allolevale nupule."
   },
   "deleteRecoverOrgConfirmDesc": {
-    "message": "You have requested to delete your Bitwarden organization."
+    "message": "Kas sa oled kindel, et soovid kustudada oma Bitwardeni organisatsiooni?"
   },
   "myOrganization": {
     "message": "Minu organisatsioon"
@@ -3754,14 +3754,14 @@
     "message": "Määra maksimaalne kasutajate limiit. Limiidi täitumisel ei saa enam uusi kasutajaid kutsuda."
   },
   "limitSmSubscriptionDesc": {
-    "message": "Set a seat limit for your Secrets Manager subscription. Once this limit is reached, you will not be able to invite new members."
+    "message": "Määra maksimaalne Secrets Manageri kasutajate limiit. Limiidi täitumisel ei saa enam uusi liikmeid kutsuda."
   },
   "maxSeatLimit": {
-    "message": "Maksimaalne kasutajate limiit (valikuline)",
+    "message": "Kasutajate limiit (valikuline)",
     "description": "Upper limit of seats to allow through autoscaling"
   },
   "maxSeatCost": {
-    "message": "Max potential seat cost"
+    "message": "Suurim võimalik hind inimese kohta"
   },
   "addSeats": {
     "message": "Lisa kasutajaid",
@@ -3772,7 +3772,7 @@
     "description": "Seat = User Seat"
   },
   "subscriptionDesc": {
-    "message": "Adjustments to your subscription will result in prorated changes to your billing totals. If newly invited users exceed your subscription seats, you will immediately receive a prorated charge for the additional users."
+    "message": "Muudatused sinu tellimusele kajastuvad arve lõppsummas. Kui sinu kasutajate arv ületab tellimuse kohtade arvu, saad kohe arve uute kasutajate eest."
   },
   "subscriptionUserSeats": {
     "message": "Sinu tellimus lubab kasutada/luua kokku $COUNT$ kasutajakontot.",
@@ -3784,34 +3784,34 @@
     }
   },
   "limitSubscription": {
-    "message": "Limit subscription (optional)"
+    "message": "Määra kasutajate ülempiir (valikuline)"
   },
   "subscriptionSeats": {
-    "message": "Subscription seats"
+    "message": "Tellimuse kasutajate arv"
   },
   "subscriptionUpdated": {
-    "message": "Subscription updated"
+    "message": "Tellimus uuendatud"
   },
   "subscribedToSecretsManager": {
-    "message": "Subscription updated. You now have access to Secrets Manager."
+    "message": "Tellimus uuendatud. Nüüd on sul ligipääs Secrets Managerile."
   },
   "additionalOptions": {
     "message": "Lisavalikud"
   },
   "additionalOptionsDesc": {
-    "message": "For additional help in managing your subscription, please contact Customer Support."
+    "message": "Küsimustega seoses oma tellimuse haldamisega kontakteeruge Kasutajatoega."
   },
   "subscriptionUserSeatsUnlimitedAutoscale": {
-    "message": "Adjustments to your subscription will result in prorated changes to your billing totals. If newly invited members exceed your subscription seats, you will immediately receive a prorated charge for the additional members."
+    "message": "Muudatused sinu tellimusele kajastuvad arve lõppsummas. Kui sinu liikmete arv ületab tellimuse kohtade arvu, saad kohe arve uute liikmete eest."
   },
   "smStandaloneTrialSeatCountUpdateMessageFragment1": {
-    "message": "If you want to add additional"
+    "message": "Kui sa soovid lisada tootesse"
   },
   "smStandaloneTrialSeatCountUpdateMessageFragment2": {
-    "message": "seats without the bundled offer, please contact"
+    "message": "teisi liikmeid ilma teiste pakkumisteta, võta ühendust osakonnaga"
   },
   "subscriptionUserSeatsLimitedAutoscale": {
-    "message": "Adjustments to your subscription will result in prorated changes to your billing totals. If newly invited members exceed your subscription seats, you will immediately receive a prorated charge for the additional members until your $MAX$ seat limit is reached.",
+    "message": "Muudatused sinu tellimusele kajastuvad arve lõppsummas. Kui sinu liikmete arv ületab tellimuse kohtade arvu, saad kohe arve uute liikmete eest, kuni su maksimaalne liikmete arv ($MAX$) on saavutatud.",
     "placeholders": {
       "max": {
         "content": "$1",
@@ -3820,7 +3820,7 @@
     }
   },
   "subscriptionUserSeatsWithoutAdditionalSeatsOption": {
-    "message": "You can invite up to $COUNT$ members for no additional charge. Contact Customer Support to upgrade your plan and invite more members.",
+    "message": "Sa saad kutsuda tasuta kuni $COUNT$ liiget. Kontakteeru kasutajatoega, et muuta oma tellimust ja kutsuda veel rohkem liikmeid.",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -3829,7 +3829,7 @@
     }
   },
   "subscriptionFreePlan": {
-    "message": "You cannot invite more than $COUNT$ members without upgrading your plan.",
+    "message": "Sa ei saa kutsuda rohkem kui $COUNT$ liiget ilma oma tellimust muutmata.",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -3838,7 +3838,7 @@
     }
   },
   "subscriptionUpgrade": {
-    "message": "You cannot invite more than $COUNT$ members without upgrading your plan.",
+    "message": "Sa ei saa kutsuda rohkem kui $COUNT$ liiget ilma oma tellimust muutmata.",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -3847,7 +3847,7 @@
     }
   },
   "subscriptionSponsoredFamiliesPlan": {
-    "message": "Your subscription allows for a total of $COUNT$ members. Your plan is sponsored and billed to an external organization.",
+    "message": "Sinu tellimust saab kasutada korraga kuni $COUNT$ liiget. Seda tellimust haldab väline organisatsioon.",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -3856,7 +3856,7 @@
     }
   },
   "subscriptionMaxReached": {
-    "message": "Adjustments to your subscription will result in prorated changes to your billing totals. You cannot invite more than $COUNT$ members without increasing your subscription seats.",
+    "message": "Muudatused sinu tellimusele kajastuvad arve lõppsummas. Sa ei saa kutsuda rohkem kui $COUNT$ liiget ilma oma tellimuse kasutajate arvu suurendamata.",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -3865,7 +3865,7 @@
     }
   },
   "subscriptionSeatMaxReached": {
-    "message": "You cannot invite more than $COUNT$ members without increasing your subscription seats.",
+    "message": "Sa ei saa kutsuda rohkem kui $COUNT$ liiget ilma oma tellimuse kasutajate arvu muutmata.",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -4009,19 +4009,19 @@
     "description": "ex. Date this password was updated"
   },
   "organizationIsDisabled": {
-    "message": "Organisatsioon on välja lülitatud."
+    "message": "Organisatsioon on määramata ajaks peatatud"
   },
   "secretsAccessSuspended": {
-    "message": "Suspended organizations cannot be accessed. Please contact your organization owner for assistance."
+    "message": "Peatatud organisatsioonidele ei ole võimalik ligi pääseda. Palun kontakteeruge oma organisatsiooni haldajaga."
   },
   "secretsCannotCreate": {
-    "message": "Secrets cannot be created in suspended organizations. Please contact your organization owner for assistance."
+    "message": "Peatatud organisatsioonidesse ei ole võimalik salvestada uusi IT-saladusi. Palun kontakteeruge oma organisatsiooni haldajaga."
   },
   "projectsCannotCreate": {
-    "message": "Projects cannot be created in suspended organizations. Please contact your organization owner for assistance."
+    "message": "Peatatud organisatsioonides ei ole võimalik luua uusi projekte. Palun kontakteeruge oma organisatsiooni haldajaga."
   },
   "serviceAccountsCannotCreate": {
-    "message": "Service accounts cannot be created in suspended organizations. Please contact your organization owner for assistance."
+    "message": "Peatatud organisatsioonides ei ole võimalik luua uusi kontosid. Palun kontakteeruge oma organisatsiooni haldajaga."
   },
   "disabledOrganizationFilterError": {
     "message": "Organisatsiooni alla kuuluvatele kirjetele ei ole ligipääsu. Kontakteeru oma organisatsiooni omanikuga."
@@ -4923,64 +4923,64 @@
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Learn more, see how it works, **or** try it now.'"
   },
   "developmentDevOpsAndITTeamsChooseBWSecret": {
-    "message": "Development, DevOps, and IT teams choose Bitwarden Secrets Manager to securely manage and deploy their infrastructure and machine secrets."
+    "message": "Arendus- ja IT-tiimid kasutavad Bitwarden Secrets Manageri, et turvaliselt hallata ja hoiustada oma infrastruktuuri ja süsteemide saladusi."
   },
   "centralizeSecretsManagement": {
-    "message": "Centralize secrets management."
+    "message": "Koguge IT-saladused ühte kohta."
   },
   "centralizeSecretsManagementDescription": {
-    "message": "Securely store and manage secrets in one location to prevent secret sprawl across your organization."
+    "message": "Hoiusta ja halda ohutult IT-saladusi ühes asukohas, et vältida nende kadumist organisatsioonis laiali valgudes."
   },
   "preventSecretLeaks": {
-    "message": "Prevent secret leaks."
+    "message": "Väldi saladuste lekkimist."
   },
   "preventSecretLeaksDescription": {
-    "message": "Protect secrets with end-to-end encryption. No more hard coding secrets or sharing through .env files."
+    "message": "Kaitse IT-saladusi täieliku krüpteerimisega. Ütle ei nende koodibaasi lisamisele või jagamisele läbi .env failide."
   },
   "enhanceDeveloperProductivity": {
-    "message": "Enhance developer productivity."
+    "message": "Paranda programmeerijate ja arendajate produktiivsust."
   },
   "enhanceDeveloperProductivityDescription": {
-    "message": "Programmatically retrieve and deploy secrets at runtime so developers can focus on what matters most, like improving code quality."
+    "message": "Kasuta IT-saladusi otse läbi programmi ja loo uusi saladusi masinat peatamata, nii et arendajad saavad keskenduda sellele, mis on kõige tähtsam, näiteks vigade parandamisele."
   },
   "strengthenBusinessSecurity": {
-    "message": "Strengthen business security."
+    "message": "Paranda firma turvalisust."
   },
   "strengthenBusinessSecurityDescription": {
-    "message": "Maintain tight control over machine and human access to secrets with SSO integrations, event logs, and access rotation."
+    "message": "Säilita kontroll masinate ja inimeste ligipääsu üle IT-saladustele läbi SSO kasutamise, sündmuste ajaloo ja ligipääsu uuendamise."
   },
   "tryItNow": {
-    "message": "Try it now"
+    "message": "Proovi kohe"
   },
   "sendRequest": {
-    "message": "Send request"
+    "message": "Saada taotlus"
   },
   "addANote": {
-    "message": "Add a note"
+    "message": "Lisa märge"
   },
   "bitwardenSecretsManager": {
     "message": "Bitwarden Secrets Manager"
   },
   "moreProductsFromBitwarden": {
-    "message": "More products from Bitwarden"
+    "message": "Veel tooteid Bitwardenilt"
   },
   "requestAccessToSecretsManager": {
-    "message": "Request access to Secrets Manager"
+    "message": "Esita taotlus Secrets Manageri kasutamiseks"
   },
   "youNeedApprovalFromYourAdminToTrySecretsManager": {
-    "message": "You need approval from your administrator to try Secrets Manager."
+    "message": "Sul on vaja enda administraatori nõusolekut Secrets Manageri proovimiseks."
   },
   "smAccessRequestEmailSent": {
-    "message": "Access request for secrets manager email sent to admins."
+    "message": "Secrets Manageri kasutamise taotlus saadetud administraatorile."
   },
   "requestAccessSMDefaultEmailContent": {
-    "message": "Hi,\n\nI am requesting a subscription to Bitwarden Secrets Manager for our team. Your support would mean a great deal!\n\nBitwarden Secrets Manager is an end-to-end encrypted secrets management solution for securely storing, sharing, and deploying machine credentials like API keys, database passwords, and authentication certificates.\n\nSecrets Manager will help us to:\n\n- Improve security\n- Streamline operations\n- Prevent costly secret leaks\n\nTo request a free trial for our team, please reach out to Bitwarden.\n\nThank you for your help!"
+    "message": "Tere!\n\nEsitan palve Bitwarden Secrets Manageri kasutamiseks meie tiimi jaoks. Teie toetus oleks meile suureks abiks!\n\nBitwarden Secrets Manager on täielikult krüpteeritud IT-saladuste (näiteks API võtmete, andmebaasi paroolide ja autentiteerimise sertifikaatide) haldamise lahendus, mis on mõeldud nende turvaliselt hoiustamiseks, jagamiseks ja kasutamiseks.\n\nSecrets Manager aitab meil:\n\n- Parandada turvalisust\n- Muuta toimingud sujuvamaks\n- Takistada võimalikke andmelekkeid\n\nEt esitada taotlus tasuta prooviajaks, palun kontakteeruge Bitwardeniga.\n\nSuur tänu teie abi eest!"
   },
   "giveMembersAccess": {
     "message": "Give members access:"
   },
   "viewAndSelectTheMembers": {
-    "message": "view and select the members you want to give access to Secrets Manager."
+    "message": "vaata ja vali liikmeid, kellele sa soovid anda ligipääsu Secrets Managerile."
   },
   "openYourOrganizations": {
     "message": "Open your organization's"
@@ -5271,10 +5271,10 @@
     "message": "Provider successfully set up"
   },
   "clients": {
-    "message": "Clients"
+    "message": "Kliendid"
   },
   "client": {
-    "message": "Client",
+    "message": "Klient",
     "description": "This is used as a table header to describe which client application created an event log."
   },
   "providerAdmin": {
@@ -5354,7 +5354,7 @@
     }
   },
   "providerIsDisabled": {
-    "message": "Provider suspended"
+    "message": "Teenusepakkuja on peatatud määramata ajaks"
   },
   "providerUpdated": {
     "message": "Provider saved"
@@ -5627,43 +5627,43 @@
     "message": "Single sign-on configuration saved"
   },
   "sponsoredFamilies": {
-    "message": "Free Bitwarden Families"
+    "message": "Tasuta Bitwarden Families pakett"
   },
   "sponsoredFamiliesEligible": {
-    "message": "You and your family are eligible for Free Bitwarden Families. Redeem with your personal email to keep your data secure even when you are not at work."
+    "message": "Sina ja su pere olete valitud tasuta Bitwarden Families paketi saamiseks. Lunasta see läbi oma emaili, et hoida oma andmed ohutus kohas isegi kui sa ei ole tööl."
   },
   "sponsoredFamiliesEligibleCard": {
-    "message": "Redeem your Free Bitwarden for Families plan today to keep your data secure even when you are not at work."
+    "message": "Lunasta tasuta pakett Bitwarden for Families juba täna, et kaitsta oma andmeid isegi siis, kui sa ei ole tööl."
   },
   "sponsoredFamiliesInclude": {
-    "message": "The Bitwarden for Families plan include"
+    "message": "Pakett Bitwarden for Families sisaldab"
   },
   "sponsoredFamiliesPremiumAccess": {
-    "message": "Premium access for up to 6 users"
+    "message": "Ligipääs Preemiumile kuni kuuele inimesele"
   },
   "sponsoredFamiliesSharedCollections": {
-    "message": "Shared collections for Family secrets"
+    "message": "Jagatud kogumikud pere saladuste talletamiseks"
   },
   "badToken": {
-    "message": "The link is no longer valid. Please have the sponsor resend the offer."
+    "message": "See link ei ole enam aktiivne. Uue lingi saamiseks kontakteeruge oma sponsoriga, et ta saadaks pakkumise uuesti."
   },
   "reclaimedFreePlan": {
-    "message": "Reclaimed free plan"
+    "message": "Uuendatud tasuta pakett"
   },
   "redeem": {
-    "message": "Redeem"
+    "message": "Lunasta"
   },
   "sponsoredFamiliesSelectOffer": {
-    "message": "Select the organization you would like sponsored"
+    "message": "Vali organisatsioon, mida soovid sponsoreerida"
   },
   "familiesSponsoringOrgSelect": {
-    "message": "Which Free Families offer would you like to redeem?"
+    "message": "Millist Free Families pakkumist soovid sa lunastada?"
   },
   "sponsoredFamiliesEmail": {
-    "message": "Enter your personal email to redeem Bitwarden Families"
+    "message": "Sisesta oma isiklik email, et lunastada Bitwarden Families"
   },
   "sponsoredFamiliesLeaveCopy": {
-    "message": "If you remove an offer or are removed from the sponsoring organization, your Families sponsorship will expire at the next renewal date."
+    "message": "Kui sa lõpetad pakkumise, või sind eemaldatakse sponsoreerivast organisatsioonist, siis sinu Families sponsorlus lõpetatakse perioodi lõpus."
   },
   "acceptBitwardenFamiliesHelp": {
     "message": "Accept offer for an existing organization or create a new Families organization."
@@ -5723,13 +5723,13 @@
     "message": "Recipient"
   },
   "removeSponsorship": {
-    "message": "Remove sponsorship"
+    "message": "Eemalda sponsorlus"
   },
   "removeSponsorshipConfirmation": {
-    "message": "After removing a sponsorship, you will be responsible for this subscription and related invoices. Are you sure you want to continue?"
+    "message": "Peale sponsorluse eemaldamist vastutad sa selle tellimusega seotud arvete eest. Kas oled kindel, et soovid jätkata?"
   },
   "sponsorshipCreated": {
-    "message": "Sponsorship created"
+    "message": "Sponsorlus loodud"
   },
   "emailSent": {
     "message": "E-kiri on saadetud"
@@ -5780,30 +5780,30 @@
     }
   },
   "leaveOrganization": {
-    "message": "Leave organization"
+    "message": "Lahku organisatsioonist"
   },
   "removeMasterPassword": {
-    "message": "Remove master password"
+    "message": "Eemalda ülemparool"
   },
   "removedMasterPassword": {
-    "message": "Master password removed"
+    "message": "Ülemparool eemaldatud"
   },
   "allowSso": {
-    "message": "Allow SSO authentication"
+    "message": "Lülita SSO autentiteerimine sisse"
   },
   "allowSsoDesc": {
     "message": "Once set up, your configuration will be saved and members will be able to authenticate using their Identity Provider credentials."
   },
   "ssoPolicyHelpStart": {
-    "message": "Use the",
+    "message": "Kasuta",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Use the require single-sign-on authentication policy to require all members to log in with SSO.'"
   },
   "ssoPolicyHelpAnchor": {
-    "message": "require single sign-on authentication policy",
+    "message": "\"nõua ühekordse sisselogimise autentimise (SSO) kasutamist\",",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Use the require single-sign-on authentication policy to require all members to log in with SSO.'"
   },
   "ssoPolicyHelpEnd": {
-    "message": "to require all members to log in with SSO.",
+    "message": "et nõuda liikmetelt SSO kasutamist.",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Use the require single-sign-on authentication policy to require all members to log in with SSO.'"
   },
   "memberDecryptionOption": {
@@ -5831,10 +5831,10 @@
     "message": "\"Login with SSO and Key Connector Decryption\" is activated. This policy will only apply to owners and admins."
   },
   "enabledSso": {
-    "message": "SSO turned on"
+    "message": "SSO sisse lülitatud"
   },
   "disabledSso": {
-    "message": "SSO turned on"
+    "message": "SSO välja lülitatud"
   },
   "enabledKeyConnector": {
     "message": "Key Connector activated"
@@ -5858,7 +5858,7 @@
     "message": "New Families organization"
   },
   "acceptOffer": {
-    "message": "Accept offer"
+    "message": "Nõustu pakkumisega"
   },
   "sponsoringOrg": {
     "message": "Sponsoring organization"
@@ -5969,16 +5969,16 @@
     "message": "Sent (awaiting sync)"
   },
   "sent": {
-    "message": "Sent"
+    "message": "Saadetud"
   },
   "requestRemoved": {
     "message": "Removed (awaiting sync)"
   },
   "requested": {
-    "message": "Requested"
+    "message": "Taotlus esitatud"
   },
   "formErrorSummaryPlural": {
-    "message": "$COUNT$ fields above need your attention.",
+    "message": "$COUNT$ välja nõuab tähelepanu.",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -5987,10 +5987,10 @@
     }
   },
   "formErrorSummarySingle": {
-    "message": "1 field above needs your attention."
+    "message": "1 väli nõuab tähelepanu."
   },
   "fieldRequiredError": {
-    "message": "$FIELDNAME$ is required.",
+    "message": "$FIELDNAME$ on nõutud.",
     "placeholders": {
       "fieldname": {
         "content": "$1",
@@ -5999,7 +5999,7 @@
     }
   },
   "required": {
-    "message": "required"
+    "message": "nõutud"
   },
   "charactersCurrentAndMaximum": {
     "message": "$CURRENT$/$MAX$ character maximum",
@@ -6326,7 +6326,7 @@
     "description": "Part of a URL."
   },
   "apiAccessToken": {
-    "message": "API ligipääsu märk"
+    "message": "API võti"
   },
   "deviceVerification": {
     "message": "Seadme kinnitamine"
@@ -6608,17 +6608,17 @@
     "description": "Action to delete a single secret from the system."
   },
   "deleteSecrets": {
-    "message": "Delete secrets",
+    "message": "Kustuta IT-saladusi",
     "description": "The action to delete multiple secrets from the system."
   },
   "hardDeleteSecret": {
     "message": "Permanently delete secret"
   },
   "hardDeleteSecrets": {
-    "message": "Permanently delete secrets"
+    "message": "Kustuta valitud jäädavalt"
   },
   "secretProjectAssociationDescription": {
-    "message": "Select projects that the secret will be associated with. Only organization users with access to these projects will be able to see the secret.",
+    "message": "Vali projektid, millega see saladus seotud on. Seda saladust saavad vaadata ainult organisatsiooni kasutajad ligipääsuga nendele projektidele.",
     "description": "A prompt explaining how secrets can be associated with projects."
   },
   "selectProjects": {
@@ -6630,7 +6630,7 @@
     "description": "Label for the search bar used to search projects."
   },
   "project": {
-    "message": "Project",
+    "message": "Projekt",
     "description": "Similar to collections, projects can be used to group secrets."
   },
   "editProject": {
@@ -6662,11 +6662,11 @@
     "description": "The title for the section that deals with service accounts."
   },
   "secrets": {
-    "message": "Secrets",
+    "message": "IT-saladused",
     "description": "The title for the section of the application that deals with secrets."
   },
   "nameValuePair": {
-    "message": "Name/Value pair",
+    "message": "Nimi/Väärtus",
     "description": "Title for a name/ value pair. Secrets typically consist of a name and value pair."
   },
   "secretEdited": {
@@ -6686,15 +6686,15 @@
     "description": "Title for creating a new service account."
   },
   "secretsNoItemsTitle": {
-    "message": "No secrets to show",
+    "message": "Siin ei ole ühtegi saladust",
     "description": "Empty state to indicate that there are no secrets to display."
   },
   "secretsNoItemsMessage": {
-    "message": "To get started, add a new secret or import secrets.",
+    "message": "Alustamiseks loo uus IT-saladus või kasuta meie importimise funktsiooni.",
     "description": "Message to encourage the user to start adding secrets."
   },
   "secretsTrashNoItemsMessage": {
-    "message": "There are no secrets in the trash."
+    "message": "Prügikast on tühi."
   },
   "serviceAccountsNoItemsMessage": {
     "message": "Create a new service account to get started automating secret access.",
@@ -6705,7 +6705,7 @@
     "description": "Title to indicate that there are no service accounts to display."
   },
   "searchSecrets": {
-    "message": "Search secrets",
+    "message": "Otsi IT-saladusi",
     "description": "Placeholder text for searching secrets."
   },
   "deleteServiceAccounts": {
@@ -6780,21 +6780,21 @@
     "description": "Title for creating a new project."
   },
   "softDeleteSecretWarning": {
-    "message": "Deleting secrets can affect existing integrations.",
+    "message": "IT-saladuste kustutamine võib mõjuta ühendatud süsteeme.",
     "description": "Warns that deleting secrets can have consequences on integrations"
   },
   "softDeletesSuccessToast": {
-    "message": "Secrets sent to trash",
+    "message": "IT-saladused prügikasti teisaldatud",
     "description": "Notifies that the selected secrets have been moved to the trash"
   },
   "hardDeleteSecretConfirmation": {
     "message": "Are you sure you want to permanently delete this secret?"
   },
   "hardDeleteSecretsConfirmation": {
-    "message": "Are you sure you want to permanently delete these secrets?"
+    "message": "Kas sa oled kindel, et soovid kustutada need IT-saladused?"
   },
   "hardDeletesSuccessToast": {
-    "message": "Secrets permanently deleted"
+    "message": "IT-saladused lõplikult kustutatud"
   },
   "smAccess": {
     "message": "Access",
@@ -6817,7 +6817,7 @@
     "description": "Notifies that a service account has been updated"
   },
   "newSaSelectAccess": {
-    "message": "Type or select projects or secrets",
+    "message": "Trüki või vali mõni projekt või saladus",
     "description": "Instructions for selecting projects or secrets for a new service account"
   },
   "newSaTypeToFilter": {
@@ -6881,7 +6881,7 @@
     "description": "Empty state to be displayed when there are no projects to display in the list."
   },
   "projectsNoItemsMessage": {
-    "message": "Add a new project to get started organizing secrets.",
+    "message": "Loo uus projekt, et alustada oma saladuste organiseerimisega.",
     "description": "Message to be displayed when there are no projects to display in the list."
   },
   "smConfirmationRequired": {
@@ -6940,7 +6940,7 @@
     "description": "Copies the generated access token to the user's clipboard."
   },
   "accessToken": {
-    "message": "Access token",
+    "message": "Juurdepääsuvõti",
     "description": "A unique string that gives a client application (eg. CLI) access to a secret or set of secrets."
   },
   "accessTokenExpirationRequired": {
@@ -6952,7 +6952,7 @@
     "description": "Notification to inform the user that the access token has been created and copied to the clipboard."
   },
   "revokeAccessToken": {
-    "message": "Revoke access token",
+    "message": "Eemalda juurdepääsuvõti",
     "description": "Invalidates / cancels an access token and as such removes access to secrets for the client application."
   },
   "revokeAccessTokens": {
@@ -7315,7 +7315,7 @@
     "message": "Exporting Organization Secret Data"
   },
   "exportingOrganizationSecretDataDescription": {
-    "message": "Only the Secrets Manager data associated with $ORGANIZATION$ will be exported. Items in other products or from other organizations will not be included.",
+    "message": "Ainult organisatsiooni $ORGANIZATION$ Secrets Manageri andmed eksporditakse. Kirjed teistes toodetes või organisatsioonides ei kuulu nende hulka.",
     "placeholders": {
       "ORGANIZATION": {
         "content": "$1",
@@ -7423,10 +7423,10 @@
     "message": "Secrets Manager"
   },
   "secretsManagerAccessDescription": {
-    "message": "Activate user access to Secrets Manager."
+    "message": "Anna kasutajale juurdepääs Secrets Managerile."
   },
   "userAccessSecretsManagerGA": {
-    "message": "This user can access Secrets Manager"
+    "message": "See kasutaja pääseb ligi Secrets Managerile"
   },
   "important": {
     "message": "Important:"
@@ -7482,14 +7482,14 @@
     "message": "Create a service account"
   },
   "downloadThe": {
-    "message": "Download the",
+    "message": "Lae alla",
     "description": "Link to a downloadable resource. This will be used as part of a larger phrase. Example: Download the Secrets Manager CLI"
   },
   "smCLI": {
     "message": "Secrets Manager CLI"
   },
   "importSecrets": {
-    "message": "Import secrets"
+    "message": "Impordi saladusi"
   },
   "getStarted": {
     "message": "Get started"
@@ -7511,19 +7511,19 @@
     "message": "Restore secret"
   },
   "restoreSecrets": {
-    "message": "Restore secrets"
+    "message": "Taasta saladusi"
   },
   "restoreSecretPrompt": {
     "message": "Are you sure you want to restore this secret?"
   },
   "restoreSecretsPrompt": {
-    "message": "Are you sure you want to restore these secrets?"
+    "message": "Kas sa oled kindel, et soovid taastada need saladused?"
   },
   "secretRestoredSuccessToast": {
     "message": "Secret restored"
   },
   "secretsRestoredSuccessToast": {
-    "message": "Secrets restored"
+    "message": "IT-saladused taastatud"
   },
   "selectionIsRequired": {
     "message": "Selection is required."
@@ -7593,7 +7593,7 @@
     "message": "This feature is not available for free organizations. Contact your organization owner to upgrade."
   },
   "smProjectSecretsNoItemsNoAccess": {
-    "message": "Contact your organization's admin to manage secrets for this project.",
+    "message": "Kontakteeruge oma organisatsiooni administraatoriga, et hallata selle projekti saladusi.",
     "description": "The message shown to the user under a project's secrets tab when the user only has read access to the project."
   },
   "enforceOnLoginDesc": {
@@ -7693,18 +7693,18 @@
     "message": "User updated a password issued through account recovery."
   },
   "activatedAccessToSecretsManager": {
-    "message": "Activated access to Secrets Manager",
+    "message": "Juurdepääs Secrets Managerile aktiveeritud",
     "description": "Confirmation message that one or more users gained access to Secrets Manager"
   },
   "activateAccess": {
     "message": "Activate access"
   },
   "bulkEnableSecretsManagerDescription": {
-    "message": "Grant the following members access to Secrets Manager. The role granted in the Password Manager will apply to Secrets Manager.",
+    "message": "Anna järgnevatele inimestele ligipääs Secrets Managerile. Password Manageris antud roll kehtib ka Secrets Managerile.",
     "description": "This description is shown to an admin when they are attempting to add more users to Secrets Manager."
   },
   "activateSecretsManager": {
-    "message": "Activate Secrets Manager"
+    "message": "Aktiveeri Secrets Manager"
   },
   "yourOrganizationsFingerprint": {
     "message": "Sinu organisatsiooni unikaalne sõnajada",
@@ -7798,7 +7798,7 @@
     }
   },
   "startYour7DayFreeTrialOfBitwardenSecretsManagerFor": {
-    "message": "Start your 7-Day free trial of Bitwarden Secrets Manager for $ORG$",
+    "message": "Alusta oma organisatsiooni $ORG$ 7-päevast tasuta Bitwarden Secrets Manageri katseperioodi",
     "placeholders": {
       "org": {
         "content": "$1",
@@ -7851,7 +7851,7 @@
     "message": "Invite Users"
   },
   "secretsManagerForPlan": {
-    "message": "Secrets Manager for $PLAN$",
+    "message": "Secrets Manager plaanile $PLAN$",
     "placeholders": {
       "plan": {
         "content": "$1",
@@ -7860,13 +7860,13 @@
     }
   },
   "secretsManagerForPlanDesc": {
-    "message": "For engineering and DevOps teams to manage secrets throughout the software development lifecycle."
+    "message": "Arendus- ja programmeerimistiimidele, et hallata saladusi läbi kogu tarkvara arendustsükli."
   },
   "free2PersonOrganization": {
     "message": "Free 2-person Organizations"
   },
   "unlimitedSecrets": {
-    "message": "Unlimited secrets"
+    "message": "Piiramatult IT-saladusi"
   },
   "unlimitedProjects": {
     "message": "Unlimited projects"
@@ -7899,10 +7899,10 @@
     }
   },
   "subscribeToSecretsManager": {
-    "message": "Subscribe to Secrets Manager"
+    "message": "Telli Secrets Manager"
   },
   "addSecretsManagerUpgradeDesc": {
-    "message": "Add Secrets Manager to your upgraded plan to maintain access to any secrets created with your previous plan."
+    "message": "Lisa Secrets Manager oma uude plaani, et säilitada juurdepääs kõigile eelmise plaaniga loodud saladustele."
   },
   "additionalServiceAccounts": {
     "message": "Additional service accounts"
@@ -7944,10 +7944,10 @@
     "message": "Password Manager plan price"
   },
   "secretsManagerPlanPrice": {
-    "message": "Secrets Manager plan price"
+    "message": "Secrets Manageri plaani hind"
   },
   "passwordManager": {
-    "message": "Password Manager"
+    "message": "Paroolihaldur"
   },
   "freeOrganization": {
     "message": "Free Organization"
@@ -8086,7 +8086,7 @@
     "message": "Confirmation details"
   },
   "smFreeTrialThankYou": {
-    "message": "Thank you for signing up for Bitwarden Secrets Manager!"
+    "message": "Aitäh registreerimast Bitwarden Secrets Manageri!"
   },
   "smFreeTrialConfirmationEmail": {
     "message": "We've sent a confirmation email to your email at "
@@ -8276,10 +8276,10 @@
     "description": "The date header used when a subscription is cancelled."
   },
   "machineAccountsCannotCreate": {
-    "message": "Machine accounts cannot be created in suspended organizations. Please contact your organization owner for assistance."
+    "message": "Peatatud organisatsioonides ei ole võimalik luua uusi kontosid arvutitele. Palun kontakteeruge oma organisatsiooni haldajaga."
   },
   "machineAccount": {
-    "message": "Machine account",
+    "message": "Arvuti konto",
     "description": "A machine user which can be used to automate processes and access secrets in the system."
   },
   "machineAccounts": {
@@ -8491,13 +8491,13 @@
     "message": "Integrations"
   },
   "integrationsDesc": {
-    "message": "Automatically sync secrets from Bitwarden Secrets Manager to a third-party service."
+    "message": "Sünkroniseeri enda Bitwarden Secrets Manageri saladusi kolmandate isikutega."
   },
   "sdks": {
     "message": "SDKs"
   },
   "sdksDesc": {
-    "message": "Use Bitwarden Secrets Manager SDK in the following programming languages to build your own applications."
+    "message": "Kasuta Bitwarden Secrets Manageri SDK järgnevates programmeerimiskeeltes, millega saad ehitada enda rakendusi."
   },
   "setUpGithubActions": {
     "message": "Set up Github Actions"
@@ -8590,16 +8590,16 @@
     "message": "Start your 7-Day free trial of Bitwarden for Enterprise"
   },
   "startYour7DayFreeTrialOfBitwardenSecretsManager": {
-    "message": "Start your 7-Day free trial of Bitwarden Secrets Manager"
+    "message": "Alusta oma 7-päevast prooviaega Bitwarden Secrets Manageriga"
   },
   "startYour7DayFreeTrialOfBitwardenSecretsManagerForTeams": {
-    "message": "Start your 7-Day free trial of Bitwarden Secrets Manager for Teams"
+    "message": "Alusta oma 7-päevast prooviaega Bitwarden Secrets Manageri ja plaaniga Teams"
   },
   "startYour7DayFreeTrialOfBitwardenSecretsManagerForFamilies": {
-    "message": "Start your 7-Day free trial of Bitwarden Secrets Manager for Families"
+    "message": "Alusta oma 7-päevast prooviaega Bitwarden Secrets Manageri ja plaaniga Families"
   },
   "startYour7DayFreeTrialOfBitwardenSecretsManagerForEnterprise": {
-    "message": "Start your 7-Day free trial of Bitwarden Secrets Manager for Enterprise"
+    "message": "Alusta oma 7-päevast prooviaega Bitwarden Secrets Manageri ja plaaniga Enterprise"
   },
   "startYour7DayFreeTrialOfBitwardenPasswordManager": {
     "message": "Start your 7-Day free trial of Bitwarden Password Manager"
@@ -8829,10 +8829,10 @@
     "message": "Download CSV"
   },
   "monthlySubscriptionUserSeatsMessage": {
-    "message": "Adjustments to your subscription will result in prorated charges to your billing totals on your next billing period. "
+    "message": "Muudatused sinu tellimusele kajastuvad järgmise perioodi arve lõppsummas. "
   },
   "annualSubscriptionUserSeatsMessage": {
-    "message": "Adjustments to your subscription will result in prorated charges on a monthly billing cycle. "
+    "message": "Muudatused sinu tellimusele kajastuvad igakuiselt arvete lõppsummades. "
   },
   "billingHistoryDescription": {
     "message": "Download a CSV to obtain client details for each billing date. Prorated charges are not included in the CSV and may vary from the linked invoice. For the most accurate billing details, refer to your monthly invoices.",
@@ -9023,7 +9023,7 @@
     "message": "Custom roles"
   },
   "unlimitedSecretsStorage": {
-    "message": "Unlimited secrets storage"
+    "message": "Piiramatult ruumi saladustele"
   },
   "unlimitedUsers": {
     "message": "Unlimited users"
@@ -9038,7 +9038,7 @@
     "message": "Current"
   },
   "secretsManagerSubInfo": {
-    "message": "Your Secrets Manager subscription will upgrade base on the plan selected"
+    "message": "Sinu Secrets Manageri tellimus uueneb vastavalt sinu valitud plaanile"
   },
   "bitwardenPasswordManager": {
     "message": "Bitwarden Password Manager"
@@ -9050,8 +9050,11 @@
     "message": "Public API",
     "description": "The text, 'API', is an acronymn and should not be translated."
   },
-  "additionalContentAvailable": {
-    "message": "Additional content is available"
+  "showCharacterCount": {
+    "message": "Show character count"
+  },
+  "hideCharacterCount": {
+    "message": "Hide character count"
   },
   "editAccess": {
     "message": "Edit access"

@@ -9050,8 +9050,11 @@
     "message": "Julkinen API",
     "description": "The text, 'API', is an acronymn and should not be translated."
   },
-  "additionalContentAvailable": {
-    "message": "Lisää sisältöä on saatavilla"
+  "showCharacterCount": {
+    "message": "Show character count"
+  },
+  "hideCharacterCount": {
+    "message": "Hide character count"
   },
   "editAccess": {
     "message": "Muokkaa käyttöoikeuksia"

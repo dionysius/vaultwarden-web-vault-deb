@@ -9050,8 +9050,11 @@
     "message": "公共 API",
     "description": "The text, 'API', is an acronymn and should not be translated."
   },
-  "additionalContentAvailable": {
-    "message": "其他内容可用"
+  "showCharacterCount": {
+    "message": "显示字符计数"
+  },
+  "hideCharacterCount": {
+    "message": "隐藏字符计数"
   },
   "editAccess": {
     "message": "编辑权限"

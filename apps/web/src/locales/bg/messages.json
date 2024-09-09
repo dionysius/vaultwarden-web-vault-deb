@@ -9050,8 +9050,11 @@
     "message": "Публичен ППИ",
     "description": "The text, 'API', is an acronymn and should not be translated."
   },
-  "additionalContentAvailable": {
-    "message": "Има налично допълнително съдържание"
+  "showCharacterCount": {
+    "message": "Показване на броя знаци"
+  },
+  "hideCharacterCount": {
+    "message": "Скриване на броя знаци"
   },
   "editAccess": {
     "message": "Редактиране на достъпа"

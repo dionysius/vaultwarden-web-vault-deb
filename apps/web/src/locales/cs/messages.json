@@ -9050,8 +9050,11 @@
     "message": "Veřejné API",
     "description": "The text, 'API', is an acronymn and should not be translated."
   },
-  "additionalContentAvailable": {
-    "message": "Je k dispozici další obsah"
+  "showCharacterCount": {
+    "message": "Zobrazit počet znaků"
+  },
+  "hideCharacterCount": {
+    "message": "Skrýt počet znaků"
   },
   "editAccess": {
     "message": "Upravit přístup"

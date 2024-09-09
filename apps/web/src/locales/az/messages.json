@@ -9050,8 +9050,11 @@
     "message": "Hər kəsə açıq API",
     "description": "The text, 'API', is an acronymn and should not be translated."
   },
-  "additionalContentAvailable": {
-    "message": "Əlavə məzmun əlçatandır"
+  "showCharacterCount": {
+    "message": "Xarakter sayını göstər"
+  },
+  "hideCharacterCount": {
+    "message": "Xarakter sayını gizlət"
   },
   "editAccess": {
     "message": "Müraciətə düzəliş et"

@@ -9050,8 +9050,11 @@
     "message": "API publique",
     "description": "The text, 'API', is an acronymn and should not be translated."
   },
-  "additionalContentAvailable": {
-    "message": "Du contenu supplémentaire est disponible"
+  "showCharacterCount": {
+    "message": "Afficher le nombre de caractères"
+  },
+  "hideCharacterCount": {
+    "message": "Cacher le nombre de caractères"
   },
   "editAccess": {
     "message": "Modifier l'accès"

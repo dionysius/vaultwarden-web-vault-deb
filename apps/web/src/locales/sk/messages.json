@@ -49,19 +49,19 @@
     "message": "Prihlasovacie údaje"
   },
   "personalDetails": {
-    "message": "Personal details"
+    "message": "Osobné údaje"
   },
   "identification": {
-    "message": "Identification"
+    "message": "Identifikácia"
   },
   "contactInfo": {
-    "message": "Contact info"
+    "message": "Kontaktné informácie"
   },
   "cardDetails": {
-    "message": "Card details"
+    "message": "Podrobnosti o karte"
   },
   "cardBrandDetails": {
-    "message": "$BRAND$ details",
+    "message": "Podrobnosti o $BRAND$",
     "placeholders": {
       "brand": {
         "content": "$1",
@@ -70,7 +70,7 @@
     }
   },
   "itemHistory": {
-    "message": "Item history"
+    "message": "História položky"
   },
   "authenticatorKey": {
     "message": "Kľúč overovacej aplikácie"
@@ -464,7 +464,7 @@
     "message": "Celé meno"
   },
   "address": {
-    "message": "Address"
+    "message": "Adresa"
   },
   "address1": {
     "message": "Adresa 1"
@@ -9050,8 +9050,11 @@
     "message": "Verejné API",
     "description": "The text, 'API', is an acronymn and should not be translated."
   },
-  "additionalContentAvailable": {
-    "message": "K dispozícii je ďalší obsah"
+  "showCharacterCount": {
+    "message": "Zobraziť počítadlo znakov"
+  },
+  "hideCharacterCount": {
+    "message": "Skryť počítadlo znakov"
   },
   "editAccess": {
     "message": "Upraviť prístup"

@@ -49,19 +49,19 @@
     "message": "Zugangsdaten"
   },
   "personalDetails": {
-    "message": "Personal details"
+    "message": "Persönliche Details"
   },
   "identification": {
-    "message": "Identification"
+    "message": "Identifikation"
   },
   "contactInfo": {
-    "message": "Contact info"
+    "message": "Kontaktinformation"
   },
   "cardDetails": {
-    "message": "Card details"
+    "message": "Kartendetails"
   },
   "cardBrandDetails": {
-    "message": "$BRAND$ details",
+    "message": "$BRAND$-Details",
     "placeholders": {
       "brand": {
         "content": "$1",
@@ -70,7 +70,7 @@
     }
   },
   "itemHistory": {
-    "message": "Item history"
+    "message": "Eintragsverlauf"
   },
   "authenticatorKey": {
     "message": "Authenticator-Schlüssel"
@@ -464,7 +464,7 @@
     "message": "Vollständiger Name"
   },
   "address": {
-    "message": "Address"
+    "message": "Adresse"
   },
   "address1": {
     "message": "Adresse 1"
@@ -9050,8 +9050,11 @@
     "message": "Öffentliche API",
     "description": "The text, 'API', is an acronymn and should not be translated."
   },
-  "additionalContentAvailable": {
-    "message": "Zusätzlicher Inhalt ist verfügbar"
+  "showCharacterCount": {
+    "message": "Zeichenanzahl anzeigen"
+  },
+  "hideCharacterCount": {
+    "message": "Zeichenanzahl ausblenden"
   },
   "editAccess": {
     "message": "Zugriff bearbeiten"

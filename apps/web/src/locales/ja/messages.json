@@ -9050,8 +9050,11 @@
     "message": "公開 API",
     "description": "The text, 'API', is an acronymn and should not be translated."
   },
-  "additionalContentAvailable": {
-    "message": "追加コンテンツが利用可能です"
+  "showCharacterCount": {
+    "message": "文字数を表示"
+  },
+  "hideCharacterCount": {
+    "message": "文字数を隠す"
   },
   "editAccess": {
     "message": "編集権限"
