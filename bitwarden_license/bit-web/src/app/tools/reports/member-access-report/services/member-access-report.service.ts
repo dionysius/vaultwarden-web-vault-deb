@@ -64,14 +64,25 @@ export class MemberAccessReportService {
 
     const exportItems = memberAccessReports.flatMap((report) => {
       const userDetails = report.accessDetails.map((detail) => {
+        const collectionName = collectionNameMap.get(detail.collectionName.encryptedString);
         return {
           email: report.email,
           name: report.userName,
-          twoStepLogin: report.twoFactorEnabled ? "On" : "Off",
-          accountRecovery: report.accountRecoveryEnabled ? "On" : "Off",
-          group: detail.groupName,
-          collection: collectionNameMap.get(detail.collectionName.encryptedString),
-          collectionPermission: this.getPermissionText(detail),
+          twoStepLogin: report.twoFactorEnabled
+            ? this.i18nService.t("memberAccessReportTwoFactorEnabledTrue")
+            : this.i18nService.t("memberAccessReportTwoFactorEnabledFalse"),
+          accountRecovery: report.accountRecoveryEnabled
+            ? this.i18nService.t("memberAccessReportAuthenticationEnabledTrue")
+            : this.i18nService.t("memberAccessReportAuthenticationEnabledFalse"),
+          group: detail.groupName
+            ? detail.groupName
+            : this.i18nService.t("memberAccessReportNoGroup"),
+          collection: collectionName
+            ? collectionName
+            : this.i18nService.t("memberAccessReportNoCollection"),
+          collectionPermission: detail.collectionId
+            ? this.getPermissionText(detail)
+            : this.i18nService.t("memberAccessReportNoCollection"),
           totalItems: detail.itemCount.toString(),
         };
       });

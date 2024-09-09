@@ -10,12 +10,12 @@ export type MemberAccessExportItem = {
 };
 
 export const userReportItemHeaders: { [key in keyof MemberAccessExportItem]: string } = {
-  email: "Email Address",
-  name: "Full Name",
+  email: "Email",
+  name: "Name",
   twoStepLogin: "Two-Step Login",
   accountRecovery: "Account Recovery",
-  group: "Group Name",
-  collection: "Collection Name",
+  group: "Group",
+  collection: "Collection",
   collectionPermission: "Collection Permission",
   totalItems: "Total Items",
 };
