@@ -3,6 +3,7 @@ import { firstValueFrom, map } from "rxjs";
 
 import { AuthenticationStatus } from "@bitwarden/common/auth/enums/authentication-status";
 import { FeatureFlag } from "@bitwarden/common/enums/feature-flag.enum";
+import { UserId } from "@bitwarden/common/types/guid";
 
 import { UnlockCommand } from "./auth/commands/unlock.command";
 import { Response } from "./models/response";
@@ -135,37 +136,55 @@ export abstract class BaseProgram {
 
   protected async exitIfLocked() {
     const userId = await this.exitIfNotAuthed();
-    if (await this.serviceContainer.cryptoService.hasUserKey()) {
+
+    // If the process.env does not have a BW_SESSION key, then we will never be able to retrieve
+    // the auto user key from secure storage. This is because the auto user key is encrypted with
+    // the session key.
+    const hasUserKey =
+      await this.serviceContainer.userAutoUnlockKeyService.setUserKeyInMemoryIfAutoUserKeySet(
+        userId,
+      );
+
+    if (hasUserKey) {
+      // User is unlocked
       return;
-    } else if (process.env.BW_NOINTERACTION !== "true") {
-      // must unlock
-      if (await this.serviceContainer.keyConnectorService.getUsesKeyConnector(userId)) {
-        const response = Response.error(
-          "Your vault is locked. You must unlock your vault using your session key.\n" +
-            "If you do not have your session key, you can get a new one by logging out and logging in again.",
-        );
-        this.processResponse(response, true);
-      } else {
-        const command = new UnlockCommand(
-          this.serviceContainer.accountService,
-          this.serviceContainer.masterPasswordService,
-          this.serviceContainer.cryptoService,
-          this.serviceContainer.userVerificationService,
-          this.serviceContainer.cryptoFunctionService,
-          this.serviceContainer.logService,
-          this.serviceContainer.keyConnectorService,
-          this.serviceContainer.environmentService,
-          this.serviceContainer.syncService,
-          this.serviceContainer.organizationApiService,
-          this.serviceContainer.logout,
-        );
-        const response = await command.run(null, null);
-        if (!response.success) {
-          this.processResponse(response, true);
-        }
-      }
-    } else {
+    }
+
+    // User is locked
+    await this.handleLockedUser(userId);
+  }
+
+  private async handleLockedUser(userId: UserId) {
+    if (process.env.BW_NOINTERACTION === "true") {
       this.processResponse(Response.error("Vault is locked."), true);
+      return;
+    }
+
+    // must unlock with interaction allowed
+    if (await this.serviceContainer.keyConnectorService.getUsesKeyConnector(userId)) {
+      const response = Response.error(
+        "Your vault is locked. You must unlock your vault using your session key.\n" +
+          "If you do not have your session key, you can get a new one by logging out and logging in again.",
+      );
+      this.processResponse(response, true);
+    } else {
+      const command = new UnlockCommand(
+        this.serviceContainer.accountService,
+        this.serviceContainer.masterPasswordService,
+        this.serviceContainer.cryptoService,
+        this.serviceContainer.userVerificationService,
+        this.serviceContainer.cryptoFunctionService,
+        this.serviceContainer.logService,
+        this.serviceContainer.keyConnectorService,
+        this.serviceContainer.environmentService,
+        this.serviceContainer.syncService,
+        this.serviceContainer.organizationApiService,
+        this.serviceContainer.logout,
+      );
+      const response = await command.run(null, null);
+      if (!response.success) {
+        this.processResponse(response, true);
+      }
     }
   }
 

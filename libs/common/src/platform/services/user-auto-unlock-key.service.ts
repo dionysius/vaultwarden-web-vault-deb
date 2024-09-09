@@ -16,10 +16,11 @@ export class UserAutoUnlockKeyService {
    * However, for users that have the auto unlock user key set, we need to set the user key in memory
    * on application bootstrap and on active account changes so that the user's vault loads unlocked.
    * @param userId - The user id to check for an auto user key.
+   * @returns True if the auto user key is set successfully, false otherwise.
    */
-  async setUserKeyInMemoryIfAutoUserKeySet(userId: UserId): Promise<void> {
+  async setUserKeyInMemoryIfAutoUserKeySet(userId: UserId): Promise<boolean> {
     if (userId == null) {
-      return;
+      return false;
     }
 
     const autoUserKey = await this.cryptoService.getUserKeyFromStorage(
@@ -28,9 +29,10 @@ export class UserAutoUnlockKeyService {
     );
 
     if (autoUserKey == null) {
-      return;
+      return false;
     }
 
     await this.cryptoService.setUserKey(autoUserKey, userId);
+    return true;
   }
 }

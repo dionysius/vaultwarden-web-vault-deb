@@ -803,6 +803,10 @@ export class ServiceContainer {
     await this.i18nService.init();
     this.twoFactorService.init();
 
+    // If a user has a BW_SESSION key stored in their env (not process.env.BW_SESSION),
+    // this should set the user key to unlock the vault on init.
+    // TODO: ideally, we wouldn't want to do this here but instead only for commands that require the vault to be unlocked
+    // as this runs on every command and could be a performance hit
     const activeAccount = await firstValueFrom(this.accountService.activeAccount$);
     if (activeAccount?.id) {
       await this.userAutoUnlockKeyService.setUserKeyInMemoryIfAutoUserKeySet(activeAccount.id);
