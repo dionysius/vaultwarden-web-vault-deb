@@ -4,6 +4,8 @@ import {
   AbstractControl,
   ControlValueAccessor,
   FormBuilder,
+  FormControl,
+  FormGroup,
   NG_VALIDATORS,
   NG_VALUE_ACCESSOR,
   ReactiveFormsModule,
@@ -22,13 +24,15 @@ import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.servic
 import { VaultTimeout, VaultTimeoutOption } from "@bitwarden/common/types/vault-timeout.type";
 import { FormFieldModule, SelectModule } from "@bitwarden/components";
 
-interface VaultTimeoutFormValue {
-  vaultTimeout: VaultTimeout | null;
-  custom: {
-    hours: number | null;
-    minutes: number | null;
-  };
-}
+type VaultTimeoutForm = FormGroup<{
+  vaultTimeout: FormControl<VaultTimeout | null>;
+  custom: FormGroup<{
+    hours: FormControl<number | null>;
+    minutes: FormControl<number | null>;
+  }>;
+}>;
+
+type VaultTimeoutFormValue = VaultTimeoutForm["value"];
 
 @Component({
   selector: "auth-vault-timeout-input",
@@ -64,7 +68,7 @@ export class VaultTimeoutInputComponent
   static CUSTOM_VALUE = -100;
   static MIN_CUSTOM_MINUTES = 0;
 
-  form = this.formBuilder.group({
+  form: VaultTimeoutForm = this.formBuilder.group({
     vaultTimeout: [null],
     custom: this.formBuilder.group({
       hours: [null],
@@ -120,7 +124,7 @@ export class VaultTimeoutInputComponent
         takeUntil(this.destroy$),
       )
       .subscribe((value) => {
-        const current = Math.max(value, 0);
+        const current = typeof value === "string" ? 0 : Math.max(value, 0);
 
         // This cannot emit an event b/c it would cause form.valueChanges to fire again
         // and we are already handling that above so just silently update
