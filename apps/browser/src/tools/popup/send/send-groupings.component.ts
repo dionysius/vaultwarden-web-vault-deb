@@ -64,7 +64,7 @@ export class SendGroupingsComponent extends BaseSendComponent implements OnInit,
       dialogService,
       toastService,
     );
-    super.onSuccessfulLoad = async () => {
+    this.onSuccessfulLoad = async () => {
       this.selectAll();
     };
   }

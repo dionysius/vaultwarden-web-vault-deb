@@ -66,7 +66,7 @@ export class SendTypeComponent extends BaseSendComponent implements OnInit, OnDe
       dialogService,
       toastService,
     );
-    super.onSuccessfulLoad = async () => {
+    this.onSuccessfulLoad = async () => {
       this.selectType(this.type);
     };
     this.applySavedState =
