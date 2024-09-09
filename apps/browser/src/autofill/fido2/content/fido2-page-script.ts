@@ -131,6 +131,12 @@ import { Messenger } from "./messaging/messenger";
       const internalAbortControllers = [new AbortController(), new AbortController()];
       const bitwardenResponse = async (internalAbortController: AbortController) => {
         try {
+          const abortListener = () =>
+            messenger.request({
+              type: MessageType.AbortRequest,
+              abortedRequestId: abortSignal.toString(),
+            });
+          internalAbortController.signal.addEventListener("abort", abortListener);
           const response = await messenger.request(
             {
               type: MessageType.CredentialGetRequest,
@@ -138,6 +144,7 @@ import { Messenger } from "./messaging/messenger";
             },
             internalAbortController.signal,
           );
+          internalAbortController.signal.removeEventListener("abort", abortListener);
           if (response.type !== MessageType.CredentialGetResponse) {
             throw new Error("Something went wrong.");
           }

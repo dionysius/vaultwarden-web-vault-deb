@@ -160,6 +160,7 @@ export class Fido2AuthenticatorService implements Fido2AuthenticatorServiceAbstr
         }
         const reencrypted = await this.cipherService.encrypt(cipher, activeUserId);
         await this.cipherService.updateWithServer(reencrypted);
+        await this.cipherService.clearCache(activeUserId);
         credentialId = fido2Credential.credentialId;
       } catch (error) {
         this.logService?.error(
@@ -243,12 +244,18 @@ export class Fido2AuthenticatorService implements Fido2AuthenticatorServiceAbstr
       }
 
       let response = { cipherId: cipherOptions[0].id, userVerified: false };
+      const masterPasswordRepromptRequired = cipherOptions.some(
+        (cipher) => cipher.reprompt !== CipherRepromptType.None,
+      );
 
-      if (this.requiresUserVerificationPrompt(params, cipherOptions)) {
+      if (
+        this.requiresUserVerificationPrompt(params, cipherOptions, masterPasswordRepromptRequired)
+      ) {
         response = await userInterfaceSession.pickCredential({
           cipherIds: cipherOptions.map((cipher) => cipher.id),
           userVerification: params.requireUserVerification,
           assumeUserPresence: params.assumeUserPresence,
+          masterPasswordRepromptRequired,
         });
       }
 
@@ -292,6 +299,7 @@ export class Fido2AuthenticatorService implements Fido2AuthenticatorServiceAbstr
           );
           const encrypted = await this.cipherService.encrypt(selectedCipher, activeUserId);
           await this.cipherService.updateWithServer(encrypted);
+          await this.cipherService.clearCache(activeUserId);
         }
 
         const authenticatorData = await generateAuthData({
@@ -330,13 +338,14 @@ export class Fido2AuthenticatorService implements Fido2AuthenticatorServiceAbstr
   private requiresUserVerificationPrompt(
     params: Fido2AuthenticatorGetAssertionParams,
     cipherOptions: CipherView[],
+    masterPasswordRepromptRequired: boolean,
   ): boolean {
     return (
       params.requireUserVerification ||
       !params.assumeUserPresence ||
       cipherOptions.length > 1 ||
       cipherOptions.length === 0 ||
-      cipherOptions.some((cipher) => cipher.reprompt !== CipherRepromptType.None)
+      masterPasswordRepromptRequired
     );
   }
 

@@ -3,6 +3,7 @@ import { pairwise } from "rxjs/operators";
 
 import { FeatureFlag } from "@bitwarden/common/enums/feature-flag.enum";
 import { ConfigService } from "@bitwarden/common/platform/abstractions/config/config.service";
+import { Fido2ActiveRequestManager } from "@bitwarden/common/platform/abstractions/fido2/fido2-active-request-manager.abstraction";
 import {
   AssertCredentialParams,
   AssertCredentialResult,
@@ -49,6 +50,7 @@ export class Fido2Background implements Fido2BackgroundInterface {
 
   constructor(
     private logService: LogService,
+    private fido2ActiveRequestManager: Fido2ActiveRequestManager,
     private fido2ClientService: Fido2ClientService,
     private vaultSettingsService: VaultSettingsService,
     private scriptInjectorService: ScriptInjectorService,
@@ -96,6 +98,7 @@ export class Fido2Background implements Fido2BackgroundInterface {
     previousEnablePasskeysSetting: boolean,
     enablePasskeys: boolean,
   ) {
+    this.fido2ActiveRequestManager.removeAllActiveRequests();
     await this.updateContentScriptRegistration();
 
     if (previousEnablePasskeysSetting === undefined) {

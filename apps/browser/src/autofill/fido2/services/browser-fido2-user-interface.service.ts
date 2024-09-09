@@ -242,12 +242,13 @@ export class BrowserFido2UserInterfaceSession implements Fido2UserInterfaceSessi
     cipherIds,
     userVerification,
     assumeUserPresence,
+    masterPasswordRepromptRequired,
   }: PickCredentialParams): Promise<{ cipherId: string; userVerified: boolean }> {
     // NOTE: For now, we are defaulting to a userVerified status of `true` when the request
     // is for a conditionally mediated authentication. This will allow for mediated conditional
     // authentication to function without requiring user interaction. This is a product
     // decision, rather than a decision based on the expected technical specifications.
-    if (assumeUserPresence && cipherIds.length === 1) {
+    if (assumeUserPresence && cipherIds.length === 1 && !masterPasswordRepromptRequired) {
       return { cipherId: cipherIds[0], userVerified: userVerification };
     }
 

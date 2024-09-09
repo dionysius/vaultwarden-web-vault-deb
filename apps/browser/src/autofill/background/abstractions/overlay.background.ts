@@ -217,6 +217,7 @@ export type OverlayBackgroundExtensionMessageHandlers = {
   addEditCipherSubmitted: () => void;
   editedCipher: () => void;
   deletedCipher: () => void;
+  fido2AbortRequest: ({ message, sender }: BackgroundOnMessageHandlerParams) => void;
 };
 
 export type PortMessageParam = {

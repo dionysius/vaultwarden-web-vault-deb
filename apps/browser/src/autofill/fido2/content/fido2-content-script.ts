@@ -60,6 +60,10 @@ import { MessageWithMetadata, Messenger } from "./messaging/messenger";
           message.data as InsecureAssertCredentialParams,
         );
       }
+
+      if (message.type === MessageType.AbortRequest) {
+        return sendExtensionMessage("fido2AbortRequest", { abortedRequestId: requestId });
+      }
     } finally {
       abortController.signal.removeEventListener("abort", abortHandler);
     }

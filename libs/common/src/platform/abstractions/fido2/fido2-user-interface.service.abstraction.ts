@@ -45,6 +45,11 @@ export interface PickCredentialParams {
    * Bypass the UI and assume that the user has already interacted with the authenticator.
    */
   assumeUserPresence?: boolean;
+
+  /**
+   * Identifies whether a cipher requires a master password reprompt when getting a credential.
+   */
+  masterPasswordRepromptRequired?: boolean;
 }
 
 /**

@@ -2,6 +2,7 @@ import { mock, MockProxy } from "jest-mock-extended";
 import { BehaviorSubject } from "rxjs";
 
 import { ConfigService } from "@bitwarden/common/platform/abstractions/config/config.service";
+import { Fido2ActiveRequestManager } from "@bitwarden/common/platform/abstractions/fido2/fido2-active-request-manager.abstraction";
 import {
   AssertCredentialParams,
   CreateCredentialParams,
@@ -52,6 +53,7 @@ describe("Fido2Background", () => {
   let tabMock!: MockProxy<chrome.tabs.Tab>;
   let senderMock!: MockProxy<chrome.runtime.MessageSender>;
   let logService!: MockProxy<LogService>;
+  let fido2ActiveRequestManager: MockProxy<Fido2ActiveRequestManager>;
   let fido2ClientService!: MockProxy<Fido2ClientService>;
   let vaultSettingsService!: MockProxy<VaultSettingsService>;
   let scriptInjectorServiceMock!: MockProxy<BrowserScriptInjectorService>;
@@ -77,9 +79,11 @@ describe("Fido2Background", () => {
 
     enablePasskeysMock$ = new BehaviorSubject(true);
     vaultSettingsService.enablePasskeys$ = enablePasskeysMock$;
+    fido2ActiveRequestManager = mock<Fido2ActiveRequestManager>();
     fido2ClientService.isFido2FeatureEnabled.mockResolvedValue(true);
     fido2Background = new Fido2Background(
       logService,
+      fido2ActiveRequestManager,
       fido2ClientService,
       vaultSettingsService,
       scriptInjectorServiceMock,

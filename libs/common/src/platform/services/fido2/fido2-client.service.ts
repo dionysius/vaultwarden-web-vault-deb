@@ -1,13 +1,15 @@
-import { firstValueFrom, map, Observable, Subscription } from "rxjs";
+import { firstValueFrom, Subscription } from "rxjs";
 import { parse } from "tldts";
 
 import { AuthService } from "../../../auth/abstractions/auth.service";
 import { AuthenticationStatus } from "../../../auth/enums/authentication-status";
 import { DomainSettingsService } from "../../../autofill/services/domain-settings.service";
 import { VaultSettingsService } from "../../../vault/abstractions/vault-settings/vault-settings.service";
-import { Fido2CredentialView } from "../../../vault/models/view/fido2-credential.view";
 import { ConfigService } from "../../abstractions/config/config.service";
-import { Fido2ActiveRequestManager } from "../../abstractions/fido2/fido2-active-request-manager.abstraction";
+import {
+  Fido2ActiveRequestEvents,
+  Fido2ActiveRequestManager,
+} from "../../abstractions/fido2/fido2-active-request-manager.abstraction";
 import {
   Fido2AuthenticatorError,
   Fido2AuthenticatorErrorCode,
@@ -71,17 +73,6 @@ export class Fido2ClientService implements Fido2ClientServiceAbstraction {
     this.taskSchedulerService.registerTaskHandler(ScheduledTaskNames.fido2ClientAbortTimeout, () =>
       this.timeoutAbortController?.abort(),
     );
-  }
-
-  availableAutofillCredentials$(tabId: number): Observable<Fido2CredentialView[]> {
-    return this.requestManager
-      .getActiveRequest$(tabId)
-      .pipe(map((request) => request?.credentials ?? []));
-  }
-
-  async autofillCredential(tabId: number, credentialId: string) {
-    const request = this.requestManager.getActiveRequest(tabId);
-    request.subject.next(credentialId);
   }
 
   async isFido2FeatureEnabled(hostname: string, origin: string): Promise<boolean> {
@@ -385,12 +376,23 @@ export class Fido2ClientService implements Fido2ClientServiceAbstraction {
       this.logService?.info(
         `[Fido2Client] started mediated request, available credentials: ${availableCredentials.length}`,
       );
-      const credentialId = await this.requestManager.newActiveRequest(
+      const requestResult = await this.requestManager.newActiveRequest(
         tab.id,
         availableCredentials,
         abortController,
       );
-      params.allowedCredentialIds = [Fido2Utils.bufferToString(guidToRawFormat(credentialId))];
+
+      if (requestResult.type === Fido2ActiveRequestEvents.Refresh) {
+        continue;
+      }
+
+      if (requestResult.type === Fido2ActiveRequestEvents.Abort) {
+        break;
+      }
+
+      params.allowedCredentialIds = [
+        Fido2Utils.bufferToString(guidToRawFormat(requestResult.credentialId)),
+      ];
       assumeUserPresence = true;
 
       const clientDataHash = await crypto.subtle.digest({ name: "SHA-256" }, clientDataJSONBytes);
