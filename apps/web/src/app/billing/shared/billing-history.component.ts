@@ -1,7 +1,10 @@
 import { Component, Input } from "@angular/core";
 
 import { PaymentMethodType, TransactionType } from "@bitwarden/common/billing/enums";
-import { BillingHistoryResponse } from "@bitwarden/common/billing/models/response/billing-history.response";
+import {
+  BillingInvoiceResponse,
+  BillingTransactionResponse,
+} from "@bitwarden/common/billing/models/response/billing.response";
 
 @Component({
   selector: "app-billing-history",
@@ -9,18 +12,13 @@ import { BillingHistoryResponse } from "@bitwarden/common/billing/models/respons
 })
 export class BillingHistoryComponent {
   @Input()
-  billing: BillingHistoryResponse;
+  invoices: BillingInvoiceResponse[];
+
+  @Input()
+  transactions: BillingTransactionResponse[];
 
   paymentMethodType = PaymentMethodType;
   transactionType = TransactionType;
-
-  get invoices() {
-    return this.billing != null ? this.billing.invoices : null;
-  }
-
-  get transactions() {
-    return this.billing != null ? this.billing.transactions : null;
-  }
 
   paymentMethodClasses(type: PaymentMethodType) {
     switch (type) {

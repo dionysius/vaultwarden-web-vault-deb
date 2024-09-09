@@ -29,6 +29,7 @@ export class BillingSourceResponse extends BaseResponse {
 }
 
 export class BillingInvoiceResponse extends BaseResponse {
+  id: string;
   url: string;
   pdfUrl: string;
   number: string;
@@ -38,6 +39,7 @@ export class BillingInvoiceResponse extends BaseResponse {
 
   constructor(response: any) {
     super(response);
+    this.id = this.getResponseProperty("Id");
     this.url = this.getResponseProperty("Url");
     this.pdfUrl = this.getResponseProperty("PdfUrl");
     this.number = this.getResponseProperty("Number");
