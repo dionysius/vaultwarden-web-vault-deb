@@ -4,7 +4,7 @@
       {{ "upgradeFreeOrganization" | i18n: currentPlanName }}
     </span>
     <div bitDialogContent>
-      <p>{{ "upgradePlan" | i18n }}</p>
+      <p>{{ "upgradePlans" | i18n }}</p>
       <div class="tw-mb-3 tw-flex tw-justify-between">
         <span class="tw-text-lg tw-pr-1 tw-font-bold">{{ "selectAPlan" | i18n }}</span>
         <div class="tw-items-center tw-gap-2">
@@ -52,9 +52,21 @@
             tabindex="0"
           >
             <div class="tw-relative">
-              <div class="tw-px-2 tw-py-4">
+              <div
+                *ngIf="selectableProduct === selectedPlan"
+                class="tw-bg-primary-600 tw-text-center !tw-text-contrast tw-text-sm tw-font-bold tw-py-1 group-hover:tw-bg-primary-700"
+              >
+                {{ "recommended" | i18n }}
+              </div>
+              <div
+                class="tw-px-2 tw-py-4"
+                [ngClass]="{
+                  'tw-py-1': !(selectableProduct === selectedPlan),
+                  'tw-py-0': selectableProduct === selectedPlan,
+                }"
+              >
                 <h3 class="tw-text-lg tw-font-bold">
-                  <span class="tw-uppercase">{{
+                  <span class="tw-capitalize">{{
                     selectableProduct.nameLocalizationKey | i18n
                   }}</span>
                   <span bitBadge variant="secondary" *ngIf="selectableProduct === currentPlan">
@@ -73,9 +85,8 @@
                         ) | currency: "$"
                       }}
                     </b>
+                    <span class="tw-text-xs tw-px-0"> /{{ "monthPerMember" | i18n }}</span>
                     <b class="tw-text-sm tw-font-semibold">
-                      /{{ "month" | i18n }}
-                      {{ "includesXMembers" | i18n: selectableProduct.PasswordManager.baseSeats }}
                       <ng-container
                         *ngIf="selectableProduct.PasswordManager.hasAdditionalSeatsOption"
                       >
@@ -108,7 +119,7 @@
                               | currency: "$")
                     }}
                   </b>
-                  <b class="tw-text-sm tw-font-semibold"> /{{ "monthPerMember" | i18n }}</b>
+                  <span class="tw-text-xs tw-px-0"> /{{ "monthPerMember" | i18n }}</span>
                 </span>
                 <span *ngIf="selectableProduct.productTier == productTypes.Free"
                   >{{ "freeForever" | i18n }}
@@ -125,7 +136,7 @@
               <p class="tw-text-xs tw-px-2 tw-font-semibold" *ngIf="organization.useSecretsManager">
                 {{ "bitwardenPasswordManager" | i18n }}
               </p>
-              <p class="tw-text-xs tw-px-2">{{ "upgradeEnterpriseMessage" | i18n }}</p>
+              <p class="tw-text-xs tw-px-2">{{ "enterprisePlanUpgradeMessage" | i18n }}</p>
 
               <ul class="bwi-ul tw-text-xs">
                 <li>
@@ -193,13 +204,13 @@
                   *ngIf="selectableProduct.productTier === productTypes.Teams"
                   class="tw-text-xs tw-px-2"
                 >
-                  {{ "upgradeTeamsMessage" | i18n }}
+                  {{ "teamsPlanUpgradeMessage" | i18n }}
                 </p>
                 <p
                   *ngIf="selectableProduct.productTier === productTypes.Families"
                   class="tw-text-xs tw-px-2"
                 >
-                  {{ "upgradeFamilyMessage" | i18n }}
+                  {{ "familyPlanUpgradeMessage" | i18n }}
                 </p>
                 <ul
                   class="bwi-ul tw-text-xs"
