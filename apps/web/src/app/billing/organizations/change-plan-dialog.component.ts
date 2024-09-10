@@ -477,6 +477,13 @@ export class ChangePlanDialogComponent implements OnInit, OnDestroy {
     );
   }
 
+  additionalStoragePriceMonthly(selectedPlan: PlanResponse) {
+    if (!selectedPlan.isAnnual) {
+      return selectedPlan.PasswordManager.additionalStoragePricePerGb;
+    }
+    return selectedPlan.PasswordManager.additionalStoragePricePerGb / 12;
+  }
+
   additionalServiceAccountTotal(plan: PlanResponse): number {
     if (!plan.SecretsManager.hasAdditionalServiceAccountOption || this.additionalServiceAccount) {
       return 0;
@@ -525,9 +532,18 @@ export class ChangePlanDialogComponent implements OnInit, OnDestroy {
 
   get total() {
     if (this.organization.useSecretsManager) {
-      return this.passwordManagerSubtotal + this.secretsManagerSubtotal + this.taxCharges || 0;
+      return (
+        this.passwordManagerSubtotal +
+          this.additionalStorageTotal(this.selectedPlan) +
+          this.secretsManagerSubtotal +
+          this.taxCharges || 0
+      );
     }
-    return this.passwordManagerSubtotal + this.taxCharges || 0;
+    return (
+      this.passwordManagerSubtotal +
+        this.additionalStorageTotal(this.selectedPlan) +
+        this.taxCharges || 0
+    );
   }
 
   get teamsStarterPlanIsAvailable() {
@@ -639,6 +655,7 @@ export class ChangePlanDialogComponent implements OnInit, OnDestroy {
     if (this.selectedPlan.productTier !== ProductTierType.Families) {
       request.additionalSeats = this.organization.seats;
     }
+    request.additionalStorageGb = this.organization.maxStorageGb;
     request.premiumAccessAddon =
       this.selectedPlan.PasswordManager.hasPremiumAccessOption &&
       this.formGroup.controls.premiumAccessAddon.value;

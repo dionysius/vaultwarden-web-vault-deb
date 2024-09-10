@@ -389,17 +389,21 @@
               bitTypography="body2"
               *ngIf="
                 selectedPlan.PasswordManager.hasAdditionalStorageOption &&
-                !organization.useSecretsManager
+                !organization.useSecretsManager &&
+                organization.maxStorageGb > 0
               "
             >
               <span>
-                {{ 0 }}
+                {{ organization.maxStorageGb }}
                 {{ "additionalStorageGbMessage" | i18n }}
                 &times;
-                {{ selectedPlan.PasswordManager.additionalStoragePricePerGb | currency: "$" }}
+                {{ additionalStoragePriceMonthly(selectedPlan) | currency: "$" }}
                 /{{ "year" | i18n }}
               </span>
-              <span>{{ 0 | currency: "$" }}</span>
+              <span>{{
+                organization.maxStorageGb * selectedPlan.PasswordManager.additionalStoragePricePerGb
+                  | currency: "$"
+              }}</span>
             </p>
             <!-- secrets manager summary for annual -->
             <p class="tw-font-semibold tw-mt-3 tw-mb-1" *ngIf="organization.useSecretsManager">
@@ -505,17 +509,21 @@
               bitTypography="body2"
               *ngIf="
                 selectedPlan.PasswordManager.hasAdditionalStorageOption &&
-                !organization.useSecretsManager
+                !organization.useSecretsManager &&
+                organization.maxStorageGb > 0
               "
             >
               <span>
-                {{ 0 }}
+                {{ organization.maxStorageGb }}
                 {{ "additionalStorageGbMessage" | i18n }}
                 &times;
-                {{ selectedPlan.PasswordManager.additionalStoragePricePerGb | currency: "$" }}
+                {{ additionalStoragePriceMonthly(selectedPlan) | currency: "$" }}
                 /{{ "month" | i18n }}
               </span>
-              <span>{{ 0 | currency: "$" }}</span>
+              <span>{{
+                organization.maxStorageGb * selectedPlan.PasswordManager.additionalStoragePricePerGb
+                  | currency: "$"
+              }}</span>
             </p>
             <!-- secrets manager summary for monthly -->
             <p class="tw-font-semibold tw-mt-3 tw-mb-1" *ngIf="organization.useSecretsManager">
