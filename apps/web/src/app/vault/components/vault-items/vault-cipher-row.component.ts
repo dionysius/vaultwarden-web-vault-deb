@@ -36,6 +36,7 @@ export class VaultCipherRowComponent implements OnInit {
   @Input() viewingOrgVault: boolean;
   @Input() canEditCipher: boolean;
   @Input() vaultBulkManagementActionEnabled: boolean;
+  @Input() canManageCollection: boolean;
 
   @Output() onEvent = new EventEmitter<VaultItemEvent>();
 

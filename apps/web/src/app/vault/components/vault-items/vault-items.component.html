@@ -133,6 +133,9 @@
           [collections]="allCollections"
           [checked]="selection.isSelected(item)"
           [canEditCipher]="canEditCipher(item.cipher) && vaultBulkManagementActionEnabled"
+          [canManageCollection]="
+            canManageCollection(item.cipher) && vaultBulkManagementActionEnabled
+          "
           [vaultBulkManagementActionEnabled]="vaultBulkManagementActionEnabled"
           (checkedToggled)="selection.toggle(item)"
           (onEvent)="event($event)"
