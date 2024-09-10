@@ -1,5 +1,5 @@
 import { inject } from "@angular/core";
-import { Router, UrlTree } from "@angular/router";
+import { UrlTree, Router } from "@angular/router";
 
 import { FeatureFlag } from "@bitwarden/common/enums/feature-flag.enum";
 import { ConfigService } from "@bitwarden/common/platform/abstractions/config/config.service";
