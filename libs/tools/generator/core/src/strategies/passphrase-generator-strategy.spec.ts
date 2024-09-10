@@ -17,7 +17,7 @@ import { PASSPHRASE_SETTINGS } from "./storage";
 
 const SomeUser = "some user" as UserId;
 
-describe("Password generation strategy", () => {
+describe("Passphrase generation strategy", () => {
   describe("toEvaluator()", () => {
     it("should map to the policy evaluator", async () => {
       const strategy = new PassphraseGeneratorStrategy(null, null);

@@ -1,13 +1,26 @@
 import { EFFLongWordList } from "@bitwarden/common/platform/misc/wordlist";
+import { GenerationRequest } from "@bitwarden/common/tools/types";
+
+import {
+  CredentialGenerator,
+  GeneratedCredential,
+  PassphraseGenerationOptions,
+  PasswordGenerationOptions,
+} from "../types";
+import { optionsToEffWordListRequest, optionsToRandomAsciiRequest } from "../util";
 
 import { Randomizer } from "./abstractions";
 import { Ascii } from "./data";
 import { CharacterSet, EffWordListRequest, RandomAsciiRequest } from "./types";
 
 /** Generation algorithms that produce randomized secrets */
-export class PasswordRandomizer {
+export class PasswordRandomizer
+  implements
+    CredentialGenerator<PassphraseGenerationOptions>,
+    CredentialGenerator<PasswordGenerationOptions>
+{
   /** Instantiates the password randomizer
-   *  @param random data source for random data
+   *  @param randomizer data source for random data
    */
   constructor(private randomizer: Randomizer) {}
 
@@ -52,6 +65,41 @@ export class PasswordRandomizer {
 
     return wordList.join(request.separator);
   }
+
+  generate(
+    request: GenerationRequest,
+    settings: PasswordGenerationOptions,
+  ): Promise<GeneratedCredential>;
+  generate(
+    request: GenerationRequest,
+    settings: PassphraseGenerationOptions,
+  ): Promise<GeneratedCredential>;
+  async generate(
+    _request: GenerationRequest,
+    settings: PasswordGenerationOptions | PassphraseGenerationOptions,
+  ) {
+    if (isPasswordGenerationOptions(settings)) {
+      const request = optionsToRandomAsciiRequest(settings);
+      const password = await this.randomAscii(request);
+
+      return new GeneratedCredential(password, "password", Date.now());
+    } else if (isPassphraseGenerationOptions(settings)) {
+      const request = optionsToEffWordListRequest(settings);
+      const passphrase = await this.randomEffLongWords(request);
+
+      return new GeneratedCredential(passphrase, "passphrase", Date.now());
+    }
+
+    throw new Error("Invalid settings received by generator.");
+  }
+}
+
+function isPasswordGenerationOptions(settings: any): settings is PasswordGenerationOptions {
+  return "length" in (settings ?? {});
+}
+
+function isPassphraseGenerationOptions(settings: any): settings is PassphraseGenerationOptions {
+  return "numWords" in (settings ?? {});
 }
 
 // given a generator request, convert each of its `number | undefined` properties

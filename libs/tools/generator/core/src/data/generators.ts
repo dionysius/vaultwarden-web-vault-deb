@@ -1,5 +1,8 @@
+import { Randomizer } from "../abstractions";
+import { PasswordRandomizer } from "../engine";
 import { PASSPHRASE_SETTINGS, PASSWORD_SETTINGS } from "../strategies/storage";
 import {
+  CredentialGenerator,
   PassphraseGenerationOptions,
   PassphraseGeneratorPolicy,
   PasswordGenerationOptions,
@@ -14,6 +17,12 @@ import { DefaultPasswordGenerationOptions } from "./default-password-generation-
 import { Policies } from "./policies";
 
 const PASSPHRASE = Object.freeze({
+  category: "passphrase",
+  engine: {
+    create(randomizer: Randomizer): CredentialGenerator<PassphraseGenerationOptions> {
+      return new PasswordRandomizer(randomizer);
+    },
+  },
   settings: {
     initial: DefaultPassphraseGenerationOptions,
     constraints: {
@@ -32,6 +41,12 @@ const PASSPHRASE = Object.freeze({
 >);
 
 const PASSWORD = Object.freeze({
+  category: "password",
+  engine: {
+    create(randomizer: Randomizer): CredentialGenerator<PasswordGenerationOptions> {
+      return new PasswordRandomizer(randomizer);
+    },
+  },
   settings: {
     initial: DefaultPasswordGenerationOptions,
     constraints: {

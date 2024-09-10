@@ -77,7 +77,7 @@ export type SingleUserDependency = {
 export type OnDependency = {
   /** The stream that controls emissions
    */
-  on$: Observable<void>;
+  on$: Observable<any>;
 };
 
 /** A pattern for types that emit when a dependency is `true`.

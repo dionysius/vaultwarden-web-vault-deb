@@ -2,11 +2,11 @@ import { PolicyType } from "@bitwarden/common/admin-console/enums";
 import { StateProvider } from "@bitwarden/common/platform/state";
 
 import { GeneratorStrategy } from "../abstractions";
-import { DefaultPassphraseBoundaries, DefaultPassphraseGenerationOptions, Policies } from "../data";
+import { DefaultPassphraseGenerationOptions, Policies } from "../data";
 import { PasswordRandomizer } from "../engine";
 import { mapPolicyToEvaluator } from "../rx";
 import { PassphraseGenerationOptions, PassphraseGeneratorPolicy } from "../types";
-import { observe$PerUserId, sharedStateByUserId } from "../util";
+import { observe$PerUserId, optionsToEffWordListRequest, sharedStateByUserId } from "../util";
 
 import { PASSPHRASE_SETTINGS } from "./storage";
 
@@ -33,13 +33,7 @@ export class PassphraseGeneratorStrategy
 
   // algorithm
   async generate(options: PassphraseGenerationOptions): Promise<string> {
-    const requestWords = options.numWords ?? DefaultPassphraseGenerationOptions.numWords;
-    const request = {
-      numberOfWords: Math.max(requestWords, DefaultPassphraseBoundaries.numWords.min),
-      capitalize: options.capitalize ?? DefaultPassphraseGenerationOptions.capitalize,
-      number: options.includeNumber ?? DefaultPassphraseGenerationOptions.includeNumber,
-      separator: options.wordSeparator ?? DefaultPassphraseGenerationOptions.wordSeparator,
-    };
+    const request = optionsToEffWordListRequest(options);
 
     return this.randomizer.randomEffLongWords(request);
   }

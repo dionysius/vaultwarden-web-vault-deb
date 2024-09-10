@@ -46,3 +46,20 @@ export type Constraints<T> = {
 
 /** utility type for methods that evaluate constraints generically. */
 export type AnyConstraint = PrimitiveConstraint & StringConstraints & NumberConstraints;
+
+/** Options that provide contextual information about the application state
+ *  when a generator is invoked.
+ */
+export type VaultItemRequest = {
+  /** The domain of the website the requested credential is used
+   *  within. This should be set to `null` when the request is not specific
+   *  to any website.
+   *  @remarks this field contains sensitive data
+   */
+  website: string | null;
+};
+
+/** Options that provide contextual information about the application state
+ *  when a generator is invoked.
+ */
+export type GenerationRequest = Partial<VaultItemRequest>;

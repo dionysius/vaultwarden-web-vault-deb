@@ -335,4 +335,40 @@ describe("PasswordRandomizer", () => {
       expect(result).toEqual("foo-foo");
     });
   });
+
+  describe("generate", () => {
+    it("processes password generation options", async () => {
+      const password = new PasswordRandomizer(randomizer);
+
+      const result = await password.generate(
+        {},
+        {
+          length: 10,
+        },
+      );
+
+      expect(result.category).toEqual("password");
+    });
+
+    it("processes passphrase generation options", async () => {
+      const password = new PasswordRandomizer(randomizer);
+
+      const result = await password.generate(
+        {},
+        {
+          numWords: 10,
+        },
+      );
+
+      expect(result.category).toEqual("passphrase");
+    });
+
+    it("throws when it cannot recognize the options type", async () => {
+      const password = new PasswordRandomizer(randomizer);
+
+      const result = password.generate({}, {});
+
+      await expect(result).rejects.toBeInstanceOf(Error);
+    });
+  });
 });
