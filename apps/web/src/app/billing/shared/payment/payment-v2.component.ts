@@ -86,7 +86,7 @@ export class PaymentV2Component implements OnInit, OnDestroy {
 
   /** Programmatically select the provided payment method. */
   select = (paymentMethod: PaymentMethodType) => {
-    this.formGroup.value.paymentMethod = paymentMethod;
+    this.formGroup.get("paymentMethod").patchValue(paymentMethod);
   };
 
   protected submit = async () => {

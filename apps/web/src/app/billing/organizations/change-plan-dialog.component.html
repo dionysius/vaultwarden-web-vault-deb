@@ -62,7 +62,7 @@
                 class="tw-px-2 tw-py-4"
                 [ngClass]="{
                   'tw-py-1': !(selectableProduct === selectedPlan),
-                  'tw-py-0': selectableProduct === selectedPlan,
+                  'tw-py-0': selectableProduct === selectedPlan
                 }"
               >
                 <h3 class="tw-text-lg tw-font-bold">
@@ -308,9 +308,14 @@
           <a></a>
         </p>
         <app-payment
-          *ngIf="upgradeRequiresPaymentMethod || showPayment"
+          *ngIf="(upgradeRequiresPaymentMethod || showPayment) && !deprecateStripeSourcesAPI"
           [hideCredit]="true"
         ></app-payment>
+        <app-payment-v2
+          *ngIf="(upgradeRequiresPaymentMethod || showPayment) && deprecateStripeSourcesAPI"
+          [showAccountCredit]="false"
+        >
+        </app-payment-v2>
         <app-tax-info
           *ngIf="showPayment || upgradeRequiresPaymentMethod"
           (onCountryChanged)="changedCountry()"

@@ -21,22 +21,27 @@ import { PolicyType } from "@bitwarden/common/admin-console/enums";
 import { Organization } from "@bitwarden/common/admin-console/models/domain/organization";
 import { OrganizationKeysRequest } from "@bitwarden/common/admin-console/models/request/organization-keys.request";
 import { OrganizationUpgradeRequest } from "@bitwarden/common/admin-console/models/request/organization-upgrade.request";
+import { BillingApiServiceAbstraction } from "@bitwarden/common/billing/abstractions";
 import {
   PaymentMethodType,
+  PlanInterval,
   PlanType,
   ProductTierType,
-  PlanInterval,
 } from "@bitwarden/common/billing/enums";
 import { PaymentRequest } from "@bitwarden/common/billing/models/request/payment.request";
+import { UpdatePaymentMethodRequest } from "@bitwarden/common/billing/models/request/update-payment-method.request";
 import { BillingResponse } from "@bitwarden/common/billing/models/response/billing.response";
 import { OrganizationSubscriptionResponse } from "@bitwarden/common/billing/models/response/organization-subscription.response";
 import { PlanResponse } from "@bitwarden/common/billing/models/response/plan.response";
+import { FeatureFlag } from "@bitwarden/common/enums/feature-flag.enum";
+import { ConfigService } from "@bitwarden/common/platform/abstractions/config/config.service";
 import { CryptoService } from "@bitwarden/common/platform/abstractions/crypto.service";
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 import { MessagingService } from "@bitwarden/common/platform/abstractions/messaging.service";
 import { SyncService } from "@bitwarden/common/vault/abstractions/sync/sync.service.abstraction";
 import { DialogService, ToastService } from "@bitwarden/components";
 
+import { PaymentV2Component } from "../shared/payment/payment-v2.component";
 import { PaymentComponent } from "../shared/payment/payment.component";
 import { TaxInfoComponent } from "../shared/tax-info.component";
 
@@ -80,6 +85,7 @@ interface OnSuccessArgs {
 })
 export class ChangePlanDialogComponent implements OnInit, OnDestroy {
   @ViewChild(PaymentComponent) paymentComponent: PaymentComponent;
+  @ViewChild(PaymentV2Component) paymentV2Component: PaymentV2Component;
   @ViewChild(TaxInfoComponent) taxComponent: TaxInfoComponent;
 
   @Input() acceptingSponsorship = false;
@@ -155,6 +161,8 @@ export class ChangePlanDialogComponent implements OnInit, OnDestroy {
   totalOpened: boolean = false;
   currentPlan: PlanResponse;
 
+  deprecateStripeSourcesAPI: boolean;
+
   private destroy$ = new Subject<void>();
 
   constructor(
@@ -171,9 +179,15 @@ export class ChangePlanDialogComponent implements OnInit, OnDestroy {
     private messagingService: MessagingService,
     private formBuilder: FormBuilder,
     private organizationApiService: OrganizationApiServiceAbstraction,
+    private configService: ConfigService,
+    private billingApiService: BillingApiServiceAbstraction,
   ) {}
 
   async ngOnInit(): Promise<void> {
+    this.deprecateStripeSourcesAPI = await this.configService.getFeatureFlag(
+      FeatureFlag.AC2476_DeprecateStripeSourcesAPI,
+    );
+
     if (this.dialogParams.organizationId) {
       this.currentPlanName = this.resolvePlanName(this.dialogParams.productTierType);
       this.sub =
@@ -595,7 +609,16 @@ export class ChangePlanDialogComponent implements OnInit, OnDestroy {
   }
 
   changedCountry() {
-    if (this.paymentComponent && this.taxComponent) {
+    if (this.deprecateStripeSourcesAPI && this.paymentV2Component && this.taxComponent) {
+      this.paymentV2Component.showBankAccount = this.taxComponent.country === "US";
+
+      if (
+        !this.paymentV2Component.showBankAccount &&
+        this.paymentV2Component.selected === PaymentMethodType.BankAccount
+      ) {
+        this.paymentV2Component.select(PaymentMethodType.Card);
+      }
+    } else if (this.paymentComponent && this.taxComponent) {
       this.paymentComponent!.hideBank = this.taxComponent?.taxFormGroup?.value.country !== "US";
       // Bank Account payments are only available for US customers
       if (
@@ -616,7 +639,7 @@ export class ChangePlanDialogComponent implements OnInit, OnDestroy {
 
     const doSubmit = async (): Promise<string> => {
       let orgId: string = null;
-      orgId = await this.updateOrganization(orgId);
+      orgId = await this.updateOrganization();
       this.toastService.showToast({
         variant: "success",
         title: null,
@@ -650,12 +673,15 @@ export class ChangePlanDialogComponent implements OnInit, OnDestroy {
     this.dialogRef.close();
   };
 
-  private async updateOrganization(orgId: string) {
+  private async updateOrganization() {
     const request = new OrganizationUpgradeRequest();
     if (this.selectedPlan.productTier !== ProductTierType.Families) {
       request.additionalSeats = this.organization.seats;
     }
-    request.additionalStorageGb = this.organization.maxStorageGb;
+    if (this.organization.maxStorageGb > this.selectedPlan.PasswordManager.baseStorageGb) {
+      request.additionalStorageGb =
+        this.organization.maxStorageGb - this.selectedPlan.PasswordManager.baseStorageGb;
+    }
     request.premiumAccessAddon =
       this.selectedPlan.PasswordManager.hasPremiumAccessOption &&
       this.formGroup.controls.premiumAccessAddon.value;
@@ -669,13 +695,33 @@ export class ChangePlanDialogComponent implements OnInit, OnDestroy {
     this.buildSecretsManagerRequest(request);
 
     if (this.upgradeRequiresPaymentMethod || this.showPayment) {
-      const tokenResult = await this.paymentComponent.createPaymentToken();
-      const paymentRequest = new PaymentRequest();
-      paymentRequest.paymentToken = tokenResult[0];
-      paymentRequest.paymentMethodType = tokenResult[1];
-      paymentRequest.country = this.taxComponent.taxFormGroup?.value.country;
-      paymentRequest.postalCode = this.taxComponent.taxFormGroup?.value.postalCode;
-      await this.organizationApiService.updatePayment(this.organizationId, paymentRequest);
+      if (this.deprecateStripeSourcesAPI) {
+        const tokenizedPaymentSource = await this.paymentV2Component.tokenize();
+        const updatePaymentMethodRequest = new UpdatePaymentMethodRequest();
+        updatePaymentMethodRequest.paymentSource = tokenizedPaymentSource;
+        updatePaymentMethodRequest.taxInformation = {
+          country: this.taxComponent.country,
+          postalCode: this.taxComponent.postalCode,
+          taxId: this.taxComponent.taxId,
+          line1: this.taxComponent.line1,
+          line2: this.taxComponent.line2,
+          city: this.taxComponent.city,
+          state: this.taxComponent.state,
+        };
+
+        await this.billingApiService.updateOrganizationPaymentMethod(
+          this.organizationId,
+          updatePaymentMethodRequest,
+        );
+      } else {
+        const tokenResult = await this.paymentComponent.createPaymentToken();
+        const paymentRequest = new PaymentRequest();
+        paymentRequest.paymentToken = tokenResult[0];
+        paymentRequest.paymentMethodType = tokenResult[1];
+        paymentRequest.country = this.taxComponent.taxFormGroup?.value.country;
+        paymentRequest.postalCode = this.taxComponent.taxFormGroup?.value.postalCode;
+        await this.organizationApiService.updatePayment(this.organizationId, paymentRequest);
+      }
     }
 
     // Backfill pub/priv key if necessary
