@@ -17,7 +17,7 @@ import { CipherService } from "@bitwarden/common/vault/abstractions/cipher.servi
 import { Cipher } from "@bitwarden/common/vault/models/domain/cipher";
 import { AttachmentView } from "@bitwarden/common/vault/models/view/attachment.view";
 import { CipherView } from "@bitwarden/common/vault/models/view/cipher.view";
-import { DialogService } from "@bitwarden/components";
+import { DialogService, ToastService } from "@bitwarden/components";
 
 @Directive()
 export class AttachmentsComponent implements OnInit {
@@ -49,6 +49,7 @@ export class AttachmentsComponent implements OnInit {
     protected dialogService: DialogService,
     protected billingAccountProfileStateService: BillingAccountProfileStateService,
     protected accountService: AccountService,
+    protected toastService: ToastService,
   ) {}
 
   async ngOnInit() {
@@ -181,6 +182,11 @@ export class AttachmentsComponent implements OnInit {
       this.fileDownloadService.download({
         fileName: attachment.fileName,
         blobData: decBuf,
+      });
+      this.toastService.showToast({
+        variant: "success",
+        title: null,
+        message: this.i18nService.t("fileSavedToDevice"),
       });
     } catch (e) {
       this.platformUtilsService.showToast("error", null, this.i18nService.t("errorOccurred"));
