@@ -42,6 +42,9 @@
   --color-info-600: 85 85 85;
   --color-info-700: 59 58 58;
 
+  --color-art-primary: 2 15 102;
+  --color-art-accent: 85 85 85;
+
   --color-text-main: 33 37 41;
   --color-text-muted: 109 117 126;
   --color-text-contrast: 255 255 255;
@@ -89,6 +92,9 @@
 
   --color-info-600: 164 176 198;
   --color-info-700: 209 215 226;
+
+  --color-art-primary: 226 227 228;
+  --color-art-accent: 164 176 198;
 
   --color-text-main: 255 255 255;
   --color-text-muted: 186 192 206;

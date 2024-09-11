@@ -54,6 +54,10 @@ module.exports = {
         600: rgba("--color-info-600"),
         700: rgba("--color-info-700"),
       },
+      art: {
+        primary: rgba("--color-art-primary"),
+        accent: rgba("--color-art-accent"),
+      },
       text: {
         main: rgba("--color-text-main"),
         muted: rgba("--color-text-muted"),
