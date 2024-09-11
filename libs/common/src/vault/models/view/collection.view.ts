@@ -38,18 +38,14 @@ export class CollectionView implements View, ITreeNodeObject {
     }
   }
 
-  canEditItems(org: Organization, restrictProviderAccess: boolean): boolean {
+  canEditItems(org: Organization): boolean {
     if (org != null && org.id !== this.organizationId) {
       throw new Error(
         "Id of the organization provided does not match the org id of the collection.",
       );
     }
 
-    return (
-      org?.canEditAllCiphers(restrictProviderAccess) ||
-      this.manage ||
-      (this.assigned && !this.readOnly)
-    );
+    return org?.canEditAllCiphers || this.manage || (this.assigned && !this.readOnly);
   }
 
   /**

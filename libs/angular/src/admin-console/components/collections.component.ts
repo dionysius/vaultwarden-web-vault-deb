@@ -4,8 +4,6 @@ import { firstValueFrom, map } from "rxjs";
 import { OrganizationService } from "@bitwarden/common/admin-console/abstractions/organization/organization.service.abstraction";
 import { Organization } from "@bitwarden/common/admin-console/models/domain/organization";
 import { AccountService } from "@bitwarden/common/auth/abstractions/account.service";
-import { FeatureFlag } from "@bitwarden/common/enums/feature-flag.enum";
-import { ConfigService } from "@bitwarden/common/platform/abstractions/config/config.service";
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 import { LogService } from "@bitwarden/common/platform/abstractions/log.service";
 import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
@@ -27,7 +25,6 @@ export class CollectionsComponent implements OnInit {
   collectionIds: string[];
   collections: CollectionView[] = [];
   organization: Organization;
-  restrictProviderAccess: boolean;
 
   protected cipherDomain: Cipher;
 
@@ -38,15 +35,11 @@ export class CollectionsComponent implements OnInit {
     protected cipherService: CipherService,
     protected organizationService: OrganizationService,
     private logService: LogService,
-    private configService: ConfigService,
     private accountService: AccountService,
     private toastService: ToastService,
   ) {}
 
   async ngOnInit() {
-    this.restrictProviderAccess = await this.configService.getFeatureFlag(
-      FeatureFlag.RestrictProviderAccess,
-    );
     await this.load();
   }
 
@@ -76,7 +69,7 @@ export class CollectionsComponent implements OnInit {
   async submit(): Promise<boolean> {
     const selectedCollectionIds = this.collections
       .filter((c) => {
-        if (this.organization.canEditAllCiphers(this.restrictProviderAccess)) {
+        if (this.organization.canEditAllCiphers) {
           return !!(c as any).checked;
         } else {
           return !!(c as any).checked && c.readOnly == null;

@@ -183,14 +183,7 @@ export class Organization {
     return this.isAdmin || this.permissions.editAnyCollection;
   }
 
-  canEditUnassignedCiphers(restrictProviderAccessFlagEnabled: boolean) {
-    // Providers can access items until the restrictProviderAccess flag is enabled
-    // After the flag is enabled and removed, this block will be deleted
-    // so that they permanently lose access to items
-    if (this.isProviderUser && !restrictProviderAccessFlagEnabled) {
-      return true;
-    }
-
+  get canEditUnassignedCiphers() {
     return (
       this.type === OrganizationUserType.Admin ||
       this.type === OrganizationUserType.Owner ||
@@ -198,14 +191,7 @@ export class Organization {
     );
   }
 
-  canEditAllCiphers(restrictProviderAccessFlagEnabled: boolean) {
-    // Providers can access items until the restrictProviderAccess flag is enabled
-    // After the flag is enabled and removed, this block will be deleted
-    // so that they permanently lose access to items
-    if (this.isProviderUser && !restrictProviderAccessFlagEnabled) {
-      return true;
-    }
-
+  get canEditAllCiphers() {
     // The allowAdminAccessToAllCollectionItems flag can restrict admins
     // Custom users with canEditAnyCollection are not affected by allowAdminAccessToAllCollectionItems flag
     return (

@@ -34,7 +34,6 @@ export class VaultCollectionRowComponent {
   @Input() organizations: Organization[];
   @Input() groups: GroupView[];
   @Input() showPermissionsColumn: boolean;
-  @Input() restrictProviderAccess: boolean;
 
   @Output() onEvent = new EventEmitter<VaultItemEvent>();
 
@@ -74,10 +73,7 @@ export class VaultCollectionRowComponent {
   }
 
   get permissionText() {
-    if (
-      this.collection.id == Unassigned &&
-      this.organization?.canEditUnassignedCiphers(this.restrictProviderAccess)
-    ) {
+    if (this.collection.id == Unassigned && this.organization?.canEditUnassignedCiphers) {
       return this.i18nService.t("canEdit");
     }
     if ((this.collection as CollectionAdminView).assigned) {

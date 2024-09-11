@@ -11,12 +11,12 @@ import {
 } from "@angular/core";
 import { FormBuilder, ReactiveFormsModule, Validators } from "@angular/forms";
 import {
-  Observable,
-  Subject,
   combineLatest,
   firstValueFrom,
   map,
+  Observable,
   shareReplay,
+  Subject,
   switchMap,
   takeUntil,
   tap,
@@ -27,8 +27,6 @@ import { OrganizationService } from "@bitwarden/common/admin-console/abstraction
 import { OrganizationUserStatusType } from "@bitwarden/common/admin-console/enums";
 import { Organization } from "@bitwarden/common/admin-console/models/domain/organization";
 import { AccountService } from "@bitwarden/common/auth/abstractions/account.service";
-import { FeatureFlag } from "@bitwarden/common/enums/feature-flag.enum";
-import { ConfigService } from "@bitwarden/common/platform/abstractions/config/config.service";
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 import { CipherId, CollectionId, OrganizationId, UserId } from "@bitwarden/common/types/guid";
 import { CipherService } from "@bitwarden/common/vault/abstractions/cipher.service";
@@ -170,7 +168,6 @@ export class AssignCollectionsComponent implements OnInit, OnDestroy, AfterViewI
   constructor(
     private cipherService: CipherService,
     private i18nService: I18nService,
-    private configService: ConfigService,
     private organizationService: OrganizationService,
     private collectionService: CollectionService,
     private formBuilder: FormBuilder,
@@ -179,10 +176,6 @@ export class AssignCollectionsComponent implements OnInit, OnDestroy, AfterViewI
   ) {}
 
   async ngOnInit() {
-    const restrictProviderAccess = await this.configService.getFeatureFlag(
-      FeatureFlag.RestrictProviderAccess,
-    );
-
     this.activeUserId = await firstValueFrom(
       this.accountService.activeAccount$.pipe(map((a) => a?.id)),
     );
@@ -193,7 +186,7 @@ export class AssignCollectionsComponent implements OnInit, OnDestroy, AfterViewI
       this.showOrgSelector = true;
     }
 
-    await this.initializeItems(this.selectedOrgId, restrictProviderAccess);
+    await this.initializeItems(this.selectedOrgId);
 
     if (this.selectedOrgId && this.selectedOrgId !== MY_VAULT_ID) {
       await this.handleOrganizationCiphers();
@@ -339,7 +332,7 @@ export class AssignCollectionsComponent implements OnInit, OnDestroy, AfterViewI
     }
   }
 
-  private async initializeItems(organizationId: OrganizationId, restrictProviderAccess: boolean) {
+  private async initializeItems(organizationId: OrganizationId) {
     this.totalItemCount = this.params.ciphers.length;
 
     // If organizationId is not present or organizationId is MyVault, then all ciphers are considered personal items
@@ -354,7 +347,7 @@ export class AssignCollectionsComponent implements OnInit, OnDestroy, AfterViewI
     const org = await this.organizationService.get(organizationId);
     this.orgName = org.name;
 
-    this.editableItems = org.canEditAllCiphers(restrictProviderAccess)
+    this.editableItems = org.canEditAllCiphers
       ? this.params.ciphers
       : this.params.ciphers.filter((c) => c.edit);
 

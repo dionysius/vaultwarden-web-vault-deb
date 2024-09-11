@@ -1,13 +1,11 @@
 import { DIALOG_DATA, DialogConfig, DialogRef } from "@angular/cdk/dialog";
 import { CommonModule } from "@angular/common";
-import { Component, Inject, OnInit, EventEmitter, OnDestroy } from "@angular/core";
+import { Component, EventEmitter, Inject, OnDestroy, OnInit } from "@angular/core";
 import { Router } from "@angular/router";
 import { Subject } from "rxjs";
 
 import { OrganizationService } from "@bitwarden/common/admin-console/abstractions/organization/organization.service.abstraction";
 import { Organization } from "@bitwarden/common/admin-console/models/domain/organization";
-import { FeatureFlag } from "@bitwarden/common/enums/feature-flag.enum";
-import { ConfigService } from "@bitwarden/common/platform/abstractions/config/config.service";
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 import { LogService } from "@bitwarden/common/platform/abstractions/log.service";
 import { MessagingService } from "@bitwarden/common/platform/abstractions/messaging.service";
@@ -50,9 +48,7 @@ export class ViewComponent implements OnInit, OnDestroy {
   cipher: CipherView;
   onDeletedCipher = new EventEmitter<CipherView>();
   cipherTypeString: string;
-  cipherEditUrl: string;
   organization: Organization;
-  restrictProviderAccess = false;
 
   protected destroy$ = new Subject<void>();
 
@@ -67,7 +63,6 @@ export class ViewComponent implements OnInit, OnDestroy {
     private toastService: ToastService,
     private organizationService: OrganizationService,
     private router: Router,
-    private configService: ConfigService,
   ) {}
 
   /**
@@ -79,9 +74,6 @@ export class ViewComponent implements OnInit, OnDestroy {
     if (this.cipher.organizationId) {
       this.organization = await this.organizationService.get(this.cipher.organizationId);
     }
-    this.restrictProviderAccess = await this.configService.getFeatureFlag(
-      FeatureFlag.RestrictProviderAccess,
-    );
   }
 
   /**
@@ -132,7 +124,7 @@ export class ViewComponent implements OnInit, OnDestroy {
    * Helper method to delete cipher.
    */
   protected async deleteCipher(): Promise<void> {
-    const asAdmin = this.organization?.canEditAllCiphers(this.restrictProviderAccess);
+    const asAdmin = this.organization?.canEditAllCiphers;
     if (this.cipher.isDeleted) {
       await this.cipherService.deleteWithServer(this.cipher.id, asAdmin);
     } else {

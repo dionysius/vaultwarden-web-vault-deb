@@ -1161,7 +1161,7 @@ export class VaultComponent implements OnInit, OnDestroy {
     }
 
     const organization = this.allOrganizations.find((o) => o.id === cipher.organizationId);
-    return organization.canEditAllCiphers(false);
+    return organization.canEditAllCiphers;
   }
 
   private go(queryParams: any = null) {

@@ -32,7 +32,7 @@
                 [(ngModel)]="$any(c).checked"
                 name="Collection[{{ i }}].Checked"
                 appStopProp
-                [disabled]="!c.canEditItems(this.organization, this.restrictProviderAccess)"
+                [disabled]="!c.canEditItems(this.organization)"
               />
               {{ c.name }}
             </td>

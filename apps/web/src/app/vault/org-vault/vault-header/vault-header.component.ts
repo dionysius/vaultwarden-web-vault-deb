@@ -13,11 +13,11 @@ import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.servic
 import { CipherType } from "@bitwarden/common/vault/enums";
 import { TreeNode } from "@bitwarden/common/vault/models/domain/tree-node";
 import {
-  DialogService,
-  SimpleDialogOptions,
   BreadcrumbsModule,
+  DialogService,
   MenuModule,
   SearchModule,
+  SimpleDialogOptions,
 } from "@bitwarden/components";
 
 import { HeaderModule } from "../../../layouts/header/header.module";
@@ -88,8 +88,6 @@ export class VaultHeaderComponent implements OnInit {
   protected CollectionDialogTabType = CollectionDialogTabType;
   protected organizations$ = this.organizationService.organizations$;
 
-  protected restrictProviderAccessFlag = false;
-
   /**
    * Whether the extension refresh feature flag is enabled.
    */
@@ -108,9 +106,6 @@ export class VaultHeaderComponent implements OnInit {
   ) {}
 
   async ngOnInit() {
-    this.restrictProviderAccessFlag = await this.configService.getFeatureFlag(
-      FeatureFlag.RestrictProviderAccess,
-    );
     this.extensionRefreshEnabled = await this.configService.getFeatureFlag(
       FeatureFlag.ExtensionRefresh,
     );
@@ -245,11 +240,7 @@ export class VaultHeaderComponent implements OnInit {
   }
 
   get canCreateCipher(): boolean {
-    if (
-      this.organization?.isProviderUser &&
-      this.restrictProviderAccessFlag &&
-      !this.organization?.isMember
-    ) {
+    if (this.organization?.isProviderUser && !this.organization?.isMember) {
       return false;
     }
     return true;

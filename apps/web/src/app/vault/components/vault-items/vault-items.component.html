@@ -106,7 +106,6 @@
           [canDeleteCollection]="canDeleteCollection(item.collection)"
           [canEditCollection]="canEditCollection(item.collection)"
           [canViewCollectionInfo]="canViewCollectionInfo(item.collection)"
-          [restrictProviderAccess]="restrictProviderAccess"
           [checked]="selection.isSelected(item)"
           (checkedToggled)="selection.toggle(item)"
           (onEvent)="event($event)"
