@@ -246,25 +246,26 @@ export class ChangePlanDialogComponent implements OnInit, OnDestroy {
         selected: false,
       },
     ];
-    this.discountPercentageFromSub = this.sub?.customerDiscount?.percentOff;
+    this.discountPercentageFromSub = this.isSecretsManagerTrial()
+      ? 0
+      : (this.sub?.customerDiscount?.percentOff ?? 0);
 
     this.setInitialPlanSelection();
     this.loading = false;
   }
 
   setInitialPlanSelection() {
-    if (
-      this.organization.useSecretsManager &&
-      this.currentPlan.productTier == ProductTierType.Free
-    ) {
-      this.selectPlan(this.getPlanByType(ProductTierType.Teams));
-    } else {
-      this.selectPlan(this.getPlanByType(ProductTierType.Enterprise));
-    }
+    this.selectPlan(this.getPlanByType(ProductTierType.Enterprise));
   }
 
   getPlanByType(productTier: ProductTierType) {
     return this.selectableProducts.find((product) => product.productTier === productTier);
+  }
+
+  secretsManagerTrialDiscount() {
+    return this.sub?.customerDiscount?.appliesTo?.includes("sm-standalone")
+      ? this.discountPercentage
+      : this.discountPercentageFromSub + this.discountPercentage;
   }
 
   isSecretsManagerTrial(): boolean {
@@ -276,14 +277,7 @@ export class ChangePlanDialogComponent implements OnInit, OnDestroy {
   }
 
   planTypeChanged() {
-    if (
-      this.organization.useSecretsManager &&
-      this.currentPlan.productTier == ProductTierType.Free
-    ) {
-      this.selectPlan(this.getPlanByType(ProductTierType.Teams));
-    } else {
-      this.selectPlan(this.getPlanByType(ProductTierType.Enterprise));
-    }
+    this.selectPlan(this.getPlanByType(ProductTierType.Enterprise));
   }
 
   updateInterval(event: number) {
@@ -302,6 +296,10 @@ export class ChangePlanDialogComponent implements OnInit, OnDestroy {
         value: PlanInterval.Monthly,
       },
     ];
+  }
+
+  optimizedNgForRender(index: number) {
+    return index;
   }
 
   protected getPlanCardContainerClasses(plan: PlanResponse, index: number) {
@@ -368,6 +366,10 @@ export class ChangePlanDialogComponent implements OnInit, OnDestroy {
       this.selectedInterval === PlanInterval.Monthly &&
       plan.productTier == ProductTierType.Families
     ) {
+      return;
+    }
+
+    if (plan === this.currentPlan) {
       return;
     }
     this.selectedPlan = plan;
@@ -463,6 +465,10 @@ export class ChangePlanDialogComponent implements OnInit, OnDestroy {
     return result;
   }
 
+  get storageGb() {
+    return this.sub?.maxStorageGb - 1;
+  }
+
   passwordManagerSeatTotal(plan: PlanResponse): number {
     if (!plan.PasswordManager.hasAdditionalSeatsOption || this.isSecretsManagerTrial()) {
       return 0;
@@ -486,8 +492,7 @@ export class ChangePlanDialogComponent implements OnInit, OnDestroy {
     }
 
     return (
-      plan.PasswordManager.additionalStoragePricePerGb *
-      Math.abs(this.organization.maxStorageGb || 0)
+      plan.PasswordManager.additionalStoragePricePerGb * Math.abs(this.sub?.maxStorageGb - 1 || 0)
     );
   }
 
@@ -499,7 +504,10 @@ export class ChangePlanDialogComponent implements OnInit, OnDestroy {
   }
 
   additionalServiceAccountTotal(plan: PlanResponse): number {
-    if (!plan.SecretsManager.hasAdditionalServiceAccountOption || this.additionalServiceAccount) {
+    if (
+      !plan.SecretsManager.hasAdditionalServiceAccountOption ||
+      this.additionalServiceAccount == 0
+    ) {
       return 0;
     }
 
@@ -541,7 +549,7 @@ export class ChangePlanDialogComponent implements OnInit, OnDestroy {
     if (this.selectedPlan.productTier === ProductTierType.Families) {
       return this.selectedPlan.PasswordManager.baseSeats;
     }
-    return this.organization.seats;
+    return this.sub?.seats;
   }
 
   get total() {
@@ -565,7 +573,7 @@ export class ChangePlanDialogComponent implements OnInit, OnDestroy {
   }
 
   get additionalServiceAccount() {
-    const baseServiceAccount = this.selectedPlan.SecretsManager?.baseServiceAccount || 0;
+    const baseServiceAccount = this.currentPlan.SecretsManager?.baseServiceAccount || 0;
     const usedServiceAccounts = this.sub?.smServiceAccounts || 0;
 
     const additionalServiceAccounts = baseServiceAccount - usedServiceAccounts;
@@ -652,7 +660,7 @@ export class ChangePlanDialogComponent implements OnInit, OnDestroy {
       if (!this.acceptingSponsorship && !this.isInTrialFlow) {
         // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
         // eslint-disable-next-line @typescript-eslint/no-floating-promises
-        this.router.navigate(["/organizations/" + orgId]);
+        this.router.navigate(["/organizations/" + orgId + "/members"]);
       }
 
       if (this.isInTrialFlow) {
@@ -676,11 +684,11 @@ export class ChangePlanDialogComponent implements OnInit, OnDestroy {
   private async updateOrganization() {
     const request = new OrganizationUpgradeRequest();
     if (this.selectedPlan.productTier !== ProductTierType.Families) {
-      request.additionalSeats = this.organization.seats;
+      request.additionalSeats = this.sub?.seats;
     }
-    if (this.organization.maxStorageGb > this.selectedPlan.PasswordManager.baseStorageGb) {
+    if (this.sub?.maxStorageGb > this.selectedPlan.PasswordManager.baseStorageGb) {
       request.additionalStorageGb =
-        this.organization.maxStorageGb - this.selectedPlan.PasswordManager.baseStorageGb;
+        this.sub?.maxStorageGb - this.selectedPlan.PasswordManager.baseStorageGb;
     }
     request.premiumAccessAddon =
       this.selectedPlan.PasswordManager.hasPremiumAccessOption &&
@@ -768,6 +776,7 @@ export class ChangePlanDialogComponent implements OnInit, OnDestroy {
       request.additionalSmSeats = this.organization.seats;
     } else {
       request.additionalSmSeats = this.sub?.smSeats;
+      request.additionalServiceAccounts = this.additionalServiceAccount;
     }
   }
 
@@ -810,6 +819,16 @@ export class ChangePlanDialogComponent implements OnInit, OnDestroy {
 
   toggleTotalOpened() {
     this.totalOpened = !this.totalOpened;
+  }
+
+  calculateTotalAppliedDiscount(total: number) {
+    const discountPercent =
+      this.selectedInterval == PlanInterval.Annually
+        ? this.discountPercentage + this.discountPercentageFromSub
+        : this.discountPercentageFromSub;
+
+    const discountedTotal = total / (1 - discountPercent / 100);
+    return discountedTotal;
   }
 
   get paymentSourceClasses() {

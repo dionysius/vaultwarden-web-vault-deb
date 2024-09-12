@@ -430,6 +430,14 @@ export class OrganizationSubscriptionCloudComponent implements OnInit, OnDestroy
     }
   }
 
+  isSecretsManagerTrial(): boolean {
+    return (
+      this.sub?.subscription?.items?.some((item) =>
+        this.sub?.customerDiscount?.appliesTo?.includes(item.productId),
+      ) ?? false
+    );
+  }
+
   closeChangePlan() {
     this.showChangePlan = false;
   }
@@ -462,6 +470,11 @@ export class OrganizationSubscriptionCloudComponent implements OnInit, OnDestroy
     // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
     // eslint-disable-next-line @typescript-eslint/no-floating-promises
     this.load();
+  }
+
+  calculateTotalAppliedDiscount(total: number) {
+    const discountedTotal = total / (1 - this.customerDiscount?.percentOff / 100);
+    return discountedTotal;
   }
 
   adjustStorage = (add: boolean) => {
