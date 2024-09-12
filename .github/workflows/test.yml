@@ -138,7 +138,12 @@ jobs:
           eval "$(printf '\n' | /usr/bin/gnome-keyring-daemon --start)"
           cargo test -- --test-threads=1
 
-      - name: Test Windows / macOS
-        if: ${{ matrix.os!='ubuntu-latest' }}
+      - name: Test macOS
+        if: ${{ matrix.os=='macos-latest' }}
         working-directory: ./apps/desktop/desktop_native
+        run: cargo test -- --test-threads=1
+
+      - name: Test Windows
+        if: ${{ matrix.os=='windows-latest'}}
+        working-directory: ./apps/desktop/desktop_native/core
         run: cargo test -- --test-threads=1
