@@ -121,7 +121,6 @@ export class ExportComponent implements OnInit, OnDestroy, AfterViewInit {
   encryptedExportType = EncryptedExportType;
   protected showFilePassword: boolean;
 
-  filePasswordValue: string = null;
   private _disabledByPolicy = false;
 
   organizations$: Observable<Organization[]>;
@@ -278,18 +277,9 @@ export class ExportComponent implements OnInit, OnDestroy, AfterViewInit {
 
   generatePassword = async () => {
     const [options] = await this.passwordGenerationService.getOptions();
-    this.filePasswordValue = await this.passwordGenerationService.generatePassword(options);
-    this.exportForm.get("filePassword").setValue(this.filePasswordValue);
-    this.exportForm.get("confirmFilePassword").setValue(this.filePasswordValue);
-  };
-
-  copyPasswordToClipboard = async () => {
-    this.platformUtilsService.copyToClipboard(this.filePasswordValue);
-    this.toastService.showToast({
-      variant: "success",
-      title: null,
-      message: this.i18nService.t("valueCopied", this.i18nService.t("password")),
-    });
+    const generatedPassword = await this.passwordGenerationService.generatePassword(options);
+    this.exportForm.get("filePassword").setValue(generatedPassword);
+    this.exportForm.get("confirmFilePassword").setValue(generatedPassword);
   };
 
   submit = async () => {
