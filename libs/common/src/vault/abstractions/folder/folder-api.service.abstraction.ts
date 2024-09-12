@@ -5,4 +5,5 @@ export class FolderApiServiceAbstraction {
   save: (folder: Folder) => Promise<any>;
   delete: (id: string) => Promise<any>;
   get: (id: string) => Promise<FolderResponse>;
+  deleteAll: () => Promise<void>;
 }

@@ -32,6 +32,11 @@ export class FolderApiService implements FolderApiServiceAbstraction {
     await this.folderService.delete(id);
   }
 
+  async deleteAll(): Promise<void> {
+    await this.apiService.send("DELETE", "/folders/all", null, true, false);
+    await this.folderService.clear();
+  }
+
   async get(id: string): Promise<FolderResponse> {
     const r = await this.apiService.send("GET", "/folders/" + id, null, true, true);
     return new FolderResponse(r);
