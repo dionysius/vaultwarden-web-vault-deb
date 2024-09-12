@@ -1,4 +1,4 @@
-import { combineLatest, filter, firstValueFrom, map, switchMap, timeout } from "rxjs";
+import { combineLatest, concatMap, filter, firstValueFrom, map, timeout } from "rxjs";
 
 import { LogoutReason } from "@bitwarden/auth/common";
 import { LogService } from "@bitwarden/common/platform/abstractions/log.service";
@@ -79,7 +79,7 @@ export class VaultTimeoutService implements VaultTimeoutServiceAbstraction {
         this.accountService.activeAccount$,
         this.accountService.accountActivity$,
       ]).pipe(
-        switchMap(async ([activeAccount, accountActivity]) => {
+        concatMap(async ([activeAccount, accountActivity]) => {
           const activeUserId = activeAccount?.id;
           for (const userIdString in accountActivity) {
             const userId = userIdString as UserId;
