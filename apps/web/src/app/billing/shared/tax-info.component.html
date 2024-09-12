@@ -1,6 +1,6 @@
 <form [formGroup]="taxFormGroup">
   <div class="tw-grid tw-grid-cols-12 tw-gap-4">
-    <div [ngClass]="trialFlow ? 'tw-col-span-7' : 'tw-col-span-6'">
+    <div class="tw-col-span-6">
       <bit-form-field>
         <bit-label>{{ "country" | i18n }}</bit-label>
         <bit-select formControlName="country" autocomplete="country">
@@ -13,7 +13,7 @@
         </bit-select>
       </bit-form-field>
     </div>
-    <div [ngClass]="trialFlow ? 'tw-col-span-5' : 'tw-col-span-4'">
+    <div [ngClass]="trialFlow ? 'tw-col-span-6' : 'tw-col-span-4'">
       <bit-form-field>
         <bit-label>{{ "zipPostalCode" | i18n }}</bit-label>
         <input bitInput type="text" formControlName="postalCode" autocomplete="postal-code" />

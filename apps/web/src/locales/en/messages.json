@@ -143,6 +143,9 @@
   "securityCode": {
     "message": "Security code (CVV)"
   },
+  "securityCodeSlashCVV": {
+    "message": "Security code / CVV"
+  },
   "identityName": {
     "message": "Identity name"
   },
