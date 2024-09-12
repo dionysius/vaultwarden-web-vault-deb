@@ -14,12 +14,14 @@ export abstract class RegistrationFinishService {
    *
    * @param email The email address of the user.
    * @param passwordInputResult The password input result.
-   * @param emailVerificationToken The optional email verification token. Not present in org invite scenarios.
+   * @param emailVerificationToken The optional email verification token. Not present in emailed invite scenarios (ex: org invite).
+   * @param orgSponsoredFreeFamilyPlanToken The optional org sponsored free family plan token.
    * Returns a promise which resolves to the captcha bypass token string upon a successful account creation.
    */
   abstract finishRegistration(
     email: string,
     passwordInputResult: PasswordInputResult,
     emailVerificationToken?: string,
+    orgSponsoredFreeFamilyPlanToken?: string,
   ): Promise<string>;
 }

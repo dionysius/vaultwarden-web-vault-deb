@@ -66,17 +66,18 @@ export class WebRegistrationFinishService
   // Note: the org invite token and email verification are mutually exclusive. Only one will be present.
   override async buildRegisterRequest(
     email: string,
-    emailVerificationToken: string,
     passwordInputResult: PasswordInputResult,
     encryptedUserKey: EncryptedString,
     userAsymmetricKeys: [string, EncString],
+    emailVerificationToken?: string,
+    orgSponsoredFreeFamilyPlanToken?: string,
   ): Promise<RegisterFinishRequest> {
     const registerRequest = await super.buildRegisterRequest(
       email,
-      emailVerificationToken,
       passwordInputResult,
       encryptedUserKey,
       userAsymmetricKeys,
+      emailVerificationToken,
     );
 
     // web specific logic
@@ -88,6 +89,10 @@ export class WebRegistrationFinishService
       registerRequest.orgInviteToken = orgInvite.token;
     }
     // Invite is accepted after login (on deep link redirect).
+
+    if (orgSponsoredFreeFamilyPlanToken) {
+      registerRequest.orgSponsoredFreeFamilyPlanToken = orgSponsoredFreeFamilyPlanToken;
+    }
 
     return registerRequest;
   }

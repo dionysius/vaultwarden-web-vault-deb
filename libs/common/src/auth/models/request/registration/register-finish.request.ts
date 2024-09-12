@@ -5,7 +5,6 @@ import { EncryptedString } from "../../../../platform/models/domain/enc-string";
 export class RegisterFinishRequest {
   constructor(
     public email: string,
-    public emailVerificationToken: string,
 
     public masterPasswordHash: string,
     public masterPasswordHint: string,
@@ -17,6 +16,9 @@ export class RegisterFinishRequest {
     public kdfIterations: number,
     public kdfMemory?: number,
     public kdfParallelism?: number,
+
+    public emailVerificationToken?: string,
+    public orgSponsoredFreeFamilyPlanToken?: string,
 
     // Org Invite data (only applies on web)
     public organizationUserId?: string,

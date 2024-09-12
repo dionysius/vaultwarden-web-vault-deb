@@ -99,8 +99,7 @@ export class AcceptOrganizationComponent extends BaseAcceptComponent {
         email: invite.email,
       };
     } else if (registerRoute === "/signup") {
-      // We have to override the base component route b/c it is correct for other components
-      // that extend the base accept comp. We don't need users to complete email verification
+      // We have to override the base component route as we don't need users to complete email verification
       // if they are coming directly from an emailed org invite.
       registerRoute = "/finish-signup";
       queryParams = {

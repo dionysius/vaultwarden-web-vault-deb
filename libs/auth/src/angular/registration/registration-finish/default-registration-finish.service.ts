@@ -23,6 +23,7 @@ export class DefaultRegistrationFinishService implements RegistrationFinishServi
     email: string,
     passwordInputResult: PasswordInputResult,
     emailVerificationToken?: string,
+    orgSponsoredFreeFamilyPlanToken?: string,
   ): Promise<string> {
     const [newUserKey, newEncUserKey] = await this.cryptoService.makeUserKey(
       passwordInputResult.masterKey,
@@ -35,10 +36,11 @@ export class DefaultRegistrationFinishService implements RegistrationFinishServi
 
     const registerRequest = await this.buildRegisterRequest(
       email,
-      emailVerificationToken,
       passwordInputResult,
       newEncUserKey.encryptedString,
       userAsymmetricKeys,
+      emailVerificationToken,
+      orgSponsoredFreeFamilyPlanToken,
     );
 
     const capchaBypassToken = await this.accountApiService.registerFinish(registerRequest);
@@ -48,19 +50,19 @@ export class DefaultRegistrationFinishService implements RegistrationFinishServi
 
   protected async buildRegisterRequest(
     email: string,
-    emailVerificationToken: string,
     passwordInputResult: PasswordInputResult,
     encryptedUserKey: EncryptedString,
     userAsymmetricKeys: [string, EncString],
+    emailVerificationToken?: string,
+    orgSponsoredFreeFamilyPlanToken?: string, // web only
   ): Promise<RegisterFinishRequest> {
     const userAsymmetricKeysRequest = new KeysRequest(
       userAsymmetricKeys[0],
       userAsymmetricKeys[1].encryptedString,
     );
 
-    return new RegisterFinishRequest(
+    const registerFinishRequest = new RegisterFinishRequest(
       email,
-      emailVerificationToken,
       passwordInputResult.masterKeyHash,
       passwordInputResult.hint,
       encryptedUserKey,
@@ -68,5 +70,11 @@ export class DefaultRegistrationFinishService implements RegistrationFinishServi
       passwordInputResult.kdfConfig.kdfType,
       passwordInputResult.kdfConfig.iterations,
     );
+
+    if (emailVerificationToken) {
+      registerFinishRequest.emailVerificationToken = emailVerificationToken;
+    }
+
+    return registerFinishRequest;
   }
 }
