@@ -16,7 +16,9 @@ export * from "./fingerprint-dialog/fingerprint-dialog.component";
 
 // password callout
 export * from "./password-callout/password-callout.component";
-export * from "./vault-timeout-input/vault-timeout-input.component";
+
+// password hint
+export * from "./password-hint/password-hint.component";
 
 // input password
 export * from "./input-password/input-password.component";
@@ -40,3 +42,6 @@ export * from "./registration/registration-start/registration-start-secondary.co
 export * from "./registration/registration-env-selector/registration-env-selector.component";
 export * from "./registration/registration-finish/registration-finish.service";
 export * from "./registration/registration-finish/default-registration-finish.service";
+
+// vault timeout
+export * from "./vault-timeout-input/vault-timeout-input.component";

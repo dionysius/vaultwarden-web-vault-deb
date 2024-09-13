@@ -1,9 +1,12 @@
+<!-- The calc() reductions are to account for browser/desktop headers -->
 <main
-  class="tw-flex tw-min-h-screen tw-w-full tw-mx-auto tw-flex-col tw-gap-7 tw-bg-background-alt tw-px-8 tw-pb-4 tw-text-main"
+  class="tw-flex tw-w-full tw-mx-auto tw-flex-col tw-gap-7 tw-bg-background-alt tw-px-8 tw-pb-4 tw-text-main"
   [ngClass]="{
     'tw-pt-0': decreaseTopPadding,
     'tw-pt-8': !decreaseTopPadding,
-    'tw-relative tw-top-0': clientType === 'browser',
+    'tw-min-h-screen': clientType === 'web',
+    'tw-min-h-[calc(100vh-72px)]': clientType === 'browser',
+    'tw-min-h-[calc(100vh-54px)]': clientType === 'desktop',
   }"
 >
   <bit-icon *ngIf="!hideLogo" [icon]="logo" class="tw-w-[128px] [&>*]:tw-align-top"></bit-icon>
@@ -23,6 +26,7 @@
         {{ title }}
       </h1>
     </ng-container>
+
     <div *ngIf="subtitle" class="tw-text-sm sm:tw-text-base">{{ subtitle }}</div>
   </div>
 

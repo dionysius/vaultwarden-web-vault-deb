@@ -20,6 +20,7 @@ import { AvatarModule, ButtonModule, ToastModule } from "@bitwarden/components";
 import { AccountComponent } from "../auth/popup/account-switching/account.component";
 import { CurrentAccountComponent } from "../auth/popup/account-switching/current-account.component";
 import { EnvironmentComponent } from "../auth/popup/environment.component";
+import { ExtensionAnonLayoutWrapperComponent } from "../auth/popup/extension-anon-layout-wrapper/extension-anon-layout-wrapper.component";
 import { HintComponent } from "../auth/popup/hint.component";
 import { HomeComponent } from "../auth/popup/home.component";
 import { LockComponent } from "../auth/popup/lock.component";
@@ -131,6 +132,7 @@ import "../platform/popup/locales";
     HeaderComponent,
     UserVerificationDialogComponent,
     CurrentAccountComponent,
+    ExtensionAnonLayoutWrapperComponent,
   ],
   declarations: [
     ActionButtonsComponent,

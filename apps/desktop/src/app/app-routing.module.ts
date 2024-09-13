@@ -1,6 +1,8 @@
 import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
 
+import { EnvironmentSelectorComponent } from "@bitwarden/angular/auth/components/environment-selector.component";
+import { unauthUiRefreshSwap } from "@bitwarden/angular/auth/functions/unauth-ui-refresh-route-swap";
 import {
   authGuard,
   lockGuard,
@@ -12,11 +14,13 @@ import { canAccessFeature } from "@bitwarden/angular/platform/guard/feature-flag
 import {
   AnonLayoutWrapperComponent,
   AnonLayoutWrapperData,
+  PasswordHintComponent,
   RegistrationFinishComponent,
   RegistrationStartComponent,
   RegistrationStartSecondaryComponent,
   RegistrationStartSecondaryComponentData,
   SetPasswordJitComponent,
+  UserLockIcon,
 } from "@bitwarden/auth/angular";
 import { FeatureFlag } from "@bitwarden/common/enums/feature-flag.enum";
 
@@ -94,7 +98,6 @@ const routes: Routes = [
     canActivate: [authGuard],
   },
   { path: "accessibility-cookie", component: AccessibilityCookieComponent },
-  { path: "hint", component: HintComponent },
   { path: "set-password", component: SetPasswordComponent },
   { path: "sso", component: SsoComponent },
   {
@@ -113,10 +116,53 @@ const routes: Routes = [
     canActivate: [authGuard],
     data: { titleId: "removeMasterPassword" },
   },
+  ...unauthUiRefreshSwap(
+    HintComponent,
+    AnonLayoutWrapperComponent,
+    {
+      path: "hint",
+      canActivate: [unauthGuardFn()],
+      data: {
+        pageTitle: "passwordHint",
+        titleId: "passwordHint",
+      },
+    },
+    {
+      path: "",
+      children: [
+        {
+          path: "hint",
+          canActivate: [unauthGuardFn()],
+          data: {
+            pageTitle: "requestPasswordHint",
+            pageSubtitle: "enterYourAccountEmailAddressAndYourPasswordHintWillBeSentToYou",
+            pageIcon: UserLockIcon,
+            state: "hint",
+          },
+          children: [
+            { path: "", component: PasswordHintComponent },
+            {
+              path: "",
+              component: EnvironmentSelectorComponent,
+              outlet: "environment-selector",
+            },
+          ],
+        },
+      ],
+    },
+  ),
   {
     path: "",
     component: AnonLayoutWrapperComponent,
     children: [
+      {
+        path: "hint",
+        component: PasswordHintComponent,
+        data: {
+          pageTitle: "requestPasswordHint",
+          pageSubtitle: "enterYourAccountEmailAddressAndYourPasswordHintWillBeSentToYou",
+        },
+      },
       {
         path: "signup",
         canActivate: [canAccessFeature(FeatureFlag.EmailVerification), unauthGuardFn()],

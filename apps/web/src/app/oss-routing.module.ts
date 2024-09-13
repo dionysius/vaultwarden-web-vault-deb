@@ -1,6 +1,7 @@
 import { NgModule } from "@angular/core";
 import { Route, RouterModule, Routes } from "@angular/router";
 
+import { unauthUiRefreshSwap } from "@bitwarden/angular/auth/functions/unauth-ui-refresh-route-swap";
 import {
   authGuard,
   lockGuard,
@@ -12,13 +13,15 @@ import { canAccessFeature } from "@bitwarden/angular/platform/guard/feature-flag
 import {
   AnonLayoutWrapperComponent,
   AnonLayoutWrapperData,
+  PasswordHintComponent,
   RegistrationFinishComponent,
   RegistrationStartComponent,
   RegistrationStartSecondaryComponent,
   RegistrationStartSecondaryComponentData,
   SetPasswordJitComponent,
-  LockIcon,
   RegistrationLinkExpiredComponent,
+  LockIcon,
+  UserLockIcon,
 } from "@bitwarden/auth/angular";
 import { FeatureFlag } from "@bitwarden/common/enums/feature-flag.enum";
 
@@ -167,6 +170,49 @@ const routes: Routes = [
       },
     ],
   },
+  ...unauthUiRefreshSwap(
+    AnonLayoutWrapperComponent,
+    AnonLayoutWrapperComponent,
+    {
+      path: "hint",
+      canActivate: [unauthGuardFn()],
+      data: {
+        pageTitle: "passwordHint",
+        titleId: "passwordHint",
+      },
+      children: [
+        { path: "", component: HintComponent },
+        {
+          path: "",
+          component: EnvironmentSelectorComponent,
+          outlet: "environment-selector",
+        },
+      ],
+    },
+    {
+      path: "",
+      children: [
+        {
+          path: "hint",
+          canActivate: [unauthGuardFn()],
+          data: {
+            pageTitle: "requestPasswordHint",
+            pageSubtitle: "enterYourAccountEmailAddressAndYourPasswordHintWillBeSentToYou",
+            pageIcon: UserLockIcon,
+            state: "hint",
+          },
+          children: [
+            { path: "", component: PasswordHintComponent },
+            {
+              path: "",
+              component: EnvironmentSelectorComponent,
+              outlet: "environment-selector",
+            },
+          ],
+        },
+      ],
+    },
+  ),
   {
     path: "",
     component: AnonLayoutWrapperComponent,
@@ -385,25 +431,6 @@ const routes: Routes = [
           {
             path: "",
             component: VerifyRecoverDeleteComponent,
-          },
-        ],
-      },
-      {
-        path: "hint",
-        canActivate: [unauthGuardFn()],
-        data: {
-          pageTitle: "passwordHint",
-          titleId: "passwordHint",
-        } satisfies DataProperties & AnonLayoutWrapperData,
-        children: [
-          {
-            path: "",
-            component: HintComponent,
-          },
-          {
-            path: "",
-            component: EnvironmentSelectorComponent,
-            outlet: "environment-selector",
           },
         ],
       },

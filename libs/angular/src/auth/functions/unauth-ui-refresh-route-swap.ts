@@ -20,6 +20,7 @@ export function unauthUiRefreshSwap(
   defaultComponent: Type<any>,
   refreshedComponent: Type<any>,
   options: Route,
+  altOptions?: Route,
 ): Routes {
   return componentRouteSwap(
     defaultComponent,
@@ -29,5 +30,6 @@ export function unauthUiRefreshSwap(
       return configService.getFeatureFlag(FeatureFlag.UnauthenticatedExtensionUIRefresh);
     },
     options,
+    altOptions,
   );
 }

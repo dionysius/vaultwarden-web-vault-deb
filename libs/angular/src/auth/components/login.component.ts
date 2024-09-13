@@ -317,6 +317,7 @@ export class LoginComponent extends CaptchaProtectedComponent implements OnInit,
     // Try to load from memory first
     const email = await firstValueFrom(this.loginEmailService.loginEmail$);
     const rememberEmail = this.loginEmailService.getRememberEmail();
+
     if (email) {
       this.formGroup.controls.email.setValue(email);
       this.formGroup.controls.rememberEmail.setValue(rememberEmail);
