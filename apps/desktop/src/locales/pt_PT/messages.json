@@ -1285,6 +1285,9 @@
       }
     }
   },
+  "copySuccessful": {
+    "message": "Copy Successful"
+  },
   "errorRefreshingAccessToken": {
     "message": "Erro no acesso ao token de atualização"
   },
@@ -3061,5 +3064,8 @@
   },
   "ssoError": {
     "message": "Não foi possível encontrar portas livres para o início de sessão sso."
+  },
+  "fileSavedToDevice": {
+    "message": "Ficheiro guardado no dispositivo. Gira-o a partir das transferências do seu dispositivo."
   }
 }

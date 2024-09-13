@@ -1285,6 +1285,9 @@
       }
     }
   },
+  "copySuccessful": {
+    "message": "Copy Successful"
+  },
   "errorRefreshingAccessToken": {
     "message": "Müraciət tokeni təzələmə xətası"
   },
@@ -3061,5 +3064,8 @@
   },
   "ssoError": {
     "message": "SSO giriş üçün açıq port tapıla bilmədi."
+  },
+  "fileSavedToDevice": {
+    "message": "File saved to device. Manage from your device downloads."
   }
 }

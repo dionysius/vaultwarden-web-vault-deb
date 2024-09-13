@@ -1285,6 +1285,9 @@
       }
     }
   },
+  "copySuccessful": {
+    "message": "Copy Successful"
+  },
   "errorRefreshingAccessToken": {
     "message": "Errore di aggiornamento del token di accesso"
   },
@@ -3061,5 +3064,8 @@
   },
   "ssoError": {
     "message": "Non è stato possibile trovare nessuna porta libera per il login Sso."
+  },
+  "fileSavedToDevice": {
+    "message": "File salvato sul dispositivo. Gestisci dai download del dispositivo."
   }
 }

@@ -1285,6 +1285,9 @@
       }
     }
   },
+  "copySuccessful": {
+    "message": "Ievietošana starpliktuvē veiksmīga"
+  },
   "errorRefreshingAccessToken": {
     "message": "Piekļuves pilnvaras atsvaizināšanas kļūda"
   },
@@ -3061,5 +3064,8 @@
   },
   "ssoError": {
     "message": "Netika atrasti brīvi vienotās (SSO) pieteikšanās porti."
+  },
+  "fileSavedToDevice": {
+    "message": "Datne saglabāta ierīcē. Tā ir atrodama ierīces lejupielāžu mapē."
   }
 }

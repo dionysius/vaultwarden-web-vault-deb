@@ -1285,6 +1285,9 @@
       }
     }
   },
+  "copySuccessful": {
+    "message": "Copy Successful"
+  },
   "errorRefreshingAccessToken": {
     "message": "Zugangs-Token Aktualisierungsfehler"
   },
@@ -3061,5 +3064,8 @@
   },
   "ssoError": {
     "message": "Es konnten keine freien Ports für die SSO-Anmeldung gefunden werden."
+  },
+  "fileSavedToDevice": {
+    "message": "File saved to device. Manage from your device downloads."
   }
 }

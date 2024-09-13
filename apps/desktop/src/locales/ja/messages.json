@@ -1285,6 +1285,9 @@
       }
     }
   },
+  "copySuccessful": {
+    "message": "コピーしました"
+  },
   "errorRefreshingAccessToken": {
     "message": "アクセストークンの更新エラー"
   },
@@ -3061,5 +3064,8 @@
   },
   "ssoError": {
     "message": "SSO ログインのための空きポートが見つかりませんでした。"
+  },
+  "fileSavedToDevice": {
+    "message": "ファイルをデバイスに保存しました。デバイスのダウンロードで管理できます。"
   }
 }

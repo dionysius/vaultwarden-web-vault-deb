@@ -1285,6 +1285,9 @@
       }
     }
   },
+  "copySuccessful": {
+    "message": "Copy Successful"
+  },
   "errorRefreshingAccessToken": {
     "message": "Σφάλμα Ανανέωσης Διακριτικού Πρόσβασης"
   },
@@ -3061,5 +3064,8 @@
   },
   "ssoError": {
     "message": "Δεν βρέθηκαν ελεύθερες θύρες για τη σύνδεση sso."
+  },
+  "fileSavedToDevice": {
+    "message": "File saved to device. Manage from your device downloads."
   }
 }

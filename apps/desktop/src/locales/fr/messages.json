@@ -1285,6 +1285,9 @@
       }
     }
   },
+  "copySuccessful": {
+    "message": "Copié avec succès"
+  },
   "errorRefreshingAccessToken": {
     "message": "Erreur d'actualisation du jeton d'accès"
   },
@@ -3061,5 +3064,8 @@
   },
   "ssoError": {
     "message": "No free ports could be found for the sso login."
+  },
+  "fileSavedToDevice": {
+    "message": "Fichier enregistré sur l'appareil. Gérez à partir des téléchargements de votre appareil."
   }
 }

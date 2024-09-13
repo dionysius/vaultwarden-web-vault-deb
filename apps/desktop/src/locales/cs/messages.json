@@ -1285,6 +1285,9 @@
       }
     }
   },
+  "copySuccessful": {
+    "message": "Kopírování bylo úspěšné"
+  },
   "errorRefreshingAccessToken": {
     "message": "Chyba aktualizace přístupového tokenu"
   },
@@ -3061,5 +3064,8 @@
   },
   "ssoError": {
     "message": "Pro přihlášení SSO nebyly nalezeny žádné volné porty."
+  },
+  "fileSavedToDevice": {
+    "message": "Soubor byl uložen. Můžete jej nalézt ve stažené složce v zařízení."
   }
 }

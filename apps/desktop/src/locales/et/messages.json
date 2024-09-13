@@ -1285,6 +1285,9 @@
       }
     }
   },
+  "copySuccessful": {
+    "message": "Copy Successful"
+  },
   "errorRefreshingAccessToken": {
     "message": "Juurdepääsukoodi Värskendamine Ebaõnnestus"
   },
@@ -3061,5 +3064,8 @@
   },
   "ssoError": {
     "message": "SSO-ga sisselogimiseks ei leitud ühtegi vaba porti."
+  },
+  "fileSavedToDevice": {
+    "message": "File saved to device. Manage from your device downloads."
   }
 }

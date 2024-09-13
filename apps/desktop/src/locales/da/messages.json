@@ -1285,6 +1285,9 @@
       }
     }
   },
+  "copySuccessful": {
+    "message": "Kopieret"
+  },
   "errorRefreshingAccessToken": {
     "message": "Adgangstoken genopfriskningsfejl"
   },
@@ -3061,5 +3064,8 @@
   },
   "ssoError": {
     "message": "Ingen ledige porte fundet til SSO-login."
+  },
+  "fileSavedToDevice": {
+    "message": "Fil gemt på enheden. Håndtér fra enhedens downloads."
   }
 }

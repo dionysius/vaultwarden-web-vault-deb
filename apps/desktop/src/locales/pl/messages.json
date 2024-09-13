@@ -1285,6 +1285,9 @@
       }
     }
   },
+  "copySuccessful": {
+    "message": "Copy Successful"
+  },
   "errorRefreshingAccessToken": {
     "message": "Błąd podczas odświeżania tokenu"
   },
@@ -3061,5 +3064,8 @@
   },
   "ssoError": {
     "message": "No free ports could be found for the sso login."
+  },
+  "fileSavedToDevice": {
+    "message": "File saved to device. Manage from your device downloads."
   }
 }

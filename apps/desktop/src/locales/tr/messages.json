@@ -1285,6 +1285,9 @@
       }
     }
   },
+  "copySuccessful": {
+    "message": "Kopyalama başarılı"
+  },
   "errorRefreshingAccessToken": {
     "message": "Access Token Refresh Error"
   },
@@ -3061,5 +3064,8 @@
   },
   "ssoError": {
     "message": "SSO girişi için açık port bulunamadı."
+  },
+  "fileSavedToDevice": {
+    "message": "Dosya cihaza kaydedildi. Cihazınızın indirilenler klasöründen yönetebilirsiniz."
   }
 }

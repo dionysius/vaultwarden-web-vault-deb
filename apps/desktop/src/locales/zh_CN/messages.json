@@ -1285,6 +1285,9 @@
       }
     }
   },
+  "copySuccessful": {
+    "message": "Copy Successful"
+  },
   "errorRefreshingAccessToken": {
     "message": "访问令牌刷新错误"
   },
@@ -3061,5 +3064,8 @@
   },
   "ssoError": {
     "message": "找不到用于 SSO 登录的可用端口。"
+  },
+  "fileSavedToDevice": {
+    "message": "文件已保存到设备。可以在设备下载中进行管理。"
   }
 }

@@ -1285,6 +1285,9 @@
       }
     }
   },
+  "copySuccessful": {
+    "message": "Úspešne skopírované"
+  },
   "errorRefreshingAccessToken": {
     "message": "Chyba obnovenia prístupového tokenu"
   },
@@ -3061,5 +3064,8 @@
   },
   "ssoError": {
     "message": "Pre prihlásenie SSO sa nepodarilo nájsť žiadne voľné porty."
+  },
+  "fileSavedToDevice": {
+    "message": "Súbor sa uložil do zariadenia. Spravujte stiahnuté súbory zo zariadenia."
   }
 }
