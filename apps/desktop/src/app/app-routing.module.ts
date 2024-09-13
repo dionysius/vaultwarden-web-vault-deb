@@ -156,14 +156,6 @@ const routes: Routes = [
     component: AnonLayoutWrapperComponent,
     children: [
       {
-        path: "hint",
-        component: PasswordHintComponent,
-        data: {
-          pageTitle: "requestPasswordHint",
-          pageSubtitle: "enterYourAccountEmailAddressAndYourPasswordHintWillBeSentToYou",
-        },
-      },
-      {
         path: "signup",
         canActivate: [canAccessFeature(FeatureFlag.EmailVerification), unauthGuardFn()],
         data: { pageTitle: "createAccount" } satisfies AnonLayoutWrapperData,
