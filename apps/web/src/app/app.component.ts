@@ -119,9 +119,12 @@ export class AppComponent implements OnDestroy, OnInit {
             this.notificationsService.updateConnection(false);
             break;
           case "loggedOut":
-            // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
-            // eslint-disable-next-line @typescript-eslint/no-floating-promises
-            this.notificationsService.updateConnection(false);
+            if (
+              message.userId == null ||
+              message.userId === (await firstValueFrom(this.accountService.activeAccount$))
+            ) {
+              await this.notificationsService.updateConnection(false);
+            }
             break;
           case "unlocked":
             // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
@@ -311,7 +314,7 @@ export class AppComponent implements OnDestroy, OnInit {
         // eslint-disable-next-line @typescript-eslint/no-floating-promises
         this.router.navigate(["/"]);
       }
-    });
+    }, userId);
   }
 
   private async recordActivity() {
