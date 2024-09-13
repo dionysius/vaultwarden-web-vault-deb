@@ -19,7 +19,7 @@ export class OrganizationInformationComponent implements OnInit {
   constructor(private accountService: AccountService) {}
 
   async ngOnInit(): Promise<void> {
-    if (this.formGroup.controls.billingEmail.value) {
+    if (this.formGroup?.controls?.billingEmail?.value) {
       return;
     }
 
