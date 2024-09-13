@@ -143,6 +143,9 @@
   "securityCode": {
     "message": "Безбедносни кôд (CVV)"
   },
+  "securityCodeSlashCVV": {
+    "message": "Security code / CVV"
+  },
   "identityName": {
     "message": "Име идентитета"
   },
@@ -561,6 +564,9 @@
         "example": "Password"
       }
     }
+  },
+  "copySuccessful": {
+    "message": "Copy Successful"
   },
   "copyValue": {
     "message": "Копирај вредност",
@@ -3894,6 +3900,12 @@
       }
     }
   },
+  "encryptionKeyUpdateCannotProceed": {
+    "message": "Encryption key update cannot proceed"
+  },
+  "keyUpdateFoldersFailed": {
+    "message": "When updating your encryption key, your folders could not be decrypted. To continue with the update, your folders must be deleted. No vault items will be deleted if you proceed."
+  },
   "keyUpdated": {
     "message": "Кључ је ажуриран"
   },
@@ -4034,6 +4046,9 @@
   },
   "selected": {
     "message": "Изабано"
+  },
+  "recommended": {
+    "message": "Recommended"
   },
   "ownership": {
     "message": "Власништво"
@@ -8756,6 +8771,27 @@
   "memberAccessReportPageDesc": {
     "message": "Провера приступа чланова организације кроз групе, колекције и ставке колекције. ЦСВ извоз пружа детаљну анализу по члану, укључујући информације о дозволама за прикупљање и конфигурацијама налога."
   },
+  "memberAccessReportNoCollection": {
+    "message": "(No Collection)"
+  },
+  "memberAccessReportNoCollectionPermission": {
+    "message": "(No Collection Permission)"
+  },
+  "memberAccessReportNoGroup": {
+    "message": "(No Group)"
+  },
+  "memberAccessReportTwoFactorEnabledTrue": {
+    "message": "On"
+  },
+  "memberAccessReportTwoFactorEnabledFalse": {
+    "message": "Off"
+  },
+  "memberAccessReportAuthenticationEnabledTrue": {
+    "message": "On"
+  },
+  "memberAccessReportAuthenticationEnabledFalse": {
+    "message": "Off"
+  },
   "higherKDFIterations": {
     "message": "Веће KDF итерације може помоћи у заштити ваше главне лозинке од грубе присиле од стране нападача."
   },
@@ -8959,8 +8995,8 @@
       }
     }
   },
-  "upgradePlan": {
-    "message": "Upgrade your plan to invite more members and gain access to additional Bitwarden features"
+  "upgradePlans": {
+    "message": "Upgrade your plan to invite members and experience powerful security features."
   },
   "upgradeDiscount": {
     "message": "Уштедите $AMOUNT$%",
@@ -8971,11 +9007,11 @@
       }
     }
   },
-  "upgradeEnterpriseMessage": {
-    "message": "Напредне могућности за већа предузећа"
+  "enterprisePlanUpgradeMessage": {
+    "message": "Advanced capabilities for larger organizations"
   },
-  "upgradeTeamsMessage": {
-    "message": "Предузећа која траже моћну сигурност"
+  "teamsPlanUpgradeMessage": {
+    "message": "Resilient protection for growing teams"
   },
   "teamsInviteMessage": {
     "message": "Invite unlimited members"
@@ -8986,8 +9022,8 @@
   "syncGroupsAndUsersFromDirectory": {
     "message": "Синхронизујте групе и кориснике из директоријума"
   },
-  "upgradeFamilyMessage": {
-    "message": "Поделите са породицама и пријатељима"
+  "familyPlanUpgradeMessage": {
+    "message": "Secure your family logins"
   },
   "accessToPremiumFeatures": {
     "message": "Приступ Премиум функцијама"
@@ -9043,8 +9079,11 @@
   "bitwardenPasswordManager": {
     "message": "Bitwarden Менаџер Лозинке"
   },
-  "secretsManagerWithFreePasswordManagerInfo": {
-    "message": "Ваша комплементарна једногодишња претплата на Менаџер Лозинки ће надоградити на изабрани план. Неће вам бити наплаћено док се бесплатни период не заврши."
+  "secretsManagerComplimentaryPasswordManager": {
+    "message": "Your complimentary one year Password Manager subscription will upgrade to the selected plan. You will not be charged until the complimentary period is over."
+  },
+  "fileSavedToDevice": {
+    "message": "File saved to device. Manage from your device downloads."
   },
   "publicApi": {
     "message": "Јавни API",

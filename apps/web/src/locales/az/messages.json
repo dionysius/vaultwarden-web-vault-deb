@@ -143,6 +143,9 @@
   "securityCode": {
     "message": "Güvənlik kodu (CVV)"
   },
+  "securityCodeSlashCVV": {
+    "message": "Security code / CVV"
+  },
   "identityName": {
     "message": "Kimlik adı"
   },
@@ -561,6 +564,9 @@
         "example": "Password"
       }
     }
+  },
+  "copySuccessful": {
+    "message": "Copy Successful"
   },
   "copyValue": {
     "message": "Dəyəri kopyala",
@@ -3894,6 +3900,12 @@
       }
     }
   },
+  "encryptionKeyUpdateCannotProceed": {
+    "message": "Encryption key update cannot proceed"
+  },
+  "keyUpdateFoldersFailed": {
+    "message": "When updating your encryption key, your folders could not be decrypted. To continue with the update, your folders must be deleted. No vault items will be deleted if you proceed."
+  },
   "keyUpdated": {
     "message": "Açar güncəlləndi"
   },
@@ -4034,6 +4046,9 @@
   },
   "selected": {
     "message": "Seçildi"
+  },
+  "recommended": {
+    "message": "Tövsiyə edilən"
   },
   "ownership": {
     "message": "Sahiblik"
@@ -8756,6 +8771,27 @@
   "memberAccessReportPageDesc": {
     "message": "Qruplar, kolleksiyalar və kolleksiya elementləri arasında təşkilat üzvlərinin müraciətini yoxlanışdan keçirin. CSV xaricə köçürməsi, kolleksiya icazələri və hesab konfiqurasiyaları haqqında məlumatlar da daxil olmaqla hər bir üzv üçün detallı məlumat təqdim edir."
   },
+  "memberAccessReportNoCollection": {
+    "message": "(Kolleksiya yoxdur)"
+  },
+  "memberAccessReportNoCollectionPermission": {
+    "message": "(Kolleksiya icazəsi yoxdur)"
+  },
+  "memberAccessReportNoGroup": {
+    "message": "(Qrup yoxdur)"
+  },
+  "memberAccessReportTwoFactorEnabledTrue": {
+    "message": "Açıq"
+  },
+  "memberAccessReportTwoFactorEnabledFalse": {
+    "message": "Bağlı"
+  },
+  "memberAccessReportAuthenticationEnabledTrue": {
+    "message": "Açıq"
+  },
+  "memberAccessReportAuthenticationEnabledFalse": {
+    "message": "Bağlı"
+  },
   "higherKDFIterations": {
     "message": "Daha yüksək KDF iterasiyaları, ana parolunuzu təcavüzkar tərəfindən \"brute force\" hücumuna qarşı qorumağa kömək edir."
   },
@@ -8959,8 +8995,8 @@
       }
     }
   },
-  "upgradePlan": {
-    "message": "Daha çox üzv dəvət etmək və əlavə Bitwarden özəlliklərinə müraciət əldə etmək üçün planınızı yüksəldin"
+  "upgradePlans": {
+    "message": "Üzv dəvət etmək və güclü təhlükəsizlik özəlliklərini təcrübə etmək üçün planınızı yüksəldin."
   },
   "upgradeDiscount": {
     "message": "$AMOUNT$% endirim",
@@ -8971,11 +9007,11 @@
       }
     }
   },
-  "upgradeEnterpriseMessage": {
-    "message": "Daha böyük bizneslər üçün qabaqcıl imkanlar"
+  "enterprisePlanUpgradeMessage": {
+    "message": "Daha böyük təşkilatlar üçün qabaqcıl imkanlar"
   },
-  "upgradeTeamsMessage": {
-    "message": "Güclü təhlükəsizlik axtaran bizneslər"
+  "teamsPlanUpgradeMessage": {
+    "message": "Böyüyən komandalar üçün dayanıqlı qoruma"
   },
   "teamsInviteMessage": {
     "message": "Limitsiz üzv dəvət et"
@@ -8986,8 +9022,8 @@
   "syncGroupsAndUsersFromDirectory": {
     "message": "Qrupları və istifadəçiləri bir kataloqdan sinxronlaşdır"
   },
-  "upgradeFamilyMessage": {
-    "message": "Ailə və dostlarla paylaş"
+  "familyPlanUpgradeMessage": {
+    "message": "Ailənizin giriş məlumatlarını güvəndə saxlayın"
   },
   "accessToPremiumFeatures": {
     "message": "Premium özəlliklərə müraciət"
@@ -9043,8 +9079,11 @@
   "bitwardenPasswordManager": {
     "message": "Bitwarden Parol Meneceri"
   },
-  "secretsManagerWithFreePasswordManagerInfo": {
-    "message": "Tamamlayıcı bir illik Parol Meneceri abunəliyiniz seçilmiş plana yüksəldiləcək. Ödənişsiz dövr bitənə qədər sizdən ödəniş alınmayacaq."
+  "secretsManagerComplimentaryPasswordManager": {
+    "message": "Your complimentary one year Password Manager subscription will upgrade to the selected plan. You will not be charged until the complimentary period is over."
+  },
+  "fileSavedToDevice": {
+    "message": "File saved to device. Manage from your device downloads."
   },
   "publicApi": {
     "message": "Hər kəsə açıq API",

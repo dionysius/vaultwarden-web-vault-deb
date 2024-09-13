@@ -143,6 +143,9 @@
   "securityCode": {
     "message": "Код за сигурност"
   },
+  "securityCodeSlashCVV": {
+    "message": "Security code / CVV"
+  },
   "identityName": {
     "message": "Име на самоличността"
   },
@@ -561,6 +564,9 @@
         "example": "Password"
       }
     }
+  },
+  "copySuccessful": {
+    "message": "Copy Successful"
   },
   "copyValue": {
     "message": "Копиране на стойността",
@@ -3894,6 +3900,12 @@
       }
     }
   },
+  "encryptionKeyUpdateCannotProceed": {
+    "message": "Encryption key update cannot proceed"
+  },
+  "keyUpdateFoldersFailed": {
+    "message": "When updating your encryption key, your folders could not be decrypted. To continue with the update, your folders must be deleted. No vault items will be deleted if you proceed."
+  },
   "keyUpdated": {
     "message": "Ключът е обновен"
   },
@@ -4034,6 +4046,9 @@
   },
   "selected": {
     "message": "Избрано"
+  },
+  "recommended": {
+    "message": "Препоръчано"
   },
   "ownership": {
     "message": "Собственост"
@@ -8756,6 +8771,27 @@
   "memberAccessReportPageDesc": {
     "message": "Направете проверка на достъпа на членовете до групи, колекции и елементи в колекциите. Изнасянето на на данните като файл CSV предоставя подробна разбивка по членове, включително информация относно правата за колекции и настройките на регистрациите."
   },
+  "memberAccessReportNoCollection": {
+    "message": "(Няма колекция)"
+  },
+  "memberAccessReportNoCollectionPermission": {
+    "message": "(Няма право за колекции)"
+  },
+  "memberAccessReportNoGroup": {
+    "message": "(Няма група)"
+  },
+  "memberAccessReportTwoFactorEnabledTrue": {
+    "message": "Включено"
+  },
+  "memberAccessReportTwoFactorEnabledFalse": {
+    "message": "Изключено"
+  },
+  "memberAccessReportAuthenticationEnabledTrue": {
+    "message": "Включено"
+  },
+  "memberAccessReportAuthenticationEnabledFalse": {
+    "message": "Изключено"
+  },
   "higherKDFIterations": {
     "message": "По-високите стойности за броя на повторения на KDF може да защитят главната Ви парола от атаки тип „груба сила“."
   },
@@ -8959,8 +8995,8 @@
       }
     }
   },
-  "upgradePlan": {
-    "message": "Надградете плана си, за да може да поканите повече членове и да получите достъп до още функционалности на Битуорден"
+  "upgradePlans": {
+    "message": "Надградете плана си, за да можете да поканите още хора, както и да се възползвате от подобрените защитни функционалности."
   },
   "upgradeDiscount": {
     "message": "Спестете $AMOUNT$%",
@@ -8971,11 +9007,11 @@
       }
     }
   },
-  "upgradeEnterpriseMessage": {
-    "message": "Допълнителни възможности за големи компании"
+  "enterprisePlanUpgradeMessage": {
+    "message": "Допълнителни възможности за големи организации"
   },
-  "upgradeTeamsMessage": {
-    "message": "Компании търсещи подобрена сигурност"
+  "teamsPlanUpgradeMessage": {
+    "message": "Подсилена защита за разрастващи се екипи"
   },
   "teamsInviteMessage": {
     "message": "Можете да каните неограничен брой членове"
@@ -8986,8 +9022,8 @@
   "syncGroupsAndUsersFromDirectory": {
     "message": "Синхронизиране на групите и потребителите с директорийни услуги"
   },
-  "upgradeFamilyMessage": {
-    "message": "Споделяне със семейство и приятели"
+  "familyPlanUpgradeMessage": {
+    "message": "Защитете данните за вписване на семейството си"
   },
   "accessToPremiumFeatures": {
     "message": "Достъп до платените функционалности"
@@ -9043,8 +9079,11 @@
   "bitwardenPasswordManager": {
     "message": "Bitwarden — управител на пароли"
   },
-  "secretsManagerWithFreePasswordManagerInfo": {
-    "message": "Your complementary one year Password Manager subscription will upgrade to the selected plan. You will not be charged until the complimentary period is over."
+  "secretsManagerComplimentaryPasswordManager": {
+    "message": "Your complimentary one year Password Manager subscription will upgrade to the selected plan. You will not be charged until the complimentary period is over."
+  },
+  "fileSavedToDevice": {
+    "message": "Файлът е запазен на устройството. Можете да го намерите в мястото за сваляния на устройството."
   },
   "publicApi": {
     "message": "Публичен ППИ",

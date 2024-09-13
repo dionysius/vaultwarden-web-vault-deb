@@ -143,6 +143,9 @@
   "securityCode": {
     "message": "Код безпеки (CVV)"
   },
+  "securityCodeSlashCVV": {
+    "message": "Код безпеки / CVV"
+  },
   "identityName": {
     "message": "Назва посвідчення"
   },
@@ -561,6 +564,9 @@
         "example": "Password"
       }
     }
+  },
+  "copySuccessful": {
+    "message": "Успішно скопійовано"
   },
   "copyValue": {
     "message": "Копіювати значення",
@@ -3894,6 +3900,12 @@
       }
     }
   },
+  "encryptionKeyUpdateCannotProceed": {
+    "message": "Неможливо продовжити оновлення ключа шифрування"
+  },
+  "keyUpdateFoldersFailed": {
+    "message": "Не вдалося розшифрувати ваші теки під час оновлення ключа шифрування. Щоб продовжити оновлення, необхідно видалити теки. Якщо ви продовжите, записи у сховищі не будуть видалені."
+  },
   "keyUpdated": {
     "message": "Ключ оновлено"
   },
@@ -4034,6 +4046,9 @@
   },
   "selected": {
     "message": "Вибрано"
+  },
+  "recommended": {
+    "message": "Рекомендовано"
   },
   "ownership": {
     "message": "Власник"
@@ -8756,6 +8771,27 @@
   "memberAccessReportPageDesc": {
     "message": "Аудит доступу учасника організації до груп, збірок та записів збірок. Експорт CSV надає детальну розбивку для кожного учасника, зокрема інформацію про дозволи для збірок та конфігурації облікового запису."
   },
+  "memberAccessReportNoCollection": {
+    "message": "(Без збірки)"
+  },
+  "memberAccessReportNoCollectionPermission": {
+    "message": "(Без дозволу для збірки)"
+  },
+  "memberAccessReportNoGroup": {
+    "message": "(Без групи)"
+  },
+  "memberAccessReportTwoFactorEnabledTrue": {
+    "message": "Увімк"
+  },
+  "memberAccessReportTwoFactorEnabledFalse": {
+    "message": "Вимк"
+  },
+  "memberAccessReportAuthenticationEnabledTrue": {
+    "message": "Увімк"
+  },
+  "memberAccessReportAuthenticationEnabledFalse": {
+    "message": "Вимк"
+  },
   "higherKDFIterations": {
     "message": "Вищі значення KDF-ітерацій можуть допомогти захистити ваш головний пароль від грубого зламу зловмисником."
   },
@@ -8959,8 +8995,8 @@
       }
     }
   },
-  "upgradePlan": {
-    "message": "Перейдіть на вищий тарифний план, щоб запросити більше учасників та отримати доступ до додаткових функцій Bitwarden"
+  "upgradePlans": {
+    "message": "Оновіть тарифний план, щоб запросити учасників та користуватися потужними функціями безпеки."
   },
   "upgradeDiscount": {
     "message": "Заощадьте $AMOUNT$%",
@@ -8971,11 +9007,11 @@
       }
     }
   },
-  "upgradeEnterpriseMessage": {
-    "message": "Розширені можливості для великого бізнесу"
+  "enterprisePlanUpgradeMessage": {
+    "message": "Розширені можливості для більших організацій"
   },
-  "upgradeTeamsMessage": {
-    "message": "Компанії, яким потрібна гарантована безпека"
+  "teamsPlanUpgradeMessage": {
+    "message": "Адаптивний захист для команд, що розширюються"
   },
   "teamsInviteMessage": {
     "message": "Запрошуйте користувачів без обмежень"
@@ -8986,8 +9022,8 @@
   "syncGroupsAndUsersFromDirectory": {
     "message": "Синхронізуйте групи та користувачів з каталогу"
   },
-  "upgradeFamilyMessage": {
-    "message": "Надавайте спільний доступ родині та друзям"
+  "familyPlanUpgradeMessage": {
+    "message": "Захистіть паролі своєї родини"
   },
   "accessToPremiumFeatures": {
     "message": "Доступ до преміальних функцій"
@@ -9043,8 +9079,11 @@
   "bitwardenPasswordManager": {
     "message": "Bitwarden – менеджер паролів"
   },
-  "secretsManagerWithFreePasswordManagerInfo": {
+  "secretsManagerComplimentaryPasswordManager": {
     "message": "Ваша додаткова річна передплата менеджера паролів поновиться до вибраного плану. З вас не стягуватиметься платіж доки не завершиться додатковий період."
+  },
+  "fileSavedToDevice": {
+    "message": "Файл збережено на пристрої. Ви можете його знайти у теці завантажень."
   },
   "publicApi": {
     "message": "Відкритий API",

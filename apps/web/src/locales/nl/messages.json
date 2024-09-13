@@ -143,6 +143,9 @@
   "securityCode": {
     "message": "Beveiligingscode (CVV)"
   },
+  "securityCodeSlashCVV": {
+    "message": "Security code / CVV"
+  },
   "identityName": {
     "message": "Identiteitsnaam"
   },
@@ -561,6 +564,9 @@
         "example": "Password"
       }
     }
+  },
+  "copySuccessful": {
+    "message": "Copy Successful"
   },
   "copyValue": {
     "message": "Waarde kopiëren",
@@ -3894,6 +3900,12 @@
       }
     }
   },
+  "encryptionKeyUpdateCannotProceed": {
+    "message": "Encryption key update cannot proceed"
+  },
+  "keyUpdateFoldersFailed": {
+    "message": "When updating your encryption key, your folders could not be decrypted. To continue with the update, your folders must be deleted. No vault items will be deleted if you proceed."
+  },
   "keyUpdated": {
     "message": "Sleutel bijgewerkt"
   },
@@ -4034,6 +4046,9 @@
   },
   "selected": {
     "message": "Geselecteerd"
+  },
+  "recommended": {
+    "message": "Aanbevolen"
   },
   "ownership": {
     "message": "Eigendom"
@@ -8756,6 +8771,27 @@
   "memberAccessReportPageDesc": {
     "message": "Audit de toegang van een organisatielid tot groepen, verzamelingen en verzamelen van items. De CSV-export biedt een gedetailleerde verdeling per lid, inclusief informatie over verzamelrechten en accountconfiguraties."
   },
+  "memberAccessReportNoCollection": {
+    "message": "(Geen collectie)"
+  },
+  "memberAccessReportNoCollectionPermission": {
+    "message": "(Geen rechten voor collectie)"
+  },
+  "memberAccessReportNoGroup": {
+    "message": "(Geen groep)"
+  },
+  "memberAccessReportTwoFactorEnabledTrue": {
+    "message": "Aan"
+  },
+  "memberAccessReportTwoFactorEnabledFalse": {
+    "message": "Uit"
+  },
+  "memberAccessReportAuthenticationEnabledTrue": {
+    "message": "Aan"
+  },
+  "memberAccessReportAuthenticationEnabledFalse": {
+    "message": "Uit"
+  },
   "higherKDFIterations": {
     "message": "Hogere KDF-iteraties beschermen je hoofdwachtwoord tegen brute-foce-aanvallen."
   },
@@ -8959,8 +8995,8 @@
       }
     }
   },
-  "upgradePlan": {
-    "message": "Upgrade je abonnement voor het uitnodigen van meer leden en toegang te krijgen tot extra Bitwarden-functionaliteit"
+  "upgradePlans": {
+    "message": "Wijzig je abonnement voor het uitnodigen van leden en gebruikmaken van krachtige beveiligingsfuncties."
   },
   "upgradeDiscount": {
     "message": "Bespaar $AMOUNT$%",
@@ -8971,11 +9007,11 @@
       }
     }
   },
-  "upgradeEnterpriseMessage": {
+  "enterprisePlanUpgradeMessage": {
     "message": "Geavanceerde mogelijkheden voor grotere bedrijven"
   },
-  "upgradeTeamsMessage": {
-    "message": "Bedrijven die op zoek zijn naar krachtige beveiliging"
+  "teamsPlanUpgradeMessage": {
+    "message": "Veerkrachtige bescherming voor groeiende teams"
   },
   "teamsInviteMessage": {
     "message": "Onbeperkt aantal leden uitnodigen"
@@ -8986,8 +9022,8 @@
   "syncGroupsAndUsersFromDirectory": {
     "message": "Synchroniseer je gebruikers en groepen vanuit een directory"
   },
-  "upgradeFamilyMessage": {
-    "message": "Deel met families en vrienden"
+  "familyPlanUpgradeMessage": {
+    "message": "Beveilig je familie-logins"
   },
   "accessToPremiumFeatures": {
     "message": "Toegang tot premium functionaliteiten"
@@ -9043,8 +9079,11 @@
   "bitwardenPasswordManager": {
     "message": "Bitwarden Password Manager"
   },
-  "secretsManagerWithFreePasswordManagerInfo": {
-    "message": "Your complementary one year Password Manager subscription will upgrade to the selected plan. You will not be charged until the complimentary period is over."
+  "secretsManagerComplimentaryPasswordManager": {
+    "message": "Your complimentary one year Password Manager subscription will upgrade to the selected plan. You will not be charged until the complimentary period is over."
+  },
+  "fileSavedToDevice": {
+    "message": "Bestand op apparaat opgeslagen. Beheer vanaf de downloads op je apparaat."
   },
   "publicApi": {
     "message": "Openbare API",

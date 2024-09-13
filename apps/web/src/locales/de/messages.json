@@ -143,6 +143,9 @@
   "securityCode": {
     "message": "Kartenprüfnummer (CVV)"
   },
+  "securityCodeSlashCVV": {
+    "message": "Security code / CVV"
+  },
   "identityName": {
     "message": "Identitätsname"
   },
@@ -561,6 +564,9 @@
         "example": "Password"
       }
     }
+  },
+  "copySuccessful": {
+    "message": "Copy Successful"
   },
   "copyValue": {
     "message": "Wert kopieren",
@@ -3894,6 +3900,12 @@
       }
     }
   },
+  "encryptionKeyUpdateCannotProceed": {
+    "message": "Encryption key update cannot proceed"
+  },
+  "keyUpdateFoldersFailed": {
+    "message": "When updating your encryption key, your folders could not be decrypted. To continue with the update, your folders must be deleted. No vault items will be deleted if you proceed."
+  },
   "keyUpdated": {
     "message": "Schlüssel aktualisiert"
   },
@@ -4034,6 +4046,9 @@
   },
   "selected": {
     "message": "Ausgewählt"
+  },
+  "recommended": {
+    "message": "Recommended"
   },
   "ownership": {
     "message": "Eigentümer"
@@ -8756,6 +8771,27 @@
   "memberAccessReportPageDesc": {
     "message": "Kontrolliere den Zugriff von Organisationsmitgliedern auf Gruppen, Sammlungen und Sammlungseinträgen. Der CSV-Export bietet eine detaillierte Aufschlüsselung pro Mitglied, einschließlich Informationen über Sammlungsberechtigungen und Kontenkonfigurationen."
   },
+  "memberAccessReportNoCollection": {
+    "message": "(No Collection)"
+  },
+  "memberAccessReportNoCollectionPermission": {
+    "message": "(No Collection Permission)"
+  },
+  "memberAccessReportNoGroup": {
+    "message": "(No Group)"
+  },
+  "memberAccessReportTwoFactorEnabledTrue": {
+    "message": "On"
+  },
+  "memberAccessReportTwoFactorEnabledFalse": {
+    "message": "Off"
+  },
+  "memberAccessReportAuthenticationEnabledTrue": {
+    "message": "On"
+  },
+  "memberAccessReportAuthenticationEnabledFalse": {
+    "message": "Off"
+  },
   "higherKDFIterations": {
     "message": "Höhere KDF-Iterationen können helfen, dein Master-Passwort vor Brute-Force-Attacken durch einen Angreifer zu schützen."
   },
@@ -8959,8 +8995,8 @@
       }
     }
   },
-  "upgradePlan": {
-    "message": "Upgrade deinen Tarif, um mehr Mitglieder einzuladen und Zugriff auf zusätzliche Bitwarden-Funktionen zu erhalten"
+  "upgradePlans": {
+    "message": "Upgrade your plan to invite members and experience powerful security features."
   },
   "upgradeDiscount": {
     "message": "$AMOUNT$% sparen",
@@ -8971,11 +9007,11 @@
       }
     }
   },
-  "upgradeEnterpriseMessage": {
-    "message": "Erweiterte Möglichkeiten für größere Unternehmen"
+  "enterprisePlanUpgradeMessage": {
+    "message": "Advanced capabilities for larger organizations"
   },
-  "upgradeTeamsMessage": {
-    "message": "Unternehmen auf der Suche nach leistungsstarker Sicherheit"
+  "teamsPlanUpgradeMessage": {
+    "message": "Resilient protection for growing teams"
   },
   "teamsInviteMessage": {
     "message": "Unbegrenzte Mitglieder einladen"
@@ -8986,8 +9022,8 @@
   "syncGroupsAndUsersFromDirectory": {
     "message": "Gruppen und Benutzer aus einem Verzeichnis synchronisieren"
   },
-  "upgradeFamilyMessage": {
-    "message": "Mit Familien und Freunden teilen"
+  "familyPlanUpgradeMessage": {
+    "message": "Secure your family logins"
   },
   "accessToPremiumFeatures": {
     "message": "Zugriff auf Premium Funktionen"
@@ -9043,8 +9079,11 @@
   "bitwardenPasswordManager": {
     "message": "Bitwarden Passwortmanager"
   },
-  "secretsManagerWithFreePasswordManagerInfo": {
-    "message": "Dein kostenloses einjähriges Passwortmanager-Abonnement wird auf den ausgewählten Tarif umgestellt. Dir wird nichts berechnet, bis der kostenlose Zeitraum abgelaufen ist."
+  "secretsManagerComplimentaryPasswordManager": {
+    "message": "Your complimentary one year Password Manager subscription will upgrade to the selected plan. You will not be charged until the complimentary period is over."
+  },
+  "fileSavedToDevice": {
+    "message": "File saved to device. Manage from your device downloads."
   },
   "publicApi": {
     "message": "Öffentliche API",

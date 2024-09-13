@@ -143,6 +143,9 @@
   "securityCode": {
     "message": "セキュリティコード (CVV)"
   },
+  "securityCodeSlashCVV": {
+    "message": "セキュリティコード / CVV"
+  },
   "identityName": {
     "message": "固有名"
   },
@@ -561,6 +564,9 @@
         "example": "Password"
       }
     }
+  },
+  "copySuccessful": {
+    "message": "コピーしました"
   },
   "copyValue": {
     "message": "値のコピー",
@@ -3894,6 +3900,12 @@
       }
     }
   },
+  "encryptionKeyUpdateCannotProceed": {
+    "message": "暗号化キーの更新を続行できません"
+  },
+  "keyUpdateFoldersFailed": {
+    "message": "暗号化キーを更新する際、フォルダーを復号できませんでした。 アップデートを続行するには、フォルダーを削除する必要があります。続行しても保管庫のアイテムは削除されません。"
+  },
   "keyUpdated": {
     "message": "キーが更新されました"
   },
@@ -4034,6 +4046,9 @@
   },
   "selected": {
     "message": "選択済み"
+  },
+  "recommended": {
+    "message": "おすすめ"
   },
   "ownership": {
     "message": "所有者"
@@ -8756,6 +8771,27 @@
   "memberAccessReportPageDesc": {
     "message": "組織メンバーによるグループ、コレクション、コレクションアイテム間のアクセスを監査します。 CSV エクスポートには、コレクションの権限とアカウント構成に関する情報を含むメンバーごとの詳細な内訳が表示されます。"
   },
+  "memberAccessReportNoCollection": {
+    "message": "（コレクションなし）"
+  },
+  "memberAccessReportNoCollectionPermission": {
+    "message": "（コレクション権限がありません）"
+  },
+  "memberAccessReportNoGroup": {
+    "message": "（グループなし）"
+  },
+  "memberAccessReportTwoFactorEnabledTrue": {
+    "message": "オン"
+  },
+  "memberAccessReportTwoFactorEnabledFalse": {
+    "message": "オフ"
+  },
+  "memberAccessReportAuthenticationEnabledTrue": {
+    "message": "オン"
+  },
+  "memberAccessReportAuthenticationEnabledFalse": {
+    "message": "オフ"
+  },
   "higherKDFIterations": {
     "message": "KDF 反復回数を多くすることで、攻撃者による総当たり攻撃からマスターパスワードを守ることができます。"
   },
@@ -8959,8 +8995,8 @@
       }
     }
   },
-  "upgradePlan": {
-    "message": "より多くのメンバーを招待し、Bitwarden の追加機能にアクセスするには、プランをアップグレードしてください。"
+  "upgradePlans": {
+    "message": "メンバーを招待し、強力なセキュリティ機能を体験するにはプランをアップグレードしてください。"
   },
   "upgradeDiscount": {
     "message": "$AMOUNT$ %割引",
@@ -8971,11 +9007,11 @@
       }
     }
   },
-  "upgradeEnterpriseMessage": {
-    "message": "大企業向けの高度な機能"
+  "enterprisePlanUpgradeMessage": {
+    "message": "大規模組織向けの高度な機能"
   },
-  "upgradeTeamsMessage": {
-    "message": "強力なセキュリティを求めている企業"
+  "teamsPlanUpgradeMessage": {
+    "message": "成長するチームにとって強靭な保護"
   },
   "teamsInviteMessage": {
     "message": "無制限のメンバー招待"
@@ -8986,8 +9022,8 @@
   "syncGroupsAndUsersFromDirectory": {
     "message": "ディレクトリからグループとユーザーを同期"
   },
-  "upgradeFamilyMessage": {
-    "message": "家族や友達と共有"
+  "familyPlanUpgradeMessage": {
+    "message": "家族のログイン情報の保護"
   },
   "accessToPremiumFeatures": {
     "message": "プレミアム機能へのアクセス"
@@ -9043,8 +9079,11 @@
   "bitwardenPasswordManager": {
     "message": "Bitwarden パスワードマネージャー"
   },
-  "secretsManagerWithFreePasswordManagerInfo": {
+  "secretsManagerComplimentaryPasswordManager": {
     "message": "1年間のパスワードマネージャーサブスクリプションは、選択したプランにアップグレードされます。無料期間が終了するまで課金されることはありません。"
+  },
+  "fileSavedToDevice": {
+    "message": "ファイルをデバイスに保存しました。デバイスのダウンロードで管理できます。"
   },
   "publicApi": {
     "message": "公開 API",

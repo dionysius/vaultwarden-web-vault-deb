@@ -143,6 +143,9 @@
   "securityCode": {
     "message": "Biztonsági kód (CVV)"
   },
+  "securityCodeSlashCVV": {
+    "message": "Security code / CVV"
+  },
   "identityName": {
     "message": "Személyazonosság megnevezés"
   },
@@ -561,6 +564,9 @@
         "example": "Password"
       }
     }
+  },
+  "copySuccessful": {
+    "message": "Copy Successful"
   },
   "copyValue": {
     "message": "Érték másolása",
@@ -3894,6 +3900,12 @@
       }
     }
   },
+  "encryptionKeyUpdateCannotProceed": {
+    "message": "Encryption key update cannot proceed"
+  },
+  "keyUpdateFoldersFailed": {
+    "message": "When updating your encryption key, your folders could not be decrypted. To continue with the update, your folders must be deleted. No vault items will be deleted if you proceed."
+  },
   "keyUpdated": {
     "message": "A kulcs frissítésre került."
   },
@@ -4034,6 +4046,9 @@
   },
   "selected": {
     "message": "Kiválasztva"
+  },
+  "recommended": {
+    "message": "Ajánlott"
   },
   "ownership": {
     "message": "Tulajdonjog"
@@ -8756,6 +8771,27 @@
   "memberAccessReportPageDesc": {
     "message": "A szervezeti tagok hozzáférésének ellenőrzése a csoportok, gyűjtemények és gyűjteményelemek között. A CSV exportálás tagonként részletes lebontást biztosít, beleértve a gyűjtemény engedélyekre és a fiókkonfigurációkra vonatkozó információkat."
   },
+  "memberAccessReportNoCollection": {
+    "message": "(Nincs gyűjtemény)"
+  },
+  "memberAccessReportNoCollectionPermission": {
+    "message": "(Nincs gyűjtemény jogosultság)"
+  },
+  "memberAccessReportNoGroup": {
+    "message": "(Nincs csoport)"
+  },
+  "memberAccessReportTwoFactorEnabledTrue": {
+    "message": "Be"
+  },
+  "memberAccessReportTwoFactorEnabledFalse": {
+    "message": "Ki"
+  },
+  "memberAccessReportAuthenticationEnabledTrue": {
+    "message": "Be"
+  },
+  "memberAccessReportAuthenticationEnabledFalse": {
+    "message": "Ki"
+  },
   "higherKDFIterations": {
     "message": "A magasabb szintű KDF iterációk segíthetnek megvédeni mesterjelszót a támadók erőszakossága ellen."
   },
@@ -8959,8 +8995,8 @@
       }
     }
   },
-  "upgradePlan": {
-    "message": "Térjünk át más csomagra, hogy több tagot hívhassunk meg és hozzáférjünk a Bitwarden további funkcióihoz."
+  "upgradePlans": {
+    "message": "Frissítsük a csomagot tagok meghívásához és élvezzük a hatékony biztonsági funkciókat."
   },
   "upgradeDiscount": {
     "message": "$AMOUNT$% megtakarítás",
@@ -8971,11 +9007,11 @@
       }
     }
   },
-  "upgradeEnterpriseMessage": {
-    "message": "Fejlett képességek nagyobb vállalkozások számára"
+  "enterprisePlanUpgradeMessage": {
+    "message": "Fejlett képességek nagyobb szervezetek számára"
   },
-  "upgradeTeamsMessage": {
-    "message": "Hatékony biztonságot kereső vállalkozások"
+  "teamsPlanUpgradeMessage": {
+    "message": "Rugalmas védelem növekvő csapatok számára"
   },
   "teamsInviteMessage": {
     "message": "Korlátlan számú tagok meghívása"
@@ -8986,8 +9022,8 @@
   "syncGroupsAndUsersFromDirectory": {
     "message": "A felhasználók és csoportok szinkronizálása könyvtárból"
   },
-  "upgradeFamilyMessage": {
-    "message": "Mggosztáás családtagokkal és ismerősökkel"
+  "familyPlanUpgradeMessage": {
+    "message": "Családi bejelentkezési adatok biztosítása"
   },
   "accessToPremiumFeatures": {
     "message": "Prémium funkciók elérése"
@@ -9043,8 +9079,11 @@
   "bitwardenPasswordManager": {
     "message": "Bitwarden jelszókezelő"
   },
-  "secretsManagerWithFreePasswordManagerInfo": {
-    "message": "A kiegészítő egyéves Jelszókezelő előfizetés a kiválasztott csomagra frissül. A díjmentes időszak lejártáig nem számítunk fel díjat."
+  "secretsManagerComplimentaryPasswordManager": {
+    "message": "Your complimentary one year Password Manager subscription will upgrade to the selected plan. You will not be charged until the complimentary period is over."
+  },
+  "fileSavedToDevice": {
+    "message": "A fájl mentésre került az eszközre. Kezeljük az eszközről a letöltéseket."
   },
   "publicApi": {
     "message": "Nyilvános API",

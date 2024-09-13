@@ -111,7 +111,7 @@
     }
   },
   "showMatchDetection": {
-    "message": "Show match detection $WEBSITE$",
+    "message": "$WEBSITE$ eşleşme tespitini göster",
     "placeholders": {
       "website": {
         "content": "$1",
@@ -120,7 +120,7 @@
     }
   },
   "hideMatchDetection": {
-    "message": "Hide match detection $WEBSITE$",
+    "message": "$WEBSITE$ eşleşme tespitini gizle",
     "placeholders": {
       "website": {
         "content": "$1",
@@ -142,6 +142,9 @@
   },
   "securityCode": {
     "message": "Güvenlik kodu (CVV)"
+  },
+  "securityCodeSlashCVV": {
+    "message": "Güvenlik kodu / CVV"
   },
   "identityName": {
     "message": "Kimlik adı"
@@ -243,7 +246,7 @@
     "message": "Bitwarden can store and fill 2-step verification codes. Select the camera icon to take a screenshot of this website's authenticator QR code, or copy and paste the key into this field."
   },
   "learnMoreAboutAuthenticators": {
-    "message": "Learn more about authenticators"
+    "message": "Kimlik doğrulayıcılar hakkında bilgi alın"
   },
   "folder": {
     "message": "Klasör"
@@ -562,6 +565,9 @@
       }
     }
   },
+  "copySuccessful": {
+    "message": "Kopyalama başarılı"
+  },
   "copyValue": {
     "message": "Değeri kopyala",
     "description": "Copy value to clipboard"
@@ -675,7 +681,7 @@
     }
   },
   "itemsMovedToOrg": {
-    "message": "Items moved to $ORGNAME$",
+    "message": "Kayıtlar $ORGNAME$ kuruluşuna taşındı",
     "placeholders": {
       "orgname": {
         "content": "$1",
@@ -684,7 +690,7 @@
     }
   },
   "itemMovedToOrg": {
-    "message": "Item moved to $ORGNAME$",
+    "message": "Kayıt $ORGNAME$ kuruluşuna taşındı",
     "placeholders": {
       "orgname": {
         "content": "$1",
@@ -1821,13 +1827,13 @@
     "message": "İki aşamalı giriş ayarlarını değiştirmek için ana parolanızı girin."
   },
   "twoStepAuthenticatorInstructionPrefix": {
-    "message": "Download an authenticator app such as"
+    "message": "Bir kimlik doğrulama uygulaması indirin. Örnek:"
   },
   "twoStepAuthenticatorInstructionInfix1": {
     "message": ","
   },
   "twoStepAuthenticatorInstructionInfix2": {
-    "message": "or"
+    "message": "veya"
   },
   "twoStepAuthenticatorInstructionSuffix": {
     "message": "."
@@ -1851,7 +1857,7 @@
     "message": "Bitwarden Authenticator allows you to store authenticator keys and generate TOTP codes for 2-step verification flows. Learn more on the bitwarden.com website."
   },
   "twoStepAuthenticatorScanCodeV2": {
-    "message": "Scan the QR code below with your authenticator app or enter the key."
+    "message": "Aşağıdaki QR kodunu kimlik doğrulama uygulamanıza okutun veya anahtarı girin."
   },
   "twoStepAuthenticatorQRCanvasError": {
     "message": "Could not load QR code. Try again or use the key below."
@@ -3894,6 +3900,12 @@
       }
     }
   },
+  "encryptionKeyUpdateCannotProceed": {
+    "message": "Şifreleme anahtarı güncellemesine devam edilemiyor"
+  },
+  "keyUpdateFoldersFailed": {
+    "message": "When updating your encryption key, your folders could not be decrypted. To continue with the update, your folders must be deleted. No vault items will be deleted if you proceed."
+  },
   "keyUpdated": {
     "message": "Anahtar güncellendi"
   },
@@ -4034,6 +4046,9 @@
   },
   "selected": {
     "message": "Seçildi"
+  },
+  "recommended": {
+    "message": "Önerilen"
   },
   "ownership": {
     "message": "Sahip"
@@ -8756,6 +8771,27 @@
   "memberAccessReportPageDesc": {
     "message": "Audit organization member access across groups, collections, and collection items. The CSV export provides a detailed breakdown per member, including information on collection permissions and account configurations."
   },
+  "memberAccessReportNoCollection": {
+    "message": "(Koleksiyon yok)"
+  },
+  "memberAccessReportNoCollectionPermission": {
+    "message": "(Koleksiyon izni yok)"
+  },
+  "memberAccessReportNoGroup": {
+    "message": "(Grup yok)"
+  },
+  "memberAccessReportTwoFactorEnabledTrue": {
+    "message": "Açık"
+  },
+  "memberAccessReportTwoFactorEnabledFalse": {
+    "message": "Kapalı"
+  },
+  "memberAccessReportAuthenticationEnabledTrue": {
+    "message": "Açık"
+  },
+  "memberAccessReportAuthenticationEnabledFalse": {
+    "message": "Kapalı"
+  },
   "higherKDFIterations": {
     "message": "KDF iterasyonunun daha yüksek olması ana parolanızı kaba kuvvet saldırılarına karşı daha iyi korur."
   },
@@ -8959,8 +8995,8 @@
       }
     }
   },
-  "upgradePlan": {
-    "message": "Upgrade your plan to invite more members and gain access to additional Bitwarden features"
+  "upgradePlans": {
+    "message": "Upgrade your plan to invite members and experience powerful security features."
   },
   "upgradeDiscount": {
     "message": "Save $AMOUNT$%",
@@ -8971,11 +9007,11 @@
       }
     }
   },
-  "upgradeEnterpriseMessage": {
-    "message": "Advanced capabilities for larger businesses"
+  "enterprisePlanUpgradeMessage": {
+    "message": "Advanced capabilities for larger organizations"
   },
-  "upgradeTeamsMessage": {
-    "message": "Businesses looking for powerful security"
+  "teamsPlanUpgradeMessage": {
+    "message": "Resilient protection for growing teams"
   },
   "teamsInviteMessage": {
     "message": "Invite unlimited members"
@@ -8986,8 +9022,8 @@
   "syncGroupsAndUsersFromDirectory": {
     "message": "Sync groups and users from a directory"
   },
-  "upgradeFamilyMessage": {
-    "message": "Share with families and friends"
+  "familyPlanUpgradeMessage": {
+    "message": "Secure your family logins"
   },
   "accessToPremiumFeatures": {
     "message": "Access to Premium features"
@@ -9043,8 +9079,11 @@
   "bitwardenPasswordManager": {
     "message": "Bitwarden Parola Yöneticisi"
   },
-  "secretsManagerWithFreePasswordManagerInfo": {
-    "message": "Your complementary one year Password Manager subscription will upgrade to the selected plan. You will not be charged until the complimentary period is over."
+  "secretsManagerComplimentaryPasswordManager": {
+    "message": "Your complimentary one year Password Manager subscription will upgrade to the selected plan. You will not be charged until the complimentary period is over."
+  },
+  "fileSavedToDevice": {
+    "message": "Dosya cihaza kaydedildi. Cihazınızın indirilenler klasöründen yönetebilirsiniz."
   },
   "publicApi": {
     "message": "Genel API",

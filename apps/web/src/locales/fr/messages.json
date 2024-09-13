@@ -143,6 +143,9 @@
   "securityCode": {
     "message": "Cryptogramme visuel (CVV)"
   },
+  "securityCodeSlashCVV": {
+    "message": "Code de sécurité / CVV"
+  },
   "identityName": {
     "message": "Identité"
   },
@@ -561,6 +564,9 @@
         "example": "Password"
       }
     }
+  },
+  "copySuccessful": {
+    "message": "Copie Réussie"
   },
   "copyValue": {
     "message": "Copier la valeur",
@@ -3894,6 +3900,12 @@
       }
     }
   },
+  "encryptionKeyUpdateCannotProceed": {
+    "message": "La mise à jour de la clé de chiffrement ne peut pas continuer"
+  },
+  "keyUpdateFoldersFailed": {
+    "message": "Lors de la mise à jour de votre clé de chiffrement, vos dossiers n'ont pas pu être déchiffrés. Pour continuer avec la mise à jour, vos dossiers doivent être supprimés. Aucun élément du coffre ne sera supprimé si vous continuez."
+  },
   "keyUpdated": {
     "message": "Clé mise à jour"
   },
@@ -4034,6 +4046,9 @@
   },
   "selected": {
     "message": "Sélectionné(s)"
+  },
+  "recommended": {
+    "message": "Recommandé"
   },
   "ownership": {
     "message": "Propriété"
@@ -8756,6 +8771,27 @@
   "memberAccessReportPageDesc": {
     "message": "Audite les accès des membres de l'organisation au sein des groupes, des collections et des éléments des collections. L'exportation CSV fournit un rapport détaillé par membre comprenant des informations sur les collections autorisées et les configurations de compte."
   },
+  "memberAccessReportNoCollection": {
+    "message": "(Aucune collection)"
+  },
+  "memberAccessReportNoCollectionPermission": {
+    "message": "(Aucune permission de collection)"
+  },
+  "memberAccessReportNoGroup": {
+    "message": "(Aucun groupe)"
+  },
+  "memberAccessReportTwoFactorEnabledTrue": {
+    "message": "Activé"
+  },
+  "memberAccessReportTwoFactorEnabledFalse": {
+    "message": "Désactivé"
+  },
+  "memberAccessReportAuthenticationEnabledTrue": {
+    "message": "Activé"
+  },
+  "memberAccessReportAuthenticationEnabledFalse": {
+    "message": "Désactivé"
+  },
   "higherKDFIterations": {
     "message": "Des itérations KDF plus élevées peuvent aider à protéger votre mot de passe principal contre la force brute d'un assaillant."
   },
@@ -8959,8 +8995,8 @@
       }
     }
   },
-  "upgradePlan": {
-    "message": "Mettez à niveau votre plan pour inviter plus de membres et accéder à des fonctionnalités supplémentaires de Bitwarden"
+  "upgradePlans": {
+    "message": "Mettez à niveau votre plan pour inviter des membres et profiter de fonctionnalités de sécurité puissantes."
   },
   "upgradeDiscount": {
     "message": "Économisez $AMOUNT$%",
@@ -8971,11 +9007,11 @@
       }
     }
   },
-  "upgradeEnterpriseMessage": {
-    "message": "Fonctionnalités avancées pour les entreprises plus grandes"
+  "enterprisePlanUpgradeMessage": {
+    "message": "Fonctionnalités avancées pour les grandes organisations"
   },
-  "upgradeTeamsMessage": {
-    "message": "Entreprises à la recherche d'une sécurité puissante"
+  "teamsPlanUpgradeMessage": {
+    "message": "Protection résistante pour les équipes en croissance"
   },
   "teamsInviteMessage": {
     "message": "Invitez un nombre illimité de membres"
@@ -8986,8 +9022,8 @@
   "syncGroupsAndUsersFromDirectory": {
     "message": "Synchroniser les groupes et les utilisateurs à partir d'un répertoire"
   },
-  "upgradeFamilyMessage": {
-    "message": "Partager avec des membres de la famille et des amis"
+  "familyPlanUpgradeMessage": {
+    "message": "Sécurisez les identifiants de votre famille"
   },
   "accessToPremiumFeatures": {
     "message": "Accède aux fonctionnalités Premium"
@@ -9043,8 +9079,11 @@
   "bitwardenPasswordManager": {
     "message": "Gestionnaire de Mots de Passe Bitwarden"
   },
-  "secretsManagerWithFreePasswordManagerInfo": {
-    "message": "Votre abonnement complémentaire d'un an au Gestionnaire de Mots de Passe sera mis à niveau au plan sélectionné. Vous ne serez pas chargé avant la fin de votre période gratuite."
+  "secretsManagerComplimentaryPasswordManager": {
+    "message": "Votre abonnement complémentairegratuit d'un an au Gestionnaire de Mots de Passe sera mis à niveau au plan sélectionné. Vous ne serez pas chargé avant la fin de votre période gratuite."
+  },
+  "fileSavedToDevice": {
+    "message": "Fichier enregistré sur l'appareil. Gérez à partir des téléchargements de votre appareil."
   },
   "publicApi": {
     "message": "API publique",

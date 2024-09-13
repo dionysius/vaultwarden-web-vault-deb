@@ -143,6 +143,9 @@
   "securityCode": {
     "message": "Drošības kods (CVV)"
   },
+  "securityCodeSlashCVV": {
+    "message": "Drošības kods / CVV"
+  },
   "identityName": {
     "message": "Identitātes nosaukums"
   },
@@ -561,6 +564,9 @@
         "example": "Password"
       }
     }
+  },
+  "copySuccessful": {
+    "message": "Ievietošana starpliktuvē veiksmīga"
   },
   "copyValue": {
     "message": "Ievietot vērtību starpliktuvē",
@@ -3894,6 +3900,12 @@
       }
     }
   },
+  "encryptionKeyUpdateCannotProceed": {
+    "message": "Šifrēšanas atslēgas atjaunināšana nav iespējama"
+  },
+  "keyUpdateFoldersFailed": {
+    "message": "Šifrēšanas atslēgas atjaunināšanas laikā mapes nevarēja atšifrēt. Lai turpinātu atjaunināšanu, mapes ir jāizdzēš. Glabātavas vienumi netiks izdzēsti, ja turpināsi."
+  },
   "keyUpdated": {
     "message": "Atslēga atjaunināta"
   },
@@ -4034,6 +4046,9 @@
   },
   "selected": {
     "message": "Atlasīts"
+  },
+  "recommended": {
+    "message": "Ieteicams"
   },
   "ownership": {
     "message": "Īpašumtiesības"
@@ -8756,6 +8771,27 @@
   "memberAccessReportPageDesc": {
     "message": "Pārskatīt apvienības dalībnieku piekļuvi dažādām kopām, krājumiem un krājumu vienumiem. CSV izgūšana sniedz izvērstu pārskatu par katru dalībnieku, tajā skaitā informāciju par krājumu atļaujām un konta konfigurāciju."
   },
+  "memberAccessReportNoCollection": {
+    "message": "(Nav krājuma)"
+  },
+  "memberAccessReportNoCollectionPermission": {
+    "message": "(Nav krājuma atļaujas)"
+  },
+  "memberAccessReportNoGroup": {
+    "message": "(Nav kopas)"
+  },
+  "memberAccessReportTwoFactorEnabledTrue": {
+    "message": "Ieslēgts"
+  },
+  "memberAccessReportTwoFactorEnabledFalse": {
+    "message": "Izslēgts"
+  },
+  "memberAccessReportAuthenticationEnabledTrue": {
+    "message": "Ieslēgts"
+  },
+  "memberAccessReportAuthenticationEnabledFalse": {
+    "message": "Izslēgts"
+  },
   "higherKDFIterations": {
     "message": "Lielāks KDF atkārtojumu skaits var palīdzēt aizsargāt galveno paroli pārlases uzbrukuma gadījumā."
   },
@@ -8959,8 +8995,8 @@
       }
     }
   },
-  "upgradePlan": {
-    "message": "Uzlabo savu plānu, lai uzaicinātu vairāk dalībnieku un iegūtu piekļuvi papildu Bitwarden iespējām"
+  "upgradePlans": {
+    "message": "Jāuzlabo savs plāns, lai uzaicinātu dalībniekus un iegūtu spēcīgas drošības iespējas."
   },
   "upgradeDiscount": {
     "message": "Ietaupi $AMOUNT$%",
@@ -8971,11 +9007,11 @@
       }
     }
   },
-  "upgradeEnterpriseMessage": {
-    "message": "Izvērstas spējas lielākiem uzņēmumiem"
+  "enterprisePlanUpgradeMessage": {
+    "message": "Papildu spējas lielākām apvienībām"
   },
-  "upgradeTeamsMessage": {
-    "message": "Uzņēmumiem, kuri meklē spēcīgu drošibu"
+  "teamsPlanUpgradeMessage": {
+    "message": "Elastīga aizsardzība augošām komandām"
   },
   "teamsInviteMessage": {
     "message": "Neierobežota dalībnieku skaita uzaicināšana"
@@ -8986,8 +9022,8 @@
   "syncGroupsAndUsersFromDirectory": {
     "message": "Kopu un lietotāju sinhronizēšana no direktorija"
   },
-  "upgradeFamilyMessage": {
-    "message": "Kopīgošana ar ģimeni un draugiem"
+  "familyPlanUpgradeMessage": {
+    "message": "Nodrošini savas ģimenes pieteikšanās vienumus"
   },
   "accessToPremiumFeatures": {
     "message": "Piekļuve Premium iespējām"
@@ -9043,8 +9079,11 @@
   "bitwardenPasswordManager": {
     "message": "Bitwarden paroļu pārvaldnieks"
   },
-  "secretsManagerWithFreePasswordManagerInfo": {
+  "secretsManagerComplimentaryPasswordManager": {
     "message": "Bezmaksas viena gada Paroļu pārvaldnieka abonements tiks uzlabots uz izvēlēto plānu. Maksa netiks ieturēta līdz bezmaksas izmantošanas laika beigām."
+  },
+  "fileSavedToDevice": {
+    "message": "Datne saglabāta ierīcē. Tā ir atrodama ierīces lejupielāžu mapē."
   },
   "publicApi": {
     "message": "Publiskais API",

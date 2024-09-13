@@ -143,6 +143,9 @@
   "securityCode": {
     "message": "Bezpečnostní kód (CVC/CVV)"
   },
+  "securityCodeSlashCVV": {
+    "message": "Bezpečnostní kód (CVC/CVV)"
+  },
   "identityName": {
     "message": "Název identity"
   },
@@ -561,6 +564,9 @@
         "example": "Password"
       }
     }
+  },
+  "copySuccessful": {
+    "message": "Kopírování bylo úspěšné"
   },
   "copyValue": {
     "message": "Kopírovat hodnotu",
@@ -3894,6 +3900,12 @@
       }
     }
   },
+  "encryptionKeyUpdateCannotProceed": {
+    "message": "Aktualizace šifrovacího klíče nemůže pokračovat"
+  },
+  "keyUpdateFoldersFailed": {
+    "message": "Při aktualizaci šifrovacího klíče se nepodařilo dešifrovat Vaše složky. Chcete-li pokračovat v aktualizaci, musí být Vaše složky smazány. Pokud budete pokračovat, nebudou smazány žádné položky trezoru."
+  },
   "keyUpdated": {
     "message": "Klíč byl aktualizován"
   },
@@ -4034,6 +4046,9 @@
   },
   "selected": {
     "message": "Vybráno"
+  },
+  "recommended": {
+    "message": "Doporučeno"
   },
   "ownership": {
     "message": "Vlastnictví"
@@ -8756,6 +8771,27 @@
   "memberAccessReportPageDesc": {
     "message": "Audit přístupu členů organizace ke skupinám, kolekcím a položkám kolekcí. Export CSV poskytuje podrobný rozpis pro jednotlivé členy, včetně informací o oprávněních ke kolekcím a konfiguracích účtů."
   },
+  "memberAccessReportNoCollection": {
+    "message": "(Žádná kolekce)"
+  },
+  "memberAccessReportNoCollectionPermission": {
+    "message": "(Žádné oprávnění ke kolekci)"
+  },
+  "memberAccessReportNoGroup": {
+    "message": "(Žádná skupina)"
+  },
+  "memberAccessReportTwoFactorEnabledTrue": {
+    "message": "Zapnuto"
+  },
+  "memberAccessReportTwoFactorEnabledFalse": {
+    "message": "Vypnuto"
+  },
+  "memberAccessReportAuthenticationEnabledTrue": {
+    "message": "Zapnuto"
+  },
+  "memberAccessReportAuthenticationEnabledFalse": {
+    "message": "Vypnuto"
+  },
   "higherKDFIterations": {
     "message": "Více iterací KDF Vám může pomoci ochránit hlavní heslo před útočníkem, který by ho vylákal hrubou silou."
   },
@@ -8959,8 +8995,8 @@
       }
     }
   },
-  "upgradePlan": {
-    "message": "Povyšte svůj tarif a pozvěte více členů a získejte přístup k dalším funkcím Bitwardenu"
+  "upgradePlans": {
+    "message": "Aktualizujte svůj plán, pozvěte členy a vyzkoušejte výkonné bezpečnostní funkce."
   },
   "upgradeDiscount": {
     "message": "Ušetřit $AMOUNT$ %",
@@ -8971,11 +9007,11 @@
       }
     }
   },
-  "upgradeEnterpriseMessage": {
-    "message": "Pokročilé možnosti pro větší podniky"
+  "enterprisePlanUpgradeMessage": {
+    "message": "Pokročilé funkce pro větší organizace"
   },
-  "upgradeTeamsMessage": {
-    "message": "Podniky hledající silnou bezpečnost"
+  "teamsPlanUpgradeMessage": {
+    "message": "Odolná ochrana pro rostoucí týmy"
   },
   "teamsInviteMessage": {
     "message": "Pozvat neomezený počet členů"
@@ -8986,8 +9022,8 @@
   "syncGroupsAndUsersFromDirectory": {
     "message": "Synchronizace skupin a uživatelů z adresáře"
   },
-  "upgradeFamilyMessage": {
-    "message": "Sdílení s rodinami a přáteli"
+  "familyPlanUpgradeMessage": {
+    "message": "Zabezpečení přihlašovacích údajů v rodině"
   },
   "accessToPremiumFeatures": {
     "message": "Přístup k prémiovým funkcím"
@@ -9043,8 +9079,11 @@
   "bitwardenPasswordManager": {
     "message": "Bitwarden - Správce hesel"
   },
-  "secretsManagerWithFreePasswordManagerInfo": {
+  "secretsManagerComplimentaryPasswordManager": {
     "message": "Vaše doplňkové roční předplatné Správce hesel bude aktualizováno na vybraný plán. Poplatek Vám bude účtován až po skončení bezplatného období."
+  },
+  "fileSavedToDevice": {
+    "message": "Soubor byl uložen. Můžete jej nalézt ve stažené složce v zařízení."
   },
   "publicApi": {
     "message": "Veřejné API",

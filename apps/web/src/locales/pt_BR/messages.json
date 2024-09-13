@@ -143,6 +143,9 @@
   "securityCode": {
     "message": "Código de Segurança (CVV)"
   },
+  "securityCodeSlashCVV": {
+    "message": "Security code / CVV"
+  },
   "identityName": {
     "message": "Nome de Identidade"
   },
@@ -561,6 +564,9 @@
         "example": "Password"
       }
     }
+  },
+  "copySuccessful": {
+    "message": "Copy Successful"
   },
   "copyValue": {
     "message": "Copiar Valor",
@@ -3894,6 +3900,12 @@
       }
     }
   },
+  "encryptionKeyUpdateCannotProceed": {
+    "message": "Encryption key update cannot proceed"
+  },
+  "keyUpdateFoldersFailed": {
+    "message": "When updating your encryption key, your folders could not be decrypted. To continue with the update, your folders must be deleted. No vault items will be deleted if you proceed."
+  },
   "keyUpdated": {
     "message": "Chave Atualizada"
   },
@@ -4034,6 +4046,9 @@
   },
   "selected": {
     "message": "Selecionado"
+  },
+  "recommended": {
+    "message": "Recommended"
   },
   "ownership": {
     "message": "Propriedade"
@@ -8756,6 +8771,27 @@
   "memberAccessReportPageDesc": {
     "message": "Avalie o acesso de membros da organização entre grupos, coleções e itens de coleções. O exporte CSV fornece informações detalhadas por membro, incluindo informações sobre permissões de coleção e configurações de conta."
   },
+  "memberAccessReportNoCollection": {
+    "message": "(No Collection)"
+  },
+  "memberAccessReportNoCollectionPermission": {
+    "message": "(No Collection Permission)"
+  },
+  "memberAccessReportNoGroup": {
+    "message": "(No Group)"
+  },
+  "memberAccessReportTwoFactorEnabledTrue": {
+    "message": "On"
+  },
+  "memberAccessReportTwoFactorEnabledFalse": {
+    "message": "Off"
+  },
+  "memberAccessReportAuthenticationEnabledTrue": {
+    "message": "On"
+  },
+  "memberAccessReportAuthenticationEnabledFalse": {
+    "message": "Off"
+  },
   "higherKDFIterations": {
     "message": "Iterações KDF mais altas podem ajudar a proteger sua senha mestra de ser descoberta por força bruta por alguém mal-intencionado."
   },
@@ -8959,8 +8995,8 @@
       }
     }
   },
-  "upgradePlan": {
-    "message": "Atualize o seu plano para convidar mais membros e ganhar acesso a recursos adicionais do Bitwarden"
+  "upgradePlans": {
+    "message": "Upgrade your plan to invite members and experience powerful security features."
   },
   "upgradeDiscount": {
     "message": "Economize $AMOUNT$%",
@@ -8971,11 +9007,11 @@
       }
     }
   },
-  "upgradeEnterpriseMessage": {
-    "message": "Recursos avançados para empresas maiores"
+  "enterprisePlanUpgradeMessage": {
+    "message": "Advanced capabilities for larger organizations"
   },
-  "upgradeTeamsMessage": {
-    "message": "Empresas que procuram segurança poderosa"
+  "teamsPlanUpgradeMessage": {
+    "message": "Resilient protection for growing teams"
   },
   "teamsInviteMessage": {
     "message": "Convide membros ilimitados"
@@ -8986,8 +9022,8 @@
   "syncGroupsAndUsersFromDirectory": {
     "message": "Sincronizar grupos e usuários de um diretório"
   },
-  "upgradeFamilyMessage": {
-    "message": "Compartilhar com famílias e amigos"
+  "familyPlanUpgradeMessage": {
+    "message": "Secure your family logins"
   },
   "accessToPremiumFeatures": {
     "message": "Acesso às funcionalidades Premium"
@@ -9043,8 +9079,11 @@
   "bitwardenPasswordManager": {
     "message": "Gerenciador de Senhas Bitwarden"
   },
-  "secretsManagerWithFreePasswordManagerInfo": {
-    "message": "Sua assinatura complementar de um ano gerente de senha vai atualizar para o plano selecionado. Você não será cobrado até que o período complementar termine."
+  "secretsManagerComplimentaryPasswordManager": {
+    "message": "Your complimentary one year Password Manager subscription will upgrade to the selected plan. You will not be charged until the complimentary period is over."
+  },
+  "fileSavedToDevice": {
+    "message": "File saved to device. Manage from your device downloads."
   },
   "publicApi": {
     "message": "Public API",

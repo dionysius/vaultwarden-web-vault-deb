@@ -143,6 +143,9 @@
   "securityCode": {
     "message": "Код безопасности (CVV)"
   },
+  "securityCodeSlashCVV": {
+    "message": "Код безопасности / CVV"
+  },
   "identityName": {
     "message": "Имя"
   },
@@ -561,6 +564,9 @@
         "example": "Password"
       }
     }
+  },
+  "copySuccessful": {
+    "message": "Скопировано успешно"
   },
   "copyValue": {
     "message": "Скопировать значение",
@@ -3894,6 +3900,12 @@
       }
     }
   },
+  "encryptionKeyUpdateCannotProceed": {
+    "message": "Обновление ключа шифрования невозможно"
+  },
+  "keyUpdateFoldersFailed": {
+    "message": "При обновлении ключа шифрования не удалось расшифровать папки. Чтобы продолжить обновление, папки необходимо удалить. При продолжении обновления элементы хранилища удалены не будут."
+  },
   "keyUpdated": {
     "message": "Ключ обновлен"
   },
@@ -4034,6 +4046,9 @@
   },
   "selected": {
     "message": "Выбрано"
+  },
+  "recommended": {
+    "message": "Рекомендуется"
   },
   "ownership": {
     "message": "Владелец"
@@ -8756,6 +8771,27 @@
   "memberAccessReportPageDesc": {
     "message": "Аудит доступа членов организации к группам, коллекциям и элементам коллекций. Экспорт в формате CSV содержит подробную разбивку по членам, включая информацию о разрешениях на коллекции и конфигурациях учетных записей."
   },
+  "memberAccessReportNoCollection": {
+    "message": "(Нет коллекций)"
+  },
+  "memberAccessReportNoCollectionPermission": {
+    "message": "(Нет прав для коллекций)"
+  },
+  "memberAccessReportNoGroup": {
+    "message": "(Нет группы)"
+  },
+  "memberAccessReportTwoFactorEnabledTrue": {
+    "message": "Вкл"
+  },
+  "memberAccessReportTwoFactorEnabledFalse": {
+    "message": "Выкл"
+  },
+  "memberAccessReportAuthenticationEnabledTrue": {
+    "message": "Вкл"
+  },
+  "memberAccessReportAuthenticationEnabledFalse": {
+    "message": "Выкл"
+  },
   "higherKDFIterations": {
     "message": "Увеличение числа итераций KDF может помочь защитить ваш мастер-пароль от взлома его злоумышленником."
   },
@@ -8959,8 +8995,8 @@
       }
     }
   },
-  "upgradePlan": {
-    "message": "Повысьте тарифный план, чтобы пригласить больше участников и получить доступ к дополнительным возможностям Bitwarden"
+  "upgradePlans": {
+    "message": "Улучшите свой план, чтобы приглашать пользователей и получить мощные возможности безопасности."
   },
   "upgradeDiscount": {
     "message": "Сэкономить $AMOUNT$%",
@@ -8971,11 +9007,11 @@
       }
     }
   },
-  "upgradeEnterpriseMessage": {
+  "enterprisePlanUpgradeMessage": {
     "message": "Расширенные возможности для крупного бизнеса"
   },
-  "upgradeTeamsMessage": {
-    "message": "Предприятиям нужна мощная система безопасности"
+  "teamsPlanUpgradeMessage": {
+    "message": "Надежная защита для растущих команд"
   },
   "teamsInviteMessage": {
     "message": "Приглашайте неограниченное количество участников"
@@ -8986,8 +9022,8 @@
   "syncGroupsAndUsersFromDirectory": {
     "message": "Синхронизация групп и пользователей из каталога"
   },
-  "upgradeFamilyMessage": {
-    "message": "Делитесь с семьей и друзьями"
+  "familyPlanUpgradeMessage": {
+    "message": "Защитите логины вашей семьи"
   },
   "accessToPremiumFeatures": {
     "message": "Доступ к премиум-возможностям"
@@ -9043,8 +9079,11 @@
   "bitwardenPasswordManager": {
     "message": "Bitwarden - Менеджер паролей"
   },
-  "secretsManagerWithFreePasswordManagerInfo": {
-    "message": "Ваш дополнительный год подписки на Менеджер паролей обновится до выбранный тарифа. Плата не будет взиматься до окончания бесплатного периода."
+  "secretsManagerComplimentaryPasswordManager": {
+    "message": "Ваша бесплатная годовая подписка на Password Manager будет обновлена до выбранного тарифного плана. Плата не будет взиматься до тех пор, пока не закончится бесплатный период."
+  },
+  "fileSavedToDevice": {
+    "message": "Файл сохранен на устройстве. Управляйте им из загрузок устройства."
   },
   "publicApi": {
     "message": "Публичный API",

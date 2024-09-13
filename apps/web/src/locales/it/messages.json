@@ -143,6 +143,9 @@
   "securityCode": {
     "message": "Codice di sicurezza (CVV)"
   },
+  "securityCodeSlashCVV": {
+    "message": "Security code / CVV"
+  },
   "identityName": {
     "message": "Nome identità"
   },
@@ -561,6 +564,9 @@
         "example": "Password"
       }
     }
+  },
+  "copySuccessful": {
+    "message": "Copy Successful"
   },
   "copyValue": {
     "message": "Copia valore",
@@ -3894,6 +3900,12 @@
       }
     }
   },
+  "encryptionKeyUpdateCannotProceed": {
+    "message": "Encryption key update cannot proceed"
+  },
+  "keyUpdateFoldersFailed": {
+    "message": "When updating your encryption key, your folders could not be decrypted. To continue with the update, your folders must be deleted. No vault items will be deleted if you proceed."
+  },
   "keyUpdated": {
     "message": "Chiave aggiornata"
   },
@@ -4034,6 +4046,9 @@
   },
   "selected": {
     "message": "Selezionato"
+  },
+  "recommended": {
+    "message": "Consigliato"
   },
   "ownership": {
     "message": "Proprietà"
@@ -8756,6 +8771,27 @@
   "memberAccessReportPageDesc": {
     "message": "Fai audit dell'accesso dei membri dell'organizzazione ai gruppi, alle raccolte e agli elementi. L'esportazione in CSV fornisce un report dettagliato per membro, comprese le informazioni sui permessi delle raccolte e le configurazioni dell'account."
   },
+  "memberAccessReportNoCollection": {
+    "message": "(Nessuna raccolta)"
+  },
+  "memberAccessReportNoCollectionPermission": {
+    "message": "(Nessun permesso sulla raccolta)"
+  },
+  "memberAccessReportNoGroup": {
+    "message": "(Nessun gruppo)"
+  },
+  "memberAccessReportTwoFactorEnabledTrue": {
+    "message": "Attivo"
+  },
+  "memberAccessReportTwoFactorEnabledFalse": {
+    "message": "Disattivo"
+  },
+  "memberAccessReportAuthenticationEnabledTrue": {
+    "message": "Attivo"
+  },
+  "memberAccessReportAuthenticationEnabledFalse": {
+    "message": "Disattivo"
+  },
   "higherKDFIterations": {
     "message": "Un numero di iterazioni KDF più elevato può aiutare a proteggere la tua password principale dall'essere forzata da un attaccante."
   },
@@ -8959,8 +8995,8 @@
       }
     }
   },
-  "upgradePlan": {
-    "message": "Aggiorna il tuo piano per invitare più membri e accedere a funzionalità aggiuntive di Bitwarden"
+  "upgradePlans": {
+    "message": "Aggiorna il tuo piano per invitare membri e sperimentare potenti funzionalità di sicurezza."
   },
   "upgradeDiscount": {
     "message": "Risparmia il $AMOUNT$%",
@@ -8971,11 +9007,11 @@
       }
     }
   },
-  "upgradeEnterpriseMessage": {
-    "message": "Capacità avanzate per le imprese più grandi"
+  "enterprisePlanUpgradeMessage": {
+    "message": "Capacità avanzate per le organizzazioni più grandi"
   },
-  "upgradeTeamsMessage": {
-    "message": "Imprese alla ricerca di una sicurezza totale"
+  "teamsPlanUpgradeMessage": {
+    "message": "Protezione resiliente per i team in crescita"
   },
   "teamsInviteMessage": {
     "message": "Invita un numero di membri illimitato"
@@ -8986,8 +9022,8 @@
   "syncGroupsAndUsersFromDirectory": {
     "message": "Sincronizza utenti e gruppi da una directory"
   },
-  "upgradeFamilyMessage": {
-    "message": "Condividi con famiglia e amici"
+  "familyPlanUpgradeMessage": {
+    "message": "Proteggi gli accessi della tua famiglia"
   },
   "accessToPremiumFeatures": {
     "message": "Accedi alle funzionalità Premium"
@@ -9043,8 +9079,11 @@
   "bitwardenPasswordManager": {
     "message": "Bitwarden Password Manager"
   },
-  "secretsManagerWithFreePasswordManagerInfo": {
-    "message": "Il tuo abbonamento complementare a Password Manager di un anno verrà aggiornato al piano selezionato. Non ti verrà addebitato nessun costo fino a quando il periodo gratuito non sarà terminato."
+  "secretsManagerComplimentaryPasswordManager": {
+    "message": "Your complimentary one year Password Manager subscription will upgrade to the selected plan. You will not be charged until the complimentary period is over."
+  },
+  "fileSavedToDevice": {
+    "message": "File salvato sul dispositivo. Gestisci dai download del dispositivo."
   },
   "publicApi": {
     "message": "API pubblica",

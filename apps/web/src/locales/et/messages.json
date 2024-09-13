@@ -143,6 +143,9 @@
   "securityCode": {
     "message": "Kaardi turvakood (CVV)"
   },
+  "securityCodeSlashCVV": {
+    "message": "Security code / CVV"
+  },
   "identityName": {
     "message": "Identiteedi nimi"
   },
@@ -561,6 +564,9 @@
         "example": "Password"
       }
     }
+  },
+  "copySuccessful": {
+    "message": "Copy Successful"
   },
   "copyValue": {
     "message": "Kopeeri kirje",
@@ -1283,7 +1289,7 @@
     "message": "Ekspordi"
   },
   "exportFrom": {
-    "message": "Export from"
+    "message": "Ekspordi asukohast"
   },
   "exportVault": {
     "message": "Hoidla sisu eksportimine"
@@ -3894,6 +3900,12 @@
       }
     }
   },
+  "encryptionKeyUpdateCannotProceed": {
+    "message": "Encryption key update cannot proceed"
+  },
+  "keyUpdateFoldersFailed": {
+    "message": "When updating your encryption key, your folders could not be decrypted. To continue with the update, your folders must be deleted. No vault items will be deleted if you proceed."
+  },
   "keyUpdated": {
     "message": "Võti on uuendatud"
   },
@@ -4035,6 +4047,9 @@
   "selected": {
     "message": "Valitud"
   },
+  "recommended": {
+    "message": "Soovituslik"
+  },
   "ownership": {
     "message": "Omanik"
   },
@@ -4148,13 +4163,13 @@
     "message": "Klooni"
   },
   "masterPassPolicyTitle": {
-    "message": "Master password requirements"
+    "message": "Ülemparooli nõuded"
   },
   "masterPassPolicyDesc": {
     "message": "Määra minimaalsed ülemparooli tugevuse tingimused."
   },
   "twoStepLoginPolicyTitle": {
-    "message": "Require two-step login"
+    "message": "Nõua kahe-astmelist sisselogimist"
   },
   "twoStepLoginPolicyDesc": {
     "message": "Nõua, et kasutajad seadistaksid oma kontodes kaheastmelise kinnituse."
@@ -4217,7 +4232,7 @@
     "message": "Minimaalne sõnade arv"
   },
   "overridePasswordTypePolicy": {
-    "message": "Password Type",
+    "message": "Parooli Tüüp",
     "description": "Name of the password generator policy that overrides the user's password/passphrase selection."
   },
   "userPreference": {
@@ -4340,10 +4355,10 @@
     "message": "Võid nüüd selle vahelehe sulgeda ning jätkata brauseri laienduses."
   },
   "youSuccessfullyLoggedIn": {
-    "message": "You successfully logged in"
+    "message": "Edukalt sisse logitud"
   },
   "thisWindowWillCloseIn5Seconds": {
-    "message": "This window will automatically close in 5 seconds"
+    "message": "See aken sulgub automaatselt 5 sekundi pärast"
   },
   "youMayCloseThisWindow": {
     "message": "You may close this window"
@@ -5399,7 +5414,7 @@
     "message": "Your master password does not meet one or more of your organization policies. In order to access the vault, you must update your master password now. Proceeding will log you out of your current session, requiring you to log back in. Active sessions on other devices may continue to remain active for up to one hour."
   },
   "automaticAppLogin": {
-    "message": "Automatically log in users for allowed applications"
+    "message": "Logi kasutajad lubatud rakendustesse automaatselt sisse"
   },
   "automaticAppLoginDesc": {
     "message": "Login forms will automatically be filled and submitted for apps launched from your configured identity provider."
@@ -6674,7 +6689,7 @@
     "description": "Notification for the successful editing of a secret."
   },
   "secretCreated": {
-    "message": "Secret created",
+    "message": "Uus saladus loodud",
     "description": "Notification for the successful creation of a secret."
   },
   "newSecret": {
@@ -6768,7 +6783,7 @@
     "description": "Notification for the successful saving of a project."
   },
   "projectCreated": {
-    "message": "Project created",
+    "message": "Projekt loodud",
     "description": "Notification for the successful creation of a project."
   },
   "projectName": {
@@ -6948,7 +6963,7 @@
     "description": "Error message indicating that an expiration date for the access token must be set."
   },
   "accessTokenCreatedAndCopied": {
-    "message": "Access token created and copied to clipboard",
+    "message": "Juurdepääsuvõti loodud ja lõikelauale kopeeritud",
     "description": "Notification to inform the user that the access token has been created and copied to the clipboard."
   },
   "revokeAccessToken": {
@@ -7816,7 +7831,7 @@
     "message": "Selected region flag"
   },
   "accountSuccessfullyCreated": {
-    "message": "Account successfully created!"
+    "message": "Konto edukalt loodud!"
   },
   "adminApprovalRequested": {
     "message": "Admin approval requested"
@@ -8350,7 +8365,7 @@
     "description": "Label for the name of a machine account"
   },
   "machineAccountCreated": {
-    "message": "Machine account created",
+    "message": "Konto arvutile loodud",
     "description": "Notifies that a new machine account has been created"
   },
   "machineAccountUpdated": {
@@ -8756,6 +8771,27 @@
   "memberAccessReportPageDesc": {
     "message": "Audit organization member access across groups, collections, and collection items. The CSV export provides a detailed breakdown per member, including information on collection permissions and account configurations."
   },
+  "memberAccessReportNoCollection": {
+    "message": "(No Collection)"
+  },
+  "memberAccessReportNoCollectionPermission": {
+    "message": "(No Collection Permission)"
+  },
+  "memberAccessReportNoGroup": {
+    "message": "(No Group)"
+  },
+  "memberAccessReportTwoFactorEnabledTrue": {
+    "message": "On"
+  },
+  "memberAccessReportTwoFactorEnabledFalse": {
+    "message": "Off"
+  },
+  "memberAccessReportAuthenticationEnabledTrue": {
+    "message": "On"
+  },
+  "memberAccessReportAuthenticationEnabledFalse": {
+    "message": "Off"
+  },
   "higherKDFIterations": {
     "message": "Higher KDF iterations can help protect your master password from being brute forced by an attacker."
   },
@@ -8959,8 +8995,8 @@
       }
     }
   },
-  "upgradePlan": {
-    "message": "Upgrade your plan to invite more members and gain access to additional Bitwarden features"
+  "upgradePlans": {
+    "message": "Upgrade your plan to invite members and experience powerful security features."
   },
   "upgradeDiscount": {
     "message": "Save $AMOUNT$%",
@@ -8971,11 +9007,11 @@
       }
     }
   },
-  "upgradeEnterpriseMessage": {
-    "message": "Advanced capabilities for larger businesses"
+  "enterprisePlanUpgradeMessage": {
+    "message": "Advanced capabilities for larger organizations"
   },
-  "upgradeTeamsMessage": {
-    "message": "Businesses looking for powerful security"
+  "teamsPlanUpgradeMessage": {
+    "message": "Resilient protection for growing teams"
   },
   "teamsInviteMessage": {
     "message": "Invite unlimited members"
@@ -8986,8 +9022,8 @@
   "syncGroupsAndUsersFromDirectory": {
     "message": "Sync groups and users from a directory"
   },
-  "upgradeFamilyMessage": {
-    "message": "Share with families and friends"
+  "familyPlanUpgradeMessage": {
+    "message": "Secure your family logins"
   },
   "accessToPremiumFeatures": {
     "message": "Access to Premium features"
@@ -9043,8 +9079,11 @@
   "bitwardenPasswordManager": {
     "message": "Bitwarden Password Manager"
   },
-  "secretsManagerWithFreePasswordManagerInfo": {
-    "message": "Your complementary one year Password Manager subscription will upgrade to the selected plan. You will not be charged until the complimentary period is over."
+  "secretsManagerComplimentaryPasswordManager": {
+    "message": "Your complimentary one year Password Manager subscription will upgrade to the selected plan. You will not be charged until the complimentary period is over."
+  },
+  "fileSavedToDevice": {
+    "message": "File saved to device. Manage from your device downloads."
   },
   "publicApi": {
     "message": "Public API",

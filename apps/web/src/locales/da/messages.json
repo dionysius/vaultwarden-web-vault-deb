@@ -143,6 +143,9 @@
   "securityCode": {
     "message": "Kortverifikationsværdi (CVC)"
   },
+  "securityCodeSlashCVV": {
+    "message": "Sikkerhedskode/CVC"
+  },
   "identityName": {
     "message": "Identitetsnavn"
   },
@@ -561,6 +564,9 @@
         "example": "Password"
       }
     }
+  },
+  "copySuccessful": {
+    "message": "Kopieret"
   },
   "copyValue": {
     "message": "Kopiér værdi",
@@ -3894,6 +3900,12 @@
       }
     }
   },
+  "encryptionKeyUpdateCannotProceed": {
+    "message": "Krypteringsnøgleopdatering kan ikke fortsætte"
+  },
+  "keyUpdateFoldersFailed": {
+    "message": "Under opdatering af krypteringsnøglen kunne de relevante mapper ikke dekrypteres. For at fortsætte opdateringen skal mapperne slettes. Ingen boks-emner slettes, hvis der fortsættes."
+  },
   "keyUpdated": {
     "message": "Nøgle opdateret"
   },
@@ -4034,6 +4046,9 @@
   },
   "selected": {
     "message": "Valgt"
+  },
+  "recommended": {
+    "message": "Anbefalet"
   },
   "ownership": {
     "message": "Ejerskab"
@@ -8756,6 +8771,27 @@
   "memberAccessReportPageDesc": {
     "message": "Inspicér organisationsmedlemsadgang på tværs af grupper, samlinger og samlingsemner. CSV-eksporten giver en detaljeret opdeling pr. medlem, herunder oplysninger om samlingstilladelser og kontoopsætninger."
   },
+  "memberAccessReportNoCollection": {
+    "message": "(Ingen Samling)"
+  },
+  "memberAccessReportNoCollectionPermission": {
+    "message": "(Ingen Samling-tilladelse)"
+  },
+  "memberAccessReportNoGroup": {
+    "message": "(Ingen Gruppe)"
+  },
+  "memberAccessReportTwoFactorEnabledTrue": {
+    "message": "Til"
+  },
+  "memberAccessReportTwoFactorEnabledFalse": {
+    "message": "Fra"
+  },
+  "memberAccessReportAuthenticationEnabledTrue": {
+    "message": "Til"
+  },
+  "memberAccessReportAuthenticationEnabledFalse": {
+    "message": "Fra"
+  },
   "higherKDFIterations": {
     "message": "Højere KDF-iterationer kan hjælpe med at beskytte hovedadgangskoden mod brute force-angreb."
   },
@@ -8959,8 +8995,8 @@
       }
     }
   },
-  "upgradePlan": {
-    "message": "Opgradér abonnementstypen for at invitere flere til at blive medlemmer samt opnå adgang til yderligere Bitwarden-funktioner"
+  "upgradePlans": {
+    "message": "Opgradér abonnementet for at invitere folk til at blive medlemmer og opleve kraftfulde sikkerhedsfunktioner."
   },
   "upgradeDiscount": {
     "message": "Spar $AMOUNT$%",
@@ -8971,11 +9007,11 @@
       }
     }
   },
-  "upgradeEnterpriseMessage": {
-    "message": "Avancerede muligheder for større virksomheder"
+  "enterprisePlanUpgradeMessage": {
+    "message": "Avancerede muligheder til større organisationer"
   },
-  "upgradeTeamsMessage": {
-    "message": "Virksomheder, som leder efter stærk sikkerhed"
+  "teamsPlanUpgradeMessage": {
+    "message": "Modstandsdygtig beskyttelse til voksende teams"
   },
   "teamsInviteMessage": {
     "message": "Ubegrænset medlemsantal"
@@ -8986,8 +9022,8 @@
   "syncGroupsAndUsersFromDirectory": {
     "message": "Synk grupper og brugere fra et kartotek"
   },
-  "upgradeFamilyMessage": {
-    "message": "Del med familier og venner"
+  "familyPlanUpgradeMessage": {
+    "message": "Sikr familie-logins"
   },
   "accessToPremiumFeatures": {
     "message": "Adgang til Premium-funktioner"
@@ -9043,8 +9079,11 @@
   "bitwardenPasswordManager": {
     "message": "Bitwarden Adgangskodehåndtering"
   },
-  "secretsManagerWithFreePasswordManagerInfo": {
-    "message": "Det komplementære et års abonnement på Adgangskodehåndtering opgraderes til den valgte abonnementstype. Betaling opkræves først efter den gratis periode."
+  "secretsManagerComplimentaryPasswordManager": {
+    "message": "Det gratis et-års abonnement på Password Manager opgraderes til den valgte abonnementstype. Betaling opkræves først efter endt gratis-periode."
+  },
+  "fileSavedToDevice": {
+    "message": "Fil gemt på enheden. Håndtér fra enhedens downloads."
   },
   "publicApi": {
     "message": "Offentlig API",

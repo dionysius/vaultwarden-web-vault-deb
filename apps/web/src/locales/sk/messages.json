@@ -143,6 +143,9 @@
   "securityCode": {
     "message": "Bezpečnostný kód (CVV)"
   },
+  "securityCodeSlashCVV": {
+    "message": "Bezpečnostný kód / CVV"
+  },
   "identityName": {
     "message": "Názov identity"
   },
@@ -561,6 +564,9 @@
         "example": "Password"
       }
     }
+  },
+  "copySuccessful": {
+    "message": "Úspešne skopírované"
   },
   "copyValue": {
     "message": "Kopírovať hodnotu",
@@ -3894,6 +3900,12 @@
       }
     }
   },
+  "encryptionKeyUpdateCannotProceed": {
+    "message": "Aktualizácia šifrovacieho kľúča nemôže pokračovať"
+  },
+  "keyUpdateFoldersFailed": {
+    "message": "Pri aktualizácii šifrovacieho kľúča nebolo možné dešifrovať vaše priečinky. Ak chcete pokračovať v aktualizácii, vaše priečinky sa musia odstrániť. Ak budete pokračovať, nebudú odstránené žiadne položky trezora."
+  },
   "keyUpdated": {
     "message": "Kľúč aktualizovaný"
   },
@@ -4034,6 +4046,9 @@
   },
   "selected": {
     "message": "Vybraté"
+  },
+  "recommended": {
+    "message": "Odporúčané"
   },
   "ownership": {
     "message": "Vlastníctvo"
@@ -8756,6 +8771,27 @@
   "memberAccessReportPageDesc": {
     "message": "Audit prístupu členov organizácie v skupinách, kolekciách a položkách kolekcie. Export CSV poskytuje podrobný rozpis podľa jednotlivých členov vrátane informácií o oprávneniach kolekcií a konfiguráciách účtov."
   },
+  "memberAccessReportNoCollection": {
+    "message": "(Žiadna Zbierka)"
+  },
+  "memberAccessReportNoCollectionPermission": {
+    "message": "(Žiadne povolenia ku zbierke)"
+  },
+  "memberAccessReportNoGroup": {
+    "message": "(Žiadna Skupina)"
+  },
+  "memberAccessReportTwoFactorEnabledTrue": {
+    "message": "Zapnuté"
+  },
+  "memberAccessReportTwoFactorEnabledFalse": {
+    "message": "Vypnuté"
+  },
+  "memberAccessReportAuthenticationEnabledTrue": {
+    "message": "Zapnuté"
+  },
+  "memberAccessReportAuthenticationEnabledFalse": {
+    "message": "Vypnuté"
+  },
   "higherKDFIterations": {
     "message": "Zvýšenie počtu KDF iterácií môže pomôcť chrániť vaše hlavné heslo pri brute force útoku."
   },
@@ -8959,8 +8995,8 @@
       }
     }
   },
-  "upgradePlan": {
-    "message": "Upgrade your plan to invite more members and gain access to additional Bitwarden features"
+  "upgradePlans": {
+    "message": "Upgrade your plan to invite members and experience powerful security features."
   },
   "upgradeDiscount": {
     "message": "Save $AMOUNT$%",
@@ -8971,11 +9007,11 @@
       }
     }
   },
-  "upgradeEnterpriseMessage": {
-    "message": "Advanced capabilities for larger businesses"
+  "enterprisePlanUpgradeMessage": {
+    "message": "Advanced capabilities for larger organizations"
   },
-  "upgradeTeamsMessage": {
-    "message": "Businesses looking for powerful security"
+  "teamsPlanUpgradeMessage": {
+    "message": "Resilient protection for growing teams"
   },
   "teamsInviteMessage": {
     "message": "Invite unlimited members"
@@ -8986,8 +9022,8 @@
   "syncGroupsAndUsersFromDirectory": {
     "message": "Sync groups and users from a directory"
   },
-  "upgradeFamilyMessage": {
-    "message": "Share with families and friends"
+  "familyPlanUpgradeMessage": {
+    "message": "Secure your family logins"
   },
   "accessToPremiumFeatures": {
     "message": "Access to Premium features"
@@ -9043,8 +9079,11 @@
   "bitwardenPasswordManager": {
     "message": "Bitwarden Správca Hesiel"
   },
-  "secretsManagerWithFreePasswordManagerInfo": {
+  "secretsManagerComplimentaryPasswordManager": {
     "message": "Vaše bezplatné ročné predplatné programu Password Manager sa zmení na vybraný plán. Poplatok vám bude účtovaný až po skončení bezplatného obdobia."
+  },
+  "fileSavedToDevice": {
+    "message": "Súbor sa uložil do zariadenia. Spravujte stiahnuté súbory zo zariadenia."
   },
   "publicApi": {
     "message": "Verejné API",

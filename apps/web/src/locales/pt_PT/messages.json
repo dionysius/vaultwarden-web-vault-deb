@@ -143,6 +143,9 @@
   "securityCode": {
     "message": "Código de segurança (CVV)"
   },
+  "securityCodeSlashCVV": {
+    "message": "Security code / CVV"
+  },
   "identityName": {
     "message": "Nome da identidade"
   },
@@ -561,6 +564,9 @@
         "example": "Password"
       }
     }
+  },
+  "copySuccessful": {
+    "message": "Copy Successful"
   },
   "copyValue": {
     "message": "Copiar valor",
@@ -3894,6 +3900,12 @@
       }
     }
   },
+  "encryptionKeyUpdateCannotProceed": {
+    "message": "Encryption key update cannot proceed"
+  },
+  "keyUpdateFoldersFailed": {
+    "message": "When updating your encryption key, your folders could not be decrypted. To continue with the update, your folders must be deleted. No vault items will be deleted if you proceed."
+  },
   "keyUpdated": {
     "message": "Chave atualizada"
   },
@@ -4034,6 +4046,9 @@
   },
   "selected": {
     "message": "Selecionado(s)"
+  },
+  "recommended": {
+    "message": "Recomendado"
   },
   "ownership": {
     "message": "Propriedade"
@@ -8756,6 +8771,27 @@
   "memberAccessReportPageDesc": {
     "message": "Audite o acesso dos membros da organização a grupos, coleções e itens de coleção. A exportação CSV fornece uma análise detalhada por membro, incluindo informações sobre permissões de coleção e configurações de conta."
   },
+  "memberAccessReportNoCollection": {
+    "message": "(Sem coleção)"
+  },
+  "memberAccessReportNoCollectionPermission": {
+    "message": "(Sem permissões de coleção)"
+  },
+  "memberAccessReportNoGroup": {
+    "message": "(Sem grupos)"
+  },
+  "memberAccessReportTwoFactorEnabledTrue": {
+    "message": "Ativado"
+  },
+  "memberAccessReportTwoFactorEnabledFalse": {
+    "message": "Desativado"
+  },
+  "memberAccessReportAuthenticationEnabledTrue": {
+    "message": "Ativado"
+  },
+  "memberAccessReportAuthenticationEnabledFalse": {
+    "message": "Desativado"
+  },
   "higherKDFIterations": {
     "message": "Iterações KDF mais altas podem ajudar a proteger a sua palavra-passe mestra de ser forçada por um atacante."
   },
@@ -8959,8 +8995,8 @@
       }
     }
   },
-  "upgradePlan": {
-    "message": "Atualize o seu plano para convidar mais membros e obter acesso a funcionalidades adicionais do Bitwarden"
+  "upgradePlans": {
+    "message": "Atualize o seu plano para convidar membros e experimentar poderosas funcionalidades de segurança."
   },
   "upgradeDiscount": {
     "message": "Poupe $AMOUNT$%",
@@ -8971,11 +9007,11 @@
       }
     }
   },
-  "upgradeEnterpriseMessage": {
-    "message": "Capacidades avançadas para empresas de maior dimensão"
+  "enterprisePlanUpgradeMessage": {
+    "message": "Capacidades avançadas para organizações de maior dimensão"
   },
-  "upgradeTeamsMessage": {
-    "message": "Empresas que procuram uma segurança poderosa"
+  "teamsPlanUpgradeMessage": {
+    "message": "Proteção resiliente para equipas em crescimento"
   },
   "teamsInviteMessage": {
     "message": "Convide membros ilimitados"
@@ -8986,8 +9022,8 @@
   "syncGroupsAndUsersFromDirectory": {
     "message": "Sincronize grupos e utilizadores a partir de um diretório"
   },
-  "upgradeFamilyMessage": {
-    "message": "Partilhe com familiares e amigos"
+  "familyPlanUpgradeMessage": {
+    "message": "Proteja as credenciais da sua família"
   },
   "accessToPremiumFeatures": {
     "message": "Acesso a funcionalidades Premium"
@@ -9043,8 +9079,11 @@
   "bitwardenPasswordManager": {
     "message": "Bitwarden - Gestor de Palavras-passe"
   },
-  "secretsManagerWithFreePasswordManagerInfo": {
-    "message": "A sua subscrição complementar de um ano do Gestor de Palavras-passe será atualizada para o plano selecionado. Não será cobrado até que o período de cortesia termine."
+  "secretsManagerComplimentaryPasswordManager": {
+    "message": "Your complimentary one year Password Manager subscription will upgrade to the selected plan. You will not be charged until the complimentary period is over."
+  },
+  "fileSavedToDevice": {
+    "message": "Ficheiro guardado no dispositivo. Gira-o a partir das transferências do seu dispositivo."
   },
   "publicApi": {
     "message": "API pública",
