@@ -1797,13 +1797,13 @@
     "message": "Non ci sono password da mostrare."
   },
   "clearHistory": {
-    "message": "Clear history"
+    "message": "Cancella cronologia"
   },
   "noPasswordsToShow": {
-    "message": "No passwords to show"
+    "message": "Nessuna password da mostrare"
   },
   "noRecentlyGeneratedPassword": {
-    "message": "You haven't generated a password recently"
+    "message": "Non hai generato una password di recente"
   },
   "remove": {
     "message": "Rimuovi"
@@ -4308,6 +4308,9 @@
   },
   "enterprisePolicyRequirementsApplied": {
     "message": "I requisiti della policy aziendale sono stati applicati a questa impostazione"
+  },
+  "fileSavedToDevice": {
+    "message": "File salvato sul dispositivo. Gestisci dai download del dispositivo."
   },
   "showCharacterCount": {
     "message": "Show character count"

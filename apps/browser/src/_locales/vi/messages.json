@@ -14,7 +14,7 @@
     "message": "Đăng nhập hoặc tạo tài khoản mới để truy cập kho lưu trữ của bạn."
   },
   "inviteAccepted": {
-    "message": "Invitation accepted"
+    "message": "Lời mời được chấp nhận"
   },
   "createAccount": {
     "message": "Tạo tài khoản"
@@ -69,10 +69,10 @@
     "message": "Gợi ý mật khẩu chính (tùy chọn)"
   },
   "joinOrganization": {
-    "message": "Join organization"
+    "message": "Tham gia tổ chức"
   },
   "finishJoiningThisOrganizationBySettingAMasterPassword": {
-    "message": "Finish joining this organization by setting a master password."
+    "message": "Hoàn tất gia nhập tổ chức này bằng cách đặt một mật khẩu chính."
   },
   "tab": {
     "message": "Tab"
@@ -114,19 +114,19 @@
     "message": "Sao chép mã bảo mật"
   },
   "copyName": {
-    "message": "Copy name"
+    "message": "Sao chép tên"
   },
   "copyCompany": {
     "message": "Copy company"
   },
   "copySSN": {
-    "message": "Copy Social Security number"
+    "message": "Số bảo hiểm xã hội"
   },
   "copyPassportNumber": {
-    "message": "Copy passport number"
+    "message": "Sao chép số hộ chiếu"
   },
   "copyLicenseNumber": {
-    "message": "Copy license number"
+    "message": "Sao chép số giấy phép"
   },
   "autoFill": {
     "message": "Tự động điền"
@@ -302,10 +302,10 @@
     "message": "Chỉnh sửa thư mục"
   },
   "newFolder": {
-    "message": "New folder"
+    "message": "Thư mục mới"
   },
   "folderName": {
-    "message": "Folder name"
+    "message": "Tên thư mục"
   },
   "folderHintText": {
     "message": "Nest a folder by adding the parent folder's name followed by a “/”. Example: Social/Forums"
@@ -400,7 +400,7 @@
     "description": "deprecated. Use specialCharactersLabel instead."
   },
   "include": {
-    "message": "Include",
+    "message": "Bao gồm",
     "description": "Card header for password generator include block"
   },
   "uppercaseDescription": {
@@ -420,7 +420,7 @@
     "description": "Label for the password generator lowercase character checkbox"
   },
   "numbersDescription": {
-    "message": "Include numbers",
+    "message": "Bao gồm cả số",
     "description": "Full description for the password generator numbers checkbox"
   },
   "numbersLabel": {
@@ -428,7 +428,7 @@
     "description": "Label for the password generator numbers checkbox"
   },
   "specialCharactersDescription": {
-    "message": "Include special characters",
+    "message": "Bao gồm các ký tự đặc biệt",
     "description": "Full description for the password generator special characters checkbox"
   },
   "specialCharactersLabel": {
@@ -684,10 +684,10 @@
     "message": "Tài khoản mới của bạn đã được tạo! Bạn có thể đăng nhập từ bây giờ."
   },
   "newAccountCreated2": {
-    "message": "Your new account has been created!"
+    "message": "Tài khoản của bạn đã được tạo thành công!"
   },
   "youHaveBeenLoggedIn": {
-    "message": "You have been logged in!"
+    "message": "Bạn đã đăng nhập thành công!"
   },
   "youSuccessfullyLoggedIn": {
     "message": "Bạn đã đăng nhập thành công"
@@ -1155,7 +1155,7 @@
     "message": "Bạn có thể nâng cấp làm thành viên cao cấp trong kho bitwarden nền web. Bạn có muốn truy cập trang web bây giờ?"
   },
   "premiumPurchaseAlertV2": {
-    "message": "You can purchase Premium from your account settings on the Bitwarden web app."
+    "message": "Bạn có thể mua gói Premium từ cài đặt tài khoản trên trang Bitwarden."
   },
   "premiumCurrentMember": {
     "message": "Bạn là một thành viên cao cấp!"
@@ -1176,7 +1176,7 @@
     }
   },
   "premiumPriceV2": {
-    "message": "All for just $PRICE$ per year!",
+    "message": "Tất cả chỉ với $PRICE$ /năm!",
     "placeholders": {
       "price": {
         "content": "$1",
@@ -1797,7 +1797,7 @@
     "message": "Không có mật khẩu để liệt kê."
   },
   "clearHistory": {
-    "message": "Clear history"
+    "message": "Xóa lịch sử"
   },
   "noPasswordsToShow": {
     "message": "No passwords to show"
@@ -1900,10 +1900,10 @@
     "message": "Các chính sách của tổ chức đang ảnh hưởng đến cài đặt tạo mật khẩu của bạn."
   },
   "passwordGenerator": {
-    "message": "Password generator"
+    "message": "Trình tạo mật khẩu"
   },
   "usernameGenerator": {
-    "message": "Username generator"
+    "message": "Bộ tạo tên người dùng"
   },
   "useThisPassword": {
     "message": "Use this password"
@@ -2246,7 +2246,7 @@
     "message": "Mật khẩu đã được bảo vệ"
   },
   "copyLink": {
-    "message": "Copy link"
+    "message": "Sao chép liên kết"
   },
   "copySendLink": {
     "message": "Sao chép liên kết mục Gửi",
@@ -2477,7 +2477,7 @@
     "message": "Mật khẩu chính của bạn không đáp ứng chính sách tổ chức của bạn. Để truy cập kho, bạn phải cập nhật mật khẩu chính của mình ngay bây giờ. Việc tiếp tục sẽ đăng xuất bạn khỏi phiên hiện tại và bắt buộc đăng nhập lại. Các phiên hoạt động trên các thiết bị khác có thể tiếp tục duy trì hoạt động trong tối đa một giờ."
   },
   "tdeDisabledMasterPasswordRequired": {
-    "message": "Your organization has disabled trusted device encryption. Please set a master password to access your vault."
+    "message": "Tổ chức của bạn đã vô hiệu hóa mã hóa bằng thiết bị đáng tin cậy. Vui lòng đặt mật khẩu chính để truy cập Kho của bạn."
   },
   "resetPasswordPolicyAutoEnroll": {
     "message": "Đăng ký tự động"
@@ -2936,7 +2936,7 @@
     "message": "Thay đổi phím tắt"
   },
   "autofillKeyboardManagerShortcutsLabel": {
-    "message": "Manage shortcuts"
+    "message": "Quản lý các lối tắt"
   },
   "autofillShortcut": {
     "message": "Phím tắt tự động điền"
@@ -4308,6 +4308,9 @@
   },
   "enterprisePolicyRequirementsApplied": {
     "message": "Enterprise policy requirements have been applied to this setting"
+  },
+  "fileSavedToDevice": {
+    "message": "File saved to device. Manage from your device downloads."
   },
   "showCharacterCount": {
     "message": "Show character count"

@@ -1797,10 +1797,10 @@
     "message": "Det finns inga lösenord att lista."
   },
   "clearHistory": {
-    "message": "Clear history"
+    "message": "Rensa historik"
   },
   "noPasswordsToShow": {
-    "message": "No passwords to show"
+    "message": "Inga lösenord att visa"
   },
   "noRecentlyGeneratedPassword": {
     "message": "You haven't generated a password recently"
@@ -4308,6 +4308,9 @@
   },
   "enterprisePolicyRequirementsApplied": {
     "message": "Enterprise policy requirements have been applied to this setting"
+  },
+  "fileSavedToDevice": {
+    "message": "File saved to device. Manage from your device downloads."
   },
   "showCharacterCount": {
     "message": "Visa antal tecken"

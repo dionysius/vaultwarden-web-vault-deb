@@ -1797,13 +1797,13 @@
     "message": "Er zijn geen wachtwoorden om weer te geven."
   },
   "clearHistory": {
-    "message": "Clear history"
+    "message": "Geschiedenis wissen"
   },
   "noPasswordsToShow": {
-    "message": "No passwords to show"
+    "message": "Geen wachtwoorden weer te geven"
   },
   "noRecentlyGeneratedPassword": {
-    "message": "You haven't generated a password recently"
+    "message": "Je hebt onlangs geen wachtwoord gegenereerd"
   },
   "remove": {
     "message": "Verwijderen"
@@ -4308,6 +4308,9 @@
   },
   "enterprisePolicyRequirementsApplied": {
     "message": "Bedrijfsbeleidseisen zijn op deze instelling toegepast"
+  },
+  "fileSavedToDevice": {
+    "message": "Bestand op apparaat opgeslagen. Beheer vanaf de downloads op je apparaat."
   },
   "showCharacterCount": {
     "message": "Aantal tekens weergeven"

@@ -1797,13 +1797,13 @@
     "message": "Nav paroļu, ko parādīt."
   },
   "clearHistory": {
-    "message": "Clear history"
+    "message": "Notīrīt vēsturi"
   },
   "noPasswordsToShow": {
-    "message": "No passwords to show"
+    "message": "Nav paroļu, ko parādīt"
   },
   "noRecentlyGeneratedPassword": {
-    "message": "You haven't generated a password recently"
+    "message": "Pēdējā laikā nav izveidota neviena parole"
   },
   "remove": {
     "message": "Noņemt"
@@ -4308,6 +4308,9 @@
   },
   "enterprisePolicyRequirementsApplied": {
     "message": "Šim iestatījumam tika piemērotas uzņēmējdarbības nosacījumu prasības"
+  },
+  "fileSavedToDevice": {
+    "message": "Datne saglabāta ierīcē. Tā ir atrodama ierīces lejupielāžu mapē."
   },
   "showCharacterCount": {
     "message": "Rādīt rakstzīmju skaitu"

@@ -1797,13 +1797,13 @@
     "message": "Der er ingen kodeord at vise."
   },
   "clearHistory": {
-    "message": "Clear history"
+    "message": "Ryd historik"
   },
   "noPasswordsToShow": {
-    "message": "No passwords to show"
+    "message": "Ingen adgangskoder at vise"
   },
   "noRecentlyGeneratedPassword": {
-    "message": "You haven't generated a password recently"
+    "message": "Der er ikke genereret nogen adgangskode for nylig"
   },
   "remove": {
     "message": "Fjern"
@@ -4308,6 +4308,9 @@
   },
   "enterprisePolicyRequirementsApplied": {
     "message": "Virksomhedspolitikkrav er anvendt på denne indstilling"
+  },
+  "fileSavedToDevice": {
+    "message": "Fil gemt på enheden. Håndtér fra enhedens downloads."
   },
   "showCharacterCount": {
     "message": "Vis tegnantal"

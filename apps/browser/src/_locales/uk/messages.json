@@ -1797,13 +1797,13 @@
     "message": "Немає паролів."
   },
   "clearHistory": {
-    "message": "Clear history"
+    "message": "Очистити історію"
   },
   "noPasswordsToShow": {
-    "message": "No passwords to show"
+    "message": "Немає паролів"
   },
   "noRecentlyGeneratedPassword": {
-    "message": "You haven't generated a password recently"
+    "message": "Ви не генерували паролі останнім часом"
   },
   "remove": {
     "message": "Вилучити"
@@ -4308,6 +4308,9 @@
   },
   "enterprisePolicyRequirementsApplied": {
     "message": "До цього налаштування застосовано вимоги політики компанії"
+  },
+  "fileSavedToDevice": {
+    "message": "Файл збережено на пристрої. Ви можете його знайти у теці завантажень."
   },
   "showCharacterCount": {
     "message": "Показати кількість символів"

@@ -266,7 +266,7 @@
     "message": "Bitwarden Authenticator allows you to store authenticator keys and generate TOTP codes for 2-step verification flows. Learn more on the bitwarden.com website"
   },
   "bitwardenSecretsManager": {
-    "message": "Bitwarden Sır Yöneticisi"
+    "message": "Bitwarden Secrets Manager"
   },
   "continueToSecretsManagerPageDesc": {
     "message": "Securely store, manage, and share developer secrets with Bitwarden Secrets Manager. Learn more on the bitwarden.com website."
@@ -1797,13 +1797,13 @@
     "message": "Listelenecek parola yok."
   },
   "clearHistory": {
-    "message": "Clear history"
+    "message": "Geçmişi temizle"
   },
   "noPasswordsToShow": {
-    "message": "No passwords to show"
+    "message": "Gösterilecek parola yok"
   },
   "noRecentlyGeneratedPassword": {
-    "message": "You haven't generated a password recently"
+    "message": "Yakın zamanda parola üretmediniz"
   },
   "remove": {
     "message": "Kaldır"
@@ -4308,6 +4308,9 @@
   },
   "enterprisePolicyRequirementsApplied": {
     "message": "Bu ayara kurumsal ilke gereksinimleri uygulandı"
+  },
+  "fileSavedToDevice": {
+    "message": "Dosya cihaza kaydedildi. Cihazınızın indirilenler klasöründen yönetebilirsiniz."
   },
   "showCharacterCount": {
     "message": "Show character count"

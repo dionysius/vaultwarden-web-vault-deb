@@ -1797,13 +1797,13 @@
     "message": "Nejsou k dispozici žádná hesla."
   },
   "clearHistory": {
-    "message": "Clear history"
+    "message": "Vymazat historii"
   },
   "noPasswordsToShow": {
-    "message": "No passwords to show"
+    "message": "Žádná hesla k zobrazení"
   },
   "noRecentlyGeneratedPassword": {
-    "message": "You haven't generated a password recently"
+    "message": "Nedávno jste nevygenerovali heslo"
   },
   "remove": {
     "message": "Odebrat"
@@ -4308,6 +4308,9 @@
   },
   "enterprisePolicyRequirementsApplied": {
     "message": "Na toto nastavení byly uplatněny požadavky podnikových zásad"
+  },
+  "fileSavedToDevice": {
+    "message": "Soubor byl uložen. Můžete jej nalézt ve stažené složce v zařízení."
   },
   "showCharacterCount": {
     "message": "Zobrazit počet znaků"

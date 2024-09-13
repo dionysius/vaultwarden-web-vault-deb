@@ -1797,13 +1797,13 @@
     "message": "表示するパスワードがありません"
   },
   "clearHistory": {
-    "message": "Clear history"
+    "message": "履歴を消去"
   },
   "noPasswordsToShow": {
-    "message": "No passwords to show"
+    "message": "パスワードがありません"
   },
   "noRecentlyGeneratedPassword": {
-    "message": "You haven't generated a password recently"
+    "message": "最近パスワードを生成していません"
   },
   "remove": {
     "message": "削除"
@@ -4308,6 +4308,9 @@
   },
   "enterprisePolicyRequirementsApplied": {
     "message": "エンタープライズポリシー要件がこの設定に適用されました"
+  },
+  "fileSavedToDevice": {
+    "message": "ファイルをデバイスに保存しました。デバイスのダウンロードで管理できます。"
   },
   "showCharacterCount": {
     "message": "文字数を表示"
