@@ -16,6 +16,8 @@ export abstract class RegistrationFinishService {
    * @param passwordInputResult The password input result.
    * @param emailVerificationToken The optional email verification token. Not present in emailed invite scenarios (ex: org invite).
    * @param orgSponsoredFreeFamilyPlanToken The optional org sponsored free family plan token.
+   * @param acceptEmergencyAccessInviteToken The optional accept emergency access invite token.
+   * @param emergencyAccessId The optional emergency access id which is required to validate the emergency access invite token.
    * Returns a promise which resolves to the captcha bypass token string upon a successful account creation.
    */
   abstract finishRegistration(
@@ -23,5 +25,7 @@ export abstract class RegistrationFinishService {
     passwordInputResult: PasswordInputResult,
     emailVerificationToken?: string,
     orgSponsoredFreeFamilyPlanToken?: string,
+    acceptEmergencyAccessInviteToken?: string,
+    emergencyAccessId?: string,
   ): Promise<string>;
 }

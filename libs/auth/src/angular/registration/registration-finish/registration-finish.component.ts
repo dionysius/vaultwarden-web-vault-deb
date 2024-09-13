@@ -44,6 +44,10 @@ export class RegistrationFinishComponent implements OnInit, OnDestroy {
   // setup a free family plan sponsored by an organization but they don't have an account yet.
   orgSponsoredFreeFamilyPlanToken: string;
 
+  // this token is provided when the user is coming from an emailed invite to accept an emergency access invite
+  acceptEmergencyAccessInviteToken: string;
+  emergencyAccessId: string;
+
   masterPasswordPolicyOptions: MasterPasswordPolicyOptions | null = null;
 
   constructor(
@@ -79,6 +83,11 @@ export class RegistrationFinishComponent implements OnInit, OnDestroy {
           if (qParams.orgSponsoredFreeFamilyPlanToken != null) {
             this.orgSponsoredFreeFamilyPlanToken = qParams.orgSponsoredFreeFamilyPlanToken;
           }
+
+          if (qParams.acceptEmergencyAccessInviteToken != null && qParams.emergencyAccessId) {
+            this.acceptEmergencyAccessInviteToken = qParams.acceptEmergencyAccessInviteToken;
+            this.emergencyAccessId = qParams.emergencyAccessId;
+          }
         }),
         switchMap((qParams: Params) => {
           if (
@@ -111,6 +120,8 @@ export class RegistrationFinishComponent implements OnInit, OnDestroy {
         passwordInputResult,
         this.emailVerificationToken,
         this.orgSponsoredFreeFamilyPlanToken,
+        this.acceptEmergencyAccessInviteToken,
+        this.emergencyAccessId,
       );
     } catch (e) {
       this.validationService.showError(e);

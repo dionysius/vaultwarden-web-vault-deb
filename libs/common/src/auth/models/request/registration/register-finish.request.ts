@@ -19,6 +19,8 @@ export class RegisterFinishRequest {
 
     public emailVerificationToken?: string,
     public orgSponsoredFreeFamilyPlanToken?: string,
+    public acceptEmergencyAccessInviteToken?: string,
+    public acceptEmergencyAccessId?: string,
 
     // Org Invite data (only applies on web)
     public organizationUserId?: string,
