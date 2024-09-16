@@ -738,7 +738,7 @@ jobs:
           $package = Get-Content -Raw -Path electron-builder.json | ConvertFrom-Json
           $package | Add-Member -MemberType NoteProperty -Name buildVersion -Value "$env:BUILD_NUMBER"
           $package | ConvertTo-Json -Depth 32 | Set-Content -Path electron-builder.json
-          "### MacOS GitHub build number: $env:BUILD_NUMBER" | Out-File -FilePath $env:GITHUB_STEP_SUMMARY -Append
+          Write-Output "### MacOS GitHub build number: $env:BUILD_NUMBER"
 
       - name: Install Node dependencies
         run: npm ci
@@ -879,6 +879,13 @@ jobs:
         with:
           creds: ${{ secrets.AZURE_KV_CI_SERVICE_PRINCIPAL }}
 
+      - name: Retrieve Slack secret
+        id: retrieve-slack-secret
+        uses: bitwarden/gh-actions/get-keyvault-secrets@main
+        with:
+          keyvault: bitwarden-ci
+          secrets: "slack-bot-token"
+
       - name: Download Provisioning Profiles secrets
         env:
           ACCOUNT_NAME: bitwardenci
@@ -955,7 +962,7 @@ jobs:
           $package = Get-Content -Raw -Path electron-builder.json | ConvertFrom-Json
           $package | Add-Member -MemberType NoteProperty -Name buildVersion -Value "$env:BUILD_NUMBER"
           $package | ConvertTo-Json -Depth 32 | Set-Content -Path electron-builder.json
-          "### MacOS App Store build number: $env:BUILD_NUMBER" | Out-File -FilePath $env:GITHUB_STEP_SUMMARY -Append
+          Write-Output "### MacOS App Store build number: $env:BUILD_NUMBER"
 
       - name: Install Node dependencies
         run: npm ci
@@ -1016,16 +1023,60 @@ jobs:
           if-no-files-found: error
 
       - name: Deploy to TestFlight
+        id: testflight-deploy
         if: |
             (github.ref == 'refs/heads/main'
-              && needs.setup.outputs.rc_branch_exists == 0
-              && needs.setup.outputs.hotfix_branch_exists == 0)
-            || (github.ref == 'refs/heads/rc' && needs.setup.outputs.hotfix_branch_exists == 0)
-            || github.ref == 'refs/heads/hotfix-rc-desktop'
+            || github.ref == 'refs/heads/rc'
+            || github.ref == 'refs/heads/hotfix-rc-desktop')
         env:
           APP_STORE_CONNECT_TEAM_ISSUER: ${{ secrets.APP_STORE_CONNECT_TEAM_ISSUER }}
           APP_STORE_CONNECT_AUTH_KEY: 6TV9MKN3GP
-        run: npm run upload:mas
+        run: |
+          xcrun altool \
+            --upload-app \
+            --type macos \
+            --file "$(find ./dist/mas-universal/Bitwarden*.pkg)" \
+            --apiKey $APP_STORE_CONNECT_AUTH_KEY \
+            --apiIssuer $APP_STORE_CONNECT_TEAM_ISSUER \
+            &> output.txt
+
+          UUID=$(cat output.txt | grep "Delivery UUID" | sed -E 's/Delivery UUID: (.*)/\1/')
+          echo "uuid=$UUID" >> $GITHUB_OUTPUT
+
+      - name: Post message to a Slack channel
+        id: slack-message
+        if: |
+            (github.ref == 'refs/heads/main'
+            || github.ref == 'refs/heads/rc'
+            || github.ref == 'refs/heads/hotfix-rc-desktop')
+        uses: slackapi/slack-github-action@6c661ce58804a1a20f6dc5fbee7f0381b469e001 # v1.25.0
+        with:
+          channel-id: C074F5UESQ0
+          payload: |
+            {
+              "blocks": [
+                {
+                  "type": "section",
+                  "text": {
+                    "type": "mrkdwn",
+                    "text": "Desktop client v${{ env._PACKAGE_VERSION }} <${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}|build> success on *${{ github.ref_name }}*"
+                  },
+                  "accessory": {
+                    "type": "button",
+                    "text": {
+                      "type": "plain_text",
+                      "text": "TestFlight Build",
+                      "emoji": true
+                    },
+                    "url": "https://appstoreconnect.apple.com/teams/${{ env.APP_STORE_CONNECT_TEAM_ISSUER }}/apps/1352778147/testflight/macos/${{ env.BUILD_UUID }}"
+                  }
+                }
+              ]
+            }
+        env:
+          APP_STORE_CONNECT_TEAM_ISSUER: ${{ secrets.APP_STORE_CONNECT_TEAM_ISSUER }}
+          SLACK_BOT_TOKEN: ${{ steps.retrieve-slack-secret.outputs.slack-bot-token }}
+          BUILD_UUID: ${{ steps.testflight-deploy.outputs.uuid }}
 
 
   macos-package-dev:
@@ -1158,7 +1209,7 @@ jobs:
           $package = Get-Content -Raw -Path electron-builder.json | ConvertFrom-Json
           $package | Add-Member -MemberType NoteProperty -Name buildVersion -Value "$env:BUILD_NUMBER"
           $package | ConvertTo-Json -Depth 32 | Set-Content -Path electron-builder.json
-          "### MacOS Dev build number: $env:BUILD_NUMBER" | Out-File -FilePath $env:GITHUB_STEP_SUMMARY -Append
+          Write-Output "### MacOS Dev build number: $env:BUILD_NUMBER"
 
       - name: Install Node dependencies
         run: npm ci
