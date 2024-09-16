@@ -53,10 +53,19 @@
           [class]="'tw-grid-cols-' + selectableProducts.length"
         >
           <div
-            *ngFor="let selectableProduct of selectableProducts; let i = index"
+            *ngFor="
+              let selectableProduct of selectableProducts;
+              trackBy: manageSelectableProduct;
+              let i = index
+            "
             [ngClass]="getPlanCardContainerClasses(selectableProduct, i)"
             (click)="selectPlan(selectableProduct)"
-            tabindex="0"
+            [attr.tabindex]="focusedIndex !== i || isCardDisabled(i) ? '-1' : '0'"
+            class="product-card"
+            (keyup)="onKeydown($event, i)"
+            (focus)="onFocus(i)"
+            [attr.aria-disabled]="isCardDisabled(i)"
+            [id]="i + 'a_plan_card'"
           >
             <div class="tw-relative">
               <div
