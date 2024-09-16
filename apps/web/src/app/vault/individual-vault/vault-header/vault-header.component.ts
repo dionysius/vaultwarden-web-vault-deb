@@ -49,7 +49,7 @@ export class VaultHeaderComponent implements OnInit {
   protected All = All;
   protected CollectionDialogTabType = CollectionDialogTabType;
   protected CipherType = CipherType;
-  protected extensionRefreshEnabled = false;
+  protected extensionRefreshEnabled: boolean;
 
   /**
    * Boolean to determine the loading state of the header.
