@@ -15,6 +15,7 @@
         [appCopyClick]="cipher.identity.fullName"
         showToast
         [valueLabel]="'name' | i18n"
+        data-testid="copy-name"
       ></button>
     </bit-form-field>
     <bit-form-field *ngIf="cipher.identity.username">
@@ -41,6 +42,7 @@
         [appCopyClick]="cipher.identity.company"
         showToast
         [valueLabel]="'company' | i18n"
+        data-testid="copy-company"
       ></button>
     </bit-form-field>
   </read-only-cipher-card>
@@ -70,6 +72,7 @@
         [appCopyClick]="cipher.identity.ssn"
         showToast
         [valueLabel]="'ssn' | i18n"
+        data-testid="copy-ssn"
       ></button>
     </bit-form-field>
     <bit-form-field *ngIf="cipher.identity.passportNumber">
@@ -96,6 +99,7 @@
         [appCopyClick]="cipher.identity.passportNumber"
         showToast
         [valueLabel]="'passportNumber' | i18n"
+        data-testid="copy-passport"
       ></button>
     </bit-form-field>
     <bit-form-field *ngIf="cipher.identity.licenseNumber">
@@ -109,6 +113,7 @@
         [appCopyClick]="cipher.identity.licenseNumber"
         showToast
         [valueLabel]="'licenseNumber' | i18n"
+        data-testid="copy-license"
       ></button>
     </bit-form-field>
   </read-only-cipher-card>
@@ -131,6 +136,7 @@
         [appCopyClick]="cipher.identity.email"
         showToast
         [valueLabel]="'email' | i18n"
+        data-testid="copy-email"
       ></button>
     </bit-form-field>
     <bit-form-field *ngIf="cipher.identity.phone">
@@ -144,6 +150,7 @@
         [appCopyClick]="cipher.identity.phone"
         showToast
         [valueLabel]="'phone' | i18n"
+        data-testid="copy-phone"
       ></button>
     </bit-form-field>
     <bit-form-field *ngIf="addressFields">
@@ -164,6 +171,7 @@
         [appCopyClick]="addressFields"
         showToast
         [valueLabel]="'address' | i18n"
+        data-testid="copy-address"
       ></button>
     </bit-form-field>
   </read-only-cipher-card>
