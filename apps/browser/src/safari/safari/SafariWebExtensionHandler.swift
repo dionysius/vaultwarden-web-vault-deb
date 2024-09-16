@@ -88,12 +88,9 @@ class SafariWebExtensionHandler: NSObject, NSExtensionRequestHandling {
             return
         case "biometricUnlock":
 
-            var error: NSError?
             let laContext = LAContext()
 
-            laContext.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: &error)
-
-            if let e = error, e.code != kLAErrorBiometryLockout {
+            if(!laContext.isBiometricsAvailable()){
                 response.userInfo = [
                     SFExtensionMessageKey: [
                         "message": [
@@ -162,6 +159,20 @@ class SafariWebExtensionHandler: NSObject, NSExtensionRequestHandling {
             }
 
             return
+        case "biometricUnlockAvailable":
+            let laContext = LAContext()
+            var isAvailable = laContext.isBiometricsAvailable();
+
+            response.userInfo = [
+                SFExtensionMessageKey: [
+                    "message": [
+                        "command": "biometricUnlockAvailable",
+                        "response": isAvailable ? "available" : "not available",
+                        "timestamp": Int64(NSDate().timeIntervalSince1970 * 1000),
+                    ],
+                ],
+            ]
+            break
         default:
             return
         }
@@ -191,6 +202,20 @@ func jsonDeserialize<T: Decodable>(json: String?) -> T? {
         return obj
     } catch _ {
         return nil
+    }
+}
+
+extension LAContext {
+    func isBiometricsAvailable() -> Bool {
+        var error: NSError?
+
+        self.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: &error)
+
+        if let e = error, e.code != kLAErrorBiometryLockout {
+            return false;
+        } else {
+            return true;
+        }
     }
 }
 
