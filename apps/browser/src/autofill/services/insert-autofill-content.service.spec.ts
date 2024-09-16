@@ -68,6 +68,7 @@ function setMockWindowLocation({
 }
 
 describe("InsertAutofillContentService", () => {
+  const mockQuerySelectorAll = mockQuerySelectorAllDefinedCall();
   const inlineMenuFieldQualificationService = mock<InlineMenuFieldQualificationService>();
   const domQueryService = new DomQueryService();
   const domElementVisibilityService = new DomElementVisibilityService();
@@ -82,7 +83,6 @@ describe("InsertAutofillContentService", () => {
   );
   let insertAutofillContentService: InsertAutofillContentService;
   let fillScript: AutofillScript;
-  const mockQuerySelectorAll = mockQuerySelectorAllDefinedCall();
 
   beforeEach(() => {
     document.body.innerHTML = mockLoginForm;

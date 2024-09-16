@@ -17,6 +17,14 @@ import { CollectAutofillContentService } from "./collect-autofill-content.servic
 import DomElementVisibilityService from "./dom-element-visibility.service";
 import { DomQueryService } from "./dom-query.service";
 
+jest.mock("../utils", () => {
+  const utils = jest.requireActual("../utils");
+  return {
+    ...utils,
+    debounce: jest.fn((fn) => fn),
+  };
+});
+
 const mockLoginForm = `
   <div id="root">
     <form>
@@ -29,6 +37,7 @@ const mockLoginForm = `
 const waitForIdleCallback = () => new Promise((resolve) => globalThis.requestIdleCallback(resolve));
 
 describe("CollectAutofillContentService", () => {
+  const mockQuerySelectorAll = mockQuerySelectorAllDefinedCall();
   const domElementVisibilityService = new DomElementVisibilityService();
   const inlineMenuFieldQualificationService = mock<InlineMenuFieldQualificationService>();
   const domQueryService = new DomQueryService();
@@ -38,7 +47,6 @@ describe("CollectAutofillContentService", () => {
   );
   let collectAutofillContentService: CollectAutofillContentService;
   const mockIntersectionObserver = mock<IntersectionObserver>();
-  const mockQuerySelectorAll = mockQuerySelectorAllDefinedCall();
 
   beforeEach(() => {
     globalThis.requestIdleCallback = jest.fn((cb, options) => setTimeout(cb, 100));
@@ -55,6 +63,7 @@ describe("CollectAutofillContentService", () => {
   afterEach(() => {
     jest.clearAllMocks();
     jest.restoreAllMocks();
+    jest.clearAllTimers();
     document.body.innerHTML = "";
   });
 
@@ -2001,41 +2010,6 @@ describe("CollectAutofillContentService", () => {
     });
   });
 
-  describe("getShadowRoot", () => {
-    beforeEach(() => {
-      // eslint-disable-next-line
-      // @ts-ignore
-      globalThis.chrome.dom = {
-        openOrClosedShadowRoot: jest.fn(),
-      };
-    });
-
-    it("returns null if the passed node is not an HTMLElement instance", () => {
-      const textNode = document.createTextNode("Hello, world!");
-      const shadowRoot = collectAutofillContentService["getShadowRoot"](textNode);
-
-      expect(shadowRoot).toEqual(null);
-    });
-
-    it("returns an open shadow root if the passed node has a shadowDOM element", () => {
-      const element = document.createElement("div");
-      element.attachShadow({ mode: "open" });
-
-      const shadowRoot = collectAutofillContentService["getShadowRoot"](element);
-
-      expect(shadowRoot).toBeInstanceOf(ShadowRoot);
-    });
-
-    it("returns a value provided by Chrome's openOrClosedShadowRoot API", () => {
-      const element = document.createElement("div");
-      collectAutofillContentService["getShadowRoot"](element);
-
-      // eslint-disable-next-line
-      // @ts-ignore
-      expect(chrome.dom.openOrClosedShadowRoot).toBeCalled();
-    });
-  });
-
   describe("setupMutationObserver", () => {
     it("sets up a mutation observer and observes the document element", () => {
       jest.spyOn(MutationObserver.prototype, "observe");
@@ -2048,6 +2022,12 @@ describe("CollectAutofillContentService", () => {
   });
 
   describe("handleMutationObserverMutation", () => {
+    const waitForAllMutationsToComplete = async () => {
+      await waitForIdleCallback();
+      await waitForIdleCallback();
+      await waitForIdleCallback();
+    };
+
     it("will set the domRecentlyMutated value to true and the noFieldsFound value to false if a form or field node has been added ", async () => {
       const form = document.createElement("form");
       document.body.appendChild(form);
@@ -2071,7 +2051,7 @@ describe("CollectAutofillContentService", () => {
       jest.spyOn(collectAutofillContentService as any, "isAutofillElementNodeMutated");
 
       collectAutofillContentService["handleMutationObserverMutation"]([mutationRecord]);
-      await waitForIdleCallback();
+      await waitForAllMutationsToComplete();
 
       expect(collectAutofillContentService["domRecentlyMutated"]).toEqual(true);
       expect(collectAutofillContentService["noFieldsFound"]).toEqual(false);
@@ -2115,7 +2095,7 @@ describe("CollectAutofillContentService", () => {
           target: document.body,
         },
       ]);
-      await waitForIdleCallback();
+      await waitForAllMutationsToComplete();
 
       expect(collectAutofillContentService["_autofillFormElements"].size).toEqual(0);
       expect(collectAutofillContentService["autofillFieldElements"].size).toEqual(0);
@@ -2140,7 +2120,7 @@ describe("CollectAutofillContentService", () => {
       jest.spyOn(collectAutofillContentService as any, "handleAutofillElementAttributeMutation");
 
       collectAutofillContentService["handleMutationObserverMutation"]([mutationRecord]);
-      await waitForIdleCallback();
+      await waitForAllMutationsToComplete();
 
       expect(collectAutofillContentService["domRecentlyMutated"]).toEqual(false);
       expect(collectAutofillContentService["noFieldsFound"]).toEqual(true);

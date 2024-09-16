@@ -107,3 +107,5 @@ export const ExtensionCommand = {
 export type ExtensionCommandType = (typeof ExtensionCommand)[keyof typeof ExtensionCommand];
 
 export const CLEAR_NOTIFICATION_LOGIN_DATA_DURATION = 60 * 1000; // 1 minute
+
+export const MAX_DEEP_QUERY_RECURSION_DEPTH = 4;

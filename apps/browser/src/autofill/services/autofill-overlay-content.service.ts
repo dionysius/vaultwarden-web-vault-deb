@@ -32,6 +32,8 @@ import {
   elementIsFillableFormField,
   elementIsSelectElement,
   getAttributeBoolean,
+  nodeIsButtonElement,
+  nodeIsTypeSubmitElement,
   sendExtensionMessage,
   throttle,
 } from "../utils";
@@ -508,12 +510,20 @@ export class AutofillOverlayContentService implements AutofillOverlayContentServ
    * @param element - The element to find the submit button within.
    */
   private findSubmitButton(element: HTMLElement): HTMLElement | null {
-    const genericSubmitElement = this.querySubmitButtonElement(element, "[type='submit']");
+    const genericSubmitElement = this.querySubmitButtonElement(
+      element,
+      "[type='submit']",
+      (node: Node) => nodeIsTypeSubmitElement(node),
+    );
     if (genericSubmitElement) {
       return genericSubmitElement;
     }
 
-    const submitButtonElement = this.querySubmitButtonElement(element, "button, [type='button']");
+    const submitButtonElement = this.querySubmitButtonElement(
+      element,
+      "button, [type='button']",
+      (node: Node) => nodeIsButtonElement(node),
+    );
     if (submitButtonElement) {
       return submitButtonElement;
     }
@@ -524,11 +534,17 @@ export class AutofillOverlayContentService implements AutofillOverlayContentServ
    *
    * @param element - The element to query for a submit button.
    * @param selector - The selector to use to query the element for a submit button.
+   * @param treeWalkerFilter - The tree walker filter to use when querying the element.
    */
-  private querySubmitButtonElement(element: HTMLElement, selector: string) {
-    const submitButtonElements = this.domQueryService.deepQueryElements<HTMLButtonElement>(
+  private querySubmitButtonElement(
+    element: HTMLElement,
+    selector: string,
+    treeWalkerFilter: CallableFunction,
+  ) {
+    const submitButtonElements = this.domQueryService.query<HTMLButtonElement>(
       element,
       selector,
+      treeWalkerFilter,
     );
     for (let index = 0; index < submitButtonElements.length; index++) {
       const submitElement = submitButtonElements[index];

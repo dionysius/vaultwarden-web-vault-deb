@@ -176,7 +176,7 @@ export function triggerWebRequestOnCompletedEvent(details: chrome.webRequest.Web
 
 export function mockQuerySelectorAllDefinedCall() {
   const originalDocumentQuerySelectorAll = document.querySelectorAll;
-  document.querySelectorAll = function (selector: string) {
+  globalThis.document.querySelectorAll = function (selector: string) {
     return originalDocumentQuerySelectorAll.call(
       document,
       selector === ":defined" ? "*" : selector,
