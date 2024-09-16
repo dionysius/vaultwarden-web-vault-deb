@@ -152,7 +152,8 @@ export class ViewV2Component {
       return false;
     }
 
-    await this.router.navigate(["/vault"]);
+    const successRoute = this.cipher.isDeleted ? "/trash" : "/vault";
+    await this.router.navigate([successRoute]);
     this.toastService.showToast({
       variant: "success",
       title: null,
@@ -169,7 +170,7 @@ export class ViewV2Component {
       this.logService.error(e);
     }
 
-    await this.router.navigate(["/vault"]);
+    await this.router.navigate(["/trash"]);
     this.toastService.showToast({
       variant: "success",
       title: null,

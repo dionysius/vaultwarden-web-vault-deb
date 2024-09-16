@@ -58,7 +58,7 @@ export class TrashListItemsContainerComponent {
     try {
       await this.cipherService.restoreWithServer(cipher.id);
 
-      await this.router.navigate(["/vault"]);
+      await this.router.navigate(["/trash"]);
       this.toastService.showToast({
         variant: "success",
         title: null,
@@ -89,7 +89,7 @@ export class TrashListItemsContainerComponent {
     try {
       await this.cipherService.deleteWithServer(cipher.id);
 
-      await this.router.navigate(["/vault"]);
+      await this.router.navigate(["/trash"]);
       this.toastService.showToast({
         variant: "success",
         title: null,
