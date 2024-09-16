@@ -9,6 +9,7 @@ import {
   AuthRequestService,
   LoginEmailServiceAbstraction,
   LogoutReason,
+  DefaultLockService,
 } from "@bitwarden/auth/common";
 import { ApiService as ApiServiceAbstraction } from "@bitwarden/common/abstractions/api.service";
 import { AuditService as AuditServiceAbstraction } from "@bitwarden/common/abstractions/audit.service";
@@ -1065,6 +1066,9 @@ export default class MainBackground {
         this.scriptInjectorService,
         this.configService,
       );
+
+      const lockService = new DefaultLockService(this.accountService, this.vaultTimeoutService);
+
       this.runtimeBackground = new RuntimeBackground(
         this,
         this.autofillService,
@@ -1079,6 +1083,7 @@ export default class MainBackground {
         this.fido2Background,
         messageListener,
         this.accountService,
+        lockService,
       );
       this.nativeMessagingBackground = new NativeMessagingBackground(
         this.cryptoService,

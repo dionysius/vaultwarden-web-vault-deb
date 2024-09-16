@@ -1,9 +1,10 @@
 import { CommonModule, Location } from "@angular/common";
 import { Component, OnDestroy, OnInit } from "@angular/core";
 import { Router } from "@angular/router";
-import { Subject, firstValueFrom, map, of, startWith, switchMap, takeUntil } from "rxjs";
+import { Subject, firstValueFrom, map, of, startWith, switchMap } from "rxjs";
 
 import { JslibModule } from "@bitwarden/angular/jslib.module";
+import { LockService } from "@bitwarden/auth/common";
 import { VaultTimeoutSettingsService } from "@bitwarden/common/abstractions/vault-timeout/vault-timeout-settings.service";
 import { VaultTimeoutService } from "@bitwarden/common/abstractions/vault-timeout/vault-timeout.service";
 import { AccountService } from "@bitwarden/common/auth/abstractions/account.service";
@@ -70,6 +71,7 @@ export class AccountSwitcherComponent implements OnInit, OnDestroy {
     private vaultTimeoutSettingsService: VaultTimeoutSettingsService,
     private authService: AuthService,
     private configService: ConfigService,
+    private lockService: LockService,
   ) {}
 
   get accountLimit() {
@@ -131,26 +133,8 @@ export class AccountSwitcherComponent implements OnInit, OnDestroy {
 
   async lockAll() {
     this.loading = true;
-    this.availableAccounts$
-      .pipe(
-        map((accounts) =>
-          accounts
-            .filter((account) => account.id !== this.specialAddAccountId)
-            .sort((a, b) => (a.isActive ? -1 : b.isActive ? 1 : 0)) // Log out of the active account first
-            .map((account) => account.id),
-        ),
-        switchMap(async (accountIds) => {
-          if (accountIds.length === 0) {
-            return;
-          }
-
-          // Must lock active (first) account first, then order doesn't matter
-          await this.vaultTimeoutService.lock(accountIds.shift());
-          await Promise.all(accountIds.map((id) => this.vaultTimeoutService.lock(id)));
-        }),
-        takeUntil(this.destroy$),
-      )
-      .subscribe(() => this.router.navigate(["lock"]));
+    await this.lockService.lockAll();
+    await this.router.navigate(["lock"]);
   }
 
   async logOut(userId: UserId) {

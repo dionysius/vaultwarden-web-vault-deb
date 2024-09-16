@@ -1,5 +1,6 @@
 import { firstValueFrom, map, mergeMap, of, switchMap } from "rxjs";
 
+import { LockService } from "@bitwarden/auth/common";
 import { NotificationsService } from "@bitwarden/common/abstractions/notifications.service";
 import { AccountService } from "@bitwarden/common/auth/abstractions/account.service";
 import { AutofillOverlayVisibility, ExtensionCommand } from "@bitwarden/common/autofill/constants";
@@ -48,6 +49,7 @@ export default class RuntimeBackground {
     private fido2Background: Fido2Background,
     private messageListener: MessageListener,
     private accountService: AccountService,
+    private readonly lockService: LockService,
   ) {
     // onInstalled listener must be wired up before anything else, so we do it in the ctor
     chrome.runtime.onInstalled.addListener((details: any) => {
@@ -244,6 +246,12 @@ export default class RuntimeBackground {
         break;
       case "lockVault":
         await this.main.vaultTimeoutService.lock(msg.userId);
+        break;
+      case "lockAll":
+        {
+          await this.lockService.lockAll();
+          this.messagingService.send("lockAllFinished", { requestId: msg.requestId });
+        }
         break;
       case "logout":
         await this.main.logout(msg.expired, msg.userId);
