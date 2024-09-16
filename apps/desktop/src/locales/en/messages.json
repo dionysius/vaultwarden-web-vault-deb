@@ -942,6 +942,9 @@
   "vaultTimeout": {
     "message": "Vault timeout"
   },
+  "vaultTimeout1": {
+    "message": "Timeout"
+  },
   "vaultTimeoutDesc": {
     "message": "Choose when your vault will take the vault timeout action."
   },
@@ -1567,7 +1570,7 @@
   "recommendedForSecurity": {
     "message": "Recommended for security."
   },
-  "lockWithMasterPassOnRestart": {
+  "lockWithMasterPassOnRestart1": {
     "message": "Lock with master password on restart"
   },
   "deleteAccount": {
@@ -2099,8 +2102,8 @@
   "minutes": {
     "message": "Minutes"
   },
-  "vaultTimeoutPolicyInEffect": {
-    "message": "Your organization policies have set your maximum allowed vault timeout to $HOURS$ hour(s) and $MINUTES$ minute(s).",
+  "vaultTimeoutPolicyInEffect1": {
+    "message": "$HOURS$ hour(s) and $MINUTES$ minute(s) maximum.",
     "placeholders": {
       "hours": {
         "content": "$1",

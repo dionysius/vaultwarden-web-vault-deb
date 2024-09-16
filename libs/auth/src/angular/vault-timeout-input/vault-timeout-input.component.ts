@@ -55,14 +55,39 @@ type VaultTimeoutFormValue = VaultTimeoutForm["value"];
 export class VaultTimeoutInputComponent
   implements ControlValueAccessor, Validator, OnInit, OnDestroy, OnChanges
 {
+  protected readonly VaultTimeoutAction = VaultTimeoutAction;
+
   get showCustom() {
     return this.form.get("vaultTimeout").value === VaultTimeoutInputComponent.CUSTOM_VALUE;
   }
 
-  get exceedsMinimumTimout(): boolean {
+  get exceedsMinimumTimeout(): boolean {
     return (
       !this.showCustom || this.customTimeInMinutes() > VaultTimeoutInputComponent.MIN_CUSTOM_MINUTES
     );
+  }
+
+  get exceedsMaximumTimeout(): boolean {
+    return (
+      this.showCustom &&
+      this.customTimeInMinutes() >
+        this.vaultTimeoutPolicyMinutes + 60 * this.vaultTimeoutPolicyHours
+    );
+  }
+
+  get filteredVaultTimeoutOptions(): VaultTimeoutOption[] {
+    // by policy max value
+    if (this.vaultTimeoutPolicy == null || this.vaultTimeoutPolicy.data == null) {
+      return this.vaultTimeoutOptions;
+    }
+
+    return this.vaultTimeoutOptions.filter((option) => {
+      if (typeof option.value === "number") {
+        return option.value <= this.vaultTimeoutPolicy.data.minutes;
+      }
+
+      return false;
+    });
   }
 
   static CUSTOM_VALUE = -100;
@@ -77,6 +102,7 @@ export class VaultTimeoutInputComponent
   });
 
   @Input() vaultTimeoutOptions: VaultTimeoutOption[];
+
   vaultTimeoutPolicy: Policy;
   vaultTimeoutPolicyHours: number;
   vaultTimeoutPolicyMinutes: number;
@@ -207,7 +233,7 @@ export class VaultTimeoutInputComponent
       return { policyError: true };
     }
 
-    if (!this.exceedsMinimumTimout) {
+    if (!this.exceedsMinimumTimeout) {
       return { minTimeoutError: true };
     }
 
