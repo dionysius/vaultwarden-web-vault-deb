@@ -57,6 +57,7 @@
         *ngIf="viewHiddenFields"
         data-testid="toggle-password-visibility"
         bitPasswordInputToggle
+        (toggledChange)="logVisibleEvent($event, EventType.Cipher_ClientToggledPasswordVisible)"
       ></button>
       <button
         type="button"
@@ -113,6 +114,7 @@
         *ngIf="viewHiddenFields"
         data-testid="toggle-totp-visibility"
         bitPasswordInputToggle
+        (toggledChange)="logVisibleEvent($event, EventType.Cipher_ClientToggledTOTPSeedVisible)"
       ></button>
       <button
         type="button"

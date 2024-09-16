@@ -4,7 +4,9 @@ import { CdkDragDrop } from "@angular/cdk/drag-drop";
 import { DebugElement } from "@angular/core";
 import { ComponentFixture, TestBed } from "@angular/core/testing";
 import { By } from "@angular/platform-browser";
+import { mock } from "jest-mock-extended";
 
+import { EventCollectionService } from "@bitwarden/common/abstractions/event/event-collection.service";
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 import {
   CardLinkedId,
@@ -50,6 +52,7 @@ describe("CustomFieldsComponent", () => {
     await TestBed.configureTestingModule({
       imports: [CustomFieldsComponent],
       providers: [
+        { provide: EventCollectionService, useValue: mock<EventCollectionService>() },
         {
           provide: I18nService,
           useValue: { t: (...keys: string[]) => keys.filter(Boolean).join(" ") },

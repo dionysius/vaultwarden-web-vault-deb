@@ -6,9 +6,11 @@ import { ActivatedRoute, Router } from "@angular/router";
 import { firstValueFrom, map, Observable, switchMap } from "rxjs";
 
 import { JslibModule } from "@bitwarden/angular/jslib.module";
+import { EventCollectionService } from "@bitwarden/common/abstractions/event/event-collection.service";
 import { Organization } from "@bitwarden/common/admin-console/models/domain/organization";
 import { AccountService } from "@bitwarden/common/auth/abstractions/account.service";
 import { AUTOFILL_ID, SHOW_AUTOFILL_BUTTON } from "@bitwarden/common/autofill/constants";
+import { EventType } from "@bitwarden/common/enums";
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 import { LogService } from "@bitwarden/common/platform/abstractions/log.service";
 import { CipherService } from "@bitwarden/common/vault/abstractions/cipher.service";
@@ -73,6 +75,7 @@ export class ViewV2Component {
     private toastService: ToastService,
     private vaultPopupAutofillService: VaultPopupAutofillService,
     private accountService: AccountService,
+    private eventCollectionService: EventCollectionService,
   ) {
     this.subscribeToParams();
   }
@@ -90,6 +93,13 @@ export class ViewV2Component {
           if (this.loadAction === AUTOFILL_ID || this.loadAction === SHOW_AUTOFILL_BUTTON) {
             await this.vaultPopupAutofillService.doAutofill(this.cipher);
           }
+
+          await this.eventCollectionService.collect(
+            EventType.Cipher_ClientViewed,
+            cipher.id,
+            false,
+            cipher.organizationId,
+          );
         }),
         takeUntilDestroyed(),
       )

@@ -3,7 +3,9 @@ import { ActivatedRoute, Router } from "@angular/router";
 import { mock } from "jest-mock-extended";
 import { Subject } from "rxjs";
 
+import { EventCollectionService } from "@bitwarden/common/abstractions/event/event-collection.service";
 import { AccountService } from "@bitwarden/common/auth/abstractions/account.service";
+import { EventType } from "@bitwarden/common/enums";
 import { ConfigService } from "@bitwarden/common/platform/abstractions/config/config.service";
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 import { LogService } from "@bitwarden/common/platform/abstractions/log.service";
@@ -29,10 +31,12 @@ describe("ViewV2Component", () => {
   let fixture: ComponentFixture<ViewV2Component>;
   const params$ = new Subject();
   const mockNavigate = jest.fn();
+  const collect = jest.fn().mockResolvedValue(null);
 
   const mockCipher = {
     id: "122-333-444",
     type: CipherType.Login,
+    orgId: "222-444-555",
   };
 
   const mockVaultPopupAutofillService = {
@@ -48,6 +52,7 @@ describe("ViewV2Component", () => {
 
   beforeEach(async () => {
     mockNavigate.mockClear();
+    collect.mockClear();
 
     await TestBed.configureTestingModule({
       imports: [ViewV2Component],
@@ -59,6 +64,7 @@ describe("ViewV2Component", () => {
         { provide: ConfigService, useValue: mock<ConfigService>() },
         { provide: PopupRouterCacheService, useValue: mock<PopupRouterCacheService>() },
         { provide: ActivatedRoute, useValue: { queryParams: params$ } },
+        { provide: EventCollectionService, useValue: { collect } },
         {
           provide: I18nService,
           useValue: {
@@ -121,6 +127,19 @@ describe("ViewV2Component", () => {
       flush(); // Resolve all promises
 
       expect(component.headerText).toEqual("viewItemHeader note");
+    }));
+
+    it("sends viewed event", fakeAsync(() => {
+      params$.next({ cipherId: "122-333-444" });
+
+      flush(); // Resolve all promises
+
+      expect(collect).toHaveBeenCalledWith(
+        EventType.Cipher_ClientViewed,
+        mockCipher.id,
+        false,
+        undefined,
+      );
     }));
   });
 });

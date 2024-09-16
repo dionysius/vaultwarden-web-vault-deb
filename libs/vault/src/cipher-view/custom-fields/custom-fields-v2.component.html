@@ -5,7 +5,7 @@
   <bit-card>
     <div
       class="tw-border-secondary-300 [&_bit-form-field:last-of-type]:tw-mb-0"
-      *ngFor="let field of fields; let last = last"
+      *ngFor="let field of cipher.fields; let last = last"
       [ngClass]="{ 'tw-mb-4': !last }"
     >
       <bit-form-field *ngIf="field.type === fieldType.Text" [disableReadOnlyBorder]="last">
@@ -24,7 +24,13 @@
       <bit-form-field *ngIf="field.type === fieldType.Hidden" [disableReadOnlyBorder]="last">
         <bit-label>{{ field.name }}</bit-label>
         <input readonly bitInput type="password" [value]="field.value" aria-readonly="true" />
-        <button bitSuffix type="button" bitIconButton bitPasswordInputToggle></button>
+        <button
+          bitSuffix
+          type="button"
+          bitIconButton
+          bitPasswordInputToggle
+          (toggledChange)="logHiddenEvent($event)"
+        ></button>
         <button
           bitIconButton="bwi-clone"
           bitSuffix
@@ -33,6 +39,7 @@
           showToast
           [valueLabel]="field.name"
           [appA11yTitle]="'copyValue' | i18n"
+          (click)="logCopyEvent()"
         ></button>
       </bit-form-field>
       <bit-form-control *ngIf="field.type === fieldType.Boolean">

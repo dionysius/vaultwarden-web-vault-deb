@@ -4,7 +4,9 @@ import { Router } from "@angular/router";
 import { Observable, shareReplay } from "rxjs";
 
 import { JslibModule } from "@bitwarden/angular/jslib.module";
+import { EventCollectionService } from "@bitwarden/common/abstractions/event/event-collection.service";
 import { BillingAccountProfileStateService } from "@bitwarden/common/billing/abstractions";
+import { EventType } from "@bitwarden/common/enums";
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 import { CipherView } from "@bitwarden/common/vault/models/view/cipher.view";
 import {
@@ -61,6 +63,7 @@ export class LoginCredentialsViewComponent {
     private billingAccountProfileStateService: BillingAccountProfileStateService,
     private router: Router,
     private i18nService: I18nService,
+    private eventCollectionService: EventCollectionService,
   ) {}
 
   get fido2CredentialCreationDateValue(): string {
@@ -76,8 +79,17 @@ export class LoginCredentialsViewComponent {
     await this.router.navigate(["/premium"]);
   }
 
-  pwToggleValue(evt: boolean) {
-    this.passwordRevealed = evt;
+  async pwToggleValue(passwordVisible: boolean) {
+    this.passwordRevealed = passwordVisible;
+
+    if (passwordVisible) {
+      await this.eventCollectionService.collect(
+        EventType.Cipher_ClientToggledPasswordVisible,
+        this.cipher.id,
+        false,
+        this.cipher.organizationId,
+      );
+    }
   }
 
   togglePasswordCount() {
@@ -86,5 +98,14 @@ export class LoginCredentialsViewComponent {
 
   setTotpCopyCode(e: TotpCodeValues) {
     this.totpCodeCopyObj = e;
+  }
+
+  async logCopyEvent() {
+    await this.eventCollectionService.collect(
+      EventType.Cipher_ClientCopiedPassword,
+      this.cipher.id,
+      false,
+      this.cipher.organizationId,
+    );
   }
 }

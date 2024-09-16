@@ -19,6 +19,8 @@ import { FormArray, FormBuilder, FormsModule, ReactiveFormsModule } from "@angul
 import { Subject, zip } from "rxjs";
 
 import { JslibModule } from "@bitwarden/angular/jslib.module";
+import { EventCollectionService } from "@bitwarden/common/abstractions/event/event-collection.service";
+import { EventType } from "@bitwarden/common/enums";
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 import { CipherType, FieldType, LinkedIdType } from "@bitwarden/common/vault/enums";
 import { CardView } from "@bitwarden/common/vault/models/view/card.view";
@@ -118,6 +120,7 @@ export class CustomFieldsComponent implements OnInit, AfterViewInit {
     private formBuilder: FormBuilder,
     private i18nService: I18nService,
     private liveAnnouncer: LiveAnnouncer,
+    private eventCollectionService: EventCollectionService,
   ) {
     this.destroyed$ = inject(DestroyRef);
     this.cipherFormContainer.registerChildForm("customFields", this.customFieldsForm);
@@ -297,6 +300,21 @@ export class CustomFieldsComponent implements OnInit, AfterViewInit {
       await this.liveAnnouncer.announce(
         this.i18nService.t("reorderFieldDown", label, currentIndex + 1, this.fields.length),
         "assertive",
+      );
+    }
+  }
+
+  async logHiddenEvent(hiddenFieldVisible: boolean) {
+    const { mode, originalCipher } = this.cipherFormContainer.config;
+
+    const isEdit = ["edit", "partial-edit"].includes(mode);
+
+    if (hiddenFieldVisible && isEdit) {
+      await this.eventCollectionService.collect(
+        EventType.Cipher_ClientToggledHiddenFieldVisible,
+        originalCipher.id,
+        false,
+        originalCipher.organizationId,
       );
     }
   }

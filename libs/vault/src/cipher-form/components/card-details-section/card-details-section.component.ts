@@ -4,6 +4,8 @@ import { takeUntilDestroyed } from "@angular/core/rxjs-interop";
 import { FormBuilder, ReactiveFormsModule } from "@angular/forms";
 
 import { JslibModule } from "@bitwarden/angular/jslib.module";
+import { EventCollectionService } from "@bitwarden/common/abstractions/event/event-collection.service";
+import { EventType } from "@bitwarden/common/enums";
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 import { CardView } from "@bitwarden/common/vault/models/view/card.view";
 import { CipherView } from "@bitwarden/common/vault/models/view/cipher.view";
@@ -91,10 +93,13 @@ export class CardDetailsSectionComponent implements OnInit {
     { name: "12 - " + this.i18nService.t("december"), value: "12" },
   ];
 
+  EventType = EventType;
+
   constructor(
     private cipherFormContainer: CipherFormContainer,
     private formBuilder: FormBuilder,
     private i18nService: I18nService,
+    private eventCollectionService: EventCollectionService,
   ) {
     this.cipherFormContainer.registerChildForm("cardDetails", this.cardDetailsForm);
 
@@ -147,6 +152,21 @@ export class CardDetailsSectionComponent implements OnInit {
     }
 
     return this.i18nService.t("cardDetails");
+  }
+
+  async logCardEvent(hiddenFieldVisible: boolean, event: EventType) {
+    const { mode, originalCipher } = this.cipherFormContainer.config;
+
+    const isEdit = ["edit", "partial-edit"].includes(mode);
+
+    if (hiddenFieldVisible && isEdit) {
+      await this.eventCollectionService.collect(
+        event,
+        originalCipher.id,
+        false,
+        originalCipher.organizationId,
+      );
+    }
   }
 
   /** Set form initial form values from the current cipher */

@@ -6,6 +6,8 @@ import { map } from "rxjs";
 
 import { JslibModule } from "@bitwarden/angular/jslib.module";
 import { AuditService } from "@bitwarden/common/abstractions/audit.service";
+import { EventCollectionService } from "@bitwarden/common/abstractions/event/event-collection.service";
+import { EventType } from "@bitwarden/common/enums";
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 import { Fido2CredentialView } from "@bitwarden/common/vault/models/view/fido2-credential.view";
 import { LoginView } from "@bitwarden/common/vault/models/view/login.view";
@@ -48,6 +50,7 @@ import { AutofillOptionsComponent } from "../autofill-options/autofill-options.c
   ],
 })
 export class LoginDetailsSectionComponent implements OnInit {
+  EventType = EventType;
   loginDetailsForm = this.formBuilder.group({
     username: [""],
     password: [""],
@@ -106,6 +109,7 @@ export class LoginDetailsSectionComponent implements OnInit {
     private generationService: CipherFormGenerationService,
     private auditService: AuditService,
     private toastService: ToastService,
+    private eventCollectionService: EventCollectionService,
     @Optional() private totpCaptureService?: TotpCaptureService,
   ) {
     this.cipherFormContainer.registerChildForm("loginDetails", this.loginDetailsForm);
@@ -162,6 +166,24 @@ export class LoginDetailsSectionComponent implements OnInit {
       password: this.initialValues?.password || "",
     });
   }
+
+  /** Logs the givin event when in edit mode */
+  logVisibleEvent = async (passwordVisible: boolean, event: EventType) => {
+    const { mode, originalCipher } = this.cipherFormContainer.config;
+
+    const isEdit = ["edit", "partial-edit"].includes(mode);
+
+    if (!passwordVisible || !isEdit || !originalCipher) {
+      return;
+    }
+
+    await this.eventCollectionService.collect(
+      event,
+      originalCipher.id,
+      false,
+      originalCipher.organizationId,
+    );
+  };
 
   captureTotp = async () => {
     if (!this.canCaptureTotp) {

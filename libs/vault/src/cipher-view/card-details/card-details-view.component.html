@@ -30,6 +30,7 @@
         bitIconButton
         bitPasswordInputToggle
         data-testid="toggle-number"
+        (toggledChange)="logCardEvent($event, EventType.Cipher_ClientToggledCardNumberVisible)"
       ></button>
       <button
         bitIconButton="bwi-clone"
@@ -69,6 +70,7 @@
         bitIconButton
         bitPasswordInputToggle
         data-testid="toggle-code"
+        (toggledChange)="logCardEvent($event, EventType.Cipher_ClientToggledCardCodeVisible)"
       ></button>
       <button
         bitIconButton="bwi-clone"
@@ -79,6 +81,7 @@
         [valueLabel]="'securityCode' | i18n"
         [appA11yTitle]="'copyValue' | i18n"
         data-testid="copy-code"
+        (click)="logCardEvent(true, EventType.Cipher_ClientCopiedCardCode)"
       ></button>
     </bit-form-field>
   </read-only-cipher-card>

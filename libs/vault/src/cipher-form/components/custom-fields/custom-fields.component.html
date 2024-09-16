@@ -46,6 +46,7 @@
             bitPasswordInputToggle
             data-testid="visibility-for-custom-hidden-field"
             [disabled]="!canViewPasswords(i)"
+            (toggledChange)="logHiddenEvent($event)"
           ></button>
         </bit-form-field>
 

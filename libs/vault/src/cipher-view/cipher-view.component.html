@@ -29,7 +29,7 @@
   </app-autofill-options-view>
 
   <!-- CARD DETAILS -->
-  <app-card-details-view *ngIf="hasCard" [card]="cipher.card"></app-card-details-view>
+  <app-card-details-view *ngIf="hasCard" [cipher]="cipher"></app-card-details-view>
 
   <!-- IDENTITY SECTIONS -->
   <app-view-identity-sections *ngIf="cipher.identity" [cipher]="cipher">
@@ -42,8 +42,7 @@
 
   <!-- CUSTOM FIELDS -->
   <ng-container *ngIf="cipher.fields">
-    <app-custom-fields-v2 [fields]="cipher.fields" [cipherType]="cipher.type">
-    </app-custom-fields-v2>
+    <app-custom-fields-v2 [cipher]="cipher"> </app-custom-fields-v2>
   </ng-container>
 
   <!-- ATTACHMENTS SECTION -->
