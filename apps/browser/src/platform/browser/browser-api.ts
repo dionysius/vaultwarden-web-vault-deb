@@ -1,6 +1,7 @@
 import { Observable } from "rxjs";
 
 import { DeviceType } from "@bitwarden/common/enums";
+import { isBrowserSafariApi } from "@bitwarden/platform";
 
 import { TabMessage } from "../../types/tab-messages";
 import { BrowserPlatformUtilsService } from "../services/platform-utils/browser-platform-utils.service";
@@ -9,10 +10,7 @@ import { registerContentScriptsPolyfill } from "./browser-api.register-content-s
 
 export class BrowserApi {
   static isWebExtensionsApi: boolean = typeof browser !== "undefined";
-  static isSafariApi: boolean =
-    navigator.userAgent.indexOf(" Safari/") !== -1 &&
-    navigator.userAgent.indexOf(" Chrome/") === -1 &&
-    navigator.userAgent.indexOf(" Chromium/") === -1;
+  static isSafariApi: boolean = isBrowserSafariApi();
   static isChromeApi: boolean = !BrowserApi.isSafariApi && typeof chrome !== "undefined";
   static isFirefoxOnAndroid: boolean =
     navigator.userAgent.indexOf("Firefox/") !== -1 && navigator.userAgent.indexOf("Android") !== -1;
