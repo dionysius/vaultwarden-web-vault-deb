@@ -340,8 +340,6 @@ describe("KeyConnectorService", () => {
             createNewCollections: false,
             editAnyCollection: false,
             deleteAnyCollection: false,
-            editAssignedCollections: false,
-            deleteAssignedCollections: false,
             manageGroups: false,
             managePolicies: false,
             manageSso: false,

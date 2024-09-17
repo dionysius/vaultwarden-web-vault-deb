@@ -7,8 +7,6 @@ export class PermissionsApi extends BaseResponse {
   createNewCollections: boolean;
   editAnyCollection: boolean;
   deleteAnyCollection: boolean;
-  editAssignedCollections: boolean;
-  deleteAssignedCollections: boolean;
   manageCiphers: boolean;
   manageGroups: boolean;
   manageSso: boolean;
@@ -29,8 +27,6 @@ export class PermissionsApi extends BaseResponse {
     this.createNewCollections = this.getResponseProperty("CreateNewCollections");
     this.editAnyCollection = this.getResponseProperty("EditAnyCollection");
     this.deleteAnyCollection = this.getResponseProperty("DeleteAnyCollection");
-    this.editAssignedCollections = this.getResponseProperty("EditAssignedCollections");
-    this.deleteAssignedCollections = this.getResponseProperty("DeleteAssignedCollections");
 
     this.manageCiphers = this.getResponseProperty("ManageCiphers");
     this.manageGroups = this.getResponseProperty("ManageGroups");
