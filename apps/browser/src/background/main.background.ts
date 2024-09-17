@@ -1038,6 +1038,14 @@ export default class MainBackground {
 
     const systemUtilsServiceReloadCallback = async () => {
       await this.taskSchedulerService.clearAllScheduledTasks();
+      if (this.platformUtilsService.isSafari()) {
+        // If we do `chrome.runtime.reload` on safari they will send an onInstalled reason of install
+        // and that prompts us to show a new tab, this apparently doesn't happen on sideloaded
+        // extensions and only shows itself production scenarios. See: https://bitwarden.atlassian.net/browse/PM-12298
+        self.location.reload();
+        return;
+      }
+
       BrowserApi.reloadExtension();
     };
 

@@ -127,6 +127,12 @@ export class AppComponent implements OnInit, OnDestroy {
             this.showNativeMessagingFingerprintDialog(msg);
           } else if (msg.command === "showToast") {
             this.toastService._showToast(msg);
+          } else if (msg.command === "reloadProcess") {
+            if (this.platformUtilsService.isSafari()) {
+              window.setTimeout(() => {
+                window.location.reload();
+              }, 2000);
+            }
           } else if (msg.command === "reloadPopup") {
             // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
             // eslint-disable-next-line @typescript-eslint/no-floating-promises
