@@ -19,7 +19,7 @@
           [appCopyClick]="field.value"
           showToast
           [valueLabel]="field.name"
-          [appA11yTitle]="'copyValue' | i18n"
+          [appA11yTitle]="'copyCustomField' | i18n: field.name"
           data-testid="copy-custom-field"
         ></button>
       </bit-form-field>
@@ -40,7 +40,7 @@
           [appCopyClick]="field.value"
           showToast
           [valueLabel]="field.name"
-          [appA11yTitle]="'copyValue' | i18n"
+          [appA11yTitle]="'copyCustomField' | i18n: field.name"
           (click)="logCopyEvent()"
         ></button>
       </bit-form-field>
