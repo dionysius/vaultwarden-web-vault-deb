@@ -20,8 +20,4 @@ export class BrowserTotpCaptureService implements TotpCaptureService {
     }
     return null;
   }
-
-  async openAutofillNewTab(loginUri: string) {
-    await BrowserApi.createNewTab(loginUri);
-  }
 }
