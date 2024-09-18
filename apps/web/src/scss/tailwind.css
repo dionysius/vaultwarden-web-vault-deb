@@ -74,7 +74,7 @@
   img.new-logo-themed {
     @apply tw-block;
 
-    width: 128px;
+    width: 175px;
   }
   .theme_light img.new-logo-themed {
     content: url("../images/logo.svg");
