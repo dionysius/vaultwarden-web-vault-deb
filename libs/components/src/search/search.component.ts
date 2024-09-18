@@ -1,6 +1,8 @@
 import { Component, ElementRef, Input, ViewChild } from "@angular/core";
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from "@angular/forms";
 
+import { isBrowserSafariApi } from "@bitwarden/platform";
+
 import { FocusableElement } from "../shared/focusable-element";
 
 let nextId = 0;
@@ -28,6 +30,8 @@ export class SearchComponent implements ControlValueAccessor, FocusableElement {
 
   protected id = `search-id-${nextId++}`;
   protected searchText: string;
+  // Use `type="text"` for Safari to improve rendering performance
+  protected inputType = isBrowserSafariApi() ? ("text" as const) : ("search" as const);
 
   @Input() disabled: boolean;
   @Input() placeholder: string;
