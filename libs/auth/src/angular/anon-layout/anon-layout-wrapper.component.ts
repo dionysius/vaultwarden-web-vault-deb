@@ -8,6 +8,8 @@ import { AnonLayoutComponent } from "@bitwarden/auth/angular";
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 import { Icon, Translation } from "@bitwarden/components";
 
+import { BitwardenShield } from "../icons";
+
 import { AnonLayoutWrapperDataService } from "./anon-layout-wrapper-data.service";
 
 export interface AnonLayoutWrapperData {
@@ -160,7 +162,7 @@ export class AnonLayoutWrapperComponent implements OnInit, OnDestroy {
   private resetPageData() {
     this.pageTitle = null;
     this.pageSubtitle = null;
-    this.pageIcon = null;
+    this.pageIcon = BitwardenShield;
     this.showReadonlyHostname = null;
     this.maxWidth = null;
     this.titleAreaMaxWidth = null;
