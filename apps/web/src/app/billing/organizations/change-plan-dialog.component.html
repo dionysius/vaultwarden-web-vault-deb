@@ -21,8 +21,8 @@
             >{{
               "upgradeDiscount"
                 | i18n
-                  : (selectedInterval === planIntervals.Annually
-                      ? discountPercentageFromSub + this.discountPercentage
+                  : (selectedInterval === planIntervals.Annually && discountPercentageFromSub == 0
+                      ? this.discountPercentage
                       : this.discountPercentageFromSub)
             }}</span
           >
