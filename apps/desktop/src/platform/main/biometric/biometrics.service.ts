@@ -170,8 +170,12 @@ export class BiometricsService extends DesktopBiometricsService {
     try {
       response = await callback();
       restartReload ||= restartReloadCallback(response);
-    } catch {
-      restartReload = true;
+    } catch (error) {
+      if (error.message === "Biometric authentication failed") {
+        restartReload = false;
+      } else {
+        restartReload = true;
+      }
     }
 
     if (restartReload) {
