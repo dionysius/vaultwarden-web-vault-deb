@@ -98,7 +98,7 @@ describe("ViewComponent", () => {
           organizationId: mockCipher.organizationId,
         },
       });
-      expect(dialogRefCloseSpy).toHaveBeenCalledWith({ action: ViewCipherDialogResult.edited });
+      expect(dialogRefCloseSpy).toHaveBeenCalledWith({ action: ViewCipherDialogResult.Edited });
     });
   });
 
@@ -111,7 +111,7 @@ describe("ViewComponent", () => {
       await component.delete();
 
       expect(deleteSpy).toHaveBeenCalled();
-      expect(dialogRefCloseSpy).toHaveBeenCalledWith({ action: ViewCipherDialogResult.deleted });
+      expect(dialogRefCloseSpy).toHaveBeenCalledWith({ action: ViewCipherDialogResult.Deleted });
     });
   });
 });

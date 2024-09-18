@@ -7,6 +7,7 @@ import { mock, MockProxy } from "jest-mock-extended";
 import { AuditService } from "@bitwarden/common/abstractions/audit.service";
 import { EventCollectionService } from "@bitwarden/common/abstractions/event/event-collection.service";
 import { EventType } from "@bitwarden/common/enums";
+import { ConfigService } from "@bitwarden/common/platform/abstractions/config/config.service";
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 import { Cipher } from "@bitwarden/common/vault/models/domain/cipher";
 import { CipherView } from "@bitwarden/common/vault/models/view/cipher.view";
@@ -39,6 +40,8 @@ describe("LoginDetailsSectionComponent", () => {
   let toastService: MockProxy<ToastService>;
   let totpCaptureService: MockProxy<TotpCaptureService>;
   let i18nService: MockProxy<I18nService>;
+  let configService: MockProxy<ConfigService>;
+
   const collect = jest.fn().mockResolvedValue(null);
 
   beforeEach(async () => {
@@ -49,6 +52,7 @@ describe("LoginDetailsSectionComponent", () => {
     toastService = mock<ToastService>();
     totpCaptureService = mock<TotpCaptureService>();
     i18nService = mock<I18nService>();
+    configService = mock<ConfigService>();
     collect.mockClear();
 
     await TestBed.configureTestingModule({
@@ -60,6 +64,7 @@ describe("LoginDetailsSectionComponent", () => {
         { provide: ToastService, useValue: toastService },
         { provide: TotpCaptureService, useValue: totpCaptureService },
         { provide: I18nService, useValue: i18nService },
+        { provide: ConfigService, useValue: configService },
         { provide: EventCollectionService, useValue: { collect } },
       ],
     })

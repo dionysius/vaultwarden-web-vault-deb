@@ -886,8 +886,9 @@ export class VaultComponent implements OnInit, OnDestroy {
     const result: ViewCipherDialogCloseResult = await lastValueFrom(dialogRef.closed);
 
     // If the dialog was closed by deleting the cipher, refresh the vault.
-    if (result.action === ViewCipherDialogResult.deleted) {
+    if (result.action === ViewCipherDialogResult.Deleted) {
       this.refresh();
+      this.go({ cipherId: null, itemId: null, action: null });
     }
 
     // If the dialog was closed by any other action (close button, escape key, etc), navigate back to the vault.

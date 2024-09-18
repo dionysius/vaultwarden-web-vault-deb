@@ -511,6 +511,24 @@
   "viewItem": {
     "message": "View item"
   },
+  "newItemHeader": {
+    "message": "New $TYPE$",
+    "placeholders": {
+      "type": {
+        "content": "$1",
+        "example": "login"
+      }
+    }
+  },
+  "editItemHeader": {
+    "message": "Edit $TYPE$",
+    "placeholders": {
+      "type": {
+        "content": "$1",
+        "example": "login"
+      }
+    }
+  },
   "viewItemType": {
     "message": "View $ITEMTYPE$",
     "placeholders": {
@@ -7398,6 +7416,9 @@
   },
   "fileUpload": {
     "message": "File upload"
+  },
+  "upload": {
+    "message": "Upload"
   },
   "acceptedFormats": {
     "message": "Accepted Formats:"
