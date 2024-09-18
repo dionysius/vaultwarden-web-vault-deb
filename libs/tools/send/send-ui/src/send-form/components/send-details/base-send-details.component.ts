@@ -62,6 +62,8 @@ export class BaseSendDetailsComponent implements OnInit {
         } as SendView);
       });
     });
+
+    this.sendFormContainer.registerChildForm("sendDetailsForm", this.sendDetailsForm);
   }
 
   async ngOnInit() {

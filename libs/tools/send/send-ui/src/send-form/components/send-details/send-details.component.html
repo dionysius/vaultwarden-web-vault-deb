@@ -16,6 +16,13 @@
       [sendDetailsForm]="sendDetailsForm"
     ></tools-send-text-details>
 
+    <tools-send-file-details
+      *ngIf="config.sendType === FileSendType"
+      [config]="config"
+      [originalSendView]="originalSendView"
+      [sendDetailsForm]="sendDetailsForm"
+    ></tools-send-file-details>
+
     <bit-form-field>
       <bit-label>{{ "deletionDate" | i18n }}</bit-label>
       <bit-select

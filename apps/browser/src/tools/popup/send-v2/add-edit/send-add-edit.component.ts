@@ -117,25 +117,18 @@ export class SendAddEditComponent {
       )
       .subscribe((config) => {
         this.config = config;
-        this.headerText = this.getHeaderText(config.mode, config.sendType);
+        this.headerText = this.getHeaderText(config.mode);
       });
   }
 
   /**
-   * Gets the header text based on the mode and type.
+   * Gets the header text based on the mode.
    * @param mode The mode of the send form.
-   * @param type The type of the send form.
    * @returns The header text.
    */
-  private getHeaderText(mode: SendFormMode, type: SendType) {
-    const headerKey =
-      mode === "edit" || mode === "partial-edit" ? "editItemHeader" : "newItemHeader";
-
-    switch (type) {
-      case SendType.Text:
-        return this.i18nService.t(headerKey, this.i18nService.t("sendTypeText"));
-      case SendType.File:
-        return this.i18nService.t(headerKey, this.i18nService.t("sendTypeFile"));
-    }
+  private getHeaderText(mode: SendFormMode) {
+    return this.i18nService.t(
+      mode === "edit" || mode === "partial-edit" ? "editSend" : "createSend",
+    );
   }
 }

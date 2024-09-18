@@ -19,6 +19,7 @@ import {
 import { SendFormContainer } from "../../send-form-container";
 
 import { BaseSendDetailsComponent } from "./base-send-details.component";
+import { SendFileDetailsComponent } from "./send-file-details.component";
 import { SendTextDetailsComponent } from "./send-text-details.component";
 
 @Component({
@@ -34,6 +35,7 @@ import { SendTextDetailsComponent } from "./send-text-details.component";
     FormFieldModule,
     ReactiveFormsModule,
     SendTextDetailsComponent,
+    SendFileDetailsComponent,
     IconButtonModule,
     CheckboxModule,
     CommonModule,

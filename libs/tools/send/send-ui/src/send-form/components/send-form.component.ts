@@ -65,6 +65,7 @@ export class SendFormComponent implements AfterViewInit, OnInit, OnChanges, Send
   private bitSubmit: BitSubmitDirective;
   private destroyRef = inject(DestroyRef);
   private _firstInitialized = false;
+  private file: File | null = null;
 
   /**
    * The form ID to use for the form. Used to connect it to a submit button.
@@ -188,14 +189,17 @@ export class SendFormComponent implements AfterViewInit, OnInit, OnChanges, Send
     private i18nService: I18nService,
   ) {}
 
+  onFileSelected(file: File): void {
+    this.file = file;
+  }
+
   submit = async () => {
     if (this.sendForm.invalid) {
       this.sendForm.markAllAsTouched();
       return;
     }
 
-    // TODO: Add file handling
-    await this.addEditFormService.saveSend(this.updatedSendView, null, this.config);
+    await this.addEditFormService.saveSend(this.updatedSendView, this.file, this.config);
 
     this.toastService.showToast({
       variant: "success",
