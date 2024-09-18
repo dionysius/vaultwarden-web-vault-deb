@@ -1,6 +1,5 @@
 import { CommonModule, DatePipe } from "@angular/common";
 import { Component, inject, Input } from "@angular/core";
-import { Router } from "@angular/router";
 import { Observable, shareReplay } from "rxjs";
 
 import { JslibModule } from "@bitwarden/angular/jslib.module";
@@ -20,6 +19,7 @@ import {
   ColorPasswordModule,
 } from "@bitwarden/components";
 
+import { PremiumUpgradePromptService } from "../../../../../libs/common/src/vault/abstractions/premium-upgrade-prompt.service";
 import { BitTotpCountdownComponent } from "../../components/totp-countdown/totp-countdown.component";
 import { ReadOnlyCipherCardComponent } from "../read-only-cipher-card/read-only-cipher-card.component";
 
@@ -61,8 +61,8 @@ export class LoginCredentialsViewComponent {
 
   constructor(
     private billingAccountProfileStateService: BillingAccountProfileStateService,
-    private router: Router,
     private i18nService: I18nService,
+    private premiumUpgradeService: PremiumUpgradePromptService,
     private eventCollectionService: EventCollectionService,
   ) {}
 
@@ -75,8 +75,8 @@ export class LoginCredentialsViewComponent {
     return `${dateCreated} ${creationDate}`;
   }
 
-  async getPremium() {
-    await this.router.navigate(["/premium"]);
+  async getPremium(organizationId?: string) {
+    await this.premiumUpgradeService.promptForPremium(organizationId);
   }
 
   async pwToggleValue(passwordVisible: boolean) {

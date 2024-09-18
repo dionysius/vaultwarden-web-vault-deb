@@ -27,18 +27,22 @@ import {
   ToastService,
 } from "@bitwarden/components";
 
+import { PremiumUpgradePromptService } from "../../../../../../../../libs/common/src/vault/abstractions/premium-upgrade-prompt.service";
 import { CipherViewComponent } from "../../../../../../../../libs/vault/src/cipher-view";
 import { PopOutComponent } from "../../../../../platform/popup/components/pop-out.component";
-
-import { PopupFooterComponent } from "./../../../../../platform/popup/layout/popup-footer.component";
-import { PopupHeaderComponent } from "./../../../../../platform/popup/layout/popup-header.component";
-import { PopupPageComponent } from "./../../../../../platform/popup/layout/popup-page.component";
-import { VaultPopupAutofillService } from "./../../../services/vault-popup-autofill.service";
+import { PopupFooterComponent } from "../../../../../platform/popup/layout/popup-footer.component";
+import { PopupHeaderComponent } from "../../../../../platform/popup/layout/popup-header.component";
+import { PopupPageComponent } from "../../../../../platform/popup/layout/popup-page.component";
+import { BrowserPremiumUpgradePromptService } from "../../../services/browser-premium-upgrade-prompt.service";
+import { VaultPopupAutofillService } from "../../../services/vault-popup-autofill.service";
 
 @Component({
   selector: "app-view-v2",
   templateUrl: "view-v2.component.html",
   standalone: true,
+  providers: [
+    { provide: PremiumUpgradePromptService, useClass: BrowserPremiumUpgradePromptService },
+  ],
   imports: [
     CommonModule,
     SearchModule,
