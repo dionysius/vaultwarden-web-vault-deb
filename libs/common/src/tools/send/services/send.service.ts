@@ -57,6 +57,8 @@ export class SendService implements InternalSendServiceAbstraction {
     send.disabled = model.disabled;
     send.hideEmail = model.hideEmail;
     send.maxAccessCount = model.maxAccessCount;
+    send.deletionDate = model.deletionDate;
+    send.expirationDate = model.expirationDate;
     if (model.key == null) {
       const key = await this.keyGenerationService.createKeyWithPurpose(
         128,
