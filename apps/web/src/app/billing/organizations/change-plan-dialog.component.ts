@@ -509,10 +509,7 @@ export class ChangePlanDialogComponent implements OnInit, OnDestroy {
   }
 
   additionalStoragePriceMonthly(selectedPlan: PlanResponse) {
-    if (!selectedPlan.isAnnual) {
-      return selectedPlan.PasswordManager.additionalStoragePricePerGb;
-    }
-    return selectedPlan.PasswordManager.additionalStoragePricePerGb / 12;
+    return selectedPlan.PasswordManager.additionalStoragePricePerGb;
   }
 
   additionalServiceAccountTotal(plan: PlanResponse): number {
@@ -834,12 +831,7 @@ export class ChangePlanDialogComponent implements OnInit, OnDestroy {
   }
 
   calculateTotalAppliedDiscount(total: number) {
-    const discountPercent =
-      this.selectedInterval == PlanInterval.Annually
-        ? this.discountPercentage + this.discountPercentageFromSub
-        : this.discountPercentageFromSub;
-
-    const discountedTotal = total / (1 - discountPercent / 100);
+    const discountedTotal = total * (this.discountPercentageFromSub / 100);
     return discountedTotal;
   }
 
