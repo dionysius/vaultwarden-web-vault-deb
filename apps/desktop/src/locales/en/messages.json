@@ -3077,6 +3077,12 @@
   "textSends": {
     "message": "Text Sends"
   },
+  "allowScreenshots": {
+    "message": "Allow screen capture"
+  },
+  "allowScreenshotsDesc": {
+    "message": "Allow screen capture of the Bitwarden desktop application."
+  },
   "ssoError": {
     "message": "No free ports could be found for the sso login."
   },

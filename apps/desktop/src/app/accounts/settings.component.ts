@@ -109,6 +109,7 @@ export class SettingsComponent implements OnInit, OnDestroy {
       disabled: true,
     }),
     enableHardwareAcceleration: true,
+    allowScreenshots: false,
     enableDuckDuckGoBrowserIntegration: false,
     theme: [null as ThemeType | null],
     locale: [null as string | null],
@@ -277,6 +278,7 @@ export class SettingsComponent implements OnInit, OnDestroy {
       enableHardwareAcceleration: await firstValueFrom(
         this.desktopSettingsService.hardwareAcceleration$,
       ),
+      allowScreenshots: await firstValueFrom(this.desktopSettingsService.allowScreenshots$),
       theme: await firstValueFrom(this.themeStateService.selectedTheme$),
       locale: await firstValueFrom(this.i18nService.userSetLocale$),
     };
@@ -725,6 +727,10 @@ export class SettingsComponent implements OnInit, OnDestroy {
     await this.desktopSettingsService.setHardwareAcceleration(
       this.form.value.enableHardwareAcceleration,
     );
+  }
+
+  async saveAllowScreenshots() {
+    await this.desktopSettingsService.setAllowScreenshots(this.form.value.allowScreenshots);
   }
 
   private async generateVaultTimeoutOptions(): Promise<VaultTimeoutOption[]> {
