@@ -2,8 +2,11 @@ import { CommonModule } from "@angular/common";
 import { Component, Input, OnInit } from "@angular/core";
 import { takeUntilDestroyed } from "@angular/core/rxjs-interop";
 import { FormBuilder, ReactiveFormsModule } from "@angular/forms";
+import { map } from "rxjs";
 
 import { JslibModule } from "@bitwarden/angular/jslib.module";
+import { PolicyService } from "@bitwarden/common/admin-console/abstractions/policy/policy.service.abstraction";
+import { PolicyType } from "@bitwarden/common/admin-console/enums";
 import { SendView } from "@bitwarden/common/tools/send/models/view/send.view";
 import {
   CardComponent,
@@ -40,6 +43,7 @@ export class SendOptionsComponent implements OnInit {
   config: SendFormConfig;
   @Input()
   originalSendView: SendView;
+  disableHideEmail = false;
   sendOptionsForm = this.formBuilder.group({
     maxAccessCount: [null as number],
     accessCount: [null as number],
@@ -47,6 +51,7 @@ export class SendOptionsComponent implements OnInit {
     password: [null as string],
     hideEmail: [false as boolean],
   });
+
   get hasPassword(): boolean {
     return (
       this.sendOptionsForm.value.password !== null && this.sendOptionsForm.value.password !== ""
@@ -66,8 +71,19 @@ export class SendOptionsComponent implements OnInit {
   constructor(
     private sendFormContainer: SendFormContainer,
     private formBuilder: FormBuilder,
+    private policyService: PolicyService,
   ) {
     this.sendFormContainer.registerChildForm("sendOptionsForm", this.sendOptionsForm);
+    this.policyService
+      .getAll$(PolicyType.SendOptions)
+      .pipe(
+        map((policies) => policies?.some((p) => p.data.disableHideEmail)),
+        takeUntilDestroyed(),
+      )
+      .subscribe((disableHideEmail) => {
+        this.disableHideEmail = disableHideEmail;
+      });
+
     this.sendOptionsForm.valueChanges.pipe(takeUntilDestroyed()).subscribe((value) => {
       this.sendFormContainer.patchSend((send) => {
         Object.assign(send, {

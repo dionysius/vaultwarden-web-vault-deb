@@ -19,7 +19,7 @@
       <button type="button" bitIconButton="bwi-refresh" bitSuffix></button>
       <bit-hint>{{ "sendPasswordDescV2" | i18n }}</bit-hint>
     </bit-form-field>
-    <bit-form-control>
+    <bit-form-control *ngIf="!disableHideEmail">
       <input bitCheckbox type="checkbox" formControlName="hideEmail" />
       <bit-label>{{ "hideYourEmail" | i18n }}</bit-label>
     </bit-form-control>
