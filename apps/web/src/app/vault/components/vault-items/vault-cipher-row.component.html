@@ -21,6 +21,7 @@
       [routerLink]="[]"
       [queryParams]="{ itemId: cipher.id, action: extensionRefreshEnabled ? 'view' : null }"
       queryParamsHandling="merge"
+      [replaceUrl]="extensionRefreshEnabled"
       title="{{ 'editItemWithName' | i18n: cipher.name }}"
       type="button"
       appStopProp

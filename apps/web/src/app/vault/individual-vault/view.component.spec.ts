@@ -1,6 +1,5 @@
 import { DIALOG_DATA, DialogRef } from "@angular/cdk/dialog";
 import { ComponentFixture, TestBed } from "@angular/core/testing";
-import { Router } from "@angular/router";
 import { mock } from "jest-mock-extended";
 
 import { OrganizationService } from "@bitwarden/common/admin-console/abstractions/organization/organization.service.abstraction";
@@ -17,12 +16,11 @@ import { FolderService } from "@bitwarden/common/vault/abstractions/folder/folde
 import { CipherView } from "@bitwarden/common/vault/models/view/cipher.view";
 import { DialogService, ToastService } from "@bitwarden/components";
 
-import { ViewComponent, ViewCipherDialogParams, ViewCipherDialogResult } from "./view.component";
+import { ViewCipherDialogParams, ViewCipherDialogResult, ViewComponent } from "./view.component";
 
 describe("ViewComponent", () => {
   let component: ViewComponent;
   let fixture: ComponentFixture<ViewComponent>;
-  let router: Router;
 
   const mockCipher: CipherView = {
     id: "cipher-id",
@@ -56,7 +54,6 @@ describe("ViewComponent", () => {
           provide: OrganizationService,
           useValue: { get: jest.fn().mockResolvedValue(mockOrganization) },
         },
-        { provide: Router, useValue: mock<Router>() },
         { provide: CollectionService, useValue: mock<CollectionService>() },
         { provide: FolderService, useValue: mock<FolderService>() },
         { provide: CryptoService, useValue: mock<CryptoService>() },
@@ -70,7 +67,6 @@ describe("ViewComponent", () => {
 
     fixture = TestBed.createComponent(ViewComponent);
     component = fixture.componentInstance;
-    router = TestBed.inject(Router);
     component.params = mockParams;
     component.cipher = mockCipher;
   });
@@ -85,19 +81,11 @@ describe("ViewComponent", () => {
   });
 
   describe("edit", () => {
-    it("navigates to the edit route and closes the dialog with the proper arguments", async () => {
-      jest.spyOn(router, "navigate").mockResolvedValue(true);
+    it("closes the dialog with the proper arguments", async () => {
       const dialogRefCloseSpy = jest.spyOn(component["dialogRef"], "close");
 
       await component.edit();
 
-      expect(router.navigate).toHaveBeenCalledWith([], {
-        queryParams: {
-          itemId: mockCipher.id,
-          action: "edit",
-          organizationId: mockCipher.organizationId,
-        },
-      });
       expect(dialogRefCloseSpy).toHaveBeenCalledWith({ action: ViewCipherDialogResult.Edited });
     });
   });

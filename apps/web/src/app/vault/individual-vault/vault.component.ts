@@ -47,7 +47,7 @@ import { MessagingService } from "@bitwarden/common/platform/abstractions/messag
 import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
 import { Utils } from "@bitwarden/common/platform/misc/utils";
 import { SyncService } from "@bitwarden/common/platform/sync";
-import { CipherId, OrganizationId, CollectionId } from "@bitwarden/common/types/guid";
+import { CipherId, CollectionId, OrganizationId } from "@bitwarden/common/types/guid";
 import { CipherService } from "@bitwarden/common/vault/abstractions/cipher.service";
 import { CollectionService } from "@bitwarden/common/vault/abstractions/collection.service";
 import { TotpService } from "@bitwarden/common/vault/abstractions/totp.service";
@@ -722,10 +722,6 @@ export class VaultComponent implements OnInit, OnDestroy {
     this.go({ cipherId: null, itemId: null, action: null });
   }
 
-  async navigateToCipher(cipher: CipherView) {
-    this.go({ itemId: cipher?.id });
-  }
-
   async editCipher(cipher: CipherView, cloneMode?: boolean) {
     return this.editCipherId(cipher?.id, cloneMode);
   }
@@ -861,16 +857,19 @@ export class VaultComponent implements OnInit, OnDestroy {
     // Wait for the dialog to close.
     const result: ViewCipherDialogCloseResult = await lastValueFrom(dialogRef.closed);
 
+    // If the dialog was closed by clicking the edit button, navigate to open the edit dialog.
+    if (result?.action === ViewCipherDialogResult.Edited) {
+      this.go({ itemId: cipherView.id, action: "edit" });
+      return;
+    }
+
     // If the dialog was closed by deleting the cipher, refresh the vault.
     if (result?.action === ViewCipherDialogResult.Deleted) {
       this.refresh();
-      this.go({ cipherId: null, itemId: null, action: null });
     }
 
-    // If the dialog was closed by any other action (close button, escape key, etc), navigate back to the vault.
-    if (!result?.action) {
-      this.go({ cipherId: null, itemId: null, action: null });
-    }
+    // Clear the query params when the view dialog closes
+    this.go({ cipherId: null, itemId: null, action: null });
   }
 
   async addCollection() {

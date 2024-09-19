@@ -3,13 +3,19 @@
     {{ cipherTypeString }}
   </span>
   <ng-container bitDialogContent>
-    <app-cipher-view [cipher]="cipher"></app-cipher-view>
+    <app-cipher-view [cipher]="cipher" [collections]="collections"></app-cipher-view>
   </ng-container>
   <ng-container bitDialogFooter>
-    <button bitButton (click)="edit()" buttonType="primary" type="button" [disabled]="!cipher.edit">
+    <button
+      bitButton
+      (click)="edit()"
+      buttonType="primary"
+      type="button"
+      [disabled]="params.disableEdit"
+    >
       {{ "edit" | i18n }}
     </button>
-    <div class="ml-auto">
+    <div class="tw-ml-auto">
       <button
         bitButton
         type="button"
