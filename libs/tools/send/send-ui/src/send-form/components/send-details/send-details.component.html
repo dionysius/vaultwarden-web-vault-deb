@@ -1,5 +1,5 @@
 <bit-section [formGroup]="sendDetailsForm">
-  <bit-section-header>
+  <bit-section-header class="tw-mt-4">
     <h2 bitTypography="h5">{{ "sendDetails" | i18n }}</h2>
   </bit-section-header>
 
@@ -13,14 +13,12 @@
       *ngIf="config.sendType === TextSendType"
       [config]="config"
       [originalSendView]="originalSendView"
-      [sendDetailsForm]="sendDetailsForm"
     ></tools-send-text-details>
 
     <tools-send-file-details
       *ngIf="config.sendType === FileSendType"
       [config]="config"
       [originalSendView]="originalSendView"
-      [sendDetailsForm]="sendDetailsForm"
     ></tools-send-file-details>
 
     <bit-form-field>
@@ -39,4 +37,5 @@
       <bit-hint>{{ "deletionDateDescV2" | i18n }}</bit-hint>
     </bit-form-field>
   </bit-card>
+  <tools-send-options [config]="config" [originalSendView]="originalSendView"></tools-send-options>
 </bit-section>

@@ -17,6 +17,7 @@ import {
 } from "@bitwarden/components";
 
 import { SendFormContainer } from "../../send-form-container";
+import { SendOptionsComponent } from "../options/send-options.component";
 
 import { BaseSendDetailsComponent } from "./base-send-details.component";
 import { SendFileDetailsComponent } from "./send-file-details.component";
@@ -36,6 +37,7 @@ import { SendTextDetailsComponent } from "./send-text-details.component";
     ReactiveFormsModule,
     SendTextDetailsComponent,
     SendFileDetailsComponent,
+    SendOptionsComponent,
     IconButtonModule,
     CheckboxModule,
     CommonModule,

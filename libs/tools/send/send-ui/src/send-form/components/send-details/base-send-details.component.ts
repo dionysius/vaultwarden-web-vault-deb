@@ -1,18 +1,13 @@
 import { DatePipe } from "@angular/common";
 import { Component, Input, OnInit } from "@angular/core";
 import { takeUntilDestroyed } from "@angular/core/rxjs-interop";
-import { FormBuilder, FormGroup, FormControl, Validators } from "@angular/forms";
+import { FormBuilder, FormControl, Validators } from "@angular/forms";
 
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 import { SendView } from "@bitwarden/common/tools/send/models/view/send.view";
 
 import { SendFormConfig } from "../../abstractions/send-form-config.service";
 import { SendFormContainer } from "../../send-form-container";
-
-export type BaseSendDetailsForm = FormGroup<{
-  name: FormControl<string>;
-  selectedDeletionDatePreset: FormControl<string | number>;
-}>;
 
 // Value = hours
 export enum DatePreset {
@@ -38,9 +33,13 @@ export class BaseSendDetailsComponent implements OnInit {
   @Input() config: SendFormConfig;
   @Input() originalSendView?: SendView;
 
-  sendDetailsForm: BaseSendDetailsForm;
   customDeletionDateOption: DatePresetSelectOption | null = null;
   datePresetOptions: DatePresetSelectOption[] = [];
+
+  sendDetailsForm = this.formBuilder.group({
+    name: new FormControl("", Validators.required),
+    selectedDeletionDatePreset: new FormControl(DatePreset.SevenDays || "", Validators.required),
+  });
 
   constructor(
     protected sendFormContainer: SendFormContainer,
@@ -48,11 +47,6 @@ export class BaseSendDetailsComponent implements OnInit {
     protected i18nService: I18nService,
     protected datePipe: DatePipe,
   ) {
-    this.sendDetailsForm = this.formBuilder.group({
-      name: new FormControl("", Validators.required),
-      selectedDeletionDatePreset: new FormControl(DatePreset.SevenDays || "", Validators.required),
-    });
-
     this.sendDetailsForm.valueChanges.pipe(takeUntilDestroyed()).subscribe((value) => {
       this.sendFormContainer.patchSend((send) => {
         return Object.assign(send, {

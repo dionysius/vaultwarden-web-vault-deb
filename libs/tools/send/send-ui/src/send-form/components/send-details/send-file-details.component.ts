@@ -1,14 +1,7 @@
 import { CommonModule } from "@angular/common";
 import { Component, Input, OnInit } from "@angular/core";
 import { takeUntilDestroyed } from "@angular/core/rxjs-interop";
-import {
-  FormBuilder,
-  FormControl,
-  FormGroup,
-  Validators,
-  ReactiveFormsModule,
-  FormsModule,
-} from "@angular/forms";
+import { FormBuilder, Validators, ReactiveFormsModule, FormsModule } from "@angular/forms";
 
 import { JslibModule } from "@bitwarden/angular/jslib.module";
 import { SendType } from "@bitwarden/common/tools/send/enums/send-type";
@@ -18,14 +11,6 @@ import { ButtonModule, FormFieldModule, SectionComponent } from "@bitwarden/comp
 
 import { SendFormConfig } from "../../abstractions/send-form-config.service";
 import { SendFormContainer } from "../../send-form-container";
-
-import { BaseSendDetailsForm } from "./base-send-details.component";
-
-type BaseSendFileDetailsForm = FormGroup<{
-  file: FormControl<SendFileView | null>;
-}>;
-
-export type SendFileDetailsForm = BaseSendFileDetailsForm & BaseSendDetailsForm;
 
 @Component({
   selector: "tools-send-file-details",
@@ -44,10 +29,10 @@ export type SendFileDetailsForm = BaseSendFileDetailsForm & BaseSendDetailsForm;
 export class SendFileDetailsComponent implements OnInit {
   @Input() config: SendFormConfig;
   @Input() originalSendView?: SendView;
-  @Input() sendDetailsForm: BaseSendDetailsForm;
 
-  baseSendFileDetailsForm: BaseSendFileDetailsForm;
-  sendFileDetailsForm: SendFileDetailsForm;
+  sendFileDetailsForm = this.formBuilder.group({
+    file: this.formBuilder.control<SendFileView | null>(null, Validators.required),
+  });
 
   FileSendType = SendType.File;
   fileName = "";
@@ -56,12 +41,6 @@ export class SendFileDetailsComponent implements OnInit {
     private formBuilder: FormBuilder,
     protected sendFormContainer: SendFormContainer,
   ) {
-    this.baseSendFileDetailsForm = this.formBuilder.group({
-      file: this.formBuilder.control<SendFileView | null>(null, Validators.required),
-    });
-
-    this.sendFileDetailsForm = Object.assign(this.baseSendFileDetailsForm, this.sendDetailsForm);
-
     this.sendFormContainer.registerChildForm("sendFileDetailsForm", this.sendFileDetailsForm);
 
     this.sendFileDetailsForm.valueChanges.pipe(takeUntilDestroyed()).subscribe((value) => {

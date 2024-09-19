@@ -1,4 +1,4 @@
-<bit-section [formGroup]="sendTextDetailsForm">
+<bit-section [formGroup]="sendTextDetailsForm" disableMargin>
   <bit-form-field>
     <bit-label>{{ "sendTypeTextToShare" | i18n }}</bit-label>
     <textarea bitInput id="text" rows="6" formControlName="text"></textarea>
