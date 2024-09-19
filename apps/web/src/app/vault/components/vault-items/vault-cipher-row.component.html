@@ -157,7 +157,7 @@
     </button>
     <button
       bitMenuItem
-      *ngIf="canManageCollection || !vaultBulkManagementActionEnabled"
+      *ngIf="canEditCipher || !vaultBulkManagementActionEnabled"
       (click)="deleteCipher()"
       type="button"
     >

@@ -57,7 +57,6 @@
       [showBulkAddToCollections]="vaultBulkManagementActionEnabled$ | async"
       (onEvent)="onVaultItemsEvent($event)"
       [vaultBulkManagementActionEnabled]="vaultBulkManagementActionEnabled$ | async"
-      [activeCollection]="selectedCollection?.node"
     >
     </app-vault-items>
     <div
