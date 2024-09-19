@@ -59,8 +59,6 @@ export class AppearanceV2Component implements OnInit {
       { name: i18nService.t("systemDefault"), value: ThemeType.System },
       { name: i18nService.t("light"), value: ThemeType.Light },
       { name: i18nService.t("dark"), value: ThemeType.Dark },
-      { name: "Nord", value: ThemeType.Nord },
-      { name: i18nService.t("solarizedDark"), value: ThemeType.SolarizedDark },
     ];
   }
 
