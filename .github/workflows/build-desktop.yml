@@ -1037,11 +1037,7 @@ jobs:
             --type macos \
             --file "$(find ./dist/mas-universal/Bitwarden*.pkg)" \
             --apiKey $APP_STORE_CONNECT_AUTH_KEY \
-            --apiIssuer $APP_STORE_CONNECT_TEAM_ISSUER \
-            &> output.txt
-
-          UUID=$(cat output.txt | grep "Delivery UUID" | sed -E 's/Delivery UUID: (.*)/\1/')
-          echo "uuid=$UUID" >> $GITHUB_OUTPUT
+            --apiIssuer $APP_STORE_CONNECT_TEAM_ISSUER
 
       - name: Post message to a Slack channel
         id: slack-message
@@ -1059,24 +1055,14 @@ jobs:
                   "type": "section",
                   "text": {
                     "type": "mrkdwn",
-                    "text": "Desktop client v${{ env._PACKAGE_VERSION }} <${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}|build> success on *${{ github.ref_name }}*"
-                  },
-                  "accessory": {
-                    "type": "button",
-                    "text": {
-                      "type": "plain_text",
-                      "text": "TestFlight Build",
-                      "emoji": true
-                    },
-                    "url": "https://appstoreconnect.apple.com/teams/${{ env.APP_STORE_CONNECT_TEAM_ISSUER }}/apps/1352778147/testflight/macos/${{ env.BUILD_UUID }}"
+                    "text": "Desktop client v${{ env._PACKAGE_VERSION }} <${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}|build ${{ env.BUILD_NUMBER }}> success on *${{ github.ref_name }}*"
                   }
                 }
               ]
             }
         env:
-          APP_STORE_CONNECT_TEAM_ISSUER: ${{ secrets.APP_STORE_CONNECT_TEAM_ISSUER }}
           SLACK_BOT_TOKEN: ${{ steps.retrieve-slack-secret.outputs.slack-bot-token }}
-          BUILD_UUID: ${{ steps.testflight-deploy.outputs.uuid }}
+          BUILD_NUMBER: ${{ needs.setup.outputs.build_number }}
 
 
   macos-package-dev:
