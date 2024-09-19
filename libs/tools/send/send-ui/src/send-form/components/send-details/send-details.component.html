@@ -21,6 +21,19 @@
       [originalSendView]="originalSendView"
     ></tools-send-file-details>
 
+    <bit-form-field *ngIf="sendLink">
+      <bit-label>{{ "sendLink" | i18n }}</bit-label>
+      <input bitInput type="text" [value]="sendLink" readonly />
+      <button
+        type="button"
+        bitSuffix
+        showToast
+        bitIconButton="bwi-clone"
+        [appCopyClick]="sendLink"
+        [appA11yTitle]="'copySendLink' | i18n"
+      ></button>
+    </bit-form-field>
+
     <bit-form-field>
       <bit-label>{{ "deletionDate" | i18n }}</bit-label>
       <bit-select
