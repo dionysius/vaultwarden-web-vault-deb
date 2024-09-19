@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit } from "@angular/core";
+import { ChangeDetectorRef, Component, OnDestroy, OnInit } from "@angular/core";
 import { ActivatedRoute, Data, NavigationEnd, Router, RouterModule } from "@angular/router";
 import { Subject, filter, switchMap, takeUntil, tap } from "rxjs";
 
@@ -40,6 +40,7 @@ export class AnonLayoutWrapperComponent implements OnInit, OnDestroy {
     private route: ActivatedRoute,
     private i18nService: I18nService,
     private anonLayoutWrapperDataService: AnonLayoutWrapperDataService,
+    private changeDetectorRef: ChangeDetectorRef,
   ) {}
 
   ngOnInit(): void {
@@ -122,6 +123,10 @@ export class AnonLayoutWrapperComponent implements OnInit, OnDestroy {
     if (data.showReadonlyHostname != null) {
       this.showReadonlyHostname = data.showReadonlyHostname;
     }
+
+    // Manually fire change detection to avoid ExpressionChangedAfterItHasBeenCheckedError
+    // when setting the page data from a service
+    this.changeDetectorRef.detectChanges();
   }
 
   private resetPageData() {
