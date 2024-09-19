@@ -135,6 +135,8 @@ const plugins = [
     template: "./src/404.html",
     filename: "404.html",
     chunks: ["styles"],
+    // 404 page is a wildcard, this ensures it uses absolute paths.
+    publicPath: "/",
   }),
   new CopyWebpackPlugin({
     patterns: [
