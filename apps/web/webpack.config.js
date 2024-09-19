@@ -178,7 +178,7 @@ const plugins = [
     ADDITIONAL_REGIONS: envConfig["additionalRegions"] ?? [],
   }),
   new AngularWebpackPlugin({
-    tsConfigPath: "tsconfig.json",
+    tsconfig: "tsconfig.build.json",
     entryModule: "src/app/app.module#AppModule",
     sourceMap: true,
   }),
