@@ -65,6 +65,9 @@ export class ChipSelectComponent<T = unknown> implements ControlValueAccessor, A
   /** Disables the entire chip */
   @Input({ transform: booleanAttribute }) disabled = false;
 
+  /** Chip will stretch to full width of its container */
+  @Input({ transform: booleanAttribute }) fullWidth?: boolean;
+
   /**
    * We have `:focus-within` and `:focus-visible` but no `:focus-visible-within`
    */
