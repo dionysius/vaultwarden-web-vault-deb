@@ -6,7 +6,7 @@ import { CipherView } from "@bitwarden/common/vault/models/view/cipher.view";
 import { TypographyModule } from "@bitwarden/components";
 
 @Component({
-  selector: "button[bitTotpCountdown]:not(button[bitButton])",
+  selector: "[bitTotpCountdown]",
   templateUrl: "totp-countdown.component.html",
   standalone: true,
   imports: [CommonModule, TypographyModule],
