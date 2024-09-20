@@ -422,9 +422,10 @@ export class OrganizationSubscriptionCloudComponent implements OnInit, OnDestroy
 
       const result = await lastValueFrom(reference.closed);
 
-      if (result === ChangePlanDialogResultType.Submitted) {
-        await this.load();
+      if (result === ChangePlanDialogResultType.Closed) {
+        return;
       }
+      await this.load();
     } else {
       this.showChangePlan = !this.showChangePlan;
     }

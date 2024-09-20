@@ -86,9 +86,9 @@
                 }"
               >
                 <h3
-                  class="tw-text-[1.5rem] tw-mt-[6px] tw-font-bold tw-mb-0 tw-leading-[2rem] tw-flex tw-items-center"
+                  class="tw-text-[1.25rem] tw-mt-[6px] tw-font-bold tw-mb-0 tw-leading-[2rem] tw-flex tw-items-center"
                 >
-                  <span class="tw-capitalize">{{
+                  <span class="tw-capitalize tw-whitespace-nowrap">{{
                     selectableProduct.nameLocalizationKey | i18n
                   }}</span>
                   <span
@@ -332,9 +332,17 @@
       <!-- Payment info -->
       <ng-container *ngIf="formGroup.value.productTier !== productTypes.Free">
         <h2 bitTypography="h4">{{ "paymentMethod" | i18n }}</h2>
-        <p *ngIf="!showPayment && billing.paymentSource">
+        <p *ngIf="!showPayment && !deprecateStripeSourcesAPI">
           <i class="bwi bwi-fw" [ngClass]="paymentSourceClasses"></i>
-          {{ billing.paymentSource.description }}
+          {{ billing?.paymentSource?.description }}
+          <span class="ml-2 tw-text-primary-600 tw-cursor-pointer" (click)="toggleShowPayment()">{{
+            "changePaymentMethod" | i18n
+          }}</span>
+          <a></a>
+        </p>
+        <p *ngIf="!showPayment && deprecateStripeSourcesAPI">
+          <i class="bwi bwi-fw" [ngClass]="paymentSourceClasses"></i>
+          {{ paymentSource?.description }}
           <span class="ml-2 tw-text-primary-600 tw-cursor-pointer" (click)="toggleShowPayment()">{{
             "changePaymentMethod" | i18n
           }}</span>
@@ -513,7 +521,7 @@
                 {{ "serviceAccounts" | i18n | lowercase }}
                 &times;
                 {{ selectedPlan?.SecretsManager?.additionalPricePerServiceAccount | currency: "$" }}
-                /{{ "month" | i18n }}
+                /{{ "year" | i18n }}
               </span>
               <span>{{ additionalServiceAccountTotal(selectedPlan) | currency: "$" }}</span>
             </p>
