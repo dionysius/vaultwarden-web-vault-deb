@@ -560,6 +560,18 @@
   "settings": {
     "message": "Seaded"
   },
+  "accountEmail": {
+    "message": "Konto e-maili aadress"
+  },
+  "requestHint": {
+    "message": "Küsi vihjet"
+  },
+  "requestPasswordHint": {
+    "message": "Küsi ülemparooli vihjet"
+  },
+  "enterYourAccountEmailAddressAndYourPasswordHintWillBeSentToYou": {
+    "message": "Sisesta oma e-maili aadress ja sulle saadetakse sinna parooli vihje"
+  },
   "passwordHint": {
     "message": "Parooli vihje"
   },
@@ -930,6 +942,9 @@
   "vaultTimeout": {
     "message": "Hoidla ajalõpp"
   },
+  "vaultTimeout1": {
+    "message": "Timeout"
+  },
   "vaultTimeoutDesc": {
     "message": "Vali millal saabub hoidla ajalõpp ning sooritatakse valitud tegevus."
   },
@@ -1286,7 +1301,7 @@
     }
   },
   "copySuccessful": {
-    "message": "Copy Successful"
+    "message": "Kopeerimine Õnnestus"
   },
   "errorRefreshingAccessToken": {
     "message": "Juurdepääsukoodi Värskendamine Ebaõnnestus"
@@ -1555,8 +1570,8 @@
   "recommendedForSecurity": {
     "message": "Soovitatud turvalisuse huvides."
   },
-  "lockWithMasterPassOnRestart": {
-    "message": "Lukusta ülemparooliga, kui rakendus taaskäivitatakse"
+  "lockWithMasterPassOnRestart1": {
+    "message": "Lock with master password on restart"
   },
   "deleteAccount": {
     "message": "Kustuta konto"
@@ -1633,7 +1648,7 @@
   },
   "lock": {
     "message": "Lukusta",
-    "description": "Verb form: to make secure or inaccesible by"
+    "description": "Verb form: to make secure or inaccessible by"
   },
   "trash": {
     "message": "Prügikast",
@@ -2087,8 +2102,8 @@
   "minutes": {
     "message": "Minutit"
   },
-  "vaultTimeoutPolicyInEffect": {
-    "message": "Organisatsiooni poliitikad mõjutavad sinu hoidla ajalõppu. Maksimaalne lubatud hoidla ajalõpp on $HOURS$ tund(i) ja $MINUTES$ minut(it)",
+  "vaultTimeoutPolicyInEffect1": {
+    "message": "$HOURS$ hour(s) and $MINUTES$ minute(s) maximum.",
     "placeholders": {
       "hours": {
         "content": "$1",
@@ -3062,10 +3077,16 @@
   "textSends": {
     "message": "Kõik Tekst-Sendid"
   },
+  "allowScreenshots": {
+    "message": "Allow screen capture"
+  },
+  "allowScreenshotsDesc": {
+    "message": "Allow screen capture of the Bitwarden desktop application."
+  },
   "ssoError": {
     "message": "SSO-ga sisselogimiseks ei leitud ühtegi vaba porti."
   },
   "fileSavedToDevice": {
-    "message": "File saved to device. Manage from your device downloads."
+    "message": "Fail salvestatud. Halda oma seadmesse allalaaditud faile."
   }
 }

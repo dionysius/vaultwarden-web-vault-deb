@@ -560,6 +560,18 @@
   "settings": {
     "message": "ಸೆಟ್ಟಿಂಗ್‍ಗಳು"
   },
+  "accountEmail": {
+    "message": "Account email"
+  },
+  "requestHint": {
+    "message": "Request hint"
+  },
+  "requestPasswordHint": {
+    "message": "Request password hint"
+  },
+  "enterYourAccountEmailAddressAndYourPasswordHintWillBeSentToYou": {
+    "message": "Enter your account email address and your password hint will be sent to you"
+  },
   "passwordHint": {
     "message": "ಪಾಸ್ವರ್ಡ್ ಸುಳಿವು"
   },
@@ -929,6 +941,9 @@
   },
   "vaultTimeout": {
     "message": "ವಾಲ್ಟ್ ಕಾಲಾವಧಿ"
+  },
+  "vaultTimeout1": {
+    "message": "Timeout"
   },
   "vaultTimeoutDesc": {
     "message": "ನಿಮ್ಮ ಕಮಾನು ಸಮಯ ಮೀರಲಿ ಮತ್ತು ಆಯ್ದ ಕ್ರಮವನ್ನು ನಿರ್ವಹಿಸುವಾಗ ಆರಿಸಿಕೊಳ್ಳಿ."
@@ -1555,8 +1570,8 @@
   "recommendedForSecurity": {
     "message": "Recommended for security."
   },
-  "lockWithMasterPassOnRestart": {
-    "message": "ಮರುಪ್ರಾರಂಭಿಸಿದಾಗ ಮಾಸ್ಟರ್ ಪಾಸ್‌ವರ್ಡ್‌ನೊಂದಿಗೆ ಲಾಕ್ ಮಾಡಿ"
+  "lockWithMasterPassOnRestart1": {
+    "message": "Lock with master password on restart"
   },
   "deleteAccount": {
     "message": "Delete account"
@@ -1633,7 +1648,7 @@
   },
   "lock": {
     "message": "ಲಾಕ್‌",
-    "description": "Verb form: to make secure or inaccesible by"
+    "description": "Verb form: to make secure or inaccessible by"
   },
   "trash": {
     "message": "ಅನುಪಯುಕ್ತ",
@@ -2087,8 +2102,8 @@
   "minutes": {
     "message": "Minutes"
   },
-  "vaultTimeoutPolicyInEffect": {
-    "message": "Your organization policies have set your maximum allowed vault timeout to $HOURS$ hour(s) and $MINUTES$ minute(s).",
+  "vaultTimeoutPolicyInEffect1": {
+    "message": "$HOURS$ hour(s) and $MINUTES$ minute(s) maximum.",
     "placeholders": {
       "hours": {
         "content": "$1",
@@ -3061,6 +3076,12 @@
   },
   "textSends": {
     "message": "Text Sends"
+  },
+  "allowScreenshots": {
+    "message": "Allow screen capture"
+  },
+  "allowScreenshotsDesc": {
+    "message": "Allow screen capture of the Bitwarden desktop application."
   },
   "ssoError": {
     "message": "No free ports could be found for the sso login."

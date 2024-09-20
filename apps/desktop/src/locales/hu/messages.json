@@ -560,6 +560,18 @@
   "settings": {
     "message": "Beállítások"
   },
+  "accountEmail": {
+    "message": "Fiók email cím"
+  },
+  "requestHint": {
+    "message": "Tipp kérése"
+  },
+  "requestPasswordHint": {
+    "message": "Jelszó emlékeztető kérése"
+  },
+  "enterYourAccountEmailAddressAndYourPasswordHintWillBeSentToYou": {
+    "message": "Adjuk meg fiók email címét és elküldésre kerül a jelszóra vonatkozó tipp."
+  },
   "passwordHint": {
     "message": "Jelszó emlékeztető"
   },
@@ -930,6 +942,9 @@
   "vaultTimeout": {
     "message": "Széf időkifutás"
   },
+  "vaultTimeout1": {
+    "message": "Időkifutás"
+  },
   "vaultTimeoutDesc": {
     "message": "Válasszuk ki, hogy a széfnél mikor legyen időkifutás és a kiválasztott művelet végrehajtása."
   },
@@ -1286,7 +1301,7 @@
     }
   },
   "copySuccessful": {
-    "message": "Copy Successful"
+    "message": "A másolás sikeres volt."
   },
   "errorRefreshingAccessToken": {
     "message": "Hozzáférési vezérjel frissítési hiba"
@@ -1555,7 +1570,7 @@
   "recommendedForSecurity": {
     "message": "Biztonsági szempontból ajánlott."
   },
-  "lockWithMasterPassOnRestart": {
+  "lockWithMasterPassOnRestart1": {
     "message": "Lezárás mesterjelszóval újraindításkor"
   },
   "deleteAccount": {
@@ -1633,7 +1648,7 @@
   },
   "lock": {
     "message": "Lezárás",
-    "description": "Verb form: to make secure or inaccesible by"
+    "description": "Verb form: to make secure or inaccessible by"
   },
   "trash": {
     "message": "Lomtár",
@@ -2087,8 +2102,8 @@
   "minutes": {
     "message": "Perc"
   },
-  "vaultTimeoutPolicyInEffect": {
-    "message": "A szervezeti házirendek hatással vannak a széf időkorlátjára. A széf időkorlátja legfeljebb $HOURS$ óra és $MINUTES$ perc lehet.",
+  "vaultTimeoutPolicyInEffect1": {
+    "message": "$HOURS$ óra és $MINUTES$ perc maximum.",
     "placeholders": {
       "hours": {
         "content": "$1",
@@ -3061,6 +3076,12 @@
   },
   "textSends": {
     "message": "Szöveg küldés"
+  },
+  "allowScreenshots": {
+    "message": "Képernyőrögzítés engedélyezése"
+  },
+  "allowScreenshotsDesc": {
+    "message": "A Bitwarden asztali alkalmazás képernyőfelvételének engedélyezése."
   },
   "ssoError": {
     "message": "Nem található szabad port az sso bejelentkezéshez."

@@ -560,6 +560,18 @@
   "settings": {
     "message": "Einstellungen"
   },
+  "accountEmail": {
+    "message": "E-Mail-Adresse des Kontos"
+  },
+  "requestHint": {
+    "message": "Hinweis anfragen"
+  },
+  "requestPasswordHint": {
+    "message": "Passwort-Hinweis anfragen"
+  },
+  "enterYourAccountEmailAddressAndYourPasswordHintWillBeSentToYou": {
+    "message": "Gib deine E-Mail-Adresse ein und dein Passwort-Hinweis wird dir zugesandt"
+  },
   "passwordHint": {
     "message": "Passwort-Hinweis"
   },
@@ -930,6 +942,9 @@
   "vaultTimeout": {
     "message": "Tresor-Timeout"
   },
+  "vaultTimeout1": {
+    "message": "Timeout"
+  },
   "vaultTimeoutDesc": {
     "message": "Wähle, wann der Timeout deines Tresors aktiviert werden soll und welche Aktion er bewirken soll."
   },
@@ -1286,7 +1301,7 @@
     }
   },
   "copySuccessful": {
-    "message": "Copy Successful"
+    "message": "Erfolgreich kopiert"
   },
   "errorRefreshingAccessToken": {
     "message": "Zugangs-Token Aktualisierungsfehler"
@@ -1555,7 +1570,7 @@
   "recommendedForSecurity": {
     "message": "Aus Sicherheitsgründen empfohlen."
   },
-  "lockWithMasterPassOnRestart": {
+  "lockWithMasterPassOnRestart1": {
     "message": "Beim Neustart mit Master-Passwort sperren"
   },
   "deleteAccount": {
@@ -1633,7 +1648,7 @@
   },
   "lock": {
     "message": "Sperren",
-    "description": "Verb form: to make secure or inaccesible by"
+    "description": "Verb form: to make secure or inaccessible by"
   },
   "trash": {
     "message": "Papierkorb",
@@ -2087,8 +2102,8 @@
   "minutes": {
     "message": "Minuten"
   },
-  "vaultTimeoutPolicyInEffect": {
-    "message": "Deine Unternehmensrichtlinien haben das maximal zulässige Tresor-Timeout auf $HOURS$ Stunde(n) und $MINUTES$ Minute(n) festgelegt.",
+  "vaultTimeoutPolicyInEffect1": {
+    "message": "Maximal $HOURS$ Stunde(n) und $MINUTES$ Minute(n).",
     "placeholders": {
       "hours": {
         "content": "$1",
@@ -3062,10 +3077,16 @@
   "textSends": {
     "message": "Text-Sends"
   },
+  "allowScreenshots": {
+    "message": "Bildschirmaufnahme erlauben"
+  },
+  "allowScreenshotsDesc": {
+    "message": "Bildschirmaufnahme der Bitwarden Desktop-Anwendung erlauben."
+  },
   "ssoError": {
     "message": "Es konnten keine freien Ports für die SSO-Anmeldung gefunden werden."
   },
   "fileSavedToDevice": {
-    "message": "File saved to device. Manage from your device downloads."
+    "message": "Datei auf Gerät gespeichert. Greife darauf über die Downloads deines Geräts zu."
   }
 }

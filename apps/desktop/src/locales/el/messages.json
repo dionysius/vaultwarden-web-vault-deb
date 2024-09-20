@@ -560,6 +560,18 @@
   "settings": {
     "message": "Ρυθμίσεις"
   },
+  "accountEmail": {
+    "message": "Email λογαριασμού"
+  },
+  "requestHint": {
+    "message": "Αίτηση υπόδειξης"
+  },
+  "requestPasswordHint": {
+    "message": "Υπόδειξη κωδικού πρόσβασης"
+  },
+  "enterYourAccountEmailAddressAndYourPasswordHintWillBeSentToYou": {
+    "message": "Εισάγετε τη διεύθυνση ηλεκτρονικού ταχυδρομείου του λογαριασμού σας και θα σας αποσταλεί η υπόδειξη κωδικού πρόσβασης"
+  },
   "passwordHint": {
     "message": "Υπόδειξη κωδικού πρόσβασης"
   },
@@ -930,6 +942,9 @@
   "vaultTimeout": {
     "message": "Χρονικό όριο λήξης κρύπτης"
   },
+  "vaultTimeout1": {
+    "message": "Χρονικό όριο"
+  },
   "vaultTimeoutDesc": {
     "message": "Επιλέξτε πότε η κρύπτη σας θα αναλάβει τη δράση χρονικού ορίου λήξης κρύπτης."
   },
@@ -1286,7 +1301,7 @@
     }
   },
   "copySuccessful": {
-    "message": "Copy Successful"
+    "message": "Επιτυχής Αντιγραφή"
   },
   "errorRefreshingAccessToken": {
     "message": "Σφάλμα Ανανέωσης Διακριτικού Πρόσβασης"
@@ -1555,7 +1570,7 @@
   "recommendedForSecurity": {
     "message": "Συνίσταται για ασφάλεια."
   },
-  "lockWithMasterPassOnRestart": {
+  "lockWithMasterPassOnRestart1": {
     "message": "Κλείδωμα με τον κύριο κωδικό πρόσβασης κατά την επανεκκίνηση"
   },
   "deleteAccount": {
@@ -1633,7 +1648,7 @@
   },
   "lock": {
     "message": "Κλείδωμα",
-    "description": "Verb form: to make secure or inaccesible by"
+    "description": "Verb form: to make secure or inaccessible by"
   },
   "trash": {
     "message": "Κάδος Απορριμάτων",
@@ -2087,8 +2102,8 @@
   "minutes": {
     "message": "Λεπτά"
   },
-  "vaultTimeoutPolicyInEffect": {
-    "message": "Οι πολιτικές του οργανισμού σας έχουν ορίσει το μέγιστο επιτρεπόμενο χρονικό όριο λήξης θησαυ/κίου σε $HOURS$ ώρα(ες) και $MINUTES$ λεπτό(α).",
+  "vaultTimeoutPolicyInEffect1": {
+    "message": "Μέγιστο $HOURS$ ώρα(-ες) και $MINUTES$ λεπτό(-α).",
     "placeholders": {
       "hours": {
         "content": "$1",
@@ -3062,10 +3077,16 @@
   "textSends": {
     "message": "Send κειμένων"
   },
+  "allowScreenshots": {
+    "message": "Να επιτρέπεται η καταγραφή οθόνης"
+  },
+  "allowScreenshotsDesc": {
+    "message": "Να επιτρέπεται η καταγραφή οθόνης της εφαρμογής Bitwarden για υπολογιστή."
+  },
   "ssoError": {
     "message": "Δεν βρέθηκαν ελεύθερες θύρες για τη σύνδεση sso."
   },
   "fileSavedToDevice": {
-    "message": "File saved to device. Manage from your device downloads."
+    "message": "Το αρχείο αποθηκεύτηκε στη συσκευή. Διαχείριση από τις λήψεις της συσκευής σας."
   }
 }

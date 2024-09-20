@@ -560,6 +560,18 @@
   "settings": {
     "message": "Настройки"
   },
+  "accountEmail": {
+    "message": "Е-поща на регистрацията"
+  },
+  "requestHint": {
+    "message": "Заявка за подсказка"
+  },
+  "requestPasswordHint": {
+    "message": "Заявка за подсказка за паролата"
+  },
+  "enterYourAccountEmailAddressAndYourPasswordHintWillBeSentToYou": {
+    "message": "Въведете е-пощата на регистрацията си и подсказката за паролата ще Ви бъде изпратена"
+  },
   "passwordHint": {
     "message": "Подсказка за паролата"
   },
@@ -930,6 +942,9 @@
   "vaultTimeout": {
     "message": "Време за достъп"
   },
+  "vaultTimeout1": {
+    "message": "Време за достъп"
+  },
   "vaultTimeoutDesc": {
     "message": "Изберете колко да е времето за достъп и какво ще е действието след това."
   },
@@ -1286,7 +1301,7 @@
     }
   },
   "copySuccessful": {
-    "message": "Copy Successful"
+    "message": "Копирането е успешно"
   },
   "errorRefreshingAccessToken": {
     "message": "Грешка при опресняването на идентификатора за достъп"
@@ -1555,7 +1570,7 @@
   "recommendedForSecurity": {
     "message": "Препоръчително от гледна точка на сигурността."
   },
-  "lockWithMasterPassOnRestart": {
+  "lockWithMasterPassOnRestart1": {
     "message": "Заключване с главната парола при повторно пускане"
   },
   "deleteAccount": {
@@ -1633,7 +1648,7 @@
   },
   "lock": {
     "message": "Заключване",
-    "description": "Verb form: to make secure or inaccesible by"
+    "description": "Verb form: to make secure or inaccessible by"
   },
   "trash": {
     "message": "Кошче",
@@ -2087,8 +2102,8 @@
   "minutes": {
     "message": "Минути"
   },
-  "vaultTimeoutPolicyInEffect": {
-    "message": "Настройките на организацията Ви влияят върху времето за достъп до трезора Ви. Максималното разрешено време за достъп е $HOURS$ час(а) и $MINUTES$ минути",
+  "vaultTimeoutPolicyInEffect1": {
+    "message": "Максимум $HOURS$ час(а) и $MINUTES$ минута/и.",
     "placeholders": {
       "hours": {
         "content": "$1",
@@ -3061,6 +3076,12 @@
   },
   "textSends": {
     "message": "Текстови изпращания"
+  },
+  "allowScreenshots": {
+    "message": "Позволяване на заснемането на екрана"
+  },
+  "allowScreenshotsDesc": {
+    "message": "Позволяване на заснемането на екрана когато работи настолното приложение на Битуорден."
   },
   "ssoError": {
     "message": "Не могат да бъдат открити свободни портове за еднократната идентификация."

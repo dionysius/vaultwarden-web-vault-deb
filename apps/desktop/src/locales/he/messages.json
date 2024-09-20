@@ -560,6 +560,18 @@
   "settings": {
     "message": "הגדרות"
   },
+  "accountEmail": {
+    "message": "Account email"
+  },
+  "requestHint": {
+    "message": "Request hint"
+  },
+  "requestPasswordHint": {
+    "message": "Request password hint"
+  },
+  "enterYourAccountEmailAddressAndYourPasswordHintWillBeSentToYou": {
+    "message": "Enter your account email address and your password hint will be sent to you"
+  },
   "passwordHint": {
     "message": "רמז לסיסמה"
   },
@@ -929,6 +941,9 @@
   },
   "vaultTimeout": {
     "message": "סגירת כספת אוטומטית"
+  },
+  "vaultTimeout1": {
+    "message": "Timeout"
   },
   "vaultTimeoutDesc": {
     "message": "בחר כמה זמן יעבור כדי שהכספת תסגר לאחר חוסר פעילות ותבצע את הפעולה שנבחרה."
@@ -1555,8 +1570,8 @@
   "recommendedForSecurity": {
     "message": "מומלץ לשיפור אבטחת מידע."
   },
-  "lockWithMasterPassOnRestart": {
-    "message": "נעל בעזרת הסיסמה הראשית בהפעלה מחדש"
+  "lockWithMasterPassOnRestart1": {
+    "message": "Lock with master password on restart"
   },
   "deleteAccount": {
     "message": "מחק חשבון"
@@ -1633,7 +1648,7 @@
   },
   "lock": {
     "message": "נעילה",
-    "description": "Verb form: to make secure or inaccesible by"
+    "description": "Verb form: to make secure or inaccessible by"
   },
   "trash": {
     "message": "סל המחזור",
@@ -2087,8 +2102,8 @@
   "minutes": {
     "message": "דקות"
   },
-  "vaultTimeoutPolicyInEffect": {
-    "message": "מדיניות הארגון שלך משפיעה על הזמן הקצוב לכספת שלך. פסק הזמן המרבי המותר לכספת הוא $HOURS$ שע(ה/ות) ו $MINUTES$ דק(ה/ות)",
+  "vaultTimeoutPolicyInEffect1": {
+    "message": "$HOURS$ hour(s) and $MINUTES$ minute(s) maximum.",
     "placeholders": {
       "hours": {
         "content": "$1",
@@ -3061,6 +3076,12 @@
   },
   "textSends": {
     "message": "Text Sends"
+  },
+  "allowScreenshots": {
+    "message": "Allow screen capture"
+  },
+  "allowScreenshotsDesc": {
+    "message": "Allow screen capture of the Bitwarden desktop application."
   },
   "ssoError": {
     "message": "No free ports could be found for the sso login."

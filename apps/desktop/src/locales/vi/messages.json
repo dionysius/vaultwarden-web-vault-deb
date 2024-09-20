@@ -560,6 +560,18 @@
   "settings": {
     "message": "Cài đặt"
   },
+  "accountEmail": {
+    "message": "Account email"
+  },
+  "requestHint": {
+    "message": "Request hint"
+  },
+  "requestPasswordHint": {
+    "message": "Request password hint"
+  },
+  "enterYourAccountEmailAddressAndYourPasswordHintWillBeSentToYou": {
+    "message": "Enter your account email address and your password hint will be sent to you"
+  },
   "passwordHint": {
     "message": "Gợi ý mật khẩu"
   },
@@ -929,6 +941,9 @@
   },
   "vaultTimeout": {
     "message": "Thời gian mở kho"
+  },
+  "vaultTimeout1": {
+    "message": "Timeout"
   },
   "vaultTimeoutDesc": {
     "message": "Chọn khi nào thì kho của bạn sẽ hết thời gian chờ và thực hiện hành động đã được chọn."
@@ -1555,8 +1570,8 @@
   "recommendedForSecurity": {
     "message": "Đề xuất để tăng cường bảo mật."
   },
-  "lockWithMasterPassOnRestart": {
-    "message": "Khóa với mật khẩu chính khi khởi động lại"
+  "lockWithMasterPassOnRestart1": {
+    "message": "Lock with master password on restart"
   },
   "deleteAccount": {
     "message": "Xóa tài khoản"
@@ -1633,7 +1648,7 @@
   },
   "lock": {
     "message": "Khóa",
-    "description": "Verb form: to make secure or inaccesible by"
+    "description": "Verb form: to make secure or inaccessible by"
   },
   "trash": {
     "message": "Thùng rác",
@@ -2087,8 +2102,8 @@
   "minutes": {
     "message": "Phút"
   },
-  "vaultTimeoutPolicyInEffect": {
-    "message": "Tổ chức của bạn đã đặt thời gian mở kho tối đa là $HOURS$ giờ và $MINUTES$ phút.",
+  "vaultTimeoutPolicyInEffect1": {
+    "message": "$HOURS$ hour(s) and $MINUTES$ minute(s) maximum.",
     "placeholders": {
       "hours": {
         "content": "$1",
@@ -3061,6 +3076,12 @@
   },
   "textSends": {
     "message": "Gửi tin nhắn"
+  },
+  "allowScreenshots": {
+    "message": "Allow screen capture"
+  },
+  "allowScreenshotsDesc": {
+    "message": "Allow screen capture of the Bitwarden desktop application."
   },
   "ssoError": {
     "message": "Không thể tìm thấy cổng trống để đăng nhập SSO."

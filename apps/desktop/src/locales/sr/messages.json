@@ -560,6 +560,18 @@
   "settings": {
     "message": "Подешавања"
   },
+  "accountEmail": {
+    "message": "Имејл налога"
+  },
+  "requestHint": {
+    "message": "Захтевај савет"
+  },
+  "requestPasswordHint": {
+    "message": "Затражити савет лозинке"
+  },
+  "enterYourAccountEmailAddressAndYourPasswordHintWillBeSentToYou": {
+    "message": "Унесите имејл свог налога и биће вам послат савет за лозинку"
+  },
   "passwordHint": {
     "message": "Савет главне лозинке"
   },
@@ -930,6 +942,9 @@
   "vaultTimeout": {
     "message": "Тајмаут сефа"
   },
+  "vaultTimeout1": {
+    "message": "Време трајања"
+  },
   "vaultTimeoutDesc": {
     "message": "Изаберите када ће сеф истећи и извршити одабрану радњу."
   },
@@ -1286,7 +1301,7 @@
     }
   },
   "copySuccessful": {
-    "message": "Copy Successful"
+    "message": "Успешно копирање"
   },
   "errorRefreshingAccessToken": {
     "message": "Грешка при освежавању токена приступа"
@@ -1555,7 +1570,7 @@
   "recommendedForSecurity": {
     "message": "Препоручује се за сигурност."
   },
-  "lockWithMasterPassOnRestart": {
+  "lockWithMasterPassOnRestart1": {
     "message": "Закључајте са главном лозинком при поновном покретању"
   },
   "deleteAccount": {
@@ -1633,7 +1648,7 @@
   },
   "lock": {
     "message": "Закључај",
-    "description": "Verb form: to make secure or inaccesible by"
+    "description": "Verb form: to make secure or inaccessible by"
   },
   "trash": {
     "message": "Отпад",
@@ -1733,7 +1748,7 @@
     "message": "Ваша нова главна лозинка не испуњава захтеве полисе."
   },
   "receiveMarketingEmailsV2": {
-    "message": "Get advice, announcements, and research opportunities from Bitwarden in your inbox."
+    "message": "Добијајте савете, најаве и могућности истраживања од Bitwarden-а у пријемном сандучету."
   },
   "unsubscribe": {
     "message": "Одјави се"
@@ -2087,8 +2102,8 @@
   "minutes": {
     "message": "Минута"
   },
-  "vaultTimeoutPolicyInEffect": {
-    "message": "Полиса ваше организације утиче на време истека сефа. Максимално дозвољено време истека је $HOURS$ сат(и) и $MINUTES$ minut(а)",
+  "vaultTimeoutPolicyInEffect1": {
+    "message": "Макимум $HOURS$ сат(а) и $MINUTES$ минут(а).",
     "placeholders": {
       "hours": {
         "content": "$1",
@@ -3062,10 +3077,16 @@
   "textSends": {
     "message": "Текст „Send“"
   },
+  "allowScreenshots": {
+    "message": "Дозволи снимање екрана"
+  },
+  "allowScreenshotsDesc": {
+    "message": "Дозволи снимање екрана Bitwarden десктоп апликације."
+  },
   "ssoError": {
-    "message": "No free ports could be found for the sso login."
+    "message": "Нису пронађени портови за SSO пријаву."
   },
   "fileSavedToDevice": {
-    "message": "File saved to device. Manage from your device downloads."
+    "message": "Датотека је сачувана на уређају. Управљајте преузимањима са свог уређаја."
   }
 }

@@ -560,6 +560,18 @@
   "settings": {
     "message": "Instellings"
   },
+  "accountEmail": {
+    "message": "Account email"
+  },
+  "requestHint": {
+    "message": "Request hint"
+  },
+  "requestPasswordHint": {
+    "message": "Request password hint"
+  },
+  "enterYourAccountEmailAddressAndYourPasswordHintWillBeSentToYou": {
+    "message": "Enter your account email address and your password hint will be sent to you"
+  },
   "passwordHint": {
     "message": "Wagwoordwenk"
   },
@@ -929,6 +941,9 @@
   },
   "vaultTimeout": {
     "message": "Kluis-uittel"
+  },
+  "vaultTimeout1": {
+    "message": "Timeout"
   },
   "vaultTimeoutDesc": {
     "message": "Kies wanneer u kluis sal uittel en die gekose aksie sal uitvoer."
@@ -1555,8 +1570,8 @@
   "recommendedForSecurity": {
     "message": "Aanbeveel vir veiligheid."
   },
-  "lockWithMasterPassOnRestart": {
-    "message": "Vergrendel by herbegin met hoofwagwoord"
+  "lockWithMasterPassOnRestart1": {
+    "message": "Lock with master password on restart"
   },
   "deleteAccount": {
     "message": "Skrap rekening"
@@ -1633,7 +1648,7 @@
   },
   "lock": {
     "message": "Vergrendel",
-    "description": "Verb form: to make secure or inaccesible by"
+    "description": "Verb form: to make secure or inaccessible by"
   },
   "trash": {
     "message": "Asblik",
@@ -2087,8 +2102,8 @@
   "minutes": {
     "message": "Minute"
   },
-  "vaultTimeoutPolicyInEffect": {
-    "message": "U organisasiebeleide beïnvloed u kluisuitelling. Maksimum toegelate kluisuittelling is $HOURS$ uur en $MINUTES$ minuut(e)",
+  "vaultTimeoutPolicyInEffect1": {
+    "message": "$HOURS$ hour(s) and $MINUTES$ minute(s) maximum.",
     "placeholders": {
       "hours": {
         "content": "$1",
@@ -3061,6 +3076,12 @@
   },
   "textSends": {
     "message": "Teks stuur"
+  },
+  "allowScreenshots": {
+    "message": "Allow screen capture"
+  },
+  "allowScreenshotsDesc": {
+    "message": "Allow screen capture of the Bitwarden desktop application."
   },
   "ssoError": {
     "message": "No free ports could be found for the sso login."

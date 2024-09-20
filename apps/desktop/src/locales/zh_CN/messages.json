@@ -560,6 +560,18 @@
   "settings": {
     "message": "设置"
   },
+  "accountEmail": {
+    "message": "账户邮件地址"
+  },
+  "requestHint": {
+    "message": "请求提示"
+  },
+  "requestPasswordHint": {
+    "message": "请求密码提示"
+  },
+  "enterYourAccountEmailAddressAndYourPasswordHintWillBeSentToYou": {
+    "message": "输入您的账户电子邮件地址，您的密码提示将发送给您"
+  },
   "passwordHint": {
     "message": "密码提示"
   },
@@ -930,6 +942,9 @@
   "vaultTimeout": {
     "message": "密码库超时时间"
   },
+  "vaultTimeout1": {
+    "message": "超时"
+  },
   "vaultTimeoutDesc": {
     "message": "选择您的密码库何时执行密码库超时动作。"
   },
@@ -1286,7 +1301,7 @@
     }
   },
   "copySuccessful": {
-    "message": "Copy Successful"
+    "message": "复制成功"
   },
   "errorRefreshingAccessToken": {
     "message": "访问令牌刷新错误"
@@ -1555,7 +1570,7 @@
   "recommendedForSecurity": {
     "message": "安全起见，推荐设置。"
   },
-  "lockWithMasterPassOnRestart": {
+  "lockWithMasterPassOnRestart1": {
     "message": "重启后使用主密码锁定"
   },
   "deleteAccount": {
@@ -1633,7 +1648,7 @@
   },
   "lock": {
     "message": "锁定",
-    "description": "Verb form: to make secure or inaccesible by"
+    "description": "Verb form: to make secure or inaccessible by"
   },
   "trash": {
     "message": "回收站",
@@ -2087,8 +2102,8 @@
   "minutes": {
     "message": "分钟"
   },
-  "vaultTimeoutPolicyInEffect": {
-    "message": "您的组织策略已将您最大允许的密码库超时时间设置为 $HOURS$ 小时 $MINUTES$ 分钟。",
+  "vaultTimeoutPolicyInEffect1": {
+    "message": "最多 $HOURS$ 小时 $MINUTES$ 分钟",
     "placeholders": {
       "hours": {
         "content": "$1",
@@ -3061,6 +3076,12 @@
   },
   "textSends": {
     "message": "文本 Send"
+  },
+  "allowScreenshots": {
+    "message": "允许截屏"
+  },
+  "allowScreenshotsDesc": {
+    "message": "允许对 Bitwarden 桌面应用程序截屏。"
   },
   "ssoError": {
     "message": "找不到用于 SSO 登录的可用端口。"

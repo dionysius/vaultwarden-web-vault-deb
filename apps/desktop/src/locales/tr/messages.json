@@ -560,6 +560,18 @@
   "settings": {
     "message": "Ayarlar"
   },
+  "accountEmail": {
+    "message": "Hesap e-posta adresi"
+  },
+  "requestHint": {
+    "message": "İpucunu iste"
+  },
+  "requestPasswordHint": {
+    "message": "Parola ipucunu iste"
+  },
+  "enterYourAccountEmailAddressAndYourPasswordHintWillBeSentToYou": {
+    "message": "Hesabınızın e-posta adresini girdiğinizde parola ipucunuz size gönderilecektir"
+  },
   "passwordHint": {
     "message": "Parola ipucu"
   },
@@ -929,6 +941,9 @@
   },
   "vaultTimeout": {
     "message": "Kasa zaman aşımı"
+  },
+  "vaultTimeout1": {
+    "message": "Zaman aşımı"
   },
   "vaultTimeoutDesc": {
     "message": "Kasa zaman aşımı eyleminin ne zaman gerçekleştirileceğini seçin."
@@ -1555,8 +1570,8 @@
   "recommendedForSecurity": {
     "message": "Güvenliğiniz için önerilir."
   },
-  "lockWithMasterPassOnRestart": {
-    "message": "Yeniden başlatmada ana şifre ile kilitle"
+  "lockWithMasterPassOnRestart1": {
+    "message": "Yeniden başlatmada ana parola ile kilitle"
   },
   "deleteAccount": {
     "message": "Hesabı sil"
@@ -1633,7 +1648,7 @@
   },
   "lock": {
     "message": "Kilitle",
-    "description": "Verb form: to make secure or inaccesible by"
+    "description": "Verb form: to make secure or inaccessible by"
   },
   "trash": {
     "message": "Çöp kutusu",
@@ -2087,8 +2102,8 @@
   "minutes": {
     "message": "Dakika"
   },
-  "vaultTimeoutPolicyInEffect": {
-    "message": "Kuruluş ilkeleriniz izin verilen maksimum kasa zaman aşımını $HOURS$ saat $MINUTES$ dakika olarak belirlemiş.",
+  "vaultTimeoutPolicyInEffect1": {
+    "message": "En fazla $HOURS$ saat $MINUTES$ dakika.",
     "placeholders": {
       "hours": {
         "content": "$1",
@@ -3061,6 +3076,12 @@
   },
   "textSends": {
     "message": "Metin Send'leri"
+  },
+  "allowScreenshots": {
+    "message": "Ekran kaydına izin ver"
+  },
+  "allowScreenshotsDesc": {
+    "message": "Bitwarden masaüstü uygulamasının ekran kaydının alınmasına izin ver."
   },
   "ssoError": {
     "message": "SSO girişi için açık port bulunamadı."

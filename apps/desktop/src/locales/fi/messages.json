@@ -560,6 +560,18 @@
   "settings": {
     "message": "Asetukset"
   },
+  "accountEmail": {
+    "message": "Tilin sähköpostiosoite"
+  },
+  "requestHint": {
+    "message": "Pyydä vihje"
+  },
+  "requestPasswordHint": {
+    "message": "Pyydä pääsalasanan vihje"
+  },
+  "enterYourAccountEmailAddressAndYourPasswordHintWillBeSentToYou": {
+    "message": "Syötä tilisi sähköpostiosoite, niin salasanavihjeesi lähetetään sinulle sähköpostitse"
+  },
   "passwordHint": {
     "message": "Salasanavihje"
   },
@@ -930,6 +942,9 @@
   "vaultTimeout": {
     "message": "Holvin aikakatkaisu"
   },
+  "vaultTimeout1": {
+    "message": "Aikakatkaisu"
+  },
   "vaultTimeoutDesc": {
     "message": "Määritä milloin holvin aikakatkaisutoiminto suoritetaan."
   },
@@ -1286,7 +1301,7 @@
     }
   },
   "copySuccessful": {
-    "message": "Copy Successful"
+    "message": "Kopiointi onnistui"
   },
   "errorRefreshingAccessToken": {
     "message": "Käyttötunnisteen päivitysvirhe"
@@ -1555,7 +1570,7 @@
   "recommendedForSecurity": {
     "message": "Suositeltavaa parempaa suojausta varten."
   },
-  "lockWithMasterPassOnRestart": {
+  "lockWithMasterPassOnRestart1": {
     "message": "Lukitse pääsalasanalla uudelleenkäynnistyksen yhteydessä"
   },
   "deleteAccount": {
@@ -1633,7 +1648,7 @@
   },
   "lock": {
     "message": "Lukitse",
-    "description": "Verb form: to make secure or inaccesible by"
+    "description": "Verb form: to make secure or inaccessible by"
   },
   "trash": {
     "message": "Roskakori",
@@ -2087,8 +2102,8 @@
   "minutes": {
     "message": "Minuuttia"
   },
-  "vaultTimeoutPolicyInEffect": {
-    "message": "Organisaatiokäytännöt ovat määrittäneet holvisi aikakatkaisun enimmäisajaksi $HOURS$ tunti(a) $MINUTES$ minuutti(a).",
+  "vaultTimeoutPolicyInEffect1": {
+    "message": "Enintään $HOURS$ tunti(a) ja $MINUTES$ minuutti(a).",
     "placeholders": {
       "hours": {
         "content": "$1",
@@ -2857,7 +2872,7 @@
     "message": "Tiedoston salasana on virheellinen. Käytä vientitiedoston luonnin yhteydessä syötettyä salasanaa."
   },
   "destination": {
-    "message": "Määränpää"
+    "message": "Kohde"
   },
   "learnAboutImportOptions": {
     "message": "Lue lisää tuontivaihtoehdoista"
@@ -3062,10 +3077,16 @@
   "textSends": {
     "message": "Teksti-Sendit"
   },
+  "allowScreenshots": {
+    "message": "Salli kuvankaappaus"
+  },
+  "allowScreenshotsDesc": {
+    "message": "Salli kuvankaappaus Bitwardenin työpöytäsovelluksesta."
+  },
   "ssoError": {
     "message": "Kertakirjautumiselle ei löytynyt vapaita portteja."
   },
   "fileSavedToDevice": {
-    "message": "File saved to device. Manage from your device downloads."
+    "message": "Tiedosto tallennettiin laitteelle. Hallitse sitä laitteesi latauksista."
   }
 }

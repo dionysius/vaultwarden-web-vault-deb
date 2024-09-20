@@ -560,6 +560,18 @@
   "settings": {
     "message": "Impostazioni"
   },
+  "accountEmail": {
+    "message": "E-mail dell’account"
+  },
+  "requestHint": {
+    "message": "Richiedi una dritta"
+  },
+  "requestPasswordHint": {
+    "message": "Richiedi una dritta per la password"
+  },
+  "enterYourAccountEmailAddressAndYourPasswordHintWillBeSentToYou": {
+    "message": "Inserisci l'indirizzo e-mail dell'account e la dritta per la password ti sarà inviata"
+  },
   "passwordHint": {
     "message": "Suggerimento per la password"
   },
@@ -930,6 +942,9 @@
   "vaultTimeout": {
     "message": "Timeout cassaforte"
   },
+  "vaultTimeout1": {
+    "message": "Timeout"
+  },
   "vaultTimeoutDesc": {
     "message": "Scegli quando la tua cassaforte eseguirà l'azione di timeout."
   },
@@ -1286,7 +1301,7 @@
     }
   },
   "copySuccessful": {
-    "message": "Copy Successful"
+    "message": "Copia riuscita"
   },
   "errorRefreshingAccessToken": {
     "message": "Errore di aggiornamento del token di accesso"
@@ -1555,8 +1570,8 @@
   "recommendedForSecurity": {
     "message": "Consigliato per la sicurezza."
   },
-  "lockWithMasterPassOnRestart": {
-    "message": "Blocca con password principale al riavvio"
+  "lockWithMasterPassOnRestart1": {
+    "message": "Lock with master password on restart"
   },
   "deleteAccount": {
     "message": "Elimina account"
@@ -1633,7 +1648,7 @@
   },
   "lock": {
     "message": "Blocca",
-    "description": "Verb form: to make secure or inaccesible by"
+    "description": "Verb form: to make secure or inaccessible by"
   },
   "trash": {
     "message": "Cestino",
@@ -2087,8 +2102,8 @@
   "minutes": {
     "message": "Minuti"
   },
-  "vaultTimeoutPolicyInEffect": {
-    "message": "Le politiche della tua organizzazione hanno impostato il timeout massimo consentito della tua cassaforte su $HOURS$ ore e $MINUTES$ minuti.",
+  "vaultTimeoutPolicyInEffect1": {
+    "message": "$HOURS$ hour(s) and $MINUTES$ minute(s) maximum.",
     "placeholders": {
       "hours": {
         "content": "$1",
@@ -3061,6 +3076,12 @@
   },
   "textSends": {
     "message": "Send Testo"
+  },
+  "allowScreenshots": {
+    "message": "Allow screen capture"
+  },
+  "allowScreenshotsDesc": {
+    "message": "Allow screen capture of the Bitwarden desktop application."
   },
   "ssoError": {
     "message": "Non è stato possibile trovare nessuna porta libera per il login Sso."

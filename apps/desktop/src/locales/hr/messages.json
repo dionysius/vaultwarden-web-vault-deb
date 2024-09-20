@@ -560,6 +560,18 @@
   "settings": {
     "message": "Postavke"
   },
+  "accountEmail": {
+    "message": "e-pošta računa"
+  },
+  "requestHint": {
+    "message": "Zatraži podsjetnik"
+  },
+  "requestPasswordHint": {
+    "message": "Zatraži podsjetnik lozinke"
+  },
+  "enterYourAccountEmailAddressAndYourPasswordHintWillBeSentToYou": {
+    "message": "Unesi svoju adresu e-pošte računa i poslat ćemo ti tvoj podsjetnik"
+  },
   "passwordHint": {
     "message": "Podsjetnik za lozinku"
   },
@@ -930,6 +942,9 @@
   "vaultTimeout": {
     "message": "Istek trezora"
   },
+  "vaultTimeout1": {
+    "message": "Vrijeme isteka"
+  },
   "vaultTimeoutDesc": {
     "message": "Odaberi kada će isteći trezor i koja će se radnja izvršiti."
   },
@@ -1286,7 +1301,7 @@
     }
   },
   "copySuccessful": {
-    "message": "Copy Successful"
+    "message": "Kopiranje uspješno"
   },
   "errorRefreshingAccessToken": {
     "message": "Pogreška osvježavanja tokena pristupa"
@@ -1555,7 +1570,7 @@
   "recommendedForSecurity": {
     "message": "Preporučeno za sigurnost."
   },
-  "lockWithMasterPassOnRestart": {
+  "lockWithMasterPassOnRestart1": {
     "message": "Zaključaj glavnom lozinkom kod svakog pokretanja"
   },
   "deleteAccount": {
@@ -1633,7 +1648,7 @@
   },
   "lock": {
     "message": "Zaključaj",
-    "description": "Verb form: to make secure or inaccesible by"
+    "description": "Verb form: to make secure or inaccessible by"
   },
   "trash": {
     "message": "Smeće",
@@ -2087,8 +2102,8 @@
   "minutes": {
     "message": "minuta"
   },
-  "vaultTimeoutPolicyInEffect": {
-    "message": "Pravilo tvoje organizacije utječe na istek trezora. Najveće dozvoljeno vrijeme isteka je $HOURS$:$MINUTES$ h.",
+  "vaultTimeoutPolicyInEffect1": {
+    "message": "Najviše: $HOURS$:$MINUTES$",
     "placeholders": {
       "hours": {
         "content": "$1",
@@ -3062,10 +3077,16 @@
   "textSends": {
     "message": "Send tekstovi"
   },
+  "allowScreenshots": {
+    "message": "Dozvoli snimanje zaslona"
+  },
+  "allowScreenshotsDesc": {
+    "message": "Dozvoli snimanje zaslona Bitwarden aplikacije za stolna računala."
+  },
   "ssoError": {
     "message": "Nisu nađeni slobodni portovi za SSO prijavu."
   },
   "fileSavedToDevice": {
-    "message": "File saved to device. Manage from your device downloads."
+    "message": "Datoteka spremljena na uređaj. Upravljaj u preuzimanjima svog uređaja."
   }
 }
