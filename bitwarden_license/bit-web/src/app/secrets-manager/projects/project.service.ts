@@ -131,6 +131,7 @@ export class ProjectService {
         );
         projectListView.creationDate = s.creationDate;
         projectListView.revisionDate = s.revisionDate;
+        projectListView.linkable = true;
         return projectListView;
       }),
     );

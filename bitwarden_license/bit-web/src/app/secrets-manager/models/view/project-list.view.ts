@@ -6,4 +6,5 @@ export class ProjectListView {
   revisionDate: string;
   read: boolean;
   write: boolean;
+  linkable: boolean;
 }
