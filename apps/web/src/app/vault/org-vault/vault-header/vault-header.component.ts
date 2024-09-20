@@ -122,7 +122,9 @@ export class VaultHeaderComponent implements OnInit {
       return this.i18nService.t("unassigned");
     }
 
-    return `${this.organization?.name} ${headerType}`;
+    return this.organization?.name
+      ? `${this.organization?.name} ${headerType}`
+      : this.i18nService.t("collections");
   }
 
   get icon() {
