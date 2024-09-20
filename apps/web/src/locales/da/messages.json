@@ -269,9 +269,18 @@
   "cfTypeBoolean": {
     "message": "Boolsk"
   },
+  "cfTypeCheckbox": {
+    "message": "Checkbox"
+  },
   "cfTypeLinked": {
     "message": "Linket",
     "description": "This describes a field that is 'linked' (related) to another field."
+  },
+  "fieldType": {
+    "message": "Field type"
+  },
+  "fieldLabel": {
+    "message": "Field label"
   },
   "remove": {
     "message": "Fjern"
@@ -511,6 +520,24 @@
   "viewItem": {
     "message": "Vis emne"
   },
+  "newItemHeader": {
+    "message": "Nyt $TYPE$",
+    "placeholders": {
+      "type": {
+        "content": "$1",
+        "example": "login"
+      }
+    }
+  },
+  "editItemHeader": {
+    "message": "Redigér $TYPE$",
+    "placeholders": {
+      "type": {
+        "content": "$1",
+        "example": "login"
+      }
+    }
+  },
   "viewItemType": {
     "message": "Vis $ITEMTYPE$",
     "placeholders": {
@@ -591,6 +618,45 @@
   "copyUri": {
     "message": "Kopiér URI",
     "description": "Copy URI to clipboard"
+  },
+  "copyCustomField": {
+    "message": "Kopiér $FIELD$",
+    "placeholders": {
+      "field": {
+        "content": "$1",
+        "example": "Custom field label"
+      }
+    }
+  },
+  "copyWebsite": {
+    "message": "Kopiér websted"
+  },
+  "copyNotes": {
+    "message": "Kopiér notater"
+  },
+  "copyAddress": {
+    "message": "Kopiér adresse"
+  },
+  "copyPhone": {
+    "message": "Kopiér telefon"
+  },
+  "copyEmail": {
+    "message": "Kopiér e-mail"
+  },
+  "copyCompany": {
+    "message": "Kopiér firma"
+  },
+  "copySSN": {
+    "message": "Kopiér Personnummer"
+  },
+  "copyPassportNumber": {
+    "message": "Kopiér pasnummer"
+  },
+  "copyLicenseNumber": {
+    "message": "Kopiér licensenummer"
+  },
+  "copyName": {
+    "message": "Kopiér navn"
   },
   "me": {
     "message": "Mig"
@@ -960,6 +1026,18 @@
   "settings": {
     "message": "Indstillinger"
   },
+  "accountEmail": {
+    "message": "Konto-e-mail"
+  },
+  "requestHint": {
+    "message": "Anmod om tip"
+  },
+  "requestPasswordHint": {
+    "message": "Anmod om adgangskodetip"
+  },
+  "enterYourAccountEmailAddressAndYourPasswordHintWillBeSentToYou": {
+    "message": "Angiv kontoens e-mailadresse og få et adgangskodetip fremsendt"
+  },
   "passwordHint": {
     "message": "Adgangskodetip"
   },
@@ -1153,7 +1231,7 @@
     "message": "Yubico OTP-sikkerhedsnøgle"
   },
   "yubiKeyDesc": {
-    "message": "Benyt en YubiKey for at tilgå din konto. Fungerer med YubiKey 4-/5-serien samt NEO-enheder."
+    "message": "Benyt en YubiKey 4-, 5- eller NEO-enhed."
   },
   "duoDescV2": {
     "message": "Angiv en kode genereret af Duo Security.",
@@ -1170,10 +1248,10 @@
     "message": "FIDO U2F-sikkerhedsnøgle"
   },
   "webAuthnTitle": {
-    "message": "FIDO2 WebAuthn"
+    "message": "Adgangsnøgle"
   },
   "webAuthnDesc": {
-    "message": "Benyt enhver WebAuthn-kompatibel sikkerhedsnøgle for at tilgå din konto."
+    "message": "Benyt enhedens biometri eller en FIDO2-kompatibel sikkerhedsnøgle."
   },
   "webAuthnMigrated": {
     "message": "(Migreret fra FIDO)"
@@ -1224,7 +1302,7 @@
     "message": "Sikker på, at du vil fortsætte?"
   },
   "moveSelectedItemsDesc": {
-    "message": "Vælg en mappe som du ønsker at tilføje $COUNT$ valgte element(er) til.",
+    "message": "Vælg en mappe, hvor valgte emne(r) fra $COUNT$ ønskes tilføjet.",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -3981,6 +4059,9 @@
   "vaultTimeout": {
     "message": "Boks timeout"
   },
+  "vaultTimeout1": {
+    "message": "Timeout"
+  },
   "vaultTimeoutDesc": {
     "message": "Vælg hvornår din boks skal udføre timeout-handlingen."
   },
@@ -4249,7 +4330,7 @@
   },
   "lock": {
     "message": "Lås",
-    "description": "Verb form: to make secure or inaccesible by"
+    "description": "Verb form: to make secure or inaccessible by"
   },
   "trash": {
     "message": "Papirkurv",
@@ -4845,12 +4926,6 @@
   },
   "deleteAnyCollection": {
     "message": "Slet enhver samling"
-  },
-  "editAssignedCollections": {
-    "message": "Redigér tildelte samlinger"
-  },
-  "deleteAssignedCollections": {
-    "message": "Slet tildelte samlinger"
   },
   "manageGroups": {
     "message": "Håndtér grupper"
@@ -5459,6 +5534,19 @@
       }
     }
   },
+  "vaultTimeoutPolicyInEffect1": {
+    "message": "$HOURS$ time(r) og $MINUTES$ minut(ter) maks.",
+    "placeholders": {
+      "hours": {
+        "content": "$1",
+        "example": "5"
+      },
+      "minutes": {
+        "content": "$2",
+        "example": "5"
+      }
+    }
+  },
   "vaultTimeoutPolicyWithActionInEffect": {
     "message": "Organisationspolitikkerne påvirker boks-timeout. Maks. tilladt boks-timeout er $HOURS$ time(r) og $MINUTES$ minut(ter). Boks-timeouthandlingen er pt. sat til $ACTION$.",
     "placeholders": {
@@ -5484,9 +5572,6 @@
         "example": "Lock"
       }
     }
-  },
-  "customVaultTimeout": {
-    "message": "Tilpasset boks-timeout"
   },
   "vaultTimeoutToLarge": {
     "message": "Din boks-timeout overskrider den organisationsfastsatte begrænsning."
@@ -5927,34 +6012,34 @@
     "message": "selv-hostet"
   },
   "customEnvironment": {
-    "message": "Custom environment"
+    "message": "Tilpasset miljø"
   },
   "selfHostedBaseUrlHint": {
-    "message": "Specify the base URL of your on-premises hosted Bitwarden installation. Example: https://bitwarden.company.com"
+    "message": "Angiv basis-URL'en for den lokalt-hosted Bitwarden-installation. Eks.: https://bitwarden.firma.dk"
   },
   "selfHostedCustomEnvHeader": {
-    "message": "For advanced configuration, you can specify the base URL of each service independently."
+    "message": "Til avancerede brugere. Man kan angive basis-URL'en for hver tjeneste uafhængigt."
   },
   "selfHostedEnvFormInvalid": {
-    "message": "Du skal tilføje enten den grundlæggende server URL eller mindst et brugerdefineret miljø."
+    "message": "Der skal tilføjes enten basis Server-URL'en eller mindst ét tilpasset miljø."
   },
   "apiUrl": {
-    "message": "API server URL"
+    "message": "API-server URL"
   },
   "webVaultUrl": {
-    "message": "Web vault server URL"
+    "message": "Web-boks server-URL"
   },
   "identityUrl": {
-    "message": "Identity server URL"
+    "message": "Identitetsserver-URL"
   },
   "notificationsUrl": {
-    "message": "Notifications server URL"
+    "message": "Notifikationsserver-URL"
   },
   "iconsUrl": {
-    "message": "Icons server URL"
+    "message": "Ikonserver-URL"
   },
   "environmentSaved": {
-    "message": "Environment URLs saved"
+    "message": "Miljø-URL'er gemt"
   },
   "selfHostingTitle": {
     "message": "Selvhosting"
@@ -6210,7 +6295,7 @@
   },
   "lastSync": {
     "message": "Seneste synk",
-    "description": "Used as a prefix to indicate the last time a sync occured. Example \"Last sync 1968-11-16 00:00:00\""
+    "description": "Used as a prefix to indicate the last time a sync occurred. Example \"Last sync 1968-11-16 00:00:00\""
   },
   "sponsorshipsSynced": {
     "message": "Selv-hostet sponsorater synket."
@@ -6369,57 +6454,57 @@
   },
   "scim": {
     "message": "SCIM-provisionering",
-    "description": "The text, 'SCIM', is an acronymn and should not be translated."
+    "description": "The text, 'SCIM', is an acronym and should not be translated."
   },
   "scimDescription": {
     "message": "Tildel automatisk brugere og grupper den foretrukne identitetsudbyder via SCIM-provisionering",
-    "description": "the text, 'SCIM', is an acronymn and should not be translated."
+    "description": "the text, 'SCIM', is an acronym and should not be translated."
   },
   "scimEnabledCheckboxDesc": {
     "message": "Aktivér SCIM",
-    "description": "the text, 'SCIM', is an acronymn and should not be translated."
+    "description": "the text, 'SCIM', is an acronym and should not be translated."
   },
   "scimEnabledCheckboxDescHelpText": {
     "message": "Opsæt foretrukken identitetsudbyder ved at opsætte URL samt SCIM API-nøgle",
-    "description": "the text, 'SCIM', is an acronymn and should not be translated."
+    "description": "the text, 'SCIM', is an acronym and should not be translated."
   },
   "scimApiKeyHelperText": {
     "message": "Denne API-nøgle har adgang til at håndtere organisationsbrugere. Den bør holdes hemmelig."
   },
   "copyScimKey": {
     "message": "Kopiér SCIM API-nøglen til udklipsholderen",
-    "description": "the text, 'SCIM' and 'API', are acronymns and should not be translated."
+    "description": "the text, 'SCIM' and 'API', are acronyms and should not be translated."
   },
   "rotateScimKey": {
     "message": "Rotér SCIM API-nøglen",
-    "description": "the text, 'SCIM' and 'API', are acronymns and should not be translated."
+    "description": "the text, 'SCIM' and 'API', are acronyms and should not be translated."
   },
   "rotateScimKeyWarning": {
     "message": "Sikker på, at SCIM API-nøglen skal roteres? Nøglen vil i så fald ikke længere fungere for eksisterende integrationer.",
-    "description": "the text, 'SCIM' and 'API', are acronymns and should not be translated."
+    "description": "the text, 'SCIM' and 'API', are acronyms and should not be translated."
   },
   "rotateKey": {
     "message": "Rotér nøgle"
   },
   "scimApiKey": {
     "message": "SCIM API-nøgle",
-    "description": "the text, 'SCIM' and 'API', are acronymns and should not be translated."
+    "description": "the text, 'SCIM' and 'API', are acronyms and should not be translated."
   },
   "copyScimUrl": {
     "message": "Kopiér SCIM-slutpunktets URL til udklipsholderen",
-    "description": "the text, 'SCIM' and 'URL', are acronymns and should not be translated."
+    "description": "the text, 'SCIM' and 'URL', are acronyms and should not be translated."
   },
   "scimUrl": {
     "message": "SCIM URL",
-    "description": "the text, 'SCIM' and 'URL', are acronymns and should not be translated."
+    "description": "the text, 'SCIM' and 'URL', are acronyms and should not be translated."
   },
   "scimApiKeyRotated": {
     "message": "SCIM API-nøglen er hermed roteret",
-    "description": "the text, 'SCIM' and 'API', are acronymns and should not be translated."
+    "description": "the text, 'SCIM' and 'API', are acronyms and should not be translated."
   },
   "scimSettingsSaved": {
     "message": "SCIM-ændringer er hermed gemt",
-    "description": "the text, 'SCIM', is an acronymn and should not be translated."
+    "description": "the text, 'SCIM', is an acronym and should not be translated."
   },
   "inputRequired": {
     "message": "Input obligatorisk."
@@ -7341,6 +7426,9 @@
   "fileUpload": {
     "message": "Fil-upload"
   },
+  "upload": {
+    "message": "Upload"
+  },
   "acceptedFormats": {
     "message": "Gyldige formater:"
   },
@@ -8202,6 +8290,9 @@
   "addField": {
     "message": "Tilføj felt"
   },
+  "editField": {
+    "message": "Edit field"
+  },
   "items": {
     "message": "Emner"
   },
@@ -8883,7 +8974,7 @@
     "description": "This will be displayed as part of a larger sentence. The whole sentence reads: 'Notice: Later this month, client vault privacy will be improved and provider members will no longer have direct access to client vault items. For questions, please contact Bitwarden support'."
   },
   "contactBitwardenSupport": {
-    "message": "kontakt Bitwarden support.",
+    "message": "kontakt Bitwarden-supporten.",
     "description": "This will be displayed as part of a larger sentence. The whole sentence reads: 'Notice: Later this month, client vault privacy will be improved and provider members will no longer have direct access to client vault items. For questions, please contact Bitwarden support'. 'Bitwarden' should not be translated"
   },
   "sponsored": {
@@ -9073,8 +9164,8 @@
   "current": {
     "message": "Nuværende"
   },
-  "secretsManagerSubInfo": {
-    "message": "Secrets Manager-abonnementet vil opgradere baseret på den valgte plan"
+  "secretsManagerSubscriptionInfo": {
+    "message": "Secrets Manager-abonnementet opgraderes baseret på den valgte abonnementstype"
   },
   "bitwardenPasswordManager": {
     "message": "Bitwarden Adgangskodehåndtering"
@@ -9087,7 +9178,7 @@
   },
   "publicApi": {
     "message": "Offentlig API",
-    "description": "The text, 'API', is an acronymn and should not be translated."
+    "description": "The text, 'API', is an acronym and should not be translated."
   },
   "showCharacterCount": {
     "message": "Vis tegnantal"

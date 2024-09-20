@@ -269,9 +269,18 @@
   "cfTypeBoolean": {
     "message": "Логічне значення"
   },
+  "cfTypeCheckbox": {
+    "message": "Checkbox"
+  },
   "cfTypeLinked": {
     "message": "Пов'язано",
     "description": "This describes a field that is 'linked' (related) to another field."
+  },
+  "fieldType": {
+    "message": "Field type"
+  },
+  "fieldLabel": {
+    "message": "Field label"
   },
   "remove": {
     "message": "Вилучити"
@@ -511,6 +520,24 @@
   "viewItem": {
     "message": "Переглянути запис"
   },
+  "newItemHeader": {
+    "message": "Новий $TYPE$",
+    "placeholders": {
+      "type": {
+        "content": "$1",
+        "example": "login"
+      }
+    }
+  },
+  "editItemHeader": {
+    "message": "Редагувати $TYPE$",
+    "placeholders": {
+      "type": {
+        "content": "$1",
+        "example": "login"
+      }
+    }
+  },
   "viewItemType": {
     "message": "Переглянути $ITEMTYPE$",
     "placeholders": {
@@ -591,6 +618,45 @@
   "copyUri": {
     "message": "Копіювати URI",
     "description": "Copy URI to clipboard"
+  },
+  "copyCustomField": {
+    "message": "Копіювати $FIELD$",
+    "placeholders": {
+      "field": {
+        "content": "$1",
+        "example": "Custom field label"
+      }
+    }
+  },
+  "copyWebsite": {
+    "message": "Копіювати вебсайт"
+  },
+  "copyNotes": {
+    "message": "Копіювати нотатки"
+  },
+  "copyAddress": {
+    "message": "Копіювати адресу"
+  },
+  "copyPhone": {
+    "message": "Копіювати телефон"
+  },
+  "copyEmail": {
+    "message": "Копіювати е-пошту"
+  },
+  "copyCompany": {
+    "message": "Копіювати компанію"
+  },
+  "copySSN": {
+    "message": "Копіювати номер соціального страхування"
+  },
+  "copyPassportNumber": {
+    "message": "Копіювати номер паспорта"
+  },
+  "copyLicenseNumber": {
+    "message": "Копіювати номер ліцензії"
+  },
+  "copyName": {
+    "message": "Копіювати ім'я"
   },
   "me": {
     "message": "Я"
@@ -959,6 +1025,18 @@
   },
   "settings": {
     "message": "Налаштування"
+  },
+  "accountEmail": {
+    "message": "Е-пошта облікового запису"
+  },
+  "requestHint": {
+    "message": "Підказка для запиту"
+  },
+  "requestPasswordHint": {
+    "message": "Підказка для запиту пароля"
+  },
+  "enterYourAccountEmailAddressAndYourPasswordHintWillBeSentToYou": {
+    "message": "Введіть адресу е-пошти свого облікового запису і вам буде надіслано підказку для пароля"
   },
   "passwordHint": {
     "message": "Підказка для пароля"
@@ -3981,6 +4059,9 @@
   "vaultTimeout": {
     "message": "Час очікування сховища"
   },
+  "vaultTimeout1": {
+    "message": "Час очікування"
+  },
   "vaultTimeoutDesc": {
     "message": "Оберіть дію, яка виконається після завершення часу очікування сховища."
   },
@@ -4249,7 +4330,7 @@
   },
   "lock": {
     "message": "Блокувати",
-    "description": "Verb form: to make secure or inaccesible by"
+    "description": "Verb form: to make secure or inaccessible by"
   },
   "trash": {
     "message": "Смітник",
@@ -4845,12 +4926,6 @@
   },
   "deleteAnyCollection": {
     "message": "Видаляти будь-яку збірку"
-  },
-  "editAssignedCollections": {
-    "message": "Редагувати призначені збірки"
-  },
-  "deleteAssignedCollections": {
-    "message": "Видалити призначені збірки"
   },
   "manageGroups": {
     "message": "Керування групами"
@@ -5459,6 +5534,19 @@
       }
     }
   },
+  "vaultTimeoutPolicyInEffect1": {
+    "message": "$HOURS$ год і $MINUTES$ хв максимум.",
+    "placeholders": {
+      "hours": {
+        "content": "$1",
+        "example": "5"
+      },
+      "minutes": {
+        "content": "$2",
+        "example": "5"
+      }
+    }
+  },
   "vaultTimeoutPolicyWithActionInEffect": {
     "message": "Політики вашої організації впливають на час очікування сховища. Максимальний дозволений час очікування сховища $HOURS$ годин, $MINUTES$ хвилин. Для часу очікування вашого сховища встановлена дія $ACTION$.",
     "placeholders": {
@@ -5484,9 +5572,6 @@
         "example": "Lock"
       }
     }
-  },
-  "customVaultTimeout": {
-    "message": "Власний час очікування сховища"
   },
   "vaultTimeoutToLarge": {
     "message": "Час очікування сховища перевищує обмеження, встановлене вашою організацією."
@@ -6210,7 +6295,7 @@
   },
   "lastSync": {
     "message": "Востаннє синхронізовано",
-    "description": "Used as a prefix to indicate the last time a sync occured. Example \"Last sync 1968-11-16 00:00:00\""
+    "description": "Used as a prefix to indicate the last time a sync occurred. Example \"Last sync 1968-11-16 00:00:00\""
   },
   "sponsorshipsSynced": {
     "message": "Власне розміщене спонсорування синхронізовано."
@@ -6369,57 +6454,57 @@
   },
   "scim": {
     "message": "Забезпечення SCIM",
-    "description": "The text, 'SCIM', is an acronymn and should not be translated."
+    "description": "The text, 'SCIM', is an acronym and should not be translated."
   },
   "scimDescription": {
     "message": "Автоматично забезпечувати користувачів та групи бажаним провайдером ідентифікації через SCIM",
-    "description": "the text, 'SCIM', is an acronymn and should not be translated."
+    "description": "the text, 'SCIM', is an acronym and should not be translated."
   },
   "scimEnabledCheckboxDesc": {
     "message": "Увімкнути SCIM",
-    "description": "the text, 'SCIM', is an acronymn and should not be translated."
+    "description": "the text, 'SCIM', is an acronym and should not be translated."
   },
   "scimEnabledCheckboxDescHelpText": {
     "message": "Налаштуйте бажаного провайдера ідентифікації, вказавши URL-адресу та ключ API для SCIM",
-    "description": "the text, 'SCIM', is an acronymn and should not be translated."
+    "description": "the text, 'SCIM', is an acronym and should not be translated."
   },
   "scimApiKeyHelperText": {
     "message": "Цей ключ API має доступ до керування користувачами в межах вашої організації. Його необхідно надійно зберігати."
   },
   "copyScimKey": {
     "message": "Копіювати ключ SCIM API до буфера обміну",
-    "description": "the text, 'SCIM' and 'API', are acronymns and should not be translated."
+    "description": "the text, 'SCIM' and 'API', are acronyms and should not be translated."
   },
   "rotateScimKey": {
     "message": "Оновити ключ SCIM API",
-    "description": "the text, 'SCIM' and 'API', are acronymns and should not be translated."
+    "description": "the text, 'SCIM' and 'API', are acronyms and should not be translated."
   },
   "rotateScimKeyWarning": {
     "message": "Ви дійсно хочете оновити ключ API для SCIM? Поточний ключ надалі не працюватиме з жодними наявними інтеграціями.",
-    "description": "the text, 'SCIM' and 'API', are acronymns and should not be translated."
+    "description": "the text, 'SCIM' and 'API', are acronyms and should not be translated."
   },
   "rotateKey": {
     "message": "Оновити ключ"
   },
   "scimApiKey": {
     "message": "Ключ SCIM API",
-    "description": "the text, 'SCIM' and 'API', are acronymns and should not be translated."
+    "description": "the text, 'SCIM' and 'API', are acronyms and should not be translated."
   },
   "copyScimUrl": {
     "message": "Копіювати URL кінцевої точки SCIM до буфера обміну",
-    "description": "the text, 'SCIM' and 'URL', are acronymns and should not be translated."
+    "description": "the text, 'SCIM' and 'URL', are acronyms and should not be translated."
   },
   "scimUrl": {
     "message": "URL-адреса SCIM",
-    "description": "the text, 'SCIM' and 'URL', are acronymns and should not be translated."
+    "description": "the text, 'SCIM' and 'URL', are acronyms and should not be translated."
   },
   "scimApiKeyRotated": {
     "message": "Ключ SCIM API успішно оновлено",
-    "description": "the text, 'SCIM' and 'API', are acronymns and should not be translated."
+    "description": "the text, 'SCIM' and 'API', are acronyms and should not be translated."
   },
   "scimSettingsSaved": {
     "message": "Налаштування SCIM збережено",
-    "description": "the text, 'SCIM', is an acronymn and should not be translated."
+    "description": "the text, 'SCIM', is an acronym and should not be translated."
   },
   "inputRequired": {
     "message": "Необхідно ввести дані."
@@ -7341,6 +7426,9 @@
   "fileUpload": {
     "message": "Вивантаження файлу"
   },
+  "upload": {
+    "message": "Вивантажити"
+  },
   "acceptedFormats": {
     "message": "Прийнятні формати:"
   },
@@ -8202,6 +8290,9 @@
   "addField": {
     "message": "Додати поле"
   },
+  "editField": {
+    "message": "Edit field"
+  },
   "items": {
     "message": "Записи"
   },
@@ -9050,7 +9141,7 @@
     "message": "Інтеграція з каталогом"
   },
   "passwordLessSso": {
-    "message": "Безпарольний вхід за допомогою SSO"
+    "message": "Безпарольний вхід SSO"
   },
   "accountRecovery": {
     "message": "Відновлення облікового запису"
@@ -9073,7 +9164,7 @@
   "current": {
     "message": "Поточний"
   },
-  "secretsManagerSubInfo": {
+  "secretsManagerSubscriptionInfo": {
     "message": "Ваша передплата менеджера секретів поновиться на основі вибраного плану"
   },
   "bitwardenPasswordManager": {
@@ -9087,7 +9178,7 @@
   },
   "publicApi": {
     "message": "Відкритий API",
-    "description": "The text, 'API', is an acronymn and should not be translated."
+    "description": "The text, 'API', is an acronym and should not be translated."
   },
   "showCharacterCount": {
     "message": "Показати кількість символів"

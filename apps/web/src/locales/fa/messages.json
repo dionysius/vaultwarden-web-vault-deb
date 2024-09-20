@@ -269,9 +269,18 @@
   "cfTypeBoolean": {
     "message": "منطقی"
   },
+  "cfTypeCheckbox": {
+    "message": "Checkbox"
+  },
   "cfTypeLinked": {
     "message": "پیوند شده",
     "description": "This describes a field that is 'linked' (related) to another field."
+  },
+  "fieldType": {
+    "message": "Field type"
+  },
+  "fieldLabel": {
+    "message": "Field label"
   },
   "remove": {
     "message": "حذف"
@@ -511,6 +520,24 @@
   "viewItem": {
     "message": "مشاهده مورد"
   },
+  "newItemHeader": {
+    "message": "New $TYPE$",
+    "placeholders": {
+      "type": {
+        "content": "$1",
+        "example": "login"
+      }
+    }
+  },
+  "editItemHeader": {
+    "message": "Edit $TYPE$",
+    "placeholders": {
+      "type": {
+        "content": "$1",
+        "example": "login"
+      }
+    }
+  },
   "viewItemType": {
     "message": "View $ITEMTYPE$",
     "placeholders": {
@@ -591,6 +618,45 @@
   "copyUri": {
     "message": "کپی نشانی اینترنتی",
     "description": "Copy URI to clipboard"
+  },
+  "copyCustomField": {
+    "message": "Copy $FIELD$",
+    "placeholders": {
+      "field": {
+        "content": "$1",
+        "example": "Custom field label"
+      }
+    }
+  },
+  "copyWebsite": {
+    "message": "Copy website"
+  },
+  "copyNotes": {
+    "message": "Copy notes"
+  },
+  "copyAddress": {
+    "message": "Copy address"
+  },
+  "copyPhone": {
+    "message": "Copy phone"
+  },
+  "copyEmail": {
+    "message": "Copy email"
+  },
+  "copyCompany": {
+    "message": "Copy company"
+  },
+  "copySSN": {
+    "message": "Copy Social Security number"
+  },
+  "copyPassportNumber": {
+    "message": "Copy passport number"
+  },
+  "copyLicenseNumber": {
+    "message": "Copy license number"
+  },
+  "copyName": {
+    "message": "Copy name"
   },
   "me": {
     "message": "من"
@@ -959,6 +1025,18 @@
   },
   "settings": {
     "message": "تنظیمات"
+  },
+  "accountEmail": {
+    "message": "Account email"
+  },
+  "requestHint": {
+    "message": "Request hint"
+  },
+  "requestPasswordHint": {
+    "message": "Request password hint"
+  },
+  "enterYourAccountEmailAddressAndYourPasswordHintWillBeSentToYou": {
+    "message": "Enter your account email address and your password hint will be sent to you"
   },
   "passwordHint": {
     "message": "یادآور کلمه عبور"
@@ -3981,6 +4059,9 @@
   "vaultTimeout": {
     "message": "متوقف شدن گاو‌صندوق"
   },
+  "vaultTimeout1": {
+    "message": "Timeout"
+  },
   "vaultTimeoutDesc": {
     "message": "انتخاب کنید که گاو‌صندوق شما چه زمانی عمل توقف زمانی گاوصندوق را انجام دهد."
   },
@@ -4249,7 +4330,7 @@
   },
   "lock": {
     "message": "قفل",
-    "description": "Verb form: to make secure or inaccesible by"
+    "description": "Verb form: to make secure or inaccessible by"
   },
   "trash": {
     "message": "زباله‌ها",
@@ -4845,12 +4926,6 @@
   },
   "deleteAnyCollection": {
     "message": "هر مجموعه ای را حذف کنید"
-  },
-  "editAssignedCollections": {
-    "message": "ویرایش مجموعه های اختصاص داده شده"
-  },
-  "deleteAssignedCollections": {
-    "message": "حذف مجموعه های اختصاص داده شده"
   },
   "manageGroups": {
     "message": "مدیریت گروه‌ها"
@@ -5459,6 +5534,19 @@
       }
     }
   },
+  "vaultTimeoutPolicyInEffect1": {
+    "message": "$HOURS$ hour(s) and $MINUTES$ minute(s) maximum.",
+    "placeholders": {
+      "hours": {
+        "content": "$1",
+        "example": "5"
+      },
+      "minutes": {
+        "content": "$2",
+        "example": "5"
+      }
+    }
+  },
   "vaultTimeoutPolicyWithActionInEffect": {
     "message": "سیاست‌های سازمانتان بر مهلت زمانی گاوصندوق شما تأثیر می‌گذارد. حداکثر زمان مجاز گاوصندوق $HOURS$ ساعت و $MINUTES$ دقیقه است. عملگر مهلت زمانی گاوصندوق شما روی $ACTION$ تنظیم شده است.",
     "placeholders": {
@@ -5484,9 +5572,6 @@
         "example": "Lock"
       }
     }
-  },
-  "customVaultTimeout": {
-    "message": "پایان زمان گاوصندوق سفارشی"
   },
   "vaultTimeoutToLarge": {
     "message": "مهلت زمانی شما بیش از محدودیت تعیین شده توسط سازمانتان است."
@@ -6210,7 +6295,7 @@
   },
   "lastSync": {
     "message": "آخرین همگام‌سازی",
-    "description": "Used as a prefix to indicate the last time a sync occured. Example \"Last sync 1968-11-16 00:00:00\""
+    "description": "Used as a prefix to indicate the last time a sync occurred. Example \"Last sync 1968-11-16 00:00:00\""
   },
   "sponsorshipsSynced": {
     "message": "حمایت‌های مالی خود میزبان همگام‌سازی شد."
@@ -6369,57 +6454,57 @@
   },
   "scim": {
     "message": "تأمین SCIM",
-    "description": "The text, 'SCIM', is an acronymn and should not be translated."
+    "description": "The text, 'SCIM', is an acronym and should not be translated."
   },
   "scimDescription": {
     "message": "به‌طور خودکار کاربران و گروه‌ها را با ارائه‌دهنده هویت ترجیحی خود از طریق تأمین SCIM فراهم کنید",
-    "description": "the text, 'SCIM', is an acronymn and should not be translated."
+    "description": "the text, 'SCIM', is an acronym and should not be translated."
   },
   "scimEnabledCheckboxDesc": {
     "message": "SCIM را فعال کنید",
-    "description": "the text, 'SCIM', is an acronymn and should not be translated."
+    "description": "the text, 'SCIM', is an acronym and should not be translated."
   },
   "scimEnabledCheckboxDescHelpText": {
     "message": "با پیکربندی نشانی اینترنتی و کلید SCIM API، ارائه دهنده هویت ترجیحی خود را تنظیم کنید",
-    "description": "the text, 'SCIM', is an acronymn and should not be translated."
+    "description": "the text, 'SCIM', is an acronym and should not be translated."
   },
   "scimApiKeyHelperText": {
     "message": "این کلید API به مدیریت کاربران در سازمان شما دسترسی دارد. که باید مخفی بماند."
   },
   "copyScimKey": {
     "message": "کلید SCIM API را در کلیپ بورد خود کپی کنید",
-    "description": "the text, 'SCIM' and 'API', are acronymns and should not be translated."
+    "description": "the text, 'SCIM' and 'API', are acronyms and should not be translated."
   },
   "rotateScimKey": {
     "message": "کلید SCIM API را بچرخانید",
-    "description": "the text, 'SCIM' and 'API', are acronymns and should not be translated."
+    "description": "the text, 'SCIM' and 'API', are acronyms and should not be translated."
   },
   "rotateScimKeyWarning": {
     "message": "آیا مطمئنید که می‌خواهید کلید SCIM API را بچرخانید؟ کلید فعلی دیگر برای ادغام‌های موجود کار نخواهد کرد.",
-    "description": "the text, 'SCIM' and 'API', are acronymns and should not be translated."
+    "description": "the text, 'SCIM' and 'API', are acronyms and should not be translated."
   },
   "rotateKey": {
     "message": "چرخاندن توکن"
   },
   "scimApiKey": {
     "message": "کلید SCIM API",
-    "description": "the text, 'SCIM' and 'API', are acronymns and should not be translated."
+    "description": "the text, 'SCIM' and 'API', are acronyms and should not be translated."
   },
   "copyScimUrl": {
     "message": "نشانی اینترنتی نقطه پایانی SCIM را در کلیپ بورد خود کپی کنید",
-    "description": "the text, 'SCIM' and 'URL', are acronymns and should not be translated."
+    "description": "the text, 'SCIM' and 'URL', are acronyms and should not be translated."
   },
   "scimUrl": {
     "message": "نشانی اینترنتی SCIM",
-    "description": "the text, 'SCIM' and 'URL', are acronymns and should not be translated."
+    "description": "the text, 'SCIM' and 'URL', are acronyms and should not be translated."
   },
   "scimApiKeyRotated": {
     "message": "کلید SCIM API با موفقیت چرخید",
-    "description": "the text, 'SCIM' and 'API', are acronymns and should not be translated."
+    "description": "the text, 'SCIM' and 'API', are acronyms and should not be translated."
   },
   "scimSettingsSaved": {
     "message": "تنظیمات SCIM ذخیره شد",
-    "description": "the text, 'SCIM', is an acronymn and should not be translated."
+    "description": "the text, 'SCIM', is an acronym and should not be translated."
   },
   "inputRequired": {
     "message": "ورودی مورد نیاز است."
@@ -7341,6 +7426,9 @@
   "fileUpload": {
     "message": "بارگذاری فایل"
   },
+  "upload": {
+    "message": "Upload"
+  },
   "acceptedFormats": {
     "message": "فرمت های پذیرفته شده:"
   },
@@ -8202,6 +8290,9 @@
   "addField": {
     "message": "Add field"
   },
+  "editField": {
+    "message": "Edit field"
+  },
   "items": {
     "message": "Items"
   },
@@ -9050,7 +9141,7 @@
     "message": "Directory integration"
   },
   "passwordLessSso": {
-    "message": "PasswordLess SSO"
+    "message": "Passwordless SSO"
   },
   "accountRecovery": {
     "message": "Account recovery"
@@ -9073,8 +9164,8 @@
   "current": {
     "message": "Current"
   },
-  "secretsManagerSubInfo": {
-    "message": "Your Secrets Manager subscription will upgrade base on the plan selected"
+  "secretsManagerSubscriptionInfo": {
+    "message": "Your Secrets Manager subscription will upgrade based on the plan selected"
   },
   "bitwardenPasswordManager": {
     "message": "Bitwarden Password Manager"
@@ -9087,7 +9178,7 @@
   },
   "publicApi": {
     "message": "Public API",
-    "description": "The text, 'API', is an acronymn and should not be translated."
+    "description": "The text, 'API', is an acronym and should not be translated."
   },
   "showCharacterCount": {
     "message": "Show character count"

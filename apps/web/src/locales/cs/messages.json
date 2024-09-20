@@ -269,9 +269,18 @@
   "cfTypeBoolean": {
     "message": "Boolean"
   },
+  "cfTypeCheckbox": {
+    "message": "Checkbox"
+  },
   "cfTypeLinked": {
     "message": "Propojeno",
     "description": "This describes a field that is 'linked' (related) to another field."
+  },
+  "fieldType": {
+    "message": "Field type"
+  },
+  "fieldLabel": {
+    "message": "Field label"
   },
   "remove": {
     "message": "Odebrat"
@@ -511,6 +520,24 @@
   "viewItem": {
     "message": "Zobrazit položku"
   },
+  "newItemHeader": {
+    "message": "Nové $TYPE$",
+    "placeholders": {
+      "type": {
+        "content": "$1",
+        "example": "login"
+      }
+    }
+  },
+  "editItemHeader": {
+    "message": "Upravit $TYPE$",
+    "placeholders": {
+      "type": {
+        "content": "$1",
+        "example": "login"
+      }
+    }
+  },
   "viewItemType": {
     "message": "Zobrazit $ITEMTYPE$",
     "placeholders": {
@@ -591,6 +618,45 @@
   "copyUri": {
     "message": "Kopírovat URI",
     "description": "Copy URI to clipboard"
+  },
+  "copyCustomField": {
+    "message": "Kopírovat $FIELD$",
+    "placeholders": {
+      "field": {
+        "content": "$1",
+        "example": "Custom field label"
+      }
+    }
+  },
+  "copyWebsite": {
+    "message": "Kopírovat webovou stránku"
+  },
+  "copyNotes": {
+    "message": "Kopírovat poznámku"
+  },
+  "copyAddress": {
+    "message": "Kopírovat adresu"
+  },
+  "copyPhone": {
+    "message": "Kopírovat telefon"
+  },
+  "copyEmail": {
+    "message": "Kopírovat e-mail"
+  },
+  "copyCompany": {
+    "message": "Kopírovat společnost"
+  },
+  "copySSN": {
+    "message": "Kopírovat rodné číslo"
+  },
+  "copyPassportNumber": {
+    "message": "Kopírovat číslo pasu"
+  },
+  "copyLicenseNumber": {
+    "message": "Kopírovat číslo dokladu totožnosti"
+  },
+  "copyName": {
+    "message": "Kopírovat název"
   },
   "me": {
     "message": "Já"
@@ -959,6 +1025,18 @@
   },
   "settings": {
     "message": "Nastavení"
+  },
+  "accountEmail": {
+    "message": "E-mail účtu"
+  },
+  "requestHint": {
+    "message": "Vyžádat nápovědu"
+  },
+  "requestPasswordHint": {
+    "message": "Vyžádat nápovědu k heslu"
+  },
+  "enterYourAccountEmailAddressAndYourPasswordHintWillBeSentToYou": {
+    "message": "Zadejte svou e-mailovou adresu, na kterou Vám zašleme nápovědu k heslu"
   },
   "passwordHint": {
     "message": "Nápověda pro heslo"
@@ -3981,6 +4059,9 @@
   "vaultTimeout": {
     "message": "Časový limit trezoru"
   },
+  "vaultTimeout1": {
+    "message": "Časový limit"
+  },
   "vaultTimeoutDesc": {
     "message": "Vyberte, kdy vyprší bezpečnostní limit trezoru. Poté bude provedena vybraná akce."
   },
@@ -4249,7 +4330,7 @@
   },
   "lock": {
     "message": "Zamknout",
-    "description": "Verb form: to make secure or inaccesible by"
+    "description": "Verb form: to make secure or inaccessible by"
   },
   "trash": {
     "message": "Koš",
@@ -4845,12 +4926,6 @@
   },
   "deleteAnyCollection": {
     "message": "Smazání jakékoli kolekce"
-  },
-  "editAssignedCollections": {
-    "message": "Úprava přiřazených kolekcí"
-  },
-  "deleteAssignedCollections": {
-    "message": "Smazání přiřazené kolekce"
   },
   "manageGroups": {
     "message": "Správa skupin"
@@ -5459,6 +5534,19 @@
       }
     }
   },
+  "vaultTimeoutPolicyInEffect1": {
+    "message": "Maximálně $HOURS$ hodin a $MINUTES$ minut.",
+    "placeholders": {
+      "hours": {
+        "content": "$1",
+        "example": "5"
+      },
+      "minutes": {
+        "content": "$2",
+        "example": "5"
+      }
+    }
+  },
   "vaultTimeoutPolicyWithActionInEffect": {
     "message": "Pravidla Vaší organizace mají vliv na časový limit trezoru. Maximální povolený časový limit trezoru je $HOURS$ hodin a $MINUTES$ minut. Akce po časovém limitu trezoru je nastavena na $ACTION$.",
     "placeholders": {
@@ -5484,9 +5572,6 @@
         "example": "Lock"
       }
     }
-  },
-  "customVaultTimeout": {
-    "message": "Vlastní časový limit trezoru"
   },
   "vaultTimeoutToLarge": {
     "message": "Časový limit Vašeho trezoru překračuje omezení stanovená Vaší organizací."
@@ -6210,7 +6295,7 @@
   },
   "lastSync": {
     "message": "Poslední synchronizace",
-    "description": "Used as a prefix to indicate the last time a sync occured. Example \"Last sync 1968-11-16 00:00:00\""
+    "description": "Used as a prefix to indicate the last time a sync occurred. Example \"Last sync 1968-11-16 00:00:00\""
   },
   "sponsorshipsSynced": {
     "message": "Sponzoringy na vlastním hostingu byly synchronizovány."
@@ -6369,57 +6454,57 @@
   },
   "scim": {
     "message": "Poskytování SCIM",
-    "description": "The text, 'SCIM', is an acronymn and should not be translated."
+    "description": "The text, 'SCIM', is an acronym and should not be translated."
   },
   "scimDescription": {
     "message": "Automatické zajišťování uživatelů a skupin u preferovaného poskytovatele identit prostřednictvím zajišťování SCIM.",
-    "description": "the text, 'SCIM', is an acronymn and should not be translated."
+    "description": "the text, 'SCIM', is an acronym and should not be translated."
   },
   "scimEnabledCheckboxDesc": {
     "message": "Povolit SCIM",
-    "description": "the text, 'SCIM', is an acronymn and should not be translated."
+    "description": "the text, 'SCIM', is an acronym and should not be translated."
   },
   "scimEnabledCheckboxDescHelpText": {
     "message": "Nastavte svého preferovaného poskytovatele identity nastavením URL a klíče SCIM API",
-    "description": "the text, 'SCIM', is an acronymn and should not be translated."
+    "description": "the text, 'SCIM', is an acronym and should not be translated."
   },
   "scimApiKeyHelperText": {
     "message": "Tento klíč API má přístup ke správě uživatelů ve Vaší organizaci. Měl by být zachován v tajnosti."
   },
   "copyScimKey": {
     "message": "Kopírovat klíč SCIM API do schránky",
-    "description": "the text, 'SCIM' and 'API', are acronymns and should not be translated."
+    "description": "the text, 'SCIM' and 'API', are acronyms and should not be translated."
   },
   "rotateScimKey": {
     "message": "Měnit klíč SCIM API",
-    "description": "the text, 'SCIM' and 'API', are acronymns and should not be translated."
+    "description": "the text, 'SCIM' and 'API', are acronyms and should not be translated."
   },
   "rotateScimKeyWarning": {
     "message": "Opravdu chcete měnit klíč SCIM API? Aktuální klíč již nebude fungovat pro žádné existující integrace.",
-    "description": "the text, 'SCIM' and 'API', are acronymns and should not be translated."
+    "description": "the text, 'SCIM' and 'API', are acronyms and should not be translated."
   },
   "rotateKey": {
     "message": "Změnit klíč"
   },
   "scimApiKey": {
     "message": "Klíč SCIM API",
-    "description": "the text, 'SCIM' and 'API', are acronymns and should not be translated."
+    "description": "the text, 'SCIM' and 'API', are acronyms and should not be translated."
   },
   "copyScimUrl": {
     "message": "Kopírovat URL koncového bodu SCIM do schránky",
-    "description": "the text, 'SCIM' and 'URL', are acronymns and should not be translated."
+    "description": "the text, 'SCIM' and 'URL', are acronyms and should not be translated."
   },
   "scimUrl": {
     "message": "URL SCIM",
-    "description": "the text, 'SCIM' and 'URL', are acronymns and should not be translated."
+    "description": "the text, 'SCIM' and 'URL', are acronyms and should not be translated."
   },
   "scimApiKeyRotated": {
     "message": "Klíč SCIM API byl úspěšně změněn",
-    "description": "the text, 'SCIM' and 'API', are acronymns and should not be translated."
+    "description": "the text, 'SCIM' and 'API', are acronyms and should not be translated."
   },
   "scimSettingsSaved": {
     "message": "Nastavení SCIM bylo uloženo",
-    "description": "the text, 'SCIM', is an acronymn and should not be translated."
+    "description": "the text, 'SCIM', is an acronym and should not be translated."
   },
   "inputRequired": {
     "message": "Je vyžadován vstup."
@@ -7341,6 +7426,9 @@
   "fileUpload": {
     "message": "Nahrát soubor"
   },
+  "upload": {
+    "message": "Nahrát"
+  },
   "acceptedFormats": {
     "message": "Povolené formáty:"
   },
@@ -8201,6 +8289,9 @@
   },
   "addField": {
     "message": "Přidat pole"
+  },
+  "editField": {
+    "message": "Edit field"
   },
   "items": {
     "message": "Položky"
@@ -9073,7 +9164,7 @@
   "current": {
     "message": "Aktuální"
   },
-  "secretsManagerSubInfo": {
+  "secretsManagerSubscriptionInfo": {
     "message": "Vaše předplatné Správce tajných klíčů bude aktualizováno na základě vybraného tarifu"
   },
   "bitwardenPasswordManager": {
@@ -9087,7 +9178,7 @@
   },
   "publicApi": {
     "message": "Veřejné API",
-    "description": "The text, 'API', is an acronymn and should not be translated."
+    "description": "The text, 'API', is an acronym and should not be translated."
   },
   "showCharacterCount": {
     "message": "Zobrazit počet znaků"

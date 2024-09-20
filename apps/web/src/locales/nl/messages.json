@@ -144,7 +144,7 @@
     "message": "Beveiligingscode (CVV)"
   },
   "securityCodeSlashCVV": {
-    "message": "Security code / CVV"
+    "message": "Veiligheidscode / CVV"
   },
   "identityName": {
     "message": "Identiteitsnaam"
@@ -269,9 +269,18 @@
   "cfTypeBoolean": {
     "message": "Boolean"
   },
+  "cfTypeCheckbox": {
+    "message": "Selectievakje"
+  },
   "cfTypeLinked": {
     "message": "Gekoppeld",
     "description": "This describes a field that is 'linked' (related) to another field."
+  },
+  "fieldType": {
+    "message": "Veldtype"
+  },
+  "fieldLabel": {
+    "message": "Veldlabel"
   },
   "remove": {
     "message": "Verwijderen"
@@ -511,6 +520,24 @@
   "viewItem": {
     "message": "Item weergeven"
   },
+  "newItemHeader": {
+    "message": "Nieuwe $TYPE$",
+    "placeholders": {
+      "type": {
+        "content": "$1",
+        "example": "login"
+      }
+    }
+  },
+  "editItemHeader": {
+    "message": "$TYPE$ bewerken",
+    "placeholders": {
+      "type": {
+        "content": "$1",
+        "example": "login"
+      }
+    }
+  },
   "viewItemType": {
     "message": "$ITEMTYPE$ weergeven",
     "placeholders": {
@@ -566,7 +593,7 @@
     }
   },
   "copySuccessful": {
-    "message": "Copy Successful"
+    "message": "Kopiëren gelukt"
   },
   "copyValue": {
     "message": "Waarde kopiëren",
@@ -591,6 +618,45 @@
   "copyUri": {
     "message": "URI kopiëren",
     "description": "Copy URI to clipboard"
+  },
+  "copyCustomField": {
+    "message": "$FIELD$ kopiëren",
+    "placeholders": {
+      "field": {
+        "content": "$1",
+        "example": "Custom field label"
+      }
+    }
+  },
+  "copyWebsite": {
+    "message": "Website kopiëren"
+  },
+  "copyNotes": {
+    "message": "Notities kopiëren"
+  },
+  "copyAddress": {
+    "message": "Adres kopiëren"
+  },
+  "copyPhone": {
+    "message": "Telefoonnummer kopiëren"
+  },
+  "copyEmail": {
+    "message": "E-mail kopiëren"
+  },
+  "copyCompany": {
+    "message": "Bedrijf kopiëren"
+  },
+  "copySSN": {
+    "message": "Burgerservicenummer kopiëren"
+  },
+  "copyPassportNumber": {
+    "message": "Paspoortnummer kopiëren"
+  },
+  "copyLicenseNumber": {
+    "message": "Kenteken kopiëren"
+  },
+  "copyName": {
+    "message": "Naam kopiëren"
   },
   "me": {
     "message": "Ik"
@@ -959,6 +1025,18 @@
   },
   "settings": {
     "message": "Instellingen"
+  },
+  "accountEmail": {
+    "message": "E-mailadres van account"
+  },
+  "requestHint": {
+    "message": "Hint vragen"
+  },
+  "requestPasswordHint": {
+    "message": "Hoofdwachtwoordhint vragen"
+  },
+  "enterYourAccountEmailAddressAndYourPasswordHintWillBeSentToYou": {
+    "message": "Als je het e-mailadres van je account invult, versturen we je je wachtwoordhint"
   },
   "passwordHint": {
     "message": "Wachtwoordhint"
@@ -3901,10 +3979,10 @@
     }
   },
   "encryptionKeyUpdateCannotProceed": {
-    "message": "Encryption key update cannot proceed"
+    "message": "Bijwerken encryptiesleutel kan niet verder gaan"
   },
   "keyUpdateFoldersFailed": {
-    "message": "When updating your encryption key, your folders could not be decrypted. To continue with the update, your folders must be deleted. No vault items will be deleted if you proceed."
+    "message": "Bij het bijwerken van je encryptiesleutel konden we je mappen niet decoderen. Om door te gaan met de update, moeten je mappen worden verwijderd. Geen kluisitems worden verwijderd als je doorgaat."
   },
   "keyUpdated": {
     "message": "Sleutel bijgewerkt"
@@ -3980,6 +4058,9 @@
   },
   "vaultTimeout": {
     "message": "Time-out van de kluis"
+  },
+  "vaultTimeout1": {
+    "message": "Time-out"
   },
   "vaultTimeoutDesc": {
     "message": "Stel de time-out van de kluis en de bijbehorende actie in."
@@ -4249,7 +4330,7 @@
   },
   "lock": {
     "message": "Vergrendelen",
-    "description": "Verb form: to make secure or inaccesible by"
+    "description": "Verb form: to make secure or inaccessible by"
   },
   "trash": {
     "message": "Prullenbak",
@@ -4845,12 +4926,6 @@
   },
   "deleteAnyCollection": {
     "message": "Iedere verzameling verwijderen"
-  },
-  "editAssignedCollections": {
-    "message": "Toegewezen verzamelingen bewerken"
-  },
-  "deleteAssignedCollections": {
-    "message": "Toegewezen verzamelingen verwijderen"
   },
   "manageGroups": {
     "message": "Groepen beheren"
@@ -5459,6 +5534,19 @@
       }
     }
   },
+  "vaultTimeoutPolicyInEffect1": {
+    "message": "$HOURS$ uren en $MINUTES$ minu(u)t(en) maximaal.",
+    "placeholders": {
+      "hours": {
+        "content": "$1",
+        "example": "5"
+      },
+      "minutes": {
+        "content": "$2",
+        "example": "5"
+      }
+    }
+  },
   "vaultTimeoutPolicyWithActionInEffect": {
     "message": "De beleidsinstellingen van je organisatie hebben invloed op de time-out van je kluis. De maximale toegestane kluis time-out is $HOURS$ uur en $MINUTES$ minuten. Jouw time-out is ingesteld op $ACTION$.",
     "placeholders": {
@@ -5484,9 +5572,6 @@
         "example": "Lock"
       }
     }
-  },
-  "customVaultTimeout": {
-    "message": "Aangepaste time-out van de kluis"
   },
   "vaultTimeoutToLarge": {
     "message": "Je kluis time-out is hoger dan het maximum van jouw organisatie."
@@ -6210,7 +6295,7 @@
   },
   "lastSync": {
     "message": "Laatste synchronisatie",
-    "description": "Used as a prefix to indicate the last time a sync occured. Example \"Last sync 1968-11-16 00:00:00\""
+    "description": "Used as a prefix to indicate the last time a sync occurred. Example \"Last sync 1968-11-16 00:00:00\""
   },
   "sponsorshipsSynced": {
     "message": "Zelf-gehoste sponsors gesynchroniseerd."
@@ -6369,57 +6454,57 @@
   },
   "scim": {
     "message": "SCIM-provisioning",
-    "description": "The text, 'SCIM', is an acronymn and should not be translated."
+    "description": "The text, 'SCIM', is an acronym and should not be translated."
   },
   "scimDescription": {
     "message": "Automatisch in gebruikers en groepen voorzien via SCIM-provisioning van je voorkeursprovider",
-    "description": "the text, 'SCIM', is an acronymn and should not be translated."
+    "description": "the text, 'SCIM', is an acronym and should not be translated."
   },
   "scimEnabledCheckboxDesc": {
     "message": "SCIM inschakelen",
-    "description": "the text, 'SCIM', is an acronymn and should not be translated."
+    "description": "the text, 'SCIM', is an acronym and should not be translated."
   },
   "scimEnabledCheckboxDescHelpText": {
     "message": "Stel je voorkeurs voorkeursprovider voor identiteiten in door de URL SCIM API-sleutel te configureren",
-    "description": "the text, 'SCIM', is an acronymn and should not be translated."
+    "description": "the text, 'SCIM', is an acronym and should not be translated."
   },
   "scimApiKeyHelperText": {
     "message": "Deze API-sleutel heeft toegang tot het beheer van gebruikers binnen je organisatie. Het moet geheim blijven."
   },
   "copyScimKey": {
     "message": "Kopieer de SCIM API-sleutel naar je klembord",
-    "description": "the text, 'SCIM' and 'API', are acronymns and should not be translated."
+    "description": "the text, 'SCIM' and 'API', are acronyms and should not be translated."
   },
   "rotateScimKey": {
     "message": "De SCIM API-sleutel roteren",
-    "description": "the text, 'SCIM' and 'API', are acronymns and should not be translated."
+    "description": "the text, 'SCIM' and 'API', are acronyms and should not be translated."
   },
   "rotateScimKeyWarning": {
     "message": "Weet je zeker dat je de SCIM API-sleutel wilt roteren? De huidige sleutel werkt niet meer voor bestaande integraties.",
-    "description": "the text, 'SCIM' and 'API', are acronymns and should not be translated."
+    "description": "the text, 'SCIM' and 'API', are acronyms and should not be translated."
   },
   "rotateKey": {
     "message": "Sleutel roteren"
   },
   "scimApiKey": {
     "message": "SCIM API-sleutel",
-    "description": "the text, 'SCIM' and 'API', are acronymns and should not be translated."
+    "description": "the text, 'SCIM' and 'API', are acronyms and should not be translated."
   },
   "copyScimUrl": {
     "message": "Kopieer de URL van het SCIM-eindpunt naar je klembord",
-    "description": "the text, 'SCIM' and 'URL', are acronymns and should not be translated."
+    "description": "the text, 'SCIM' and 'URL', are acronyms and should not be translated."
   },
   "scimUrl": {
     "message": "SCIM-URL",
-    "description": "the text, 'SCIM' and 'URL', are acronymns and should not be translated."
+    "description": "the text, 'SCIM' and 'URL', are acronyms and should not be translated."
   },
   "scimApiKeyRotated": {
     "message": "De SCIM API-sleutel is met succes veranderd",
-    "description": "the text, 'SCIM' and 'API', are acronymns and should not be translated."
+    "description": "the text, 'SCIM' and 'API', are acronyms and should not be translated."
   },
   "scimSettingsSaved": {
     "message": "SCIM-instellingen opgeslagen",
-    "description": "the text, 'SCIM', is an acronymn and should not be translated."
+    "description": "the text, 'SCIM', is an acronym and should not be translated."
   },
   "inputRequired": {
     "message": "Invoer vereist."
@@ -7341,6 +7426,9 @@
   "fileUpload": {
     "message": "Bestand uploaden"
   },
+  "upload": {
+    "message": "Uploaden"
+  },
   "acceptedFormats": {
     "message": "Toegestane formaten:"
   },
@@ -8201,6 +8289,9 @@
   },
   "addField": {
     "message": "Veld toevoegen"
+  },
+  "editField": {
+    "message": "Veld bewerken"
   },
   "items": {
     "message": "Items"
@@ -9073,21 +9164,21 @@
   "current": {
     "message": "Huidig"
   },
-  "secretsManagerSubInfo": {
+  "secretsManagerSubscriptionInfo": {
     "message": "Je Secrets Manager-abonnement zal upgraden naar het geselecteerde abonnement"
   },
   "bitwardenPasswordManager": {
     "message": "Bitwarden Password Manager"
   },
   "secretsManagerComplimentaryPasswordManager": {
-    "message": "Your complimentary one year Password Manager subscription will upgrade to the selected plan. You will not be charged until the complimentary period is over."
+    "message": "Je gratis eenjarige Password Manager-abonnement zal veranderen naar het geselecteerde abonnement. Er worden pas kosten in rekening gebracht als de gratis periode voorbij is."
   },
   "fileSavedToDevice": {
     "message": "Bestand op apparaat opgeslagen. Beheer vanaf de downloads op je apparaat."
   },
   "publicApi": {
     "message": "Openbare API",
-    "description": "The text, 'API', is an acronymn and should not be translated."
+    "description": "The text, 'API', is an acronym and should not be translated."
   },
   "showCharacterCount": {
     "message": "Aantal tekens weergeven"

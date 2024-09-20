@@ -269,9 +269,18 @@
   "cfTypeBoolean": {
     "message": "Booleskt värde"
   },
+  "cfTypeCheckbox": {
+    "message": "Checkbox"
+  },
   "cfTypeLinked": {
     "message": "Länkad",
     "description": "This describes a field that is 'linked' (related) to another field."
+  },
+  "fieldType": {
+    "message": "Field type"
+  },
+  "fieldLabel": {
+    "message": "Field label"
   },
   "remove": {
     "message": "Ta bort"
@@ -511,6 +520,24 @@
   "viewItem": {
     "message": "Visa objekt"
   },
+  "newItemHeader": {
+    "message": "Ny $TYPE$",
+    "placeholders": {
+      "type": {
+        "content": "$1",
+        "example": "login"
+      }
+    }
+  },
+  "editItemHeader": {
+    "message": "Redigera $TYPE$",
+    "placeholders": {
+      "type": {
+        "content": "$1",
+        "example": "login"
+      }
+    }
+  },
   "viewItemType": {
     "message": "Visa $ITEMTYPE$",
     "placeholders": {
@@ -591,6 +618,45 @@
   "copyUri": {
     "message": "Kopiera URI",
     "description": "Copy URI to clipboard"
+  },
+  "copyCustomField": {
+    "message": "Kopiera $FIELD$",
+    "placeholders": {
+      "field": {
+        "content": "$1",
+        "example": "Custom field label"
+      }
+    }
+  },
+  "copyWebsite": {
+    "message": "Kopiera webbplats"
+  },
+  "copyNotes": {
+    "message": "Kopiera anteckningar"
+  },
+  "copyAddress": {
+    "message": "Kopiera adress"
+  },
+  "copyPhone": {
+    "message": "Copy phone"
+  },
+  "copyEmail": {
+    "message": "Copy email"
+  },
+  "copyCompany": {
+    "message": "Kopiera företag"
+  },
+  "copySSN": {
+    "message": "Kopiera personnummer"
+  },
+  "copyPassportNumber": {
+    "message": "Kopiera passnummer"
+  },
+  "copyLicenseNumber": {
+    "message": "Copy license number"
+  },
+  "copyName": {
+    "message": "Kopiera namn"
   },
   "me": {
     "message": "Jag"
@@ -807,7 +873,7 @@
     "message": "Logga in med nyckel"
   },
   "invalidPasskeyPleaseTryAgain": {
-    "message": "Ogiltig nyckel. Vänligen försök igen."
+    "message": "Ogiltig nyckel. Försök igen."
   },
   "twoFactorForPasskeysNotSupportedOnClientUpdateToLogIn": {
     "message": "Tvåstegsverifiering stöds inte för nycklar. Uppdatera appen för att logga in."
@@ -960,6 +1026,18 @@
   "settings": {
     "message": "Inställningar"
   },
+  "accountEmail": {
+    "message": "Account email"
+  },
+  "requestHint": {
+    "message": "Begär ledtråd"
+  },
+  "requestPasswordHint": {
+    "message": "Begär lösenordsledtråd"
+  },
+  "enterYourAccountEmailAddressAndYourPasswordHintWillBeSentToYou": {
+    "message": "Enter your account email address and your password hint will be sent to you"
+  },
   "passwordHint": {
     "message": "Lösenordsledtråd"
   },
@@ -1019,7 +1097,7 @@
     "message": "E-postadress"
   },
   "yourVaultIsLockedV2": {
-    "message": "Ditt valv är låst."
+    "message": "Ditt valv är låst"
   },
   "uuid": {
     "message": "UUID"
@@ -1170,7 +1248,7 @@
     "message": "FIDO U2F-säkerhetsnyckel"
   },
   "webAuthnTitle": {
-    "message": "FIDO2 WebAuthn"
+    "message": "Nyckel"
   },
   "webAuthnDesc": {
     "message": "Använd en WebAuthn-aktiverad säkerhetsnyckel för att komma åt ditt konto."
@@ -3981,6 +4059,9 @@
   "vaultTimeout": {
     "message": "Valvets tidsgräns"
   },
+  "vaultTimeout1": {
+    "message": "Timeout"
+  },
   "vaultTimeoutDesc": {
     "message": "Välj när valvets tidsgräns överskrids och den valda åtgärden utförs."
   },
@@ -4232,7 +4313,7 @@
     "message": "Minsta antal ord"
   },
   "overridePasswordTypePolicy": {
-    "message": "Password Type",
+    "message": "Lösenordstyp",
     "description": "Name of the password generator policy that overrides the user's password/passphrase selection."
   },
   "userPreference": {
@@ -4249,7 +4330,7 @@
   },
   "lock": {
     "message": "Lås",
-    "description": "Verb form: to make secure or inaccesible by"
+    "description": "Verb form: to make secure or inaccessible by"
   },
   "trash": {
     "message": "Papperskorg",
@@ -4520,7 +4601,7 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "copyLink": {
-    "message": "Copy link"
+    "message": "Kopiera länk"
   },
   "copySendLink": {
     "message": "Kopiera Send-länk",
@@ -4845,12 +4926,6 @@
   },
   "deleteAnyCollection": {
     "message": "Ta bort valfri samling"
-  },
-  "editAssignedCollections": {
-    "message": "Redigera tilldelade samlingar"
-  },
-  "deleteAssignedCollections": {
-    "message": "Radera tilldelade samlingar"
   },
   "manageGroups": {
     "message": "Hantera grupper"
@@ -5326,7 +5401,7 @@
     "message": "Provider"
   },
   "newClientOrganization": {
-    "message": "New client organization"
+    "message": "Ny klientorganisation"
   },
   "newClientOrganizationDesc": {
     "message": "Create a new client organization that will be associated with you as the Provider. You will be able to access and manage this organization."
@@ -5459,6 +5534,19 @@
       }
     }
   },
+  "vaultTimeoutPolicyInEffect1": {
+    "message": "$HOURS$ hour(s) and $MINUTES$ minute(s) maximum.",
+    "placeholders": {
+      "hours": {
+        "content": "$1",
+        "example": "5"
+      },
+      "minutes": {
+        "content": "$2",
+        "example": "5"
+      }
+    }
+  },
   "vaultTimeoutPolicyWithActionInEffect": {
     "message": "Your organization policies are affecting your vault timeout. Maximum allowed vault timeout is $HOURS$ hour(s) and $MINUTES$ minute(s). Your vault timeout action is set to $ACTION$.",
     "placeholders": {
@@ -5484,9 +5572,6 @@
         "example": "Lock"
       }
     }
-  },
-  "customVaultTimeout": {
-    "message": "Custom vault timeout"
   },
   "vaultTimeoutToLarge": {
     "message": "Your vault timeout exceeds the restriction set by your organization."
@@ -6210,7 +6295,7 @@
   },
   "lastSync": {
     "message": "Senaste synkronisering",
-    "description": "Used as a prefix to indicate the last time a sync occured. Example \"Last sync 1968-11-16 00:00:00\""
+    "description": "Used as a prefix to indicate the last time a sync occurred. Example \"Last sync 1968-11-16 00:00:00\""
   },
   "sponsorshipsSynced": {
     "message": "Self-hosted sponsorships synced."
@@ -6337,7 +6422,7 @@
     }
   },
   "hostname": {
-    "message": "Hostname",
+    "message": "Värdnamn",
     "description": "Part of a URL."
   },
   "apiAccessToken": {
@@ -6369,57 +6454,57 @@
   },
   "scim": {
     "message": "SCIM provisioning",
-    "description": "The text, 'SCIM', is an acronymn and should not be translated."
+    "description": "The text, 'SCIM', is an acronym and should not be translated."
   },
   "scimDescription": {
     "message": "Automatically provision users and groups with your preferred identity provider via SCIM provisioning",
-    "description": "the text, 'SCIM', is an acronymn and should not be translated."
+    "description": "the text, 'SCIM', is an acronym and should not be translated."
   },
   "scimEnabledCheckboxDesc": {
     "message": "Aktivera SCIM",
-    "description": "the text, 'SCIM', is an acronymn and should not be translated."
+    "description": "the text, 'SCIM', is an acronym and should not be translated."
   },
   "scimEnabledCheckboxDescHelpText": {
     "message": "Set up your preferred identity provider by configuring the URL and SCIM API Key",
-    "description": "the text, 'SCIM', is an acronymn and should not be translated."
+    "description": "the text, 'SCIM', is an acronym and should not be translated."
   },
   "scimApiKeyHelperText": {
     "message": "This API key has access to manage users within your organization. It should be kept secret."
   },
   "copyScimKey": {
     "message": "Copy the SCIM API key to your clipboard",
-    "description": "the text, 'SCIM' and 'API', are acronymns and should not be translated."
+    "description": "the text, 'SCIM' and 'API', are acronyms and should not be translated."
   },
   "rotateScimKey": {
     "message": "Rotate the SCIM API key",
-    "description": "the text, 'SCIM' and 'API', are acronymns and should not be translated."
+    "description": "the text, 'SCIM' and 'API', are acronyms and should not be translated."
   },
   "rotateScimKeyWarning": {
     "message": "Are you sure you want to rotate the SCIM API Key? The current key will no longer work for any existing integrations.",
-    "description": "the text, 'SCIM' and 'API', are acronymns and should not be translated."
+    "description": "the text, 'SCIM' and 'API', are acronyms and should not be translated."
   },
   "rotateKey": {
     "message": "Rotate key"
   },
   "scimApiKey": {
     "message": "SCIM API key",
-    "description": "the text, 'SCIM' and 'API', are acronymns and should not be translated."
+    "description": "the text, 'SCIM' and 'API', are acronyms and should not be translated."
   },
   "copyScimUrl": {
     "message": "Copy the SCIM endpoint URL to your clipboard",
-    "description": "the text, 'SCIM' and 'URL', are acronymns and should not be translated."
+    "description": "the text, 'SCIM' and 'URL', are acronyms and should not be translated."
   },
   "scimUrl": {
     "message": "SCIM URL",
-    "description": "the text, 'SCIM' and 'URL', are acronymns and should not be translated."
+    "description": "the text, 'SCIM' and 'URL', are acronyms and should not be translated."
   },
   "scimApiKeyRotated": {
     "message": "SCIM API key successfully rotated",
-    "description": "the text, 'SCIM' and 'API', are acronymns and should not be translated."
+    "description": "the text, 'SCIM' and 'API', are acronyms and should not be translated."
   },
   "scimSettingsSaved": {
     "message": "SCIM settings saved",
-    "description": "the text, 'SCIM', is an acronymn and should not be translated."
+    "description": "the text, 'SCIM', is an acronym and should not be translated."
   },
   "inputRequired": {
     "message": "Inmatning är obligatoriskt."
@@ -7081,10 +7166,10 @@
     "message": "Reverify domain"
   },
   "copyDnsTxtRecord": {
-    "message": "Copy DNS TXT record"
+    "message": "Kopiera DNS TXT-post"
   },
   "dnsTxtRecord": {
-    "message": "DNS TXT record"
+    "message": "DNS TXT-post"
   },
   "dnsTxtRecordInputHint": {
     "message": "Copy and paste the TXT record into your DNS Provider."
@@ -7340,6 +7425,9 @@
   },
   "fileUpload": {
     "message": "File upload"
+  },
+  "upload": {
+    "message": "Upload"
   },
   "acceptedFormats": {
     "message": "Accepted Formats:"
@@ -7747,7 +7835,7 @@
     "message": "Approve request"
   },
   "noDeviceRequests": {
-    "message": "No device requests"
+    "message": "Inga enhetsförfrågningar"
   },
   "noDeviceRequestsDesc": {
     "message": "Member device approval requests will appear here"
@@ -7941,7 +8029,7 @@
     }
   },
   "collectionManagement": {
-    "message": "Collection management"
+    "message": "Samlingshantering"
   },
   "collectionManagementDesc": {
     "message": "Manage the collection behavior for the organization"
@@ -8010,7 +8098,7 @@
     "message": "At least one member or group must have can manage permission."
   },
   "typePasskey": {
-    "message": "Passkey"
+    "message": "Nyckel"
   },
   "passkeyNotCopied": {
     "message": "Passkey will not be copied"
@@ -8202,6 +8290,9 @@
   "addField": {
     "message": "Lägg till fält"
   },
+  "editField": {
+    "message": "Redigera fält"
+  },
   "items": {
     "message": "Objekt"
   },
@@ -8302,7 +8393,7 @@
     "description": "The title for the section that deals with machine accounts."
   },
   "newMachineAccount": {
-    "message": "New machine account",
+    "message": "Nytt maskinkonto",
     "description": "Title for creating a new machine account."
   },
   "machineAccountsNoItemsMessage": {
@@ -8314,15 +8405,15 @@
     "description": "Title to indicate that there are no machine accounts to display."
   },
   "deleteMachineAccounts": {
-    "message": "Delete machine accounts",
+    "message": "Radera maskinkonton",
     "description": "Title for the action to delete one or multiple machine accounts."
   },
   "deleteMachineAccount": {
-    "message": "Delete machine account",
+    "message": "Radera maskinkonto",
     "description": "Title for the action to delete a single machine account."
   },
   "viewMachineAccount": {
-    "message": "View machine account",
+    "message": "Visa maskinkonto",
     "description": "Action to view the details of a machine account."
   },
   "deleteMachineAccountDialogMessage": {
@@ -8338,7 +8429,7 @@
     "message": "Deleting machine accounts is permanent and irreversible."
   },
   "deleteMachineAccountsConfirmMessage": {
-    "message": "Delete $COUNT$ machine accounts",
+    "message": "Radera $COUNT$ maskinkonton",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -8357,7 +8448,7 @@
     "description": "Placeholder text for searching machine accounts."
   },
   "editMachineAccount": {
-    "message": "Edit machine account",
+    "message": "Redigera maskinkonto",
     "description": "Title for editing a machine account."
   },
   "machineAccountName": {
@@ -8388,7 +8479,7 @@
     "message": "Assign projects to this machine account. "
   },
   "createMachineAccount": {
-    "message": "Create a machine account"
+    "message": "Skapa ett maskinkonto"
   },
   "maPeopleWarningMessage": {
     "message": "Removing people from a machine account does not remove the access tokens they created. For security best practice, it is recommended to revoke access tokens created by people removed from a machine account."
@@ -8560,16 +8651,16 @@
     "message": "Select a plan"
   },
   "thirtyFivePercentDiscount": {
-    "message": "35% Discount"
+    "message": "35% rabatt"
   },
   "monthPerMember": {
-    "message": "month per member"
+    "message": "månad per medlem"
   },
   "seats": {
     "message": "Seats"
   },
   "addOrganization": {
-    "message": "Add organization"
+    "message": "Lägg till organisation"
   },
   "createdNewClient": {
     "message": "Successfully created new client"
@@ -9050,7 +9141,7 @@
     "message": "Directory integration"
   },
   "passwordLessSso": {
-    "message": "PasswordLess SSO"
+    "message": "Passwordless SSO"
   },
   "accountRecovery": {
     "message": "Kontoåterställning"
@@ -9065,19 +9156,19 @@
     "message": "Obegränsat antal användare"
   },
   "UpTo50MachineAccounts": {
-    "message": "Up to 50 machine accounts"
+    "message": "Upp till 50 maskinkonton"
   },
   "UpTo20MachineAccounts": {
-    "message": "Up to 20 machine accounts"
+    "message": "Upp till 20 maskinkonton"
   },
   "current": {
     "message": "Current"
   },
-  "secretsManagerSubInfo": {
-    "message": "Your Secrets Manager subscription will upgrade base on the plan selected"
+  "secretsManagerSubscriptionInfo": {
+    "message": "Your Secrets Manager subscription will upgrade based on the plan selected"
   },
   "bitwardenPasswordManager": {
-    "message": "Bitwarden Password Manager"
+    "message": "Bitwarden Lösenordshanterare"
   },
   "secretsManagerComplimentaryPasswordManager": {
     "message": "Your complimentary one year Password Manager subscription will upgrade to the selected plan. You will not be charged until the complimentary period is over."
@@ -9087,13 +9178,13 @@
   },
   "publicApi": {
     "message": "Public API",
-    "description": "The text, 'API', is an acronymn and should not be translated."
+    "description": "The text, 'API', is an acronym and should not be translated."
   },
   "showCharacterCount": {
-    "message": "Visa antal tecken"
+    "message": "Visa teckenantal"
   },
   "hideCharacterCount": {
-    "message": "Dölj antal tecken"
+    "message": "Dölj teckenantal"
   },
   "editAccess": {
     "message": "Redigera åtkomst"

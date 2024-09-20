@@ -144,7 +144,7 @@
     "message": "Код за сигурност"
   },
   "securityCodeSlashCVV": {
-    "message": "Security code / CVV"
+    "message": "Код за сигурност / CVV"
   },
   "identityName": {
     "message": "Име на самоличността"
@@ -269,9 +269,18 @@
   "cfTypeBoolean": {
     "message": "Булево"
   },
+  "cfTypeCheckbox": {
+    "message": "Checkbox"
+  },
   "cfTypeLinked": {
     "message": "Свързано",
     "description": "This describes a field that is 'linked' (related) to another field."
+  },
+  "fieldType": {
+    "message": "Field type"
+  },
+  "fieldLabel": {
+    "message": "Field label"
   },
   "remove": {
     "message": "Премахване"
@@ -511,6 +520,24 @@
   "viewItem": {
     "message": "Преглед на елемента"
   },
+  "newItemHeader": {
+    "message": "Ново $TYPE$",
+    "placeholders": {
+      "type": {
+        "content": "$1",
+        "example": "login"
+      }
+    }
+  },
+  "editItemHeader": {
+    "message": "Редактиране на $TYPE$",
+    "placeholders": {
+      "type": {
+        "content": "$1",
+        "example": "login"
+      }
+    }
+  },
   "viewItemType": {
     "message": "Преглед на $ITEMTYPE$",
     "placeholders": {
@@ -566,7 +593,7 @@
     }
   },
   "copySuccessful": {
-    "message": "Copy Successful"
+    "message": "Копирането е успешно"
   },
   "copyValue": {
     "message": "Копиране на стойността",
@@ -591,6 +618,45 @@
   "copyUri": {
     "message": "Копиране на адреса",
     "description": "Copy URI to clipboard"
+  },
+  "copyCustomField": {
+    "message": "Копиране на $FIELD$",
+    "placeholders": {
+      "field": {
+        "content": "$1",
+        "example": "Custom field label"
+      }
+    }
+  },
+  "copyWebsite": {
+    "message": "Копиране на уеб сайта"
+  },
+  "copyNotes": {
+    "message": "Копиране на бележките"
+  },
+  "copyAddress": {
+    "message": "Копиране на адреса"
+  },
+  "copyPhone": {
+    "message": "Копиране на телефона"
+  },
+  "copyEmail": {
+    "message": "Копиране на е-пощата"
+  },
+  "copyCompany": {
+    "message": "Копиране на компанията"
+  },
+  "copySSN": {
+    "message": "Копиране на номера на осигуровката"
+  },
+  "copyPassportNumber": {
+    "message": "Копиране на номера на паспорта"
+  },
+  "copyLicenseNumber": {
+    "message": "Копиране на номера на свидетелството"
+  },
+  "copyName": {
+    "message": "Копиране на името"
   },
   "me": {
     "message": "Аз"
@@ -959,6 +1025,18 @@
   },
   "settings": {
     "message": "Настройки"
+  },
+  "accountEmail": {
+    "message": "Е-поща на регистрацията"
+  },
+  "requestHint": {
+    "message": "Заявка за подсказка"
+  },
+  "requestPasswordHint": {
+    "message": "Заявка за подсказка за паролата"
+  },
+  "enterYourAccountEmailAddressAndYourPasswordHintWillBeSentToYou": {
+    "message": "Въведете е-пощата на регистрацията си и подсказката за паролата ще Ви бъде изпратена"
   },
   "passwordHint": {
     "message": "Подсказка за паролата"
@@ -3901,10 +3979,10 @@
     }
   },
   "encryptionKeyUpdateCannotProceed": {
-    "message": "Encryption key update cannot proceed"
+    "message": "Актуализирането на шифриращия ключ не може да продължи"
   },
   "keyUpdateFoldersFailed": {
-    "message": "When updating your encryption key, your folders could not be decrypted. To continue with the update, your folders must be deleted. No vault items will be deleted if you proceed."
+    "message": "Ако актуализирате шифроващия ключ, папките Ви няма да могат да бъдат дешифрирани. За да продължите с промяната, папките трябва да бъдат изтрити. Елементите в трезора няма да бъдат изтрити, ако продължите."
   },
   "keyUpdated": {
     "message": "Ключът е обновен"
@@ -3979,6 +4057,9 @@
     "message": "Филтри"
   },
   "vaultTimeout": {
+    "message": "Време за достъп"
+  },
+  "vaultTimeout1": {
     "message": "Време за достъп"
   },
   "vaultTimeoutDesc": {
@@ -4249,7 +4330,7 @@
   },
   "lock": {
     "message": "Заключване",
-    "description": "Verb form: to make secure or inaccesible by"
+    "description": "Verb form: to make secure or inaccessible by"
   },
   "trash": {
     "message": "Кошче",
@@ -4845,12 +4926,6 @@
   },
   "deleteAnyCollection": {
     "message": "Изтриване на всякакви колекции"
-  },
-  "editAssignedCollections": {
-    "message": "Редактиране на възложените колекции"
-  },
-  "deleteAssignedCollections": {
-    "message": "Изтриване на възложените колекции"
   },
   "manageGroups": {
     "message": "Управление на групи"
@@ -5459,6 +5534,19 @@
       }
     }
   },
+  "vaultTimeoutPolicyInEffect1": {
+    "message": "Максимум $HOURS$ час(а) и $MINUTES$ минута/и.",
+    "placeholders": {
+      "hours": {
+        "content": "$1",
+        "example": "5"
+      },
+      "minutes": {
+        "content": "$2",
+        "example": "5"
+      }
+    }
+  },
   "vaultTimeoutPolicyWithActionInEffect": {
     "message": "Настройките на организацията Ви влияят върху времето за достъп до трезора Ви. Максималното разрешено време за достъп е $HOURS$ час(а) и $MINUTES$ минута/и. Зададеното действие при изтичане на това време е $ACTION$.",
     "placeholders": {
@@ -5484,9 +5572,6 @@
         "example": "Lock"
       }
     }
-  },
-  "customVaultTimeout": {
-    "message": "Персонализирано време за достъп до трезора"
   },
   "vaultTimeoutToLarge": {
     "message": "Времето за достъп до трезора Ви превишава ограничението, определено от организацията Ви."
@@ -6210,7 +6295,7 @@
   },
   "lastSync": {
     "message": "Последно синхронизиране",
-    "description": "Used as a prefix to indicate the last time a sync occured. Example \"Last sync 1968-11-16 00:00:00\""
+    "description": "Used as a prefix to indicate the last time a sync occurred. Example \"Last sync 1968-11-16 00:00:00\""
   },
   "sponsorshipsSynced": {
     "message": "Спонсорствата на собствения сървър са синхронизирани."
@@ -6369,57 +6454,57 @@
   },
   "scim": {
     "message": "Удостоверяване чрез SCIM",
-    "description": "The text, 'SCIM', is an acronymn and should not be translated."
+    "description": "The text, 'SCIM', is an acronym and should not be translated."
   },
   "scimDescription": {
     "message": "Предоставете на потребителите и групите си автоматично удостоверяване със своя предпочитан доставчик на удостоверителни данни като използвате удостоверяване чрез SCIM",
-    "description": "the text, 'SCIM', is an acronymn and should not be translated."
+    "description": "the text, 'SCIM', is an acronym and should not be translated."
   },
   "scimEnabledCheckboxDesc": {
     "message": "Включване на SCIM",
-    "description": "the text, 'SCIM', is an acronymn and should not be translated."
+    "description": "the text, 'SCIM', is an acronym and should not be translated."
   },
   "scimEnabledCheckboxDescHelpText": {
     "message": "Задайте предпочитания си доставчик на удостоверителни данни като настроите адреса и ключа за API на SCIM",
-    "description": "the text, 'SCIM', is an acronymn and should not be translated."
+    "description": "the text, 'SCIM', is an acronym and should not be translated."
   },
   "scimApiKeyHelperText": {
     "message": "Този ключ за API предоставя достъп за управление на потребителите в организацията Ви. Трябва да го пазите в тайна."
   },
   "copyScimKey": {
     "message": "Копиране на ключа за API на SCIM в буфера",
-    "description": "the text, 'SCIM' and 'API', are acronymns and should not be translated."
+    "description": "the text, 'SCIM' and 'API', are acronyms and should not be translated."
   },
   "rotateScimKey": {
     "message": "Смяна на ключа за API на SCIM",
-    "description": "the text, 'SCIM' and 'API', are acronymns and should not be translated."
+    "description": "the text, 'SCIM' and 'API', are acronyms and should not be translated."
   },
   "rotateScimKeyWarning": {
     "message": "Наистина ли искате да смените ключа за API на SCIM? Текущият ключ ще спре да работи за вече настроените интеграции.",
-    "description": "the text, 'SCIM' and 'API', are acronymns and should not be translated."
+    "description": "the text, 'SCIM' and 'API', are acronyms and should not be translated."
   },
   "rotateKey": {
     "message": "Смяна на ключа"
   },
   "scimApiKey": {
     "message": "Ключ за API на SCIM",
-    "description": "the text, 'SCIM' and 'API', are acronymns and should not be translated."
+    "description": "the text, 'SCIM' and 'API', are acronyms and should not be translated."
   },
   "copyScimUrl": {
     "message": "Копиране на адреса на SCIM в буфера",
-    "description": "the text, 'SCIM' and 'URL', are acronymns and should not be translated."
+    "description": "the text, 'SCIM' and 'URL', are acronyms and should not be translated."
   },
   "scimUrl": {
     "message": "Адрес на SCIM",
-    "description": "the text, 'SCIM' and 'URL', are acronymns and should not be translated."
+    "description": "the text, 'SCIM' and 'URL', are acronyms and should not be translated."
   },
   "scimApiKeyRotated": {
     "message": "Ключът за API на SCIM беше сменен успешно",
-    "description": "the text, 'SCIM' and 'API', are acronymns and should not be translated."
+    "description": "the text, 'SCIM' and 'API', are acronyms and should not be translated."
   },
   "scimSettingsSaved": {
     "message": "Настройките за SCIM бяха запазени успешно",
-    "description": "the text, 'SCIM', is an acronymn and should not be translated."
+    "description": "the text, 'SCIM', is an acronym and should not be translated."
   },
   "inputRequired": {
     "message": "Полето е задължително да бъде попълнено."
@@ -7341,6 +7426,9 @@
   "fileUpload": {
     "message": "Качване на файлове"
   },
+  "upload": {
+    "message": "Качване"
+  },
   "acceptedFormats": {
     "message": "Поддържани формати:"
   },
@@ -8201,6 +8289,9 @@
   },
   "addField": {
     "message": "Добавяне на поле"
+  },
+  "editField": {
+    "message": "Edit field"
   },
   "items": {
     "message": "Елементи"
@@ -9073,21 +9164,21 @@
   "current": {
     "message": "Текущо"
   },
-  "secretsManagerSubInfo": {
+  "secretsManagerSubscriptionInfo": {
     "message": "Вашият абонамент за Управлението на тайни ще бъде надграден според избрания план"
   },
   "bitwardenPasswordManager": {
     "message": "Bitwarden — управител на пароли"
   },
   "secretsManagerComplimentaryPasswordManager": {
-    "message": "Your complimentary one year Password Manager subscription will upgrade to the selected plan. You will not be charged until the complimentary period is over."
+    "message": "Вашият безплатен едногодишен абонамент за Управлението на пароли ще бъде надграден до избрания план. Няма да бъдете таксуван(а), докато не изтече безплатния период."
   },
   "fileSavedToDevice": {
     "message": "Файлът е запазен на устройството. Можете да го намерите в мястото за сваляния на устройството."
   },
   "publicApi": {
     "message": "Публичен ППИ",
-    "description": "The text, 'API', is an acronymn and should not be translated."
+    "description": "The text, 'API', is an acronym and should not be translated."
   },
   "showCharacterCount": {
     "message": "Показване на броя знаци"

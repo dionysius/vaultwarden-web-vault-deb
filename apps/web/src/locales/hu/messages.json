@@ -144,7 +144,7 @@
     "message": "Biztonsági kód (CVV)"
   },
   "securityCodeSlashCVV": {
-    "message": "Security code / CVV"
+    "message": "Biztonsági kód / CVV"
   },
   "identityName": {
     "message": "Személyazonosság megnevezés"
@@ -269,9 +269,18 @@
   "cfTypeBoolean": {
     "message": "Logikai"
   },
+  "cfTypeCheckbox": {
+    "message": "Jelölődoboz"
+  },
   "cfTypeLinked": {
     "message": "Csatolt",
     "description": "This describes a field that is 'linked' (related) to another field."
+  },
+  "fieldType": {
+    "message": "Mezőtípus"
+  },
+  "fieldLabel": {
+    "message": "Mezőfelirat"
   },
   "remove": {
     "message": "Eltávolítás"
@@ -511,6 +520,24 @@
   "viewItem": {
     "message": "Elem megtekintése"
   },
+  "newItemHeader": {
+    "message": "Új $TYPE$",
+    "placeholders": {
+      "type": {
+        "content": "$1",
+        "example": "login"
+      }
+    }
+  },
+  "editItemHeader": {
+    "message": "$TYPE$ szerkesztése",
+    "placeholders": {
+      "type": {
+        "content": "$1",
+        "example": "login"
+      }
+    }
+  },
   "viewItemType": {
     "message": "$ITEMTYPE$ megtekintése",
     "placeholders": {
@@ -591,6 +618,45 @@
   "copyUri": {
     "message": "URI másolása",
     "description": "Copy URI to clipboard"
+  },
+  "copyCustomField": {
+    "message": "$FIELD$ másolása",
+    "placeholders": {
+      "field": {
+        "content": "$1",
+        "example": "Custom field label"
+      }
+    }
+  },
+  "copyWebsite": {
+    "message": "Webhely másolása"
+  },
+  "copyNotes": {
+    "message": "Jegyzet másolása"
+  },
+  "copyAddress": {
+    "message": "Postai cím másolása"
+  },
+  "copyPhone": {
+    "message": "Telefonszám másolása"
+  },
+  "copyEmail": {
+    "message": "Email cím másolása"
+  },
+  "copyCompany": {
+    "message": "Cég másolása"
+  },
+  "copySSN": {
+    "message": "Társadalombiztosítási szám másolása"
+  },
+  "copyPassportNumber": {
+    "message": "Útlevélszám másolása"
+  },
+  "copyLicenseNumber": {
+    "message": "Vezetői engedély szám másolása"
+  },
+  "copyName": {
+    "message": "Név másolása"
   },
   "me": {
     "message": "Én"
@@ -959,6 +1025,18 @@
   },
   "settings": {
     "message": "Beállítások"
+  },
+  "accountEmail": {
+    "message": "Fiók email cím"
+  },
+  "requestHint": {
+    "message": "Tipp kérése"
+  },
+  "requestPasswordHint": {
+    "message": "Jelszó emlékeztető kérése"
+  },
+  "enterYourAccountEmailAddressAndYourPasswordHintWillBeSentToYou": {
+    "message": "Adjuk meg fiók email címét és elküldésre kerül a jelszóra vonatkozó tipp."
   },
   "passwordHint": {
     "message": "Jelszó emlékeztető"
@@ -3981,6 +4059,9 @@
   "vaultTimeout": {
     "message": "Széf időkifutás"
   },
+  "vaultTimeout1": {
+    "message": "Időtúllépés"
+  },
   "vaultTimeoutDesc": {
     "message": "Válasszuk ki, hogy a széfnél mikor legyen időkifutás és a kiválasztott művelet végrehajtása."
   },
@@ -4249,7 +4330,7 @@
   },
   "lock": {
     "message": "Lezárás",
-    "description": "Verb form: to make secure or inaccesible by"
+    "description": "Verb form: to make secure or inaccessible by"
   },
   "trash": {
     "message": "Lomtár",
@@ -4845,12 +4926,6 @@
   },
   "deleteAnyCollection": {
     "message": "Bármely gyűjtemény törlése"
-  },
-  "editAssignedCollections": {
-    "message": "Hozzárendelt gyűjtemények szerkesztése"
-  },
-  "deleteAssignedCollections": {
-    "message": "Hozzárendelt gyűjtemények törlése"
   },
   "manageGroups": {
     "message": "Csoportok kezelése"
@@ -5459,6 +5534,19 @@
       }
     }
   },
+  "vaultTimeoutPolicyInEffect1": {
+    "message": "$HOURS$ óra és $MINUTES$ perc maximum.",
+    "placeholders": {
+      "hours": {
+        "content": "$1",
+        "example": "5"
+      },
+      "minutes": {
+        "content": "$2",
+        "example": "5"
+      }
+    }
+  },
   "vaultTimeoutPolicyWithActionInEffect": {
     "message": "A szervezeti házirendek hatással vannak a széf időkorlátjára. A széf időkorlátja legfeljebb $HOURS$ óra és $MINUTES$ perc lehet. A széf időkifutási művelete $ACTION$.",
     "placeholders": {
@@ -5484,9 +5572,6 @@
         "example": "Lock"
       }
     }
-  },
-  "customVaultTimeout": {
-    "message": "Egyedi széf időkifutás"
   },
   "vaultTimeoutToLarge": {
     "message": "A széf időkorlátja túllépi a szervezet által beállított korlátozást."
@@ -6210,7 +6295,7 @@
   },
   "lastSync": {
     "message": "Utolsó szinkronizálás",
-    "description": "Used as a prefix to indicate the last time a sync occured. Example \"Last sync 1968-11-16 00:00:00\""
+    "description": "Used as a prefix to indicate the last time a sync occurred. Example \"Last sync 1968-11-16 00:00:00\""
   },
   "sponsorshipsSynced": {
     "message": "A saját üzemeltetésű szponzorálások szinkronizálásra kerültek."
@@ -6369,57 +6454,57 @@
   },
   "scim": {
     "message": "SCIM ellátás",
-    "description": "The text, 'SCIM', is an acronymn and should not be translated."
+    "description": "The text, 'SCIM', is an acronym and should not be translated."
   },
   "scimDescription": {
     "message": "A felhasználók és csoportok automatikusan biztosítása a kívánt identitás szolgáltatóval a SCIM szolgáltatáson keresztül.",
-    "description": "the text, 'SCIM', is an acronymn and should not be translated."
+    "description": "the text, 'SCIM', is an acronym and should not be translated."
   },
   "scimEnabledCheckboxDesc": {
     "message": "SCIM engedélyezése",
-    "description": "the text, 'SCIM', is an acronymn and should not be translated."
+    "description": "the text, 'SCIM', is an acronym and should not be translated."
   },
   "scimEnabledCheckboxDescHelpText": {
     "message": "Állítsuk be a kívánt azonosító szolgáltatót a webcím és a SCIM API kulcs konfigurálásával.",
-    "description": "the text, 'SCIM', is an acronymn and should not be translated."
+    "description": "the text, 'SCIM', is an acronym and should not be translated."
   },
   "scimApiKeyHelperText": {
     "message": "Ez az API kulcs hozzáféréssel rendelkezik a szervezeten belüli felhasználók kezeléséhez. Célszerű titokban tartani."
   },
   "copyScimKey": {
     "message": "A SCIM API kulcs másolása a vágólapra",
-    "description": "the text, 'SCIM' and 'API', are acronymns and should not be translated."
+    "description": "the text, 'SCIM' and 'API', are acronyms and should not be translated."
   },
   "rotateScimKey": {
     "message": "A SCIM API kulcs forgatása",
-    "description": "the text, 'SCIM' and 'API', are acronymns and should not be translated."
+    "description": "the text, 'SCIM' and 'API', are acronyms and should not be translated."
   },
   "rotateScimKeyWarning": {
     "message": "Biztosan forgatni akarjuk a SCIM API kulcsot? A jelenlegi kulcs már nem működik egyik meglévő integrációhoz sem.",
-    "description": "the text, 'SCIM' and 'API', are acronymns and should not be translated."
+    "description": "the text, 'SCIM' and 'API', are acronyms and should not be translated."
   },
   "rotateKey": {
     "message": "Kulcs forgatása"
   },
   "scimApiKey": {
     "message": "SCIM API kulcs",
-    "description": "the text, 'SCIM' and 'API', are acronymns and should not be translated."
+    "description": "the text, 'SCIM' and 'API', are acronyms and should not be translated."
   },
   "copyScimUrl": {
     "message": "A SCIM cégpont webcím másolása a vágólapra",
-    "description": "the text, 'SCIM' and 'URL', are acronymns and should not be translated."
+    "description": "the text, 'SCIM' and 'URL', are acronyms and should not be translated."
   },
   "scimUrl": {
     "message": "SCIM webcím",
-    "description": "the text, 'SCIM' and 'URL', are acronymns and should not be translated."
+    "description": "the text, 'SCIM' and 'URL', are acronyms and should not be translated."
   },
   "scimApiKeyRotated": {
     "message": "A SCIM API kulcs sikeresen forgatásra került.",
-    "description": "the text, 'SCIM' and 'API', are acronymns and should not be translated."
+    "description": "the text, 'SCIM' and 'API', are acronyms and should not be translated."
   },
   "scimSettingsSaved": {
     "message": "A SCIM beállítások sikeresen mentésre kerültek.",
-    "description": "the text, 'SCIM', is an acronymn and should not be translated."
+    "description": "the text, 'SCIM', is an acronym and should not be translated."
   },
   "inputRequired": {
     "message": "Az adatbevitel kötelező."
@@ -7341,6 +7426,9 @@
   "fileUpload": {
     "message": "Fájlfeltöltés"
   },
+  "upload": {
+    "message": "Feltöltés"
+  },
   "acceptedFormats": {
     "message": "Elfogadott formátumok:"
   },
@@ -8201,6 +8289,9 @@
   },
   "addField": {
     "message": "Mező hozzáadása"
+  },
+  "editField": {
+    "message": "Mező szerkesztése"
   },
   "items": {
     "message": "Elemek"
@@ -9073,7 +9164,7 @@
   "current": {
     "message": "Jelenlegi"
   },
-  "secretsManagerSubInfo": {
+  "secretsManagerSubscriptionInfo": {
     "message": "A Titkos kód kezelő előfizetés a kiválasztott csomag alapján frissül."
   },
   "bitwardenPasswordManager": {
@@ -9087,7 +9178,7 @@
   },
   "publicApi": {
     "message": "Nyilvános API",
-    "description": "The text, 'API', is an acronymn and should not be translated."
+    "description": "The text, 'API', is an acronym and should not be translated."
   },
   "showCharacterCount": {
     "message": "Karakterszámláló megjelenítése"

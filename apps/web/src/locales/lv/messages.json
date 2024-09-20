@@ -46,7 +46,7 @@
     "message": "Kartes īpašnieka vārds"
   },
   "loginCredentials": {
-    "message": "Login credentials"
+    "message": "Pieteikšanās dati"
   },
   "personalDetails": {
     "message": "Personiskā informācija"
@@ -73,7 +73,7 @@
     "message": "Vienuma vēsture"
   },
   "authenticatorKey": {
-    "message": "Authenticator key"
+    "message": "Autentificētāja atslēga"
   },
   "autofillOptions": {
     "message": "Automātiskās aizpildes iespējas"
@@ -237,13 +237,13 @@
     "message": "Autentificētāja atslēga (TOTP)"
   },
   "totpHelperTitle": {
-    "message": "Make 2-step verification seamless"
+    "message": "Padarīt divpakāpju apliecināšanu plūdenu"
   },
   "totpHelper": {
-    "message": "Bitwarden can store and fill 2-step verification codes. Copy and paste the key into this field."
+    "message": "Bitwarden var glabāt un aizpildīt divpakāpju apliecināšanas kodus. Atslēga jāievieto starpliktuvē un jāielīmē šajā laukā."
   },
   "totpHelperWithCapture": {
-    "message": "Bitwarden can store and fill 2-step verification codes. Select the camera icon to take a screenshot of this website's authenticator QR code, or copy and paste the key into this field."
+    "message": "Bitwarden var glabāt un aizpildīt divpakāpju apliecināšanas kodus. Jāizvēlas kameras ikona, lai veiktu tīmekļvietnes autentificētāja kvadrātkoda ekrānuzņēmumu, vai jāievieto starpliktuvē atslēga un jāielīmē šajā laukā."
   },
   "learnMoreAboutAuthenticators": {
     "message": "Uzzināt vairāk par autentificētājiem"
@@ -269,9 +269,18 @@
   "cfTypeBoolean": {
     "message": "Patiesuma vērtība"
   },
+  "cfTypeCheckbox": {
+    "message": "Checkbox"
+  },
   "cfTypeLinked": {
     "message": "Saistīts",
     "description": "This describes a field that is 'linked' (related) to another field."
+  },
+  "fieldType": {
+    "message": "Field type"
+  },
+  "fieldLabel": {
+    "message": "Field label"
   },
   "remove": {
     "message": "Noņemt"
@@ -511,6 +520,24 @@
   "viewItem": {
     "message": "Skatīt vienumu"
   },
+  "newItemHeader": {
+    "message": "Jauns/a $TYPE$",
+    "placeholders": {
+      "type": {
+        "content": "$1",
+        "example": "login"
+      }
+    }
+  },
+  "editItemHeader": {
+    "message": "Labot $TYPE$",
+    "placeholders": {
+      "type": {
+        "content": "$1",
+        "example": "login"
+      }
+    }
+  },
   "viewItemType": {
     "message": "Apskatīt $ITEMTYPE$",
     "placeholders": {
@@ -591,6 +618,45 @@
   "copyUri": {
     "message": "Ievietot URI starpliktuvē",
     "description": "Copy URI to clipboard"
+  },
+  "copyCustomField": {
+    "message": "Ievietot $FIELD$ starpliktuvē",
+    "placeholders": {
+      "field": {
+        "content": "$1",
+        "example": "Custom field label"
+      }
+    }
+  },
+  "copyWebsite": {
+    "message": "Ievietot tīmekļvietni starpliktuvē"
+  },
+  "copyNotes": {
+    "message": "Ievietot piezīmes starpliktuvē"
+  },
+  "copyAddress": {
+    "message": "Ievietot adresi starpliktuvē"
+  },
+  "copyPhone": {
+    "message": "Ievietot tālruņa numuru starpliktuvē"
+  },
+  "copyEmail": {
+    "message": "Ievietot e-pasta adresi starpliktuvē"
+  },
+  "copyCompany": {
+    "message": "Ievietot uzņēmumu starpliktuvē"
+  },
+  "copySSN": {
+    "message": "Ievietot sociālās nodrošināšanas numuru starpliktuvē"
+  },
+  "copyPassportNumber": {
+    "message": "Ievietot pases numuru starpliktuvē"
+  },
+  "copyLicenseNumber": {
+    "message": "Ievietot licences numuru starpliktuvē"
+  },
+  "copyName": {
+    "message": "Ievietot nosaukumu starpliktuvē"
   },
   "me": {
     "message": "Es"
@@ -959,6 +1025,18 @@
   },
   "settings": {
     "message": "Iestatījumi"
+  },
+  "accountEmail": {
+    "message": "Konta e-pasta adrese"
+  },
+  "requestHint": {
+    "message": "Pieprasīt norādi"
+  },
+  "requestPasswordHint": {
+    "message": "Pieprasīt paroles norādi"
+  },
+  "enterYourAccountEmailAddressAndYourPasswordHintWillBeSentToYou": {
+    "message": "Jāievada sava konta e-pasta adrese, un paroles norāde tiks nosūtīta"
   },
   "passwordHint": {
     "message": "Paroles norāde"
@@ -3981,6 +4059,9 @@
   "vaultTimeout": {
     "message": "Glabātavas noildze"
   },
+  "vaultTimeout1": {
+    "message": "Noildze"
+  },
   "vaultTimeoutDesc": {
     "message": "Izvēlēties, kad glabātavai iestāsies noildze un tiks izpildīta atlasītā darbība."
   },
@@ -4249,7 +4330,7 @@
   },
   "lock": {
     "message": "Aizslēgt",
-    "description": "Verb form: to make secure or inaccesible by"
+    "description": "Verb form: to make secure or inaccessible by"
   },
   "trash": {
     "message": "Atkritne",
@@ -4845,12 +4926,6 @@
   },
   "deleteAnyCollection": {
     "message": "Izdzēst jebkuru kolekciju"
-  },
-  "editAssignedCollections": {
-    "message": "Labot norīkotos krājumus"
-  },
-  "deleteAssignedCollections": {
-    "message": "Izdzēst norīkotos krājumus"
   },
   "manageGroups": {
     "message": "Pārvaldīt kopas"
@@ -5459,6 +5534,19 @@
       }
     }
   },
+  "vaultTimeoutPolicyInEffect1": {
+    "message": "Ne vairāk kā $HOURS$ stunda(s) un $MINUTES$ minūte(s).",
+    "placeholders": {
+      "hours": {
+        "content": "$1",
+        "example": "5"
+      },
+      "minutes": {
+        "content": "$2",
+        "example": "5"
+      }
+    }
+  },
   "vaultTimeoutPolicyWithActionInEffect": {
     "message": "Apvienības nosacījumi ietekmē glabātavas noildzi. Lielākā atļautā glabātavas noildze ir $HOURS$ stunda(s) un $MINUTES$ minūte(s). Kā glabātavas noildzes darbība ir uzstādīta $ACTION$.",
     "placeholders": {
@@ -5484,9 +5572,6 @@
         "example": "Lock"
       }
     }
-  },
-  "customVaultTimeout": {
-    "message": "Pielāgota glabātavas noildze"
   },
   "vaultTimeoutToLarge": {
     "message": "Glabātavas noildze pārsniedz apvienības uzstādītos ierobežojumus."
@@ -6210,7 +6295,7 @@
   },
   "lastSync": {
     "message": "Pēdējā sinhronizācija",
-    "description": "Used as a prefix to indicate the last time a sync occured. Example \"Last sync 1968-11-16 00:00:00\""
+    "description": "Used as a prefix to indicate the last time a sync occurred. Example \"Last sync 1968-11-16 00:00:00\""
   },
   "sponsorshipsSynced": {
     "message": "Pašizvietotās pabalstītājdarbības vienādotas."
@@ -6369,57 +6454,57 @@
   },
   "scim": {
     "message": "SCIM nodrošināšana",
-    "description": "The text, 'SCIM', is an acronymn and should not be translated."
+    "description": "The text, 'SCIM', is an acronym and should not be translated."
   },
   "scimDescription": {
     "message": "Automātiski nodrošina lietotājus un kopas ar vēlamo identitātes nodrošinātāju, izmantojot SCIM nodrošināšanu",
-    "description": "the text, 'SCIM', is an acronymn and should not be translated."
+    "description": "the text, 'SCIM', is an acronym and should not be translated."
   },
   "scimEnabledCheckboxDesc": {
     "message": "Iespējot SCIM",
-    "description": "the text, 'SCIM', is an acronymn and should not be translated."
+    "description": "the text, 'SCIM', is an acronym and should not be translated."
   },
   "scimEnabledCheckboxDescHelpText": {
     "message": "Uzstādīt vēlamo identitātes nodrošinātāju ar URL un SCIM API atslēgas iestatīšanu",
-    "description": "the text, 'SCIM', is an acronymn and should not be translated."
+    "description": "the text, 'SCIM', is an acronym and should not be translated."
   },
   "scimApiKeyHelperText": {
     "message": "Šai API atslēgai ir piekļuve pāŗvaldīt apvienības lietotājus. Tā ir jātur noslēpumā."
   },
   "copyScimKey": {
     "message": "Ievietot SCIM API atslēgu starpliktuvē",
-    "description": "the text, 'SCIM' and 'API', are acronymns and should not be translated."
+    "description": "the text, 'SCIM' and 'API', are acronyms and should not be translated."
   },
   "rotateScimKey": {
     "message": "Nomainīt SCIM API atslēgu",
-    "description": "the text, 'SCIM' and 'API', are acronymns and should not be translated."
+    "description": "the text, 'SCIM' and 'API', are acronyms and should not be translated."
   },
   "rotateScimKeyWarning": {
     "message": "Vai tiešām nomainīt SCIM API atslēgu? Pašreizējā atslēga vairs nedarbosies nekur, kur tā ir norādīta.",
-    "description": "the text, 'SCIM' and 'API', are acronymns and should not be translated."
+    "description": "the text, 'SCIM' and 'API', are acronyms and should not be translated."
   },
   "rotateKey": {
     "message": "Mainīt atslēgu"
   },
   "scimApiKey": {
     "message": "SCIM API atslēga",
-    "description": "the text, 'SCIM' and 'API', are acronymns and should not be translated."
+    "description": "the text, 'SCIM' and 'API', are acronyms and should not be translated."
   },
   "copyScimUrl": {
     "message": "Ievietot SCIM galapunkta URL starpliktuvē",
-    "description": "the text, 'SCIM' and 'URL', are acronymns and should not be translated."
+    "description": "the text, 'SCIM' and 'URL', are acronyms and should not be translated."
   },
   "scimUrl": {
     "message": "SCIM URL",
-    "description": "the text, 'SCIM' and 'URL', are acronymns and should not be translated."
+    "description": "the text, 'SCIM' and 'URL', are acronyms and should not be translated."
   },
   "scimApiKeyRotated": {
     "message": "SCIM API atslēga ir veiksmīgi nomainīta",
-    "description": "the text, 'SCIM' and 'API', are acronymns and should not be translated."
+    "description": "the text, 'SCIM' and 'API', are acronyms and should not be translated."
   },
   "scimSettingsSaved": {
     "message": "SCIM iestatījumi ir veiksmīgi saglabāti",
-    "description": "the text, 'SCIM', is an acronymn and should not be translated."
+    "description": "the text, 'SCIM', is an acronym and should not be translated."
   },
   "inputRequired": {
     "message": "Jāievada vērtība."
@@ -7341,6 +7426,9 @@
   "fileUpload": {
     "message": "Datņu augšupielāde"
   },
+  "upload": {
+    "message": "Augšupielādēt"
+  },
   "acceptedFormats": {
     "message": "Pieļaujamie veidi:"
   },
@@ -8201,6 +8289,9 @@
   },
   "addField": {
     "message": "Pievienot lauku"
+  },
+  "editField": {
+    "message": "Edit field"
   },
   "items": {
     "message": "Vienumi"
@@ -9073,7 +9164,7 @@
   "current": {
     "message": "Current"
   },
-  "secretsManagerSubInfo": {
+  "secretsManagerSubscriptionInfo": {
     "message": "Noslēpumu pārvaldnieka abonements tiks uzlabots atbilstoši izvēlētajam plānam"
   },
   "bitwardenPasswordManager": {
@@ -9087,7 +9178,7 @@
   },
   "publicApi": {
     "message": "Publiskais API",
-    "description": "The text, 'API', is an acronymn and should not be translated."
+    "description": "The text, 'API', is an acronym and should not be translated."
   },
   "showCharacterCount": {
     "message": "Rādīt rakstzīmju skaitu"

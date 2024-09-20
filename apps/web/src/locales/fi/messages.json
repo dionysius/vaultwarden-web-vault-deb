@@ -144,7 +144,7 @@
     "message": "Turvakoodi (CVC/CVV)"
   },
   "securityCodeSlashCVV": {
-    "message": "Security code / CVV"
+    "message": "Turvakoodi (CVC/CVV)"
   },
   "identityName": {
     "message": "Henkilöllisyyden nimi"
@@ -269,9 +269,18 @@
   "cfTypeBoolean": {
     "message": "Totuusarvo"
   },
+  "cfTypeCheckbox": {
+    "message": "Checkbox"
+  },
   "cfTypeLinked": {
     "message": "Linkitetty",
     "description": "This describes a field that is 'linked' (related) to another field."
+  },
+  "fieldType": {
+    "message": "Field type"
+  },
+  "fieldLabel": {
+    "message": "Field label"
   },
   "remove": {
     "message": "Poista"
@@ -511,6 +520,24 @@
   "viewItem": {
     "message": "Näytä kohde"
   },
+  "newItemHeader": {
+    "message": "Uusi $TYPE$",
+    "placeholders": {
+      "type": {
+        "content": "$1",
+        "example": "login"
+      }
+    }
+  },
+  "editItemHeader": {
+    "message": "Muokkaa: $TYPE$",
+    "placeholders": {
+      "type": {
+        "content": "$1",
+        "example": "login"
+      }
+    }
+  },
   "viewItemType": {
     "message": "Näytä $ITEMTYPE$",
     "placeholders": {
@@ -566,7 +593,7 @@
     }
   },
   "copySuccessful": {
-    "message": "Copy Successful"
+    "message": "Kopiointi onnistui"
   },
   "copyValue": {
     "message": "Kopioi arvo",
@@ -591,6 +618,45 @@
   "copyUri": {
     "message": "Kopioi URI",
     "description": "Copy URI to clipboard"
+  },
+  "copyCustomField": {
+    "message": "Kopioi $FIELD$",
+    "placeholders": {
+      "field": {
+        "content": "$1",
+        "example": "Custom field label"
+      }
+    }
+  },
+  "copyWebsite": {
+    "message": "Kopioi verkkosivusto"
+  },
+  "copyNotes": {
+    "message": "Kopioi merkinnät"
+  },
+  "copyAddress": {
+    "message": "Kopioi osoite"
+  },
+  "copyPhone": {
+    "message": "Kopioi puhelinnumero"
+  },
+  "copyEmail": {
+    "message": "Kopioi sähköpostiosoite"
+  },
+  "copyCompany": {
+    "message": "Kopioi yritys"
+  },
+  "copySSN": {
+    "message": "Kopioi henkilötunnus"
+  },
+  "copyPassportNumber": {
+    "message": "Kopioi passin numero"
+  },
+  "copyLicenseNumber": {
+    "message": "Kopioi ajokortin numero"
+  },
+  "copyName": {
+    "message": "Kopioi nimi"
   },
   "me": {
     "message": "Minä"
@@ -959,6 +1025,18 @@
   },
   "settings": {
     "message": "Asetukset"
+  },
+  "accountEmail": {
+    "message": "Tilin sähköpostiosoite"
+  },
+  "requestHint": {
+    "message": "Pyydä vihje"
+  },
+  "requestPasswordHint": {
+    "message": "Pyydä salasanan vihje"
+  },
+  "enterYourAccountEmailAddressAndYourPasswordHintWillBeSentToYou": {
+    "message": "Syötä tilisi sähköpostiosoite, niin salasanavihjeesi lähetetään sinulle sähköpostitse"
   },
   "passwordHint": {
     "message": "Salasanavihje"
@@ -3981,6 +4059,9 @@
   "vaultTimeout": {
     "message": "Holvin aikakatkaisu"
   },
+  "vaultTimeout1": {
+    "message": "Aikakatkaisu"
+  },
   "vaultTimeoutDesc": {
     "message": "Määritä milloin holvin aikakatkaisutoiminto suoritetaan."
   },
@@ -4048,7 +4129,7 @@
     "message": "Valittu"
   },
   "recommended": {
-    "message": "Recommended"
+    "message": "Suositeltu"
   },
   "ownership": {
     "message": "Omistus"
@@ -4249,7 +4330,7 @@
   },
   "lock": {
     "message": "Lukitse",
-    "description": "Verb form: to make secure or inaccesible by"
+    "description": "Verb form: to make secure or inaccessible by"
   },
   "trash": {
     "message": "Roskakori",
@@ -4845,12 +4926,6 @@
   },
   "deleteAnyCollection": {
     "message": "Poista kokoelmia"
-  },
-  "editAssignedCollections": {
-    "message": "Muokkaa kokoelmamäärityksiä"
-  },
-  "deleteAssignedCollections": {
-    "message": "Poista kokoelmamäärityksiä"
   },
   "manageGroups": {
     "message": "Ryhmien hallinta"
@@ -5459,6 +5534,19 @@
       }
     }
   },
+  "vaultTimeoutPolicyInEffect1": {
+    "message": "Enintään $HOURS$ tunti(a) ja $MINUTES$ minuutti(a).",
+    "placeholders": {
+      "hours": {
+        "content": "$1",
+        "example": "5"
+      },
+      "minutes": {
+        "content": "$2",
+        "example": "5"
+      }
+    }
+  },
   "vaultTimeoutPolicyWithActionInEffect": {
     "message": "Organisaatiokäytännöt vaikuttavat holvisi aikakatkaisuun. Suurin sallittu aika on $HOURS$ tunti(a) $MINUTES$ minuutti(a). Holvillesi määritetty aikakatkaisutoiminto on $ACTION$.",
     "placeholders": {
@@ -5484,9 +5572,6 @@
         "example": "Lock"
       }
     }
-  },
-  "customVaultTimeout": {
-    "message": "Mukautettu holvin aikakatkaisu"
   },
   "vaultTimeoutToLarge": {
     "message": "Holvisi aikakatkaisu ylittää organisaatiosi asettamat rajoitukset."
@@ -6210,7 +6295,7 @@
   },
   "lastSync": {
     "message": "Viimeisin synkronointi",
-    "description": "Used as a prefix to indicate the last time a sync occured. Example \"Last sync 1968-11-16 00:00:00\""
+    "description": "Used as a prefix to indicate the last time a sync occurred. Example \"Last sync 1968-11-16 00:00:00\""
   },
   "sponsorshipsSynced": {
     "message": "Itse ylläpidetyt sponsoroinnit on synkronoitu."
@@ -6369,57 +6454,57 @@
   },
   "scim": {
     "message": "SCIM-provisiointi",
-    "description": "The text, 'SCIM', is an acronymn and should not be translated."
+    "description": "The text, 'SCIM', is an acronym and should not be translated."
   },
   "scimDescription": {
     "message": "Provisioi käyttäjät ja ryhmät automaattisesti haluamasi identiteettitoimittajan kanssa SCIM-provisioinnilla",
-    "description": "the text, 'SCIM', is an acronymn and should not be translated."
+    "description": "the text, 'SCIM', is an acronym and should not be translated."
   },
   "scimEnabledCheckboxDesc": {
     "message": "Ota SCIM käyttöön",
-    "description": "the text, 'SCIM', is an acronymn and should not be translated."
+    "description": "the text, 'SCIM', is an acronym and should not be translated."
   },
   "scimEnabledCheckboxDescHelpText": {
     "message": "Määritä haluamasi identiteettitoimittaja määrittämällä sen URL-osoite ja SCIM API -avain",
-    "description": "the text, 'SCIM', is an acronymn and should not be translated."
+    "description": "the text, 'SCIM', is an acronym and should not be translated."
   },
   "scimApiKeyHelperText": {
     "message": "Tällä API-avaimella on oikeus hallita organisaation käyttäjiä. Se tulee pitää salassa."
   },
   "copyScimKey": {
     "message": "Kopioi SCIM API-avain leikepöydälle",
-    "description": "the text, 'SCIM' and 'API', are acronymns and should not be translated."
+    "description": "the text, 'SCIM' and 'API', are acronyms and should not be translated."
   },
   "rotateScimKey": {
     "message": "Uudista SCIM API-avain",
-    "description": "the text, 'SCIM' and 'API', are acronymns and should not be translated."
+    "description": "the text, 'SCIM' and 'API', are acronyms and should not be translated."
   },
   "rotateScimKeyWarning": {
     "message": "Haluatko varmasti uudistaa SCIM API-avaimen? Nykyinen avain ei enää toimi olemassa oleville integraatioille.",
-    "description": "the text, 'SCIM' and 'API', are acronymns and should not be translated."
+    "description": "the text, 'SCIM' and 'API', are acronyms and should not be translated."
   },
   "rotateKey": {
     "message": "Uudista avain"
   },
   "scimApiKey": {
     "message": "SCIM API-avain",
-    "description": "the text, 'SCIM' and 'API', are acronymns and should not be translated."
+    "description": "the text, 'SCIM' and 'API', are acronyms and should not be translated."
   },
   "copyScimUrl": {
     "message": "Kopioi SCIM-päätteen URL-osoite leikepöydälle",
-    "description": "the text, 'SCIM' and 'URL', are acronymns and should not be translated."
+    "description": "the text, 'SCIM' and 'URL', are acronyms and should not be translated."
   },
   "scimUrl": {
     "message": "SCIM URL",
-    "description": "the text, 'SCIM' and 'URL', are acronymns and should not be translated."
+    "description": "the text, 'SCIM' and 'URL', are acronyms and should not be translated."
   },
   "scimApiKeyRotated": {
     "message": "SCIM API-avain uudistettiin",
-    "description": "the text, 'SCIM' and 'API', are acronymns and should not be translated."
+    "description": "the text, 'SCIM' and 'API', are acronyms and should not be translated."
   },
   "scimSettingsSaved": {
     "message": "SCIM-asetukset tallennettiin",
-    "description": "the text, 'SCIM', is an acronymn and should not be translated."
+    "description": "the text, 'SCIM', is an acronym and should not be translated."
   },
   "inputRequired": {
     "message": "Syöte vaaditaan."
@@ -7341,6 +7426,9 @@
   "fileUpload": {
     "message": "Valitse tuotava tiedosto"
   },
+  "upload": {
+    "message": "Lähetä"
+  },
   "acceptedFormats": {
     "message": "Hyväksytyt muodot:"
   },
@@ -8202,6 +8290,9 @@
   "addField": {
     "message": "Lisää kenttä"
   },
+  "editField": {
+    "message": "Edit field"
+  },
   "items": {
     "message": "Kohteet"
   },
@@ -8772,25 +8863,25 @@
     "message": "Tarkastele organisaation jäsenten käyttöoikeuksia ryhmiin, kokoelmiin ja kokoelmien kohteisiin. CSV-vienti tuottaa yksityiskohtaisen jäsenkohtaisen erittelyn, joka sisältää kokoelmaoikeudet ja tilimääritykset."
   },
   "memberAccessReportNoCollection": {
-    "message": "(No Collection)"
+    "message": "(Ei kokoelmaa)"
   },
   "memberAccessReportNoCollectionPermission": {
     "message": "(No Collection Permission)"
   },
   "memberAccessReportNoGroup": {
-    "message": "(No Group)"
+    "message": "(Ei ryhmää)"
   },
   "memberAccessReportTwoFactorEnabledTrue": {
-    "message": "On"
+    "message": "Käytössä"
   },
   "memberAccessReportTwoFactorEnabledFalse": {
-    "message": "Off"
+    "message": "Ei käytössä"
   },
   "memberAccessReportAuthenticationEnabledTrue": {
-    "message": "On"
+    "message": "Käytössä"
   },
   "memberAccessReportAuthenticationEnabledFalse": {
-    "message": "Off"
+    "message": "Ei käytössä"
   },
   "higherKDFIterations": {
     "message": "Korkeampi KDF-toistojen määrä vahvistaa pääsalasanasi suojausta väsytyshyökkäyksien varalta."
@@ -9023,7 +9114,7 @@
     "message": "Ryhmien ja käyttäjien synkronointi hakemistosta"
   },
   "familyPlanUpgradeMessage": {
-    "message": "Secure your family logins"
+    "message": "Suojaa perheesi kirjautumistiedot"
   },
   "accessToPremiumFeatures": {
     "message": "Premium-ominaisuuksien käyttöoikeus"
@@ -9073,8 +9164,8 @@
   "current": {
     "message": "Nykyinen"
   },
-  "secretsManagerSubInfo": {
-    "message": "Salaisuushallinta-tilauksesi päivittyy valittua tilausta vastaavaksi"
+  "secretsManagerSubscriptionInfo": {
+    "message": "Your Secrets Manager subscription will upgrade based on the plan selected"
   },
   "bitwardenPasswordManager": {
     "message": "Bitwarden Salasanahallinta"
@@ -9083,17 +9174,17 @@
     "message": "Your complimentary one year Password Manager subscription will upgrade to the selected plan. You will not be charged until the complimentary period is over."
   },
   "fileSavedToDevice": {
-    "message": "File saved to device. Manage from your device downloads."
+    "message": "Tiedosto tallennettiin laitteelle. Hallitse sitä laitteesi latauksista."
   },
   "publicApi": {
     "message": "Julkinen API",
-    "description": "The text, 'API', is an acronymn and should not be translated."
+    "description": "The text, 'API', is an acronym and should not be translated."
   },
   "showCharacterCount": {
-    "message": "Show character count"
+    "message": "Näytä merkkimäärä"
   },
   "hideCharacterCount": {
-    "message": "Hide character count"
+    "message": "Piilota merkkimäärä"
   },
   "editAccess": {
     "message": "Muokkaa käyttöoikeuksia"

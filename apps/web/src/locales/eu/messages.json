@@ -269,9 +269,18 @@
   "cfTypeBoolean": {
     "message": "Boolearra"
   },
+  "cfTypeCheckbox": {
+    "message": "Checkbox"
+  },
   "cfTypeLinked": {
     "message": "Konektatuta",
     "description": "This describes a field that is 'linked' (related) to another field."
+  },
+  "fieldType": {
+    "message": "Field type"
+  },
+  "fieldLabel": {
+    "message": "Field label"
   },
   "remove": {
     "message": "Ezabatu"
@@ -511,6 +520,24 @@
   "viewItem": {
     "message": "Bistaratu elementua"
   },
+  "newItemHeader": {
+    "message": "New $TYPE$",
+    "placeholders": {
+      "type": {
+        "content": "$1",
+        "example": "login"
+      }
+    }
+  },
+  "editItemHeader": {
+    "message": "Edit $TYPE$",
+    "placeholders": {
+      "type": {
+        "content": "$1",
+        "example": "login"
+      }
+    }
+  },
   "viewItemType": {
     "message": "View $ITEMTYPE$",
     "placeholders": {
@@ -591,6 +618,45 @@
   "copyUri": {
     "message": "Kopiatu URIa",
     "description": "Copy URI to clipboard"
+  },
+  "copyCustomField": {
+    "message": "Copy $FIELD$",
+    "placeholders": {
+      "field": {
+        "content": "$1",
+        "example": "Custom field label"
+      }
+    }
+  },
+  "copyWebsite": {
+    "message": "Copy website"
+  },
+  "copyNotes": {
+    "message": "Copy notes"
+  },
+  "copyAddress": {
+    "message": "Copy address"
+  },
+  "copyPhone": {
+    "message": "Copy phone"
+  },
+  "copyEmail": {
+    "message": "Copy email"
+  },
+  "copyCompany": {
+    "message": "Copy company"
+  },
+  "copySSN": {
+    "message": "Copy Social Security number"
+  },
+  "copyPassportNumber": {
+    "message": "Copy passport number"
+  },
+  "copyLicenseNumber": {
+    "message": "Copy license number"
+  },
+  "copyName": {
+    "message": "Copy name"
   },
   "me": {
     "message": "Ni"
@@ -959,6 +1025,18 @@
   },
   "settings": {
     "message": "Ezarpenak"
+  },
+  "accountEmail": {
+    "message": "Account email"
+  },
+  "requestHint": {
+    "message": "Request hint"
+  },
+  "requestPasswordHint": {
+    "message": "Request password hint"
+  },
+  "enterYourAccountEmailAddressAndYourPasswordHintWillBeSentToYou": {
+    "message": "Enter your account email address and your password hint will be sent to you"
   },
   "passwordHint": {
     "message": "Pasahitza gogoratzeko pista"
@@ -3981,6 +4059,9 @@
   "vaultTimeout": {
     "message": "Kutxa gotorraren itxaronaldia"
   },
+  "vaultTimeout1": {
+    "message": "Timeout"
+  },
   "vaultTimeoutDesc": {
     "message": "Aukeratu kutxa gotorraren itxaronaldia eta egingo den ekintza."
   },
@@ -4249,7 +4330,7 @@
   },
   "lock": {
     "message": "Blokeatu",
-    "description": "Verb form: to make secure or inaccesible by"
+    "description": "Verb form: to make secure or inaccessible by"
   },
   "trash": {
     "message": "Zakarrontzia",
@@ -4845,12 +4926,6 @@
   },
   "deleteAnyCollection": {
     "message": "Ezabatu edozein bilduma"
-  },
-  "editAssignedCollections": {
-    "message": "Editatu esleitutako bildumak"
-  },
-  "deleteAssignedCollections": {
-    "message": "Ezabatu esleitutako bildumak"
   },
   "manageGroups": {
     "message": "Kudeatu taldeak"
@@ -5459,6 +5534,19 @@
       }
     }
   },
+  "vaultTimeoutPolicyInEffect1": {
+    "message": "$HOURS$ hour(s) and $MINUTES$ minute(s) maximum.",
+    "placeholders": {
+      "hours": {
+        "content": "$1",
+        "example": "5"
+      },
+      "minutes": {
+        "content": "$2",
+        "example": "5"
+      }
+    }
+  },
   "vaultTimeoutPolicyWithActionInEffect": {
     "message": "Your organization policies are affecting your vault timeout. Maximum allowed vault timeout is $HOURS$ hour(s) and $MINUTES$ minute(s). Your vault timeout action is set to $ACTION$.",
     "placeholders": {
@@ -5484,9 +5572,6 @@
         "example": "Lock"
       }
     }
-  },
-  "customVaultTimeout": {
-    "message": "Ezarri kutxa gotorreko itxaronaldia"
   },
   "vaultTimeoutToLarge": {
     "message": "Zure kutxa gotorreko itxaronaldiak, zure erakundeak ezarritako murrizpen bat gainditzen ditu."
@@ -6210,7 +6295,7 @@
   },
   "lastSync": {
     "message": "Azken sinkronizazioa",
-    "description": "Used as a prefix to indicate the last time a sync occured. Example \"Last sync 1968-11-16 00:00:00\""
+    "description": "Used as a prefix to indicate the last time a sync occurred. Example \"Last sync 1968-11-16 00:00:00\""
   },
   "sponsorshipsSynced": {
     "message": "Ostatatze propioko babesleak sinkronizatuta."
@@ -6369,57 +6454,57 @@
   },
   "scim": {
     "message": "SCIM hornitzailea",
-    "description": "The text, 'SCIM', is an acronymn and should not be translated."
+    "description": "The text, 'SCIM', is an acronym and should not be translated."
   },
   "scimDescription": {
     "message": "Eman automatikoki erabiltzaileei eta taldeei zure identitate-hornitzaile gogokoenarekin, SCIM hornitzaile bidez",
-    "description": "the text, 'SCIM', is an acronymn and should not be translated."
+    "description": "the text, 'SCIM', is an acronym and should not be translated."
   },
   "scimEnabledCheckboxDesc": {
     "message": "SCIM gaituta",
-    "description": "the text, 'SCIM', is an acronymn and should not be translated."
+    "description": "the text, 'SCIM', is an acronym and should not be translated."
   },
   "scimEnabledCheckboxDescHelpText": {
     "message": "Ezarri zure identitate-hornitzaile gogokoena URL eta SCIM API gakoak ezarriz",
-    "description": "the text, 'SCIM', is an acronymn and should not be translated."
+    "description": "the text, 'SCIM', is an acronym and should not be translated."
   },
   "scimApiKeyHelperText": {
     "message": "API gako honek zure erakundeko erabiltzaileak kudeatzeko aukera ematen du. Sekretupean gorde beharko litzake."
   },
   "copyScimKey": {
     "message": "Kopiatu SCIM API gakoa zure arbelean",
-    "description": "the text, 'SCIM' and 'API', are acronymns and should not be translated."
+    "description": "the text, 'SCIM' and 'API', are acronyms and should not be translated."
   },
   "rotateScimKey": {
     "message": "Berritu SCIM API gakoa",
-    "description": "the text, 'SCIM' and 'API', are acronymns and should not be translated."
+    "description": "the text, 'SCIM' and 'API', are acronyms and should not be translated."
   },
   "rotateScimKeyWarning": {
     "message": "Ziur al zaude SCIM API gakoa berritu nahi duzula? Uneko gakoak ez du balioko lehendik ezarrita dauden integrazioetarako.",
-    "description": "the text, 'SCIM' and 'API', are acronymns and should not be translated."
+    "description": "the text, 'SCIM' and 'API', are acronyms and should not be translated."
   },
   "rotateKey": {
     "message": "Berritu gakoa"
   },
   "scimApiKey": {
     "message": "SCIM API gakoa",
-    "description": "the text, 'SCIM' and 'API', are acronymns and should not be translated."
+    "description": "the text, 'SCIM' and 'API', are acronyms and should not be translated."
   },
   "copyScimUrl": {
     "message": "Kopiatu SCIM endpoint URL-a zure arbelean",
-    "description": "the text, 'SCIM' and 'URL', are acronymns and should not be translated."
+    "description": "the text, 'SCIM' and 'URL', are acronyms and should not be translated."
   },
   "scimUrl": {
     "message": "SCIM URL-a",
-    "description": "the text, 'SCIM' and 'URL', are acronymns and should not be translated."
+    "description": "the text, 'SCIM' and 'URL', are acronyms and should not be translated."
   },
   "scimApiKeyRotated": {
     "message": "SCIM API gakoa ongi berritu da",
-    "description": "the text, 'SCIM' and 'API', are acronymns and should not be translated."
+    "description": "the text, 'SCIM' and 'API', are acronyms and should not be translated."
   },
   "scimSettingsSaved": {
     "message": "SCIM ezarpenak behar bezala gorde dira",
-    "description": "the text, 'SCIM', is an acronymn and should not be translated."
+    "description": "the text, 'SCIM', is an acronym and should not be translated."
   },
   "inputRequired": {
     "message": "Sarrera behar da."
@@ -7341,6 +7426,9 @@
   "fileUpload": {
     "message": "File upload"
   },
+  "upload": {
+    "message": "Upload"
+  },
   "acceptedFormats": {
     "message": "Accepted Formats:"
   },
@@ -8202,6 +8290,9 @@
   "addField": {
     "message": "Add field"
   },
+  "editField": {
+    "message": "Edit field"
+  },
   "items": {
     "message": "Items"
   },
@@ -9050,7 +9141,7 @@
     "message": "Directory integration"
   },
   "passwordLessSso": {
-    "message": "PasswordLess SSO"
+    "message": "Passwordless SSO"
   },
   "accountRecovery": {
     "message": "Account recovery"
@@ -9073,8 +9164,8 @@
   "current": {
     "message": "Current"
   },
-  "secretsManagerSubInfo": {
-    "message": "Your Secrets Manager subscription will upgrade base on the plan selected"
+  "secretsManagerSubscriptionInfo": {
+    "message": "Your Secrets Manager subscription will upgrade based on the plan selected"
   },
   "bitwardenPasswordManager": {
     "message": "Bitwarden Password Manager"
@@ -9087,7 +9178,7 @@
   },
   "publicApi": {
     "message": "Public API",
-    "description": "The text, 'API', is an acronymn and should not be translated."
+    "description": "The text, 'API', is an acronym and should not be translated."
   },
   "showCharacterCount": {
     "message": "Show character count"

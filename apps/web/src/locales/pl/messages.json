@@ -269,9 +269,18 @@
   "cfTypeBoolean": {
     "message": "Wartość logiczna"
   },
+  "cfTypeCheckbox": {
+    "message": "Checkbox"
+  },
   "cfTypeLinked": {
     "message": "Powiązane pole",
     "description": "This describes a field that is 'linked' (related) to another field."
+  },
+  "fieldType": {
+    "message": "Field type"
+  },
+  "fieldLabel": {
+    "message": "Field label"
   },
   "remove": {
     "message": "Usuń"
@@ -511,6 +520,24 @@
   "viewItem": {
     "message": "Zobacz element"
   },
+  "newItemHeader": {
+    "message": "New $TYPE$",
+    "placeholders": {
+      "type": {
+        "content": "$1",
+        "example": "login"
+      }
+    }
+  },
+  "editItemHeader": {
+    "message": "Edit $TYPE$",
+    "placeholders": {
+      "type": {
+        "content": "$1",
+        "example": "login"
+      }
+    }
+  },
   "viewItemType": {
     "message": "View $ITEMTYPE$",
     "placeholders": {
@@ -591,6 +618,45 @@
   "copyUri": {
     "message": "Kopiuj URI",
     "description": "Copy URI to clipboard"
+  },
+  "copyCustomField": {
+    "message": "Copy $FIELD$",
+    "placeholders": {
+      "field": {
+        "content": "$1",
+        "example": "Custom field label"
+      }
+    }
+  },
+  "copyWebsite": {
+    "message": "Copy website"
+  },
+  "copyNotes": {
+    "message": "Copy notes"
+  },
+  "copyAddress": {
+    "message": "Copy address"
+  },
+  "copyPhone": {
+    "message": "Copy phone"
+  },
+  "copyEmail": {
+    "message": "Copy email"
+  },
+  "copyCompany": {
+    "message": "Copy company"
+  },
+  "copySSN": {
+    "message": "Copy Social Security number"
+  },
+  "copyPassportNumber": {
+    "message": "Copy passport number"
+  },
+  "copyLicenseNumber": {
+    "message": "Copy license number"
+  },
+  "copyName": {
+    "message": "Copy name"
   },
   "me": {
     "message": "Ja"
@@ -959,6 +1025,18 @@
   },
   "settings": {
     "message": "Ustawienia"
+  },
+  "accountEmail": {
+    "message": "Account email"
+  },
+  "requestHint": {
+    "message": "Request hint"
+  },
+  "requestPasswordHint": {
+    "message": "Request password hint"
+  },
+  "enterYourAccountEmailAddressAndYourPasswordHintWillBeSentToYou": {
+    "message": "Enter your account email address and your password hint will be sent to you"
   },
   "passwordHint": {
     "message": "Podpowiedź do hasła"
@@ -3981,6 +4059,9 @@
   "vaultTimeout": {
     "message": "Blokowanie sejfu"
   },
+  "vaultTimeout1": {
+    "message": "Timeout"
+  },
   "vaultTimeoutDesc": {
     "message": "Wybierz kiedy sejf zostanie zablokowany i wykonaj następującą akcję."
   },
@@ -4249,7 +4330,7 @@
   },
   "lock": {
     "message": "Zablokuj",
-    "description": "Verb form: to make secure or inaccesible by"
+    "description": "Verb form: to make secure or inaccessible by"
   },
   "trash": {
     "message": "Kosz",
@@ -4845,12 +4926,6 @@
   },
   "deleteAnyCollection": {
     "message": "Usuń dowolną kolekcję"
-  },
-  "editAssignedCollections": {
-    "message": "Edytuj przypisane kolekcje"
-  },
-  "deleteAssignedCollections": {
-    "message": "Usuń przypisane kolekcje"
   },
   "manageGroups": {
     "message": "Zarządzaj grupami"
@@ -5459,6 +5534,19 @@
       }
     }
   },
+  "vaultTimeoutPolicyInEffect1": {
+    "message": "$HOURS$ hour(s) and $MINUTES$ minute(s) maximum.",
+    "placeholders": {
+      "hours": {
+        "content": "$1",
+        "example": "5"
+      },
+      "minutes": {
+        "content": "$2",
+        "example": "5"
+      }
+    }
+  },
   "vaultTimeoutPolicyWithActionInEffect": {
     "message": "Zasady organizacji mają wpływ na czas blokowania sejfu. Maksymalny dozwolony czas wynosi $HOURS$ godz. i $MINUTES$ min. Twój czas blokowania sejfu to $ACTION$.",
     "placeholders": {
@@ -5484,9 +5572,6 @@
         "example": "Lock"
       }
     }
-  },
-  "customVaultTimeout": {
-    "message": "Niestandardowy czas blokowania sejfu"
   },
   "vaultTimeoutToLarge": {
     "message": "Czas blokowania sejfu przekracza limit określony przez organizację."
@@ -6210,7 +6295,7 @@
   },
   "lastSync": {
     "message": "Ostatnia synchronizacja",
-    "description": "Used as a prefix to indicate the last time a sync occured. Example \"Last sync 1968-11-16 00:00:00\""
+    "description": "Used as a prefix to indicate the last time a sync occurred. Example \"Last sync 1968-11-16 00:00:00\""
   },
   "sponsorshipsSynced": {
     "message": "Zsynchronizowano sponsorowanie na własnym hostingu."
@@ -6369,57 +6454,57 @@
   },
   "scim": {
     "message": "Aprowizacja SCIM",
-    "description": "The text, 'SCIM', is an acronymn and should not be translated."
+    "description": "The text, 'SCIM', is an acronym and should not be translated."
   },
   "scimDescription": {
     "message": "Automatycznie aprowiduj użytkowników i grupy z preferowanym dostawcą tożsamości poprzez aprowizację SCIM",
-    "description": "the text, 'SCIM', is an acronymn and should not be translated."
+    "description": "the text, 'SCIM', is an acronym and should not be translated."
   },
   "scimEnabledCheckboxDesc": {
     "message": "Włącz SCIM",
-    "description": "the text, 'SCIM', is an acronymn and should not be translated."
+    "description": "the text, 'SCIM', is an acronym and should not be translated."
   },
   "scimEnabledCheckboxDescHelpText": {
     "message": "Skonfiguruj preferowanego dostawcę tożsamości poprzez konfigurowanie adresu URL i klucza API SCIM",
-    "description": "the text, 'SCIM', is an acronymn and should not be translated."
+    "description": "the text, 'SCIM', is an acronym and should not be translated."
   },
   "scimApiKeyHelperText": {
     "message": "Ten klucz API ma dostęp do zarządzania użytkownikami w Twojej organizacji. Powinien być zachowany w tajemnicy."
   },
   "copyScimKey": {
     "message": "Kopiuj klucz API SCIM do schowka",
-    "description": "the text, 'SCIM' and 'API', are acronymns and should not be translated."
+    "description": "the text, 'SCIM' and 'API', are acronyms and should not be translated."
   },
   "rotateScimKey": {
     "message": "Zmień klucz API SCIM",
-    "description": "the text, 'SCIM' and 'API', are acronymns and should not be translated."
+    "description": "the text, 'SCIM' and 'API', are acronyms and should not be translated."
   },
   "rotateScimKeyWarning": {
     "message": "Czy na pewno chcesz zmienić klucz interfejsu API SCIM? Obecny klucz nie będzie już działał dla żadnych istniejących integracji.",
-    "description": "the text, 'SCIM' and 'API', are acronymns and should not be translated."
+    "description": "the text, 'SCIM' and 'API', are acronyms and should not be translated."
   },
   "rotateKey": {
     "message": "Zmień klucz"
   },
   "scimApiKey": {
     "message": "Klucz API SCIM",
-    "description": "the text, 'SCIM' and 'API', are acronymns and should not be translated."
+    "description": "the text, 'SCIM' and 'API', are acronyms and should not be translated."
   },
   "copyScimUrl": {
     "message": "Skopiuj adres URL SCIM do schowka",
-    "description": "the text, 'SCIM' and 'URL', are acronymns and should not be translated."
+    "description": "the text, 'SCIM' and 'URL', are acronyms and should not be translated."
   },
   "scimUrl": {
     "message": "Adres SCIM",
-    "description": "the text, 'SCIM' and 'URL', are acronymns and should not be translated."
+    "description": "the text, 'SCIM' and 'URL', are acronyms and should not be translated."
   },
   "scimApiKeyRotated": {
     "message": "Klucz API SCIM został zmieniony",
-    "description": "the text, 'SCIM' and 'API', are acronymns and should not be translated."
+    "description": "the text, 'SCIM' and 'API', are acronyms and should not be translated."
   },
   "scimSettingsSaved": {
     "message": "Ustawienia SCIM zostały zapisane",
-    "description": "the text, 'SCIM', is an acronymn and should not be translated."
+    "description": "the text, 'SCIM', is an acronym and should not be translated."
   },
   "inputRequired": {
     "message": "Dane wejściowe są wymagane."
@@ -7341,6 +7426,9 @@
   "fileUpload": {
     "message": "Przesyłanie plików"
   },
+  "upload": {
+    "message": "Upload"
+  },
   "acceptedFormats": {
     "message": "Dozwolone formaty:"
   },
@@ -8202,6 +8290,9 @@
   "addField": {
     "message": "Dodaj pole"
   },
+  "editField": {
+    "message": "Edit field"
+  },
   "items": {
     "message": "Elementy"
   },
@@ -9050,7 +9141,7 @@
     "message": "Directory integration"
   },
   "passwordLessSso": {
-    "message": "PasswordLess SSO"
+    "message": "Passwordless SSO"
   },
   "accountRecovery": {
     "message": "Account recovery"
@@ -9073,8 +9164,8 @@
   "current": {
     "message": "Current"
   },
-  "secretsManagerSubInfo": {
-    "message": "Your Secrets Manager subscription will upgrade base on the plan selected"
+  "secretsManagerSubscriptionInfo": {
+    "message": "Your Secrets Manager subscription will upgrade based on the plan selected"
   },
   "bitwardenPasswordManager": {
     "message": "Bitwarden Password Manager"
@@ -9087,7 +9178,7 @@
   },
   "publicApi": {
     "message": "Public API",
-    "description": "The text, 'API', is an acronymn and should not be translated."
+    "description": "The text, 'API', is an acronym and should not be translated."
   },
   "showCharacterCount": {
     "message": "Show character count"

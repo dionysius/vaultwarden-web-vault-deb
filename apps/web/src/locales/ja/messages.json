@@ -269,9 +269,18 @@
   "cfTypeBoolean": {
     "message": "真偽値"
   },
+  "cfTypeCheckbox": {
+    "message": "Checkbox"
+  },
   "cfTypeLinked": {
     "message": "リンク済",
     "description": "This describes a field that is 'linked' (related) to another field."
+  },
+  "fieldType": {
+    "message": "Field type"
+  },
+  "fieldLabel": {
+    "message": "Field label"
   },
   "remove": {
     "message": "削除"
@@ -511,6 +520,24 @@
   "viewItem": {
     "message": "アイテムの表示"
   },
+  "newItemHeader": {
+    "message": "$TYPE$ を新規作成",
+    "placeholders": {
+      "type": {
+        "content": "$1",
+        "example": "login"
+      }
+    }
+  },
+  "editItemHeader": {
+    "message": "$TYPE$ を編集",
+    "placeholders": {
+      "type": {
+        "content": "$1",
+        "example": "login"
+      }
+    }
+  },
   "viewItemType": {
     "message": "$ITEMTYPE$ を表示",
     "placeholders": {
@@ -591,6 +618,45 @@
   "copyUri": {
     "message": "URI のコピー",
     "description": "Copy URI to clipboard"
+  },
+  "copyCustomField": {
+    "message": "$FIELD$ をコピー",
+    "placeholders": {
+      "field": {
+        "content": "$1",
+        "example": "Custom field label"
+      }
+    }
+  },
+  "copyWebsite": {
+    "message": "ウェブサイトをコピー"
+  },
+  "copyNotes": {
+    "message": "メモをコピー"
+  },
+  "copyAddress": {
+    "message": "住所をコピー"
+  },
+  "copyPhone": {
+    "message": "電話番号をコピー"
+  },
+  "copyEmail": {
+    "message": "メールアドレスをコピー"
+  },
+  "copyCompany": {
+    "message": "会社名をコピー"
+  },
+  "copySSN": {
+    "message": "社会保障番号をコピー"
+  },
+  "copyPassportNumber": {
+    "message": "パスポート番号をコピー"
+  },
+  "copyLicenseNumber": {
+    "message": "免許証番号をコピー"
+  },
+  "copyName": {
+    "message": "名前をコピー"
   },
   "me": {
     "message": "自分"
@@ -959,6 +1025,18 @@
   },
   "settings": {
     "message": "設定"
+  },
+  "accountEmail": {
+    "message": "アカウントのメールアドレス"
+  },
+  "requestHint": {
+    "message": "ヒントを要求"
+  },
+  "requestPasswordHint": {
+    "message": "パスワードのヒントを要求する"
+  },
+  "enterYourAccountEmailAddressAndYourPasswordHintWillBeSentToYou": {
+    "message": "アカウントのメールアドレスを入力すると、パスワードのヒントが送信されます"
   },
   "passwordHint": {
     "message": "パスワードのヒント"
@@ -3981,6 +4059,9 @@
   "vaultTimeout": {
     "message": "保管庫のタイムアウト"
   },
+  "vaultTimeout1": {
+    "message": "タイムアウト"
+  },
   "vaultTimeoutDesc": {
     "message": "保管庫がタイムアウトし、選択したアクションを実行するタイミングを選択します。"
   },
@@ -4249,7 +4330,7 @@
   },
   "lock": {
     "message": "ロック",
-    "description": "Verb form: to make secure or inaccesible by"
+    "description": "Verb form: to make secure or inaccessible by"
   },
   "trash": {
     "message": "ごみ箱",
@@ -4845,12 +4926,6 @@
   },
   "deleteAnyCollection": {
     "message": "任意のコレクションを削除"
-  },
-  "editAssignedCollections": {
-    "message": "割り当てられたコレクションを編集"
-  },
-  "deleteAssignedCollections": {
-    "message": "割り当てられたコレクションを削除"
   },
   "manageGroups": {
     "message": "グループを管理"
@@ -5459,6 +5534,19 @@
       }
     }
   },
+  "vaultTimeoutPolicyInEffect1": {
+    "message": "$HOURS$ 時間と $MINUTES$ 分が最大です。",
+    "placeholders": {
+      "hours": {
+        "content": "$1",
+        "example": "5"
+      },
+      "minutes": {
+        "content": "$2",
+        "example": "5"
+      }
+    }
+  },
   "vaultTimeoutPolicyWithActionInEffect": {
     "message": "組織のポリシーがデータ保管庫のタイムアウトに影響しています。保管庫のタイムアウトの最大許容値は、$HOURS$時間$MINUTES$分です。保管庫タイムアウト時のアクションは、$ACTION$に設定されています。",
     "placeholders": {
@@ -5484,9 +5572,6 @@
         "example": "Lock"
       }
     }
-  },
-  "customVaultTimeout": {
-    "message": "個別の保管庫のタイムアウト"
   },
   "vaultTimeoutToLarge": {
     "message": "保管庫のタイムアウトが組織によって設定された制限を超えています。"
@@ -6210,7 +6295,7 @@
   },
   "lastSync": {
     "message": "前回の同期",
-    "description": "Used as a prefix to indicate the last time a sync occured. Example \"Last sync 1968-11-16 00:00:00\""
+    "description": "Used as a prefix to indicate the last time a sync occurred. Example \"Last sync 1968-11-16 00:00:00\""
   },
   "sponsorshipsSynced": {
     "message": "セルフホストのスポンサーシップが同期されました。"
@@ -6369,57 +6454,57 @@
   },
   "scim": {
     "message": "SCIM プロビジョニング",
-    "description": "The text, 'SCIM', is an acronymn and should not be translated."
+    "description": "The text, 'SCIM', is an acronym and should not be translated."
   },
   "scimDescription": {
     "message": "SCIM プロビジョニングにより、ユーザーとグループを希望する ID プロバイダーで自動的にプロビジョニングします。",
-    "description": "the text, 'SCIM', is an acronymn and should not be translated."
+    "description": "the text, 'SCIM', is an acronym and should not be translated."
   },
   "scimEnabledCheckboxDesc": {
     "message": "SCIM を有効にする",
-    "description": "the text, 'SCIM', is an acronymn and should not be translated."
+    "description": "the text, 'SCIM', is an acronym and should not be translated."
   },
   "scimEnabledCheckboxDescHelpText": {
     "message": "URL と SCIM API キーを設定して、ご希望の ID プロバイダーを設定します",
-    "description": "the text, 'SCIM', is an acronymn and should not be translated."
+    "description": "the text, 'SCIM', is an acronym and should not be translated."
   },
   "scimApiKeyHelperText": {
     "message": "この API キーは、組織内のユーザーを管理するためのアクセス権を持っています。慎重に取り扱ってください。"
   },
   "copyScimKey": {
     "message": "SCIM API キーをクリップボードにコピー",
-    "description": "the text, 'SCIM' and 'API', are acronymns and should not be translated."
+    "description": "the text, 'SCIM' and 'API', are acronyms and should not be translated."
   },
   "rotateScimKey": {
     "message": "SCIM API キーをローテーション",
-    "description": "the text, 'SCIM' and 'API', are acronymns and should not be translated."
+    "description": "the text, 'SCIM' and 'API', are acronyms and should not be translated."
   },
   "rotateScimKeyWarning": {
     "message": "SCIM API キーをローテーションさせてもよろしいですか？現在のキーでは動作しなくなります。",
-    "description": "the text, 'SCIM' and 'API', are acronymns and should not be translated."
+    "description": "the text, 'SCIM' and 'API', are acronyms and should not be translated."
   },
   "rotateKey": {
     "message": "キーをローテーション"
   },
   "scimApiKey": {
     "message": "SCIM API キー",
-    "description": "the text, 'SCIM' and 'API', are acronymns and should not be translated."
+    "description": "the text, 'SCIM' and 'API', are acronyms and should not be translated."
   },
   "copyScimUrl": {
     "message": "SCIM エンドポイント URL をクリップボードにコピー",
-    "description": "the text, 'SCIM' and 'URL', are acronymns and should not be translated."
+    "description": "the text, 'SCIM' and 'URL', are acronyms and should not be translated."
   },
   "scimUrl": {
     "message": "SCIM URL",
-    "description": "the text, 'SCIM' and 'URL', are acronymns and should not be translated."
+    "description": "the text, 'SCIM' and 'URL', are acronyms and should not be translated."
   },
   "scimApiKeyRotated": {
     "message": "SCIM API キーのローテーションに成功しました",
-    "description": "the text, 'SCIM' and 'API', are acronymns and should not be translated."
+    "description": "the text, 'SCIM' and 'API', are acronyms and should not be translated."
   },
   "scimSettingsSaved": {
     "message": "SCIM 設定を保存しました。",
-    "description": "the text, 'SCIM', is an acronymn and should not be translated."
+    "description": "the text, 'SCIM', is an acronym and should not be translated."
   },
   "inputRequired": {
     "message": "入力が必要です。"
@@ -7341,6 +7426,9 @@
   "fileUpload": {
     "message": "ファイルのアップロード"
   },
+  "upload": {
+    "message": "アップロード"
+  },
   "acceptedFormats": {
     "message": "利用できる形式："
   },
@@ -8201,6 +8289,9 @@
   },
   "addField": {
     "message": "フィールドを追加"
+  },
+  "editField": {
+    "message": "Edit field"
   },
   "items": {
     "message": "アイテム"
@@ -9073,7 +9164,7 @@
   "current": {
     "message": "現在"
   },
-  "secretsManagerSubInfo": {
+  "secretsManagerSubscriptionInfo": {
     "message": "シークレットマネージャーのサブスクリプションは、選択されたプランを基準にアップグレードされます"
   },
   "bitwardenPasswordManager": {
@@ -9087,7 +9178,7 @@
   },
   "publicApi": {
     "message": "公開 API",
-    "description": "The text, 'API', is an acronymn and should not be translated."
+    "description": "The text, 'API', is an acronym and should not be translated."
   },
   "showCharacterCount": {
     "message": "文字数を表示"

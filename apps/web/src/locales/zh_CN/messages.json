@@ -144,7 +144,7 @@
     "message": "安全码 (CVV)"
   },
   "securityCodeSlashCVV": {
-    "message": "Security code / CVV"
+    "message": "安全码 / CVV"
   },
   "identityName": {
     "message": "身份名称"
@@ -269,9 +269,18 @@
   "cfTypeBoolean": {
     "message": "布尔型"
   },
+  "cfTypeCheckbox": {
+    "message": "Checkbox"
+  },
   "cfTypeLinked": {
     "message": "链接型",
     "description": "This describes a field that is 'linked' (related) to another field."
+  },
+  "fieldType": {
+    "message": "Field type"
+  },
+  "fieldLabel": {
+    "message": "Field label"
   },
   "remove": {
     "message": "移除"
@@ -511,6 +520,24 @@
   "viewItem": {
     "message": "查看项目"
   },
+  "newItemHeader": {
+    "message": "新增 $TYPE$",
+    "placeholders": {
+      "type": {
+        "content": "$1",
+        "example": "login"
+      }
+    }
+  },
+  "editItemHeader": {
+    "message": "编辑 $TYPE$",
+    "placeholders": {
+      "type": {
+        "content": "$1",
+        "example": "login"
+      }
+    }
+  },
   "viewItemType": {
     "message": "查看 $ITEMTYPE$",
     "placeholders": {
@@ -566,7 +593,7 @@
     }
   },
   "copySuccessful": {
-    "message": "Copy Successful"
+    "message": "复制成功"
   },
   "copyValue": {
     "message": "复制值",
@@ -591,6 +618,45 @@
   "copyUri": {
     "message": "复制 URI",
     "description": "Copy URI to clipboard"
+  },
+  "copyCustomField": {
+    "message": "复制 $FIELD$",
+    "placeholders": {
+      "field": {
+        "content": "$1",
+        "example": "Custom field label"
+      }
+    }
+  },
+  "copyWebsite": {
+    "message": "复制网站"
+  },
+  "copyNotes": {
+    "message": "复制备注"
+  },
+  "copyAddress": {
+    "message": "复制地址"
+  },
+  "copyPhone": {
+    "message": "复制电话号码"
+  },
+  "copyEmail": {
+    "message": "复制电子邮件地址"
+  },
+  "copyCompany": {
+    "message": "复制公司信息"
+  },
+  "copySSN": {
+    "message": "复制社会保障号码"
+  },
+  "copyPassportNumber": {
+    "message": "复制护照号码"
+  },
+  "copyLicenseNumber": {
+    "message": "复制许可证号码"
+  },
+  "copyName": {
+    "message": "复制名称"
   },
   "me": {
     "message": "我"
@@ -959,6 +1025,18 @@
   },
   "settings": {
     "message": "设置"
+  },
+  "accountEmail": {
+    "message": "账户邮件地址"
+  },
+  "requestHint": {
+    "message": "请求提示"
+  },
+  "requestPasswordHint": {
+    "message": "请求密码提示"
+  },
+  "enterYourAccountEmailAddressAndYourPasswordHintWillBeSentToYou": {
+    "message": "输入您的账户电子邮件地址，您的密码提示将发送给您"
   },
   "passwordHint": {
     "message": "密码提示"
@@ -3901,10 +3979,10 @@
     }
   },
   "encryptionKeyUpdateCannotProceed": {
-    "message": "Encryption key update cannot proceed"
+    "message": "加密密钥更新无法继续"
   },
   "keyUpdateFoldersFailed": {
-    "message": "When updating your encryption key, your folders could not be decrypted. To continue with the update, your folders must be deleted. No vault items will be deleted if you proceed."
+    "message": "更新您的加密密钥时，无法解密您的文件夹。要继续更新，文件夹必须被删除。继续操作不会删除密码库项目。"
   },
   "keyUpdated": {
     "message": "密钥已更新"
@@ -3980,6 +4058,9 @@
   },
   "vaultTimeout": {
     "message": "密码库超时时间"
+  },
+  "vaultTimeout1": {
+    "message": "超时"
   },
   "vaultTimeoutDesc": {
     "message": "选择您的密码库何时执行密码库超时动作。"
@@ -4249,7 +4330,7 @@
   },
   "lock": {
     "message": "锁定",
-    "description": "Verb form: to make secure or inaccesible by"
+    "description": "Verb form: to make secure or inaccessible by"
   },
   "trash": {
     "message": "回收站",
@@ -4845,12 +4926,6 @@
   },
   "deleteAnyCollection": {
     "message": "删除任意集合"
-  },
-  "editAssignedCollections": {
-    "message": "编辑已分配的集合"
-  },
-  "deleteAssignedCollections": {
-    "message": "删除已分配的集合"
   },
   "manageGroups": {
     "message": "管理群组"
@@ -5459,6 +5534,19 @@
       }
     }
   },
+  "vaultTimeoutPolicyInEffect1": {
+    "message": "最多 $HOURS$ 小时 $MINUTES$ 分钟",
+    "placeholders": {
+      "hours": {
+        "content": "$1",
+        "example": "5"
+      },
+      "minutes": {
+        "content": "$2",
+        "example": "5"
+      }
+    }
+  },
   "vaultTimeoutPolicyWithActionInEffect": {
     "message": "您的组织策略正在影响您的密码库超时时间。最大允许的密码库超时时间是 $HOURS$ 小时 $MINUTES$ 分钟。您的密码库超时动作被设置为 $ACTION$。",
     "placeholders": {
@@ -5484,9 +5572,6 @@
         "example": "Lock"
       }
     }
-  },
-  "customVaultTimeout": {
-    "message": "自定义密码库超时时间"
   },
   "vaultTimeoutToLarge": {
     "message": "您的密码库超时时间超出了您的组织设置的限制。"
@@ -6210,7 +6295,7 @@
   },
   "lastSync": {
     "message": "上次同步",
-    "description": "Used as a prefix to indicate the last time a sync occured. Example \"Last sync 1968-11-16 00:00:00\""
+    "description": "Used as a prefix to indicate the last time a sync occurred. Example \"Last sync 1968-11-16 00:00:00\""
   },
   "sponsorshipsSynced": {
     "message": "自托管赞助已同步。"
@@ -6369,57 +6454,57 @@
   },
   "scim": {
     "message": "SCIM 配置",
-    "description": "The text, 'SCIM', is an acronymn and should not be translated."
+    "description": "The text, 'SCIM', is an acronym and should not be translated."
   },
   "scimDescription": {
     "message": "通过 SCIM 配置，使用您首选的身份提供程序自动配置用户和群组",
-    "description": "the text, 'SCIM', is an acronymn and should not be translated."
+    "description": "the text, 'SCIM', is an acronym and should not be translated."
   },
   "scimEnabledCheckboxDesc": {
     "message": "启用 SCIM",
-    "description": "the text, 'SCIM', is an acronymn and should not be translated."
+    "description": "the text, 'SCIM', is an acronym and should not be translated."
   },
   "scimEnabledCheckboxDescHelpText": {
     "message": "通过配置 URL 和 SCIM API 密钥来设置您的首选身份提供程序",
-    "description": "the text, 'SCIM', is an acronymn and should not be translated."
+    "description": "the text, 'SCIM', is an acronym and should not be translated."
   },
   "scimApiKeyHelperText": {
     "message": "此 API 密钥具有管理您组织内用户的权限。请严格保密。"
   },
   "copyScimKey": {
     "message": "复制 SCIM API 密钥到剪贴板",
-    "description": "the text, 'SCIM' and 'API', are acronymns and should not be translated."
+    "description": "the text, 'SCIM' and 'API', are acronyms and should not be translated."
   },
   "rotateScimKey": {
     "message": "轮换 SCIM API 密钥",
-    "description": "the text, 'SCIM' and 'API', are acronymns and should not be translated."
+    "description": "the text, 'SCIM' and 'API', are acronyms and should not be translated."
   },
   "rotateScimKeyWarning": {
     "message": "确定要轮换 SCIM API 密钥吗？轮换后当前的密钥将不再适用于任何现有的集成。",
-    "description": "the text, 'SCIM' and 'API', are acronymns and should not be translated."
+    "description": "the text, 'SCIM' and 'API', are acronyms and should not be translated."
   },
   "rotateKey": {
     "message": "轮换密钥"
   },
   "scimApiKey": {
     "message": "SCIM API 密钥",
-    "description": "the text, 'SCIM' and 'API', are acronymns and should not be translated."
+    "description": "the text, 'SCIM' and 'API', are acronyms and should not be translated."
   },
   "copyScimUrl": {
     "message": "复制 SCIM 端点 URL 到剪贴板",
-    "description": "the text, 'SCIM' and 'URL', are acronymns and should not be translated."
+    "description": "the text, 'SCIM' and 'URL', are acronyms and should not be translated."
   },
   "scimUrl": {
     "message": "SCIM URL",
-    "description": "the text, 'SCIM' and 'URL', are acronymns and should not be translated."
+    "description": "the text, 'SCIM' and 'URL', are acronyms and should not be translated."
   },
   "scimApiKeyRotated": {
     "message": "SCIM API 密钥已成功轮换",
-    "description": "the text, 'SCIM' and 'API', are acronymns and should not be translated."
+    "description": "the text, 'SCIM' and 'API', are acronyms and should not be translated."
   },
   "scimSettingsSaved": {
     "message": "SCIM 设置已保存",
-    "description": "the text, 'SCIM', is an acronymn and should not be translated."
+    "description": "the text, 'SCIM', is an acronym and should not be translated."
   },
   "inputRequired": {
     "message": "必须输入内容。"
@@ -7341,6 +7426,9 @@
   "fileUpload": {
     "message": "文件上传"
   },
+  "upload": {
+    "message": "上传"
+  },
   "acceptedFormats": {
     "message": "可接受的格式："
   },
@@ -8202,6 +8290,9 @@
   "addField": {
     "message": "添加字段"
   },
+  "editField": {
+    "message": "Edit field"
+  },
   "items": {
     "message": "项目"
   },
@@ -9050,7 +9141,7 @@
     "message": "目录集成"
   },
   "passwordLessSso": {
-    "message": "PasswordLess SSO"
+    "message": "Passwordless SSO"
   },
   "accountRecovery": {
     "message": "账户恢复"
@@ -9073,21 +9164,21 @@
   "current": {
     "message": "当前"
   },
-  "secretsManagerSubInfo": {
-    "message": "您的机密管理器订阅将基于所选的计划进行升级"
+  "secretsManagerSubscriptionInfo": {
+    "message": "您的机密管理器订阅将根据选定的计划升级"
   },
   "bitwardenPasswordManager": {
     "message": "Bitwarden 密码管理器"
   },
   "secretsManagerComplimentaryPasswordManager": {
-    "message": "Your complimentary one year Password Manager subscription will upgrade to the selected plan. You will not be charged until the complimentary period is over."
+    "message": "您的一年免费密码管理器订阅将升级到所选计划。在免费期结束前，我们不会向您收取费用。"
   },
   "fileSavedToDevice": {
-    "message": "文件已保存到设备。在设备下载中进行管理。"
+    "message": "文件已保存到设备。可以在设备下载中进行管理。"
   },
   "publicApi": {
     "message": "公共 API",
-    "description": "The text, 'API', is an acronymn and should not be translated."
+    "description": "The text, 'API', is an acronym and should not be translated."
   },
   "showCharacterCount": {
     "message": "显示字符计数"

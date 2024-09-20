@@ -269,9 +269,18 @@
   "cfTypeBoolean": {
     "message": "Booléen"
   },
+  "cfTypeCheckbox": {
+    "message": "Case à cocher"
+  },
   "cfTypeLinked": {
     "message": "Lié",
     "description": "This describes a field that is 'linked' (related) to another field."
+  },
+  "fieldType": {
+    "message": "Type de champ"
+  },
+  "fieldLabel": {
+    "message": "Étiquette du champ"
   },
   "remove": {
     "message": "Supprimer"
@@ -511,6 +520,24 @@
   "viewItem": {
     "message": "Afficher l'élément"
   },
+  "newItemHeader": {
+    "message": "Nouveau $TYPE$",
+    "placeholders": {
+      "type": {
+        "content": "$1",
+        "example": "login"
+      }
+    }
+  },
+  "editItemHeader": {
+    "message": "Modifier $TYPE$",
+    "placeholders": {
+      "type": {
+        "content": "$1",
+        "example": "login"
+      }
+    }
+  },
   "viewItemType": {
     "message": "Voir $ITEMTYPE$",
     "placeholders": {
@@ -591,6 +618,45 @@
   "copyUri": {
     "message": "Copier l'URI",
     "description": "Copy URI to clipboard"
+  },
+  "copyCustomField": {
+    "message": "Copier $FIELD$",
+    "placeholders": {
+      "field": {
+        "content": "$1",
+        "example": "Custom field label"
+      }
+    }
+  },
+  "copyWebsite": {
+    "message": "Copier le site web"
+  },
+  "copyNotes": {
+    "message": "Copier les notes"
+  },
+  "copyAddress": {
+    "message": "Copier l'adresse"
+  },
+  "copyPhone": {
+    "message": "Copier le téléphone"
+  },
+  "copyEmail": {
+    "message": "Copier le courriel"
+  },
+  "copyCompany": {
+    "message": "Copier l'entreprise"
+  },
+  "copySSN": {
+    "message": "Copier le numéro de Sécurité Sociale"
+  },
+  "copyPassportNumber": {
+    "message": "Copier le numéro de passeport"
+  },
+  "copyLicenseNumber": {
+    "message": "Copier le numéro de permis de conduire"
+  },
+  "copyName": {
+    "message": "Copier le nom"
   },
   "me": {
     "message": "Moi"
@@ -959,6 +1025,18 @@
   },
   "settings": {
     "message": "Paramètres"
+  },
+  "accountEmail": {
+    "message": "Courriel du compte"
+  },
+  "requestHint": {
+    "message": "Demander l'indice"
+  },
+  "requestPasswordHint": {
+    "message": "Demander l'indice du mot de passe"
+  },
+  "enterYourAccountEmailAddressAndYourPasswordHintWillBeSentToYou": {
+    "message": "Entrez l'adresse courriel de votre compte et l'indice de votre mot de passe vous sera envoyé"
   },
   "passwordHint": {
     "message": "Indice de mot de passe"
@@ -3981,6 +4059,9 @@
   "vaultTimeout": {
     "message": "Délai d'expiration du coffre"
   },
+  "vaultTimeout1": {
+    "message": "Délai d'expiration"
+  },
   "vaultTimeoutDesc": {
     "message": "Choisissez quand votre coffre entreprendra l'action après le délai d'expiration du coffre."
   },
@@ -4249,7 +4330,7 @@
   },
   "lock": {
     "message": "Verrouiller",
-    "description": "Verb form: to make secure or inaccesible by"
+    "description": "Verb form: to make secure or inaccessible by"
   },
   "trash": {
     "message": "Corbeille",
@@ -4845,12 +4926,6 @@
   },
   "deleteAnyCollection": {
     "message": "Supprimer n'importe quelle collection"
-  },
-  "editAssignedCollections": {
-    "message": "Modifier les collection assignées"
-  },
-  "deleteAssignedCollections": {
-    "message": "Supprimer les collections assignées"
   },
   "manageGroups": {
     "message": "Gérer les groupes"
@@ -5459,6 +5534,19 @@
       }
     }
   },
+  "vaultTimeoutPolicyInEffect1": {
+    "message": "$HOURS$ heure(s) et $MINUTES$ minute(s) maximum.",
+    "placeholders": {
+      "hours": {
+        "content": "$1",
+        "example": "5"
+      },
+      "minutes": {
+        "content": "$2",
+        "example": "5"
+      }
+    }
+  },
   "vaultTimeoutPolicyWithActionInEffect": {
     "message": "Les politiques de sécurité de votre organisation affectent le délai d'expiration de votre coffre. Le délai autorisé d'expiration du coffre est de $HOURS$ heure(s) et $MINUTES$ minute(s) maximum. L'action après délai d'expiration de votre coffre est fixée à $ACTION$.",
     "placeholders": {
@@ -5484,9 +5572,6 @@
         "example": "Lock"
       }
     }
-  },
-  "customVaultTimeout": {
-    "message": "Délai d'expiration du coffre personnalisé"
   },
   "vaultTimeoutToLarge": {
     "message": "Le délai d'expiration de votre coffre-fort dépasse les restrictions définies par votre organisation."
@@ -6210,7 +6295,7 @@
   },
   "lastSync": {
     "message": "Dernière Synchronisation",
-    "description": "Used as a prefix to indicate the last time a sync occured. Example \"Last sync 1968-11-16 00:00:00\""
+    "description": "Used as a prefix to indicate the last time a sync occurred. Example \"Last sync 1968-11-16 00:00:00\""
   },
   "sponsorshipsSynced": {
     "message": "Des parrainages auto-hébergés ont été synchronisés."
@@ -6369,57 +6454,57 @@
   },
   "scim": {
     "message": "Provisionnement SCIM",
-    "description": "The text, 'SCIM', is an acronymn and should not be translated."
+    "description": "The text, 'SCIM', is an acronym and should not be translated."
   },
   "scimDescription": {
     "message": "Fournit automatiquement aux utilisateurs et aux groupes votre fournisseur d'identité préféré via l'approvisionnement SCIM",
-    "description": "the text, 'SCIM', is an acronymn and should not be translated."
+    "description": "the text, 'SCIM', is an acronym and should not be translated."
   },
   "scimEnabledCheckboxDesc": {
     "message": "Activer SCIM",
-    "description": "the text, 'SCIM', is an acronymn and should not be translated."
+    "description": "the text, 'SCIM', is an acronym and should not be translated."
   },
   "scimEnabledCheckboxDescHelpText": {
     "message": "Configurez votre fournisseur d'identité préféré en configurant l'URL et la clé API SCIM",
-    "description": "the text, 'SCIM', is an acronymn and should not be translated."
+    "description": "the text, 'SCIM', is an acronym and should not be translated."
   },
   "scimApiKeyHelperText": {
     "message": "Cette clé API possède l'accès pour gérer les utilisateurs au sein de votre organisation. Elle devrait être tenue secrète."
   },
   "copyScimKey": {
     "message": "Copiez la clé API SCIM dans votre presse-papiers",
-    "description": "the text, 'SCIM' and 'API', are acronymns and should not be translated."
+    "description": "the text, 'SCIM' and 'API', are acronyms and should not be translated."
   },
   "rotateScimKey": {
     "message": "Régénérer la clé API SCIM",
-    "description": "the text, 'SCIM' and 'API', are acronymns and should not be translated."
+    "description": "the text, 'SCIM' and 'API', are acronyms and should not be translated."
   },
   "rotateScimKeyWarning": {
     "message": "Êtes-vous sûr de vouloir régénérer la clé API SCIM ? La clé actuelle ne fonctionnera plus pour aucune intégration existante.",
-    "description": "the text, 'SCIM' and 'API', are acronymns and should not be translated."
+    "description": "the text, 'SCIM' and 'API', are acronyms and should not be translated."
   },
   "rotateKey": {
     "message": "Régénérer la clé"
   },
   "scimApiKey": {
     "message": "Clé API SCIM",
-    "description": "the text, 'SCIM' and 'API', are acronymns and should not be translated."
+    "description": "the text, 'SCIM' and 'API', are acronyms and should not be translated."
   },
   "copyScimUrl": {
     "message": "Copiez l'URL du point de terminaison SCIM dans votre presse-papiers",
-    "description": "the text, 'SCIM' and 'URL', are acronymns and should not be translated."
+    "description": "the text, 'SCIM' and 'URL', are acronyms and should not be translated."
   },
   "scimUrl": {
     "message": "URL SCIM",
-    "description": "the text, 'SCIM' and 'URL', are acronymns and should not be translated."
+    "description": "the text, 'SCIM' and 'URL', are acronyms and should not be translated."
   },
   "scimApiKeyRotated": {
     "message": "Clé API SCIM régénérée avec succès",
-    "description": "the text, 'SCIM' and 'API', are acronymns and should not be translated."
+    "description": "the text, 'SCIM' and 'API', are acronyms and should not be translated."
   },
   "scimSettingsSaved": {
     "message": "Les paramètres SCIM ont été enregistrés avec succès",
-    "description": "the text, 'SCIM', is an acronymn and should not be translated."
+    "description": "the text, 'SCIM', is an acronym and should not be translated."
   },
   "inputRequired": {
     "message": "Entrée requise."
@@ -7341,6 +7426,9 @@
   "fileUpload": {
     "message": "Chargement du fichier"
   },
+  "upload": {
+    "message": "Téléverser"
+  },
   "acceptedFormats": {
     "message": "Formats acceptés :"
   },
@@ -8201,6 +8289,9 @@
   },
   "addField": {
     "message": "Ajouter un champ"
+  },
+  "editField": {
+    "message": "Modifier le champ"
   },
   "items": {
     "message": "Éléments"
@@ -9073,7 +9164,7 @@
   "current": {
     "message": "Actuel"
   },
-  "secretsManagerSubInfo": {
+  "secretsManagerSubscriptionInfo": {
     "message": "Votre abonnement au Secrets Manager sera mis à niveau selon le plan sélectionné"
   },
   "bitwardenPasswordManager": {
@@ -9087,7 +9178,7 @@
   },
   "publicApi": {
     "message": "API publique",
-    "description": "The text, 'API', is an acronymn and should not be translated."
+    "description": "The text, 'API', is an acronym and should not be translated."
   },
   "showCharacterCount": {
     "message": "Afficher le nombre de caractères"

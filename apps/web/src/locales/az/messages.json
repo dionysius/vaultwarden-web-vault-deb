@@ -144,7 +144,7 @@
     "message": "Güvənlik kodu (CVV)"
   },
   "securityCodeSlashCVV": {
-    "message": "Security code / CVV"
+    "message": "Güvənlik kodu / CVV"
   },
   "identityName": {
     "message": "Kimlik adı"
@@ -269,9 +269,18 @@
   "cfTypeBoolean": {
     "message": "Boolean"
   },
+  "cfTypeCheckbox": {
+    "message": "Checkbox"
+  },
   "cfTypeLinked": {
     "message": "Əlaqələndirildi",
     "description": "This describes a field that is 'linked' (related) to another field."
+  },
+  "fieldType": {
+    "message": "Field type"
+  },
+  "fieldLabel": {
+    "message": "Field label"
   },
   "remove": {
     "message": "Sil"
@@ -511,6 +520,24 @@
   "viewItem": {
     "message": "Elementə bax"
   },
+  "newItemHeader": {
+    "message": "Yeni $TYPE$",
+    "placeholders": {
+      "type": {
+        "content": "$1",
+        "example": "login"
+      }
+    }
+  },
+  "editItemHeader": {
+    "message": "$TYPE$ - düzəliş et",
+    "placeholders": {
+      "type": {
+        "content": "$1",
+        "example": "login"
+      }
+    }
+  },
   "viewItemType": {
     "message": "$ITEMTYPE$ - bax",
     "placeholders": {
@@ -566,7 +593,7 @@
     }
   },
   "copySuccessful": {
-    "message": "Copy Successful"
+    "message": "Uğurla kopyalandı"
   },
   "copyValue": {
     "message": "Dəyəri kopyala",
@@ -591,6 +618,45 @@
   "copyUri": {
     "message": "URI-ni kopyala",
     "description": "Copy URI to clipboard"
+  },
+  "copyCustomField": {
+    "message": "$FIELD$ - kopyala",
+    "placeholders": {
+      "field": {
+        "content": "$1",
+        "example": "Custom field label"
+      }
+    }
+  },
+  "copyWebsite": {
+    "message": "Veb saytı kopyala"
+  },
+  "copyNotes": {
+    "message": "Notları kopyala"
+  },
+  "copyAddress": {
+    "message": "Ünvanı kopyala"
+  },
+  "copyPhone": {
+    "message": "Telefonu kopyala"
+  },
+  "copyEmail": {
+    "message": "E-poçtu kopyala"
+  },
+  "copyCompany": {
+    "message": "Şirkəti kopyala"
+  },
+  "copySSN": {
+    "message": "Sosial güvənlik nömrəsini kopyala"
+  },
+  "copyPassportNumber": {
+    "message": "Pasport nömrəsini kopyala"
+  },
+  "copyLicenseNumber": {
+    "message": "Lisenziya nömrəsini kopyala"
+  },
+  "copyName": {
+    "message": "Adı kopyala"
   },
   "me": {
     "message": "Mən"
@@ -959,6 +1025,18 @@
   },
   "settings": {
     "message": "Ayarlar"
+  },
+  "accountEmail": {
+    "message": "Hesab e-poçtu"
+  },
+  "requestHint": {
+    "message": "İpucu tələb et"
+  },
+  "requestPasswordHint": {
+    "message": "Parol ipucusu tələb et"
+  },
+  "enterYourAccountEmailAddressAndYourPasswordHintWillBeSentToYou": {
+    "message": "Hesabınızın e-poçt ünvanını daxil edin və parolunuz üçün ipucu sizə göndəriləcək"
   },
   "passwordHint": {
     "message": "Parol məsləhəti"
@@ -3901,10 +3979,10 @@
     }
   },
   "encryptionKeyUpdateCannotProceed": {
-    "message": "Encryption key update cannot proceed"
+    "message": "Şifrələmə açarı güncəlləməsi davam edə bilmir"
   },
   "keyUpdateFoldersFailed": {
-    "message": "When updating your encryption key, your folders could not be decrypted. To continue with the update, your folders must be deleted. No vault items will be deleted if you proceed."
+    "message": "Şifrələmə açarınızı güncəlləyərkən qovluqlarınızın şifrəsi açıla bilmədi. Güncəlləmənin davam etməsi üçün qovluqlarınız silinməlidir. Davam etsəniz, heç bir anbar elementi silinməyəcək."
   },
   "keyUpdated": {
     "message": "Açar güncəlləndi"
@@ -3980,6 +4058,9 @@
   },
   "vaultTimeout": {
     "message": "Anbara müraciət bitəcək"
+  },
+  "vaultTimeout1": {
+    "message": "Vaxt bitmə"
   },
   "vaultTimeoutDesc": {
     "message": "Anbara müraciətin bitəcəyi vaxtı seçin və seçilən əməliyyatı icra edin."
@@ -4249,7 +4330,7 @@
   },
   "lock": {
     "message": "Kilidlə",
-    "description": "Verb form: to make secure or inaccesible by"
+    "description": "Verb form: to make secure or inaccessible by"
   },
   "trash": {
     "message": "Tullantı qutusu",
@@ -4845,12 +4926,6 @@
   },
   "deleteAnyCollection": {
     "message": "İstənilən kolleksiyanı sil"
-  },
-  "editAssignedCollections": {
-    "message": "Təyin edilmiş kolleksiyalara düzəliş et"
-  },
-  "deleteAssignedCollections": {
-    "message": "Təyin edilmiş kolleksiyaları sil"
   },
   "manageGroups": {
     "message": "Qrupları idarə et"
@@ -5459,6 +5534,19 @@
       }
     }
   },
+  "vaultTimeoutPolicyInEffect1": {
+    "message": "Maksimum $HOURS$ saat və $MINUTES$ dəqiqə.",
+    "placeholders": {
+      "hours": {
+        "content": "$1",
+        "example": "5"
+      },
+      "minutes": {
+        "content": "$2",
+        "example": "5"
+      }
+    }
+  },
   "vaultTimeoutPolicyWithActionInEffect": {
     "message": "Təşkilatınızın siyasətləri, anbarınızın vaxt bitişinə təsir edir. Anbar vaxt bitişi üçün icazə verilən maksimum vaxt $HOURS$ saat $MINUTES$ dəqiqədir. Anbar vaxt bitişi əməliyyatı $ACTION$ olaraq ayarlandı.",
     "placeholders": {
@@ -5484,9 +5572,6 @@
         "example": "Lock"
       }
     }
-  },
-  "customVaultTimeout": {
-    "message": "Özəl vaxt"
   },
   "vaultTimeoutToLarge": {
     "message": "Anbar vaxt bitişi, təşkilatınız tərəfindən ayarlanan məhdudiyyətləri aşır."
@@ -6210,7 +6295,7 @@
   },
   "lastSync": {
     "message": "Son sinxr",
-    "description": "Used as a prefix to indicate the last time a sync occured. Example \"Last sync 1968-11-16 00:00:00\""
+    "description": "Used as a prefix to indicate the last time a sync occurred. Example \"Last sync 1968-11-16 00:00:00\""
   },
   "sponsorshipsSynced": {
     "message": "Self-hosted sponsorluq sinxronlaşdırıldı."
@@ -6369,57 +6454,57 @@
   },
   "scim": {
     "message": "SCIM Təminatı",
-    "description": "The text, 'SCIM', is an acronymn and should not be translated."
+    "description": "The text, 'SCIM', is an acronym and should not be translated."
   },
   "scimDescription": {
     "message": "SCIM təmin etmə vasitəsilə tərcih etdiyiniz kimlik doğrulama provayderləri ilə istifadəçiləri və qrupları avtomatik təmin edin",
-    "description": "the text, 'SCIM', is an acronymn and should not be translated."
+    "description": "the text, 'SCIM', is an acronym and should not be translated."
   },
   "scimEnabledCheckboxDesc": {
     "message": "SCIM-i fəallaşdır",
-    "description": "the text, 'SCIM', is an acronymn and should not be translated."
+    "description": "the text, 'SCIM', is an acronym and should not be translated."
   },
   "scimEnabledCheckboxDescHelpText": {
     "message": "URL və SCIM API açarını konfiqurasiya edərək tərcih etdiyiniz kimlik provayderini qurun",
-    "description": "the text, 'SCIM', is an acronymn and should not be translated."
+    "description": "the text, 'SCIM', is an acronym and should not be translated."
   },
   "scimApiKeyHelperText": {
     "message": "Bu API açarı, təşkilatınızdakı istifadəçiləri idarə etmə müraciətinə sahibdir. Gizli saxlanılmalıdır."
   },
   "copyScimKey": {
     "message": "SCIM API açarını lövhəyə kopyala",
-    "description": "the text, 'SCIM' and 'API', are acronymns and should not be translated."
+    "description": "the text, 'SCIM' and 'API', are acronyms and should not be translated."
   },
   "rotateScimKey": {
     "message": "SCIM API açarını döndər",
-    "description": "the text, 'SCIM' and 'API', are acronymns and should not be translated."
+    "description": "the text, 'SCIM' and 'API', are acronyms and should not be translated."
   },
   "rotateScimKeyWarning": {
     "message": "SCIM API açarını döndərmək istədiyinizə əminsiniz? Hazırkı açar, mövcud heç bir inteqrasiya üçün işləməyəcək.",
-    "description": "the text, 'SCIM' and 'API', are acronymns and should not be translated."
+    "description": "the text, 'SCIM' and 'API', are acronyms and should not be translated."
   },
   "rotateKey": {
     "message": "Açarı döndər"
   },
   "scimApiKey": {
     "message": "SCIM API açarı",
-    "description": "the text, 'SCIM' and 'API', are acronymns and should not be translated."
+    "description": "the text, 'SCIM' and 'API', are acronyms and should not be translated."
   },
   "copyScimUrl": {
     "message": "SCIM uc nöqtə URL-sini lövhəyə kopyala",
-    "description": "the text, 'SCIM' and 'URL', are acronymns and should not be translated."
+    "description": "the text, 'SCIM' and 'URL', are acronyms and should not be translated."
   },
   "scimUrl": {
     "message": "SCIM URL",
-    "description": "the text, 'SCIM' and 'URL', are acronymns and should not be translated."
+    "description": "the text, 'SCIM' and 'URL', are acronyms and should not be translated."
   },
   "scimApiKeyRotated": {
     "message": "SCIM API açarı uğurla döndərildi",
-    "description": "the text, 'SCIM' and 'API', are acronymns and should not be translated."
+    "description": "the text, 'SCIM' and 'API', are acronyms and should not be translated."
   },
   "scimSettingsSaved": {
     "message": "SCIM ayarları saxlanıldı",
-    "description": "the text, 'SCIM', is an acronymn and should not be translated."
+    "description": "the text, 'SCIM', is an acronym and should not be translated."
   },
   "inputRequired": {
     "message": "Giriş lazımdır."
@@ -7341,6 +7426,9 @@
   "fileUpload": {
     "message": "Fayl yüklə"
   },
+  "upload": {
+    "message": "Yüklə"
+  },
   "acceptedFormats": {
     "message": "Qəbul edilən formatlar:"
   },
@@ -8201,6 +8289,9 @@
   },
   "addField": {
     "message": "Xana əlavə et"
+  },
+  "editField": {
+    "message": "Edit field"
   },
   "items": {
     "message": "Elementlər"
@@ -9073,21 +9164,21 @@
   "current": {
     "message": "Hazırkı"
   },
-  "secretsManagerSubInfo": {
+  "secretsManagerSubscriptionInfo": {
     "message": "Sirr Meneceri abunəliyiniz seçilmiş plan əsasında yüksəldiləcək"
   },
   "bitwardenPasswordManager": {
     "message": "Bitwarden Parol Meneceri"
   },
   "secretsManagerComplimentaryPasswordManager": {
-    "message": "Your complimentary one year Password Manager subscription will upgrade to the selected plan. You will not be charged until the complimentary period is over."
+    "message": "Tamamlayıcı bir illik Parol Meneceri abunəliyiniz seçilmiş plana yüksəldiləcək. Ödənişsiz dövr bitənə qədər sizdən ödəniş alınmayacaq."
   },
   "fileSavedToDevice": {
-    "message": "File saved to device. Manage from your device downloads."
+    "message": "Fayl cihazda saxlanıldı. Endirilənləri cihazınızdan idarə edin."
   },
   "publicApi": {
     "message": "Hər kəsə açıq API",
-    "description": "The text, 'API', is an acronymn and should not be translated."
+    "description": "The text, 'API', is an acronym and should not be translated."
   },
   "showCharacterCount": {
     "message": "Xarakter sayını göstər"

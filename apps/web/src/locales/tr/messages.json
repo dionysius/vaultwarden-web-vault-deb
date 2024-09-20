@@ -269,9 +269,18 @@
   "cfTypeBoolean": {
     "message": "Boolean"
   },
+  "cfTypeCheckbox": {
+    "message": "Checkbox"
+  },
   "cfTypeLinked": {
     "message": "Bağlantılı",
     "description": "This describes a field that is 'linked' (related) to another field."
+  },
+  "fieldType": {
+    "message": "Field type"
+  },
+  "fieldLabel": {
+    "message": "Field label"
   },
   "remove": {
     "message": "Kaldır"
@@ -511,6 +520,24 @@
   "viewItem": {
     "message": "Kaydı göster"
   },
+  "newItemHeader": {
+    "message": "New $TYPE$",
+    "placeholders": {
+      "type": {
+        "content": "$1",
+        "example": "login"
+      }
+    }
+  },
+  "editItemHeader": {
+    "message": "Edit $TYPE$",
+    "placeholders": {
+      "type": {
+        "content": "$1",
+        "example": "login"
+      }
+    }
+  },
   "viewItemType": {
     "message": "$ITEMTYPE$ bilgileri",
     "placeholders": {
@@ -591,6 +618,45 @@
   "copyUri": {
     "message": "URI'yi kopyala",
     "description": "Copy URI to clipboard"
+  },
+  "copyCustomField": {
+    "message": "$FIELD$ alanını kopyala",
+    "placeholders": {
+      "field": {
+        "content": "$1",
+        "example": "Custom field label"
+      }
+    }
+  },
+  "copyWebsite": {
+    "message": "Web sitesini kopyala"
+  },
+  "copyNotes": {
+    "message": "Notları kopyala"
+  },
+  "copyAddress": {
+    "message": "Adresi kopyala"
+  },
+  "copyPhone": {
+    "message": "Telefonu kopyala"
+  },
+  "copyEmail": {
+    "message": "E-postayı kopyala"
+  },
+  "copyCompany": {
+    "message": "Şirketi kopyala"
+  },
+  "copySSN": {
+    "message": "Sosyal güvenlik numarasını kopyala"
+  },
+  "copyPassportNumber": {
+    "message": "Pasaport numarasını kopyala"
+  },
+  "copyLicenseNumber": {
+    "message": "Ruhsat numarasını kopyala"
+  },
+  "copyName": {
+    "message": "Adı kopyala"
   },
   "me": {
     "message": "Ben"
@@ -959,6 +1025,18 @@
   },
   "settings": {
     "message": "Ayarlar"
+  },
+  "accountEmail": {
+    "message": "Hesap e-posta adresi"
+  },
+  "requestHint": {
+    "message": "İpucunu iste"
+  },
+  "requestPasswordHint": {
+    "message": "Parola ipucunu iste"
+  },
+  "enterYourAccountEmailAddressAndYourPasswordHintWillBeSentToYou": {
+    "message": "Hesabınızın e-posta adresini girdiğinizde parola ipucunuz size gönderilecektir"
   },
   "passwordHint": {
     "message": "Parola ipucu"
@@ -3981,6 +4059,9 @@
   "vaultTimeout": {
     "message": "Kasa zaman aşımı"
   },
+  "vaultTimeout1": {
+    "message": "Zaman aşımı"
+  },
   "vaultTimeoutDesc": {
     "message": "Kasa zaman aşımı eyleminin ne zaman gerçekleştirileceğini seçin."
   },
@@ -4249,7 +4330,7 @@
   },
   "lock": {
     "message": "Kilitle",
-    "description": "Verb form: to make secure or inaccesible by"
+    "description": "Verb form: to make secure or inaccessible by"
   },
   "trash": {
     "message": "Çöp Kutusu",
@@ -4845,12 +4926,6 @@
   },
   "deleteAnyCollection": {
     "message": "Tüm koleksiyonları silme"
-  },
-  "editAssignedCollections": {
-    "message": "Atanmış koleksiyonları düzenleme"
-  },
-  "deleteAssignedCollections": {
-    "message": "Atanmış koleksiyonları silme"
   },
   "manageGroups": {
     "message": "Grupları yönetme"
@@ -5459,6 +5534,19 @@
       }
     }
   },
+  "vaultTimeoutPolicyInEffect1": {
+    "message": "En fazla $HOURS$ saat $MINUTES$ dakika.",
+    "placeholders": {
+      "hours": {
+        "content": "$1",
+        "example": "5"
+      },
+      "minutes": {
+        "content": "$2",
+        "example": "5"
+      }
+    }
+  },
   "vaultTimeoutPolicyWithActionInEffect": {
     "message": "Kuruluş ilkeleriniz kasa zaman aşımınızı etkiliyor. İzin verilen maksimum kasa zaman aşımı $HOURS$ saat ve $MINUTES$ dakikadır. Kasa zaman aşımı eyleminiz $ACTION$ olarak ayarlandı.",
     "placeholders": {
@@ -5484,9 +5572,6 @@
         "example": "Lock"
       }
     }
-  },
-  "customVaultTimeout": {
-    "message": "Özel kasa zaman aşımı"
   },
   "vaultTimeoutToLarge": {
     "message": "Kasa zaman aşımınız, kuruluşunuz tarafından belirlenen kısıtlamaları aşıyor."
@@ -6210,7 +6295,7 @@
   },
   "lastSync": {
     "message": "Son eşitleme",
-    "description": "Used as a prefix to indicate the last time a sync occured. Example \"Last sync 1968-11-16 00:00:00\""
+    "description": "Used as a prefix to indicate the last time a sync occurred. Example \"Last sync 1968-11-16 00:00:00\""
   },
   "sponsorshipsSynced": {
     "message": "Kendi kendine barındırılan sponsorluklar eşitlendi."
@@ -6369,57 +6454,57 @@
   },
   "scim": {
     "message": "SCIM provisioning",
-    "description": "The text, 'SCIM', is an acronymn and should not be translated."
+    "description": "The text, 'SCIM', is an acronym and should not be translated."
   },
   "scimDescription": {
     "message": "Automatically provision users and groups with your preferred identity provider via SCIM provisioning",
-    "description": "the text, 'SCIM', is an acronymn and should not be translated."
+    "description": "the text, 'SCIM', is an acronym and should not be translated."
   },
   "scimEnabledCheckboxDesc": {
     "message": "SCIM'i etkinleştir",
-    "description": "the text, 'SCIM', is an acronymn and should not be translated."
+    "description": "the text, 'SCIM', is an acronym and should not be translated."
   },
   "scimEnabledCheckboxDescHelpText": {
     "message": "URL'yi ve SCIM API anahtarını yapılandırarak tercih ettiğiniz kimlik sağlayıcısını ayarlayın",
-    "description": "the text, 'SCIM', is an acronymn and should not be translated."
+    "description": "the text, 'SCIM', is an acronym and should not be translated."
   },
   "scimApiKeyHelperText": {
     "message": "Bu API anahtarı, kuruluşunuzdaki kullanıcıları yönetme erişimine sahiptir. Gizli tutmaya özen gösterin."
   },
   "copyScimKey": {
     "message": "SCIM API anahtarını panoya kopyala",
-    "description": "the text, 'SCIM' and 'API', are acronymns and should not be translated."
+    "description": "the text, 'SCIM' and 'API', are acronyms and should not be translated."
   },
   "rotateScimKey": {
     "message": "SCIM API anahtarını yenile",
-    "description": "the text, 'SCIM' and 'API', are acronymns and should not be translated."
+    "description": "the text, 'SCIM' and 'API', are acronyms and should not be translated."
   },
   "rotateScimKeyWarning": {
     "message": "SCIM API Anahtarını yenilemek istediğinizden emin misiniz? Geçerli anahtar, mevcut entegrasyonlarda artık çalışmayacaktır.",
-    "description": "the text, 'SCIM' and 'API', are acronymns and should not be translated."
+    "description": "the text, 'SCIM' and 'API', are acronyms and should not be translated."
   },
   "rotateKey": {
     "message": "Anahtarı yenile"
   },
   "scimApiKey": {
     "message": "SCIM API anahtarı",
-    "description": "the text, 'SCIM' and 'API', are acronymns and should not be translated."
+    "description": "the text, 'SCIM' and 'API', are acronyms and should not be translated."
   },
   "copyScimUrl": {
     "message": "SCIM uç noktası URL'sini panoya kopyala",
-    "description": "the text, 'SCIM' and 'URL', are acronymns and should not be translated."
+    "description": "the text, 'SCIM' and 'URL', are acronyms and should not be translated."
   },
   "scimUrl": {
     "message": "SCIM URL'si",
-    "description": "the text, 'SCIM' and 'URL', are acronymns and should not be translated."
+    "description": "the text, 'SCIM' and 'URL', are acronyms and should not be translated."
   },
   "scimApiKeyRotated": {
     "message": "SCIM API anahtarı başarıyla yenilendi",
-    "description": "the text, 'SCIM' and 'API', are acronymns and should not be translated."
+    "description": "the text, 'SCIM' and 'API', are acronyms and should not be translated."
   },
   "scimSettingsSaved": {
     "message": "SCIM ayarları kaydedildi",
-    "description": "the text, 'SCIM', is an acronymn and should not be translated."
+    "description": "the text, 'SCIM', is an acronym and should not be translated."
   },
   "inputRequired": {
     "message": "Girdi gerekli."
@@ -7341,6 +7426,9 @@
   "fileUpload": {
     "message": "Dosya yükleme"
   },
+  "upload": {
+    "message": "Upload"
+  },
   "acceptedFormats": {
     "message": "Kabul edilen biçimler:"
   },
@@ -8201,6 +8289,9 @@
   },
   "addField": {
     "message": "Alan ekle"
+  },
+  "editField": {
+    "message": "Edit field"
   },
   "items": {
     "message": "Kayıtlar"
@@ -9073,8 +9164,8 @@
   "current": {
     "message": "Current"
   },
-  "secretsManagerSubInfo": {
-    "message": "Your Secrets Manager subscription will upgrade base on the plan selected"
+  "secretsManagerSubscriptionInfo": {
+    "message": "Secrets Manager aboneliğiniz seçtiğiniz plana göre yükseltilecektir"
   },
   "bitwardenPasswordManager": {
     "message": "Bitwarden Parola Yöneticisi"
@@ -9087,7 +9178,7 @@
   },
   "publicApi": {
     "message": "Genel API",
-    "description": "The text, 'API', is an acronymn and should not be translated."
+    "description": "The text, 'API', is an acronym and should not be translated."
   },
   "showCharacterCount": {
     "message": "Karakter sayacını göster"

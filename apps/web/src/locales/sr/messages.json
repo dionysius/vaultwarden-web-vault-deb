@@ -144,7 +144,7 @@
     "message": "Безбедносни кôд (CVV)"
   },
   "securityCodeSlashCVV": {
-    "message": "Security code / CVV"
+    "message": "Безбедносни кôд/CVV"
   },
   "identityName": {
     "message": "Име идентитета"
@@ -269,9 +269,18 @@
   "cfTypeBoolean": {
     "message": "Булове"
   },
+  "cfTypeCheckbox": {
+    "message": "Checkbox"
+  },
   "cfTypeLinked": {
     "message": "Повезано",
     "description": "This describes a field that is 'linked' (related) to another field."
+  },
+  "fieldType": {
+    "message": "Field type"
+  },
+  "fieldLabel": {
+    "message": "Field label"
   },
   "remove": {
     "message": "Уклони"
@@ -511,6 +520,24 @@
   "viewItem": {
     "message": "Види ставку"
   },
+  "newItemHeader": {
+    "message": "New $TYPE$",
+    "placeholders": {
+      "type": {
+        "content": "$1",
+        "example": "login"
+      }
+    }
+  },
+  "editItemHeader": {
+    "message": "Edit $TYPE$",
+    "placeholders": {
+      "type": {
+        "content": "$1",
+        "example": "login"
+      }
+    }
+  },
   "viewItemType": {
     "message": "Видети $ITEMTYPE$",
     "placeholders": {
@@ -566,7 +593,7 @@
     }
   },
   "copySuccessful": {
-    "message": "Copy Successful"
+    "message": "Успешно копирање"
   },
   "copyValue": {
     "message": "Копирај вредност",
@@ -591,6 +618,45 @@
   "copyUri": {
     "message": "Копирај УРЛ",
     "description": "Copy URI to clipboard"
+  },
+  "copyCustomField": {
+    "message": "Копирати $FIELD$",
+    "placeholders": {
+      "field": {
+        "content": "$1",
+        "example": "Custom field label"
+      }
+    }
+  },
+  "copyWebsite": {
+    "message": "Копирати вебсајт"
+  },
+  "copyNotes": {
+    "message": "Копирати белешке"
+  },
+  "copyAddress": {
+    "message": "Копирати адресу"
+  },
+  "copyPhone": {
+    "message": "Копирати телефон"
+  },
+  "copyEmail": {
+    "message": "Копирати имејл"
+  },
+  "copyCompany": {
+    "message": "Копирати фирму"
+  },
+  "copySSN": {
+    "message": "Копирати број социјалног осигурања"
+  },
+  "copyPassportNumber": {
+    "message": "Копирати број пасоша"
+  },
+  "copyLicenseNumber": {
+    "message": "Копирати број лиценце"
+  },
+  "copyName": {
+    "message": "Копирати име"
   },
   "me": {
     "message": "Ја"
@@ -959,6 +1025,18 @@
   },
   "settings": {
     "message": "Подешавања"
+  },
+  "accountEmail": {
+    "message": "Имејл налога"
+  },
+  "requestHint": {
+    "message": "Захтевај савет"
+  },
+  "requestPasswordHint": {
+    "message": "Затражити савет лозинке"
+  },
+  "enterYourAccountEmailAddressAndYourPasswordHintWillBeSentToYou": {
+    "message": "Унесите имејл свог налога и биће вам послат савет за лозинку"
   },
   "passwordHint": {
     "message": "Помоћ за лозинку"
@@ -3901,10 +3979,10 @@
     }
   },
   "encryptionKeyUpdateCannotProceed": {
-    "message": "Encryption key update cannot proceed"
+    "message": "Ажурирање кључа за шифровање не може да се настави"
   },
   "keyUpdateFoldersFailed": {
-    "message": "When updating your encryption key, your folders could not be decrypted. To continue with the update, your folders must be deleted. No vault items will be deleted if you proceed."
+    "message": "Приликом ажурирања кључа за шифровање, ваше фасцикле нису могле да се дешифрују. Да бисте наставили са ажурирањем, ваше фасцикле морају бити избрисане. Ниједна ставка у сефу неће бити избрисана ако наставите."
   },
   "keyUpdated": {
     "message": "Кључ је ажуриран"
@@ -3981,6 +4059,9 @@
   "vaultTimeout": {
     "message": "Тајмаут сефа"
   },
+  "vaultTimeout1": {
+    "message": "Истекло време"
+  },
   "vaultTimeoutDesc": {
     "message": "Изаберите када ће сеф истећи и да изврши одабрану радњу."
   },
@@ -4048,7 +4129,7 @@
     "message": "Изабано"
   },
   "recommended": {
-    "message": "Recommended"
+    "message": "Препоручено"
   },
   "ownership": {
     "message": "Власништво"
@@ -4249,7 +4330,7 @@
   },
   "lock": {
     "message": "Закључај",
-    "description": "Verb form: to make secure or inaccesible by"
+    "description": "Verb form: to make secure or inaccessible by"
   },
   "trash": {
     "message": "Отпад",
@@ -4845,12 +4926,6 @@
   },
   "deleteAnyCollection": {
     "message": "Брише било коју колекцију"
-  },
-  "editAssignedCollections": {
-    "message": "Уреди додељеним колекцијама"
-  },
-  "deleteAssignedCollections": {
-    "message": "Брише додељеним колекцијама"
   },
   "manageGroups": {
     "message": "Управљање групама"
@@ -5459,6 +5534,19 @@
       }
     }
   },
+  "vaultTimeoutPolicyInEffect1": {
+    "message": "Макимум $HOURS$ сат(а) и $MINUTES$ минут(а).",
+    "placeholders": {
+      "hours": {
+        "content": "$1",
+        "example": "5"
+      },
+      "minutes": {
+        "content": "$2",
+        "example": "5"
+      }
+    }
+  },
   "vaultTimeoutPolicyWithActionInEffect": {
     "message": "Смернице ваше организације утичу на временско ограничење сефа. Максимално дозвољено ограничење сефа је $HOURS$ сат(и) и $MINUTES$ минут(а). Ваша радња временског ограничења сефа је подешена на $ACTION$.",
     "placeholders": {
@@ -5484,9 +5572,6 @@
         "example": "Lock"
       }
     }
-  },
-  "customVaultTimeout": {
-    "message": "Прилагодити тајмаут сефа"
   },
   "vaultTimeoutToLarge": {
     "message": "Време истека вашег сефа је премашило дозвољена ограничења од стране ваше организације."
@@ -6210,7 +6295,7 @@
   },
   "lastSync": {
     "message": "Последња синхронизација",
-    "description": "Used as a prefix to indicate the last time a sync occured. Example \"Last sync 1968-11-16 00:00:00\""
+    "description": "Used as a prefix to indicate the last time a sync occurred. Example \"Last sync 1968-11-16 00:00:00\""
   },
   "sponsorshipsSynced": {
     "message": "Self-hosted sponsorships synced."
@@ -6369,57 +6454,57 @@
   },
   "scim": {
     "message": "SCIM provisioning",
-    "description": "The text, 'SCIM', is an acronymn and should not be translated."
+    "description": "The text, 'SCIM', is an acronym and should not be translated."
   },
   "scimDescription": {
     "message": "Automatically provision users and groups with your preferred identity provider via SCIM provisioning",
-    "description": "the text, 'SCIM', is an acronymn and should not be translated."
+    "description": "the text, 'SCIM', is an acronym and should not be translated."
   },
   "scimEnabledCheckboxDesc": {
     "message": "Упали SCIM",
-    "description": "the text, 'SCIM', is an acronymn and should not be translated."
+    "description": "the text, 'SCIM', is an acronym and should not be translated."
   },
   "scimEnabledCheckboxDescHelpText": {
     "message": "Set up your preferred identity provider by configuring the URL and SCIM API Key",
-    "description": "the text, 'SCIM', is an acronymn and should not be translated."
+    "description": "the text, 'SCIM', is an acronym and should not be translated."
   },
   "scimApiKeyHelperText": {
     "message": "This API key has access to manage users within your organization. It should be kept secret."
   },
   "copyScimKey": {
     "message": "Copy the SCIM API key to your clipboard",
-    "description": "the text, 'SCIM' and 'API', are acronymns and should not be translated."
+    "description": "the text, 'SCIM' and 'API', are acronyms and should not be translated."
   },
   "rotateScimKey": {
     "message": "Rotate the SCIM API key",
-    "description": "the text, 'SCIM' and 'API', are acronymns and should not be translated."
+    "description": "the text, 'SCIM' and 'API', are acronyms and should not be translated."
   },
   "rotateScimKeyWarning": {
     "message": "Are you sure you want to rotate the SCIM API Key? The current key will no longer work for any existing integrations.",
-    "description": "the text, 'SCIM' and 'API', are acronymns and should not be translated."
+    "description": "the text, 'SCIM' and 'API', are acronyms and should not be translated."
   },
   "rotateKey": {
     "message": "Променити кључ"
   },
   "scimApiKey": {
     "message": "SCIM API key",
-    "description": "the text, 'SCIM' and 'API', are acronymns and should not be translated."
+    "description": "the text, 'SCIM' and 'API', are acronyms and should not be translated."
   },
   "copyScimUrl": {
     "message": "Copy the SCIM endpoint URL to your clipboard",
-    "description": "the text, 'SCIM' and 'URL', are acronymns and should not be translated."
+    "description": "the text, 'SCIM' and 'URL', are acronyms and should not be translated."
   },
   "scimUrl": {
     "message": "SCIM УРЛ",
-    "description": "the text, 'SCIM' and 'URL', are acronymns and should not be translated."
+    "description": "the text, 'SCIM' and 'URL', are acronyms and should not be translated."
   },
   "scimApiKeyRotated": {
     "message": "SCIM API кључ успешно ротиран",
-    "description": "the text, 'SCIM' and 'API', are acronymns and should not be translated."
+    "description": "the text, 'SCIM' and 'API', are acronyms and should not be translated."
   },
   "scimSettingsSaved": {
     "message": "SCIM подешавања сачувана",
-    "description": "the text, 'SCIM', is an acronymn and should not be translated."
+    "description": "the text, 'SCIM', is an acronym and should not be translated."
   },
   "inputRequired": {
     "message": "Унос је потребан."
@@ -7341,6 +7426,9 @@
   "fileUpload": {
     "message": "Отпремање датотеке"
   },
+  "upload": {
+    "message": "Upload"
+  },
   "acceptedFormats": {
     "message": "Прихваћени формати:"
   },
@@ -8202,6 +8290,9 @@
   "addField": {
     "message": "Додај поље"
   },
+  "editField": {
+    "message": "Edit field"
+  },
   "items": {
     "message": "Ставке"
   },
@@ -8772,25 +8863,25 @@
     "message": "Провера приступа чланова организације кроз групе, колекције и ставке колекције. ЦСВ извоз пружа детаљну анализу по члану, укључујући информације о дозволама за прикупљање и конфигурацијама налога."
   },
   "memberAccessReportNoCollection": {
-    "message": "(No Collection)"
+    "message": "(Нема колекције)"
   },
   "memberAccessReportNoCollectionPermission": {
-    "message": "(No Collection Permission)"
+    "message": "(Без дозволе за колекцију)"
   },
   "memberAccessReportNoGroup": {
-    "message": "(No Group)"
+    "message": "(Нема групе)"
   },
   "memberAccessReportTwoFactorEnabledTrue": {
-    "message": "On"
+    "message": "Да"
   },
   "memberAccessReportTwoFactorEnabledFalse": {
-    "message": "Off"
+    "message": "Не"
   },
   "memberAccessReportAuthenticationEnabledTrue": {
-    "message": "On"
+    "message": "Да"
   },
   "memberAccessReportAuthenticationEnabledFalse": {
-    "message": "Off"
+    "message": "Не"
   },
   "higherKDFIterations": {
     "message": "Веће KDF итерације може помоћи у заштити ваше главне лозинке од грубе присиле од стране нападача."
@@ -8996,7 +9087,7 @@
     }
   },
   "upgradePlans": {
-    "message": "Upgrade your plan to invite members and experience powerful security features."
+    "message": "Надоградите свој план да бисте позвали чланове и искусили моћне безбедносне функције."
   },
   "upgradeDiscount": {
     "message": "Уштедите $AMOUNT$%",
@@ -9008,10 +9099,10 @@
     }
   },
   "enterprisePlanUpgradeMessage": {
-    "message": "Advanced capabilities for larger organizations"
+    "message": "Напредне могућности за веће организације"
   },
   "teamsPlanUpgradeMessage": {
-    "message": "Resilient protection for growing teams"
+    "message": "Отпорна заштита за растуће тимове"
   },
   "teamsInviteMessage": {
     "message": "Invite unlimited members"
@@ -9023,7 +9114,7 @@
     "message": "Синхронизујте групе и кориснике из директоријума"
   },
   "familyPlanUpgradeMessage": {
-    "message": "Secure your family logins"
+    "message": "Осигурајте своје породичне пријаве"
   },
   "accessToPremiumFeatures": {
     "message": "Приступ Премиум функцијама"
@@ -9073,27 +9164,27 @@
   "current": {
     "message": "Тренутно"
   },
-  "secretsManagerSubInfo": {
-    "message": "Your Secrets Manager subscription will upgrade base on the plan selected"
+  "secretsManagerSubscriptionInfo": {
+    "message": "Your Secrets Manager subscription will upgrade based on the plan selected"
   },
   "bitwardenPasswordManager": {
     "message": "Bitwarden Менаџер Лозинке"
   },
   "secretsManagerComplimentaryPasswordManager": {
-    "message": "Your complimentary one year Password Manager subscription will upgrade to the selected plan. You will not be charged until the complimentary period is over."
+    "message": "Ваша комплементарна једногодишња претплата на Менаџер Лозинки ће надоградити на изабрани план. Неће вам бити наплаћено док се бесплатни период не заврши."
   },
   "fileSavedToDevice": {
     "message": "File saved to device. Manage from your device downloads."
   },
   "publicApi": {
     "message": "Јавни API",
-    "description": "The text, 'API', is an acronymn and should not be translated."
+    "description": "The text, 'API', is an acronym and should not be translated."
   },
   "showCharacterCount": {
-    "message": "Show character count"
+    "message": "Прикажи бројање слова"
   },
   "hideCharacterCount": {
-    "message": "Hide character count"
+    "message": "Сакриј бројање слова"
   },
   "editAccess": {
     "message": "Edit access"

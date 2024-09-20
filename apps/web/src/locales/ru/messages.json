@@ -269,9 +269,18 @@
   "cfTypeBoolean": {
     "message": "Логическое"
   },
+  "cfTypeCheckbox": {
+    "message": "Флажок"
+  },
   "cfTypeLinked": {
     "message": "Связано",
     "description": "This describes a field that is 'linked' (related) to another field."
+  },
+  "fieldType": {
+    "message": "Тип поля"
+  },
+  "fieldLabel": {
+    "message": "Метка поля"
   },
   "remove": {
     "message": "Удалить"
@@ -511,6 +520,24 @@
   "viewItem": {
     "message": "Просмотр элемента"
   },
+  "newItemHeader": {
+    "message": "Новый $TYPE$",
+    "placeholders": {
+      "type": {
+        "content": "$1",
+        "example": "login"
+      }
+    }
+  },
+  "editItemHeader": {
+    "message": "Изменить $TYPE$",
+    "placeholders": {
+      "type": {
+        "content": "$1",
+        "example": "login"
+      }
+    }
+  },
   "viewItemType": {
     "message": "Просмотр $ITEMTYPE$",
     "placeholders": {
@@ -591,6 +618,45 @@
   "copyUri": {
     "message": "Скопировать URI",
     "description": "Copy URI to clipboard"
+  },
+  "copyCustomField": {
+    "message": "Скопировать $FIELD$",
+    "placeholders": {
+      "field": {
+        "content": "$1",
+        "example": "Custom field label"
+      }
+    }
+  },
+  "copyWebsite": {
+    "message": "Скопировать сайт"
+  },
+  "copyNotes": {
+    "message": "Скопировать заметки"
+  },
+  "copyAddress": {
+    "message": "Скопировать адрес"
+  },
+  "copyPhone": {
+    "message": "Скопировать телефон"
+  },
+  "copyEmail": {
+    "message": "Скопировать email"
+  },
+  "copyCompany": {
+    "message": "Скопировать компанию"
+  },
+  "copySSN": {
+    "message": "Скопировать номер социального страхования"
+  },
+  "copyPassportNumber": {
+    "message": "Скопировать номер паспорта"
+  },
+  "copyLicenseNumber": {
+    "message": "Скопировать номер лицензии"
+  },
+  "copyName": {
+    "message": "Скопировать имя"
   },
   "me": {
     "message": "Мое"
@@ -959,6 +1025,18 @@
   },
   "settings": {
     "message": "Настройки"
+  },
+  "accountEmail": {
+    "message": "Email аккаунта"
+  },
+  "requestHint": {
+    "message": "Запросить подсказку"
+  },
+  "requestPasswordHint": {
+    "message": "Запросить подсказку к паролю"
+  },
+  "enterYourAccountEmailAddressAndYourPasswordHintWillBeSentToYou": {
+    "message": "Введите email вашего аккаунта, и вам будет отправлена подсказка для пароля"
   },
   "passwordHint": {
     "message": "Подсказка к паролю"
@@ -3981,6 +4059,9 @@
   "vaultTimeout": {
     "message": "Тайм-аут хранилища"
   },
+  "vaultTimeout1": {
+    "message": "Тайм-аут"
+  },
   "vaultTimeoutDesc": {
     "message": "Выберите тайм-аут для хранилища и действие, которое необходимо предпринять."
   },
@@ -4249,7 +4330,7 @@
   },
   "lock": {
     "message": "Блокировка",
-    "description": "Verb form: to make secure or inaccesible by"
+    "description": "Verb form: to make secure or inaccessible by"
   },
   "trash": {
     "message": "Корзина",
@@ -4845,12 +4926,6 @@
   },
   "deleteAnyCollection": {
     "message": "Удалять любую коллекцию"
-  },
-  "editAssignedCollections": {
-    "message": "Изменять назначенные коллекции"
-  },
-  "deleteAssignedCollections": {
-    "message": "Удалять назначенные коллекции"
   },
   "manageGroups": {
     "message": "Управлять группами"
@@ -5459,6 +5534,19 @@
       }
     }
   },
+  "vaultTimeoutPolicyInEffect1": {
+    "message": "Максимум $HOURS$ час. $MINUTES$ мин.",
+    "placeholders": {
+      "hours": {
+        "content": "$1",
+        "example": "5"
+      },
+      "minutes": {
+        "content": "$2",
+        "example": "5"
+      }
+    }
+  },
   "vaultTimeoutPolicyWithActionInEffect": {
     "message": "Политики вашей организации влияют на тайм-аут хранилища. Максимально допустимый тайм-аут хранилища составляет $HOURS$ час. и $MINUTES$ мин. Для вашего хранилища задан тайм-аут $ACTION$.",
     "placeholders": {
@@ -5484,9 +5572,6 @@
         "example": "Lock"
       }
     }
-  },
-  "customVaultTimeout": {
-    "message": "Пользовательский тайм-аут хранилища"
   },
   "vaultTimeoutToLarge": {
     "message": "Тайм-аут вашего хранилища превышает ограничение, установленное вашей организацией."
@@ -6210,7 +6295,7 @@
   },
   "lastSync": {
     "message": "Последняя синхронизация",
-    "description": "Used as a prefix to indicate the last time a sync occured. Example \"Last sync 1968-11-16 00:00:00\""
+    "description": "Used as a prefix to indicate the last time a sync occurred. Example \"Last sync 1968-11-16 00:00:00\""
   },
   "sponsorshipsSynced": {
     "message": "Спонсирование собственного сервера синхронизировано."
@@ -6369,57 +6454,57 @@
   },
   "scim": {
     "message": "Обеспечение SCIM",
-    "description": "The text, 'SCIM', is an acronymn and should not be translated."
+    "description": "The text, 'SCIM', is an acronym and should not be translated."
   },
   "scimDescription": {
     "message": "Автоматически предоставлять пользователям и группам предпочитаемого поставщика удостоверений с помощью обеспечения SCIM",
-    "description": "the text, 'SCIM', is an acronymn and should not be translated."
+    "description": "the text, 'SCIM', is an acronym and should not be translated."
   },
   "scimEnabledCheckboxDesc": {
     "message": "Включить SCIM",
-    "description": "the text, 'SCIM', is an acronymn and should not be translated."
+    "description": "the text, 'SCIM', is an acronym and should not be translated."
   },
   "scimEnabledCheckboxDescHelpText": {
     "message": "Установить предпочтительного поставщика идентификационных данных, настроив URL и ключ API SCIM",
-    "description": "the text, 'SCIM', is an acronymn and should not be translated."
+    "description": "the text, 'SCIM', is an acronym and should not be translated."
   },
   "scimApiKeyHelperText": {
     "message": "Этот ключ API имеет доступ к управлению пользователями вашей организации. Его следует держать в секрете."
   },
   "copyScimKey": {
     "message": "Скопировать API-ключ SCIM в буфер обмена",
-    "description": "the text, 'SCIM' and 'API', are acronymns and should not be translated."
+    "description": "the text, 'SCIM' and 'API', are acronyms and should not be translated."
   },
   "rotateScimKey": {
     "message": "Сменить API-ключ SCIM",
-    "description": "the text, 'SCIM' and 'API', are acronymns and should not be translated."
+    "description": "the text, 'SCIM' and 'API', are acronyms and should not be translated."
   },
   "rotateScimKeyWarning": {
     "message": "Вы уверены, что хотите сменить API-ключ SCIM? Текущий ключ перестанет работать для любых существующих интеграций.",
-    "description": "the text, 'SCIM' and 'API', are acronymns and should not be translated."
+    "description": "the text, 'SCIM' and 'API', are acronyms and should not be translated."
   },
   "rotateKey": {
     "message": "Сменить ключ"
   },
   "scimApiKey": {
     "message": "API-ключ SCIM",
-    "description": "the text, 'SCIM' and 'API', are acronymns and should not be translated."
+    "description": "the text, 'SCIM' and 'API', are acronyms and should not be translated."
   },
   "copyScimUrl": {
     "message": "Скопировать URL конечной точки SCIM в буфер обмена",
-    "description": "the text, 'SCIM' and 'URL', are acronymns and should not be translated."
+    "description": "the text, 'SCIM' and 'URL', are acronyms and should not be translated."
   },
   "scimUrl": {
     "message": "URL SCIM",
-    "description": "the text, 'SCIM' and 'URL', are acronymns and should not be translated."
+    "description": "the text, 'SCIM' and 'URL', are acronyms and should not be translated."
   },
   "scimApiKeyRotated": {
     "message": "API-ключ SCIM сменен успешно",
-    "description": "the text, 'SCIM' and 'API', are acronymns and should not be translated."
+    "description": "the text, 'SCIM' and 'API', are acronyms and should not be translated."
   },
   "scimSettingsSaved": {
     "message": "Настройки SCIM успешно сохранены",
-    "description": "the text, 'SCIM', is an acronymn and should not be translated."
+    "description": "the text, 'SCIM', is an acronym and should not be translated."
   },
   "inputRequired": {
     "message": "Необходимо ввести данные."
@@ -7341,6 +7426,9 @@
   "fileUpload": {
     "message": "Загрузить файл"
   },
+  "upload": {
+    "message": "Загрузить"
+  },
   "acceptedFormats": {
     "message": "Допустимые форматы:"
   },
@@ -8201,6 +8289,9 @@
   },
   "addField": {
     "message": "Добавить поле"
+  },
+  "editField": {
+    "message": "Изменить поле"
   },
   "items": {
     "message": "Элементы"
@@ -9073,8 +9164,8 @@
   "current": {
     "message": "Текущий"
   },
-  "secretsManagerSubInfo": {
-    "message": "Ваша подписка на Менеджер секретов будет обновляться в зависимости от выбранного тарифа"
+  "secretsManagerSubscriptionInfo": {
+    "message": "Ваша подписка на Менеджер секретов будет обновлена в зависимости от выбранного тарифа"
   },
   "bitwardenPasswordManager": {
     "message": "Bitwarden - Менеджер паролей"
@@ -9087,7 +9178,7 @@
   },
   "publicApi": {
     "message": "Публичный API",
-    "description": "The text, 'API', is an acronymn and should not be translated."
+    "description": "The text, 'API', is an acronym and should not be translated."
   },
   "showCharacterCount": {
     "message": "Показать количество символов"

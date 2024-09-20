@@ -144,7 +144,7 @@
     "message": "Kartenprüfnummer (CVV)"
   },
   "securityCodeSlashCVV": {
-    "message": "Security code / CVV"
+    "message": "Sicherheitscode / CVV"
   },
   "identityName": {
     "message": "Identitätsname"
@@ -269,9 +269,18 @@
   "cfTypeBoolean": {
     "message": "Boolescher Wert"
   },
+  "cfTypeCheckbox": {
+    "message": "Kontrollkästchen"
+  },
   "cfTypeLinked": {
     "message": "Verknüpft",
     "description": "This describes a field that is 'linked' (related) to another field."
+  },
+  "fieldType": {
+    "message": "Feldtyp"
+  },
+  "fieldLabel": {
+    "message": "Feldbezeichnung"
   },
   "remove": {
     "message": "Entfernen"
@@ -511,6 +520,24 @@
   "viewItem": {
     "message": "Eintrag anzeigen"
   },
+  "newItemHeader": {
+    "message": "Neue $TYPE$",
+    "placeholders": {
+      "type": {
+        "content": "$1",
+        "example": "login"
+      }
+    }
+  },
+  "editItemHeader": {
+    "message": "$TYPE$ bearbeiten",
+    "placeholders": {
+      "type": {
+        "content": "$1",
+        "example": "login"
+      }
+    }
+  },
   "viewItemType": {
     "message": "$ITEMTYPE$ anzeigen",
     "placeholders": {
@@ -566,7 +593,7 @@
     }
   },
   "copySuccessful": {
-    "message": "Copy Successful"
+    "message": "Erfolgreich kopiert"
   },
   "copyValue": {
     "message": "Wert kopieren",
@@ -591,6 +618,45 @@
   "copyUri": {
     "message": "URI kopieren",
     "description": "Copy URI to clipboard"
+  },
+  "copyCustomField": {
+    "message": "$FIELD$ kopieren",
+    "placeholders": {
+      "field": {
+        "content": "$1",
+        "example": "Custom field label"
+      }
+    }
+  },
+  "copyWebsite": {
+    "message": "Website kopieren"
+  },
+  "copyNotes": {
+    "message": "Notizen kopieren"
+  },
+  "copyAddress": {
+    "message": "Adresse kopieren"
+  },
+  "copyPhone": {
+    "message": "Telefonnummer kopieren"
+  },
+  "copyEmail": {
+    "message": "E-Mail-Adresse kopieren"
+  },
+  "copyCompany": {
+    "message": "Unternehmen kopieren"
+  },
+  "copySSN": {
+    "message": "Sozialversicherungsnummer kopieren"
+  },
+  "copyPassportNumber": {
+    "message": "Passnummer kopieren"
+  },
+  "copyLicenseNumber": {
+    "message": "Lizenznummer kopieren"
+  },
+  "copyName": {
+    "message": "Name kopieren"
   },
   "me": {
     "message": "Ich"
@@ -959,6 +1025,18 @@
   },
   "settings": {
     "message": "Einstellungen"
+  },
+  "accountEmail": {
+    "message": "E-Mail-Adresse des Kontos"
+  },
+  "requestHint": {
+    "message": "Hinweis anfragen"
+  },
+  "requestPasswordHint": {
+    "message": "Passwort-Hinweis anfragen"
+  },
+  "enterYourAccountEmailAddressAndYourPasswordHintWillBeSentToYou": {
+    "message": "Gib deine E-Mail-Adresse ein und dein Passwort-Hinweis wird dir zugesandt"
   },
   "passwordHint": {
     "message": "Passwort-Hinweis"
@@ -3901,10 +3979,10 @@
     }
   },
   "encryptionKeyUpdateCannotProceed": {
-    "message": "Encryption key update cannot proceed"
+    "message": "Aktualisierung des Verschlüsselungsschlüssels kann nicht fortgesetzt werden"
   },
   "keyUpdateFoldersFailed": {
-    "message": "When updating your encryption key, your folders could not be decrypted. To continue with the update, your folders must be deleted. No vault items will be deleted if you proceed."
+    "message": "Beim Aktualisieren deines Verschlüsselungsschlüssels konnten deine Ordner nicht entschlüsselt werden. Um mit der Aktualisierung fortzufahren, müssen deine Ordner gelöscht werden. Es werden keine Tresor-Einträge gelöscht, wenn du fortfährst."
   },
   "keyUpdated": {
     "message": "Schlüssel aktualisiert"
@@ -3981,6 +4059,9 @@
   "vaultTimeout": {
     "message": "Tresor-Timeout"
   },
+  "vaultTimeout1": {
+    "message": "Timeout"
+  },
   "vaultTimeoutDesc": {
     "message": "Lege einen Timeout für den Tresor und die auszuführende Aktion fest."
   },
@@ -4048,7 +4129,7 @@
     "message": "Ausgewählt"
   },
   "recommended": {
-    "message": "Recommended"
+    "message": "Empfohlen"
   },
   "ownership": {
     "message": "Eigentümer"
@@ -4249,7 +4330,7 @@
   },
   "lock": {
     "message": "Sperren",
-    "description": "Verb form: to make secure or inaccesible by"
+    "description": "Verb form: to make secure or inaccessible by"
   },
   "trash": {
     "message": "Papierkorb",
@@ -4845,12 +4926,6 @@
   },
   "deleteAnyCollection": {
     "message": "Jede Sammlung löschen"
-  },
-  "editAssignedCollections": {
-    "message": "Zugewiesene Sammlungen bearbeiten"
-  },
-  "deleteAssignedCollections": {
-    "message": "Zugewiesene Sammlungen löschen"
   },
   "manageGroups": {
     "message": "Gruppen verwalten"
@@ -5459,6 +5534,19 @@
       }
     }
   },
+  "vaultTimeoutPolicyInEffect1": {
+    "message": "Maximal $HOURS$ Stunde(n) und $MINUTES$ Minute(n).",
+    "placeholders": {
+      "hours": {
+        "content": "$1",
+        "example": "5"
+      },
+      "minutes": {
+        "content": "$2",
+        "example": "5"
+      }
+    }
+  },
   "vaultTimeoutPolicyWithActionInEffect": {
     "message": "Deine Organisationsrichtlinien beeinflussen dein Tresor-Timeout. Das maximal zulässige Tresor-Timeout beträgt $HOURS$ Stunde(n) und $MINUTES$ Minute(n). Deine Tresor-Timeout-Aktion ist auf $ACTION$ gesetzt.",
     "placeholders": {
@@ -5484,9 +5572,6 @@
         "example": "Lock"
       }
     }
-  },
-  "customVaultTimeout": {
-    "message": "Benutzerdefinierter Tresor-Timeout"
   },
   "vaultTimeoutToLarge": {
     "message": "Dein Tresor-Timeout überschreitet die von deinem Unternehmen festgelegte Beschränkung."
@@ -6210,7 +6295,7 @@
   },
   "lastSync": {
     "message": "Zuletzt synchronisiert:",
-    "description": "Used as a prefix to indicate the last time a sync occured. Example \"Last sync 1968-11-16 00:00:00\""
+    "description": "Used as a prefix to indicate the last time a sync occurred. Example \"Last sync 1968-11-16 00:00:00\""
   },
   "sponsorshipsSynced": {
     "message": "Selbst gehostetes Sponsoring synchronisiert."
@@ -6369,57 +6454,57 @@
   },
   "scim": {
     "message": "SCIM-Bereitstellung",
-    "description": "The text, 'SCIM', is an acronymn and should not be translated."
+    "description": "The text, 'SCIM', is an acronym and should not be translated."
   },
   "scimDescription": {
     "message": "Über SCIM-Bereitstellung automatisch Benutzer und Gruppen mit deinem bevorzugten Identitätsanbieter zur Verfügung stellen",
-    "description": "the text, 'SCIM', is an acronymn and should not be translated."
+    "description": "the text, 'SCIM', is an acronym and should not be translated."
   },
   "scimEnabledCheckboxDesc": {
     "message": "SCIM aktivieren",
-    "description": "the text, 'SCIM', is an acronymn and should not be translated."
+    "description": "the text, 'SCIM', is an acronym and should not be translated."
   },
   "scimEnabledCheckboxDescHelpText": {
     "message": "Richte deinen bevorzugten Identitätsanbieter ein, indem du die URL und den SCIM API-Schlüssel konfigurierst",
-    "description": "the text, 'SCIM', is an acronymn and should not be translated."
+    "description": "the text, 'SCIM', is an acronym and should not be translated."
   },
   "scimApiKeyHelperText": {
     "message": "Dieser API-Schlüssel hat Zugriff auf die Verwaltung von Benutzern innerhalb deiner Organisation. Er sollte geheim gehalten werden."
   },
   "copyScimKey": {
     "message": "Den SCIM API-Schlüssel in deine Zwischenablage kopieren",
-    "description": "the text, 'SCIM' and 'API', are acronymns and should not be translated."
+    "description": "the text, 'SCIM' and 'API', are acronyms and should not be translated."
   },
   "rotateScimKey": {
     "message": "Den SCIM API-Schlüssel erneuern",
-    "description": "the text, 'SCIM' and 'API', are acronymns and should not be translated."
+    "description": "the text, 'SCIM' and 'API', are acronyms and should not be translated."
   },
   "rotateScimKeyWarning": {
     "message": "Bist du sicher, dass du den SCIM API-Schlüssel erneuern möchtest? Der aktuelle Schlüssel wird für bestehende Integrationen nicht mehr funktionieren.",
-    "description": "the text, 'SCIM' and 'API', are acronymns and should not be translated."
+    "description": "the text, 'SCIM' and 'API', are acronyms and should not be translated."
   },
   "rotateKey": {
     "message": "Schlüssel erneuern"
   },
   "scimApiKey": {
     "message": "SCIM API-Schlüssel",
-    "description": "the text, 'SCIM' and 'API', are acronymns and should not be translated."
+    "description": "the text, 'SCIM' and 'API', are acronyms and should not be translated."
   },
   "copyScimUrl": {
     "message": "Kopiere die SCIM Endpunkt-URL in deine Zwischenablage",
-    "description": "the text, 'SCIM' and 'URL', are acronymns and should not be translated."
+    "description": "the text, 'SCIM' and 'URL', are acronyms and should not be translated."
   },
   "scimUrl": {
     "message": "SCIM URL",
-    "description": "the text, 'SCIM' and 'URL', are acronymns and should not be translated."
+    "description": "the text, 'SCIM' and 'URL', are acronyms and should not be translated."
   },
   "scimApiKeyRotated": {
     "message": "Der SCIM API-Schlüssel wurde erfolgreich erneuert",
-    "description": "the text, 'SCIM' and 'API', are acronymns and should not be translated."
+    "description": "the text, 'SCIM' and 'API', are acronyms and should not be translated."
   },
   "scimSettingsSaved": {
     "message": "SCIM Einstellungen gespeichert",
-    "description": "the text, 'SCIM', is an acronymn and should not be translated."
+    "description": "the text, 'SCIM', is an acronym and should not be translated."
   },
   "inputRequired": {
     "message": "Eingabe ist erforderlich."
@@ -7341,6 +7426,9 @@
   "fileUpload": {
     "message": "Datei-Upload"
   },
+  "upload": {
+    "message": "Hochladen"
+  },
   "acceptedFormats": {
     "message": "Akzeptierte Formate:"
   },
@@ -8202,6 +8290,9 @@
   "addField": {
     "message": "Feld hinzufügen"
   },
+  "editField": {
+    "message": "Feld bearbeiten"
+  },
   "items": {
     "message": "Einträge"
   },
@@ -8772,25 +8863,25 @@
     "message": "Kontrolliere den Zugriff von Organisationsmitgliedern auf Gruppen, Sammlungen und Sammlungseinträgen. Der CSV-Export bietet eine detaillierte Aufschlüsselung pro Mitglied, einschließlich Informationen über Sammlungsberechtigungen und Kontenkonfigurationen."
   },
   "memberAccessReportNoCollection": {
-    "message": "(No Collection)"
+    "message": "(Keine Sammlung)"
   },
   "memberAccessReportNoCollectionPermission": {
-    "message": "(No Collection Permission)"
+    "message": "(Keine Sammlungsberechtigung)"
   },
   "memberAccessReportNoGroup": {
-    "message": "(No Group)"
+    "message": "(Keine Gruppe)"
   },
   "memberAccessReportTwoFactorEnabledTrue": {
-    "message": "On"
+    "message": "Ein"
   },
   "memberAccessReportTwoFactorEnabledFalse": {
-    "message": "Off"
+    "message": "Aus"
   },
   "memberAccessReportAuthenticationEnabledTrue": {
-    "message": "On"
+    "message": "Ein"
   },
   "memberAccessReportAuthenticationEnabledFalse": {
-    "message": "Off"
+    "message": "Aus"
   },
   "higherKDFIterations": {
     "message": "Höhere KDF-Iterationen können helfen, dein Master-Passwort vor Brute-Force-Attacken durch einen Angreifer zu schützen."
@@ -8996,7 +9087,7 @@
     }
   },
   "upgradePlans": {
-    "message": "Upgrade your plan to invite members and experience powerful security features."
+    "message": "Upgrade deinen Tarif, um Mitglieder einzuladen und leistungsstarke Sicherheitsfunktionen zu nutzen."
   },
   "upgradeDiscount": {
     "message": "$AMOUNT$% sparen",
@@ -9008,10 +9099,10 @@
     }
   },
   "enterprisePlanUpgradeMessage": {
-    "message": "Advanced capabilities for larger organizations"
+    "message": "Erweiterte Möglichkeiten für größere Organisationen"
   },
   "teamsPlanUpgradeMessage": {
-    "message": "Resilient protection for growing teams"
+    "message": "Widerstandsfähiger Schutz für wachsende Teams"
   },
   "teamsInviteMessage": {
     "message": "Unbegrenzte Mitglieder einladen"
@@ -9023,7 +9114,7 @@
     "message": "Gruppen und Benutzer aus einem Verzeichnis synchronisieren"
   },
   "familyPlanUpgradeMessage": {
-    "message": "Secure your family logins"
+    "message": "Schütze deine Familien-Zugangsdaten"
   },
   "accessToPremiumFeatures": {
     "message": "Zugriff auf Premium Funktionen"
@@ -9073,21 +9164,21 @@
   "current": {
     "message": "Aktuell"
   },
-  "secretsManagerSubInfo": {
-    "message": "Dein Secrets Manager Abonnement wird sich auf Grundlage des ausgewählten Plan upgraden"
+  "secretsManagerSubscriptionInfo": {
+    "message": "Dein Secrets Manager Abonnement wird sich auf Grundlage des ausgewählten Tarifs upgraden"
   },
   "bitwardenPasswordManager": {
     "message": "Bitwarden Passwortmanager"
   },
   "secretsManagerComplimentaryPasswordManager": {
-    "message": "Your complimentary one year Password Manager subscription will upgrade to the selected plan. You will not be charged until the complimentary period is over."
+    "message": "Dein kostenloses einjähriges Passwortmanager-Abonnement wird auf den ausgewählten Tarif umgestellt. Dir wird nichts berechnet, bis der kostenlose Zeitraum abgelaufen ist."
   },
   "fileSavedToDevice": {
-    "message": "File saved to device. Manage from your device downloads."
+    "message": "Datei auf Gerät gespeichert. Greife darauf über die Downloads deines Geräts zu."
   },
   "publicApi": {
     "message": "Öffentliche API",
-    "description": "The text, 'API', is an acronymn and should not be translated."
+    "description": "The text, 'API', is an acronym and should not be translated."
   },
   "showCharacterCount": {
     "message": "Zeichenanzahl anzeigen"
