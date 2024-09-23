@@ -128,6 +128,21 @@
   "copyLicenseNumber": {
     "message": "Copy license number"
   },
+  "copyCustomField": {
+    "message": "Kopiera $FIELD$",
+    "placeholders": {
+      "field": {
+        "content": "$1",
+        "example": "Custom field label"
+      }
+    }
+  },
+  "copyWebsite": {
+    "message": "Kopiera webbplats"
+  },
+  "copyNotes": {
+    "message": "Kopiera anteckningar"
+  },
   "autoFill": {
     "message": "Fyll i automatiskt"
   },
@@ -178,6 +193,18 @@
   },
   "addItem": {
     "message": "Lägg till objekt"
+  },
+  "accountEmail": {
+    "message": "Account email"
+  },
+  "requestHint": {
+    "message": "Begär ledtråd"
+  },
+  "requestPasswordHint": {
+    "message": "Begär lösenordsledtråd"
+  },
+  "enterYourAccountEmailAddressAndYourPasswordHintWillBeSentToYou": {
+    "message": "Enter your account email address and your password hint will be sent to you"
   },
   "passwordHint": {
     "message": "Lösenordsledtråd"
@@ -462,6 +489,10 @@
     "message": "Avoid ambiguous characters",
     "description": "Label for the avoid ambiguous characters checkbox."
   },
+  "generatorPolicyInEffect": {
+    "message": "Enterprise policy requirements have been applied to your generator options.",
+    "description": "Indicates that a policy limits the credential generator screen."
+  },
   "searchVault": {
     "message": "Sök i valvet"
   },
@@ -503,6 +534,9 @@
   },
   "notes": {
     "message": "Anteckningar"
+  },
+  "privateNote": {
+    "message": "Privat anteckning"
   },
   "note": {
     "message": "Anteckning"
@@ -549,6 +583,9 @@
   "sessionTimeoutHeader": {
     "message": "Session timeout"
   },
+  "vaultTimeoutHeader": {
+    "message": "Vault timeout"
+  },
   "otherOptions": {
     "message": "Andra alternativ"
   },
@@ -588,6 +625,9 @@
   },
   "vaultTimeout": {
     "message": "Valvets tidsgräns"
+  },
+  "vaultTimeout1": {
+    "message": "Timeout"
   },
   "lockNow": {
     "message": "Lås nu"
@@ -789,6 +829,12 @@
   "twoStepLoginConfirmation": {
     "message": "Tvåstegsverifiering gör ditt konto säkrare genom att kräva att du verifierar din inloggning med en annan enhet, t.ex. en säkerhetsnyckel, autentiseringsapp, SMS, telefonsamtal eller e-post. Tvåstegsverifiering kan aktiveras i Bitwardens webbvalv. Vill du besöka webbplatsen nu?"
   },
+  "twoStepLoginConfirmationContent": {
+    "message": "Make your account more secure by setting up two-step login in the Bitwarden web app."
+  },
+  "twoStepLoginConfirmationTitle": {
+    "message": "Continue to web app?"
+  },
   "editedFolder": {
     "message": "Mapp sparad"
   },
@@ -892,7 +938,7 @@
     "message": "Lista kortobjekt på fliksidan för enkel automatisk fyllning."
   },
   "showIdentitiesInVaultView": {
-    "message": "Show identifies as Autofill suggestions on Vault view"
+    "message": "Show identities as Autofill suggestions on Vault view"
   },
   "showIdentitiesCurrentTab": {
     "message": "Visa identiteter på fliksidan"
@@ -1097,6 +1143,9 @@
   "file": {
     "message": "Fil"
   },
+  "fileToShare": {
+    "message": "File to share"
+  },
   "selectFile": {
     "message": "Välj en fil"
   },
@@ -1131,7 +1180,7 @@
     "message": "1 GB lagring av krypterade filer."
   },
   "premiumSignUpEmergency": {
-    "message": "Nödåtkomst"
+    "message": "Nödåtkomst."
   },
   "premiumSignUpTwoStepOptions": {
     "message": "Premium-alternativ för tvåstegsverifiering, såsom YubiKey och Duo."
@@ -1863,8 +1912,17 @@
   "unlockWithPin": {
     "message": "Lås upp med PIN-kod"
   },
+  "setYourPinTitle": {
+    "message": "Ställ in PIN-kod"
+  },
+  "setYourPinButton": {
+    "message": "Ställ in PIN-kod"
+  },
   "setYourPinCode": {
     "message": "Ange en PIN-kod för att låsa upp Bitwarden. Dina PIN-inställningar återställs om du någonsin loggar ut helt från programmet."
+  },
+  "setYourPinCode1": {
+    "message": "Your PIN will be used to unlock Bitwarden instead of your master password. Your PIN will reset if you ever fully log out of Bitwarden."
   },
   "pinRequired": {
     "message": "PIN-kod krävs."
@@ -1886,6 +1944,9 @@
   },
   "lockWithMasterPassOnRestart": {
     "message": "Lås med huvudlösenordet vid omstart av webbläsaren"
+  },
+  "lockWithMasterPassOnRestart1": {
+    "message": "Require master password on browser restart"
   },
   "selectOneCollection": {
     "message": "Du måste markera minst en samling."
@@ -1925,9 +1986,12 @@
   "vaultTimeoutAction": {
     "message": "Åtgärd när valvets tidsgräns överskrids"
   },
+  "vaultTimeoutAction1": {
+    "message": "Timeout action"
+  },
   "lock": {
     "message": "Lås",
-    "description": "Verb form: to make secure or inaccesible by"
+    "description": "Verb form: to make secure or inaccessible by"
   },
   "trash": {
     "message": "Papperskorg",
@@ -2119,11 +2183,11 @@
   "nativeMessagingWrongUserTitle": {
     "message": "Kontoavvikelse"
   },
-  "nativeMessagingWrongUserKeyDesc": {
-    "message": "Biometric unlock failed. The biometric secret key failed to unlock the vault. Please try to set up biometrics again."
-  },
   "nativeMessagingWrongUserKeyTitle": {
     "message": "Biometric key missmatch"
+  },
+  "nativeMessagingWrongUserKeyDesc": {
+    "message": "Biometric unlock failed. The biometric secret key failed to unlock the vault. Please try to set up biometrics again."
   },
   "biometricsNotEnabledTitle": {
     "message": "Biometri är inte aktiverat"
@@ -2210,8 +2274,29 @@
   "excludedDomainsSavedSuccess": {
     "message": "Excluded domain changes saved"
   },
+  "limitSendViews": {
+    "message": "Limit views"
+  },
+  "limitSendViewsHint": {
+    "message": "No one can view this Send after the limit is reached.",
+    "description": "Displayed under the limit views field on Send"
+  },
+  "limitSendViewsCount": {
+    "message": "$ACCESSCOUNT$ views left",
+    "description": "Displayed under the limit views field on Send",
+    "placeholders": {
+      "accessCount": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
   "send": {
     "message": "Send",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendDetails": {
+    "message": "Send details",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "searchSends": {
@@ -2225,12 +2310,18 @@
   "sendTypeText": {
     "message": "Text"
   },
+  "sendTypeTextToShare": {
+    "message": "Text to share"
+  },
   "sendTypeFile": {
     "message": "Fil"
   },
   "allSends": {
     "message": "Alla Sends",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "hideTextByDefault": {
+    "message": "Hide text by default"
   },
   "maxAccessCountReached": {
     "message": "Det maximala antalet åtkomster har uppnåtts",
@@ -2305,6 +2396,10 @@
     "message": "Denna Send kommer att raderas permanent på angivet datum och klockslag.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
+  "deletionDateDescV2": {
+    "message": "The Send will be permanently deleted on this date.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
   "expirationDate": {
     "message": "Utgångsdatum"
   },
@@ -2336,6 +2431,10 @@
   },
   "sendPasswordDesc": {
     "message": "Kräv valfritt ett lösenord för att användare ska komma åt denna Send.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendPasswordDescV2": {
+    "message": "Require this password to view the Send.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendNotesDesc": {
@@ -2443,6 +2542,9 @@
   "hideEmail": {
     "message": "Dölj min e-postadress för mottagare."
   },
+  "hideYourEmail": {
+    "message": "Hide your email address from viewers."
+  },
   "sendOptionsPolicyInEffect": {
     "message": "En eller flera organisationsriktlinjer påverkar dina Send-inställningar."
   },
@@ -2510,8 +2612,37 @@
   "minutes": {
     "message": "Minuter"
   },
+  "vaultTimeoutPolicyAffectingOptions": {
+    "message": "Enterprise policy requirements have been applied to your timeout options"
+  },
   "vaultTimeoutPolicyInEffect": {
     "message": "Dina organisationsprinciper påverkar ditt valvs tid för timeout. Maximal tillåten tid innan timeout är $HOURS$ timmar och $MINUTES$ minuter",
+    "placeholders": {
+      "hours": {
+        "content": "$1",
+        "example": "5"
+      },
+      "minutes": {
+        "content": "$2",
+        "example": "5"
+      }
+    }
+  },
+  "vaultTimeoutPolicyInEffect1": {
+    "message": "$HOURS$ hour(s) and $MINUTES$ minute(s) maximum.",
+    "placeholders": {
+      "hours": {
+        "content": "$1",
+        "example": "5"
+      },
+      "minutes": {
+        "content": "$2",
+        "example": "5"
+      }
+    }
+  },
+  "vaultTimeoutPolicyMaximumError": {
+    "message": "Timeout exceeds the restriction set by your organization: $HOURS$ hour(s) and $MINUTES$ minute(s) maximum",
     "placeholders": {
       "hours": {
         "content": "$1",
@@ -3273,7 +3404,7 @@
     "description": "Screen reader text (aria-label) for new item button in overlay"
   },
   "newLogin": {
-    "message": "New login",
+    "message": "Ny inloggning",
     "description": "Button text to display within inline menu when there are no matching items on a login field"
   },
   "addNewLoginItemAria": {
@@ -3281,7 +3412,7 @@
     "description": "Screen reader text (aria-label) for new login button within inline menu"
   },
   "newCard": {
-    "message": "New card",
+    "message": "Nytt kort",
     "description": "Button text to display within inline menu when there are no matching items on a credit card field"
   },
   "addNewCardItemAria": {
@@ -3289,7 +3420,7 @@
     "description": "Screen reader text (aria-label) for new card button within inline menu"
   },
   "newIdentity": {
-    "message": "New identity",
+    "message": "Ny identitet",
     "description": "Button text to display within inline menu when there are no matching items on an identity field"
   },
   "addNewIdentityItemAria": {
@@ -3475,7 +3606,7 @@
     "message": "Vault data exported"
   },
   "typePasskey": {
-    "message": "Lösennyckel"
+    "message": "Nyckel"
   },
   "passkeyNotCopied": {
     "message": "Lösennyckeln kommer inte kopieras"
@@ -3487,7 +3618,7 @@
     "message": "Verifiering krävs av den initierande webbplatsen. Denna funktion är ännu inte implementerad för konton utan huvudlösenord."
   },
   "logInWithPasskeyQuestion": {
-    "message": "Log in with passkey?"
+    "message": "Logga in med nyckel?"
   },
   "passkeyAlreadyExists": {
     "message": "En lösennyckel finns redan för detta program."
@@ -3505,10 +3636,10 @@
     "message": "Bekräfta"
   },
   "savePasskey": {
-    "message": "Spara lösennyckel"
+    "message": "Spara nyckel"
   },
   "savePasskeyNewLogin": {
-    "message": "Spara lösennyckel som ny inloggning"
+    "message": "Spara nyckel som ny inloggning"
   },
   "chooseCipherForPasskeySave": {
     "message": "Choose a login to save this passkey to"
@@ -3912,7 +4043,7 @@
     "message": "Ytterligare information"
   },
   "itemHistory": {
-    "message": "Item history"
+    "message": "Objekthistorik"
   },
   "lastEdited": {
     "message": "Last edited"
@@ -4080,7 +4211,7 @@
     "message": "Data"
   },
   "passkeys": {
-    "message": "Passkeys",
+    "message": "Nycklar",
     "description": "A section header for a list of passkeys."
   },
   "passwords": {
@@ -4088,7 +4219,7 @@
     "description": "A section header for a list of passwords."
   },
   "logInWithPasskeyAriaLabel": {
-    "message": "Log in with passkey",
+    "message": "Logga in med nyckel",
     "description": "ARIA label for the inline menu button that logs in with a passkey."
   },
   "assign": {
@@ -4304,10 +4435,19 @@
     "message": "Show number of login autofill suggestions on extension icon"
   },
   "systemDefault": {
-    "message": "System default"
+    "message": "Systemstandard"
   },
   "enterprisePolicyRequirementsApplied": {
     "message": "Enterprise policy requirements have been applied to this setting"
+  },
+  "retry": {
+    "message": "Försök igen"
+  },
+  "vaultCustomTimeoutMinimum": {
+    "message": "Minimum custom timeout is 1 minute."
+  },
+  "additionalContentAvailable": {
+    "message": "Additional content is available"
   },
   "fileSavedToDevice": {
     "message": "File saved to device. Manage from your device downloads."

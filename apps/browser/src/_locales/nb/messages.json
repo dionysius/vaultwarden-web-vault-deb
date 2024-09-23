@@ -128,6 +128,21 @@
   "copyLicenseNumber": {
     "message": "Copy license number"
   },
+  "copyCustomField": {
+    "message": "Copy $FIELD$",
+    "placeholders": {
+      "field": {
+        "content": "$1",
+        "example": "Custom field label"
+      }
+    }
+  },
+  "copyWebsite": {
+    "message": "Copy website"
+  },
+  "copyNotes": {
+    "message": "Copy notes"
+  },
   "autoFill": {
     "message": "Auto-utfylling"
   },
@@ -178,6 +193,18 @@
   },
   "addItem": {
     "message": "Legg til en gjenstand"
+  },
+  "accountEmail": {
+    "message": "Account email"
+  },
+  "requestHint": {
+    "message": "Request hint"
+  },
+  "requestPasswordHint": {
+    "message": "Request password hint"
+  },
+  "enterYourAccountEmailAddressAndYourPasswordHintWillBeSentToYou": {
+    "message": "Enter your account email address and your password hint will be sent to you"
   },
   "passwordHint": {
     "message": "Passordhint"
@@ -462,6 +489,10 @@
     "message": "Avoid ambiguous characters",
     "description": "Label for the avoid ambiguous characters checkbox."
   },
+  "generatorPolicyInEffect": {
+    "message": "Enterprise policy requirements have been applied to your generator options.",
+    "description": "Indicates that a policy limits the credential generator screen."
+  },
   "searchVault": {
     "message": "Søk i hvelvet"
   },
@@ -503,6 +534,9 @@
   },
   "notes": {
     "message": "Notater"
+  },
+  "privateNote": {
+    "message": "Private note"
   },
   "note": {
     "message": "Notat"
@@ -549,6 +583,9 @@
   "sessionTimeoutHeader": {
     "message": "Session timeout"
   },
+  "vaultTimeoutHeader": {
+    "message": "Vault timeout"
+  },
   "otherOptions": {
     "message": "Other options"
   },
@@ -588,6 +625,9 @@
   },
   "vaultTimeout": {
     "message": "Tidsavbrudd i hvelvet"
+  },
+  "vaultTimeout1": {
+    "message": "Timeout"
   },
   "lockNow": {
     "message": "Lås nå"
@@ -789,6 +829,12 @@
   "twoStepLoginConfirmation": {
     "message": "2-trinnsinnlogging gjør kontoen din mer sikker, ved å kreve at du verifiserer din innlogging med en annen enhet, f.eks. en autentiseringsapp, SMS, e-post, telefonsamtale, eller sikkerhetsnøkkel. 2-trinnsinnlogging kan aktiveres i netthvelvet ditt på bitwarden.com. Vil du besøke bitwarden.com nå?"
   },
+  "twoStepLoginConfirmationContent": {
+    "message": "Make your account more secure by setting up two-step login in the Bitwarden web app."
+  },
+  "twoStepLoginConfirmationTitle": {
+    "message": "Continue to web app?"
+  },
   "editedFolder": {
     "message": "Redigerte mappen"
   },
@@ -892,7 +938,7 @@
     "message": "Vis kortelementer på fanesiden for lett auto-utfylling."
   },
   "showIdentitiesInVaultView": {
-    "message": "Show identifies as Autofill suggestions on Vault view"
+    "message": "Show identities as Autofill suggestions on Vault view"
   },
   "showIdentitiesCurrentTab": {
     "message": "Vis identiteter på fanesiden"
@@ -1096,6 +1142,9 @@
   },
   "file": {
     "message": "Fil"
+  },
+  "fileToShare": {
+    "message": "File to share"
   },
   "selectFile": {
     "message": "Velg en fil."
@@ -1863,8 +1912,17 @@
   "unlockWithPin": {
     "message": "Lås opp med PIN-kode"
   },
+  "setYourPinTitle": {
+    "message": "Set PIN"
+  },
+  "setYourPinButton": {
+    "message": "Set PIN"
+  },
   "setYourPinCode": {
     "message": "Angi PIN-koden din for å låse opp Bitwarden. PIN-innstillingene tilbakestilles hvis du logger deg helt ut av programmet."
+  },
+  "setYourPinCode1": {
+    "message": "Your PIN will be used to unlock Bitwarden instead of your master password. Your PIN will reset if you ever fully log out of Bitwarden."
   },
   "pinRequired": {
     "message": "PIN-kode er påkrevd."
@@ -1886,6 +1944,9 @@
   },
   "lockWithMasterPassOnRestart": {
     "message": "Lås med hovedpassordet når du starter nettleseren på nytt"
+  },
+  "lockWithMasterPassOnRestart1": {
+    "message": "Require master password on browser restart"
   },
   "selectOneCollection": {
     "message": "Du må velge minst én samling."
@@ -1925,9 +1986,12 @@
   "vaultTimeoutAction": {
     "message": "Handling ved tidsavbrudd i hvelvet"
   },
+  "vaultTimeoutAction1": {
+    "message": "Timeout action"
+  },
   "lock": {
     "message": "Lås",
-    "description": "Verb form: to make secure or inaccesible by"
+    "description": "Verb form: to make secure or inaccessible by"
   },
   "trash": {
     "message": "Papirkurv",
@@ -2119,11 +2183,11 @@
   "nativeMessagingWrongUserTitle": {
     "message": "Kontoen eksisterer ikke"
   },
-  "nativeMessagingWrongUserKeyDesc": {
-    "message": "Biometric unlock failed. The biometric secret key failed to unlock the vault. Please try to set up biometrics again."
-  },
   "nativeMessagingWrongUserKeyTitle": {
     "message": "Biometric key missmatch"
+  },
+  "nativeMessagingWrongUserKeyDesc": {
+    "message": "Biometric unlock failed. The biometric secret key failed to unlock the vault. Please try to set up biometrics again."
   },
   "biometricsNotEnabledTitle": {
     "message": "Biometri ikke aktivert"
@@ -2210,8 +2274,29 @@
   "excludedDomainsSavedSuccess": {
     "message": "Excluded domain changes saved"
   },
+  "limitSendViews": {
+    "message": "Limit views"
+  },
+  "limitSendViewsHint": {
+    "message": "No one can view this Send after the limit is reached.",
+    "description": "Displayed under the limit views field on Send"
+  },
+  "limitSendViewsCount": {
+    "message": "$ACCESSCOUNT$ views left",
+    "description": "Displayed under the limit views field on Send",
+    "placeholders": {
+      "accessCount": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
   "send": {
     "message": "Send",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendDetails": {
+    "message": "Send details",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "searchSends": {
@@ -2225,12 +2310,18 @@
   "sendTypeText": {
     "message": "Tekst"
   },
+  "sendTypeTextToShare": {
+    "message": "Text to share"
+  },
   "sendTypeFile": {
     "message": "Fil"
   },
   "allSends": {
     "message": "Alle Send-er",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "hideTextByDefault": {
+    "message": "Hide text by default"
   },
   "maxAccessCountReached": {
     "message": "Maksimalt antall tilganger nådd",
@@ -2305,6 +2396,10 @@
     "message": "Send-en vil bli slettet permanent på den angitte dato og klokkeslett.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
+  "deletionDateDescV2": {
+    "message": "The Send will be permanently deleted on this date.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
   "expirationDate": {
     "message": "Utløpsdato"
   },
@@ -2336,6 +2431,10 @@
   },
   "sendPasswordDesc": {
     "message": "Eventuelt krever et passord for brukere å få tilgang til denne Send.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendPasswordDescV2": {
+    "message": "Require this password to view the Send.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendNotesDesc": {
@@ -2443,6 +2542,9 @@
   "hideEmail": {
     "message": "Skjul min e-postadresse fra mottakere."
   },
+  "hideYourEmail": {
+    "message": "Hide your email address from viewers."
+  },
   "sendOptionsPolicyInEffect": {
     "message": "En eller flere av virksomhetens regler påvirker generatorinnstillingene dine."
   },
@@ -2510,8 +2612,37 @@
   "minutes": {
     "message": "Minutter"
   },
+  "vaultTimeoutPolicyAffectingOptions": {
+    "message": "Enterprise policy requirements have been applied to your timeout options"
+  },
   "vaultTimeoutPolicyInEffect": {
     "message": "Din virksomhets regler påvirker tidsavbruddet for hvelvet ditt. Maksimalt tillatt tidsavbrudd for hvelv er $HOURS$ time(r) og $MINUTES$ minutt(er)",
+    "placeholders": {
+      "hours": {
+        "content": "$1",
+        "example": "5"
+      },
+      "minutes": {
+        "content": "$2",
+        "example": "5"
+      }
+    }
+  },
+  "vaultTimeoutPolicyInEffect1": {
+    "message": "$HOURS$ hour(s) and $MINUTES$ minute(s) maximum.",
+    "placeholders": {
+      "hours": {
+        "content": "$1",
+        "example": "5"
+      },
+      "minutes": {
+        "content": "$2",
+        "example": "5"
+      }
+    }
+  },
+  "vaultTimeoutPolicyMaximumError": {
+    "message": "Timeout exceeds the restriction set by your organization: $HOURS$ hour(s) and $MINUTES$ minute(s) maximum",
     "placeholders": {
       "hours": {
         "content": "$1",
@@ -4308,6 +4439,15 @@
   },
   "enterprisePolicyRequirementsApplied": {
     "message": "Enterprise policy requirements have been applied to this setting"
+  },
+  "retry": {
+    "message": "Retry"
+  },
+  "vaultCustomTimeoutMinimum": {
+    "message": "Minimum custom timeout is 1 minute."
+  },
+  "additionalContentAvailable": {
+    "message": "Additional content is available"
   },
   "fileSavedToDevice": {
     "message": "File saved to device. Manage from your device downloads."

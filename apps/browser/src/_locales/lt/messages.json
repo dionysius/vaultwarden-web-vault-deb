@@ -128,6 +128,21 @@
   "copyLicenseNumber": {
     "message": "Copy license number"
   },
+  "copyCustomField": {
+    "message": "Copy $FIELD$",
+    "placeholders": {
+      "field": {
+        "content": "$1",
+        "example": "Custom field label"
+      }
+    }
+  },
+  "copyWebsite": {
+    "message": "Copy website"
+  },
+  "copyNotes": {
+    "message": "Copy notes"
+  },
   "autoFill": {
     "message": "Automatinis užpildymas"
   },
@@ -178,6 +193,18 @@
   },
   "addItem": {
     "message": "Pridėti elementą"
+  },
+  "accountEmail": {
+    "message": "Account email"
+  },
+  "requestHint": {
+    "message": "Request hint"
+  },
+  "requestPasswordHint": {
+    "message": "Request password hint"
+  },
+  "enterYourAccountEmailAddressAndYourPasswordHintWillBeSentToYou": {
+    "message": "Enter your account email address and your password hint will be sent to you"
   },
   "passwordHint": {
     "message": "Slaptažodžio užuomina"
@@ -462,6 +489,10 @@
     "message": "Avoid ambiguous characters",
     "description": "Label for the avoid ambiguous characters checkbox."
   },
+  "generatorPolicyInEffect": {
+    "message": "Enterprise policy requirements have been applied to your generator options.",
+    "description": "Indicates that a policy limits the credential generator screen."
+  },
   "searchVault": {
     "message": "Ieškoti saugykloje"
   },
@@ -503,6 +534,9 @@
   },
   "notes": {
     "message": "Pastabos"
+  },
+  "privateNote": {
+    "message": "Private note"
   },
   "note": {
     "message": "Pastaba"
@@ -549,6 +583,9 @@
   "sessionTimeoutHeader": {
     "message": "Baigėsi seanso laikas"
   },
+  "vaultTimeoutHeader": {
+    "message": "Vault timeout"
+  },
   "otherOptions": {
     "message": "Kitos parinktys"
   },
@@ -588,6 +625,9 @@
   },
   "vaultTimeout": {
     "message": "Atsijungta nuo saugyklos"
+  },
+  "vaultTimeout1": {
+    "message": "Timeout"
   },
   "lockNow": {
     "message": "Užrakinti dabar"
@@ -789,6 +829,12 @@
   "twoStepLoginConfirmation": {
     "message": "Prisijungus dviem veiksmais, jūsų paskyra tampa saugesnė, reikalaujant patvirtinti prisijungimą naudojant kitą įrenginį, pvz., saugos raktą, autentifikavimo programėlę, SMS, telefono skambutį ar el. paštą. Dviejų žingsnių prisijungimą galima įjungti „bitwarden.com“ interneto saugykloje. Ar norite dabar apsilankyti svetainėje?"
   },
+  "twoStepLoginConfirmationContent": {
+    "message": "Make your account more secure by setting up two-step login in the Bitwarden web app."
+  },
+  "twoStepLoginConfirmationTitle": {
+    "message": "Continue to web app?"
+  },
   "editedFolder": {
     "message": "Katalogas atnaujintas"
   },
@@ -892,7 +938,7 @@
     "message": "Pateikti kortelių elementų skirtuko puslapyje sąrašą, kad būtų lengva automatiškai užpildyti."
   },
   "showIdentitiesInVaultView": {
-    "message": "Show identifies as Autofill suggestions on Vault view"
+    "message": "Show identities as Autofill suggestions on Vault view"
   },
   "showIdentitiesCurrentTab": {
     "message": "Rodyti tapatybes skirtuko puslapyje"
@@ -1096,6 +1142,9 @@
   },
   "file": {
     "message": "Failas"
+  },
+  "fileToShare": {
+    "message": "File to share"
   },
   "selectFile": {
     "message": "Pasirinkite failą."
@@ -1863,8 +1912,17 @@
   "unlockWithPin": {
     "message": "Atrakinti PIN kodu"
   },
+  "setYourPinTitle": {
+    "message": "Set PIN"
+  },
+  "setYourPinButton": {
+    "message": "Set PIN"
+  },
   "setYourPinCode": {
     "message": "Nustatykite savo PIN kodą, kad atrakintumėte „Bitwarden“. Jūsų PIN nustatymai bus nustatyti iš naujo, jei kada nors visiškai atsijungsite nuo programos."
+  },
+  "setYourPinCode1": {
+    "message": "Your PIN will be used to unlock Bitwarden instead of your master password. Your PIN will reset if you ever fully log out of Bitwarden."
   },
   "pinRequired": {
     "message": "PIN kodas yra privalomas."
@@ -1886,6 +1944,9 @@
   },
   "lockWithMasterPassOnRestart": {
     "message": "Užrakinkite pagrindiniu slaptažodžiu paleidus naršyklę iš naujo"
+  },
+  "lockWithMasterPassOnRestart1": {
+    "message": "Require master password on browser restart"
   },
   "selectOneCollection": {
     "message": "Turite pasirinkti bent vieną kategoriją."
@@ -1925,9 +1986,12 @@
   "vaultTimeoutAction": {
     "message": "Vault skirtojo laiko veiksmas"
   },
+  "vaultTimeoutAction1": {
+    "message": "Timeout action"
+  },
   "lock": {
     "message": "Užrakinti",
-    "description": "Verb form: to make secure or inaccesible by"
+    "description": "Verb form: to make secure or inaccessible by"
   },
   "trash": {
     "message": "Šiukšliadėžė",
@@ -2119,11 +2183,11 @@
   "nativeMessagingWrongUserTitle": {
     "message": "Paskyros neatitikimas"
   },
-  "nativeMessagingWrongUserKeyDesc": {
-    "message": "Biometric unlock failed. The biometric secret key failed to unlock the vault. Please try to set up biometrics again."
-  },
   "nativeMessagingWrongUserKeyTitle": {
     "message": "Biometric key missmatch"
+  },
+  "nativeMessagingWrongUserKeyDesc": {
+    "message": "Biometric unlock failed. The biometric secret key failed to unlock the vault. Please try to set up biometrics again."
   },
   "biometricsNotEnabledTitle": {
     "message": "Trūksta biometrinių duomenų nustatymų"
@@ -2210,8 +2274,29 @@
   "excludedDomainsSavedSuccess": {
     "message": "Excluded domain changes saved"
   },
+  "limitSendViews": {
+    "message": "Limit views"
+  },
+  "limitSendViewsHint": {
+    "message": "No one can view this Send after the limit is reached.",
+    "description": "Displayed under the limit views field on Send"
+  },
+  "limitSendViewsCount": {
+    "message": "$ACCESSCOUNT$ views left",
+    "description": "Displayed under the limit views field on Send",
+    "placeholders": {
+      "accessCount": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
   "send": {
     "message": "Siųsti",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendDetails": {
+    "message": "Send details",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "searchSends": {
@@ -2225,12 +2310,18 @@
   "sendTypeText": {
     "message": "Tekstas"
   },
+  "sendTypeTextToShare": {
+    "message": "Text to share"
+  },
   "sendTypeFile": {
     "message": "Byla"
   },
   "allSends": {
     "message": "Visi siuntimai",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "hideTextByDefault": {
+    "message": "Hide text by default"
   },
   "maxAccessCountReached": {
     "message": "Pasiektas maksimalus prisijungimų skaičius",
@@ -2305,6 +2396,10 @@
     "message": "Nurodytos datos ir laiko metu „Send“ bus bus ištrinta visam laikui.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
+  "deletionDateDescV2": {
+    "message": "The Send will be permanently deleted on this date.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
   "expirationDate": {
     "message": "Galiojimo data"
   },
@@ -2336,6 +2431,10 @@
   },
   "sendPasswordDesc": {
     "message": "Pasirinktinai reikalauti slaptažodžio, kad vartotojai galėtų pasiekti šį „Send“.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendPasswordDescV2": {
+    "message": "Require this password to view the Send.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendNotesDesc": {
@@ -2443,6 +2542,9 @@
   "hideEmail": {
     "message": "Slėpti mano el. pašto adresą nuo gavėjų."
   },
+  "hideYourEmail": {
+    "message": "Hide your email address from viewers."
+  },
   "sendOptionsPolicyInEffect": {
     "message": "Viena ar daugiau organizacijos politikų turi įtakos Jūsų „Send“ nustatymams."
   },
@@ -2510,8 +2612,37 @@
   "minutes": {
     "message": "Minučių"
   },
+  "vaultTimeoutPolicyAffectingOptions": {
+    "message": "Enterprise policy requirements have been applied to your timeout options"
+  },
   "vaultTimeoutPolicyInEffect": {
     "message": "Jūsų organizacijos politika nustatė Jūsų didžiausią leidžiamą saugyklos laiko limitą į $HOURS$ valandas(-ų) ir $MINUTES$ minutes(-čių).",
+    "placeholders": {
+      "hours": {
+        "content": "$1",
+        "example": "5"
+      },
+      "minutes": {
+        "content": "$2",
+        "example": "5"
+      }
+    }
+  },
+  "vaultTimeoutPolicyInEffect1": {
+    "message": "$HOURS$ hour(s) and $MINUTES$ minute(s) maximum.",
+    "placeholders": {
+      "hours": {
+        "content": "$1",
+        "example": "5"
+      },
+      "minutes": {
+        "content": "$2",
+        "example": "5"
+      }
+    }
+  },
+  "vaultTimeoutPolicyMaximumError": {
+    "message": "Timeout exceeds the restriction set by your organization: $HOURS$ hour(s) and $MINUTES$ minute(s) maximum",
     "placeholders": {
       "hours": {
         "content": "$1",
@@ -4308,6 +4439,15 @@
   },
   "enterprisePolicyRequirementsApplied": {
     "message": "Enterprise policy requirements have been applied to this setting"
+  },
+  "retry": {
+    "message": "Retry"
+  },
+  "vaultCustomTimeoutMinimum": {
+    "message": "Minimum custom timeout is 1 minute."
+  },
+  "additionalContentAvailable": {
+    "message": "Additional content is available"
   },
   "fileSavedToDevice": {
     "message": "File saved to device. Manage from your device downloads."

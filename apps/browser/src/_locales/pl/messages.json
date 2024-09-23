@@ -128,6 +128,21 @@
   "copyLicenseNumber": {
     "message": "Kopiuj numer licencji"
   },
+  "copyCustomField": {
+    "message": "Copy $FIELD$",
+    "placeholders": {
+      "field": {
+        "content": "$1",
+        "example": "Custom field label"
+      }
+    }
+  },
+  "copyWebsite": {
+    "message": "Copy website"
+  },
+  "copyNotes": {
+    "message": "Copy notes"
+  },
   "autoFill": {
     "message": "Autouzupełnianie"
   },
@@ -178,6 +193,18 @@
   },
   "addItem": {
     "message": "Dodaj element"
+  },
+  "accountEmail": {
+    "message": "Account email"
+  },
+  "requestHint": {
+    "message": "Request hint"
+  },
+  "requestPasswordHint": {
+    "message": "Request password hint"
+  },
+  "enterYourAccountEmailAddressAndYourPasswordHintWillBeSentToYou": {
+    "message": "Enter your account email address and your password hint will be sent to you"
   },
   "passwordHint": {
     "message": "Podpowiedź do hasła"
@@ -462,6 +489,10 @@
     "message": "Avoid ambiguous characters",
     "description": "Label for the avoid ambiguous characters checkbox."
   },
+  "generatorPolicyInEffect": {
+    "message": "Enterprise policy requirements have been applied to your generator options.",
+    "description": "Indicates that a policy limits the credential generator screen."
+  },
   "searchVault": {
     "message": "Szukaj w sejfie"
   },
@@ -503,6 +534,9 @@
   },
   "notes": {
     "message": "Notatki"
+  },
+  "privateNote": {
+    "message": "Private note"
   },
   "note": {
     "message": "Notatka"
@@ -549,6 +583,9 @@
   "sessionTimeoutHeader": {
     "message": "Limit czasu sesji"
   },
+  "vaultTimeoutHeader": {
+    "message": "Vault timeout"
+  },
   "otherOptions": {
     "message": "Pozostałe opcje"
   },
@@ -588,6 +625,9 @@
   },
   "vaultTimeout": {
     "message": "Blokowanie sejfu"
+  },
+  "vaultTimeout1": {
+    "message": "Timeout"
   },
   "lockNow": {
     "message": "Zablokuj"
@@ -789,6 +829,12 @@
   "twoStepLoginConfirmation": {
     "message": "Logowanie dwustopniowe sprawia, że konto jest bardziej bezpieczne poprzez wymuszenie potwierdzenia logowania z innego urządzenia, takiego jak z klucza bezpieczeństwa, aplikacji uwierzytelniającej, wiadomości SMS, telefonu lub adresu e-mail. Logowanie dwustopniowe możesz włączyć w sejfie internetowym bitwarden.com. Czy chcesz przejść do tej strony?"
   },
+  "twoStepLoginConfirmationContent": {
+    "message": "Make your account more secure by setting up two-step login in the Bitwarden web app."
+  },
+  "twoStepLoginConfirmationTitle": {
+    "message": "Continue to web app?"
+  },
   "editedFolder": {
     "message": "Folder został zapisany"
   },
@@ -892,7 +938,7 @@
     "message": "Pokaż elementy karty na stronie głównej, aby ułatwić autouzupełnianie."
   },
   "showIdentitiesInVaultView": {
-    "message": "Show identifies as Autofill suggestions on Vault view"
+    "message": "Show identities as Autofill suggestions on Vault view"
   },
   "showIdentitiesCurrentTab": {
     "message": "Pokaż tożsamości na stronie głównej"
@@ -1096,6 +1142,9 @@
   },
   "file": {
     "message": "Plik"
+  },
+  "fileToShare": {
+    "message": "File to share"
   },
   "selectFile": {
     "message": "Wybierz plik"
@@ -1863,8 +1912,17 @@
   "unlockWithPin": {
     "message": "Odblokuj kodem PIN"
   },
+  "setYourPinTitle": {
+    "message": "Set PIN"
+  },
+  "setYourPinButton": {
+    "message": "Set PIN"
+  },
   "setYourPinCode": {
     "message": "Ustaw kod PIN do odblokowywania aplikacji Bitwarden. Ustawienia odblokowywania kodem PIN zostaną zresetowane po wylogowaniu."
+  },
+  "setYourPinCode1": {
+    "message": "Your PIN will be used to unlock Bitwarden instead of your master password. Your PIN will reset if you ever fully log out of Bitwarden."
   },
   "pinRequired": {
     "message": "Kod PIN jest wymagany."
@@ -1886,6 +1944,9 @@
   },
   "lockWithMasterPassOnRestart": {
     "message": "Zablokuj hasłem głównym po uruchomieniu przeglądarki"
+  },
+  "lockWithMasterPassOnRestart1": {
+    "message": "Require master password on browser restart"
   },
   "selectOneCollection": {
     "message": "Musisz wybrać co najmniej jedną kolekcję."
@@ -1925,9 +1986,12 @@
   "vaultTimeoutAction": {
     "message": "Sposób blokowania sejfu"
   },
+  "vaultTimeoutAction1": {
+    "message": "Timeout action"
+  },
   "lock": {
     "message": "Zablokuj",
-    "description": "Verb form: to make secure or inaccesible by"
+    "description": "Verb form: to make secure or inaccessible by"
   },
   "trash": {
     "message": "Kosz",
@@ -2119,11 +2183,11 @@
   "nativeMessagingWrongUserTitle": {
     "message": "Konto jest niezgodne"
   },
-  "nativeMessagingWrongUserKeyDesc": {
-    "message": "Odblokowanie biometryczne nie powiodło się. Sekretny klucz biometryczny nie odblokował sejfu. Spróbuj skonfigurować biometrię ponownie."
-  },
   "nativeMessagingWrongUserKeyTitle": {
     "message": "Klucz biometryczny jest niepoprawny"
+  },
+  "nativeMessagingWrongUserKeyDesc": {
+    "message": "Odblokowanie biometryczne nie powiodło się. Sekretny klucz biometryczny nie odblokował sejfu. Spróbuj skonfigurować biometrię ponownie."
   },
   "biometricsNotEnabledTitle": {
     "message": "Dane biometryczne są wyłączone"
@@ -2210,8 +2274,29 @@
   "excludedDomainsSavedSuccess": {
     "message": "Zmiany w wykluczonych domenach zapisane"
   },
+  "limitSendViews": {
+    "message": "Limit views"
+  },
+  "limitSendViewsHint": {
+    "message": "No one can view this Send after the limit is reached.",
+    "description": "Displayed under the limit views field on Send"
+  },
+  "limitSendViewsCount": {
+    "message": "$ACCESSCOUNT$ views left",
+    "description": "Displayed under the limit views field on Send",
+    "placeholders": {
+      "accessCount": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
   "send": {
     "message": "Wyślij",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendDetails": {
+    "message": "Send details",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "searchSends": {
@@ -2225,12 +2310,18 @@
   "sendTypeText": {
     "message": "Tekst"
   },
+  "sendTypeTextToShare": {
+    "message": "Text to share"
+  },
   "sendTypeFile": {
     "message": "Plik"
   },
   "allSends": {
     "message": "Wszystkie wysyłki",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "hideTextByDefault": {
+    "message": "Hide text by default"
   },
   "maxAccessCountReached": {
     "message": "Maksymalna liczba dostępów została osiągnięta",
@@ -2305,6 +2396,10 @@
     "message": "Wysyłka zostanie trwale usunięta w określonym czasie.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
+  "deletionDateDescV2": {
+    "message": "The Send will be permanently deleted on this date.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
   "expirationDate": {
     "message": "Data wygaśnięcia"
   },
@@ -2336,6 +2431,10 @@
   },
   "sendPasswordDesc": {
     "message": "Opcjonalne hasło dla użytkownika, aby uzyskać dostęp do wysyłki.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendPasswordDescV2": {
+    "message": "Require this password to view the Send.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendNotesDesc": {
@@ -2443,6 +2542,9 @@
   "hideEmail": {
     "message": "Ukryj mój adres e-mail przed odbiorcami."
   },
+  "hideYourEmail": {
+    "message": "Hide your email address from viewers."
+  },
   "sendOptionsPolicyInEffect": {
     "message": "Co najmniej jedna zasada organizacji wpływa na ustawienia wysyłek."
   },
@@ -2510,8 +2612,37 @@
   "minutes": {
     "message": "Minuty"
   },
+  "vaultTimeoutPolicyAffectingOptions": {
+    "message": "Enterprise policy requirements have been applied to your timeout options"
+  },
   "vaultTimeoutPolicyInEffect": {
     "message": "Zasady organizacji mają wpływ czas blokowania sejfu. Maksymalny dozwolony czas wynosi $HOURS$ godz. i $MINUTES$ min.",
+    "placeholders": {
+      "hours": {
+        "content": "$1",
+        "example": "5"
+      },
+      "minutes": {
+        "content": "$2",
+        "example": "5"
+      }
+    }
+  },
+  "vaultTimeoutPolicyInEffect1": {
+    "message": "$HOURS$ hour(s) and $MINUTES$ minute(s) maximum.",
+    "placeholders": {
+      "hours": {
+        "content": "$1",
+        "example": "5"
+      },
+      "minutes": {
+        "content": "$2",
+        "example": "5"
+      }
+    }
+  },
+  "vaultTimeoutPolicyMaximumError": {
+    "message": "Timeout exceeds the restriction set by your organization: $HOURS$ hour(s) and $MINUTES$ minute(s) maximum",
     "placeholders": {
       "hours": {
         "content": "$1",
@@ -4308,6 +4439,15 @@
   },
   "enterprisePolicyRequirementsApplied": {
     "message": "Enterprise policy requirements have been applied to this setting"
+  },
+  "retry": {
+    "message": "Retry"
+  },
+  "vaultCustomTimeoutMinimum": {
+    "message": "Minimum custom timeout is 1 minute."
+  },
+  "additionalContentAvailable": {
+    "message": "Additional content is available"
   },
   "fileSavedToDevice": {
     "message": "File saved to device. Manage from your device downloads."

@@ -128,6 +128,21 @@
   "copyLicenseNumber": {
     "message": "Copy license number"
   },
+  "copyCustomField": {
+    "message": "Copy $FIELD$",
+    "placeholders": {
+      "field": {
+        "content": "$1",
+        "example": "Custom field label"
+      }
+    }
+  },
+  "copyWebsite": {
+    "message": "Copy website"
+  },
+  "copyNotes": {
+    "message": "Copy notes"
+  },
   "autoFill": {
     "message": "Auto-fill sa Filipino ay Awtomatikong Pagpuno"
   },
@@ -178,6 +193,18 @@
   },
   "addItem": {
     "message": "Magdagdag ng Item"
+  },
+  "accountEmail": {
+    "message": "Account email"
+  },
+  "requestHint": {
+    "message": "Request hint"
+  },
+  "requestPasswordHint": {
+    "message": "Request password hint"
+  },
+  "enterYourAccountEmailAddressAndYourPasswordHintWillBeSentToYou": {
+    "message": "Enter your account email address and your password hint will be sent to you"
   },
   "passwordHint": {
     "message": "Mungkahi sa Password"
@@ -462,6 +489,10 @@
     "message": "Avoid ambiguous characters",
     "description": "Label for the avoid ambiguous characters checkbox."
   },
+  "generatorPolicyInEffect": {
+    "message": "Enterprise policy requirements have been applied to your generator options.",
+    "description": "Indicates that a policy limits the credential generator screen."
+  },
   "searchVault": {
     "message": "Hanapin ang vault"
   },
@@ -503,6 +534,9 @@
   },
   "notes": {
     "message": "Mga nota"
+  },
+  "privateNote": {
+    "message": "Private note"
   },
   "note": {
     "message": "Ang paalala"
@@ -549,6 +583,9 @@
   "sessionTimeoutHeader": {
     "message": "Session timeout"
   },
+  "vaultTimeoutHeader": {
+    "message": "Vault timeout"
+  },
   "otherOptions": {
     "message": "Other options"
   },
@@ -588,6 +625,9 @@
   },
   "vaultTimeout": {
     "message": "Vault timeout"
+  },
+  "vaultTimeout1": {
+    "message": "Timeout"
   },
   "lockNow": {
     "message": "Mag-kandado Na"
@@ -789,6 +829,12 @@
   "twoStepLoginConfirmation": {
     "message": "Ang two-step login ay nagpapagaan sa iyong account sa pamamagitan ng pag-verify sa iyong login sa isa pang device tulad ng security key, authenticator app, SMS, tawag sa telepono o email. Ang two-step login ay maaaring magawa sa bitwarden.com web vault. Gusto mo bang bisitahin ang website ngayon?"
   },
+  "twoStepLoginConfirmationContent": {
+    "message": "Make your account more secure by setting up two-step login in the Bitwarden web app."
+  },
+  "twoStepLoginConfirmationTitle": {
+    "message": "Continue to web app?"
+  },
   "editedFolder": {
     "message": "Nai-save na folder"
   },
@@ -892,7 +938,7 @@
     "message": "Itala ang mga item ng card sa Tab page para sa madaling auto-fill."
   },
   "showIdentitiesInVaultView": {
-    "message": "Show identifies as Autofill suggestions on Vault view"
+    "message": "Show identities as Autofill suggestions on Vault view"
   },
   "showIdentitiesCurrentTab": {
     "message": "Ipakita ang mga pagkatao sa Tab page"
@@ -1096,6 +1142,9 @@
   },
   "file": {
     "message": "Mag-file"
+  },
+  "fileToShare": {
+    "message": "File to share"
   },
   "selectFile": {
     "message": "Pumili ng File"
@@ -1863,8 +1912,17 @@
   "unlockWithPin": {
     "message": "Unlock sa pamamagitan ng PIN"
   },
+  "setYourPinTitle": {
+    "message": "Set PIN"
+  },
+  "setYourPinButton": {
+    "message": "Set PIN"
+  },
   "setYourPinCode": {
     "message": "Itakda ang iyong PIN code para sa pag-unlock ng Bitwarden. Ang iyong mga setting ng PIN ay ma-reset kung kailanman ay lubusang lumabas ka mula sa application."
+  },
+  "setYourPinCode1": {
+    "message": "Your PIN will be used to unlock Bitwarden instead of your master password. Your PIN will reset if you ever fully log out of Bitwarden."
   },
   "pinRequired": {
     "message": "Kinakailangan ang PIN code."
@@ -1886,6 +1944,9 @@
   },
   "lockWithMasterPassOnRestart": {
     "message": "I-lock sa master password sa restart ng browser"
+  },
+  "lockWithMasterPassOnRestart1": {
+    "message": "Require master password on browser restart"
   },
   "selectOneCollection": {
     "message": "Kailangan mong piliin ang hindi bababa sa isang koleksyon."
@@ -1925,9 +1986,12 @@
   "vaultTimeoutAction": {
     "message": "Aksyon sa Vault timeout"
   },
+  "vaultTimeoutAction1": {
+    "message": "Timeout action"
+  },
   "lock": {
     "message": "I-lock",
-    "description": "Verb form: to make secure or inaccesible by"
+    "description": "Verb form: to make secure or inaccessible by"
   },
   "trash": {
     "message": "Basurahan",
@@ -2119,11 +2183,11 @@
   "nativeMessagingWrongUserTitle": {
     "message": "Mismatch sa Account"
   },
-  "nativeMessagingWrongUserKeyDesc": {
-    "message": "Biometric unlock failed. The biometric secret key failed to unlock the vault. Please try to set up biometrics again."
-  },
   "nativeMessagingWrongUserKeyTitle": {
     "message": "Biometric key missmatch"
+  },
+  "nativeMessagingWrongUserKeyDesc": {
+    "message": "Biometric unlock failed. The biometric secret key failed to unlock the vault. Please try to set up biometrics again."
   },
   "biometricsNotEnabledTitle": {
     "message": "Hindi naka-setup ang biometrics"
@@ -2210,8 +2274,29 @@
   "excludedDomainsSavedSuccess": {
     "message": "Excluded domain changes saved"
   },
+  "limitSendViews": {
+    "message": "Limit views"
+  },
+  "limitSendViewsHint": {
+    "message": "No one can view this Send after the limit is reached.",
+    "description": "Displayed under the limit views field on Send"
+  },
+  "limitSendViewsCount": {
+    "message": "$ACCESSCOUNT$ views left",
+    "description": "Displayed under the limit views field on Send",
+    "placeholders": {
+      "accessCount": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
   "send": {
     "message": "Ipadala",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendDetails": {
+    "message": "Send details",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "searchSends": {
@@ -2225,12 +2310,18 @@
   "sendTypeText": {
     "message": "Teksto"
   },
+  "sendTypeTextToShare": {
+    "message": "Text to share"
+  },
   "sendTypeFile": {
     "message": "Mag-file"
   },
   "allSends": {
     "message": "Lahat ng Mga Padala",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "hideTextByDefault": {
+    "message": "Hide text by default"
   },
   "maxAccessCountReached": {
     "message": "Ang pinaka-access count ay nakaabot na",
@@ -2305,6 +2396,10 @@
     "message": "Ang Ipadala ay tatanggalin nang permanente sa tinukoy na petsa at oras.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
+  "deletionDateDescV2": {
+    "message": "The Send will be permanently deleted on this date.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
   "expirationDate": {
     "message": "Petsa ng pag-expire"
   },
@@ -2336,6 +2431,10 @@
   },
   "sendPasswordDesc": {
     "message": "Maipapayo na mag-require ng password para sa mga user na ma-access ang Send na ito.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendPasswordDescV2": {
+    "message": "Require this password to view the Send.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendNotesDesc": {
@@ -2443,6 +2542,9 @@
   "hideEmail": {
     "message": "Itago ang aking email address mula sa mga tatanggap."
   },
+  "hideYourEmail": {
+    "message": "Hide your email address from viewers."
+  },
   "sendOptionsPolicyInEffect": {
     "message": "Isang o higit pang mga patakaran ng organisasyon ay nakaapekto sa iyong mga pagpipilian sa Pagpadala."
   },
@@ -2510,8 +2612,37 @@
   "minutes": {
     "message": "Minuto"
   },
+  "vaultTimeoutPolicyAffectingOptions": {
+    "message": "Enterprise policy requirements have been applied to your timeout options"
+  },
   "vaultTimeoutPolicyInEffect": {
     "message": "Nakakaapekto ang mga patakaran ng iyong organisasyon sa iyong vault timeout. Ang pinakamataas na pinapayagang Vault Timeout ay $HOURS$ oras at $MINUTES$ minuto",
+    "placeholders": {
+      "hours": {
+        "content": "$1",
+        "example": "5"
+      },
+      "minutes": {
+        "content": "$2",
+        "example": "5"
+      }
+    }
+  },
+  "vaultTimeoutPolicyInEffect1": {
+    "message": "$HOURS$ hour(s) and $MINUTES$ minute(s) maximum.",
+    "placeholders": {
+      "hours": {
+        "content": "$1",
+        "example": "5"
+      },
+      "minutes": {
+        "content": "$2",
+        "example": "5"
+      }
+    }
+  },
+  "vaultTimeoutPolicyMaximumError": {
+    "message": "Timeout exceeds the restriction set by your organization: $HOURS$ hour(s) and $MINUTES$ minute(s) maximum",
     "placeholders": {
       "hours": {
         "content": "$1",
@@ -4308,6 +4439,15 @@
   },
   "enterprisePolicyRequirementsApplied": {
     "message": "Enterprise policy requirements have been applied to this setting"
+  },
+  "retry": {
+    "message": "Retry"
+  },
+  "vaultCustomTimeoutMinimum": {
+    "message": "Minimum custom timeout is 1 minute."
+  },
+  "additionalContentAvailable": {
+    "message": "Additional content is available"
   },
   "fileSavedToDevice": {
     "message": "File saved to device. Manage from your device downloads."

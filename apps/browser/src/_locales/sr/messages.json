@@ -128,6 +128,21 @@
   "copyLicenseNumber": {
     "message": "Копирај број лиценце"
   },
+  "copyCustomField": {
+    "message": "Копирати $FIELD$",
+    "placeholders": {
+      "field": {
+        "content": "$1",
+        "example": "Custom field label"
+      }
+    }
+  },
+  "copyWebsite": {
+    "message": "Копирати вебсајт"
+  },
+  "copyNotes": {
+    "message": "Копирати белешке"
+  },
   "autoFill": {
     "message": "Аутоматско допуњавање"
   },
@@ -178,6 +193,18 @@
   },
   "addItem": {
     "message": "Додај ставку"
+  },
+  "accountEmail": {
+    "message": "Имејл налога"
+  },
+  "requestHint": {
+    "message": "Захтевај савет"
+  },
+  "requestPasswordHint": {
+    "message": "Затражити савет лозинке"
+  },
+  "enterYourAccountEmailAddressAndYourPasswordHintWillBeSentToYou": {
+    "message": "Унесите имејл свог налога и биће вам послат савет за лозинку"
   },
   "passwordHint": {
     "message": "Савет лозинке"
@@ -462,6 +489,10 @@
     "message": "Избегавај двосмислене карактере",
     "description": "Label for the avoid ambiguous characters checkbox."
   },
+  "generatorPolicyInEffect": {
+    "message": "Enterprise policy requirements have been applied to your generator options.",
+    "description": "Indicates that a policy limits the credential generator screen."
+  },
   "searchVault": {
     "message": "Претражи сеф"
   },
@@ -503,6 +534,9 @@
   },
   "notes": {
     "message": "Белешке"
+  },
+  "privateNote": {
+    "message": "Приватна белешка"
   },
   "note": {
     "message": "Белешка"
@@ -549,6 +583,9 @@
   "sessionTimeoutHeader": {
     "message": "Истек сесије"
   },
+  "vaultTimeoutHeader": {
+    "message": "Тајмаут сефа"
+  },
   "otherOptions": {
     "message": "Остале опције"
   },
@@ -588,6 +625,9 @@
   },
   "vaultTimeout": {
     "message": "Тајмаут сефа"
+  },
+  "vaultTimeout1": {
+    "message": "Тајмаут"
   },
   "lockNow": {
     "message": "Закључај одмах"
@@ -788,6 +828,12 @@
   },
   "twoStepLoginConfirmation": {
     "message": "Пријава у два корака чини ваш налог сигурнијим захтевом да верификујете своје податке помоћу другог уређаја, као што су безбедносни кључ, апликација, СМС-а, телефонски позив или имејл. Пријављивање у два корака може се омогућити на веб сефу. Да ли желите да посетите веб страницу сада?"
+  },
+  "twoStepLoginConfirmationContent": {
+    "message": "Учините свој налог сигурнијим подешавањем пријаве у два корака у Bitwarden веб апликацији."
+  },
+  "twoStepLoginConfirmationTitle": {
+    "message": "Ићи на веб апликацију?"
   },
   "editedFolder": {
     "message": "Фасцикла измењена"
@@ -1096,6 +1142,9 @@
   },
   "file": {
     "message": "Датотека"
+  },
+  "fileToShare": {
+    "message": "Датотека за дељење"
   },
   "selectFile": {
     "message": "Изабери датотеку."
@@ -1797,13 +1846,13 @@
     "message": "Нема лозинки у листи."
   },
   "clearHistory": {
-    "message": "Clear history"
+    "message": "Обриши историју"
   },
   "noPasswordsToShow": {
-    "message": "No passwords to show"
+    "message": "Нема лозинке за приказ"
   },
   "noRecentlyGeneratedPassword": {
-    "message": "You haven't generated a password recently"
+    "message": "Нисте недавно генерисали лозинку"
   },
   "remove": {
     "message": "Уклони"
@@ -1863,8 +1912,17 @@
   "unlockWithPin": {
     "message": "Откључај са ПИН"
   },
+  "setYourPinTitle": {
+    "message": "Поставите PIN"
+  },
+  "setYourPinButton": {
+    "message": "Поставите PIN"
+  },
   "setYourPinCode": {
     "message": "Поставите свој ПИН код за откључавање Bitwarden-а. Поставке ПИН-а ће се ресетовати ако се икада потпуно одјавите из апликације."
+  },
+  "setYourPinCode1": {
+    "message": "Ваш ПИН ће се користити за откључавање Bitwarden-а уместо ваше главне лозинке. Ваш ПИН ће се ресетовати ако се икада потпуно одјавите са Bitwarden-а."
   },
   "pinRequired": {
     "message": "ПИН је обавезан."
@@ -1886,6 +1944,9 @@
   },
   "lockWithMasterPassOnRestart": {
     "message": "Закључајте са главном лозинком при поновном покретању прегледача"
+  },
+  "lockWithMasterPassOnRestart1": {
+    "message": "Потражити главну лозинку при поновном покретању прегледача"
   },
   "selectOneCollection": {
     "message": "Морате одабрати макар једну колекцију."
@@ -1925,9 +1986,12 @@
   "vaultTimeoutAction": {
     "message": "Акција на тајмаут сефа"
   },
+  "vaultTimeoutAction1": {
+    "message": "Акција тајмаута"
+  },
   "lock": {
     "message": "Закључај",
-    "description": "Verb form: to make secure or inaccesible by"
+    "description": "Verb form: to make secure or inaccessible by"
   },
   "trash": {
     "message": "Отпад",
@@ -2119,11 +2183,11 @@
   "nativeMessagingWrongUserTitle": {
     "message": "Неподударање налога"
   },
-  "nativeMessagingWrongUserKeyDesc": {
-    "message": "Биометријско откључавање није успело. Биометријски тајни кључ није успео да откључа сеф. Покушајте поново да подесите биометрију."
-  },
   "nativeMessagingWrongUserKeyTitle": {
     "message": "Неподударање биометријског кључа"
+  },
+  "nativeMessagingWrongUserKeyDesc": {
+    "message": "Биометријско откључавање није успело. Биометријски тајни кључ није успео да откључа сеф. Покушајте поново да подесите биометрију."
   },
   "biometricsNotEnabledTitle": {
     "message": "Биометрија није омогућена"
@@ -2210,8 +2274,29 @@
   "excludedDomainsSavedSuccess": {
     "message": "Изузете промене домена су сачуване"
   },
+  "limitSendViews": {
+    "message": "Ограничити приказе"
+  },
+  "limitSendViewsHint": {
+    "message": "Нико не може да види ово Send након што се достигне ограничење.",
+    "description": "Displayed under the limit views field on Send"
+  },
+  "limitSendViewsCount": {
+    "message": "Осталих прегледа: $ACCESSCOUNT$",
+    "description": "Displayed under the limit views field on Send",
+    "placeholders": {
+      "accessCount": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
   "send": {
     "message": "Send",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendDetails": {
+    "message": "Детаљи Send-а",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "searchSends": {
@@ -2225,12 +2310,18 @@
   "sendTypeText": {
     "message": "Текст"
   },
+  "sendTypeTextToShare": {
+    "message": "Текст за дељење"
+  },
   "sendTypeFile": {
     "message": "Датотека"
   },
   "allSends": {
     "message": "Све „Send“",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "hideTextByDefault": {
+    "message": "Сакриј текст подразумевано"
   },
   "maxAccessCountReached": {
     "message": "Достигнут максималан број приступа",
@@ -2305,6 +2396,10 @@
     "message": "„Send“ ће бити трајно избрисан наведеног датума и времена.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
+  "deletionDateDescV2": {
+    "message": "Send ће бити трајно обрисано у наведени датум.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
   "expirationDate": {
     "message": "Рок употребе"
   },
@@ -2336,6 +2431,10 @@
   },
   "sendPasswordDesc": {
     "message": "Опционално захтевајте лозинку за приступ корисницима „Send“-у.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendPasswordDescV2": {
+    "message": "Захтева ову лозинку за преглед Send-а.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendNotesDesc": {
@@ -2443,6 +2542,9 @@
   "hideEmail": {
     "message": "Сакриј моју е-адресу од примаоца."
   },
+  "hideYourEmail": {
+    "message": "Сакријте свој имејл од гледалаца."
+  },
   "sendOptionsPolicyInEffect": {
     "message": "Једна или више смерница организације утичу на опције „Send“-а."
   },
@@ -2510,8 +2612,37 @@
   "minutes": {
     "message": "Минута"
   },
+  "vaultTimeoutPolicyAffectingOptions": {
+    "message": "Захтеви политике предузећа су примењени на опције тајмаута"
+  },
   "vaultTimeoutPolicyInEffect": {
     "message": "Полиса ваше организације утиче на време истека сефа. Максимално дозвољено време истека је $HOURS$ сат(и) и $MINUTES$ minut(а)",
+    "placeholders": {
+      "hours": {
+        "content": "$1",
+        "example": "5"
+      },
+      "minutes": {
+        "content": "$2",
+        "example": "5"
+      }
+    }
+  },
+  "vaultTimeoutPolicyInEffect1": {
+    "message": "Макимум $HOURS$ сат(а) и $MINUTES$ минут(а).",
+    "placeholders": {
+      "hours": {
+        "content": "$1",
+        "example": "5"
+      },
+      "minutes": {
+        "content": "$2",
+        "example": "5"
+      }
+    }
+  },
+  "vaultTimeoutPolicyMaximumError": {
+    "message": "Тајмаут је већи него што је решила организација: макимум $HOURS$ сат(а) и $MINUTES$ минут(а)",
     "placeholders": {
       "hours": {
         "content": "$1",
@@ -4309,14 +4440,23 @@
   "enterprisePolicyRequirementsApplied": {
     "message": "Захтеви политике предузећа су примењени на ово подешавање"
   },
+  "retry": {
+    "message": "Пробај поново"
+  },
+  "vaultCustomTimeoutMinimum": {
+    "message": "Минимално прилагођено временско ограничење је 1 минут."
+  },
+  "additionalContentAvailable": {
+    "message": "Додатни садржај је доступан"
+  },
   "fileSavedToDevice": {
     "message": "File saved to device. Manage from your device downloads."
   },
   "showCharacterCount": {
-    "message": "Show character count"
+    "message": "Прикажи бројање слова"
   },
   "hideCharacterCount": {
-    "message": "Hide character count"
+    "message": "Сакриј бројање слова"
   },
   "itemsInTrash": {
     "message": "Ставке у смећу"

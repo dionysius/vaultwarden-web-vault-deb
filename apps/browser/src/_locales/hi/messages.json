@@ -128,6 +128,21 @@
   "copyLicenseNumber": {
     "message": "Copy license number"
   },
+  "copyCustomField": {
+    "message": "Copy $FIELD$",
+    "placeholders": {
+      "field": {
+        "content": "$1",
+        "example": "Custom field label"
+      }
+    }
+  },
+  "copyWebsite": {
+    "message": "Copy website"
+  },
+  "copyNotes": {
+    "message": "Copy notes"
+  },
   "autoFill": {
     "message": "स्वत:भरण"
   },
@@ -178,6 +193,18 @@
   },
   "addItem": {
     "message": "Add Item"
+  },
+  "accountEmail": {
+    "message": "Account email"
+  },
+  "requestHint": {
+    "message": "Request hint"
+  },
+  "requestPasswordHint": {
+    "message": "Request password hint"
+  },
+  "enterYourAccountEmailAddressAndYourPasswordHintWillBeSentToYou": {
+    "message": "Enter your account email address and your password hint will be sent to you"
   },
   "passwordHint": {
     "message": "Password Hint"
@@ -462,6 +489,10 @@
     "message": "Avoid ambiguous characters",
     "description": "Label for the avoid ambiguous characters checkbox."
   },
+  "generatorPolicyInEffect": {
+    "message": "Enterprise policy requirements have been applied to your generator options.",
+    "description": "Indicates that a policy limits the credential generator screen."
+  },
   "searchVault": {
     "message": "वॉल्ट खोजे"
   },
@@ -503,6 +534,9 @@
   },
   "notes": {
     "message": "नोट्स"
+  },
+  "privateNote": {
+    "message": "Private note"
   },
   "note": {
     "message": "नोट:"
@@ -549,6 +583,9 @@
   "sessionTimeoutHeader": {
     "message": "Session timeout"
   },
+  "vaultTimeoutHeader": {
+    "message": "तिजोरी टाइमआउट"
+  },
   "otherOptions": {
     "message": "Other options"
   },
@@ -588,6 +625,9 @@
   },
   "vaultTimeout": {
     "message": "वॉल्ट मध्यांतर"
+  },
+  "vaultTimeout1": {
+    "message": "टाइमआउट"
   },
   "lockNow": {
     "message": "Lock Now"
@@ -789,6 +829,12 @@
   "twoStepLoginConfirmation": {
     "message": "Two-step login makes your account more secure by requiring you to enter a security code from an authenticator app whenever you log in. Two-step login can be enabled on the bitwarden.com web vault. Do you want to visit the website now?"
   },
+  "twoStepLoginConfirmationContent": {
+    "message": "बिटवर्डन वेब ऐप में दो-चरणीय लॉगिन सेट करके अपने खाते को अधिक सुरक्षित बनाएं।"
+  },
+  "twoStepLoginConfirmationTitle": {
+    "message": "वेब ऐप पर जाएं?"
+  },
   "editedFolder": {
     "message": "Edited Folder"
   },
@@ -892,7 +938,7 @@
     "message": "आसान ऑटो-फिल के लिए टैब पेज पर कार्ड आइटम सूचीबद्ध करें।"
   },
   "showIdentitiesInVaultView": {
-    "message": "Show identifies as Autofill suggestions on Vault view"
+    "message": "Show identities as Autofill suggestions on Vault view"
   },
   "showIdentitiesCurrentTab": {
     "message": "टैब पेज पर पहचान दिखाएं"
@@ -1096,6 +1142,9 @@
   },
   "file": {
     "message": "फ़ाइल"
+  },
+  "fileToShare": {
+    "message": "File to share"
   },
   "selectFile": {
     "message": "फ़ाइल का चयन करें।"
@@ -1863,8 +1912,17 @@
   "unlockWithPin": {
     "message": "पिन से अनलॉक करें "
   },
+  "setYourPinTitle": {
+    "message": "पिन सेट करें"
+  },
+  "setYourPinButton": {
+    "message": "पिन सेट करें"
+  },
   "setYourPinCode": {
     "message": "बिटवर्डन को अनलॉक करने के लिए अपना पिन कोड सेट करें यदि आप कभी भी आवेदन से पूरी तरह लॉग आउट करते हैं तो आपकी पिन सेटिंग्स रीसेट हो जाएंगी।"
+  },
+  "setYourPinCode1": {
+    "message": "बिटवर्डन को अनलॉक करने के लिए आपके मास्टर पासवर्ड के बजाय आपके पिन का उपयोग किया जाएगा। यदि आप कभी भी बिटवर्डन से पूरी तरह लॉग आउट हो जाते हैं तो आपका पिन रीसेट हो जाएगा।"
   },
   "pinRequired": {
     "message": "पिन-कोड आवश्यक है |"
@@ -1886,6 +1944,9 @@
   },
   "lockWithMasterPassOnRestart": {
     "message": "ब्राउज़र पुनः आरंभ करने पर मास्टर पासवर्ड के साथ लॉक करें"
+  },
+  "lockWithMasterPassOnRestart1": {
+    "message": "ब्राउज़र पुनरारंभ पर मास्टर पासवर्ड की आवश्यकता है"
   },
   "selectOneCollection": {
     "message": "आपको कम से कम एक संग्रह का चयन करना होगा।"
@@ -1925,9 +1986,12 @@
   "vaultTimeoutAction": {
     "message": "वॉल्ट मध्यांतर कार्रवाई"
   },
+  "vaultTimeoutAction1": {
+    "message": "टाइमआउट कार्रवाई"
+  },
   "lock": {
     "message": "लॉक",
-    "description": "Verb form: to make secure or inaccesible by"
+    "description": "Verb form: to make secure or inaccessible by"
   },
   "trash": {
     "message": "थ्रैश",
@@ -2119,11 +2183,11 @@
   "nativeMessagingWrongUserTitle": {
     "message": "खाता गलत मैच"
   },
-  "nativeMessagingWrongUserKeyDesc": {
-    "message": "बायोमेट्रिक अनलॉक विफल रहा. बायोमेट्रिक गुप्त कुंजी वॉल्ट को अनलॉक करने में विफल रही. कृपया बायोमेट्रिक्स को फिर से सेट करने का प्रयास करें."
-  },
   "nativeMessagingWrongUserKeyTitle": {
     "message": "बेमेल बायोमेट्रिक कुंजी"
+  },
+  "nativeMessagingWrongUserKeyDesc": {
+    "message": "बायोमेट्रिक अनलॉक विफल रहा. बायोमेट्रिक गुप्त कुंजी वॉल्ट को अनलॉक करने में विफल रही. कृपया बायोमेट्रिक्स को फिर से सेट करने का प्रयास करें."
   },
   "biometricsNotEnabledTitle": {
     "message": "बॉयोमीट्रिक्स सक्षम नहीं  है"
@@ -2210,8 +2274,29 @@
   "excludedDomainsSavedSuccess": {
     "message": "Excluded domain changes saved"
   },
+  "limitSendViews": {
+    "message": "Limit views"
+  },
+  "limitSendViewsHint": {
+    "message": "No one can view this Send after the limit is reached.",
+    "description": "Displayed under the limit views field on Send"
+  },
+  "limitSendViewsCount": {
+    "message": "$ACCESSCOUNT$ views left",
+    "description": "Displayed under the limit views field on Send",
+    "placeholders": {
+      "accessCount": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
   "send": {
     "message": "भेजें",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendDetails": {
+    "message": "Send details",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "searchSends": {
@@ -2225,12 +2310,18 @@
   "sendTypeText": {
     "message": "शब्द"
   },
+  "sendTypeTextToShare": {
+    "message": "Text to share"
+  },
   "sendTypeFile": {
     "message": "फ़ाइल"
   },
   "allSends": {
     "message": "सभी Sends",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "hideTextByDefault": {
+    "message": "Hide text by default"
   },
   "maxAccessCountReached": {
     "message": "मैक्स एक्सेस काउंट पहुंच गया है",
@@ -2305,6 +2396,10 @@
     "message": " यह सेंड निर्धारित तिथि और समय पर स्थायी रूप से हटा दिया जाएगा।",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
+  "deletionDateDescV2": {
+    "message": "The Send will be permanently deleted on this date.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
   "expirationDate": {
     "message": "समाप्ति तिथि"
   },
@@ -2336,6 +2431,10 @@
   },
   "sendPasswordDesc": {
     "message": "वैकल्पिक रूप से उपयोगकर्ताओं को इस सेंड तक पहुंचने के लिए पासवर्ड की आवश्यकता होगी।",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendPasswordDescV2": {
+    "message": "Require this password to view the Send.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendNotesDesc": {
@@ -2443,6 +2542,9 @@
   "hideEmail": {
     "message": "प्राप्तकर्ताओं से मेरा ईमेल पता छिपाएं।"
   },
+  "hideYourEmail": {
+    "message": "Hide your email address from viewers."
+  },
   "sendOptionsPolicyInEffect": {
     "message": "एक या एक से अधिक संगठन नीतियां आपके सेंड विकल्पों को प्रभावित कर रही हैं।"
   },
@@ -2510,8 +2612,37 @@
   "minutes": {
     "message": "मिनट"
   },
+  "vaultTimeoutPolicyAffectingOptions": {
+    "message": "एंटरप्राइज़ नीति आवश्यकताएँ आपके टाइमआउट विकल्पों पर लागू की गई हैं"
+  },
   "vaultTimeoutPolicyInEffect": {
     "message": "आपकी संगठन नीतियां आपके तिजोरी टाइमआउट को प्रभावित कर रही हैं। अधिकतम अनुमत तिजोरी टाइमआउट $HOURS$ घंटे और $MINUTES$ मिनट है",
+    "placeholders": {
+      "hours": {
+        "content": "$1",
+        "example": "5"
+      },
+      "minutes": {
+        "content": "$2",
+        "example": "5"
+      }
+    }
+  },
+  "vaultTimeoutPolicyInEffect1": {
+    "message": "अधिकतम $HOURS$ घंटे और $MINUTES$ मिनट)।",
+    "placeholders": {
+      "hours": {
+        "content": "$1",
+        "example": "5"
+      },
+      "minutes": {
+        "content": "$2",
+        "example": "5"
+      }
+    }
+  },
+  "vaultTimeoutPolicyMaximumError": {
+    "message": "टाइमआउट आपके संगठन द्वारा निर्धारित प्रतिबंध से अधिक है: अधिकतम $HOURS$ घंटे और $MINUTES$ मिनट",
     "placeholders": {
       "hours": {
         "content": "$1",
@@ -4308,6 +4439,15 @@
   },
   "enterprisePolicyRequirementsApplied": {
     "message": "इस सेटिंग पर एंटरप्राइज़ नीति आवश्यकताएँ लागू की गई हैं"
+  },
+  "retry": {
+    "message": "पुन: प्रयास करें"
+  },
+  "vaultCustomTimeoutMinimum": {
+    "message": "न्यूनतम कस्टम टाइमआउट 1 मिनट है."
+  },
+  "additionalContentAvailable": {
+    "message": "अतिरिक्त सामग्री उपलब्ध है"
   },
   "fileSavedToDevice": {
     "message": "File saved to device. Manage from your device downloads."

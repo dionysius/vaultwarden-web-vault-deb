@@ -128,6 +128,21 @@
   "copyLicenseNumber": {
     "message": "Copiar número da CNH"
   },
+  "copyCustomField": {
+    "message": "Copy $FIELD$",
+    "placeholders": {
+      "field": {
+        "content": "$1",
+        "example": "Custom field label"
+      }
+    }
+  },
+  "copyWebsite": {
+    "message": "Copy website"
+  },
+  "copyNotes": {
+    "message": "Copy notes"
+  },
   "autoFill": {
     "message": "Autopreencher"
   },
@@ -178,6 +193,18 @@
   },
   "addItem": {
     "message": "Adicionar Item"
+  },
+  "accountEmail": {
+    "message": "Account email"
+  },
+  "requestHint": {
+    "message": "Request hint"
+  },
+  "requestPasswordHint": {
+    "message": "Request password hint"
+  },
+  "enterYourAccountEmailAddressAndYourPasswordHintWillBeSentToYou": {
+    "message": "Enter your account email address and your password hint will be sent to you"
   },
   "passwordHint": {
     "message": "Dica da Senha"
@@ -462,6 +489,10 @@
     "message": "Evitar Caracteres Ambíguos",
     "description": "Label for the avoid ambiguous characters checkbox."
   },
+  "generatorPolicyInEffect": {
+    "message": "Enterprise policy requirements have been applied to your generator options.",
+    "description": "Indicates that a policy limits the credential generator screen."
+  },
   "searchVault": {
     "message": "Pesquisar no Cofre"
   },
@@ -503,6 +534,9 @@
   },
   "notes": {
     "message": "Notas"
+  },
+  "privateNote": {
+    "message": "Private note"
   },
   "note": {
     "message": "Nota"
@@ -549,6 +583,9 @@
   "sessionTimeoutHeader": {
     "message": "Tempo limite da sessão"
   },
+  "vaultTimeoutHeader": {
+    "message": "Vault timeout"
+  },
   "otherOptions": {
     "message": "Outras opções"
   },
@@ -588,6 +625,9 @@
   },
   "vaultTimeout": {
     "message": "Cofre - tempo esgotado"
+  },
+  "vaultTimeout1": {
+    "message": "Timeout"
   },
   "lockNow": {
     "message": "Bloquear Agora"
@@ -788,6 +828,12 @@
   },
   "twoStepLoginConfirmation": {
     "message": "O login de duas etapas torna a sua conta mais segura ao exigir que digite um código de segurança de um aplicativo de autenticação quando for iniciar a sessão. O login de duas etapas pode ser ativado no cofre web bitwarden.com. Deseja visitar o site agora?"
+  },
+  "twoStepLoginConfirmationContent": {
+    "message": "Make your account more secure by setting up two-step login in the Bitwarden web app."
+  },
+  "twoStepLoginConfirmationTitle": {
+    "message": "Continue to web app?"
   },
   "editedFolder": {
     "message": "Pasta Editada"
@@ -1096,6 +1142,9 @@
   },
   "file": {
     "message": "Arquivo"
+  },
+  "fileToShare": {
+    "message": "File to share"
   },
   "selectFile": {
     "message": "Selecione um arquivo."
@@ -1863,8 +1912,17 @@
   "unlockWithPin": {
     "message": "Desbloquear com o PIN"
   },
+  "setYourPinTitle": {
+    "message": "Set PIN"
+  },
+  "setYourPinButton": {
+    "message": "Set PIN"
+  },
   "setYourPinCode": {
     "message": "Defina o seu código PIN para desbloquear o Bitwarden. Suas configurações de PIN serão redefinidas se alguma vez você encerrar completamente toda a sessão do aplicativo."
+  },
+  "setYourPinCode1": {
+    "message": "Your PIN will be used to unlock Bitwarden instead of your master password. Your PIN will reset if you ever fully log out of Bitwarden."
   },
   "pinRequired": {
     "message": "O código PIN é necessário."
@@ -1886,6 +1944,9 @@
   },
   "lockWithMasterPassOnRestart": {
     "message": "Bloquear com senha mestra ao reiniciar o navegador"
+  },
+  "lockWithMasterPassOnRestart1": {
+    "message": "Require master password on browser restart"
   },
   "selectOneCollection": {
     "message": "Você deve selecionar pelo menos uma coleção."
@@ -1925,9 +1986,12 @@
   "vaultTimeoutAction": {
     "message": "Ação de Tempo Limite do Cofre"
   },
+  "vaultTimeoutAction1": {
+    "message": "Timeout action"
+  },
   "lock": {
     "message": "Bloquear",
-    "description": "Verb form: to make secure or inaccesible by"
+    "description": "Verb form: to make secure or inaccessible by"
   },
   "trash": {
     "message": "Lixeira",
@@ -2119,11 +2183,11 @@
   "nativeMessagingWrongUserTitle": {
     "message": "A conta não confere"
   },
-  "nativeMessagingWrongUserKeyDesc": {
-    "message": "O desbloqueio biométrico falhou. A chave secreta biométrica não conseguiu desbloquear o cofre. Tente configurar os dados biométricos novamente."
-  },
   "nativeMessagingWrongUserKeyTitle": {
     "message": "Falta de chave biométrica"
+  },
+  "nativeMessagingWrongUserKeyDesc": {
+    "message": "O desbloqueio biométrico falhou. A chave secreta biométrica não conseguiu desbloquear o cofre. Tente configurar os dados biométricos novamente."
   },
   "biometricsNotEnabledTitle": {
     "message": "Biometria não ativada"
@@ -2210,8 +2274,29 @@
   "excludedDomainsSavedSuccess": {
     "message": "Mudanças de domínios excluídos salvas"
   },
+  "limitSendViews": {
+    "message": "Limit views"
+  },
+  "limitSendViewsHint": {
+    "message": "No one can view this Send after the limit is reached.",
+    "description": "Displayed under the limit views field on Send"
+  },
+  "limitSendViewsCount": {
+    "message": "$ACCESSCOUNT$ views left",
+    "description": "Displayed under the limit views field on Send",
+    "placeholders": {
+      "accessCount": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
   "send": {
     "message": "Send",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendDetails": {
+    "message": "Send details",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "searchSends": {
@@ -2225,12 +2310,18 @@
   "sendTypeText": {
     "message": "Texto"
   },
+  "sendTypeTextToShare": {
+    "message": "Text to share"
+  },
   "sendTypeFile": {
     "message": "Arquivo"
   },
   "allSends": {
     "message": "Todos os Sends",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "hideTextByDefault": {
+    "message": "Hide text by default"
   },
   "maxAccessCountReached": {
     "message": "Número máximo de acessos atingido",
@@ -2305,6 +2396,10 @@
     "message": "O Send será eliminado permanentemente na data e hora especificadas.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
+  "deletionDateDescV2": {
+    "message": "The Send will be permanently deleted on this date.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
   "expirationDate": {
     "message": "Data de Validade"
   },
@@ -2336,6 +2431,10 @@
   },
   "sendPasswordDesc": {
     "message": "Exigir opcionalmente uma senha para os usuários acessarem este Send.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendPasswordDescV2": {
+    "message": "Require this password to view the Send.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendNotesDesc": {
@@ -2443,6 +2542,9 @@
   "hideEmail": {
     "message": "Ocultar meu endereço de e-mail dos destinatários."
   },
+  "hideYourEmail": {
+    "message": "Hide your email address from viewers."
+  },
   "sendOptionsPolicyInEffect": {
     "message": "Uma ou mais políticas da organização estão afetando as suas opções de Send."
   },
@@ -2510,8 +2612,37 @@
   "minutes": {
     "message": "Minutos"
   },
+  "vaultTimeoutPolicyAffectingOptions": {
+    "message": "Enterprise policy requirements have been applied to your timeout options"
+  },
   "vaultTimeoutPolicyInEffect": {
     "message": "As políticas da sua organização estão afetando o tempo limite do seu cofre. O Tempo Limite Máximo permitido do Cofre é $HOURS$ hora(s) e $MINUTES$ minuto(s)",
+    "placeholders": {
+      "hours": {
+        "content": "$1",
+        "example": "5"
+      },
+      "minutes": {
+        "content": "$2",
+        "example": "5"
+      }
+    }
+  },
+  "vaultTimeoutPolicyInEffect1": {
+    "message": "$HOURS$ hour(s) and $MINUTES$ minute(s) maximum.",
+    "placeholders": {
+      "hours": {
+        "content": "$1",
+        "example": "5"
+      },
+      "minutes": {
+        "content": "$2",
+        "example": "5"
+      }
+    }
+  },
+  "vaultTimeoutPolicyMaximumError": {
+    "message": "Timeout exceeds the restriction set by your organization: $HOURS$ hour(s) and $MINUTES$ minute(s) maximum",
     "placeholders": {
       "hours": {
         "content": "$1",
@@ -4308,6 +4439,15 @@
   },
   "enterprisePolicyRequirementsApplied": {
     "message": "Os requisitos de política empresarial foram aplicados nesta configuração"
+  },
+  "retry": {
+    "message": "Retry"
+  },
+  "vaultCustomTimeoutMinimum": {
+    "message": "Minimum custom timeout is 1 minute."
+  },
+  "additionalContentAvailable": {
+    "message": "Additional content is available"
   },
   "fileSavedToDevice": {
     "message": "File saved to device. Manage from your device downloads."

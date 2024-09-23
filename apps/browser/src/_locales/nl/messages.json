@@ -128,6 +128,21 @@
   "copyLicenseNumber": {
     "message": "Kenteken kopiëren"
   },
+  "copyCustomField": {
+    "message": "$FIELD$ kopiëren",
+    "placeholders": {
+      "field": {
+        "content": "$1",
+        "example": "Custom field label"
+      }
+    }
+  },
+  "copyWebsite": {
+    "message": "Website kopiëren"
+  },
+  "copyNotes": {
+    "message": "Notities kopiëren"
+  },
   "autoFill": {
     "message": "Auto-invullen"
   },
@@ -178,6 +193,18 @@
   },
   "addItem": {
     "message": "Item toevoegen"
+  },
+  "accountEmail": {
+    "message": "E-mailadres van account"
+  },
+  "requestHint": {
+    "message": "Hint vragen"
+  },
+  "requestPasswordHint": {
+    "message": "Hoofdwachtwoordhint vragen"
+  },
+  "enterYourAccountEmailAddressAndYourPasswordHintWillBeSentToYou": {
+    "message": "Als je het e-mailadres van je account invult, versturen we je je wachtwoordhint"
   },
   "passwordHint": {
     "message": "Wachtwoordhint"
@@ -462,6 +489,10 @@
     "message": "Dubbelzinnige tekens vermijden",
     "description": "Label for the avoid ambiguous characters checkbox."
   },
+  "generatorPolicyInEffect": {
+    "message": "Enterprise policy requirements have been applied to your generator options.",
+    "description": "Indicates that a policy limits the credential generator screen."
+  },
   "searchVault": {
     "message": "Kluis doorzoeken"
   },
@@ -503,6 +534,9 @@
   },
   "notes": {
     "message": "Notities"
+  },
+  "privateNote": {
+    "message": "Privénotitie"
   },
   "note": {
     "message": "Notitie"
@@ -549,6 +583,9 @@
   "sessionTimeoutHeader": {
     "message": "Sessietime-out"
   },
+  "vaultTimeoutHeader": {
+    "message": "Time-out van de kluis"
+  },
   "otherOptions": {
     "message": "Andere opties"
   },
@@ -588,6 +625,9 @@
   },
   "vaultTimeout": {
     "message": "Time-out van de kluis"
+  },
+  "vaultTimeout1": {
+    "message": "Time-out"
   },
   "lockNow": {
     "message": "Nu vergrendelen"
@@ -788,6 +828,12 @@
   },
   "twoStepLoginConfirmation": {
     "message": "Tweestapsaanmelding beschermt je account door je inlogpoging te bevestigen met een ander apparaat zoals een beveiligingscode, authenticatie-app, SMS, spraakoproep of e-mail. Je kunt Tweestapsaanmelding inschakelen in de webkluis op bitwarden.com. Wil je de website nu bezoeken?"
+  },
+  "twoStepLoginConfirmationContent": {
+    "message": "Maak je account veiliger met het instellen van tweestapsaanmelding in de Bitwarden-webapp."
+  },
+  "twoStepLoginConfirmationTitle": {
+    "message": "Doorgaan naar web-app?"
   },
   "editedFolder": {
     "message": "Map is bewerkt"
@@ -1096,6 +1142,9 @@
   },
   "file": {
     "message": "Bestand"
+  },
+  "fileToShare": {
+    "message": "Bestand om te delen"
   },
   "selectFile": {
     "message": "Selecteer een bestand."
@@ -1654,7 +1703,7 @@
     "message": "Identiteit"
   },
   "newItemHeader": {
-    "message": "Nieuw $TYPE$",
+    "message": "Nieuwe $TYPE$",
     "placeholders": {
       "type": {
         "content": "$1",
@@ -1863,8 +1912,17 @@
   "unlockWithPin": {
     "message": "Ontgrendelen met PIN"
   },
+  "setYourPinTitle": {
+    "message": "PIN-code instellen"
+  },
+  "setYourPinButton": {
+    "message": "PIN-code instellen"
+  },
   "setYourPinCode": {
     "message": "Stel je PIN-code in voor het ontgrendelen van Bitwarden. Je PIN-code wordt opnieuw ingesteld als je je ooit volledig afmeldt bij de applicatie."
+  },
+  "setYourPinCode1": {
+    "message": "Je pincode wordt gebruikt om Bitwarden te ontgrendelen in plaats van je hoofdwachtwoord. Je pincode wordt opnieuw ingesteld als je ooit volledig uitlogt op Bitwarden."
   },
   "pinRequired": {
     "message": "PIN-code is vereist."
@@ -1886,6 +1944,9 @@
   },
   "lockWithMasterPassOnRestart": {
     "message": "Vergrendelen met hoofdwachtwoord bij herstart browser"
+  },
+  "lockWithMasterPassOnRestart1": {
+    "message": "Hoofdwachtwoord vereisen bij herstart van browser"
   },
   "selectOneCollection": {
     "message": "Je moet tenminste één verzameling selecteren."
@@ -1925,9 +1986,12 @@
   "vaultTimeoutAction": {
     "message": "Actie bij time-out"
   },
+  "vaultTimeoutAction1": {
+    "message": "Time-out actie"
+  },
   "lock": {
     "message": "Vergrendelen",
-    "description": "Verb form: to make secure or inaccesible by"
+    "description": "Verb form: to make secure or inaccessible by"
   },
   "trash": {
     "message": "Prullenbak",
@@ -2119,11 +2183,11 @@
   "nativeMessagingWrongUserTitle": {
     "message": "Accounts komt niet overeen"
   },
-  "nativeMessagingWrongUserKeyDesc": {
-    "message": "Biometrische ontgrendelen mislukt. De biometrische geheime sleutel kon de kluis niet ontgrendelen. Probeer biometrische gegevens opnieuw in te stellen."
-  },
   "nativeMessagingWrongUserKeyTitle": {
     "message": "Biometrische sleutel discrepantie"
+  },
+  "nativeMessagingWrongUserKeyDesc": {
+    "message": "Biometrische ontgrendelen mislukt. De biometrische geheime sleutel kon de kluis niet ontgrendelen. Probeer biometrische gegevens opnieuw in te stellen."
   },
   "biometricsNotEnabledTitle": {
     "message": "Biometrie niet ingeschakeld"
@@ -2210,8 +2274,29 @@
   "excludedDomainsSavedSuccess": {
     "message": "Uitgesloten domeinwijzigingen opgeslagen"
   },
+  "limitSendViews": {
+    "message": "Weergaven limiteren"
+  },
+  "limitSendViewsHint": {
+    "message": "Niemand kan deze Send weergeven als de limiet is bereikt.",
+    "description": "Displayed under the limit views field on Send"
+  },
+  "limitSendViewsCount": {
+    "message": "$ACCESSCOUNT$ weergaven over",
+    "description": "Displayed under the limit views field on Send",
+    "placeholders": {
+      "accessCount": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
   "send": {
     "message": "Send",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendDetails": {
+    "message": "Send-details",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "searchSends": {
@@ -2225,12 +2310,18 @@
   "sendTypeText": {
     "message": "Tekst"
   },
+  "sendTypeTextToShare": {
+    "message": "Te delen tekst"
+  },
   "sendTypeFile": {
     "message": "Bestand"
   },
   "allSends": {
     "message": "Alle Sends",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "hideTextByDefault": {
+    "message": "Tekst standaard verbergen"
   },
   "maxAccessCountReached": {
     "message": "Maximum aantal keren benaderd",
@@ -2305,6 +2396,10 @@
     "message": "Deze Send wordt op de aangegeven datum en tijd definitief verwijderd.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
+  "deletionDateDescV2": {
+    "message": "Op deze datum wordt de Send definitief verwijderd.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
   "expirationDate": {
     "message": "Vervaldatum"
   },
@@ -2336,6 +2431,10 @@
   },
   "sendPasswordDesc": {
     "message": "Vereis optioneel een wachtwoord voor gebruikers om toegang te krijgen tot deze Send.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendPasswordDescV2": {
+    "message": "Dit wachtwoord vereisen voor het weergeven van de Send.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendNotesDesc": {
@@ -2443,6 +2542,9 @@
   "hideEmail": {
     "message": "Verberg mijn e-mailadres voor ontvangers."
   },
+  "hideYourEmail": {
+    "message": "Je e-mailadres voor ontvangers verbergen."
+  },
   "sendOptionsPolicyInEffect": {
     "message": "Een of meer organisatiebeleidseisen heeft invloed op de mogelijkheden van je Send."
   },
@@ -2510,8 +2612,37 @@
   "minutes": {
     "message": "Minuten"
   },
+  "vaultTimeoutPolicyAffectingOptions": {
+    "message": "Bedrijfsbeleidseisen zijn toegepast op je time-out instellingen"
+  },
   "vaultTimeoutPolicyInEffect": {
     "message": "Het beleid van je organisatie heeft invloed op de time-out van je kluis. De maximaal toegestane kluis time-out is $HOURS$ uur en $MINUTES$ minuten.",
+    "placeholders": {
+      "hours": {
+        "content": "$1",
+        "example": "5"
+      },
+      "minutes": {
+        "content": "$2",
+        "example": "5"
+      }
+    }
+  },
+  "vaultTimeoutPolicyInEffect1": {
+    "message": "$HOURS$ uur en $MINUTES$ minu(u)t(en) maximaal.",
+    "placeholders": {
+      "hours": {
+        "content": "$1",
+        "example": "5"
+      },
+      "minutes": {
+        "content": "$2",
+        "example": "5"
+      }
+    }
+  },
+  "vaultTimeoutPolicyMaximumError": {
+    "message": "Time-out overschrijdt de beperking van je organisatie: $HOURS$ uur en $MINUTES$ minu(u) t(en) maximum",
     "placeholders": {
       "hours": {
         "content": "$1",
@@ -4308,6 +4439,15 @@
   },
   "enterprisePolicyRequirementsApplied": {
     "message": "Bedrijfsbeleidseisen zijn op deze instelling toegepast"
+  },
+  "retry": {
+    "message": "Opnieuw proberen"
+  },
+  "vaultCustomTimeoutMinimum": {
+    "message": "Minimale aangepaste time-out is 1 minuut."
+  },
+  "additionalContentAvailable": {
+    "message": "Extra inhoud beschikbaar"
   },
   "fileSavedToDevice": {
     "message": "Bestand op apparaat opgeslagen. Beheer vanaf de downloads op je apparaat."

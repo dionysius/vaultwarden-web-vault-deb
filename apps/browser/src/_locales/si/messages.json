@@ -128,6 +128,21 @@
   "copyLicenseNumber": {
     "message": "Copy license number"
   },
+  "copyCustomField": {
+    "message": "Copy $FIELD$",
+    "placeholders": {
+      "field": {
+        "content": "$1",
+        "example": "Custom field label"
+      }
+    }
+  },
+  "copyWebsite": {
+    "message": "Copy website"
+  },
+  "copyNotes": {
+    "message": "Copy notes"
+  },
   "autoFill": {
     "message": "ස්වයං-පිරවීම"
   },
@@ -178,6 +193,18 @@
   },
   "addItem": {
     "message": "අයිතමය එකතු කරන්න"
+  },
+  "accountEmail": {
+    "message": "Account email"
+  },
+  "requestHint": {
+    "message": "Request hint"
+  },
+  "requestPasswordHint": {
+    "message": "Request password hint"
+  },
+  "enterYourAccountEmailAddressAndYourPasswordHintWillBeSentToYou": {
+    "message": "Enter your account email address and your password hint will be sent to you"
   },
   "passwordHint": {
     "message": "මුරපදය ඉඟිය"
@@ -462,6 +489,10 @@
     "message": "Avoid ambiguous characters",
     "description": "Label for the avoid ambiguous characters checkbox."
   },
+  "generatorPolicyInEffect": {
+    "message": "Enterprise policy requirements have been applied to your generator options.",
+    "description": "Indicates that a policy limits the credential generator screen."
+  },
   "searchVault": {
     "message": "සුරක්ෂිතාගාරය සොයන්න"
   },
@@ -503,6 +534,9 @@
   },
   "notes": {
     "message": "සටහන්"
+  },
+  "privateNote": {
+    "message": "Private note"
   },
   "note": {
     "message": "සටහන"
@@ -549,6 +583,9 @@
   "sessionTimeoutHeader": {
     "message": "Session timeout"
   },
+  "vaultTimeoutHeader": {
+    "message": "Vault timeout"
+  },
   "otherOptions": {
     "message": "Other options"
   },
@@ -588,6 +625,9 @@
   },
   "vaultTimeout": {
     "message": "සුරක්ෂිතාගාරය වේලාව"
+  },
+  "vaultTimeout1": {
+    "message": "Timeout"
   },
   "lockNow": {
     "message": "දැන් අගුලුදමන්න"
@@ -789,6 +829,12 @@
   "twoStepLoginConfirmation": {
     "message": "ආරක්ෂක යතුරක්, සත්යාපන යෙදුම, කෙටි පණිවුඩ, දුරකථන ඇමතුමක් හෝ විද්යුත් තැපෑල වැනි වෙනත් උපාංගයක් සමඟ ඔබේ පිවිසුම සත්යාපනය කිරීමට ඔබට අවශ්ය වීමෙන් ද්වි-පියවර පිවිසුම ඔබගේ ගිණුම වඩාත් සුරක්ෂිත කරයි. බිට්වොන්.com වෙබ් සුරක්ෂිතාගාරයේ ද්වි-පියවර පිවිසුම සක්රීය කළ හැකිය. ඔබට දැන් වෙබ් අඩවියට පිවිසීමට අවශ්යද?"
   },
+  "twoStepLoginConfirmationContent": {
+    "message": "Make your account more secure by setting up two-step login in the Bitwarden web app."
+  },
+  "twoStepLoginConfirmationTitle": {
+    "message": "Continue to web app?"
+  },
   "editedFolder": {
     "message": "සංස්කරණය ෆෝල්ඩරය"
   },
@@ -892,7 +938,7 @@
     "message": "List card items on the Tab page for easy autofill."
   },
   "showIdentitiesInVaultView": {
-    "message": "Show identifies as Autofill suggestions on Vault view"
+    "message": "Show identities as Autofill suggestions on Vault view"
   },
   "showIdentitiesCurrentTab": {
     "message": "Show identities on Tab page"
@@ -1096,6 +1142,9 @@
   },
   "file": {
     "message": "ගොනුව"
+  },
+  "fileToShare": {
+    "message": "File to share"
   },
   "selectFile": {
     "message": "ගොනුවක් තෝරන්න."
@@ -1863,8 +1912,17 @@
   "unlockWithPin": {
     "message": "PIN අංකය සමඟ විවෘත"
   },
+  "setYourPinTitle": {
+    "message": "Set PIN"
+  },
+  "setYourPinButton": {
+    "message": "Set PIN"
+  },
   "setYourPinCode": {
     "message": "බිට්වර්ඩන් අගුළු ඇරීමට ඔබේ PIN අංකය කේතය සකසන්න. ඔබ කවදා හෝ යෙදුමෙන් සම්පූර්ණයෙන්ම පුරනය වී ඇත්නම් ඔබගේ PIN සැකසුම් නැවත සකසනු ඇත."
+  },
+  "setYourPinCode1": {
+    "message": "Your PIN will be used to unlock Bitwarden instead of your master password. Your PIN will reset if you ever fully log out of Bitwarden."
   },
   "pinRequired": {
     "message": "PIN කේතය අවශ්ය වේ."
@@ -1886,6 +1944,9 @@
   },
   "lockWithMasterPassOnRestart": {
     "message": "බ්රව්සරය නැවත ආරම්භ මත ප්රධාන මුරපදය සමග අගුළු"
+  },
+  "lockWithMasterPassOnRestart1": {
+    "message": "Require master password on browser restart"
   },
   "selectOneCollection": {
     "message": "ඔබ අවම වශයෙන් එක් එකතුවක්වත් තෝරා ගත යුතුය."
@@ -1925,9 +1986,12 @@
   "vaultTimeoutAction": {
     "message": "සුරක්ෂිතාගාරය කාලය ක්රියාකාරී"
   },
+  "vaultTimeoutAction1": {
+    "message": "Timeout action"
+  },
   "lock": {
     "message": "අගුල",
-    "description": "Verb form: to make secure or inaccesible by"
+    "description": "Verb form: to make secure or inaccessible by"
   },
   "trash": {
     "message": "කුණු කූඩයට",
@@ -2119,11 +2183,11 @@
   "nativeMessagingWrongUserTitle": {
     "message": "ගිණුම මිස්ගැලච්"
   },
-  "nativeMessagingWrongUserKeyDesc": {
-    "message": "Biometric unlock failed. The biometric secret key failed to unlock the vault. Please try to set up biometrics again."
-  },
   "nativeMessagingWrongUserKeyTitle": {
     "message": "Biometric key missmatch"
+  },
+  "nativeMessagingWrongUserKeyDesc": {
+    "message": "Biometric unlock failed. The biometric secret key failed to unlock the vault. Please try to set up biometrics again."
   },
   "biometricsNotEnabledTitle": {
     "message": "ජීව විද්යාව සක්රීය කර නැත"
@@ -2210,8 +2274,29 @@
   "excludedDomainsSavedSuccess": {
     "message": "Excluded domain changes saved"
   },
+  "limitSendViews": {
+    "message": "Limit views"
+  },
+  "limitSendViewsHint": {
+    "message": "No one can view this Send after the limit is reached.",
+    "description": "Displayed under the limit views field on Send"
+  },
+  "limitSendViewsCount": {
+    "message": "$ACCESSCOUNT$ views left",
+    "description": "Displayed under the limit views field on Send",
+    "placeholders": {
+      "accessCount": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
   "send": {
     "message": "යවන්න",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendDetails": {
+    "message": "Send details",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "searchSends": {
@@ -2225,12 +2310,18 @@
   "sendTypeText": {
     "message": "පෙළ"
   },
+  "sendTypeTextToShare": {
+    "message": "Text to share"
+  },
   "sendTypeFile": {
     "message": "ගොනුව"
   },
   "allSends": {
     "message": "සියලු යවයි",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "hideTextByDefault": {
+    "message": "Hide text by default"
   },
   "maxAccessCountReached": {
     "message": "මැක්ස් ප්රවේශ ගණන ළඟා",
@@ -2305,6 +2396,10 @@
     "message": "නියම කරන ලද දිනය හා වේලාව මත Send ස්ථිරවම මකා දමනු ලැබේ.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
+  "deletionDateDescV2": {
+    "message": "The Send will be permanently deleted on this date.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
   "expirationDate": {
     "message": "කල් ඉකුත්වන දිනය"
   },
@@ -2336,6 +2431,10 @@
   },
   "sendPasswordDesc": {
     "message": "විකල්පයක් ලෙස පරිශීලකයින්ට මෙම යවන්න වෙත ප්රවේශ වීමට මුරපදයක් අවශ්ය වේ.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendPasswordDescV2": {
+    "message": "Require this password to view the Send.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendNotesDesc": {
@@ -2443,6 +2542,9 @@
   "hideEmail": {
     "message": "ලබන්නන්ගෙන් මගේ විද්යුත් තැපැල් ලිපිනය සඟවන්න."
   },
+  "hideYourEmail": {
+    "message": "Hide your email address from viewers."
+  },
   "sendOptionsPolicyInEffect": {
     "message": "සංවිධාන ප්රතිපත්ති එකක් හෝ කිහිපයක් ඔබගේ Send විකල්පයන්ට බලපායි."
   },
@@ -2510,8 +2612,37 @@
   "minutes": {
     "message": "විනාඩි"
   },
+  "vaultTimeoutPolicyAffectingOptions": {
+    "message": "Enterprise policy requirements have been applied to your timeout options"
+  },
   "vaultTimeoutPolicyInEffect": {
     "message": "ඔබේ සංවිධාන ප්රතිපත්ති ඔබගේ සුරක්ෂිතාගාරය කාලය කෙරෙහි බලපායි. උපරිම අවසර ලත් සුරක්ෂිතාගාරය කාලය පැය $HOURS$ (ය) සහ විනාඩි $MINUTES$ (ය)",
+    "placeholders": {
+      "hours": {
+        "content": "$1",
+        "example": "5"
+      },
+      "minutes": {
+        "content": "$2",
+        "example": "5"
+      }
+    }
+  },
+  "vaultTimeoutPolicyInEffect1": {
+    "message": "$HOURS$ hour(s) and $MINUTES$ minute(s) maximum.",
+    "placeholders": {
+      "hours": {
+        "content": "$1",
+        "example": "5"
+      },
+      "minutes": {
+        "content": "$2",
+        "example": "5"
+      }
+    }
+  },
+  "vaultTimeoutPolicyMaximumError": {
+    "message": "Timeout exceeds the restriction set by your organization: $HOURS$ hour(s) and $MINUTES$ minute(s) maximum",
     "placeholders": {
       "hours": {
         "content": "$1",
@@ -4308,6 +4439,15 @@
   },
   "enterprisePolicyRequirementsApplied": {
     "message": "Enterprise policy requirements have been applied to this setting"
+  },
+  "retry": {
+    "message": "Retry"
+  },
+  "vaultCustomTimeoutMinimum": {
+    "message": "Minimum custom timeout is 1 minute."
+  },
+  "additionalContentAvailable": {
+    "message": "Additional content is available"
   },
   "fileSavedToDevice": {
     "message": "File saved to device. Manage from your device downloads."

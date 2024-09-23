@@ -128,6 +128,21 @@
   "copyLicenseNumber": {
     "message": "Copia el número de llicència"
   },
+  "copyCustomField": {
+    "message": "Copia $FIELD$",
+    "placeholders": {
+      "field": {
+        "content": "$1",
+        "example": "Custom field label"
+      }
+    }
+  },
+  "copyWebsite": {
+    "message": "Copia lloc web"
+  },
+  "copyNotes": {
+    "message": "Copia notes"
+  },
   "autoFill": {
     "message": "Emplenament automàtic"
   },
@@ -178,6 +193,18 @@
   },
   "addItem": {
     "message": "Afegeix element"
+  },
+  "accountEmail": {
+    "message": "Correu electrònic del compte"
+  },
+  "requestHint": {
+    "message": "Sol·licita pista"
+  },
+  "requestPasswordHint": {
+    "message": "Sol·licita pista de la contrasenya"
+  },
+  "enterYourAccountEmailAddressAndYourPasswordHintWillBeSentToYou": {
+    "message": "Introduïu l'adreça de correu electrònic del compte i se us enviarà la pista de contrasenya"
   },
   "passwordHint": {
     "message": "Pista de la contrasenya"
@@ -462,6 +489,10 @@
     "message": "Avoid ambiguous characters",
     "description": "Label for the avoid ambiguous characters checkbox."
   },
+  "generatorPolicyInEffect": {
+    "message": "Enterprise policy requirements have been applied to your generator options.",
+    "description": "Indicates that a policy limits the credential generator screen."
+  },
   "searchVault": {
     "message": "Cerca en la caixa forta"
   },
@@ -503,6 +534,9 @@
   },
   "notes": {
     "message": "Notes"
+  },
+  "privateNote": {
+    "message": "Private note"
   },
   "note": {
     "message": "Nota"
@@ -549,6 +583,9 @@
   "sessionTimeoutHeader": {
     "message": "Temps de sessió"
   },
+  "vaultTimeoutHeader": {
+    "message": "Vault timeout"
+  },
   "otherOptions": {
     "message": "Altres opcions"
   },
@@ -588,6 +625,9 @@
   },
   "vaultTimeout": {
     "message": "Temps d'espera de la caixa forta"
+  },
+  "vaultTimeout1": {
+    "message": "Timeout"
   },
   "lockNow": {
     "message": "Bloqueja ara"
@@ -789,6 +829,12 @@
   "twoStepLoginConfirmation": {
     "message": "L'inici de sessió en dues passes fa que el vostre compte siga més segur, ja que obliga a verificar el vostre inici de sessió amb un altre dispositiu, com ara una clau de seguretat, una aplicació autenticadora, un SMS, una trucada telefònica o un correu electrònic. Es pot habilitar l'inici de sessió en dues passes a la caixa forta web de bitwarden.com. Voleu visitar el lloc web ara?"
   },
+  "twoStepLoginConfirmationContent": {
+    "message": "Make your account more secure by setting up two-step login in the Bitwarden web app."
+  },
+  "twoStepLoginConfirmationTitle": {
+    "message": "Continue to web app?"
+  },
   "editedFolder": {
     "message": "Carpeta guardada"
   },
@@ -892,7 +938,7 @@
     "message": "Llista els elements de la targeta a la pàgina de pestanya per facilitar l'autoemplenat."
   },
   "showIdentitiesInVaultView": {
-    "message": "Show identifies as Autofill suggestions on Vault view"
+    "message": "Show identities as Autofill suggestions on Vault view"
   },
   "showIdentitiesCurrentTab": {
     "message": "Mostra les identitats a la pàgina de pestanya"
@@ -1096,6 +1142,9 @@
   },
   "file": {
     "message": "Fitxer"
+  },
+  "fileToShare": {
+    "message": "File to share"
   },
   "selectFile": {
     "message": "Seleccioneu un fitxer"
@@ -1863,8 +1912,17 @@
   "unlockWithPin": {
     "message": "Desbloqueja amb codi PIN"
   },
+  "setYourPinTitle": {
+    "message": "Set PIN"
+  },
+  "setYourPinButton": {
+    "message": "Set PIN"
+  },
   "setYourPinCode": {
     "message": "Configureu el vostre codi PIN per desbloquejar Bitwarden. La configuració del PIN es restablirà si tanqueu la sessió definitivament."
+  },
+  "setYourPinCode1": {
+    "message": "Your PIN will be used to unlock Bitwarden instead of your master password. Your PIN will reset if you ever fully log out of Bitwarden."
   },
   "pinRequired": {
     "message": "Es necessita el codi PIN."
@@ -1886,6 +1944,9 @@
   },
   "lockWithMasterPassOnRestart": {
     "message": "Bloqueja amb la contrasenya mestra en reiniciar el navegador"
+  },
+  "lockWithMasterPassOnRestart1": {
+    "message": "Require master password on browser restart"
   },
   "selectOneCollection": {
     "message": "Heu d'escollir com a mínim una col·lecció."
@@ -1925,9 +1986,12 @@
   "vaultTimeoutAction": {
     "message": "Acció quan acabe el temps d'espera de la caixa forta"
   },
+  "vaultTimeoutAction1": {
+    "message": "Timeout action"
+  },
   "lock": {
     "message": "Bloqueja",
-    "description": "Verb form: to make secure or inaccesible by"
+    "description": "Verb form: to make secure or inaccessible by"
   },
   "trash": {
     "message": "Paperera",
@@ -2119,11 +2183,11 @@
   "nativeMessagingWrongUserTitle": {
     "message": "El compte no coincideix"
   },
-  "nativeMessagingWrongUserKeyDesc": {
-    "message": "Biometric unlock failed. The biometric secret key failed to unlock the vault. Please try to set up biometrics again."
-  },
   "nativeMessagingWrongUserKeyTitle": {
     "message": "Biometric key missmatch"
+  },
+  "nativeMessagingWrongUserKeyDesc": {
+    "message": "Biometric unlock failed. The biometric secret key failed to unlock the vault. Please try to set up biometrics again."
   },
   "biometricsNotEnabledTitle": {
     "message": "La biomètrica no està habilitada"
@@ -2210,8 +2274,29 @@
   "excludedDomainsSavedSuccess": {
     "message": "Excluded domain changes saved"
   },
+  "limitSendViews": {
+    "message": "Limit views"
+  },
+  "limitSendViewsHint": {
+    "message": "No one can view this Send after the limit is reached.",
+    "description": "Displayed under the limit views field on Send"
+  },
+  "limitSendViewsCount": {
+    "message": "$ACCESSCOUNT$ views left",
+    "description": "Displayed under the limit views field on Send",
+    "placeholders": {
+      "accessCount": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
   "send": {
     "message": "Send",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendDetails": {
+    "message": "Detalls de l'enviament",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "searchSends": {
@@ -2225,12 +2310,18 @@
   "sendTypeText": {
     "message": "Text"
   },
+  "sendTypeTextToShare": {
+    "message": "Text a compartir"
+  },
   "sendTypeFile": {
     "message": "Fitxer"
   },
   "allSends": {
     "message": "Tots els Send",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "hideTextByDefault": {
+    "message": "Ocultar el text per defecte"
   },
   "maxAccessCountReached": {
     "message": "S'ha assolit el recompte màxim d'accesos",
@@ -2305,6 +2396,10 @@
     "message": "L'enviament se suprimirà permanentment a la data i hora especificades.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
+  "deletionDateDescV2": {
+    "message": "L'enviament s'esborrarà permanentment en aquesta data.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
   "expirationDate": {
     "message": "Data de caducitat"
   },
@@ -2336,6 +2431,10 @@
   },
   "sendPasswordDesc": {
     "message": "Opcionalment, necessiteu una contrasenya perquè els usuaris accedisquen a aquest Send.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendPasswordDescV2": {
+    "message": "Require this password to view the Send.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendNotesDesc": {
@@ -2443,6 +2542,9 @@
   "hideEmail": {
     "message": "Amagueu la meua adreça de correu electrònic als destinataris."
   },
+  "hideYourEmail": {
+    "message": "Hide your email address from viewers."
+  },
   "sendOptionsPolicyInEffect": {
     "message": "Una o més polítiques d'organització afecten les vostres opcions del Send."
   },
@@ -2510,8 +2612,37 @@
   "minutes": {
     "message": "Minuts"
   },
+  "vaultTimeoutPolicyAffectingOptions": {
+    "message": "Enterprise policy requirements have been applied to your timeout options"
+  },
   "vaultTimeoutPolicyInEffect": {
     "message": "Les polítiques de l'organització afecten el temps d'espera de la caixa forta. El temps d'espera màxim permès d'aquesta és de $HOURS$ hores i $MINUTES$ minuts",
+    "placeholders": {
+      "hours": {
+        "content": "$1",
+        "example": "5"
+      },
+      "minutes": {
+        "content": "$2",
+        "example": "5"
+      }
+    }
+  },
+  "vaultTimeoutPolicyInEffect1": {
+    "message": "$HOURS$ hour(s) and $MINUTES$ minute(s) maximum.",
+    "placeholders": {
+      "hours": {
+        "content": "$1",
+        "example": "5"
+      },
+      "minutes": {
+        "content": "$2",
+        "example": "5"
+      }
+    }
+  },
+  "vaultTimeoutPolicyMaximumError": {
+    "message": "Timeout exceeds the restriction set by your organization: $HOURS$ hour(s) and $MINUTES$ minute(s) maximum",
     "placeholders": {
       "hours": {
         "content": "$1",
@@ -4308,6 +4439,15 @@
   },
   "enterprisePolicyRequirementsApplied": {
     "message": "Enterprise policy requirements have been applied to this setting"
+  },
+  "retry": {
+    "message": "Retry"
+  },
+  "vaultCustomTimeoutMinimum": {
+    "message": "Minimum custom timeout is 1 minute."
+  },
+  "additionalContentAvailable": {
+    "message": "Additional content is available"
   },
   "fileSavedToDevice": {
     "message": "File saved to device. Manage from your device downloads."

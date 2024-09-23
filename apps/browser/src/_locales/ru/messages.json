@@ -128,6 +128,21 @@
   "copyLicenseNumber": {
     "message": "Скопировать номер лицензии"
   },
+  "copyCustomField": {
+    "message": "Скопировать $FIELD$",
+    "placeholders": {
+      "field": {
+        "content": "$1",
+        "example": "Custom field label"
+      }
+    }
+  },
+  "copyWebsite": {
+    "message": "Скопировать сайт"
+  },
+  "copyNotes": {
+    "message": "Скопировать заметки"
+  },
   "autoFill": {
     "message": "Автозаполнение"
   },
@@ -178,6 +193,18 @@
   },
   "addItem": {
     "message": "Добавить элемент"
+  },
+  "accountEmail": {
+    "message": "Email аккаунта"
+  },
+  "requestHint": {
+    "message": "Запросить подсказку"
+  },
+  "requestPasswordHint": {
+    "message": "Запросить подсказку к паролю"
+  },
+  "enterYourAccountEmailAddressAndYourPasswordHintWillBeSentToYou": {
+    "message": "Введите email вашего аккаунта, и вам будет отправлена подсказка для пароля"
   },
   "passwordHint": {
     "message": "Подсказка к паролю"
@@ -462,6 +489,10 @@
     "message": "Избегать неоднозначных символов",
     "description": "Label for the avoid ambiguous characters checkbox."
   },
+  "generatorPolicyInEffect": {
+    "message": "Enterprise policy requirements have been applied to your generator options.",
+    "description": "Indicates that a policy limits the credential generator screen."
+  },
   "searchVault": {
     "message": "Поиск в хранилище"
   },
@@ -503,6 +534,9 @@
   },
   "notes": {
     "message": "Заметки"
+  },
+  "privateNote": {
+    "message": "Приватная заметка"
   },
   "note": {
     "message": "Заметка"
@@ -549,6 +583,9 @@
   "sessionTimeoutHeader": {
     "message": "Тайм-аут сессии"
   },
+  "vaultTimeoutHeader": {
+    "message": "Тайм-аут хранилища"
+  },
   "otherOptions": {
     "message": "Прочие настройки"
   },
@@ -588,6 +625,9 @@
   },
   "vaultTimeout": {
     "message": "Тайм-аут хранилища"
+  },
+  "vaultTimeout1": {
+    "message": "Тайм-аут"
   },
   "lockNow": {
     "message": "Заблокировать"
@@ -788,6 +828,12 @@
   },
   "twoStepLoginConfirmation": {
     "message": "Двухэтапная аутентификация делает аккаунт более защищенным, поскольку требуется подтверждение входа при помощи другого устройства, например, ключа безопасности, приложения-аутентификатора, SMS, телефонного звонка или электронной почты. Двухэтапная аутентификация включается на bitwarden.com. Перейти на сайт сейчас?"
+  },
+  "twoStepLoginConfirmationContent": {
+    "message": "Сделайте ваш аккаунт более защищенным, настроив двухэтапную аутентификацию в веб-приложении Bitwarden."
+  },
+  "twoStepLoginConfirmationTitle": {
+    "message": "Перейти к веб-приложению?"
   },
   "editedFolder": {
     "message": "Папка сохранена"
@@ -1096,6 +1142,9 @@
   },
   "file": {
     "message": "Файл"
+  },
+  "fileToShare": {
+    "message": "Файл для отправки"
   },
   "selectFile": {
     "message": "Выбрать файл"
@@ -1863,8 +1912,17 @@
   "unlockWithPin": {
     "message": "Разблокировать с помощью PIN-кода"
   },
+  "setYourPinTitle": {
+    "message": "Установка PIN"
+  },
+  "setYourPinButton": {
+    "message": "Задать PIN-код"
+  },
   "setYourPinCode": {
     "message": "Установите PIN-код для разблокировки Bitwarden. Настройки PIN-кода будут сброшены, если вы когда-либо полностью выйдете из приложения."
+  },
+  "setYourPinCode1": {
+    "message": "Ваш PIN-код будет использоваться для разблокировки Bitwarden вместо мастер-пароля. PIN-код будет сброшен, если вы выйдете из Bitwarden."
   },
   "pinRequired": {
     "message": "Необходим PIN-код."
@@ -1886,6 +1944,9 @@
   },
   "lockWithMasterPassOnRestart": {
     "message": "Блокировать мастер-паролем при перезапуске браузера"
+  },
+  "lockWithMasterPassOnRestart1": {
+    "message": "Требовать мастер-пароль при перезапуске браузера"
   },
   "selectOneCollection": {
     "message": "Необходимо выбрать хотя бы одну коллекцию."
@@ -1925,9 +1986,12 @@
   "vaultTimeoutAction": {
     "message": "Действие по тайм-ауту хранилища"
   },
+  "vaultTimeoutAction1": {
+    "message": "Тайм-аут действия"
+  },
   "lock": {
     "message": "Блокировка",
-    "description": "Verb form: to make secure or inaccesible by"
+    "description": "Verb form: to make secure or inaccessible by"
   },
   "trash": {
     "message": "Корзина",
@@ -2119,11 +2183,11 @@
   "nativeMessagingWrongUserTitle": {
     "message": "Несоответствие аккаунта"
   },
-  "nativeMessagingWrongUserKeyDesc": {
-    "message": "Биометрическая разблокировка не удалась. Биометрический секретный ключ не смог разблокировать хранилище. Пожалуйста, попробуйте настроить биометрию еще раз."
-  },
   "nativeMessagingWrongUserKeyTitle": {
     "message": "Несовпадение биометрического ключа"
+  },
+  "nativeMessagingWrongUserKeyDesc": {
+    "message": "Биометрическая разблокировка не удалась. Биометрический секретный ключ не смог разблокировать хранилище. Пожалуйста, попробуйте настроить биометрию еще раз."
   },
   "biometricsNotEnabledTitle": {
     "message": "Биометрия не настроена"
@@ -2210,8 +2274,29 @@
   "excludedDomainsSavedSuccess": {
     "message": "Изменения в исключенном домене сохранены"
   },
+  "limitSendViews": {
+    "message": "Лимит просмотров"
+  },
+  "limitSendViewsHint": {
+    "message": "Никто не сможет просмотреть эту Send после лимита просмотров.",
+    "description": "Displayed under the limit views field on Send"
+  },
+  "limitSendViewsCount": {
+    "message": "Осталось просмотров: $ACCESSCOUNT$",
+    "description": "Displayed under the limit views field on Send",
+    "placeholders": {
+      "accessCount": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
   "send": {
     "message": "Send",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendDetails": {
+    "message": "Информация о Send",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "searchSends": {
@@ -2225,12 +2310,18 @@
   "sendTypeText": {
     "message": "Текст"
   },
+  "sendTypeTextToShare": {
+    "message": "Текст для отправки"
+  },
   "sendTypeFile": {
     "message": "Файл"
   },
   "allSends": {
     "message": "Все Send’ы",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "hideTextByDefault": {
+    "message": "Скрыть текст по умолчанию"
   },
   "maxAccessCountReached": {
     "message": "Достигнут максимум обращений",
@@ -2305,6 +2396,10 @@
     "message": "Эта Send будет окончательно удалена в указанные дату и время.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
+  "deletionDateDescV2": {
+    "message": "С этой даты Send будет удалена навсегда.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
   "expirationDate": {
     "message": "Дата истечения"
   },
@@ -2336,6 +2431,10 @@
   },
   "sendPasswordDesc": {
     "message": "По возможности запрашивать у пользователей пароль для доступа к этой Send.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendPasswordDescV2": {
+    "message": "Требовать этот пароль для просмотра Send.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendNotesDesc": {
@@ -2443,6 +2542,9 @@
   "hideEmail": {
     "message": "Скрыть мой адрес email от получателей."
   },
+  "hideYourEmail": {
+    "message": "Скрыть ваш email от просматривающих."
+  },
   "sendOptionsPolicyInEffect": {
     "message": "На параметры Send влияют одна или несколько политик организации."
   },
@@ -2510,8 +2612,37 @@
   "minutes": {
     "message": "Мин."
   },
+  "vaultTimeoutPolicyAffectingOptions": {
+    "message": "К настройкам тайм-аута были применены требования корпоративной политики"
+  },
   "vaultTimeoutPolicyInEffect": {
     "message": "В соответствии с политиками вашей организации максимально допустимый тайм-аут хранилища составляет $HOURS$ час. и $MINUTES$ мин.",
+    "placeholders": {
+      "hours": {
+        "content": "$1",
+        "example": "5"
+      },
+      "minutes": {
+        "content": "$2",
+        "example": "5"
+      }
+    }
+  },
+  "vaultTimeoutPolicyInEffect1": {
+    "message": "Максимум $HOURS$ час. $MINUTES$ мин.",
+    "placeholders": {
+      "hours": {
+        "content": "$1",
+        "example": "5"
+      },
+      "minutes": {
+        "content": "$2",
+        "example": "5"
+      }
+    }
+  },
+  "vaultTimeoutPolicyMaximumError": {
+    "message": "Время ожидания превышает установленное организацией максимальное ограничение: $HOURS$ час. $MINUTES$ мин.",
     "placeholders": {
       "hours": {
         "content": "$1",
@@ -4308,6 +4439,15 @@
   },
   "enterprisePolicyRequirementsApplied": {
     "message": "К этой настройке были применены требования корпоративной политики"
+  },
+  "retry": {
+    "message": "Повторить"
+  },
+  "vaultCustomTimeoutMinimum": {
+    "message": "Минимальный пользовательский тайм-аут составляет 1 минуту."
+  },
+  "additionalContentAvailable": {
+    "message": "Дополнительный контент доступен"
   },
   "fileSavedToDevice": {
     "message": "Файл сохранен на устройстве. Управляйте им из загрузок устройства."
