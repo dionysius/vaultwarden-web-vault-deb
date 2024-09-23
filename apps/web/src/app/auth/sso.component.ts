@@ -110,7 +110,7 @@ export class SsoComponent extends BaseSsoComponent implements OnInit {
             const response: OrganizationDomainSsoDetailsResponse =
               await this.orgDomainApiService.getClaimedOrgDomainByEmail(qParams.email);
 
-            if (response?.ssoAvailable) {
+            if (response?.ssoAvailable && response?.verifiedDate) {
               this.identifierFormControl.setValue(response.organizationIdentifier);
               await this.submit();
               return;
