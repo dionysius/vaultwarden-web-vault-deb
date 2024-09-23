@@ -270,17 +270,17 @@
     "message": "Patiesuma vērtība"
   },
   "cfTypeCheckbox": {
-    "message": "Checkbox"
+    "message": "Izvēles rūtiņa"
   },
   "cfTypeLinked": {
     "message": "Saistīts",
     "description": "This describes a field that is 'linked' (related) to another field."
   },
   "fieldType": {
-    "message": "Field type"
+    "message": "Lauka veids"
   },
   "fieldLabel": {
-    "message": "Field label"
+    "message": "Lauka iezīme"
   },
   "remove": {
     "message": "Noņemt"
@@ -6579,7 +6579,7 @@
     }
   },
   "duoHealthCheckResultsInNullAuthUrlError": {
-    "message": "Kļūda savienojuma izveidošanā ar Duo pakalpojumu. Jāizmanto cits divpakāpju pieteikšanāš veids vai jāvēršas pie Duo pēc palīdzības."
+    "message": "Kļūda savienojuma izveidošanā ar Duo pakalpojumu. Jāizmanto cits divpakāpju pieteikšanās veids vai jāvēršas pie Duo pēc palīdzības."
   },
   "launchDuoAndFollowStepsToFinishLoggingIn": {
     "message": "Jāpalaiž DUO un jāseko soļiem, lai pabeigtu pieteikšanos."
@@ -8291,7 +8291,7 @@
     "message": "Pievienot lauku"
   },
   "editField": {
-    "message": "Edit field"
+    "message": "Labot lauku"
   },
   "items": {
     "message": "Vienumi"
@@ -8683,41 +8683,14 @@
   "manageBillingFromProviderPortalMessage": {
     "message": "Norēķinus var pārvaldīt Nodrošinātāju portālā"
   },
-  "startYour7DayFreeTrialOfBitwarden": {
-    "message": "Uzsāc savu 7 dienu bezmaksas Bitwarden izmēģinājumu"
+  "continueSettingUpFreeTrial": {
+    "message": "Turpināt iestatīt savu Bitwarden bezmaksas izmēģinājumu"
   },
-  "startYour7DayFreeTrialOfBitwardenForTeams": {
-    "message": "Uzsāc savu 7 dienu bezmaksas Bitwarden komandām izmēģinājumu"
+  "continueSettingUpFreeTrialPasswordManager": {
+    "message": "Turpināt iestatīt savu Bitwarden paroļu pārvaldnieka bezmaksas izmēģinājumu"
   },
-  "startYour7DayFreeTrialOfBitwardenForFamilies": {
-    "message": "Uzsāc savu 7 dienu bezmaksas Bitwarden ģimenēm izmēģinājumu"
-  },
-  "startYour7DayFreeTrialOfBitwardenForEnterprise": {
-    "message": "Uzsāc savu 7 dienu bezmaksas Bitwarden uzņēmējdarbībai izmēģinājumu"
-  },
-  "startYour7DayFreeTrialOfBitwardenSecretsManager": {
-    "message": "Uzsāc savu 7 dienu bezmaksas Bitwarden noslēpumu pārvaldnieka izmēģinājumu"
-  },
-  "startYour7DayFreeTrialOfBitwardenSecretsManagerForTeams": {
-    "message": "Uzsāc savu 7 dienu bezmaksas Bitwarden noslēpumu pārvaldnieka komandām izmēģinājumu"
-  },
-  "startYour7DayFreeTrialOfBitwardenSecretsManagerForFamilies": {
-    "message": "Uzsāc savu 7 dienu bezmaksas Bitwarden noslēpumu pārvaldnieka ģimenēm izmēģinājumu"
-  },
-  "startYour7DayFreeTrialOfBitwardenSecretsManagerForEnterprise": {
-    "message": "Uzsāc savu 7 dienu bezmaksas Bitwarden noslēpumu pārvaldnieka uzņēmējdarbībai izmēģinājumu"
-  },
-  "startYour7DayFreeTrialOfBitwardenPasswordManager": {
-    "message": "Uzsāc savu 7 dienu bezmaksas Bitwarden paroļu pārvaldnieka izmēģinājumu"
-  },
-  "startYour7DayFreeTrialOfBitwardenPasswordManagerForTeams": {
-    "message": "Uzsāc savu 7 dienu bezmaksas Bitwarden paroļu pārvaldnieka komandām izmēģinājumu"
-  },
-  "startYour7DayFreeTrialOfBitwardenPasswordManagerForFamilies": {
-    "message": "Uzsāc savu 7 dienu bezmaksas Bitwarden paroļu pārvaldnieka ģimenēm izmēģinājumu"
-  },
-  "startYour7DayFreeTrialOfBitwardenPasswordManagerForEnterprise": {
-    "message": "Uzsāc savu 7 dienu bezmaksas Bitwarden paroļu pārvaldnieka uzņēmējdarbībai izmēģinājumu"
+  "continueSettingUpFreeTrialSecretsManager": {
+    "message": "Turpināt iestatīt savu Bitwarden noslēpumu pārvaldnieka bezmaksas izmēģinājumu"
   },
   "enterTeamsOrgInfo": {
     "message": "Jāievada informācija par savas komandas apvienību"
@@ -9029,6 +9002,66 @@
   "purchasedSeatsRemoved": {
     "message": "iegādātās vietas noņemtas"
   },
+  "environmentVariables": {
+    "message": "Vides mainīgie"
+  },
+  "organizationId": {
+    "message": "Apvienības Id"
+  },
+  "projectIds": {
+    "message": "Projektu Id"
+  },
+  "projectId": {
+    "message": "Projekta Id"
+  },
+  "projectsAccessedByMachineAccount": {
+    "message": "Šis mašīnu konts var piekļūt zemāk esošajiem projektiem."
+  },
+  "config": {
+    "message": "Konfigurācija"
+  },
+  "learnMoreAboutEmergencyAccess": {
+    "message": "Uzzināt vairāk par ārkārtas piekļuvi"
+  },
+  "learnMoreAboutMatchDetection": {
+    "message": "Uzzināt vairāk par atbilstības noteikšanu"
+  },
+  "learnMoreAboutMasterPasswordReprompt": {
+    "message": "Uzzināt vairāk par galvenās paroles atkārtotu uzvednes rādīšanu"
+  },
+  "learnMoreAboutSearchingYourVault": {
+    "message": "Uzzināt vairāk par meklēšanu savā glabātavā"
+  },
+  "learnMoreAboutYourAccountFingerprintPhrase": {
+    "message": "Uzzināt vairāk par sava konta atpazīšanas vārdkopu"
+  },
+  "impactOfRotatingYourEncryptionKey": {
+    "message": "Šifrēšanas atslēgas maiņas ietekme"
+  },
+  "learnMoreAboutEncryptionAlgorithms": {
+    "message": "Uzzināt vairāk par šifrēšanas algoritmiem"
+  },
+  "learnMoreAboutKDFIterations": {
+    "message": "Uzzināt vairāk par KDF atkārtojumiem"
+  },
+  "learnMoreAboutLocalization": {
+    "message": "Uzzināt vairāk par lokalizāciju"
+  },
+  "learnMoreAboutWebsiteIcons": {
+    "message": "Uzzināt vairāk par tīmekļvietņu ikonu izmantošanu"
+  },
+  "learnMoreAboutUserAccess": {
+    "message": "Uzzināt vairāk par lietotāju piekļuvi"
+  },
+  "learnMoreAboutMemberRoles": {
+    "message": "Uzzināt vairāk par dalībnieku lomām un atļaujām"
+  },
+  "whatIsACvvNumber": {
+    "message": "Kas ir CVV numurs?"
+  },
+  "learnMoreAboutApi": {
+    "message": "Uzzināt vairāk par Bitwarden API"
+  },
   "fileSends": {
     "message": "Datņu Send"
   },
@@ -9162,7 +9195,7 @@
     "message": "Līdz 20 mašīnu kontu"
   },
   "current": {
-    "message": "Current"
+    "message": "Pašreizējais"
   },
   "secretsManagerSubscriptionInfo": {
     "message": "Noslēpumu pārvaldnieka abonements tiks uzlabots atbilstoši izvēlētajam plānam"

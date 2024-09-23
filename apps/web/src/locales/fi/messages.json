@@ -49,7 +49,7 @@
     "message": "Kirjautumistiedot"
   },
   "personalDetails": {
-    "message": "Henkilökohtaiset tiedot"
+    "message": "Henkilötiedot"
   },
   "identification": {
     "message": "Tunnistautuminen"
@@ -70,7 +70,7 @@
     }
   },
   "itemHistory": {
-    "message": "Kohdehistoria"
+    "message": "Kohteen historia"
   },
   "authenticatorKey": {
     "message": "Todennusavain"
@@ -270,17 +270,17 @@
     "message": "Totuusarvo"
   },
   "cfTypeCheckbox": {
-    "message": "Checkbox"
+    "message": "Valintaruutu"
   },
   "cfTypeLinked": {
     "message": "Linkitetty",
     "description": "This describes a field that is 'linked' (related) to another field."
   },
   "fieldType": {
-    "message": "Field type"
+    "message": "Kentän tyyppi"
   },
   "fieldLabel": {
-    "message": "Field label"
+    "message": "Kentän nimi"
   },
   "remove": {
     "message": "Poista"
@@ -993,7 +993,7 @@
     "message": "Pääsalasanalla avaat holviisi ja on erittäin tärkeää, että muistat pääsalasanasi, koska sitä ei ole mahdollista palauttaa sen unohtuessa."
   },
   "masterPassImportant": {
-    "message": "Pääsalasanasi palauttaminen ei ole mahdollista, jos unohdat sen!"
+    "message": "Pääsalasanaasi ei ole mahdollista palauttaa, jos unohdat sen!"
   },
   "masterPassHintDesc": {
     "message": "Pääsalasanan vihje voi auttaa sinua muistamaan unohtamasi salasanan."
@@ -1005,13 +1005,13 @@
     "message": "Pääsalasanan vihje (valinnainen)"
   },
   "newMasterPassHint": {
-    "message": "Uusi pääsalasanan vihje (valinnainen)"
+    "message": "Uusi pääsalasanavihje (valinnainen)"
   },
   "masterPassHintLabel": {
     "message": "Pääsalasanan vihje"
   },
   "masterPassHintText": {
-    "message": "Jos unohdat salasanasi, salasanan vihje voidaan lähettää sähköpostiisi. Merkkien enimmäismäärä: $CURRENT$/$MAXIMUM$.",
+    "message": "Jos unohdat salasanasi, voidaan salasanavihje lähettää sähköpostiisi. $CURRENT$ merkkiä $MAXIMUM$ merkin enimmäismäärä.",
     "placeholders": {
       "current": {
         "content": "$1",
@@ -1033,7 +1033,7 @@
     "message": "Pyydä vihje"
   },
   "requestPasswordHint": {
-    "message": "Pyydä salasanan vihje"
+    "message": "Pyydä salasanavihje"
   },
   "enterYourAccountEmailAddressAndYourPasswordHintWillBeSentToYou": {
     "message": "Syötä tilisi sähköpostiosoite, niin salasanavihjeesi lähetetään sinulle sähköpostitse"
@@ -3979,10 +3979,10 @@
     }
   },
   "encryptionKeyUpdateCannotProceed": {
-    "message": "Encryption key update cannot proceed"
+    "message": "Salausavaimen päivitystä ei voida jatkaa"
   },
   "keyUpdateFoldersFailed": {
-    "message": "When updating your encryption key, your folders could not be decrypted. To continue with the update, your folders must be deleted. No vault items will be deleted if you proceed."
+    "message": "Kansioidesi salausta ei voitu purkaa salausavaimesi päivityksen aikana. Jatkaaksesi päivitystä kansiosi on poistettava. Holvin kohteita ei poisteta, jos jatkat."
   },
   "keyUpdated": {
     "message": "Avain päivitettiin"
@@ -5013,31 +5013,31 @@
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Learn more, see how it works, **or** try it now.'"
   },
   "developmentDevOpsAndITTeamsChooseBWSecret": {
-    "message": "Development, DevOps, and IT teams choose Bitwarden Secrets Manager to securely manage and deploy their infrastructure and machine secrets."
+    "message": "Kehitys-, DevOps-, ja IT-tiimit valitsevat Bitwarden Salaisuushallinnan infansa ja konesalaisuuksiensa turvalliseen hallintaan ja käyttöön."
   },
   "centralizeSecretsManagement": {
     "message": "Keskitä salaisuuksien hallinta."
   },
   "centralizeSecretsManagementDescription": {
-    "message": "Säilytä ja hallitse salaisuuksia turvallisesti yhdessä paikassa ja estä salaisuuksien leviäminen organisaatiossasi."
+    "message": "Säilytä ja hallitse salaisuuksia turvallisesti yhdessä paikassa ja estä niiden leviäminen organisaatiossasi."
   },
   "preventSecretLeaks": {
-    "message": "Estä salaisuuksien vuodot."
+    "message": "Estä salaisuuksia vuotamasta."
   },
   "preventSecretLeaksDescription": {
-    "message": "Protect secrets with end-to-end encryption. No more hard coding secrets or sharing through .env files."
+    "message": "Suojaa salaisuutesi päästä päähän -salauksella. Ei tarvetta salaisuuksien kovakoodaukseen tai .env-tiedostojen jakeluun."
   },
   "enhanceDeveloperProductivity": {
     "message": "Paranna kehittäjien tuottavuutta."
   },
   "enhanceDeveloperProductivityDescription": {
-    "message": "Programmatically retrieve and deploy secrets at runtime so developers can focus on what matters most, like improving code quality."
+    "message": "Nouda ja jakele salaisuuksia ohjelmallisesti suorituksen yhteydessä, jotta kehittäjät voivat keskittyä olennaiseen, kuten koodin laadun parantamiseen."
   },
   "strengthenBusinessSecurity": {
-    "message": "Paranna yrityksen turvallisuutta."
+    "message": "Vahvista yrityksen tietoturvaa."
   },
   "strengthenBusinessSecurityDescription": {
-    "message": "Maintain tight control over machine and human access to secrets with SSO integrations, event logs, and access rotation."
+    "message": "Pidä koneiden ja ihmisten pääsy salaisuuksiin tiukasti hallinanssasi SSO-integraatiolla, tapahtumalokeilla ja kierrätetyllä pääsyllä."
   },
   "tryItNow": {
     "message": "Kokeile sitä nyt"
@@ -5061,16 +5061,16 @@
     "message": "Tarvitset ylläpitäjän hyväksynnän kokeillaksesi Salaisuushallintaa."
   },
   "smAccessRequestEmailSent": {
-    "message": "Pääsypyyntö Salaisuushallintaan lähetettiin sähköpostitse ylläpitäjille."
+    "message": "Salaisuushallinnan käyttöoikeuspyyntö lähetettiin ylläpidolle sähköpostitse."
   },
   "requestAccessSMDefaultEmailContent": {
     "message": "Hei,\n\nPyydän tiimillemme Bitwarden Salaisuushallinnan tilausta ja arvostaisin tukeasi merkittävästi!\n\nBitwarden Salaisuushallinta on päästä päähän salattu sailaisuuksien hallintaratkaisu niiden turvalliseen säilytykseen ja jakamiseen sekä API-avainten, tietokantojen salasanojen ja todennusvarmenteiden kaltaisten laitetunnisteiden jakeluun.\n\nSalaisuushallinnan avulla:\n- parannamme tietoturvaa\n- suoraviivastamme toimintoja\n- estämme kalliita salaisuusvuotoja\n\nOle ilmaisesta kokeilusta yhteydessä Bitwardeniin.\n\nKiitos avustasi!"
   },
   "giveMembersAccess": {
-    "message": "Anna jäsenille pääsy:"
+    "message": "Myönnä jäsenille käyttöoikeus:"
   },
   "viewAndSelectTheMembers": {
-    "message": "tarkastele ja valitse jäseniä, joille haluat antaa pääsyn Salaisuushallintaan."
+    "message": "tarkastele ja valitse jäsenet, joille haluat myöntää Salaisuushallinnan käyttöoikeuden."
   },
   "openYourOrganizations": {
     "message": "Avaa organisaatiosi"
@@ -5079,7 +5079,7 @@
     "message": "Valitse valikkoa käyttäen"
   },
   "toGrantAccessToSelectedMembers": {
-    "message": "myöntääksesi pääsyn valituille jäsenille."
+    "message": "myöntääksesi käyttöoikeuden valituille jäsenille."
   },
   "sendVaultCardTryItNow": {
     "message": "kokeile sitä nyt",
@@ -5492,7 +5492,7 @@
     "message": "Kirjaa käyttäjät automaattisesti sisään sallittuihin sovelluksiin"
   },
   "automaticAppLoginDesc": {
-    "message": "Kirjautumislomakkeet täytetään ja lähetetään automaattisesti määritetystä identiteettitarjoastasi käynnistetyissä sovelluksissa."
+    "message": "Kirjautumislomakkeet täytetään ja lähetetään automaattisesti määritetyltä identiteettitarjoaltasi käynnistetyissä sovelluksissa."
   },
   "automaticAppLoginIdpHostLabel": {
     "message": "Identiteettitarjoajan osoite"
@@ -5501,7 +5501,7 @@
     "message": "Syötä identiteettitarjoajasi URL-osoite. Syötä useat URL-osoitteet pilkuin erotetuina."
   },
   "tdeDisabledMasterPasswordRequired": {
-    "message": "Organisaatiosi on päivittänyt salauksen purkuasetukset. Käytä holviasi asettamalla pääsalasana."
+    "message": "Organisaatiosi on muuttanut salauksen purun asetuksia. Avaa holvisi asettamalla pääsalasana."
   },
   "maximumVaultTimeout": {
     "message": "Holvin aikakatkaisu"
@@ -5522,7 +5522,7 @@
     "message": "Minuuttia"
   },
   "vaultTimeoutPolicyInEffect": {
-    "message": "Organisaatiokäytännöt ovat määrittäneet holvisi aikakatkaisun enimmäisajaksi $HOURS$ tunti(a) $MINUTES$ minuutti(a).",
+    "message": "Organisaatiokäytännöt ovat määrittäneet holvisi aikakatkaisun enimmäisajaksi $HOURS$ tuntia $MINUTES$ minuuttia.",
     "placeholders": {
       "hours": {
         "content": "$1",
@@ -5535,7 +5535,7 @@
     }
   },
   "vaultTimeoutPolicyInEffect1": {
-    "message": "Enintään $HOURS$ tunti(a) ja $MINUTES$ minuutti(a).",
+    "message": "Enintään $HOURS$ tuntia $MINUTES$ minuuttia.",
     "placeholders": {
       "hours": {
         "content": "$1",
@@ -5548,7 +5548,7 @@
     }
   },
   "vaultTimeoutPolicyWithActionInEffect": {
-    "message": "Organisaatiokäytännöt vaikuttavat holvisi aikakatkaisuun. Suurin sallittu aika on $HOURS$ tunti(a) $MINUTES$ minuutti(a). Holvillesi määritetty aikakatkaisutoiminto on $ACTION$.",
+    "message": "Organisaatiokäytännöt vaikuttavat holvisi aikakatkaisuun. Suurin sallittu aika on $HOURS$ tuntia $MINUTES$ minuuttia. Holvillesi määritetty aikakatkaisutoiminto on $ACTION$.",
     "placeholders": {
       "hours": {
         "content": "$1",
@@ -5577,7 +5577,7 @@
     "message": "Holvisi aikakatkaisu ylittää organisaatiosi asettamat rajoitukset."
   },
   "vaultCustomTimeoutMinimum": {
-    "message": "Mukautetun aikakatkaisun vähimmäisaika on 1 minuutti."
+    "message": "Mukautetun aikakatkaisun vähimmäisaika on yksi minuutti."
   },
   "vaultTimeoutRangeError": {
     "message": "Holvin aikakatkaisu ei ole sallitun alueen sisällä."
@@ -7889,7 +7889,7 @@
     "message": "Laitehyväksyntää pyydetty."
   },
   "tdeOffboardingPasswordSet": {
-    "message": "User set a master password during TDE offboarding."
+    "message": "Käyttäjä asetti pääsalasanan TDE offboarding -prosessin aikana."
   },
   "startYour7DayFreeTrialOfBitwardenFor": {
     "message": "Aloita seitsemän päivän ilmainen Bitwarden-kokeilu organisaatiolle $ORG$",
@@ -8291,7 +8291,7 @@
     "message": "Lisää kenttä"
   },
   "editField": {
-    "message": "Edit field"
+    "message": "Muokkaa kenttää"
   },
   "items": {
     "message": "Kohteet"
@@ -8563,7 +8563,7 @@
     }
   },
   "deleteProviderWarningDescription": {
-    "message": "Kaikki pääteliitokset on poistettava ennen toimittajan $ID$ poistoa.",
+    "message": "Kaikki asiakaskytkökset on poistettava ennen toimittajan $ID$ poistoa.",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -8683,41 +8683,14 @@
   "manageBillingFromProviderPortalMessage": {
     "message": "Hallitse laskutusta Toimittajaportaaliista"
   },
-  "startYour7DayFreeTrialOfBitwarden": {
-    "message": "Aloita seitsemän päivän ilmainen Bitwarden-kokeilu"
+  "continueSettingUpFreeTrial": {
+    "message": "Jatka ilmaisen Bitwarden-kokeilusi käyttöönottoa"
   },
-  "startYour7DayFreeTrialOfBitwardenForTeams": {
-    "message": "Aloita seitsemän päivän ilmainen Bitwarden Teams -kokeilusi"
+  "continueSettingUpFreeTrialPasswordManager": {
+    "message": "Jatka ilmaisen Bitwarden Salasanahallinta -kokeilusi käyttöönottoa"
   },
-  "startYour7DayFreeTrialOfBitwardenForFamilies": {
-    "message": "Aloita seitsemän päivän ilmainen Bitwarden Families -kokeilusi"
-  },
-  "startYour7DayFreeTrialOfBitwardenForEnterprise": {
-    "message": "Aloita seitsemän päivän ilmainen Bitwarden Enterprise -kokeilusi"
-  },
-  "startYour7DayFreeTrialOfBitwardenSecretsManager": {
-    "message": "Aloita seitsemän päivän ilmainen Bitwarden Salaisuushallinnan kokeilu"
-  },
-  "startYour7DayFreeTrialOfBitwardenSecretsManagerForTeams": {
-    "message": "Aloita seitsemän päivän ilmainen Bitwarden Salaisuushallinta Teams -kokeilusi"
-  },
-  "startYour7DayFreeTrialOfBitwardenSecretsManagerForFamilies": {
-    "message": "Aloita seitsemän päivän ilmainen Bitwarden Salaisuushallinta Families -kokeilusi"
-  },
-  "startYour7DayFreeTrialOfBitwardenSecretsManagerForEnterprise": {
-    "message": "Aloita seitsemän päivän ilmainen Bitwarden Salaisuushallinta Enterprise -kokeilusi"
-  },
-  "startYour7DayFreeTrialOfBitwardenPasswordManager": {
-    "message": "Aloita seitsemän päivän ilmainen Bitwarden Salasanahallinnan kokeilu"
-  },
-  "startYour7DayFreeTrialOfBitwardenPasswordManagerForTeams": {
-    "message": "Aloita seitsemän päivän ilmainen Bitwarden Salasanahallinta Teams -kokeilusi"
-  },
-  "startYour7DayFreeTrialOfBitwardenPasswordManagerForFamilies": {
-    "message": "Aloita seitsemän päivän ilmainen Bitwarden Salasanahallinta Families -kokeilusi"
-  },
-  "startYour7DayFreeTrialOfBitwardenPasswordManagerForEnterprise": {
-    "message": "Aloita seitsemän päivän ilmainen Bitwarden Salasanahallinta Enterprise -kokeilusi"
+  "continueSettingUpFreeTrialSecretsManager": {
+    "message": "Jatka ilmaisen Bitwarden Salaisuushallinta -kokeilusi käyttöönottoa"
   },
   "enterTeamsOrgInfo": {
     "message": "Syötä Teams-organisaatiosi tiedot"
@@ -8863,13 +8836,13 @@
     "message": "Tarkastele organisaation jäsenten käyttöoikeuksia ryhmiin, kokoelmiin ja kokoelmien kohteisiin. CSV-vienti tuottaa yksityiskohtaisen jäsenkohtaisen erittelyn, joka sisältää kokoelmaoikeudet ja tilimääritykset."
   },
   "memberAccessReportNoCollection": {
-    "message": "(Ei kokoelmaa)"
+    "message": "(ei kokoelmaa)"
   },
   "memberAccessReportNoCollectionPermission": {
-    "message": "(No Collection Permission)"
+    "message": "(ei kokoelman käyttöoikeutta)"
   },
   "memberAccessReportNoGroup": {
-    "message": "(Ei ryhmää)"
+    "message": "(ei ryhmää)"
   },
   "memberAccessReportTwoFactorEnabledTrue": {
     "message": "Käytössä"
@@ -9027,7 +9000,67 @@
     "message": "Tiedot"
   },
   "purchasedSeatsRemoved": {
-    "message": "ostetut käyttäjäpaikat poistettiin"
+    "message": "ostetta käyttäjäpaikkaa poistettiin"
+  },
+  "environmentVariables": {
+    "message": "Ympäristömuuttujat"
+  },
+  "organizationId": {
+    "message": "Organisaatiotunniste"
+  },
+  "projectIds": {
+    "message": "Projektitunnisteet"
+  },
+  "projectId": {
+    "message": "Projektitunniste"
+  },
+  "projectsAccessedByMachineAccount": {
+    "message": "Tämä konetili voi käyttää seuraavia projekteja."
+  },
+  "config": {
+    "message": "Määritykset"
+  },
+  "learnMoreAboutEmergencyAccess": {
+    "message": "Lisätietoja varmuuskäytöstä"
+  },
+  "learnMoreAboutMatchDetection": {
+    "message": "Lisätietoja tunnistustavoista"
+  },
+  "learnMoreAboutMasterPasswordReprompt": {
+    "message": "Lisätietoja pääsalasanan uudelleenkyselystä"
+  },
+  "learnMoreAboutSearchingYourVault": {
+    "message": "Lisätietoja holvisi hausta"
+  },
+  "learnMoreAboutYourAccountFingerprintPhrase": {
+    "message": "Lisätietoja tilisi tunnistelausekkeesta"
+  },
+  "impactOfRotatingYourEncryptionKey": {
+    "message": "Salausavaimesi kierrätyksen vaikutus"
+  },
+  "learnMoreAboutEncryptionAlgorithms": {
+    "message": "Lisätietoja salausalgoritmeista"
+  },
+  "learnMoreAboutKDFIterations": {
+    "message": "Lisätietoja KDF-toistoista"
+  },
+  "learnMoreAboutLocalization": {
+    "message": "Lisätietoja lokalisoinnista"
+  },
+  "learnMoreAboutWebsiteIcons": {
+    "message": "Lisätietoja sivustokuvakkeiden käytöstä"
+  },
+  "learnMoreAboutUserAccess": {
+    "message": "Lisätietoja käyttäjien käyttöoikeuksista"
+  },
+  "learnMoreAboutMemberRoles": {
+    "message": "Lisätietoja jäsenten rooleista ja käyttöoikeuksista"
+  },
+  "whatIsACvvNumber": {
+    "message": "Mikä on CVC-/CVV-numero?"
+  },
+  "learnMoreAboutApi": {
+    "message": "Lisätietoja Bitwardenin API:sta"
   },
   "fileSends": {
     "message": "Tiedosto-Sendit"
@@ -9057,7 +9090,7 @@
     "message": "Valinnainen oman palvelinympäristön käyttö"
   },
   "upgradeFreeOrganization": {
-    "message": "Päivitä organisaatiosi $NAME$ ",
+    "message": "Päivitä $NAME$-organisaatiosi ",
     "placeholders": {
       "name": {
         "content": "$1",
@@ -9087,7 +9120,7 @@
     }
   },
   "upgradePlans": {
-    "message": "Upgrade your plan to invite members and experience powerful security features."
+    "message": "Kutsu käyttäjiä ja koe tehokkaat suojausominaisuudet päivittämällä tilauksesi."
   },
   "upgradeDiscount": {
     "message": "Säästä $AMOUNT$ %",
@@ -9099,10 +9132,10 @@
     }
   },
   "enterprisePlanUpgradeMessage": {
-    "message": "Advanced capabilities for larger organizations"
+    "message": "Lisäominaisuuksia suurille organisaatioille"
   },
   "teamsPlanUpgradeMessage": {
-    "message": "Resilient protection for growing teams"
+    "message": "Vahvaa suojausta kasvaville tiimeille"
   },
   "teamsInviteMessage": {
     "message": "Kutsu rajattomasti jäseniä"
@@ -9165,13 +9198,13 @@
     "message": "Nykyinen"
   },
   "secretsManagerSubscriptionInfo": {
-    "message": "Your Secrets Manager subscription will upgrade based on the plan selected"
+    "message": "Salaisuushallinta-tilauksesi päivittyy valitun tilauksen mukaisesti"
   },
   "bitwardenPasswordManager": {
     "message": "Bitwarden Salasanahallinta"
   },
   "secretsManagerComplimentaryPasswordManager": {
-    "message": "Your complimentary one year Password Manager subscription will upgrade to the selected plan. You will not be charged until the complimentary period is over."
+    "message": "Vuoden veloitukseton Salasanahallinta-tilauksesi päivittyy valittuun tilaukseen. Sinua ei veloiteta ennen ilmaisjakson päättymistä."
   },
   "fileSavedToDevice": {
     "message": "Tiedosto tallennettiin laitteelle. Hallitse sitä laitteesi latauksista."

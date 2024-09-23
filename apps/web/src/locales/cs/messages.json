@@ -270,17 +270,17 @@
     "message": "Boolean"
   },
   "cfTypeCheckbox": {
-    "message": "Checkbox"
+    "message": "Zaškrtávací políčko"
   },
   "cfTypeLinked": {
     "message": "Propojeno",
     "description": "This describes a field that is 'linked' (related) to another field."
   },
   "fieldType": {
-    "message": "Field type"
+    "message": "Typ pole"
   },
   "fieldLabel": {
-    "message": "Field label"
+    "message": "Popis pole"
   },
   "remove": {
     "message": "Odebrat"
@@ -8291,7 +8291,7 @@
     "message": "Přidat pole"
   },
   "editField": {
-    "message": "Edit field"
+    "message": "Upravit pole"
   },
   "items": {
     "message": "Položky"
@@ -8683,41 +8683,14 @@
   "manageBillingFromProviderPortalMessage": {
     "message": "Spravovat fakturaci z portálu poskytovatele"
   },
-  "startYour7DayFreeTrialOfBitwarden": {
-    "message": "Začněte 7denní bezplatnou zkušební verzi Bitwardenu"
+  "continueSettingUpFreeTrial": {
+    "message": "Pokračujte v nastavení zkušební verze aplikace Bitwarden"
   },
-  "startYour7DayFreeTrialOfBitwardenForTeams": {
-    "message": "Začněte 7denní bezplatnou zkušební verzi Bitwardenu pro Teams"
+  "continueSettingUpFreeTrialPasswordManager": {
+    "message": "Pokračujte v nastavení bezplatného zkušebního období Správce hesel Bitwarden"
   },
-  "startYour7DayFreeTrialOfBitwardenForFamilies": {
-    "message": "Začněte 7denní bezplatnou zkušební verzi Bitwardenu pro rodiny"
-  },
-  "startYour7DayFreeTrialOfBitwardenForEnterprise": {
-    "message": "Začněte 7denní bezplatnou zkušební verzi Bitwardenu pro Enterprise"
-  },
-  "startYour7DayFreeTrialOfBitwardenSecretsManager": {
-    "message": "Začněte 7denní bezplatnou zkušební verzi Správce tajných klíčů Bitwarden"
-  },
-  "startYour7DayFreeTrialOfBitwardenSecretsManagerForTeams": {
-    "message": "Začněte 7denní bezplatnou zkušební verzi Správce tajných klíčů Bitwarden pro Teams"
-  },
-  "startYour7DayFreeTrialOfBitwardenSecretsManagerForFamilies": {
-    "message": "Začněte 7denní bezplatnou zkušební verzi Správce tajných klíčů Bitwarden pro rodiny"
-  },
-  "startYour7DayFreeTrialOfBitwardenSecretsManagerForEnterprise": {
-    "message": "Začněte 7denní bezplatnou zkušební verzi Správce tajných klíčů Bitwarden pro Enterprise"
-  },
-  "startYour7DayFreeTrialOfBitwardenPasswordManager": {
-    "message": "Začněte 7denní bezplatnou zkušební verzi Správce hesel Bitwarden"
-  },
-  "startYour7DayFreeTrialOfBitwardenPasswordManagerForTeams": {
-    "message": "Začněte 7denní bezplatnou zkušební verzi Správce hesel Bitwarden pro Teams"
-  },
-  "startYour7DayFreeTrialOfBitwardenPasswordManagerForFamilies": {
-    "message": "Začněte 7denní bezplatnou zkušební verzi Správce hesel Bitwarden pro rodiny"
-  },
-  "startYour7DayFreeTrialOfBitwardenPasswordManagerForEnterprise": {
-    "message": "Začněte 7denní bezplatnou zkušební verzi Správce hesel Bitwarden pro Enterprise"
+  "continueSettingUpFreeTrialSecretsManager": {
+    "message": "Pokračujte v nastavení bezplatného zkušebního období Správce hesel Bitwarden"
   },
   "enterTeamsOrgInfo": {
     "message": "Zadejte informace o Teams Vaší organizace"
@@ -9028,6 +9001,66 @@
   },
   "purchasedSeatsRemoved": {
     "message": "zakoupení uživatelé odebráni"
+  },
+  "environmentVariables": {
+    "message": "Environment variables"
+  },
+  "organizationId": {
+    "message": "Organization ID"
+  },
+  "projectIds": {
+    "message": "Project IDs"
+  },
+  "projectId": {
+    "message": "Project ID"
+  },
+  "projectsAccessedByMachineAccount": {
+    "message": "The following projects can be accessed by this machine account."
+  },
+  "config": {
+    "message": "Config"
+  },
+  "learnMoreAboutEmergencyAccess": {
+    "message": "Další informace o nouzovém přístupu"
+  },
+  "learnMoreAboutMatchDetection": {
+    "message": "Další informace o detekci shody"
+  },
+  "learnMoreAboutMasterPasswordReprompt": {
+    "message": "Další informace o výzvě k hlavnímu heslu"
+  },
+  "learnMoreAboutSearchingYourVault": {
+    "message": "Další informace o hledání Vašeho trezoru"
+  },
+  "learnMoreAboutYourAccountFingerprintPhrase": {
+    "message": "Další informace o frázi otisků prstů Vašeho účtu"
+  },
+  "impactOfRotatingYourEncryptionKey": {
+    "message": "Dopad rotace Vašeho šifrovacího klíče"
+  },
+  "learnMoreAboutEncryptionAlgorithms": {
+    "message": "Další informace o šifrovacích algoritmech"
+  },
+  "learnMoreAboutKDFIterations": {
+    "message": "Další informace o iteracích KDF"
+  },
+  "learnMoreAboutLocalization": {
+    "message": "Další informace o lokalizaci"
+  },
+  "learnMoreAboutWebsiteIcons": {
+    "message": "Další informace o používání ikon webových stránek"
+  },
+  "learnMoreAboutUserAccess": {
+    "message": "Další informace o přístupu uživatele"
+  },
+  "learnMoreAboutMemberRoles": {
+    "message": "Další informace o rolích a oprávněních členů"
+  },
+  "whatIsACvvNumber": {
+    "message": "Co je číslo CVV?"
+  },
+  "learnMoreAboutApi": {
+    "message": "Další informace o API Bitwardenu"
   },
   "fileSends": {
     "message": "Sends se soubory"

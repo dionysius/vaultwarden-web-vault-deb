@@ -8683,41 +8683,14 @@
   "manageBillingFromProviderPortalMessage": {
     "message": "Gerenciar faturamento a partir do Portal do Provedor"
   },
-  "startYour7DayFreeTrialOfBitwarden": {
-    "message": "Comece o seu teste grátis de 7 dias do Bitwarden"
+  "continueSettingUpFreeTrial": {
+    "message": "Continue setting up your free trial of Bitwarden"
   },
-  "startYour7DayFreeTrialOfBitwardenForTeams": {
-    "message": "Comece o seu teste gratuito de 7 dias do Bitwarden para Equipes"
+  "continueSettingUpFreeTrialPasswordManager": {
+    "message": "Continue setting up your free trial of Bitwarden Password Manager"
   },
-  "startYour7DayFreeTrialOfBitwardenForFamilies": {
-    "message": "Comece o seu teste gratuito de 7 dias do Bitwarden para as Famílias"
-  },
-  "startYour7DayFreeTrialOfBitwardenForEnterprise": {
-    "message": "Comece o seu teste gratuito de 7 dias do Bitwarden para Empresas"
-  },
-  "startYour7DayFreeTrialOfBitwardenSecretsManager": {
-    "message": "Inicie o seu teste gratuito de 7 dias do Gerenciador de Segredos do Bitwarden"
-  },
-  "startYour7DayFreeTrialOfBitwardenSecretsManagerForTeams": {
-    "message": "Comece o seu teste gratuito de 7 dias do Gerenciador de Segredos do Bitwarden para equipes"
-  },
-  "startYour7DayFreeTrialOfBitwardenSecretsManagerForFamilies": {
-    "message": "Comece o seu teste gratuito de 7 dias do Bitwarden Secrets Manager para famílias"
-  },
-  "startYour7DayFreeTrialOfBitwardenSecretsManagerForEnterprise": {
-    "message": "Comece o seu teste gratuito de 7 dias do Bitwarden Secrets Manager para a Empresa"
-  },
-  "startYour7DayFreeTrialOfBitwardenPasswordManager": {
-    "message": "Comece o seu teste gratuito de 7 dias do Bitwarden Password Manager"
-  },
-  "startYour7DayFreeTrialOfBitwardenPasswordManagerForTeams": {
-    "message": "Comece o seu teste gratuito de 7 dias do Gerenciador de Senhas do Bitwarden para Equipes"
-  },
-  "startYour7DayFreeTrialOfBitwardenPasswordManagerForFamilies": {
-    "message": "Comece o seu teste gratuito de 7 dias do Bitwarden Password Manager para Famílias"
-  },
-  "startYour7DayFreeTrialOfBitwardenPasswordManagerForEnterprise": {
-    "message": "Comece o seu teste gratuito de 7 dias do Bitwarden Password Manager para a Empresa"
+  "continueSettingUpFreeTrialSecretsManager": {
+    "message": "Continue setting up your free trial of Bitwarden Secrets Manager"
   },
   "enterTeamsOrgInfo": {
     "message": "Insira as informações da organização de suas equipes"
@@ -9028,6 +9001,66 @@
   },
   "purchasedSeatsRemoved": {
     "message": "assentos comprados removidos"
+  },
+  "environmentVariables": {
+    "message": "Environment variables"
+  },
+  "organizationId": {
+    "message": "Organization ID"
+  },
+  "projectIds": {
+    "message": "Project IDs"
+  },
+  "projectId": {
+    "message": "Project ID"
+  },
+  "projectsAccessedByMachineAccount": {
+    "message": "The following projects can be accessed by this machine account."
+  },
+  "config": {
+    "message": "Config"
+  },
+  "learnMoreAboutEmergencyAccess": {
+    "message": "Learn more about emergency access"
+  },
+  "learnMoreAboutMatchDetection": {
+    "message": "Learn more about match detection"
+  },
+  "learnMoreAboutMasterPasswordReprompt": {
+    "message": "Learn more about master password re-prompt"
+  },
+  "learnMoreAboutSearchingYourVault": {
+    "message": "Learn more about searching your vault"
+  },
+  "learnMoreAboutYourAccountFingerprintPhrase": {
+    "message": "Learn about your account fingerprint phrase"
+  },
+  "impactOfRotatingYourEncryptionKey": {
+    "message": "Impact of rotating your encryption key"
+  },
+  "learnMoreAboutEncryptionAlgorithms": {
+    "message": "Learn more about encryption algorithms"
+  },
+  "learnMoreAboutKDFIterations": {
+    "message": "Learn more about KDF iterations"
+  },
+  "learnMoreAboutLocalization": {
+    "message": "Learn more about localization"
+  },
+  "learnMoreAboutWebsiteIcons": {
+    "message": "Learn more about using website icons"
+  },
+  "learnMoreAboutUserAccess": {
+    "message": "Learn more about user access"
+  },
+  "learnMoreAboutMemberRoles": {
+    "message": "Learn more about member roles and permissions"
+  },
+  "whatIsACvvNumber": {
+    "message": "What is a CVV number?"
+  },
+  "learnMoreAboutApi": {
+    "message": "Learn more about Bitwarden's API"
   },
   "fileSends": {
     "message": "Arquivos enviados"

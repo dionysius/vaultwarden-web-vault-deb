@@ -277,10 +277,10 @@
     "description": "This describes a field that is 'linked' (related) to another field."
   },
   "fieldType": {
-    "message": "Field type"
+    "message": "Tipo de campo"
   },
   "fieldLabel": {
-    "message": "Field label"
+    "message": "Etiqueta do campo"
   },
   "remove": {
     "message": "Remover"
@@ -620,7 +620,7 @@
     "description": "Copy URI to clipboard"
   },
   "copyCustomField": {
-    "message": "Copy $FIELD$",
+    "message": "Copiar $FIELD$",
     "placeholders": {
       "field": {
         "content": "$1",
@@ -629,34 +629,34 @@
     }
   },
   "copyWebsite": {
-    "message": "Copy website"
+    "message": "Copiar site"
   },
   "copyNotes": {
-    "message": "Copy notes"
+    "message": "Copiar notas"
   },
   "copyAddress": {
-    "message": "Copy address"
+    "message": "Copiar endereço"
   },
   "copyPhone": {
-    "message": "Copy phone"
+    "message": "Copiar telefone"
   },
   "copyEmail": {
-    "message": "Copy email"
+    "message": "Copiar e-mail"
   },
   "copyCompany": {
-    "message": "Copy company"
+    "message": "Copiar empresa"
   },
   "copySSN": {
-    "message": "Copy Social Security number"
+    "message": "Copiar número de segurança social"
   },
   "copyPassportNumber": {
-    "message": "Copy passport number"
+    "message": "Copiar número do passaporte"
   },
   "copyLicenseNumber": {
-    "message": "Copy license number"
+    "message": "Copiar número da carta de condução"
   },
   "copyName": {
-    "message": "Copy name"
+    "message": "Copiar nome"
   },
   "me": {
     "message": "Eu"
@@ -8291,7 +8291,7 @@
     "message": "Adicionar campo"
   },
   "editField": {
-    "message": "Edit field"
+    "message": "Editar campo"
   },
   "items": {
     "message": "Itens"
@@ -8683,41 +8683,14 @@
   "manageBillingFromProviderPortalMessage": {
     "message": "Gira a faturação a partir do Portal do fornecedor"
   },
-  "startYour7DayFreeTrialOfBitwarden": {
-    "message": "Inicie o seu período experimental gratuito de 7 dias do Bitwarden"
+  "continueSettingUpFreeTrial": {
+    "message": "Continuar a configurar a sua versão experimental gratuita do Bitwarden"
   },
-  "startYour7DayFreeTrialOfBitwardenForTeams": {
-    "message": "Inicie o seu período experimental gratuito de 7 dias do Bitwarden do plano Equipas"
+  "continueSettingUpFreeTrialPasswordManager": {
+    "message": "Continuar a configurar a sua versão experimental gratuita do Gestor de Palavras-passe do Bitwarden"
   },
-  "startYour7DayFreeTrialOfBitwardenForFamilies": {
-    "message": "Inicie o seu período experimental gratuito de 7 dias do Bitwarden do plano Familiar"
-  },
-  "startYour7DayFreeTrialOfBitwardenForEnterprise": {
-    "message": "Inicie o seu período experimental gratuito de 7 dias do Bitwarden do plano Empresarial"
-  },
-  "startYour7DayFreeTrialOfBitwardenSecretsManager": {
-    "message": "Inicie o seu período experimental gratuito de 7 dias do Bitwarden - Gestor de Segredos"
-  },
-  "startYour7DayFreeTrialOfBitwardenSecretsManagerForTeams": {
-    "message": "Inicie o seu período experimental gratuito de 7 dias do Bitwarden - Gestor de Segredos do plano Equipas"
-  },
-  "startYour7DayFreeTrialOfBitwardenSecretsManagerForFamilies": {
-    "message": "Inicie o seu período experimental gratuito de 7 dias do Bitwarden - Gestor de Segredos do plano Familiar"
-  },
-  "startYour7DayFreeTrialOfBitwardenSecretsManagerForEnterprise": {
-    "message": "Inicie o seu período experimental gratuito de 7 dias do Bitwarden - Gestor de Segredos do plano Empresarial"
-  },
-  "startYour7DayFreeTrialOfBitwardenPasswordManager": {
-    "message": "Inicie o seu período experimental gratuito de 7 dias do Bitwarden - Gestor de Palavras-passe"
-  },
-  "startYour7DayFreeTrialOfBitwardenPasswordManagerForTeams": {
-    "message": "Inicie o seu período experimental gratuito de 7 dias do Bitwarden - Gestor de Palavras-passe do plano Equipas"
-  },
-  "startYour7DayFreeTrialOfBitwardenPasswordManagerForFamilies": {
-    "message": "Inicie o seu período experimental gratuito de 7 dias do Bitwarden - Gestor de Palavras-passe do plano Familiar"
-  },
-  "startYour7DayFreeTrialOfBitwardenPasswordManagerForEnterprise": {
-    "message": "Inicie o seu período experimental gratuito de 7 dias do Bitwarden - Gestor de Palavras-passe do plano Empresarial"
+  "continueSettingUpFreeTrialSecretsManager": {
+    "message": "Continuar a configurar a sua versão experimental gratuita do Gestor de Segredos do Bitwarden"
   },
   "enterTeamsOrgInfo": {
     "message": "Introduza as informações da organização do plano Equipas"
@@ -9028,6 +9001,66 @@
   },
   "purchasedSeatsRemoved": {
     "message": "lugares adquiridos removidos"
+  },
+  "environmentVariables": {
+    "message": "Variáveis de ambiente"
+  },
+  "organizationId": {
+    "message": "ID da organização"
+  },
+  "projectIds": {
+    "message": "IDs de projetos"
+  },
+  "projectId": {
+    "message": "ID do projeto"
+  },
+  "projectsAccessedByMachineAccount": {
+    "message": "Os seguintes projetos podem ser acedidos por esta conta automática."
+  },
+  "config": {
+    "message": "Configuração"
+  },
+  "learnMoreAboutEmergencyAccess": {
+    "message": "Saiba mais sobre o acesso de emergência"
+  },
+  "learnMoreAboutMatchDetection": {
+    "message": "Saiba mais sobre a deteção de correspondências"
+  },
+  "learnMoreAboutMasterPasswordReprompt": {
+    "message": "Saiba mais sobre o novo pedido da palavra-passe mestra"
+  },
+  "learnMoreAboutSearchingYourVault": {
+    "message": "Saiba mais sobre como pesquisar no seu cofre"
+  },
+  "learnMoreAboutYourAccountFingerprintPhrase": {
+    "message": "Saiba mais sobre a frase de impressão digital da sua conta"
+  },
+  "impactOfRotatingYourEncryptionKey": {
+    "message": "Impacto da regeneração da sua chave de encriptação"
+  },
+  "learnMoreAboutEncryptionAlgorithms": {
+    "message": "Saiba mais sobre os algoritmos de encriptação"
+  },
+  "learnMoreAboutKDFIterations": {
+    "message": "Saiba mais sobre as iterações do KDF"
+  },
+  "learnMoreAboutLocalization": {
+    "message": "Saiba mais sobre a localização"
+  },
+  "learnMoreAboutWebsiteIcons": {
+    "message": "Saiba mais sobre a utilização de ícones de sites"
+  },
+  "learnMoreAboutUserAccess": {
+    "message": "Saiba mais sobre o acesso dos utilizadores"
+  },
+  "learnMoreAboutMemberRoles": {
+    "message": "Saiba mais sobre os papéis e permissões dos membros"
+  },
+  "whatIsACvvNumber": {
+    "message": "O que é um número CVV?"
+  },
+  "learnMoreAboutApi": {
+    "message": "Saiba mais sobre a API do Bitwarden"
   },
   "fileSends": {
     "message": "Sends de ficheiros"

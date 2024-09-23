@@ -867,7 +867,7 @@
     "message": "保持此視窗打開，然後按照瀏覽器的提示進行操作。"
   },
   "useADifferentLogInMethod": {
-    "message": "使用不同的登入方法"
+    "message": "改用不同的登入方式"
   },
   "loginWithPasskey": {
     "message": "使用密碼金鑰登入"
@@ -906,10 +906,10 @@
     "message": "命名您的密碼金鑰以方便您辨識它。"
   },
   "useForVaultEncryption": {
-    "message": "用於密碼庫加密"
+    "message": "用於驗證密碼庫"
   },
   "useForVaultEncryptionInfo": {
-    "message": "於支援的裝置不使用主密碼登入與解鎖。依循後續於瀏覽器的指令以完成最終設定。\nLog in and unlock on supported devices without your master password. Follow the prompts from your browser to finalize setup."
+    "message": "不需要使用主密碼，就可在支援該功能的裝置上登入。請依照瀏覽器指示完成設定。"
   },
   "useForVaultEncryptionErrorReadingPasskey": {
     "message": "密碼金鑰讀取錯誤。再試一次或者取消勾選此選項。"
@@ -921,7 +921,7 @@
     "message": "設定加密"
   },
   "usedForEncryption": {
-    "message": "使用加密"
+    "message": "用於加密"
   },
   "loginWithPasskeyEnabled": {
     "message": "密碼金鑰登入已開啓"
@@ -1251,7 +1251,7 @@
     "message": "FIDO2 WebAuthn"
   },
   "webAuthnDesc": {
-    "message": "使用任何具有 WebAuthn 功能的安全鑰匙來存取您的帳戶。"
+    "message": "使用任何與 WebAuthn 相容的安全金鑰來存取您的帳戶。"
   },
   "webAuthnMigrated": {
     "message": "（遷移自 FIDO）"
@@ -1302,7 +1302,7 @@
     "message": "您確定要繼續嗎?"
   },
   "moveSelectedItemsDesc": {
-    "message": "Choose a folder that you would like to add the $COUNT$ selected item(s) to.",
+    "message": "選擇要將這 $COUNT$ 個項目移動至哪個資料夾。",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -1678,7 +1678,7 @@
     "message": "資料匯入成功"
   },
   "importSuccessNumberOfItems": {
-    "message": "一共匯入了 $AMOUNT$ 個項目。",
+    "message": "一共匯入 $AMOUNT$ 個項目。",
     "placeholders": {
       "amount": {
         "content": "$1",
@@ -2111,7 +2111,7 @@
     "description": "Vault health reports can be used to evaluate the security of your Bitwarden individual or organization vault."
   },
   "orgsReportsDesc": {
-    "message": "點選下方的報告，識別並消除組織帳號的安全漏洞。",
+    "message": "點選下方的報告，辨識並消除組織帳號的安全漏洞。",
     "description": "Vault health reports can be used to evaluate the security of your Bitwarden individual or organization vault."
   },
   "unsecuredWebsitesReport": {
@@ -2168,13 +2168,13 @@
     "message": "說明"
   },
   "exposedPasswordsReport": {
-    "message": "暴露的密碼"
+    "message": "洩露的密碼"
   },
   "exposedPasswordsReportDesc": {
     "message": "在資料外洩事件中暴露的密碼很容易成為攻擊者的目標。變更這些密碼以防止潛在的入侵。"
   },
   "exposedPasswordsFound": {
-    "message": "發現暴露的密碼"
+    "message": "發現洩露的密碼"
   },
   "exposedPasswordsFoundReportDesc": {
     "message": "我們在你的 $VAULT$ 中發現 $COUNT$ 項項目的密碼在已知資料外洩事件中暴露。你應該變更它們以使用新密碼。",
@@ -2193,7 +2193,7 @@
     "message": "您的密碼庫中沒有在已知資料外洩事件中被暴露密碼的項目。"
   },
   "checkExposedPasswords": {
-    "message": "檢查暴露的密碼"
+    "message": "檢查洩露的密碼"
   },
   "exposedXTimes": {
     "message": "已暴露 $COUNT$ 次",
@@ -2205,7 +2205,7 @@
     }
   },
   "weakPasswordsReport": {
-    "message": "弱式密碼"
+    "message": "弱密碼"
   },
   "weakPasswordsReportDesc": {
     "message": "弱密碼很容易被攻擊者猜到。使用密碼產生器將這些密碼變更為安全性更高的密碼。"
@@ -2397,7 +2397,7 @@
     }
   },
   "premiumPriceWithFamilyPlan": {
-    "message": "升級到進階會員只需 $PRICE$/年，或是可為 $FAMILYPLANUSERCOUNT$ 個使用者取得進階會員與無限制的家庭共享只需： ",
+    "message": "升級到進階會員只需 $PRICE$/年，或是升級到含有 $FAMILYPLANUSERCOUNT$ 位進階使用者，可無限制家庭共享的 ",
     "placeholders": {
       "price": {
         "content": "$1",
@@ -2657,7 +2657,7 @@
     "message": "聯絡客戶支援部門"
   },
   "contactSupportShort": {
-    "message": "聯絡支援部門"
+    "message": "聯絡客服"
   },
   "updatedPaymentMethod": {
     "message": "已更新付款方式。"
@@ -2836,7 +2836,7 @@
     }
   },
   "onPremHostingOptional": {
-    "message": "內部部署（選用）"
+    "message": "內部架設（選用）"
   },
   "usersGetPremium": {
     "message": "使用者取得了進階功能的存取權限"
@@ -3034,7 +3034,7 @@
     "message": "在下方輸入 Bitwarden 帳戶的電子郵件位址，以邀請新使用者加入您的組織。若他們沒有 Bitwarden 帳戶，系統將提示他們建立新帳戶。"
   },
   "inviteMultipleEmailDesc": {
-    "message": "透過使用逗號分隔，您可以一次輸入最多 $COUNT$ 個電子郵件地阯。",
+    "message": "可使用逗號分隔最多 $COUNT$ 組電子郵件地址。",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -3055,7 +3055,7 @@
     "message": "已確認"
   },
   "clientOwnerEmail": {
-    "message": "用戶擁有者電子郵件"
+    "message": "用戶擁有者電子郵件地址"
   },
   "owner": {
     "message": "擁有者"
@@ -3121,7 +3121,7 @@
     "message": "CLI 命令列介面"
   },
   "bitWebVault": {
-    "message": "Bitwarden 網頁密碼庫"
+    "message": "Bitwarden 網頁版密碼庫"
   },
   "bitSecretsManager": {
     "message": "Bitwarden Secrets Manager"
@@ -3574,10 +3574,10 @@
     "message": "群組存取"
   },
   "groupAccessUserDesc": {
-    "message": "透過將成員添加到 1 個或多個群組來授予他們對集合的存取權限。"
+    "message": "將成員加入到 1 或多個群組，即可授予他們對不同分類的存取權限。"
   },
   "invitedUsers": {
-    "message": "已邀請使用者。"
+    "message": "已邀請使用者"
   },
   "resendInvitation": {
     "message": "重新傳送邀請"
@@ -3586,7 +3586,7 @@
     "message": "重新傳送電子郵件"
   },
   "hasBeenReinvited": {
-    "message": "已重新邀請 $USER$。",
+    "message": "已重新邀請 $USER$",
     "placeholders": {
       "user": {
         "content": "$1",
@@ -3643,7 +3643,7 @@
     "message": "無法驗證電子郵件。請嘗試傳送一封新的驗證電子郵件。"
   },
   "emailVerificationRequired": {
-    "message": "需要驗證電子郵件"
+    "message": "需要驗證電子郵件地址"
   },
   "emailVerificationRequiredDesc": {
     "message": "必須驗證您的電子郵件才能使用此功能。"
@@ -3706,7 +3706,7 @@
     "message": "如果您的帳戶存在，我們將傳送一封包含詳細指示的電子郵件。"
   },
   "deleteRecoverConfirmDesc": {
-    "message": "您已要求刪除您的 Bitwarden 帳戶。點選下方的按鈕以確認。"
+    "message": "您已要求刪除您的 Bitwarden 帳戶。請點選下方的按鈕確認。"
   },
   "deleteRecoverOrgConfirmDesc": {
     "message": "You have requested to delete your Bitwarden organization."
@@ -3838,7 +3838,7 @@
     "message": "為您的訂閲設定席位限制。達到此限制後，您將無法邀請新的成員。"
   },
   "limitSmSubscriptionDesc": {
-    "message": "為您的 Secrets Manger 訂閲設定席位限制。達到此限制後，就無法邀請新成員。"
+    "message": "為您的機密管理員訂閲設定席位限制。達到此限制後，就無法邀請新成員。"
   },
   "maxSeatLimit": {
     "message": "席位限制（選用）",
@@ -3877,7 +3877,7 @@
     "message": "已更新訂閲"
   },
   "subscribedToSecretsManager": {
-    "message": "訂閱已更新。您現在可以存取 Secrets Manager 了。"
+    "message": "訂閱已更新。您現在可以存取機密管理員了。"
   },
   "additionalOptions": {
     "message": "額外選項"
@@ -3904,7 +3904,7 @@
     }
   },
   "subscriptionUserSeatsWithoutAdditionalSeatsOption": {
-    "message": "您可以邀請最多 $COUNT$ 個成員，而無需額外付款。聯絡客戶支援團隊升級您的方案並邀請更多成員。",
+    "message": "您可以邀請最多 $COUNT$ 個成員，而無需額外付款。聯絡客服團隊升級您的方案並邀請更多成員。",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -3991,7 +3991,7 @@
     "message": "更新加密金鑰"
   },
   "updateEncryptionSchemeDesc": {
-    "message": "我們變更了加密方案以提供更好的安全性。 立即透過在下面輸入您的主密碼來更新您的加密金鑰。"
+    "message": "我們變更了加密方法以加強安全性。請在下面輸入主密碼來更新您的加密金鑰。"
   },
   "updateEncryptionKeyWarning": {
     "message": "更新加密金鑰後，您需要登出並重新登入目前使用的所有 Bitwarden 應用程式（如行動應用程式或瀏覽器擴充套件）。登出和重新登入（這會下載新的加密金鑰）失敗可能會導致資料損毀。我們將嘗試自動登出，但可能會有所延遲。"
@@ -4172,7 +4172,7 @@
     "message": "此項目包含需要修正的舊檔案附件。"
   },
   "attachmentFixDescription": {
-    "message": "此附件使用了過時的加密方式。 選擇「修正」以下載、重新加密，然後重新上傳此附件。"
+    "message": "此附件使用了過時的加密方式。選擇「修正」以下載、重新加密，然後重新上傳此附件。"
   },
   "fix": {
     "message": "修正",
@@ -4367,7 +4367,7 @@
     }
   },
   "permanentlyDeletedItemId": {
-    "message": "已永久刪除項目 $ID$",
+    "message": "已永久刪除 $ID$ 項目",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -4388,7 +4388,7 @@
     "message": "項目已還原"
   },
   "restoredItemId": {
-    "message": "已還原項目 $ID$",
+    "message": "已還原 $ID$ 項目",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -4448,13 +4448,13 @@
     "message": "包含所有團隊版功能"
   },
   "includeAllTeamsStarterFeatures": {
-    "message": "All Teams Starter features, plus:"
+    "message": "所有 Teams Starter 版功能，以及："
   },
   "chooseMonthlyOrAnnualBilling": {
     "message": "選擇按月或按年計費"
   },
   "abilityToAddMoreThanNMembers": {
-    "message": "Ability to add more than $COUNT$ members",
+    "message": "能夠新增 $COUNT$ 位以上的成員",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -5098,7 +5098,7 @@
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Learn more about Bitwarden Send or sign up to **try it today.**'"
   },
   "sendAccessCreatorIdentifier": {
-    "message": "Bitwarden 成員 $USER_IDENTIFIER$ 與您共用了以下內容",
+    "message": "Bitwarden 成員 $USER_IDENTIFIER$ 與您分享下列資訊",
     "placeholders": {
       "user_identifier": {
         "content": "$1",
@@ -5160,7 +5160,7 @@
     "message": "撤銷成功！"
   },
   "eventEnrollAccountRecovery": {
-    "message": "使用者 $ID$ 注冊了帳戶復原。",
+    "message": "使用者 $ID$ 參與帳戶復原。",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -5169,7 +5169,7 @@
     }
   },
   "eventWithdrawAccountRecovery": {
-    "message": "使用者 $ID$ 撤銷了帳戶復原",
+    "message": "使用者 $ID$ 撤銷了帳戶復原。",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -5325,7 +5325,7 @@
     "message": "成功還原對組織的存取權限"
   },
   "bulkFilteredMessage": {
-    "message": "已排除，不適用於此動作。"
+    "message": "已排除，不適用於此動作"
   },
   "fingerprint": {
     "message": "指紋"
@@ -5486,7 +5486,7 @@
     "message": "您的主密碼不符合此組織原則的要求。您必須現在更新主密碼才可以加入此組織。繼續操作會登出您目前的工作階段，並要求您重新登入帳戶。其他裝置上的活動工作階段最多會保持一個小時。"
   },
   "updateWeakMasterPasswordWarning": {
-    "message": "您的主密碼不符合一個或多個組織原則要求。您必須立即更新您的主密碼才能存取密碼庫。進行此動作將登出您目前的工作階段，需要您重新登入。其他裝置上的工作階段可能繼續長達一小時。"
+    "message": "您的主密碼不符合一個或多個組織政策規定。您必須立即更新您的主密碼才能存取密碼庫。進行此動作將登出您目前的工作階段，需要您重新登入。其他裝置上的工作階段可能持續長達一小時。"
   },
   "automaticAppLogin": {
     "message": "Automatically log in users for allowed applications"
@@ -5522,7 +5522,7 @@
     "message": "分鐘"
   },
   "vaultTimeoutPolicyInEffect": {
-    "message": "您的組織原則正在影響您的密碼庫逾時時間。密碼庫逾時時間最多可以設定到 $HOURS$ 小時 $MINUTES$ 分鐘。",
+    "message": "您的組織政策已限定您密碼庫逾時的時間長度。密碼庫逾時時間最高可以設定到 $HOURS$ 小時 $MINUTES$ 分鐘。",
     "placeholders": {
       "hours": {
         "content": "$1",
@@ -5548,7 +5548,7 @@
     }
   },
   "vaultTimeoutPolicyWithActionInEffect": {
-    "message": "您的組織原則正在影響您的密碼庫逾時時間。密碼庫逾時時間最多可以設定到 $HOURS$ 小時 $MINUTES$ 分鐘。您密碼庫的逾時動作被設定為 $ACTION$。",
+    "message": "您的組織政策正影響您的密碼庫逾時時間。密碼庫逾時時間最高可以設定到 $HOURS$ 小時 $MINUTES$ 分鐘。您密碼庫的逾時動作被設定為 $ACTION$。",
     "placeholders": {
       "hours": {
         "content": "$1",
@@ -5565,7 +5565,7 @@
     }
   },
   "vaultTimeoutActionPolicyInEffect": {
-    "message": "您的組織原則已將密碼庫逾時動作設定為 $ACTION$。",
+    "message": "您的組織政策已將密碼庫逾時動作設定為 $ACTION$。",
     "placeholders": {
       "action": {
         "content": "$1",
@@ -5598,10 +5598,10 @@
     "message": "啓用自動填入"
   },
   "activateAutofillPolicyDesc": {
-    "message": "為所有現有的和新的成員啓用瀏覽器擴充套件上的頁面載入時自動填入設定。"
+    "message": "為所有現有的和新的成員，啓用瀏覽器擴充套件上的頁面載入自動填入設定。"
   },
   "experimentalFeature": {
-    "message": "被入侵或不可信任的網站可不當利用頁面載入時的自動填入功能。"
+    "message": "被入侵或不被信任的網站，可能會濫用頁面載入的自動填入功能。"
   },
   "learnMoreAboutAutofill": {
     "message": "進一步瞭解「自動填入」功能"
@@ -5634,7 +5634,7 @@
     "message": "客戶 ID"
   },
   "clientSecret": {
-    "message": "客戶端機密"
+    "message": "客戶機密"
   },
   "metadataAddress": {
     "message": "中繼資料位址"
@@ -5724,7 +5724,7 @@
     "message": "簽署身分驗證要求"
   },
   "ssoSettingsSaved": {
-    "message": "已儲存單一登入設定。"
+    "message": "單一登入設定已儲存"
   },
   "sponsoredFamilies": {
     "message": "免費的 Bitwarden 家庭方案"
@@ -5742,7 +5742,7 @@
     "message": "最多 6 位使用者的付費方案存取權限"
   },
   "sponsoredFamiliesSharedCollections": {
-    "message": "用於家庭機密的共用集合"
+    "message": "用於家庭機密的共用分類"
   },
   "badToken": {
     "message": "連結已失效。請讓贊助者重新傳送邀請。"
@@ -6102,7 +6102,7 @@
     "message": "必填"
   },
   "charactersCurrentAndMaximum": {
-    "message": "$CURRENT$/$MAX$ character maximum",
+    "message": "最多 $CURRENT$/$MAX$ 字元",
     "placeholders": {
       "current": {
         "content": "$1",
@@ -6154,7 +6154,7 @@
     }
   },
   "exportingOrganizationVaultDesc": {
-    "message": "僅匯出與 $ORGANIZATION$ 關聯的組織密碼庫項目。個人密碼庫項目或其他組織中的項目將不包括在内。",
+    "message": "僅匯出與 $ORGANIZATION$ 相關的組織密碼庫項目。個人密碼庫項目或其他組織中的項目將不包括在内。",
     "placeholders": {
       "organization": {
         "content": "$1",
@@ -6558,10 +6558,10 @@
     }
   },
   "multipleInputEmails": {
-    "message": "一個或多個電子郵件無效"
+    "message": "一或多個電子郵件地址無效"
   },
   "tooManyEmails": {
-    "message": "您一次最多只能送出 $COUNT$ 個電子郵件",
+    "message": "您一次最多只能送出 $COUNT$ 組電子郵件地址",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -7085,7 +7085,7 @@
     "message": "更新"
   },
   "plusNMore": {
-    "message": "+ $QUANTITY$ more",
+    "message": "再加上 $QUANTITY$ 個",
     "placeholders": {
       "quantity": {
         "content": "$1",
@@ -7100,7 +7100,7 @@
     "message": "授予成員對該群組已指派的集合的存取權限。"
   },
   "editGroupCollectionsDesc": {
-    "message": "透過將他們添加到此群組，授予對集合的存取權限。"
+    "message": "將成員加入到此群組，即可授予他們對不同分類的存取權限。"
   },
   "restrictedCollectionAssignmentDesc": {
     "message": "You can only assign collections you manage."
@@ -7109,7 +7109,7 @@
     "message": "選擇成員"
   },
   "selectCollections": {
-    "message": "選擇集合"
+    "message": "選擇分類"
   },
   "role": {
     "message": "角色"
@@ -7118,10 +7118,10 @@
     "message": "移除成員"
   },
   "collection": {
-    "message": "集合"
+    "message": "分類"
   },
   "noCollection": {
-    "message": "沒有集合"
+    "message": "沒有分類"
   },
   "canView": {
     "message": "可以檢視"
@@ -7136,7 +7136,7 @@
     "message": "可以編輯（除了密碼）"
   },
   "noCollectionsAdded": {
-    "message": "未新增任何集合"
+    "message": "未新增任何分類"
   },
   "noMembersAdded": {
     "message": "未新增任何成員"
@@ -7157,7 +7157,7 @@
     "message": "沒有網域"
   },
   "noDomainsSubText": {
-    "message": "連線網域允許成員在使用 SSO 登入期間跳過 SSO 識別碼欄位。"
+    "message": "與網域連線後，成員在使用 SSO 登入期間就可以跳過 SSO 識別碼欄位。"
   },
   "verifyDomain": {
     "message": "驗證網域"
@@ -7181,7 +7181,7 @@
     "message": "自動網域驗證"
   },
   "automaticDomainVerificationProcess": {
-    "message": "Bitwarden 將在前 72 小時內嘗試驗證網域 3 次。如果無法驗證此網域，請檢查主機中的 DNS 記錄並手動驗證。如果無法驗證，該網域將在 7 天內從您的組織中移除"
+    "message": "Bitwarden 將在 72 小時內嘗試驗證網域 3 次。如果無法驗證此網域，請檢查主機的 DNS 記錄並手動進行驗證。如果超過 7 天仍無法驗證，將從您的組織中移除該網域"
   },
   "invalidDomainNameMessage": {
     "message": "輸入的格式無效。格式：mydomain.com。子網域需要單獨的條目進行驗證。"
@@ -7370,7 +7370,7 @@
     }
   },
   "teamsStarterPlanInvLimitReachedManageBilling": {
-    "message": "Teams Starter plans may have up to $SEATCOUNT$ members. Upgrade to your plan to invite more members.",
+    "message": "Teams Starter 方案最多可以有 $SEATCOUNT$ 個成員。請聯絡客服來升級方案，就可邀請更多成員。",
     "placeholders": {
       "seatcount": {
         "content": "$1",
@@ -7379,7 +7379,7 @@
     }
   },
   "teamsStarterPlanInvLimitReachedNoManageBilling": {
-    "message": "Teams Starter plans may have up to $SEATCOUNT$ members. Contact your organization owner to upgrade your plan and invite more members.",
+    "message": "Teams Starter 方案最多可以有 $SEATCOUNT$ 個成員。請聯絡您的組織擁有者來升級方案，並且邀請更多成員。",
     "placeholders": {
       "seatcount": {
         "content": "$1",
@@ -7415,7 +7415,7 @@
     "message": "匯出組織機密資料"
   },
   "exportingOrganizationSecretDataDescription": {
-    "message": "僅匯出與 $ORGANIZATION$ 關聯的 Secrets Manager 資料。其他產品中的項目或來自其他組織的項目將不包括在內。",
+    "message": "僅匯出與 $ORGANIZATION$ 關聯的機密管理員資料。其他產品中的項目或來自其他組織的項目將不包括在內。",
     "placeholders": {
       "ORGANIZATION": {
         "content": "$1",
@@ -7457,16 +7457,16 @@
     "message": "授權成功同步"
   },
   "licenseUploadSuccess": {
-    "message": "授權証上傳成功"
+    "message": "授權上傳成功"
   },
   "lastLicenseSync": {
-    "message": "最近授权同步"
+    "message": "最近授權同步"
   },
   "billingSyncHelp": {
     "message": "計費同步幫助"
   },
   "licensePaidFeaturesHelp": {
-    "message": "授權付費功能幫助"
+    "message": "授權付費功能說明"
   },
   "selfHostGracePeriodHelp": {
     "message": "訂閱逾期後，您有 60 天的時間將已更新的授權檔案套用到您的組織。寬限期結束於 $GRACE_PERIOD_END_DATE$。",
@@ -7523,10 +7523,10 @@
     "message": "Proceeding will log you out of all active sessions. You will need to log back in and complete two-step login, if any. We recommend exporting your vault before changing your encryption settings to prevent data loss."
   },
   "secretsManager": {
-    "message": "Secrets Manager"
+    "message": "機密管理員"
   },
   "secretsManagerAccessDescription": {
-    "message": "激活對 Secrets Manager 的使用者存取權限。"
+    "message": "啟用機密管理員的使用者存取權限。"
   },
   "userAccessSecretsManagerGA": {
     "message": "此使用者可以存取 Secrets Manager"
@@ -7554,7 +7554,7 @@
     "message": "請解決下面的錯誤然後再試一次。"
   },
   "description": {
-    "message": "描述"
+    "message": "說明"
   },
   "errorReadingImportFile": {
     "message": "嘗試讀取匯入檔案時發生錯誤"
@@ -7589,7 +7589,7 @@
     "description": "Link to a downloadable resource. This will be used as part of a larger phrase. Example: Download the Secrets Manager CLI"
   },
   "smCLI": {
-    "message": "Secrets Manager CLI"
+    "message": "機密管理員 CLI"
   },
   "importSecrets": {
     "message": "匯入機密"
@@ -7653,22 +7653,22 @@
     "message": "移除存取權限"
   },
   "checkForBreaches": {
-    "message": "檢查外洩密碼資料庫中是否有此密碼"
+    "message": "檢查外洩的密碼資料庫中是否包含此密碼"
   },
   "exposedMasterPassword": {
-    "message": "已暴露的主密碼"
+    "message": "已洩露的主密碼"
   },
   "exposedMasterPasswordDesc": {
-    "message": "在資料外洩事件中找到了密碼。我們建議您使用一個獨特的密碼來保護您的帳戶，您確定要使用已暴露的密碼嗎？"
+    "message": "該密碼已洩露。建議您使用一個獨特的密碼來保護您的帳戶，您確定要使用已洩露的密碼嗎？"
   },
   "weakAndExposedMasterPassword": {
-    "message": "強度不足且已暴露的主密碼"
+    "message": "強度不足且已洩露的主密碼"
   },
   "weakAndBreachedMasterPasswordDesc": {
-    "message": "密碼強度不足，且在資料外洩事件中找到了這個密碼。使用一個強度足夠和獨特的密碼來保護您的帳戶。您確定要使用這個密碼嗎？"
+    "message": "密碼強度不足，且該密碼已洩露。請使用一個強度足夠和獨特的密碼來保護您的帳戶。您確定要使用這個密碼嗎？"
   },
   "characterMinimum": {
-    "message": "$LENGTH$ 個字元以上",
+    "message": "最少 $LENGTH$ 個字元以上",
     "placeholders": {
       "length": {
         "content": "$1",
@@ -7686,7 +7686,7 @@
     }
   },
   "inputTrimValidator": {
-    "message": "輸入不得僅包含空格。",
+    "message": "輸入內容不得只有空格。",
     "description": "Notification to inform the user that a form's input can't contain only whitespace."
   },
   "dismiss": {
@@ -7714,19 +7714,19 @@
     "message": "更新 KDF 設定"
   },
   "loginInitiated": {
-    "message": "登入已發起"
+    "message": "登入已啟動"
   },
   "deviceApprovalRequired": {
-    "message": "裝置核准已要求。請在下面選擇一個核准選項："
+    "message": "裝置需要取得核准。請在下面選擇一個核准選項："
   },
   "rememberThisDevice": {
     "message": "記住這個裝置"
   },
   "uncheckIfPublicDevice": {
-    "message": "若使用公用裝置，请勿選中"
+    "message": "若使用公用裝置，請勿勾選"
   },
   "approveFromYourOtherDevice": {
-    "message": "從其他裝置核准"
+    "message": "使用其他裝置核准"
   },
   "requestAdminApproval": {
     "message": "要求管理員核准"
@@ -7769,11 +7769,11 @@
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Once authenticated, members will decrypt vault data using a key stored on their device. The single organization policy, SSO required policy, and account recovery administration policy with automatic enrollment will turn on when this option is used.'"
   },
   "orgPermissionsUpdatedMustSetPassword": {
-    "message": "您的組織權限已更新，要求您設定一個主密碼。",
+    "message": "您的組織權限已更新，因此您需要設定主密碼。",
     "description": "Used as a card title description on the set password page to explain why the user is there"
   },
   "orgRequiresYouToSetPassword": {
-    "message": "您的組織要求您設定一個主密碼。",
+    "message": "您的組織要求您設定主密碼。",
     "description": "Used as a card title description on the set password page to explain why the user is there"
   },
   "notFound": {
@@ -7793,21 +7793,21 @@
     "message": "復原帳戶"
   },
   "updatedTempPassword": {
-    "message": "使用者更新了透過帳戶復原頒發的密碼。"
+    "message": "使用者更新了透過帳戶復原發送的密碼。"
   },
   "activatedAccessToSecretsManager": {
-    "message": "已激活對 Secrets Manager 的存取權限",
+    "message": "已啟用對機密管理員的存取權限",
     "description": "Confirmation message that one or more users gained access to Secrets Manager"
   },
   "activateAccess": {
-    "message": "激活存取權限"
+    "message": "啟用存取權限"
   },
   "bulkEnableSecretsManagerDescription": {
-    "message": "授予以下成員對 Secrets Manager 的存取權限。在 Password Manager 授予的角色也適用於 Secrets Manager。",
+    "message": "授予以下成員對機密管理員的存取權限。在密碼管理員授予的角色也適用於機密管理員。",
     "description": "This description is shown to an admin when they are attempting to add more users to Secrets Manager."
   },
   "activateSecretsManager": {
-    "message": "激活 Secrets Manager"
+    "message": "啟用 Secrets Manager"
   },
   "yourOrganizationsFingerprint": {
     "message": "您組織的指紋短語",
@@ -7913,13 +7913,13 @@
     "message": "下一步"
   },
   "ssoLoginIsRequired": {
-    "message": "SSO login is required"
+    "message": "需要登入 SSO"
   },
   "selectedRegionFlag": {
     "message": "選定的區域標記"
   },
   "accountSuccessfullyCreated": {
-    "message": "已成功建立帳戶！"
+    "message": "帳戶已成功建立！"
   },
   "adminApprovalRequested": {
     "message": "已要求管理員核准"
@@ -7937,7 +7937,7 @@
     "message": "登入已核准"
   },
   "userEmailMissing": {
-    "message": "缺少使用者電子郵件"
+    "message": "缺少使用者電子郵件地址"
   },
   "deviceTrusted": {
     "message": "裝置已信任"
@@ -7954,7 +7954,7 @@
     "message": "邀請使用者"
   },
   "secretsManagerForPlan": {
-    "message": "Secrets Manager for $PLAN$",
+    "message": "$PLAN$ 的 Secrets Manager",
     "placeholders": {
       "plan": {
         "content": "$1",
@@ -8002,10 +8002,10 @@
     }
   },
   "subscribeToSecretsManager": {
-    "message": "訂閲 Secrets Manager"
+    "message": "訂閲機密管理員"
   },
   "addSecretsManagerUpgradeDesc": {
-    "message": "將 Secrets Manager 加入您的升級方案，來記錄維持存取於先前方案中保存的秘密資訊。"
+    "message": "將機密管理員加入您的升級方案，來維持先前方案建立的秘密資訊的存取權限。"
   },
   "additionalServiceAccounts": {
     "message": "額外服務帳戶"
@@ -8029,28 +8029,28 @@
     }
   },
   "collectionManagement": {
-    "message": "集合管理"
+    "message": "分類管理"
   },
   "collectionManagementDesc": {
-    "message": "管理組織集合的行為"
+    "message": "管理組織分類的行為"
   },
   "limitCollectionCreationDeletionDesc": {
     "message": "對擁有者和管理員限制集合的建立和刪除"
   },
   "allowAdminAccessToAllCollectionItemsDesc": {
-    "message": "Owners and admins can manage all collections and items"
+    "message": "擁有人與管理員可以管理所有分類與項目"
   },
   "updatedCollectionManagement": {
     "message": "更新了集合管理設定"
   },
   "passwordManagerPlanPrice": {
-    "message": "密碼管理器方案價格"
+    "message": "密碼管理員方案價格"
   },
   "secretsManagerPlanPrice": {
-    "message": "Secrets Manager 方案價格"
+    "message": "機密管理員方案價格"
   },
   "passwordManager": {
-    "message": "密碼管理器"
+    "message": "密碼管理員"
   },
   "freeOrganization": {
     "message": "免費組織"
@@ -8074,13 +8074,13 @@
     "message": "Beta 版"
   },
   "assignCollectionAccess": {
-    "message": "指派集合存取權限"
+    "message": "指派分類存取權限"
   },
   "editedCollections": {
-    "message": "編輯了集合"
+    "message": "編輯了分類"
   },
   "baseUrl": {
-    "message": "伺服器 URL"
+    "message": "伺服器網址"
   },
   "aliasDomain": {
     "message": "別名網域"
@@ -8107,7 +8107,7 @@
     "message": "密碼金鑰不會被複製到新的項目中。您要繼續複製此項目嗎？"
   },
   "modifiedCollectionManagement": {
-    "message": "修改了集合管理設定 $ID$。",
+    "message": "已修改的分類管理設定 $ID$。",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -8116,7 +8116,7 @@
     }
   },
   "seeDetailedInstructions": {
-    "message": "請參閱我們的幫助網站上的詳細說明：",
+    "message": "請參閱我們說明網站上的詳細說明於",
     "description": "This is followed a by a hyperlink to the help website."
   },
   "installBrowserExtension": {
@@ -8126,22 +8126,22 @@
     "message": "Use the extension to quickly save logins and auto-fill forms without opening the web app."
   },
   "projectAccessUpdated": {
-    "message": "Project access updated"
+    "message": "專案存取權限已更新"
   },
   "unexpectedErrorSend": {
-    "message": "An unexpected error has occurred while loading this Send. Try again later."
+    "message": "載入此 Send 時發生了為預期錯誤。請稍後再試一次。"
   },
   "seatLimitReached": {
-    "message": "Seat limit has been reached"
+    "message": "已達到席次上限"
   },
   "contactYourProvider": {
-    "message": "Contact your provider to purchase additional seats."
+    "message": "請聯絡您的供應商並購買額外席次。"
   },
   "seatLimitReachedContactYourProvider": {
-    "message": "Seat limit has been reached. Contact your provider to purchase additional seats."
+    "message": "已達到席次上限，請聯絡您的供應商並購買額外席次。"
   },
   "collectionAccessRestricted": {
-    "message": "Collection access is restricted"
+    "message": "有限的分類的存取權限"
   },
   "readOnlyCollectionAccess": {
     "message": "You do not have access to manage this collection."
@@ -8683,41 +8683,14 @@
   "manageBillingFromProviderPortalMessage": {
     "message": "從提供者入口網站管理計費"
   },
-  "startYour7DayFreeTrialOfBitwarden": {
-    "message": "Start your 7-Day free trial of Bitwarden"
+  "continueSettingUpFreeTrial": {
+    "message": "Continue setting up your free trial of Bitwarden"
   },
-  "startYour7DayFreeTrialOfBitwardenForTeams": {
-    "message": "Start your 7-Day free trial of Bitwarden for Teams"
+  "continueSettingUpFreeTrialPasswordManager": {
+    "message": "Continue setting up your free trial of Bitwarden Password Manager"
   },
-  "startYour7DayFreeTrialOfBitwardenForFamilies": {
-    "message": "Start your 7-Day free trial of Bitwarden for Families"
-  },
-  "startYour7DayFreeTrialOfBitwardenForEnterprise": {
-    "message": "Start your 7-Day free trial of Bitwarden for Enterprise"
-  },
-  "startYour7DayFreeTrialOfBitwardenSecretsManager": {
-    "message": "Start your 7-Day free trial of Bitwarden Secrets Manager"
-  },
-  "startYour7DayFreeTrialOfBitwardenSecretsManagerForTeams": {
-    "message": "Start your 7-Day free trial of Bitwarden Secrets Manager for Teams"
-  },
-  "startYour7DayFreeTrialOfBitwardenSecretsManagerForFamilies": {
-    "message": "Start your 7-Day free trial of Bitwarden Secrets Manager for Families"
-  },
-  "startYour7DayFreeTrialOfBitwardenSecretsManagerForEnterprise": {
-    "message": "Start your 7-Day free trial of Bitwarden Secrets Manager for Enterprise"
-  },
-  "startYour7DayFreeTrialOfBitwardenPasswordManager": {
-    "message": "Start your 7-Day free trial of Bitwarden Password Manager"
-  },
-  "startYour7DayFreeTrialOfBitwardenPasswordManagerForTeams": {
-    "message": "Start your 7-Day free trial of Bitwarden Password Manager for Teams"
-  },
-  "startYour7DayFreeTrialOfBitwardenPasswordManagerForFamilies": {
-    "message": "Start your 7-Day free trial of Bitwarden Password Manager for Families"
-  },
-  "startYour7DayFreeTrialOfBitwardenPasswordManagerForEnterprise": {
-    "message": "Start your 7-Day free trial of Bitwarden Password Manager for Enterprise"
+  "continueSettingUpFreeTrialSecretsManager": {
+    "message": "Continue setting up your free trial of Bitwarden Secrets Manager"
   },
   "enterTeamsOrgInfo": {
     "message": "Enter your Teams organization information"
@@ -9028,6 +9001,66 @@
   },
   "purchasedSeatsRemoved": {
     "message": "purchased seats removed"
+  },
+  "environmentVariables": {
+    "message": "Environment variables"
+  },
+  "organizationId": {
+    "message": "Organization ID"
+  },
+  "projectIds": {
+    "message": "Project IDs"
+  },
+  "projectId": {
+    "message": "Project ID"
+  },
+  "projectsAccessedByMachineAccount": {
+    "message": "The following projects can be accessed by this machine account."
+  },
+  "config": {
+    "message": "Config"
+  },
+  "learnMoreAboutEmergencyAccess": {
+    "message": "Learn more about emergency access"
+  },
+  "learnMoreAboutMatchDetection": {
+    "message": "Learn more about match detection"
+  },
+  "learnMoreAboutMasterPasswordReprompt": {
+    "message": "Learn more about master password re-prompt"
+  },
+  "learnMoreAboutSearchingYourVault": {
+    "message": "Learn more about searching your vault"
+  },
+  "learnMoreAboutYourAccountFingerprintPhrase": {
+    "message": "Learn about your account fingerprint phrase"
+  },
+  "impactOfRotatingYourEncryptionKey": {
+    "message": "Impact of rotating your encryption key"
+  },
+  "learnMoreAboutEncryptionAlgorithms": {
+    "message": "Learn more about encryption algorithms"
+  },
+  "learnMoreAboutKDFIterations": {
+    "message": "Learn more about KDF iterations"
+  },
+  "learnMoreAboutLocalization": {
+    "message": "Learn more about localization"
+  },
+  "learnMoreAboutWebsiteIcons": {
+    "message": "Learn more about using website icons"
+  },
+  "learnMoreAboutUserAccess": {
+    "message": "Learn more about user access"
+  },
+  "learnMoreAboutMemberRoles": {
+    "message": "Learn more about member roles and permissions"
+  },
+  "whatIsACvvNumber": {
+    "message": "What is a CVV number?"
+  },
+  "learnMoreAboutApi": {
+    "message": "Learn more about Bitwarden's API"
   },
   "fileSends": {
     "message": "File Sends"

@@ -8683,41 +8683,14 @@
   "manageBillingFromProviderPortalMessage": {
     "message": "A számlázás kezelése a szolgáltatói portálon keresztül"
   },
-  "startYour7DayFreeTrialOfBitwarden": {
-    "message": "A Bitwarden 7 napos ingyenes próbaverziójának elindítása"
+  "continueSettingUpFreeTrial": {
+    "message": "Folytassuk a Bitwarden ingyenes próbaverziójának beállítását."
   },
-  "startYour7DayFreeTrialOfBitwardenForTeams": {
-    "message": "A Bitwarden for Teams 7 napos ingyenes próbaverziójának elindítása"
+  "continueSettingUpFreeTrialPasswordManager": {
+    "message": "Folytassuk a Bitwarden jelszókezelő ingyenes próbaverziójának beállítását."
   },
-  "startYour7DayFreeTrialOfBitwardenForFamilies": {
-    "message": "A Bitwarden for Families 7 napos ingyenes próbaverziójának elindítása"
-  },
-  "startYour7DayFreeTrialOfBitwardenForEnterprise": {
-    "message": "A Bitwarden for Enterprise 7 napos ingyenes próbaverziójának elindítása"
-  },
-  "startYour7DayFreeTrialOfBitwardenSecretsManager": {
-    "message": "A Bitwarden Secrets Manager 7 napos ingyenes próbaverziójának elindítása"
-  },
-  "startYour7DayFreeTrialOfBitwardenSecretsManagerForTeams": {
-    "message": "A Bitwarden Secrets Manager for Teams 7 napos ingyenes próbaverziójának elindítása"
-  },
-  "startYour7DayFreeTrialOfBitwardenSecretsManagerForFamilies": {
-    "message": "A Bitwarden Secrets Manager for Families 7 napos ingyenes próbaverziójának elindítása"
-  },
-  "startYour7DayFreeTrialOfBitwardenSecretsManagerForEnterprise": {
-    "message": "A Bitwarden Secrets Manager for Enterprise 7 napos ingyenes próbaverziójának elindítása"
-  },
-  "startYour7DayFreeTrialOfBitwardenPasswordManager": {
-    "message": "A Bitwarden Password Manager 7 napos ingyenes próbaverziójának elindítása"
-  },
-  "startYour7DayFreeTrialOfBitwardenPasswordManagerForTeams": {
-    "message": "A Bitwarden Password Manager for Teams 7 napos ingyenes próbaverziójának elindítása"
-  },
-  "startYour7DayFreeTrialOfBitwardenPasswordManagerForFamilies": {
-    "message": "A Bitwarden Password Manager for Families 7 napos ingyenes próbaverziójának elindítása"
-  },
-  "startYour7DayFreeTrialOfBitwardenPasswordManagerForEnterprise": {
-    "message": "A Bitwarden password Manager for Enterprise 7 napos ingyenes próbaverziójának elindítása"
+  "continueSettingUpFreeTrialSecretsManager": {
+    "message": "Folytassuk a Bitwarden titkos kód kezelő ingyenes próbaverziójának beállítását."
   },
   "enterTeamsOrgInfo": {
     "message": "Adjuk meg a Teams szervezet információit."
@@ -9028,6 +9001,66 @@
   },
   "purchasedSeatsRemoved": {
     "message": "megvásárolt hely eltávolításra került."
+  },
+  "environmentVariables": {
+    "message": "Környezeti változók"
+  },
+  "organizationId": {
+    "message": "Szervezet AZ"
+  },
+  "projectIds": {
+    "message": "Projekt azonosítók"
+  },
+  "projectId": {
+    "message": "Projekt azonosító"
+  },
+  "projectsAccessedByMachineAccount": {
+    "message": "A következő projektek érhetők el ezzel a gépfiókkal."
+  },
+  "config": {
+    "message": "Konfiguráció"
+  },
+  "learnMoreAboutEmergencyAccess": {
+    "message": "További információ a vészhelyzeti hozzáférésről"
+  },
+  "learnMoreAboutMatchDetection": {
+    "message": "További információ az egyezés észlelésről"
+  },
+  "learnMoreAboutMasterPasswordReprompt": {
+    "message": "További információ a mesterjelszó újbóli bekéréséről"
+  },
+  "learnMoreAboutSearchingYourVault": {
+    "message": "További információ a széfben keresésről"
+  },
+  "learnMoreAboutYourAccountFingerprintPhrase": {
+    "message": "Továbi információ a fiók ujjlenyomat kifejezéséről"
+  },
+  "impactOfRotatingYourEncryptionKey": {
+    "message": "A titkosítási kulcs elforgatásának hatása"
+  },
+  "learnMoreAboutEncryptionAlgorithms": {
+    "message": "További információ a titkosítási algoritmusokról"
+  },
+  "learnMoreAboutKDFIterations": {
+    "message": "További információ a KDF iterációkról"
+  },
+  "learnMoreAboutLocalization": {
+    "message": "További információ a nyelvi fordításról"
+  },
+  "learnMoreAboutWebsiteIcons": {
+    "message": "További információ a webhelyikonok használatáról"
+  },
+  "learnMoreAboutUserAccess": {
+    "message": "További információ a felhasználói hozzáférésről"
+  },
+  "learnMoreAboutMemberRoles": {
+    "message": "További információ a tagi szerepekről és engedélyekről"
+  },
+  "whatIsACvvNumber": {
+    "message": "Mi az a CVV szám?"
+  },
+  "learnMoreAboutApi": {
+    "message": "További információ a Bitwarden API-járól"
   },
   "fileSends": {
     "message": "Fájl küldés"

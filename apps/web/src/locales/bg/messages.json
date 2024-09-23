@@ -270,17 +270,17 @@
     "message": "Булево"
   },
   "cfTypeCheckbox": {
-    "message": "Checkbox"
+    "message": "Поле за отметка"
   },
   "cfTypeLinked": {
     "message": "Свързано",
     "description": "This describes a field that is 'linked' (related) to another field."
   },
   "fieldType": {
-    "message": "Field type"
+    "message": "Тип на полето"
   },
   "fieldLabel": {
-    "message": "Field label"
+    "message": "Етикет на полето"
   },
   "remove": {
     "message": "Премахване"
@@ -810,7 +810,7 @@
     "message": "Ниво на достъп"
   },
   "accessing": {
-    "message": "Accessing"
+    "message": "Използване на"
   },
   "loggedOut": {
     "message": "Бяхте отписани"
@@ -8291,7 +8291,7 @@
     "message": "Добавяне на поле"
   },
   "editField": {
-    "message": "Edit field"
+    "message": "Редактиране на полето"
   },
   "items": {
     "message": "Елементи"
@@ -8683,41 +8683,14 @@
   "manageBillingFromProviderPortalMessage": {
     "message": "Управление на плащанията от Портала за доставчици"
   },
-  "startYour7DayFreeTrialOfBitwarden": {
-    "message": "Започнете свой безплатен 7-дневен пробен период на Битуорден"
+  "continueSettingUpFreeTrial": {
+    "message": "Продължете настройването на безплатния пробен период на Буторден"
   },
-  "startYour7DayFreeTrialOfBitwardenForTeams": {
-    "message": "Започнете свой безплатен 7-дневен пробен период на Битуорден за екипи"
+  "continueSettingUpFreeTrialPasswordManager": {
+    "message": "Продължете настройването на безплатния пробен период на Управлението на пароли на Буторден"
   },
-  "startYour7DayFreeTrialOfBitwardenForFamilies": {
-    "message": "Започнете свой безплатен 7-дневен пробен период на Битуорден за семейства"
-  },
-  "startYour7DayFreeTrialOfBitwardenForEnterprise": {
-    "message": "Започнете свой безплатен 7-дневен пробен период на Битуорден за големи организации"
-  },
-  "startYour7DayFreeTrialOfBitwardenSecretsManager": {
-    "message": "Започнете безплатен 7-дневен пробен период на Управлението на тайни на Битуорден"
-  },
-  "startYour7DayFreeTrialOfBitwardenSecretsManagerForTeams": {
-    "message": "Започнете безплатен 7-дневен пробен период на Управлението на тайни на Битуорден за екипи"
-  },
-  "startYour7DayFreeTrialOfBitwardenSecretsManagerForFamilies": {
-    "message": "Започнете безплатен 7-дневен пробен период на Управлението на тайни на Битуорден за семейства"
-  },
-  "startYour7DayFreeTrialOfBitwardenSecretsManagerForEnterprise": {
-    "message": "Започнете безплатен 7-дневен пробен период на Управлението на тайни на Битуорден за големи организации"
-  },
-  "startYour7DayFreeTrialOfBitwardenPasswordManager": {
-    "message": "Започнете безплатен 7-дневен пробен период на Управлението на пароли на Битуорден"
-  },
-  "startYour7DayFreeTrialOfBitwardenPasswordManagerForTeams": {
-    "message": "Започнете безплатен 7-дневен пробен период на Управлението на пароли на Битуорден за екипи"
-  },
-  "startYour7DayFreeTrialOfBitwardenPasswordManagerForFamilies": {
-    "message": "Започнете безплатен 7-дневен пробен период на Управлението на пароли на Битуорден за семейства"
-  },
-  "startYour7DayFreeTrialOfBitwardenPasswordManagerForEnterprise": {
-    "message": "Започнете безплатен 7-дневен пробен период на Управлението на пароли на Битуорден за големи организации"
+  "continueSettingUpFreeTrialSecretsManager": {
+    "message": "Продължете настройването на безплатния пробен период на Управлението на тайни на Буторден"
   },
   "enterTeamsOrgInfo": {
     "message": "Въведете информацията относно своята екипна организация"
@@ -9028,6 +9001,66 @@
   },
   "purchasedSeatsRemoved": {
     "message": "purchased seats removed"
+  },
+  "environmentVariables": {
+    "message": "Променливи на средата"
+  },
+  "organizationId": {
+    "message": "Идентификатор на организация"
+  },
+  "projectIds": {
+    "message": "Идентификатори на проекти"
+  },
+  "projectId": {
+    "message": "Идентификатор на проект"
+  },
+  "projectsAccessedByMachineAccount": {
+    "message": "Следните проекти са достъпни чрез този машинен акаунт."
+  },
+  "config": {
+    "message": "Конфигурация"
+  },
+  "learnMoreAboutEmergencyAccess": {
+    "message": "Научете повече относно достъпа в извънредни ситуации"
+  },
+  "learnMoreAboutMatchDetection": {
+    "message": "Научете повече относно разпознаването на съвпадения"
+  },
+  "learnMoreAboutMasterPasswordReprompt": {
+    "message": "Научете повече относно повторното запитване за главната парола"
+  },
+  "learnMoreAboutSearchingYourVault": {
+    "message": "Научете повече относно търсенето в трезора"
+  },
+  "learnMoreAboutYourAccountFingerprintPhrase": {
+    "message": "Научете повече относно уникалната фраза на регистрацията си"
+  },
+  "impactOfRotatingYourEncryptionKey": {
+    "message": "Значимост на обновяването на шифриращия ключ"
+  },
+  "learnMoreAboutEncryptionAlgorithms": {
+    "message": "Научете повече относно алгоритмите за шифроване"
+  },
+  "learnMoreAboutKDFIterations": {
+    "message": "Научете повече относно повторенията за KDF"
+  },
+  "learnMoreAboutLocalization": {
+    "message": "Научете повече относно локализацията"
+  },
+  "learnMoreAboutWebsiteIcons": {
+    "message": "Научете повече относно използването на иконки в уеб сайта"
+  },
+  "learnMoreAboutUserAccess": {
+    "message": "Научете повече относно достъпа на потребителите"
+  },
+  "learnMoreAboutMemberRoles": {
+    "message": "Научете повече относно ролите и правата на членовете"
+  },
+  "whatIsACvvNumber": {
+    "message": "Какво представлява номерът CVV?"
+  },
+  "learnMoreAboutApi": {
+    "message": "Научете повече относно ППИ на Биуорден"
   },
   "fileSends": {
     "message": "Файлови изпращания"

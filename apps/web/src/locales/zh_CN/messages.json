@@ -246,7 +246,7 @@
     "message": "Bitwarden 可以存储并填充两步验证码。选择相机图标来截取此网站的验证器二维码，或者手动复制并粘贴密钥到此字段。"
   },
   "learnMoreAboutAuthenticators": {
-    "message": "了解更多关于验证器的信息"
+    "message": "进一步了解验证器"
   },
   "folder": {
     "message": "文件夹"
@@ -270,17 +270,17 @@
     "message": "布尔型"
   },
   "cfTypeCheckbox": {
-    "message": "Checkbox"
+    "message": "复选框型"
   },
   "cfTypeLinked": {
     "message": "链接型",
     "description": "This describes a field that is 'linked' (related) to another field."
   },
   "fieldType": {
-    "message": "Field type"
+    "message": "字段类型"
   },
   "fieldLabel": {
-    "message": "Field label"
+    "message": "字段标签"
   },
   "remove": {
     "message": "移除"
@@ -885,7 +885,7 @@
     "message": "新增通行密钥"
   },
   "learnMoreAboutPasswordless": {
-    "message": "了解更多关于无密码登录的信息"
+    "message": "进一步了解无密码登录"
   },
   "creatingPasskeyLoading": {
     "message": "正在创建通行密钥..."
@@ -3979,7 +3979,7 @@
     }
   },
   "encryptionKeyUpdateCannotProceed": {
-    "message": "加密密钥更新无法继续"
+    "message": "无法继续加密密钥更新"
   },
   "keyUpdateFoldersFailed": {
     "message": "更新您的加密密钥时，无法解密您的文件夹。要继续更新，文件夹必须被删除。继续操作不会删除密码库项目。"
@@ -5604,7 +5604,7 @@
     "message": "不完整或不信任的网站可以使用页面加载时自动填充。"
   },
   "learnMoreAboutAutofill": {
-    "message": "了解更多关于自动填充的信息"
+    "message": "进一步了解自动填充"
   },
   "selectType": {
     "message": "选择 SSO 类型"
@@ -8291,7 +8291,7 @@
     "message": "添加字段"
   },
   "editField": {
-    "message": "Edit field"
+    "message": "编辑字段"
   },
   "items": {
     "message": "项目"
@@ -8683,41 +8683,14 @@
   "manageBillingFromProviderPortalMessage": {
     "message": "从提供商门户管理账单"
   },
-  "startYour7DayFreeTrialOfBitwarden": {
-    "message": "开始您的 Bitwarden 7 天免费试用"
+  "continueSettingUpFreeTrial": {
+    "message": "Continue setting up your free trial of Bitwarden"
   },
-  "startYour7DayFreeTrialOfBitwardenForTeams": {
-    "message": "开始您的团队版 Bitwarden 7 天免费试用"
+  "continueSettingUpFreeTrialPasswordManager": {
+    "message": "Continue setting up your free trial of Bitwarden Password Manager"
   },
-  "startYour7DayFreeTrialOfBitwardenForFamilies": {
-    "message": "开始您的家庭版 Bitwarden 7 天免费试用"
-  },
-  "startYour7DayFreeTrialOfBitwardenForEnterprise": {
-    "message": "开始您的企业版 Bitwarden 7 天免费试用"
-  },
-  "startYour7DayFreeTrialOfBitwardenSecretsManager": {
-    "message": "开始您的 Bitwarden 机密管理器 7 天免费试用"
-  },
-  "startYour7DayFreeTrialOfBitwardenSecretsManagerForTeams": {
-    "message": "开始您的团队版 Bitwarden 机密管理器 7 天免费试用"
-  },
-  "startYour7DayFreeTrialOfBitwardenSecretsManagerForFamilies": {
-    "message": "开始您的家庭版 Bitwarden 机密管理器 7 天免费试用"
-  },
-  "startYour7DayFreeTrialOfBitwardenSecretsManagerForEnterprise": {
-    "message": "开始您的企业版 Bitwarden 机密管理器 7 天免费试用"
-  },
-  "startYour7DayFreeTrialOfBitwardenPasswordManager": {
-    "message": "开始您的 Bitwarden 密码管理器 7 天免费试用"
-  },
-  "startYour7DayFreeTrialOfBitwardenPasswordManagerForTeams": {
-    "message": "开始您的团队版 Bitwarden 密码管理器 7 天免费试用"
-  },
-  "startYour7DayFreeTrialOfBitwardenPasswordManagerForFamilies": {
-    "message": "开始您的家庭版 Bitwarden 密码管理器 7 天免费试用"
-  },
-  "startYour7DayFreeTrialOfBitwardenPasswordManagerForEnterprise": {
-    "message": "开始您的企业版 Bitwarden 密码管理器 7 天免费试用"
+  "continueSettingUpFreeTrialSecretsManager": {
+    "message": "Continue setting up your free trial of Bitwarden Secrets Manager"
   },
   "enterTeamsOrgInfo": {
     "message": "输入您的团队组织信息"
@@ -9028,6 +9001,66 @@
   },
   "purchasedSeatsRemoved": {
     "message": "购买的席位已移除"
+  },
+  "environmentVariables": {
+    "message": "环境变量"
+  },
+  "organizationId": {
+    "message": "组织 ID"
+  },
+  "projectIds": {
+    "message": "项目 ID"
+  },
+  "projectId": {
+    "message": "项目 ID"
+  },
+  "projectsAccessedByMachineAccount": {
+    "message": "以下项目可以通过本机账户访问。"
+  },
+  "config": {
+    "message": "配置"
+  },
+  "learnMoreAboutEmergencyAccess": {
+    "message": "进一步了解紧急访问"
+  },
+  "learnMoreAboutMatchDetection": {
+    "message": "进一步了解匹配检测"
+  },
+  "learnMoreAboutMasterPasswordReprompt": {
+    "message": "进一步了解主密码重新提示"
+  },
+  "learnMoreAboutSearchingYourVault": {
+    "message": "进一步了解搜索密码库"
+  },
+  "learnMoreAboutYourAccountFingerprintPhrase": {
+    "message": "进一步了解账户指纹短语"
+  },
+  "impactOfRotatingYourEncryptionKey": {
+    "message": "轮换加密密钥的影响"
+  },
+  "learnMoreAboutEncryptionAlgorithms": {
+    "message": "进一步了解加密算法"
+  },
+  "learnMoreAboutKDFIterations": {
+    "message": "进一步了解 KDF 迭代"
+  },
+  "learnMoreAboutLocalization": {
+    "message": "进一步了解本地化"
+  },
+  "learnMoreAboutWebsiteIcons": {
+    "message": "进一步了解网站图标的使用"
+  },
+  "learnMoreAboutUserAccess": {
+    "message": "进一步了解用户访问权限"
+  },
+  "learnMoreAboutMemberRoles": {
+    "message": "进一步了解成员角色和权限"
+  },
+  "whatIsACvvNumber": {
+    "message": "CVV 码是什么？"
+  },
+  "learnMoreAboutApi": {
+    "message": "进一步了解 Bitwarden API"
   },
   "fileSends": {
     "message": "文件 Send"

@@ -270,17 +270,17 @@
     "message": "Boolean"
   },
   "cfTypeCheckbox": {
-    "message": "Checkbox"
+    "message": "Təsdiq qutusu"
   },
   "cfTypeLinked": {
     "message": "Əlaqələndirildi",
     "description": "This describes a field that is 'linked' (related) to another field."
   },
   "fieldType": {
-    "message": "Field type"
+    "message": "Xana növü"
   },
   "fieldLabel": {
-    "message": "Field label"
+    "message": "Xana etiketi"
   },
   "remove": {
     "message": "Sil"
@@ -8291,7 +8291,7 @@
     "message": "Xana əlavə et"
   },
   "editField": {
-    "message": "Edit field"
+    "message": "Xanaya düzəliş et"
   },
   "items": {
     "message": "Elementlər"
@@ -8683,41 +8683,14 @@
   "manageBillingFromProviderPortalMessage": {
     "message": "Fakturanı \"Provayder Portalı\"ndan idarə et"
   },
-  "startYour7DayFreeTrialOfBitwarden": {
-    "message": "Bitwarden-in 7 günlük ödənişsiz sınağını başladın"
+  "continueSettingUpFreeTrial": {
+    "message": "Ödənişsiz Bitwarden sınağınızı qurmağa davam edin"
   },
-  "startYour7DayFreeTrialOfBitwardenForTeams": {
-    "message": "Bitwarden for Teams üçün 7 günlük ödənişsiz sınağı başladın"
+  "continueSettingUpFreeTrialPasswordManager": {
+    "message": "Ödənişsiz Bitwarden Parol Meneceri sınağınızı qurmağa davam edin"
   },
-  "startYour7DayFreeTrialOfBitwardenForFamilies": {
-    "message": "Bitwarden for Families üçün 7 günlük ödənişsiz sınağı başladın"
-  },
-  "startYour7DayFreeTrialOfBitwardenForEnterprise": {
-    "message": "Bitwarden for Enterprise üçün 7 günlük ödənişsiz sınağı başladın"
-  },
-  "startYour7DayFreeTrialOfBitwardenSecretsManager": {
-    "message": "Bitwarden Secrets Manager üçün 7 günlük ödənişsiz sınağı başladın"
-  },
-  "startYour7DayFreeTrialOfBitwardenSecretsManagerForTeams": {
-    "message": "Bitwarden Secrets Manager for Teams üçün 7 günlük ödənişsiz sınağı başladın"
-  },
-  "startYour7DayFreeTrialOfBitwardenSecretsManagerForFamilies": {
-    "message": "Bitwarden Secrets Manager for Families üçün 7 günlük ödənişsiz sınağı başladın"
-  },
-  "startYour7DayFreeTrialOfBitwardenSecretsManagerForEnterprise": {
-    "message": "Bitwarden Secrets Manager for Enterprise üçün 7 günlük ödənişsiz sınağı başladın"
-  },
-  "startYour7DayFreeTrialOfBitwardenPasswordManager": {
-    "message": "Bitwarden Password Manager üçün 7 günlük ödənişsiz sınağı başladın"
-  },
-  "startYour7DayFreeTrialOfBitwardenPasswordManagerForTeams": {
-    "message": "Bitwarden Password Manager for Teams üçün 7 günlük ödənişsiz sınağı başladın"
-  },
-  "startYour7DayFreeTrialOfBitwardenPasswordManagerForFamilies": {
-    "message": "Bitwarden Password Manager for Families üçün 7 günlük ödənişsiz sınağı başladın"
-  },
-  "startYour7DayFreeTrialOfBitwardenPasswordManagerForEnterprise": {
-    "message": "Bitwarden Password Manager for Enterprise üçün 7 günlük ödənişsiz sınağı başladın"
+  "continueSettingUpFreeTrialSecretsManager": {
+    "message": "Ödənişsiz Bitwarden Sirr Meneceri sınağınızı qurmağa davam edin"
   },
   "enterTeamsOrgInfo": {
     "message": "Teams təşkilatınızın məlumatlarını daxil edin"
@@ -9028,6 +9001,66 @@
   },
   "purchasedSeatsRemoved": {
     "message": "satın alınmış yerlər silindi"
+  },
+  "environmentVariables": {
+    "message": "Mühit dəyişənləri"
+  },
+  "organizationId": {
+    "message": "Təşkilat kimliyi"
+  },
+  "projectIds": {
+    "message": "Layihə kimlikləri"
+  },
+  "projectId": {
+    "message": "Layihə kimliyi"
+  },
+  "projectsAccessedByMachineAccount": {
+    "message": "Bu maşın hesabı ilə aşağıdakı layihələrə müraciət edilə bilər."
+  },
+  "config": {
+    "message": "Konfiqurasiya"
+  },
+  "learnMoreAboutEmergencyAccess": {
+    "message": "Fövqəladə hal müraciət haqqında daha ətraflı"
+  },
+  "learnMoreAboutMatchDetection": {
+    "message": "Uyuşma aşkarlaması haqqında daha ətraflı"
+  },
+  "learnMoreAboutMasterPasswordReprompt": {
+    "message": "Ana parolu təkrar soruşmaq haqqında daha ətraflı"
+  },
+  "learnMoreAboutSearchingYourVault": {
+    "message": "Anbarınızda axtarış haqqında daha ətraflı"
+  },
+  "learnMoreAboutYourAccountFingerprintPhrase": {
+    "message": "Hesabınızın barmaq izi ifadəsi haqqında daha ətraflı"
+  },
+  "impactOfRotatingYourEncryptionKey": {
+    "message": "Şifrələmə açarınızı döndərməyin təsiri"
+  },
+  "learnMoreAboutEncryptionAlgorithms": {
+    "message": "Şifrələmə alqoritmləri haqqında daha ətraflı"
+  },
+  "learnMoreAboutKDFIterations": {
+    "message": "KDF iterasiyaları haqqında daha ətraflı"
+  },
+  "learnMoreAboutLocalization": {
+    "message": "Lokallaşdırma haqqında daha ətraflı"
+  },
+  "learnMoreAboutWebsiteIcons": {
+    "message": "Veb sayt ikonlarını istifadə etmə haqqında daha ətraflı"
+  },
+  "learnMoreAboutUserAccess": {
+    "message": "İstifadəçi müraciəti haqqında daha ətraflı"
+  },
+  "learnMoreAboutMemberRoles": {
+    "message": "Üzv rolları və icazələr haqqında daha ətraflı"
+  },
+  "whatIsACvvNumber": {
+    "message": "CVV nömrəsi nədir?"
+  },
+  "learnMoreAboutApi": {
+    "message": "Bitwarden-nin API-si haqqında daha ətraflı"
   },
   "fileSends": {
     "message": "Fayl \"Send\"ləri"

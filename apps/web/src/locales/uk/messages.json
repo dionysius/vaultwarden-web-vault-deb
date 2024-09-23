@@ -270,17 +270,17 @@
     "message": "Логічне значення"
   },
   "cfTypeCheckbox": {
-    "message": "Checkbox"
+    "message": "Прапорець"
   },
   "cfTypeLinked": {
     "message": "Пов'язано",
     "description": "This describes a field that is 'linked' (related) to another field."
   },
   "fieldType": {
-    "message": "Field type"
+    "message": "Тип поля"
   },
   "fieldLabel": {
-    "message": "Field label"
+    "message": "Мітка поля"
   },
   "remove": {
     "message": "Вилучити"
@@ -7514,7 +7514,7 @@
     "message": "Група/Користувач"
   },
   "lowKdfIterations": {
-    "message": "Низький показник KDF-ітерацій"
+    "message": "Низьке значення ітерацій KDF"
   },
   "updateLowKdfIterationsDesc": {
     "message": "Оновіть свої налаштування шифрування згідно з новими рекомендаціями щодо безпеки для вдосконалення захисту облікового запису."
@@ -8291,7 +8291,7 @@
     "message": "Додати поле"
   },
   "editField": {
-    "message": "Edit field"
+    "message": "Редагувати поле"
   },
   "items": {
     "message": "Записи"
@@ -8683,41 +8683,14 @@
   "manageBillingFromProviderPortalMessage": {
     "message": "Керування рахунками на порталі провайдера"
   },
-  "startYour7DayFreeTrialOfBitwarden": {
-    "message": "Розпочніть 7-денний пробний період Bitwarden"
+  "continueSettingUpFreeTrial": {
+    "message": "Продовжити налаштування безплатної пробної версії Bitwarden"
   },
-  "startYour7DayFreeTrialOfBitwardenForTeams": {
-    "message": "Розпочніть 7-денний пробний період Bitwarden для команд"
+  "continueSettingUpFreeTrialPasswordManager": {
+    "message": "Продовжити налаштування безплатної пробної версії менеджера паролів Bitwarden"
   },
-  "startYour7DayFreeTrialOfBitwardenForFamilies": {
-    "message": "Розпочніть 7-денний пробний період Bitwarden для родини"
-  },
-  "startYour7DayFreeTrialOfBitwardenForEnterprise": {
-    "message": "Розпочніть 7-денний пробний період Bitwarden для компаній"
-  },
-  "startYour7DayFreeTrialOfBitwardenSecretsManager": {
-    "message": "Розпочніть безплатний 7-денний пробний період менеджера секретів Bitwarden"
-  },
-  "startYour7DayFreeTrialOfBitwardenSecretsManagerForTeams": {
-    "message": "Розпочніть безплатний 7-денний пробний період менеджера секретів Bitwarden для команд"
-  },
-  "startYour7DayFreeTrialOfBitwardenSecretsManagerForFamilies": {
-    "message": "Розпочніть безплатний 7-денний пробний період менеджера секретів Bitwarden для родини"
-  },
-  "startYour7DayFreeTrialOfBitwardenSecretsManagerForEnterprise": {
-    "message": "Розпочніть безплатний 7-денний пробний період менеджера секретів Bitwarden для компаній"
-  },
-  "startYour7DayFreeTrialOfBitwardenPasswordManager": {
-    "message": "Розпочніть безплатний 7-денний пробний період менеджера паролів Bitwarden"
-  },
-  "startYour7DayFreeTrialOfBitwardenPasswordManagerForTeams": {
-    "message": "Розпочніть безплатний 7-денний пробний період менеджера паролів Bitwarden для команд"
-  },
-  "startYour7DayFreeTrialOfBitwardenPasswordManagerForFamilies": {
-    "message": "Розпочніть безплатний 7-денний пробний період менеджера паролів Bitwarden для родини"
-  },
-  "startYour7DayFreeTrialOfBitwardenPasswordManagerForEnterprise": {
-    "message": "Розпочніть безплатний 7-денний пробний період менеджера паролів Bitwarden для компаній"
+  "continueSettingUpFreeTrialSecretsManager": {
+    "message": "Продовжити налаштування безплатної пробної версії менеджера секретів Bitwarden"
   },
   "enterTeamsOrgInfo": {
     "message": "Введіть інформацію про організацію своєї команди"
@@ -8793,7 +8766,7 @@
     }
   },
   "lowKDFIterationsBanner": {
-    "message": "Низьке значення KDF ітерацій. Збільште значення для посилання безпеки свого облікового запису."
+    "message": "Низьке значення ітерацій KDF. Збільште значення для посилення безпеки свого облікового запису."
   },
   "changeKDFSettings": {
     "message": "Змінити налаштування KDF"
@@ -8884,7 +8857,7 @@
     "message": "Вимк"
   },
   "higherKDFIterations": {
-    "message": "Вищі значення KDF-ітерацій можуть допомогти захистити ваш головний пароль від грубого зламу зловмисником."
+    "message": "Вищі значення ітерацій KDF можуть допомогти захистити ваш головний пароль від грубого зламу зловмисником."
   },
   "incrementsOf100,000": {
     "message": "кроком 100 000"
@@ -9028,6 +9001,66 @@
   },
   "purchasedSeatsRemoved": {
     "message": "куплених місць вилучено"
+  },
+  "environmentVariables": {
+    "message": "Змінні середовища"
+  },
+  "organizationId": {
+    "message": "Ідентифікатор організації"
+  },
+  "projectIds": {
+    "message": "Ідентифікатори проєктів"
+  },
+  "projectId": {
+    "message": "Ідентифікатор проєкту"
+  },
+  "projectsAccessedByMachineAccount": {
+    "message": "За допомогою цього машинного облікового запису можна отримати доступ до таких проєктів."
+  },
+  "config": {
+    "message": "Конфігурація"
+  },
+  "learnMoreAboutEmergencyAccess": {
+    "message": "Докладніше про екстрений доступ"
+  },
+  "learnMoreAboutMatchDetection": {
+    "message": "Докладніше про виявлення збігів"
+  },
+  "learnMoreAboutMasterPasswordReprompt": {
+    "message": "Докладніше про повторний запит головного пароля"
+  },
+  "learnMoreAboutSearchingYourVault": {
+    "message": "Докладніше про пошук у сховищі"
+  },
+  "learnMoreAboutYourAccountFingerprintPhrase": {
+    "message": "Докладніше про фразу відбитка вашого облікового запису"
+  },
+  "impactOfRotatingYourEncryptionKey": {
+    "message": "Наслідки оновлення ключа шифрування"
+  },
+  "learnMoreAboutEncryptionAlgorithms": {
+    "message": "Докладніше про алгоритми шифрування"
+  },
+  "learnMoreAboutKDFIterations": {
+    "message": "Докладніше про ітерації KDF"
+  },
+  "learnMoreAboutLocalization": {
+    "message": "Докладніше про локалізацію"
+  },
+  "learnMoreAboutWebsiteIcons": {
+    "message": "Докладніше про використання піктограм вебсайтів"
+  },
+  "learnMoreAboutUserAccess": {
+    "message": "Докладніше про доступ користувачів"
+  },
+  "learnMoreAboutMemberRoles": {
+    "message": "Докладніше про ролі учасників і дозволи"
+  },
+  "whatIsACvvNumber": {
+    "message": "Що таке номер CVV?"
+  },
+  "learnMoreAboutApi": {
+    "message": "Докладніше про Bitwarden API"
   },
   "fileSends": {
     "message": "Відправлення файлів"

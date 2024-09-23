@@ -270,17 +270,17 @@
     "message": "Áno/Nie"
   },
   "cfTypeCheckbox": {
-    "message": "Checkbox"
+    "message": "Zaškrtávacie pole"
   },
   "cfTypeLinked": {
     "message": "Prepojené",
     "description": "This describes a field that is 'linked' (related) to another field."
   },
   "fieldType": {
-    "message": "Field type"
+    "message": "Typ poľa"
   },
   "fieldLabel": {
-    "message": "Field label"
+    "message": "Názov poľa"
   },
   "remove": {
     "message": "Odstrániť"
@@ -521,7 +521,7 @@
     "message": "Zobraziť položku"
   },
   "newItemHeader": {
-    "message": "New $TYPE$",
+    "message": "Nové $TYPE$",
     "placeholders": {
       "type": {
         "content": "$1",
@@ -530,7 +530,7 @@
     }
   },
   "editItemHeader": {
-    "message": "Edit $TYPE$",
+    "message": "Upraviť $TYPE$",
     "placeholders": {
       "type": {
         "content": "$1",
@@ -7427,7 +7427,7 @@
     "message": "Nahrať súbor"
   },
   "upload": {
-    "message": "Upload"
+    "message": "Nahrať"
   },
   "acceptedFormats": {
     "message": "Akceptované formáty:"
@@ -8291,7 +8291,7 @@
     "message": "Pridať pole"
   },
   "editField": {
-    "message": "Edit field"
+    "message": "Upraviť pole"
   },
   "items": {
     "message": "Položky"
@@ -8683,41 +8683,14 @@
   "manageBillingFromProviderPortalMessage": {
     "message": "Spravujte fakturáciu cez portál poskytovateľa"
   },
-  "startYour7DayFreeTrialOfBitwarden": {
-    "message": "Start your 7-Day free trial of Bitwarden"
+  "continueSettingUpFreeTrial": {
+    "message": "Pokračujte v nastavovaní vašej bezplatnej skúšobnej doby Bitwardenu"
   },
-  "startYour7DayFreeTrialOfBitwardenForTeams": {
-    "message": "Start your 7-Day free trial of Bitwarden for Teams"
+  "continueSettingUpFreeTrialPasswordManager": {
+    "message": "Pokračujte v nastavovaní vašej bezplatnej skúšobnej doby Bitwarden Správcu Hesiel"
   },
-  "startYour7DayFreeTrialOfBitwardenForFamilies": {
-    "message": "Start your 7-Day free trial of Bitwarden for Families"
-  },
-  "startYour7DayFreeTrialOfBitwardenForEnterprise": {
-    "message": "Start your 7-Day free trial of Bitwarden for Enterprise"
-  },
-  "startYour7DayFreeTrialOfBitwardenSecretsManager": {
-    "message": "Start your 7-Day free trial of Bitwarden Secrets Manager"
-  },
-  "startYour7DayFreeTrialOfBitwardenSecretsManagerForTeams": {
-    "message": "Start your 7-Day free trial of Bitwarden Secrets Manager for Teams"
-  },
-  "startYour7DayFreeTrialOfBitwardenSecretsManagerForFamilies": {
-    "message": "Start your 7-Day free trial of Bitwarden Secrets Manager for Families"
-  },
-  "startYour7DayFreeTrialOfBitwardenSecretsManagerForEnterprise": {
-    "message": "Start your 7-Day free trial of Bitwarden Secrets Manager for Enterprise"
-  },
-  "startYour7DayFreeTrialOfBitwardenPasswordManager": {
-    "message": "Start your 7-Day free trial of Bitwarden Password Manager"
-  },
-  "startYour7DayFreeTrialOfBitwardenPasswordManagerForTeams": {
-    "message": "Start your 7-Day free trial of Bitwarden Password Manager for Teams"
-  },
-  "startYour7DayFreeTrialOfBitwardenPasswordManagerForFamilies": {
-    "message": "Start your 7-Day free trial of Bitwarden Password Manager for Families"
-  },
-  "startYour7DayFreeTrialOfBitwardenPasswordManagerForEnterprise": {
-    "message": "Start your 7-Day free trial of Bitwarden Password Manager for Enterprise"
+  "continueSettingUpFreeTrialSecretsManager": {
+    "message": "Pokračujte v nastavovaní vašej bezplatnej skúšobnej doby Bitwarden správcu tajomstiev"
   },
   "enterTeamsOrgInfo": {
     "message": "Enter your Teams organization information"
@@ -9029,6 +9002,66 @@
   "purchasedSeatsRemoved": {
     "message": "zakúpené sedenia boli odstránené"
   },
+  "environmentVariables": {
+    "message": "Premenné prostredia"
+  },
+  "organizationId": {
+    "message": "ID organizácie"
+  },
+  "projectIds": {
+    "message": "ID projektov"
+  },
+  "projectId": {
+    "message": "ID projektu"
+  },
+  "projectsAccessedByMachineAccount": {
+    "message": "Tento strojový účet môže pristupovať k nasledujúcim projektom."
+  },
+  "config": {
+    "message": "Konfigurácia"
+  },
+  "learnMoreAboutEmergencyAccess": {
+    "message": "Dozvedieť sa viac o núdzovom prístupe"
+  },
+  "learnMoreAboutMatchDetection": {
+    "message": "Dozvedieť sa viac o spôsobe mapovania"
+  },
+  "learnMoreAboutMasterPasswordReprompt": {
+    "message": "Dozvedieť sa viac o opätovnej výzve na zadanie hlavného hesla"
+  },
+  "learnMoreAboutSearchingYourVault": {
+    "message": "Dozvedieť sa viac o vyhľadávaní vo vašom trezore"
+  },
+  "learnMoreAboutYourAccountFingerprintPhrase": {
+    "message": "Dozvedieť sa viac o fráze odtlačku účtu"
+  },
+  "impactOfRotatingYourEncryptionKey": {
+    "message": "Dozvedieť sa viac o obnove vášho šifrovacieho kľúča"
+  },
+  "learnMoreAboutEncryptionAlgorithms": {
+    "message": "Dozvedieť sa viac o šifrovacom algoritme"
+  },
+  "learnMoreAboutKDFIterations": {
+    "message": "Dozvedieť sa viac o KDF iteráciách"
+  },
+  "learnMoreAboutLocalization": {
+    "message": "Dozvedieť sa viac o lokalizácii"
+  },
+  "learnMoreAboutWebsiteIcons": {
+    "message": "Dozvedieť sa viac o ikonách stránok"
+  },
+  "learnMoreAboutUserAccess": {
+    "message": "Dozvedieť sa viac o používateľskom prístupe"
+  },
+  "learnMoreAboutMemberRoles": {
+    "message": "Dozvedieť sa viac o povoleniach a rolách členov"
+  },
+  "whatIsACvvNumber": {
+    "message": "Čo je číslo CVV?"
+  },
+  "learnMoreAboutApi": {
+    "message": "Dozvedieť sa viac o Bitwarden API"
+  },
   "fileSends": {
     "message": "Sendy so súborom"
   },
@@ -9165,7 +9198,7 @@
     "message": "Aktuálne"
   },
   "secretsManagerSubscriptionInfo": {
-    "message": "Your Secrets Manager subscription will upgrade based on the plan selected"
+    "message": "Vaše predplatné Secrets Manager sa obnoví na základe vybraného plánu"
   },
   "bitwardenPasswordManager": {
     "message": "Bitwarden Správca Hesiel"

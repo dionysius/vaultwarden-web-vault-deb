@@ -8683,41 +8683,14 @@
   "manageBillingFromProviderPortalMessage": {
     "message": "Управление биллингом на портале провайдера"
   },
-  "startYour7DayFreeTrialOfBitwarden": {
-    "message": "Начните 7-дневную бесплатную пробную версию Bitwarden"
+  "continueSettingUpFreeTrial": {
+    "message": "Продолжить настройку бесплатной пробной версии Bitwarden"
   },
-  "startYour7DayFreeTrialOfBitwardenForTeams": {
-    "message": "Начните 7-дневную бесплатную пробную версию Bitwarden Teams"
+  "continueSettingUpFreeTrialPasswordManager": {
+    "message": "Продолжить настройку бесплатной пробной версии Bitwarden Password Manager"
   },
-  "startYour7DayFreeTrialOfBitwardenForFamilies": {
-    "message": "Начните 7-дневную бесплатную пробную версию Bitwarden Family"
-  },
-  "startYour7DayFreeTrialOfBitwardenForEnterprise": {
-    "message": "Начните 7-дневную бесплатную пробную версию Bitwarden Enterprise"
-  },
-  "startYour7DayFreeTrialOfBitwardenSecretsManager": {
-    "message": "Начните 7-дневную бесплатную пробную версию менеджера секретов Bitwarden"
-  },
-  "startYour7DayFreeTrialOfBitwardenSecretsManagerForTeams": {
-    "message": "Начните 7-дневную бесплатную пробную версию менеджера секретов Bitwarden Teams"
-  },
-  "startYour7DayFreeTrialOfBitwardenSecretsManagerForFamilies": {
-    "message": "Начните 7-дневную бесплатную пробную версию менеджера секретов Bitwarden Family"
-  },
-  "startYour7DayFreeTrialOfBitwardenSecretsManagerForEnterprise": {
-    "message": "Начните 7-дневную бесплатную пробную версию менеджера секретов Bitwarden Enterprise"
-  },
-  "startYour7DayFreeTrialOfBitwardenPasswordManager": {
-    "message": "Начните 7-дневную бесплатную пробную версию менеджера паролей Bitwarden"
-  },
-  "startYour7DayFreeTrialOfBitwardenPasswordManagerForTeams": {
-    "message": "Начните 7-дневную бесплатную пробную версию менеджера паролей Bitwarden Teams"
-  },
-  "startYour7DayFreeTrialOfBitwardenPasswordManagerForFamilies": {
-    "message": "Начните 7-дневную бесплатную пробную версию менеджера паролей Bitwarden Family"
-  },
-  "startYour7DayFreeTrialOfBitwardenPasswordManagerForEnterprise": {
-    "message": "Начните 7-дневную бесплатную пробную версию менеджера паролей Bitwarden Enterprise"
+  "continueSettingUpFreeTrialSecretsManager": {
+    "message": "Продолжить настройку бесплатной пробной версии менеджера секретов Bitwarden"
   },
   "enterTeamsOrgInfo": {
     "message": "Введите информацию о вашей команде"
@@ -9028,6 +9001,66 @@
   },
   "purchasedSeatsRemoved": {
     "message": "купленные места удалены"
+  },
+  "environmentVariables": {
+    "message": "Переменные окружения"
+  },
+  "organizationId": {
+    "message": "ID организации"
+  },
+  "projectIds": {
+    "message": "ID проектов"
+  },
+  "projectId": {
+    "message": "ID проекта"
+  },
+  "projectsAccessedByMachineAccount": {
+    "message": "С помощью этого машинного аккаунта можно получить доступ к следующим проектам."
+  },
+  "config": {
+    "message": "Конфигурация"
+  },
+  "learnMoreAboutEmergencyAccess": {
+    "message": "Узнайте больше об экстренном доступе"
+  },
+  "learnMoreAboutMatchDetection": {
+    "message": "Узнайте больше об обнаружении совпадений"
+  },
+  "learnMoreAboutMasterPasswordReprompt": {
+    "message": "Узнайте больше о повторном запросе мастер-пароля"
+  },
+  "learnMoreAboutSearchingYourVault": {
+    "message": "Узнайте больше о поиске в хранилище"
+  },
+  "learnMoreAboutYourAccountFingerprintPhrase": {
+    "message": "Узнайте больше о фразе отпечатка вашего аккаунта"
+  },
+  "impactOfRotatingYourEncryptionKey": {
+    "message": "Последствия поворота ключа шифрования"
+  },
+  "learnMoreAboutEncryptionAlgorithms": {
+    "message": "Узнайте больше об алгоритмах шифрования"
+  },
+  "learnMoreAboutKDFIterations": {
+    "message": "Узнайте больше об итерациях KDF"
+  },
+  "learnMoreAboutLocalization": {
+    "message": "Узнайте больше о локализации"
+  },
+  "learnMoreAboutWebsiteIcons": {
+    "message": "Узнайте больше об использовании значков веб-сайтов"
+  },
+  "learnMoreAboutUserAccess": {
+    "message": "Узнайте больше о пользовательском доступе"
+  },
+  "learnMoreAboutMemberRoles": {
+    "message": "Узнайте больше о ролях и разрешениях пользователей"
+  },
+  "whatIsACvvNumber": {
+    "message": "Что такое номер CVV?"
+  },
+  "learnMoreAboutApi": {
+    "message": "Узнайте больше об API Bitwarden"
   },
   "fileSends": {
     "message": "Файловая Send"

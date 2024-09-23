@@ -270,17 +270,17 @@
     "message": "Boolsk"
   },
   "cfTypeCheckbox": {
-    "message": "Checkbox"
+    "message": "Afkrydsningsfelt"
   },
   "cfTypeLinked": {
     "message": "Linket",
     "description": "This describes a field that is 'linked' (related) to another field."
   },
   "fieldType": {
-    "message": "Field type"
+    "message": "Felttype"
   },
   "fieldLabel": {
-    "message": "Field label"
+    "message": "Feltetiket"
   },
   "remove": {
     "message": "Fjern"
@@ -8291,7 +8291,7 @@
     "message": "Tilføj felt"
   },
   "editField": {
-    "message": "Edit field"
+    "message": "Redigér felt"
   },
   "items": {
     "message": "Emner"
@@ -8683,41 +8683,14 @@
   "manageBillingFromProviderPortalMessage": {
     "message": "Håndter fakturering via udbyderportalen"
   },
-  "startYour7DayFreeTrialOfBitwarden": {
-    "message": "Start den 7-dages gratis prøveperiode på Bitwarden"
+  "continueSettingUpFreeTrial": {
+    "message": "Fortsæt opsætningen af den gratis Bitwarden-prøveperiode"
   },
-  "startYour7DayFreeTrialOfBitwardenForTeams": {
-    "message": "Start den 7-dages gratis prøveperiode på Bitwarden til Teams"
+  "continueSettingUpFreeTrialPasswordManager": {
+    "message": "Fortsæt opsætningen af den gratis Bitwarden Password Manager-prøveperiode"
   },
-  "startYour7DayFreeTrialOfBitwardenForFamilies": {
-    "message": "Start den 7-dages gratis prøveperiode på Bitwarden til Familier"
-  },
-  "startYour7DayFreeTrialOfBitwardenForEnterprise": {
-    "message": "Start den 7-dages gratis prøveperiode på Bitwarden til Virksomhed"
-  },
-  "startYour7DayFreeTrialOfBitwardenSecretsManager": {
-    "message": "Start den 7-dages gratis prøveperiode på Bitwarden Secrets Manager"
-  },
-  "startYour7DayFreeTrialOfBitwardenSecretsManagerForTeams": {
-    "message": "Start den 7-dages gratis prøveperiode på Bitwarden Secrets Manager til Teams"
-  },
-  "startYour7DayFreeTrialOfBitwardenSecretsManagerForFamilies": {
-    "message": "Start den 7-dages gratis prøveperiode på Bitwarden Secrets Manager til Familier"
-  },
-  "startYour7DayFreeTrialOfBitwardenSecretsManagerForEnterprise": {
-    "message": "Start den 7-dages gratis prøveperiode på Bitwarden Secrets Manager til Virksomhed"
-  },
-  "startYour7DayFreeTrialOfBitwardenPasswordManager": {
-    "message": "Start den 7-dages gratis prøveperiode på Bitwarden Password Manager"
-  },
-  "startYour7DayFreeTrialOfBitwardenPasswordManagerForTeams": {
-    "message": "Start den 7-dages gratis prøveperiode på Bitwarden Password Manager til Teams"
-  },
-  "startYour7DayFreeTrialOfBitwardenPasswordManagerForFamilies": {
-    "message": "Start den 7-dages gratis prøveperiode på Bitwarden Password Manager til Familier"
-  },
-  "startYour7DayFreeTrialOfBitwardenPasswordManagerForEnterprise": {
-    "message": "Start den 7-dages gratis prøveperiode på Bitwarden Password Manager til Virksomhed"
+  "continueSettingUpFreeTrialSecretsManager": {
+    "message": "Fortsæt opsætningen af den gratis Bitwarden Secrets Manager-prøveperiode"
   },
   "enterTeamsOrgInfo": {
     "message": "Angiv Teams-organisationsinformation"
@@ -9028,6 +9001,66 @@
   },
   "purchasedSeatsRemoved": {
     "message": "købte pladser fjernet"
+  },
+  "environmentVariables": {
+    "message": "Miljøvariabler"
+  },
+  "organizationId": {
+    "message": "Organisations-ID"
+  },
+  "projectIds": {
+    "message": "Projekt-ID'er"
+  },
+  "projectId": {
+    "message": "Projekt-ID"
+  },
+  "projectsAccessedByMachineAccount": {
+    "message": "Følgende projekter kan tilgås af denne maskinkonto."
+  },
+  "config": {
+    "message": "Opsætning"
+  },
+  "learnMoreAboutEmergencyAccess": {
+    "message": "Læs mere om nødadgang"
+  },
+  "learnMoreAboutMatchDetection": {
+    "message": "Læs mere om matchdetektion"
+  },
+  "learnMoreAboutMasterPasswordReprompt": {
+    "message": "Læs om genanmodning af hovedadgangskode"
+  },
+  "learnMoreAboutSearchingYourVault": {
+    "message": "Læs mere om at søge i boksen"
+  },
+  "learnMoreAboutYourAccountFingerprintPhrase": {
+    "message": "Læs om fingeraftrykssætning til kontoen"
+  },
+  "impactOfRotatingYourEncryptionKey": {
+    "message": "Indvirkning af rotation af krypteringsnøgle"
+  },
+  "learnMoreAboutEncryptionAlgorithms": {
+    "message": "Læs mere om krypteringsalgoritmer"
+  },
+  "learnMoreAboutKDFIterations": {
+    "message": "Læs mere om KDF-iterationer"
+  },
+  "learnMoreAboutLocalization": {
+    "message": "Læs mere om lokalisering"
+  },
+  "learnMoreAboutWebsiteIcons": {
+    "message": "Læs mere om brug af webstedsikoner"
+  },
+  "learnMoreAboutUserAccess": {
+    "message": "Læs mere brugeradgang"
+  },
+  "learnMoreAboutMemberRoles": {
+    "message": "Læs mere om medlemsroller og tilladelser"
+  },
+  "whatIsACvvNumber": {
+    "message": "Hvad er et CVV-nummer?"
+  },
+  "learnMoreAboutApi": {
+    "message": "Læs mere om Bitwardens API"
   },
   "fileSends": {
     "message": "Fil-Sends"

@@ -270,17 +270,17 @@
     "message": "Булове"
   },
   "cfTypeCheckbox": {
-    "message": "Checkbox"
+    "message": "Поље за потврду"
   },
   "cfTypeLinked": {
     "message": "Повезано",
     "description": "This describes a field that is 'linked' (related) to another field."
   },
   "fieldType": {
-    "message": "Field type"
+    "message": "Врста поља"
   },
   "fieldLabel": {
-    "message": "Field label"
+    "message": "Ознака поља"
   },
   "remove": {
     "message": "Уклони"
@@ -530,7 +530,7 @@
     }
   },
   "editItemHeader": {
-    "message": "Edit $TYPE$",
+    "message": "Уреди $TYPE$",
     "placeholders": {
       "type": {
         "content": "$1",
@@ -7427,7 +7427,7 @@
     "message": "Отпремање датотеке"
   },
   "upload": {
-    "message": "Upload"
+    "message": "Отпреми"
   },
   "acceptedFormats": {
     "message": "Прихваћени формати:"
@@ -8291,7 +8291,7 @@
     "message": "Додај поље"
   },
   "editField": {
-    "message": "Edit field"
+    "message": "Уреди поље"
   },
   "items": {
     "message": "Ставке"
@@ -8683,41 +8683,14 @@
   "manageBillingFromProviderPortalMessage": {
     "message": "Управљајте наплатом из Provider Portal"
   },
-  "startYour7DayFreeTrialOfBitwarden": {
-    "message": "Започните своју 7-дневну бесплатну пробну Bitwarden-а"
+  "continueSettingUpFreeTrial": {
+    "message": "Наставите са подешавањем бесплатне пробне верзије Bitwarden-а"
   },
-  "startYour7DayFreeTrialOfBitwardenForTeams": {
-    "message": "Започните своју 7-дневну бесплатну пробну Bitwarden-а за Teams"
+  "continueSettingUpFreeTrialPasswordManager": {
+    "message": "Наставите са подешавањем бесплатне пробне верзије Bitwarden менаџер лозинки"
   },
-  "startYour7DayFreeTrialOfBitwardenForFamilies": {
-    "message": "Започните своју 7-дневну бесплатну пробну Bitwarden-а за Families"
-  },
-  "startYour7DayFreeTrialOfBitwardenForEnterprise": {
-    "message": "Започните своју 7-дневну бесплатну пробну Bitwarden-а за Enterprise"
-  },
-  "startYour7DayFreeTrialOfBitwardenSecretsManager": {
-    "message": "Започните своју 7-дневну бесплатну пробну Bitwarden Secrets Manager"
-  },
-  "startYour7DayFreeTrialOfBitwardenSecretsManagerForTeams": {
-    "message": "Започните своју 7-дневну бесплатну пробну Bitwarden Secrets Manager за Teams"
-  },
-  "startYour7DayFreeTrialOfBitwardenSecretsManagerForFamilies": {
-    "message": "Започните своју 7-дневну бесплатну пробну Bitwarden Secrets Manager за Families"
-  },
-  "startYour7DayFreeTrialOfBitwardenSecretsManagerForEnterprise": {
-    "message": "Започните своју 7-дневну бесплатну пробну Bitwarden Secrets Manager за Enterprise"
-  },
-  "startYour7DayFreeTrialOfBitwardenPasswordManager": {
-    "message": "Започните своју 7-дневну бесплатну пробну Bitwarden Password Manager"
-  },
-  "startYour7DayFreeTrialOfBitwardenPasswordManagerForTeams": {
-    "message": "Започните своју 7-дневну бесплатну пробну Bitwarden Password Manager за Teams"
-  },
-  "startYour7DayFreeTrialOfBitwardenPasswordManagerForFamilies": {
-    "message": "Започните своју 7-дневну бесплатну пробну Bitwarden Password Manager за Families"
-  },
-  "startYour7DayFreeTrialOfBitwardenPasswordManagerForEnterprise": {
-    "message": "Започните своју 7-дневну бесплатну пробну Bitwarden Password Manager за Enterprise"
+  "continueSettingUpFreeTrialSecretsManager": {
+    "message": "Наставите са подешавањем бесплатне пробне верзије Bitwarden Secrets Manager"
   },
   "enterTeamsOrgInfo": {
     "message": "Унесите своје информације о организацији Teams"
@@ -9029,6 +9002,66 @@
   "purchasedSeatsRemoved": {
     "message": "купљена места уклоњена"
   },
+  "environmentVariables": {
+    "message": "Environment variables"
+  },
+  "organizationId": {
+    "message": "Organization ID"
+  },
+  "projectIds": {
+    "message": "Project IDs"
+  },
+  "projectId": {
+    "message": "Project ID"
+  },
+  "projectsAccessedByMachineAccount": {
+    "message": "The following projects can be accessed by this machine account."
+  },
+  "config": {
+    "message": "Config"
+  },
+  "learnMoreAboutEmergencyAccess": {
+    "message": "Сазнајте више о приступу у хитним случајевима"
+  },
+  "learnMoreAboutMatchDetection": {
+    "message": "Сазнајте више о откривању подударања"
+  },
+  "learnMoreAboutMasterPasswordReprompt": {
+    "message": "Сазнајте више о поновном постављању главне лозинке"
+  },
+  "learnMoreAboutSearchingYourVault": {
+    "message": "Сазнајте више о претраживању вашег сефа"
+  },
+  "learnMoreAboutYourAccountFingerprintPhrase": {
+    "message": "Сазнајте више о фрази отиска прста на налогу"
+  },
+  "impactOfRotatingYourEncryptionKey": {
+    "message": "Утицај ротирања кључа за шифровање"
+  },
+  "learnMoreAboutEncryptionAlgorithms": {
+    "message": "Сазнајте више о алгоритмима за шифровање"
+  },
+  "learnMoreAboutKDFIterations": {
+    "message": "Сазнајте више о KDF понављања"
+  },
+  "learnMoreAboutLocalization": {
+    "message": "Сазнајте више о локализацији"
+  },
+  "learnMoreAboutWebsiteIcons": {
+    "message": "Сазнајте више о коришћењу икона веб локација"
+  },
+  "learnMoreAboutUserAccess": {
+    "message": "Сазнајте више о приступу корисника"
+  },
+  "learnMoreAboutMemberRoles": {
+    "message": "Сазнајте више о улогама и дозволама чланова"
+  },
+  "whatIsACvvNumber": {
+    "message": "Шта је CVV број?"
+  },
+  "learnMoreAboutApi": {
+    "message": "Сазнајте више о API Bitwarden-а"
+  },
   "fileSends": {
     "message": "Датотека „Send“"
   },
@@ -9165,7 +9198,7 @@
     "message": "Тренутно"
   },
   "secretsManagerSubscriptionInfo": {
-    "message": "Your Secrets Manager subscription will upgrade based on the plan selected"
+    "message": "Ваша претплата на Secrets Manager ће се надоградити на основу одабраног плана"
   },
   "bitwardenPasswordManager": {
     "message": "Bitwarden Менаџер Лозинке"

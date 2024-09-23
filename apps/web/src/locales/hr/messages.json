@@ -8683,41 +8683,14 @@
   "manageBillingFromProviderPortalMessage": {
     "message": "Upravljanje naplatom s Portala pružatelja usluga"
   },
-  "startYour7DayFreeTrialOfBitwarden": {
-    "message": "Započni 7-dnevnu besplatnu probu Bitwardena"
+  "continueSettingUpFreeTrial": {
+    "message": "Continue setting up your free trial of Bitwarden"
   },
-  "startYour7DayFreeTrialOfBitwardenForTeams": {
-    "message": "Započni 7-dnevnu besplatnu probu Bitwarden paketa Timovi"
+  "continueSettingUpFreeTrialPasswordManager": {
+    "message": "Continue setting up your free trial of Bitwarden Password Manager"
   },
-  "startYour7DayFreeTrialOfBitwardenForFamilies": {
-    "message": "Započni 7-dnevnu besplatnu probu Bitwarden paketa Obitelji"
-  },
-  "startYour7DayFreeTrialOfBitwardenForEnterprise": {
-    "message": "Započni 7-dnevnu besplatnu probu Bitwarden paketa Tvrtke"
-  },
-  "startYour7DayFreeTrialOfBitwardenSecretsManager": {
-    "message": "Započni 7-dnevnu besplatnu probu Bitwarden Secrets Managera"
-  },
-  "startYour7DayFreeTrialOfBitwardenSecretsManagerForTeams": {
-    "message": "Započni 7-dnevnu besplatnu probu Bitwarden Secrets Manager paketa Timovi"
-  },
-  "startYour7DayFreeTrialOfBitwardenSecretsManagerForFamilies": {
-    "message": "Započni 7-dnevnu besplatnu probu Bitwarden Secrets Manager paketa Obitelji"
-  },
-  "startYour7DayFreeTrialOfBitwardenSecretsManagerForEnterprise": {
-    "message": "Započni 7-dnevnu besplatnu probu Bitwarden Secrets Manager paketa Tvrtke"
-  },
-  "startYour7DayFreeTrialOfBitwardenPasswordManager": {
-    "message": "Započni 7-dnevnu besplatnu probu Bitwarden Upravitelja lozinki"
-  },
-  "startYour7DayFreeTrialOfBitwardenPasswordManagerForTeams": {
-    "message": "Započni 7-dnevnu besplatnu probu Bitwarden Upravitelj lozinki paketa Timovi"
-  },
-  "startYour7DayFreeTrialOfBitwardenPasswordManagerForFamilies": {
-    "message": "Započni 7-dnevnu besplatnu probu Bitwarden Upravitelj lozinki paketa Obitelji"
-  },
-  "startYour7DayFreeTrialOfBitwardenPasswordManagerForEnterprise": {
-    "message": "Započni 7-dnevnu besplatnu probu Bitwarden Upravitelj lozinki paketa Tvrtke"
+  "continueSettingUpFreeTrialSecretsManager": {
+    "message": "Continue setting up your free trial of Bitwarden Secrets Manager"
   },
   "enterTeamsOrgInfo": {
     "message": "Unesi podatke za organizaciju Timovi"
@@ -9028,6 +9001,66 @@
   },
   "purchasedSeatsRemoved": {
     "message": "kupljenih mjesta uklonjeno"
+  },
+  "environmentVariables": {
+    "message": "Environment variables"
+  },
+  "organizationId": {
+    "message": "Organization ID"
+  },
+  "projectIds": {
+    "message": "Project IDs"
+  },
+  "projectId": {
+    "message": "Project ID"
+  },
+  "projectsAccessedByMachineAccount": {
+    "message": "The following projects can be accessed by this machine account."
+  },
+  "config": {
+    "message": "Config"
+  },
+  "learnMoreAboutEmergencyAccess": {
+    "message": "Learn more about emergency access"
+  },
+  "learnMoreAboutMatchDetection": {
+    "message": "Learn more about match detection"
+  },
+  "learnMoreAboutMasterPasswordReprompt": {
+    "message": "Learn more about master password re-prompt"
+  },
+  "learnMoreAboutSearchingYourVault": {
+    "message": "Learn more about searching your vault"
+  },
+  "learnMoreAboutYourAccountFingerprintPhrase": {
+    "message": "Learn about your account fingerprint phrase"
+  },
+  "impactOfRotatingYourEncryptionKey": {
+    "message": "Impact of rotating your encryption key"
+  },
+  "learnMoreAboutEncryptionAlgorithms": {
+    "message": "Learn more about encryption algorithms"
+  },
+  "learnMoreAboutKDFIterations": {
+    "message": "Learn more about KDF iterations"
+  },
+  "learnMoreAboutLocalization": {
+    "message": "Learn more about localization"
+  },
+  "learnMoreAboutWebsiteIcons": {
+    "message": "Learn more about using website icons"
+  },
+  "learnMoreAboutUserAccess": {
+    "message": "Learn more about user access"
+  },
+  "learnMoreAboutMemberRoles": {
+    "message": "Learn more about member roles and permissions"
+  },
+  "whatIsACvvNumber": {
+    "message": "What is a CVV number?"
+  },
+  "learnMoreAboutApi": {
+    "message": "Learn more about Bitwarden's API"
   },
   "fileSends": {
     "message": "Send datoteke"

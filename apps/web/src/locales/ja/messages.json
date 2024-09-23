@@ -270,17 +270,17 @@
     "message": "真偽値"
   },
   "cfTypeCheckbox": {
-    "message": "Checkbox"
+    "message": "チェックボックス"
   },
   "cfTypeLinked": {
     "message": "リンク済",
     "description": "This describes a field that is 'linked' (related) to another field."
   },
   "fieldType": {
-    "message": "Field type"
+    "message": "フィールドタイプ"
   },
   "fieldLabel": {
-    "message": "Field label"
+    "message": "フィールドラベル"
   },
   "remove": {
     "message": "削除"
@@ -8291,7 +8291,7 @@
     "message": "フィールドを追加"
   },
   "editField": {
-    "message": "Edit field"
+    "message": "フィールドを編集"
   },
   "items": {
     "message": "アイテム"
@@ -8683,41 +8683,14 @@
   "manageBillingFromProviderPortalMessage": {
     "message": "プロバイダーポータルからの請求を管理"
   },
-  "startYour7DayFreeTrialOfBitwarden": {
-    "message": "Bitwarden の 7 日間無料トライアルを開始"
+  "continueSettingUpFreeTrial": {
+    "message": "Bitwarden の無料トライアルのセットアップを続ける"
   },
-  "startYour7DayFreeTrialOfBitwardenForTeams": {
-    "message": "Bitwarden チームの7日間無料トライアルを開始"
+  "continueSettingUpFreeTrialPasswordManager": {
+    "message": "Bitwarden パスワードマネージャーの無料トライアルのセットアップを続けます"
   },
-  "startYour7DayFreeTrialOfBitwardenForFamilies": {
-    "message": "Bitwarden ファミリーの7日間無料トライアルを開始"
-  },
-  "startYour7DayFreeTrialOfBitwardenForEnterprise": {
-    "message": "Bitwarden エンタープライズの7日間無料トライアルを開始"
-  },
-  "startYour7DayFreeTrialOfBitwardenSecretsManager": {
-    "message": "Bitwarden シークレットマネージャーの7日間無料トライアルを開始"
-  },
-  "startYour7DayFreeTrialOfBitwardenSecretsManagerForTeams": {
-    "message": "チーム向け Bitwarden シークレットマネージャーの7日間無料トライアルを開始"
-  },
-  "startYour7DayFreeTrialOfBitwardenSecretsManagerForFamilies": {
-    "message": "ファミリー向け Bitwarden シークレットマネージャーの7日間無料トライアルを開始"
-  },
-  "startYour7DayFreeTrialOfBitwardenSecretsManagerForEnterprise": {
-    "message": "エンタープライズ向け Bitwarden シークレットマネージャーの7日間無料トライアルを開始"
-  },
-  "startYour7DayFreeTrialOfBitwardenPasswordManager": {
-    "message": "Bitwarden パスワードマネージャーの7日間無料トライアルを開始"
-  },
-  "startYour7DayFreeTrialOfBitwardenPasswordManagerForTeams": {
-    "message": "チーム向け Bitwarden パスワードマネージャーの7日間無料トライアルを開始"
-  },
-  "startYour7DayFreeTrialOfBitwardenPasswordManagerForFamilies": {
-    "message": "ファミリー向け Bitwarden パスワードマネージャーの7日間無料トライアルを開始"
-  },
-  "startYour7DayFreeTrialOfBitwardenPasswordManagerForEnterprise": {
-    "message": "エンタープライズ向け Bitwarden パスワードマネージャーの7日間無料トライアルを開始"
+  "continueSettingUpFreeTrialSecretsManager": {
+    "message": "Bitwarden シークレットマネージャーの無料トライアルのセットアップを続けます"
   },
   "enterTeamsOrgInfo": {
     "message": "チームの組織情報を入力してください"
@@ -9028,6 +9001,66 @@
   },
   "purchasedSeatsRemoved": {
     "message": "購入済みシートが削除されました"
+  },
+  "environmentVariables": {
+    "message": "環境変数"
+  },
+  "organizationId": {
+    "message": "組織 ID"
+  },
+  "projectIds": {
+    "message": "プロジェクト ID"
+  },
+  "projectId": {
+    "message": "プロジェクト ID"
+  },
+  "projectsAccessedByMachineAccount": {
+    "message": "次のプロジェクトに、このマシンアカウントでアクセスできます。"
+  },
+  "config": {
+    "message": "設定"
+  },
+  "learnMoreAboutEmergencyAccess": {
+    "message": "緊急アクセスの詳細"
+  },
+  "learnMoreAboutMatchDetection": {
+    "message": "マッチ検出の詳細"
+  },
+  "learnMoreAboutMasterPasswordReprompt": {
+    "message": "マスターパスワードの再プロンプトの詳細"
+  },
+  "learnMoreAboutSearchingYourVault": {
+    "message": "保管庫検索の詳細"
+  },
+  "learnMoreAboutYourAccountFingerprintPhrase": {
+    "message": "アカウントのフィンガープリントフレーズの詳細"
+  },
+  "impactOfRotatingYourEncryptionKey": {
+    "message": "暗号化キーのロテートによる影響"
+  },
+  "learnMoreAboutEncryptionAlgorithms": {
+    "message": "暗号化アルゴリズムの詳細"
+  },
+  "learnMoreAboutKDFIterations": {
+    "message": "KDF 反復回数の詳細"
+  },
+  "learnMoreAboutLocalization": {
+    "message": "ローカライズの詳細"
+  },
+  "learnMoreAboutWebsiteIcons": {
+    "message": "ウェブサイトアイコンの使用方法の詳細"
+  },
+  "learnMoreAboutUserAccess": {
+    "message": "ユーザーアクセスの詳細"
+  },
+  "learnMoreAboutMemberRoles": {
+    "message": "メンバーのロールと権限の詳細"
+  },
+  "whatIsACvvNumber": {
+    "message": "CVV 番号とは?"
+  },
+  "learnMoreAboutApi": {
+    "message": "Bitwarden API の詳細"
   },
   "fileSends": {
     "message": "ファイル Send"

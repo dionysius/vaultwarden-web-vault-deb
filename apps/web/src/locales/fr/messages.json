@@ -8683,41 +8683,14 @@
   "manageBillingFromProviderPortalMessage": {
     "message": "Gérer la facturation depuis le Portail Fournisseur"
   },
-  "startYour7DayFreeTrialOfBitwarden": {
-    "message": "Commencez votre essai gratuit de 7 jours de Bitwarden"
+  "continueSettingUpFreeTrial": {
+    "message": "Continuer à configurer votre essai gratuit de Bitwarden"
   },
-  "startYour7DayFreeTrialOfBitwardenForTeams": {
-    "message": "Commencez votre essai gratuit de 7 jours de Bitwarden pour les Teams"
+  "continueSettingUpFreeTrialPasswordManager": {
+    "message": "Continuer à configurer votre essai gratuit du gestionnaire de mots de passe Bitwarden"
   },
-  "startYour7DayFreeTrialOfBitwardenForFamilies": {
-    "message": "Commencez votre essai gratuit de 7 jours de Bitwarden pour Familles"
-  },
-  "startYour7DayFreeTrialOfBitwardenForEnterprise": {
-    "message": "Commencez votre essai gratuit de 7 jours de Bitwarden pour Entreprise"
-  },
-  "startYour7DayFreeTrialOfBitwardenSecretsManager": {
-    "message": "Commencez votre essai gratuit de 7 jours de Bitwarden Secrets Manager"
-  },
-  "startYour7DayFreeTrialOfBitwardenSecretsManagerForTeams": {
-    "message": "Commencez votre essai gratuit de 7 jours de Bitwarden Secrets Manager pour Équipes"
-  },
-  "startYour7DayFreeTrialOfBitwardenSecretsManagerForFamilies": {
-    "message": "Commencez votre essai gratuit de 7 jours de Bitwarden Secrets Manager pour Familles"
-  },
-  "startYour7DayFreeTrialOfBitwardenSecretsManagerForEnterprise": {
-    "message": "Commencez votre essai gratuit de 7 jours de Bitwarden Secrets Manager pour Entreprise"
-  },
-  "startYour7DayFreeTrialOfBitwardenPasswordManager": {
-    "message": "Commencez votre essai gratuit de 7 jours du Gestionnaire de Mots de Passe Bitwarden"
-  },
-  "startYour7DayFreeTrialOfBitwardenPasswordManagerForTeams": {
-    "message": "Commencez votre essai gratuit de 7 jours du Gestionnaire de Mots de Passe Bitwarden pour Équipes"
-  },
-  "startYour7DayFreeTrialOfBitwardenPasswordManagerForFamilies": {
-    "message": "Commencez votre essai gratuit de 7 jours du Gestionnaire de Mots de Passe Bitwarden pour Familles"
-  },
-  "startYour7DayFreeTrialOfBitwardenPasswordManagerForEnterprise": {
-    "message": "Commencez votre essai gratuit de 7 jours du Gestionnaire de Mots de Passe Bitwarden pour Entreprise"
+  "continueSettingUpFreeTrialSecretsManager": {
+    "message": "Continuez à configurer votre essai gratuit de Bitwarden Secrets Manager"
   },
   "enterTeamsOrgInfo": {
     "message": "Entrez vos informations d'organisation pour Équipes"
@@ -9028,6 +9001,66 @@
   },
   "purchasedSeatsRemoved": {
     "message": "licenses achetées retirées"
+  },
+  "environmentVariables": {
+    "message": "Variables d'environnement"
+  },
+  "organizationId": {
+    "message": "ID d’organisation"
+  },
+  "projectIds": {
+    "message": "ID du projet"
+  },
+  "projectId": {
+    "message": "ID du projet"
+  },
+  "projectsAccessedByMachineAccount": {
+    "message": "Les projets suivants peuvent être consultés par ce compte machine."
+  },
+  "config": {
+    "message": "Configuration"
+  },
+  "learnMoreAboutEmergencyAccess": {
+    "message": "En savoir plus sur l'accès d'urgence"
+  },
+  "learnMoreAboutMatchDetection": {
+    "message": "En savoir plus sur la détection de correspondance"
+  },
+  "learnMoreAboutMasterPasswordReprompt": {
+    "message": "En savoir plus sur la demande de ressaisie du mot de passe principal"
+  },
+  "learnMoreAboutSearchingYourVault": {
+    "message": "En savoir plus sur la recherche dans votre coffre"
+  },
+  "learnMoreAboutYourAccountFingerprintPhrase": {
+    "message": "En savoir plus sur la phrase d'empreinte de votre compte"
+  },
+  "impactOfRotatingYourEncryptionKey": {
+    "message": "Impact de la rotation de votre clé de chiffrement"
+  },
+  "learnMoreAboutEncryptionAlgorithms": {
+    "message": "En savoir plus sur les algorithmes de chiffrement"
+  },
+  "learnMoreAboutKDFIterations": {
+    "message": "En savoir plus sur les itérations KDF"
+  },
+  "learnMoreAboutLocalization": {
+    "message": "En savoir plus sur la localisation"
+  },
+  "learnMoreAboutWebsiteIcons": {
+    "message": "En savoir plus sur l'utilisation des icônes de site web"
+  },
+  "learnMoreAboutUserAccess": {
+    "message": "En savoir plus sur l'accès des utilisateurs"
+  },
+  "learnMoreAboutMemberRoles": {
+    "message": "En savoir plus sur les rôles et les autorisations des membres"
+  },
+  "whatIsACvvNumber": {
+    "message": "Qu'est-ce qu'un numéro CVV ?"
+  },
+  "learnMoreAboutApi": {
+    "message": "En savoir plus sur l'API de Bitwarden"
   },
   "fileSends": {
     "message": "Déposer des Sends"

@@ -8683,41 +8683,14 @@
   "manageBillingFromProviderPortalMessage": {
     "message": "Manage billing from the Provider Portal"
   },
-  "startYour7DayFreeTrialOfBitwarden": {
-    "message": "Begin je 7-daagse gratis Bitwarden-proefperiode"
+  "continueSettingUpFreeTrial": {
+    "message": "Doorgaan met het instellen van je gratis proefperiode van Bitwarden"
   },
-  "startYour7DayFreeTrialOfBitwardenForTeams": {
-    "message": "Begin je 7-daagse gratis proefperiode voor Bitwarden voor Teams"
+  "continueSettingUpFreeTrialPasswordManager": {
+    "message": "Doorgaan met het instellen van je gratis proefperiode van Bitwarden Password Manager"
   },
-  "startYour7DayFreeTrialOfBitwardenForFamilies": {
-    "message": "Begin je 7-daagse gratis proefperiode voor Bitwarden voor Families"
-  },
-  "startYour7DayFreeTrialOfBitwardenForEnterprise": {
-    "message": "Begin je 7-daagse gratis proefperiode voor Bitwarden voor Enterprise"
-  },
-  "startYour7DayFreeTrialOfBitwardenSecretsManager": {
-    "message": "Begin je gratis 7-daagse proefperiode van Bitwarden Secrets Manager"
-  },
-  "startYour7DayFreeTrialOfBitwardenSecretsManagerForTeams": {
-    "message": "Begin je gratis 7-daagse proefperiode van Bitwarden Secrets Manager voor Teams"
-  },
-  "startYour7DayFreeTrialOfBitwardenSecretsManagerForFamilies": {
-    "message": "Begin je gratis 7-daagse proefperiode van Bitwarden Secrets Manager voor Families"
-  },
-  "startYour7DayFreeTrialOfBitwardenSecretsManagerForEnterprise": {
-    "message": "Begin je gratis 7-daagse proefperiode van Bitwarden Secrets Manager voor Enterprise"
-  },
-  "startYour7DayFreeTrialOfBitwardenPasswordManager": {
-    "message": "Begin je gratis 7-daagse proefperiode van Bitwarden Wachtwoord Manager"
-  },
-  "startYour7DayFreeTrialOfBitwardenPasswordManagerForTeams": {
-    "message": "Begin je gratis 7-daagse proefperiode van Bitwarden Wachtwoord Manager voor Teams"
-  },
-  "startYour7DayFreeTrialOfBitwardenPasswordManagerForFamilies": {
-    "message": "Begin je gratis 7-daagse proefperiode van Bitwarden Wachtwoord Manager voor Families"
-  },
-  "startYour7DayFreeTrialOfBitwardenPasswordManagerForEnterprise": {
-    "message": "Begin je gratis 7-daagse proefperiode van Bitwarden Wachtwoord Manager voor Enterprise"
+  "continueSettingUpFreeTrialSecretsManager": {
+    "message": "Doorgaan met het instellen van je gratis proefperiode van Bitwarden Secrets Manager"
   },
   "enterTeamsOrgInfo": {
     "message": "Voer je organisatie-informatie voor Teams in"
@@ -9028,6 +9001,66 @@
   },
   "purchasedSeatsRemoved": {
     "message": "gekochte plaatsen verwijderd"
+  },
+  "environmentVariables": {
+    "message": "Omgevingsvariabelen"
+  },
+  "organizationId": {
+    "message": "Organisatie-ID"
+  },
+  "projectIds": {
+    "message": "Project-IDs"
+  },
+  "projectId": {
+    "message": "Project-ID"
+  },
+  "projectsAccessedByMachineAccount": {
+    "message": "De volgende projecten zijn toegankelijk voor dit machine-account."
+  },
+  "config": {
+    "message": "Configuratie"
+  },
+  "learnMoreAboutEmergencyAccess": {
+    "message": "Lees meer over noodtoegang"
+  },
+  "learnMoreAboutMatchDetection": {
+    "message": "Lees meer over overeenkomstdetectie"
+  },
+  "learnMoreAboutMasterPasswordReprompt": {
+    "message": "Lees meer over het opnieuw vragen van het hoofdwachtwoord"
+  },
+  "learnMoreAboutSearchingYourVault": {
+    "message": "Lees meer over het doorzoeken van je kluis"
+  },
+  "learnMoreAboutYourAccountFingerprintPhrase": {
+    "message": "Lees meer over de vingerafdrukzin van je account"
+  },
+  "impactOfRotatingYourEncryptionKey": {
+    "message": "Impact van het roteren van je encryptiesleutel"
+  },
+  "learnMoreAboutEncryptionAlgorithms": {
+    "message": "Lees meer over versleutelingsalgoritmen"
+  },
+  "learnMoreAboutKDFIterations": {
+    "message": "Lees meer over KDF-iteraties"
+  },
+  "learnMoreAboutLocalization": {
+    "message": "Lees meer over lokaliseren"
+  },
+  "learnMoreAboutWebsiteIcons": {
+    "message": "Lees meer over het gebruik van website-pictogrammen"
+  },
+  "learnMoreAboutUserAccess": {
+    "message": "Lees meer over gebruikerstoegang"
+  },
+  "learnMoreAboutMemberRoles": {
+    "message": "Lees meer over rollen en rechten van leden"
+  },
+  "whatIsACvvNumber": {
+    "message": "Wat is een CVV-nummer?"
+  },
+  "learnMoreAboutApi": {
+    "message": "Lees meer over Bitwarden's API"
   },
   "fileSends": {
     "message": "Bestand-Sends"
