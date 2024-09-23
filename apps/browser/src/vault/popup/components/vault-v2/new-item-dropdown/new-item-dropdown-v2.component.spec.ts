@@ -7,6 +7,8 @@ import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.servic
 import { CipherType } from "@bitwarden/common/vault/enums";
 import { ButtonModule, DialogService, MenuModule } from "@bitwarden/components";
 
+import { BrowserApi } from "../../../../../platform/browser/browser-api";
+import BrowserPopupUtils from "../../../../../platform/popup/browser-popup-utils";
 import { AddEditQueryParams } from "../add-edit/add-edit-v2.component";
 import { AddEditFolderDialogComponent } from "../add-edit-folder-dialog/add-edit-folder-dialog.component";
 
@@ -17,6 +19,10 @@ describe("NewItemDropdownV2Component", () => {
   let fixture: ComponentFixture<NewItemDropdownV2Component>;
   const open = jest.fn();
   const navigate = jest.fn();
+
+  jest
+    .spyOn(BrowserApi, "getTabFromCurrentWindow")
+    .mockResolvedValue({ url: "https://example.com" } as chrome.tabs.Tab);
 
   beforeEach(async () => {
     open.mockClear();
@@ -54,46 +60,74 @@ describe("NewItemDropdownV2Component", () => {
       jest.spyOn(component, "newItemNavigate");
     });
 
-    it("navigates to new login", () => {
-      component.newItemNavigate(CipherType.Login);
+    it("navigates to new login", async () => {
+      await component.newItemNavigate(CipherType.Login);
 
       expect(navigate).toHaveBeenCalledWith(["/add-cipher"], {
-        queryParams: { type: CipherType.Login.toString(), ...emptyParams },
+        queryParams: {
+          type: CipherType.Login.toString(),
+          name: "example.com",
+          uri: "https://example.com",
+          ...emptyParams,
+        },
       });
     });
 
-    it("navigates to new card", () => {
-      component.newItemNavigate(CipherType.Card);
+    it("navigates to new card", async () => {
+      await component.newItemNavigate(CipherType.Card);
 
       expect(navigate).toHaveBeenCalledWith(["/add-cipher"], {
         queryParams: { type: CipherType.Card.toString(), ...emptyParams },
       });
     });
 
-    it("navigates to new identity", () => {
-      component.newItemNavigate(CipherType.Identity);
+    it("navigates to new identity", async () => {
+      await component.newItemNavigate(CipherType.Identity);
 
       expect(navigate).toHaveBeenCalledWith(["/add-cipher"], {
         queryParams: { type: CipherType.Identity.toString(), ...emptyParams },
       });
     });
 
-    it("navigates to new note", () => {
-      component.newItemNavigate(CipherType.SecureNote);
+    it("navigates to new note", async () => {
+      await component.newItemNavigate(CipherType.SecureNote);
 
       expect(navigate).toHaveBeenCalledWith(["/add-cipher"], {
         queryParams: { type: CipherType.SecureNote.toString(), ...emptyParams },
       });
     });
 
-    it("includes initial values", () => {
+    it("includes initial values", async () => {
       component.initialValues = {
         folderId: "222-333-444",
         organizationId: "444-555-666",
         collectionId: "777-888-999",
       } as NewItemInitialValues;
 
-      component.newItemNavigate(CipherType.Login);
+      await component.newItemNavigate(CipherType.Login);
+
+      expect(navigate).toHaveBeenCalledWith(["/add-cipher"], {
+        queryParams: {
+          type: CipherType.Login.toString(),
+          folderId: "222-333-444",
+          organizationId: "444-555-666",
+          collectionId: "777-888-999",
+          uri: "https://example.com",
+          name: "example.com",
+        },
+      });
+    });
+
+    it("does not include name or uri when the extension is popped out", async () => {
+      jest.spyOn(BrowserPopupUtils, "inPopout").mockReturnValue(true);
+
+      component.initialValues = {
+        folderId: "222-333-444",
+        organizationId: "444-555-666",
+        collectionId: "777-888-999",
+      } as NewItemInitialValues;
+
+      await component.newItemNavigate(CipherType.Login);
 
       expect(navigate).toHaveBeenCalledWith(["/add-cipher"], {
         queryParams: {
