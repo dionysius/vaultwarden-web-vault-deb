@@ -125,7 +125,7 @@ export class LoginDetailsSectionComponent implements OnInit {
           Object.assign(cipher.login, {
             username: value.username,
             password: value.password,
-            totp: value.totp,
+            totp: value.totp?.trim(),
           } as LoginView);
 
           return cipher;

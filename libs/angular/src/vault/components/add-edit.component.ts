@@ -329,6 +329,11 @@ export class AddEditComponent implements OnInit, OnDestroy {
       this.cipher.card.expYear = normalizeExpiryYearFormat(this.cipher.card.expYear);
     }
 
+    // trim whitespace from the TOTP field
+    if (this.cipher.type === this.cipherType.Login && this.cipher.login.totp) {
+      this.cipher.login.totp = this.cipher.login.totp.trim();
+    }
+
     if (this.cipher.name == null || this.cipher.name === "") {
       this.platformUtilsService.showToast(
         "error",
