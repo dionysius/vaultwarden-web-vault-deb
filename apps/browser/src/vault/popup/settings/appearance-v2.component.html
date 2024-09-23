@@ -1,4 +1,4 @@
-<popup-page>
+<popup-page [loading]="formLoading">
   <popup-header slot="header" [pageTitle]="'appearance' | i18n" showBackButton>
     <ng-container slot="end">
       <app-pop-out></app-pop-out>
@@ -23,9 +23,14 @@
         <bit-label>{{ "showNumberOfAutofillSuggestions" | i18n }}</bit-label>
       </bit-form-control>
 
-      <bit-form-control disableMargin>
+      <bit-form-control>
         <input bitCheckbox formControlName="enableFavicon" type="checkbox" />
         <bit-label>{{ "enableFavicon" | i18n }}</bit-label>
+      </bit-form-control>
+
+      <bit-form-control disableMargin>
+        <input bitCheckbox formControlName="enableAnimations" type="checkbox" />
+        <bit-label>{{ "showAnimations" | i18n }}</bit-label>
       </bit-form-control>
     </bit-card>
   </form>
