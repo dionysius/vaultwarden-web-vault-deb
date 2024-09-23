@@ -24,12 +24,13 @@ import {
   SingleUserDependency,
   UserDependency,
 } from "@bitwarden/common/tools/dependencies";
+import { isDynamic } from "@bitwarden/common/tools/state/state-constraints-dependency";
 import { UserStateSubject } from "@bitwarden/common/tools/state/user-state-subject";
-import { Constraints } from "@bitwarden/common/tools/types";
 
-import { PolicyEvaluator, Randomizer } from "../abstractions";
-import { mapPolicyToEvaluatorV2 } from "../rx";
+import { Randomizer } from "../abstractions";
+import { mapPolicyToConstraints } from "../rx";
 import { CredentialGeneratorConfiguration as Configuration } from "../types/credential-generator-configuration";
+import { GeneratorConstraints } from "../types/generator-constraints";
 
 type Policy$Dependencies = UserDependency;
 type Settings$Dependencies = Partial<UserDependency>;
@@ -44,9 +45,6 @@ type Generate$Dependencies = Simplify<Partial<OnDependency> & Partial<UserDepend
    */
   website$?: Observable<string>;
 };
-// FIXME: once the modernization is complete, switch the type parameters
-// in `PolicyEvaluator<P, S>` and bake-in the constraints type.
-type Evaluator<Settings, Policy> = PolicyEvaluator<Policy, Settings> & Constraints<Settings>;
 
 export class CredentialGeneratorService {
   constructor(
@@ -61,7 +59,7 @@ export class CredentialGeneratorService {
    *   this emits. Otherwise, a new credential is emitted when the settings
    *   update.
    */
-  generate$<Settings, Policy>(
+  generate$<Settings extends object, Policy>(
     configuration: Readonly<Configuration<Settings, Policy>>,
     dependencies?: Generate$Dependencies,
   ) {
@@ -96,7 +94,7 @@ export class CredentialGeneratorService {
    * @returns an observable that emits settings
    * @remarks the observable enforces policies on the settings
    */
-  settings$<Settings, Policy>(
+  settings$<Settings extends object, Policy>(
     configuration: Configuration<Settings, Policy>,
     dependencies?: Settings$Dependencies,
   ) {
@@ -118,10 +116,9 @@ export class CredentialGeneratorService {
 
     const settings$ = combineLatest([state$, this.policy$(configuration, { userId$ })]).pipe(
       map(([settings, policy]) => {
-        // FIXME: create `onLoadApply` that wraps these operations
-        const applied = policy.applyPolicy(settings);
-        const sanitized = policy.sanitize(applied);
-        return sanitized;
+        const calibration = isDynamic(policy) ? policy.calibrate(settings) : policy;
+        const adjusted = calibration.adjust(settings);
+        return adjusted;
       }),
     );
 
@@ -135,7 +132,7 @@ export class CredentialGeneratorService {
    *  `dependencies.singleUserId$` becomes available.
    * @remarks the subject enforces policy for the settings
    */
-  async settings<Settings, Policy>(
+  async settings<Settings extends object, Policy>(
     configuration: Readonly<Configuration<Settings, Policy>>,
     dependencies: SingleUserDependency,
   ) {
@@ -143,19 +140,14 @@ export class CredentialGeneratorService {
       dependencies.singleUserId$.pipe(filter((userId) => !!userId)),
     );
     const state = this.stateProvider.getUser(userId, configuration.settings.account);
+    const constraints$ = this.policy$(configuration, { userId$: dependencies.singleUserId$ });
 
-    // FIXME: apply policy to the settings - this should happen *within* the subject.
-    // Note that policies could be evaluated when the settings are saved or when they
-    // are loaded. The existing subject presently could only apply settings on save
-    // (by wiring the policy in as a dependency and applying with "nextState"), and
-    // even that has a limitation since arbitrary dependencies do not trigger state
-    // emissions.
-    const subject = new UserStateSubject(state, dependencies);
+    const subject = new UserStateSubject(state, { ...dependencies, constraints$ });
 
     return subject;
   }
 
-  /** Get the policy for the provided configuration
+  /** Get the policy constraints for the provided configuration
    *  @param dependencies.userId$ determines which user's policy is loaded
    *  @returns an observable that emits the policy once `dependencies.userId$`
    *   and the policy become available.
@@ -163,20 +155,20 @@ export class CredentialGeneratorService {
   policy$<Settings, Policy>(
     configuration: Configuration<Settings, Policy>,
     dependencies: Policy$Dependencies,
-  ): Observable<Evaluator<Settings, Policy>> {
+  ): Observable<GeneratorConstraints<Settings>> {
     const completion$ = dependencies.userId$.pipe(ignoreElements(), endWith(true));
 
-    const policy$ = dependencies.userId$.pipe(
+    const constraints$ = dependencies.userId$.pipe(
       mergeMap((userId) => {
-        // complete policy emissions otherwise `mergeMap` holds `policy$` open indefinitely
+        // complete policy emissions otherwise `mergeMap` holds `policies$` open indefinitely
         const policies$ = this.policyService
           .getAll$(configuration.policy.type, userId)
           .pipe(takeUntil(completion$));
         return policies$;
       }),
-      mapPolicyToEvaluatorV2(configuration.policy),
+      mapPolicyToConstraints(configuration.policy),
     );
 
-    return policy$;
+    return constraints$;
   }
 }

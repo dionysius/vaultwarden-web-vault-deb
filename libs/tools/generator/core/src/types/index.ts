@@ -5,6 +5,7 @@ export * from "./credential-generator";
 export * from "./credential-generator-configuration";
 export * from "./eff-username-generator-options";
 export * from "./forwarder-options";
+export * from "./generator-constraints";
 export * from "./generated-credential";
 export * from "./generator-options";
 export * from "./generator-type";

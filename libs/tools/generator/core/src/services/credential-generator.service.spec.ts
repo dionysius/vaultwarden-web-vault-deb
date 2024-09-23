@@ -5,7 +5,7 @@ import { PolicyService } from "@bitwarden/common/admin-console/abstractions/poli
 import { PolicyType } from "@bitwarden/common/admin-console/enums";
 import { Policy } from "@bitwarden/common/admin-console/models/domain/policy";
 import { GENERATOR_DISK, UserKeyDefinition } from "@bitwarden/common/platform/state";
-import { Constraints } from "@bitwarden/common/tools/types";
+import { StateConstraints } from "@bitwarden/common/tools/types";
 import { OrganizationId, PolicyId, UserId } from "@bitwarden/common/types/guid";
 
 import {
@@ -14,8 +14,12 @@ import {
   awaitAsync,
   ObservableTracker,
 } from "../../../../../common/spec";
-import { PolicyEvaluator, Randomizer } from "../abstractions";
-import { CredentialGeneratorConfiguration, GeneratedCredential } from "../types";
+import { Randomizer } from "../abstractions";
+import {
+  CredentialGeneratorConfiguration,
+  GeneratedCredential,
+  GeneratorConstraints,
+} from "../types";
 
 import { CredentialGeneratorService } from "./credential-generator.service";
 
@@ -72,18 +76,37 @@ const SomeConfiguration: CredentialGeneratorConfiguration<SomeSettings, SomePoli
     createEvaluator: () => {
       throw new Error("this should never be called");
     },
-    createEvaluatorV2: (policy) => {
-      return {
-        foo: {},
-        policy,
-        policyInEffect: policy.fooPolicy,
-        applyPolicy: (settings) => {
-          return policy.fooPolicy ? { foo: `apply(${settings.foo})` } : settings;
-        },
-        sanitize: (settings) => {
-          return policy.fooPolicy ? { foo: `sanitize(${settings.foo})` } : settings;
-        },
-      } as PolicyEvaluator<SomePolicy, SomeSettings> & Constraints<SomeSettings>;
+    toConstraints: (policy) => {
+      if (policy.fooPolicy) {
+        return {
+          constraints: {
+            policyInEffect: true,
+          },
+          calibrate(state: SomeSettings) {
+            return {
+              constraints: {},
+              adjust(state: SomeSettings) {
+                return { foo: `adjusted(${state.foo})` };
+              },
+              fix(state: SomeSettings) {
+                return { foo: `fixed(${state.foo})` };
+              },
+            } satisfies StateConstraints<SomeSettings>;
+          },
+        } satisfies GeneratorConstraints<SomeSettings>;
+      } else {
+        return {
+          constraints: {
+            policyInEffect: false,
+          },
+          adjust(state: SomeSettings) {
+            return state;
+          },
+          fix(state: SomeSettings) {
+            return state;
+          },
+        } satisfies GeneratorConstraints<SomeSettings>;
+      }
     },
   },
 };
@@ -378,7 +401,7 @@ describe("CredentialGeneratorService", () => {
 
       const result = await firstValueFrom(generator.settings$(SomeConfiguration));
 
-      expect(result).toEqual({ foo: "sanitize(apply(value))" });
+      expect(result).toEqual({ foo: "adjusted(value)" });
     });
 
     it("follows changes to the active user", async () => {
@@ -525,17 +548,16 @@ describe("CredentialGeneratorService", () => {
   });
 
   describe("policy$", () => {
-    it("creates a disabled policy evaluator when there is no policy", async () => {
+    it("creates constraints without policy in effect when there is no policy", async () => {
       const generator = new CredentialGeneratorService(randomizer, stateProvider, policyService);
       const userId$ = new BehaviorSubject(SomeUser).asObservable();
 
       const result = await firstValueFrom(generator.policy$(SomeConfiguration, { userId$ }));
 
-      expect(result.policy).toEqual(SomeConfiguration.policy.disabledValue);
-      expect(result.policyInEffect).toBeFalsy();
+      expect(result.constraints.policyInEffect).toBeFalsy();
     });
 
-    it("creates an active policy evaluator when there is a policy", async () => {
+    it("creates constraints with policy in effect when there is a policy", async () => {
       const generator = new CredentialGeneratorService(randomizer, stateProvider, policyService);
       const userId$ = new BehaviorSubject(SomeUser).asObservable();
       const policy$ = new BehaviorSubject([somePolicy]);
@@ -543,8 +565,7 @@ describe("CredentialGeneratorService", () => {
 
       const result = await firstValueFrom(generator.policy$(SomeConfiguration, { userId$ }));
 
-      expect(result.policy).toEqual({ fooPolicy: true });
-      expect(result.policyInEffect).toBeTruthy();
+      expect(result.constraints.policyInEffect).toBeTruthy();
     });
 
     it("follows policy emissions", async () => {
@@ -553,7 +574,7 @@ describe("CredentialGeneratorService", () => {
       const userId$ = userId.asObservable();
       const somePolicySubject = new BehaviorSubject([somePolicy]);
       policyService.getAll$.mockReturnValueOnce(somePolicySubject.asObservable());
-      const emissions: any = [];
+      const emissions: GeneratorConstraints<SomeSettings>[] = [];
       const sub = generator
         .policy$(SomeConfiguration, { userId$ })
         .subscribe((policy) => emissions.push(policy));
@@ -564,10 +585,8 @@ describe("CredentialGeneratorService", () => {
       sub.unsubscribe();
       const [someResult, anotherResult] = emissions;
 
-      expect(someResult.policy).toEqual({ fooPolicy: true });
-      expect(someResult.policyInEffect).toBeTruthy();
-      expect(anotherResult.policy).toEqual(SomeConfiguration.policy.disabledValue);
-      expect(anotherResult.policyInEffect).toBeFalsy();
+      expect(someResult.constraints.policyInEffect).toBeTruthy();
+      expect(anotherResult.constraints.policyInEffect).toBeFalsy();
     });
 
     it("follows user emissions", async () => {
@@ -577,7 +596,7 @@ describe("CredentialGeneratorService", () => {
       const somePolicy$ = new BehaviorSubject([somePolicy]).asObservable();
       const anotherPolicy$ = new BehaviorSubject([]).asObservable();
       policyService.getAll$.mockReturnValueOnce(somePolicy$).mockReturnValueOnce(anotherPolicy$);
-      const emissions: any = [];
+      const emissions: GeneratorConstraints<SomeSettings>[] = [];
       const sub = generator
         .policy$(SomeConfiguration, { userId$ })
         .subscribe((policy) => emissions.push(policy));
@@ -588,10 +607,8 @@ describe("CredentialGeneratorService", () => {
       sub.unsubscribe();
       const [someResult, anotherResult] = emissions;
 
-      expect(someResult.policy).toEqual({ fooPolicy: true });
-      expect(someResult.policyInEffect).toBeTruthy();
-      expect(anotherResult.policy).toEqual(SomeConfiguration.policy.disabledValue);
-      expect(anotherResult.policyInEffect).toBeFalsy();
+      expect(someResult.constraints.policyInEffect).toBeTruthy();
+      expect(anotherResult.constraints.policyInEffect).toBeFalsy();
     });
 
     it("errors when the user errors", async () => {

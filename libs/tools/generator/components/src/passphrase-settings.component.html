@@ -5,7 +5,7 @@
   <form class="box" [formGroup]="settings" class="tw-container">
     <div class="tw-mb-4">
       <bit-card>
-        <bit-form-field>
+        <bit-form-field disableMargin>
           <bit-label>{{ "numWords" | i18n }}</bit-label>
           <input
             bitInput
@@ -28,10 +28,11 @@
           <input bitCheckbox formControlName="capitalize" id="capitalize" type="checkbox" />
           <bit-label>{{ "capitalize" | i18n }}</bit-label>
         </bit-form-control>
-        <bit-form-control>
+        <bit-form-control [disableMargin]="!policyInEffect">
           <input bitCheckbox formControlName="includeNumber" id="include-number" type="checkbox" />
           <bit-label>{{ "includeNumber" | i18n }}</bit-label>
         </bit-form-control>
+        <p *ngIf="policyInEffect" bitTypography="helper">{{ "generatorPolicyInEffect" | i18n }}</p>
       </bit-card>
     </div>
   </form>

@@ -23,7 +23,7 @@ const Controls = Object.freeze({
 /** Options group for passphrases */
 @Component({
   standalone: true,
-  selector: "bit-passphrase-settings",
+  selector: "tools-passphrase-settings",
   templateUrl: "passphrase-settings.component.html",
   imports: [DependenciesModule],
 })
@@ -81,24 +81,22 @@ export class PassphraseSettingsComponent implements OnInit, OnDestroy {
     this.generatorService
       .policy$(Generators.Passphrase, { userId$: singleUserId$ })
       .pipe(takeUntil(this.destroyed$))
-      .subscribe((policy) => {
+      .subscribe(({ constraints }) => {
         this.settings
           .get(Controls.numWords)
-          .setValidators(toValidators(Controls.numWords, Generators.Passphrase, policy));
+          .setValidators(toValidators(Controls.numWords, Generators.Passphrase, constraints));
 
         this.settings
           .get(Controls.wordSeparator)
-          .setValidators(toValidators(Controls.wordSeparator, Generators.Passphrase, policy));
+          .setValidators(toValidators(Controls.wordSeparator, Generators.Passphrase, constraints));
 
         // forward word boundaries to the template (can't do it through the rx form)
-        // FIXME: move the boundary logic fully into the policy evaluator
-        this.minNumWords =
-          policy.numWords?.min ?? Generators.Passphrase.settings.constraints.numWords.min;
-        this.maxNumWords =
-          policy.numWords?.max ?? Generators.Passphrase.settings.constraints.numWords.max;
+        this.minNumWords = constraints.numWords.min;
+        this.maxNumWords = constraints.numWords.max;
+        this.policyInEffect = constraints.policyInEffect;
 
-        this.toggleEnabled(Controls.capitalize, !policy.policy.capitalize);
-        this.toggleEnabled(Controls.includeNumber, !policy.policy.includeNumber);
+        this.toggleEnabled(Controls.capitalize, !constraints.capitalize?.readonly);
+        this.toggleEnabled(Controls.includeNumber, !constraints.includeNumber?.readonly);
       });
 
     // now that outputs are set up, connect inputs
@@ -111,11 +109,14 @@ export class PassphraseSettingsComponent implements OnInit, OnDestroy {
   /** attribute binding for numWords[max] */
   protected maxNumWords: number;
 
+  /** display binding for enterprise policy notice */
+  protected policyInEffect: boolean;
+
   private toggleEnabled(setting: keyof typeof Controls, enabled: boolean) {
     if (enabled) {
-      this.settings.get(setting).enable();
+      this.settings.get(setting).enable({ emitEvent: false });
     } else {
-      this.settings.get(setting).disable();
+      this.settings.get(setting).disable({ emitEvent: false });
     }
   }
 

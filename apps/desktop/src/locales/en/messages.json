@@ -444,6 +444,10 @@
   "ambiguous": {
     "message": "Avoid ambiguous characters"
   },
+  "generatorPolicyInEffect": {
+    "message": "Enterprise policy requirements have been applied to your generator options.",
+    "description": "Indicates that a policy limits the credential generator screen."
+  },
   "searchCollection": {
     "message": "Search collection"
   },

@@ -17,37 +17,20 @@ import {
   startWith,
   Observable,
   Subscription,
+  last,
+  concat,
+  combineLatestWith,
+  catchError,
+  EMPTY,
 } from "rxjs";
-import { Simplify } from "type-fest";
 
 import { SingleUserState } from "@bitwarden/common/platform/state";
 
-import { Dependencies, SingleUserDependency, WhenDependency } from "../dependencies";
+import { WithConstraints } from "../types";
 
-/** dependencies accepted by the user state subject */
-export type UserStateSubjectDependencies<State, Dependency> = Simplify<
-  SingleUserDependency &
-    Partial<WhenDependency> &
-    Partial<Dependencies<Dependency>> & {
-      /** Compute the next stored value. If this is not set, values
-       *  provided to `next` unconditionally override state.
-       *  @param current the value stored in state
-       *  @param next the value received by the user state subject's `next` member
-       *  @param dependencies the latest value from `Dependencies<TCombine>`
-       *  @returns the value to store in state
-       */
-      nextValue?: (current: State, next: State, dependencies?: Dependency) => State;
-      /**
-       * Compute whether the state should update. If this is not set, values
-       * provided to `next` always update the state.
-       * @param current the value stored in state
-       * @param next the value received by the user state subject's `next` member
-       * @param dependencies the latest value from `Dependencies<TCombine>`
-       * @returns `true` if the value should be stored, otherwise `false`.
-       */
-      shouldUpdate?: (value: State, next: State, dependencies?: Dependency) => boolean;
-    }
->;
+import { IdentityConstraint } from "./identity-state-constraint";
+import { isDynamic } from "./state-constraints-dependency";
+import { UserStateSubjectDependencies } from "./user-state-subject-dependencies";
 
 /**
  * Adapt a state provider to an rxjs subject.
@@ -61,7 +44,7 @@ export type UserStateSubjectDependencies<State, Dependency> = Simplify<
  * @template State the state stored by the subject
  * @template Dependencies use-specific dependencies provided by the user.
  */
-export class UserStateSubject<State, Dependencies = null>
+export class UserStateSubject<State extends object, Dependencies = null>
   extends Observable<State>
   implements SubjectLike<State>
 {
@@ -99,6 +82,35 @@ export class UserStateSubject<State, Dependencies = null>
       }),
       distinctUntilChanged(),
     );
+    const constraints$ = (
+      this.dependencies.constraints$ ?? new BehaviorSubject(new IdentityConstraint<State>())
+    ).pipe(
+      // FIXME: this should probably log that an error occurred
+      catchError(() => EMPTY),
+    );
+
+    // normalize input in case this `UserStateSubject` is not the only
+    // observer of the backing store
+    const input$ = combineLatest([this.input, constraints$]).pipe(
+      map(([input, constraints]) => {
+        const calibration = isDynamic(constraints) ? constraints.calibrate(input) : constraints;
+        const state = calibration.adjust(input);
+        return state;
+      }),
+    );
+
+    // when the output subscription completes, its last-emitted value
+    // loops around to the input for finalization
+    const finalize$ = this.pipe(
+      last(),
+      combineLatestWith(constraints$),
+      map(([output, constraints]) => {
+        const calibration = isDynamic(constraints) ? constraints.calibrate(output) : constraints;
+        const state = calibration.fix(output);
+        return state;
+      }),
+    );
+    const updates$ = concat(input$, finalize$);
 
     // observe completion
     const whenComplete$ = when$.pipe(ignoreElements(), endWith(true));
@@ -106,9 +118,24 @@ export class UserStateSubject<State, Dependencies = null>
     const userIdComplete$ = this.dependencies.singleUserId$.pipe(ignoreElements(), endWith(true));
     const completion$ = race(whenComplete$, inputComplete$, userIdComplete$);
 
-    // wire subscriptions
-    this.outputSubscription = this.state.state$.subscribe(this.output);
-    this.inputSubscription = combineLatest([this.input, when$, userIdAvailable$])
+    // wire output before input so that output normalizes the current state
+    // before any `next` value is processed
+    this.outputSubscription = this.state.state$
+      .pipe(
+        combineLatestWith(constraints$),
+        map(([rawState, constraints]) => {
+          const calibration = isDynamic(constraints)
+            ? constraints.calibrate(rawState)
+            : constraints;
+          const state = calibration.adjust(rawState);
+          return {
+            constraints: calibration.constraints,
+            state,
+          };
+        }),
+      )
+      .subscribe(this.output);
+    this.inputSubscription = combineLatest([updates$, when$, userIdAvailable$])
       .pipe(
         filter(([_, when]) => when),
         map(([state]) => state),
@@ -144,14 +171,19 @@ export class UserStateSubject<State, Dependencies = null>
    * @returns the subscription
    */
   subscribe(observer?: Partial<Observer<State>> | ((value: State) => void) | null): Subscription {
-    return this.output.subscribe(observer);
+    return this.output.pipe(map((wc) => wc.state)).subscribe(observer);
   }
 
   // using subjects to ensure the right semantics are followed;
   // if greater efficiency becomes desirable, consider implementing
   // `SubjectLike` directly
   private input = new Subject<State>();
-  private readonly output = new ReplaySubject<State>(1);
+  private readonly output = new ReplaySubject<WithConstraints<State>>(1);
+
+  /** A stream containing settings and their last-applied constraints. */
+  get withConstraints$() {
+    return this.output.asObservable();
+  }
 
   private inputSubscription: Unsubscribable;
   private outputSubscription: Unsubscribable;

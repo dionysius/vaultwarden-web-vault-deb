@@ -13,7 +13,7 @@ import { PasswordSettingsComponent } from "./password-settings.component";
 /** Options group for passwords */
 @Component({
   standalone: true,
-  selector: "bit-password-generator",
+  selector: "tools-password-generator",
   templateUrl: "password-generator.component.html",
   imports: [DependenciesModule, PasswordSettingsComponent, PassphraseSettingsComponent],
 })

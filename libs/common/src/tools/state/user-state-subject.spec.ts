@@ -2,12 +2,36 @@ import { BehaviorSubject, of, Subject } from "rxjs";
 
 import { UserId } from "@bitwarden/common/types/guid";
 
-import { awaitAsync, FakeSingleUserState } from "../../../spec";
+import { awaitAsync, FakeSingleUserState, ObservableTracker } from "../../../spec";
+import { StateConstraints } from "../types";
 
 import { UserStateSubject } from "./user-state-subject";
 
 const SomeUser = "some user" as UserId;
 type TestType = { foo: string };
+
+function fooMaxLength(maxLength: number): StateConstraints<TestType> {
+  return Object.freeze({
+    constraints: { foo: { maxLength } },
+    adjust: function (state: TestType): TestType {
+      return {
+        foo: state.foo.slice(0, this.constraints.foo.maxLength),
+      };
+    },
+    fix: function (state: TestType): TestType {
+      return {
+        foo: `finalized|${state.foo.slice(0, this.constraints.foo.maxLength)}`,
+      };
+    },
+  });
+}
+
+const DynamicFooMaxLength = Object.freeze({
+  expected: fooMaxLength(0),
+  calibrate(state: TestType) {
+    return this.expected;
+  },
+});
 
 describe("UserStateSubject", () => {
   describe("dependencies", () => {
@@ -53,6 +77,19 @@ describe("UserStateSubject", () => {
       await awaitAsync();
 
       expect(nextValue).toHaveBeenCalledTimes(1);
+    });
+
+    it("waits for constraints$", async () => {
+      const state = new FakeSingleUserState<TestType>(SomeUser, { foo: "init" });
+      const singleUserId$ = new BehaviorSubject(SomeUser);
+      const constraints$ = new Subject<StateConstraints<TestType>>();
+      const subject = new UserStateSubject(state, { singleUserId$, constraints$ });
+      const tracker = new ObservableTracker(subject);
+
+      constraints$.next(fooMaxLength(3));
+      const [initResult] = await tracker.pauseUntilReceived(1);
+
+      expect(initResult).toEqual({ foo: "ini" });
     });
   });
 
@@ -245,6 +282,116 @@ describe("UserStateSubject", () => {
       await awaitAsync();
 
       expect(nextValue).toHaveBeenCalled();
+    });
+
+    it("applies constraints$ on init", async () => {
+      const state = new FakeSingleUserState<TestType>(SomeUser, { foo: "init" });
+      const singleUserId$ = new BehaviorSubject(SomeUser);
+      const constraints$ = new BehaviorSubject(fooMaxLength(2));
+      const subject = new UserStateSubject(state, { singleUserId$, constraints$ });
+      const tracker = new ObservableTracker(subject);
+
+      const [result] = await tracker.pauseUntilReceived(1);
+
+      expect(result).toEqual({ foo: "in" });
+    });
+
+    it("applies dynamic constraints", async () => {
+      const state = new FakeSingleUserState<TestType>(SomeUser, { foo: "init" });
+      const singleUserId$ = new BehaviorSubject(SomeUser);
+      const constraints$ = new BehaviorSubject(DynamicFooMaxLength);
+      const subject = new UserStateSubject(state, { singleUserId$, constraints$ });
+      const tracker = new ObservableTracker(subject);
+      const expected: TestType = { foo: "next" };
+      const emission = tracker.expectEmission();
+
+      subject.next(expected);
+      const actual = await emission;
+
+      expect(actual).toEqual({ foo: "" });
+    });
+
+    it("applies constraints$ on constraints$ emission", async () => {
+      const state = new FakeSingleUserState<TestType>(SomeUser, { foo: "init" });
+      const singleUserId$ = new BehaviorSubject(SomeUser);
+      const constraints$ = new BehaviorSubject(fooMaxLength(2));
+      const subject = new UserStateSubject(state, { singleUserId$, constraints$ });
+      const tracker = new ObservableTracker(subject);
+
+      constraints$.next(fooMaxLength(1));
+      const [, result] = await tracker.pauseUntilReceived(2);
+
+      expect(result).toEqual({ foo: "i" });
+    });
+
+    it("applies constraints$ on next", async () => {
+      const state = new FakeSingleUserState<TestType>(SomeUser, { foo: "init" });
+      const singleUserId$ = new BehaviorSubject(SomeUser);
+      const constraints$ = new BehaviorSubject(fooMaxLength(2));
+      const subject = new UserStateSubject(state, { singleUserId$, constraints$ });
+      const tracker = new ObservableTracker(subject);
+
+      subject.next({ foo: "next" });
+      const [, result] = await tracker.pauseUntilReceived(2);
+
+      expect(result).toEqual({ foo: "ne" });
+    });
+
+    it("applies latest constraints$ on next", async () => {
+      const state = new FakeSingleUserState<TestType>(SomeUser, { foo: "init" });
+      const singleUserId$ = new BehaviorSubject(SomeUser);
+      const constraints$ = new BehaviorSubject(fooMaxLength(2));
+      const subject = new UserStateSubject(state, { singleUserId$, constraints$ });
+      const tracker = new ObservableTracker(subject);
+
+      constraints$.next(fooMaxLength(3));
+      subject.next({ foo: "next" });
+      const [, , result] = await tracker.pauseUntilReceived(3);
+
+      expect(result).toEqual({ foo: "nex" });
+    });
+
+    it("waits for constraints$", async () => {
+      const state = new FakeSingleUserState<TestType>(SomeUser, { foo: "init" });
+      const singleUserId$ = new BehaviorSubject(SomeUser);
+      const constraints$ = new Subject<StateConstraints<TestType>>();
+      const subject = new UserStateSubject(state, { singleUserId$, constraints$ });
+      const tracker = new ObservableTracker(subject);
+
+      subject.next({ foo: "next" });
+      constraints$.next(fooMaxLength(3));
+      // `init` is also waiting and is processed before `next`
+      const [, nextResult] = await tracker.pauseUntilReceived(2);
+
+      expect(nextResult).toEqual({ foo: "nex" });
+    });
+
+    it("uses the last-emitted value from constraints$ when constraints$ errors", async () => {
+      const state = new FakeSingleUserState<TestType>(SomeUser, { foo: "init" });
+      const singleUserId$ = new BehaviorSubject(SomeUser);
+      const constraints$ = new BehaviorSubject(fooMaxLength(3));
+      const subject = new UserStateSubject(state, { singleUserId$, constraints$ });
+      const tracker = new ObservableTracker(subject);
+
+      constraints$.error({ some: "error" });
+      subject.next({ foo: "next" });
+      const [, nextResult] = await tracker.pauseUntilReceived(1);
+
+      expect(nextResult).toEqual({ foo: "nex" });
+    });
+
+    it("uses the last-emitted value from constraints$ when constraints$ completes", async () => {
+      const state = new FakeSingleUserState<TestType>(SomeUser, { foo: "init" });
+      const singleUserId$ = new BehaviorSubject(SomeUser);
+      const constraints$ = new BehaviorSubject(fooMaxLength(3));
+      const subject = new UserStateSubject(state, { singleUserId$, constraints$ });
+      const tracker = new ObservableTracker(subject);
+
+      constraints$.complete();
+      subject.next({ foo: "next" });
+      const [, nextResult] = await tracker.pauseUntilReceived(1);
+
+      expect(nextResult).toEqual({ foo: "nex" });
     });
   });
 
@@ -472,6 +619,152 @@ describe("UserStateSubject", () => {
       const subject = new UserStateSubject(state, { singleUserId$ });
 
       expect(subject.userId).toEqual(SomeUser);
+    });
+  });
+
+  describe("withConstraints$", () => {
+    it("emits the next value with an empty constraint", async () => {
+      const state = new FakeSingleUserState<TestType>(SomeUser, { foo: "init" });
+      const singleUserId$ = new BehaviorSubject(SomeUser);
+      const subject = new UserStateSubject(state, { singleUserId$ });
+      const tracker = new ObservableTracker(subject.withConstraints$);
+      const expected: TestType = { foo: "next" };
+      const emission = tracker.expectEmission();
+
+      subject.next(expected);
+      const actual = await emission;
+
+      expect(actual.state).toEqual(expected);
+      expect(actual.constraints).toEqual({});
+    });
+
+    it("ceases emissions once the subject completes", async () => {
+      const initialState = { foo: "init" };
+      const state = new FakeSingleUserState<TestType>(SomeUser, initialState);
+      const singleUserId$ = new BehaviorSubject(SomeUser);
+      const subject = new UserStateSubject(state, { singleUserId$ });
+      const tracker = new ObservableTracker(subject.withConstraints$);
+
+      subject.complete();
+      subject.next({ foo: "ignored" });
+      const [result] = await tracker.pauseUntilReceived(1);
+
+      expect(result.state).toEqual(initialState);
+      expect(tracker.emissions.length).toEqual(1);
+    });
+
+    it("emits constraints$ on constraints$ emission", async () => {
+      const state = new FakeSingleUserState<TestType>(SomeUser, { foo: "init" });
+      const singleUserId$ = new BehaviorSubject(SomeUser);
+      const constraints$ = new BehaviorSubject(fooMaxLength(2));
+      const subject = new UserStateSubject(state, { singleUserId$, constraints$ });
+      const tracker = new ObservableTracker(subject.withConstraints$);
+      const expected = fooMaxLength(1);
+      const emission = tracker.expectEmission();
+
+      constraints$.next(expected);
+      const result = await emission;
+
+      expect(result.state).toEqual({ foo: "i" });
+      expect(result.constraints).toEqual(expected.constraints);
+    });
+
+    it("emits dynamic constraints", async () => {
+      const state = new FakeSingleUserState<TestType>(SomeUser, { foo: "init" });
+      const singleUserId$ = new BehaviorSubject(SomeUser);
+      const constraints$ = new BehaviorSubject(DynamicFooMaxLength);
+      const subject = new UserStateSubject(state, { singleUserId$, constraints$ });
+      const tracker = new ObservableTracker(subject.withConstraints$);
+      const expected: TestType = { foo: "next" };
+      const emission = tracker.expectEmission();
+
+      subject.next(expected);
+      const actual = await emission;
+
+      expect(actual.state).toEqual({ foo: "" });
+      expect(actual.constraints).toEqual(DynamicFooMaxLength.expected.constraints);
+    });
+
+    it("emits constraints$ on next", async () => {
+      const state = new FakeSingleUserState<TestType>(SomeUser, { foo: "init" });
+      const singleUserId$ = new BehaviorSubject(SomeUser);
+      const expected = fooMaxLength(2);
+      const constraints$ = new BehaviorSubject(expected);
+      const subject = new UserStateSubject(state, { singleUserId$, constraints$ });
+      const tracker = new ObservableTracker(subject.withConstraints$);
+      const emission = tracker.expectEmission();
+
+      subject.next({ foo: "next" });
+      const result = await emission;
+
+      expect(result.state).toEqual({ foo: "ne" });
+      expect(result.constraints).toEqual(expected.constraints);
+    });
+
+    it("emits the latest constraints$ on next", async () => {
+      const state = new FakeSingleUserState<TestType>(SomeUser, { foo: "init" });
+      const singleUserId$ = new BehaviorSubject(SomeUser);
+      const constraints$ = new BehaviorSubject(fooMaxLength(2));
+      const subject = new UserStateSubject(state, { singleUserId$, constraints$ });
+      const tracker = new ObservableTracker(subject.withConstraints$);
+      const expected = fooMaxLength(3);
+      constraints$.next(expected);
+
+      const emission = tracker.expectEmission();
+      subject.next({ foo: "next" });
+      const result = await emission;
+
+      expect(result.state).toEqual({ foo: "nex" });
+      expect(result.constraints).toEqual(expected.constraints);
+    });
+
+    it("waits for constraints$", async () => {
+      const state = new FakeSingleUserState<TestType>(SomeUser, { foo: "init" });
+      const singleUserId$ = new BehaviorSubject(SomeUser);
+      const constraints$ = new Subject<StateConstraints<TestType>>();
+      const subject = new UserStateSubject(state, { singleUserId$, constraints$ });
+      const tracker = new ObservableTracker(subject.withConstraints$);
+      const expected = fooMaxLength(3);
+
+      subject.next({ foo: "next" });
+      constraints$.next(expected);
+      // `init` is also waiting and is processed before `next`
+      const [, nextResult] = await tracker.pauseUntilReceived(2);
+
+      expect(nextResult.state).toEqual({ foo: "nex" });
+      expect(nextResult.constraints).toEqual(expected.constraints);
+    });
+
+    it("emits the last-emitted value from constraints$ when constraints$ errors", async () => {
+      const state = new FakeSingleUserState<TestType>(SomeUser, { foo: "init" });
+      const singleUserId$ = new BehaviorSubject(SomeUser);
+      const expected = fooMaxLength(3);
+      const constraints$ = new BehaviorSubject(expected);
+      const subject = new UserStateSubject(state, { singleUserId$, constraints$ });
+      const tracker = new ObservableTracker(subject.withConstraints$);
+
+      constraints$.error({ some: "error" });
+      subject.next({ foo: "next" });
+      const [, nextResult] = await tracker.pauseUntilReceived(1);
+
+      expect(nextResult.state).toEqual({ foo: "nex" });
+      expect(nextResult.constraints).toEqual(expected.constraints);
+    });
+
+    it("emits the last-emitted value from constraints$ when constraints$ completes", async () => {
+      const state = new FakeSingleUserState<TestType>(SomeUser, { foo: "init" });
+      const singleUserId$ = new BehaviorSubject(SomeUser);
+      const expected = fooMaxLength(3);
+      const constraints$ = new BehaviorSubject(expected);
+      const subject = new UserStateSubject(state, { singleUserId$, constraints$ });
+      const tracker = new ObservableTracker(subject.withConstraints$);
+
+      constraints$.complete();
+      subject.next({ foo: "next" });
+      const [, nextResult] = await tracker.pauseUntilReceived(1);
+
+      expect(nextResult.state).toEqual({ foo: "nex" });
+      expect(nextResult.constraints).toEqual(expected.constraints);
     });
   });
 });
