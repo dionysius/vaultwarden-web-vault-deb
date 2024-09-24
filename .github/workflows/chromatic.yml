@@ -38,7 +38,7 @@ jobs:
           echo "node_version=$NODE_VERSION" >> $GITHUB_OUTPUT
 
       - name: Set up Node
-        uses: actions/setup-node@1e60f620b9541d16bece96c5465dc8ee9832be0b # v4.0.3
+        uses: actions/setup-node@0a44ba7841725637a19e28fa30b79a866c81b0a6 # v4.0.4
         with:
           node-version: ${{ steps.retrieve-node-version.outputs.node_version }}
 
@@ -57,7 +57,7 @@ jobs:
         run: npm run build-storybook:ci
 
       - name: Publish to Chromatic
-        uses: chromaui/action@b984808b772126a9f44b2b7737b131b68a2ede32 # v11.7.1
+        uses: chromaui/action@c883154c39671e194613be2f09ff4d17bb95f1e6 # v11.10.3
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
