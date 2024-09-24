@@ -234,7 +234,7 @@ const safeProviders: SafeProvider[] = [
     provide: NativeMessageHandlerService,
     deps: [
       StateServiceAbstraction,
-      CryptoServiceAbstraction,
+      EncryptService,
       CryptoFunctionServiceAbstraction,
       MessagingServiceAbstraction,
       EncryptedMessageHandlerService,

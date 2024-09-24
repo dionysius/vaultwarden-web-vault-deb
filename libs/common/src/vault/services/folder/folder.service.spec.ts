@@ -49,7 +49,13 @@ describe("Folder Service", () => {
     );
     encryptService.decryptToUtf8.mockResolvedValue("DEC");
 
-    folderService = new FolderService(cryptoService, i18nService, cipherService, stateProvider);
+    folderService = new FolderService(
+      cryptoService,
+      encryptService,
+      i18nService,
+      cipherService,
+      stateProvider,
+    );
 
     folderState = stateProvider.activeUser.getFake(FOLDER_ENCRYPTED_FOLDERS);
 
@@ -62,9 +68,9 @@ describe("Folder Service", () => {
     model.id = "2";
     model.name = "Test Folder";
 
-    cryptoService.encrypt.mockResolvedValue(new EncString("ENC"));
+    encryptService.encrypt.mockResolvedValue(new EncString("ENC"));
 
-    const result = await folderService.encrypt(model);
+    const result = await folderService.encrypt(model, null);
 
     expect(result).toEqual({
       id: "2",
@@ -185,7 +191,7 @@ describe("Folder Service", () => {
 
     beforeEach(() => {
       encryptedKey = new EncString("Re-encrypted Folder");
-      cryptoService.encrypt.mockResolvedValue(encryptedKey);
+      encryptService.encrypt.mockResolvedValue(encryptedKey);
     });
 
     it("returns re-encrypted user folders", async () => {

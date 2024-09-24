@@ -31,6 +31,7 @@ import { PlanResponse } from "@bitwarden/common/billing/models/response/plan.res
 import { FeatureFlag } from "@bitwarden/common/enums/feature-flag.enum";
 import { ConfigService } from "@bitwarden/common/platform/abstractions/config/config.service";
 import { CryptoService } from "@bitwarden/common/platform/abstractions/crypto.service";
+import { EncryptService } from "@bitwarden/common/platform/abstractions/encrypt.service";
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 import { LogService } from "@bitwarden/common/platform/abstractions/log.service";
 import { MessagingService } from "@bitwarden/common/platform/abstractions/messaging.service";
@@ -147,6 +148,7 @@ export class OrganizationPlansComponent implements OnInit, OnDestroy {
     private i18nService: I18nService,
     private platformUtilsService: PlatformUtilsService,
     private cryptoService: CryptoService,
+    private encryptService: EncryptService,
     private router: Router,
     private syncService: SyncService,
     private policyService: PolicyService,
@@ -590,7 +592,7 @@ export class OrganizationPlansComponent implements OnInit, OnDestroy {
       if (this.createOrganization) {
         const orgKey = await this.cryptoService.makeOrgKey<OrgKey>();
         const key = orgKey[0].encryptedString;
-        const collection = await this.cryptoService.encrypt(
+        const collection = await this.encryptService.encrypt(
           this.i18nService.t("defaultCollection"),
           orgKey[1],
         );
@@ -744,7 +746,7 @@ export class OrganizationPlansComponent implements OnInit, OnDestroy {
       );
       const providerKey = await this.cryptoService.getProviderKey(this.providerId);
       providerRequest.organizationCreateRequest.key = (
-        await this.cryptoService.encrypt(orgKey.key, providerKey)
+        await this.encryptService.encrypt(orgKey.key, providerKey)
       ).encryptedString;
       const orgId = (
         await this.apiService.postProviderCreateOrganization(this.providerId, providerRequest)

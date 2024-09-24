@@ -21,6 +21,7 @@ import { EventType } from "@bitwarden/common/enums";
 import { ErrorResponse } from "@bitwarden/common/models/response/error.response";
 import { BroadcasterService } from "@bitwarden/common/platform/abstractions/broadcaster.service";
 import { CryptoService } from "@bitwarden/common/platform/abstractions/crypto.service";
+import { EncryptService } from "@bitwarden/common/platform/abstractions/encrypt.service";
 import { FileDownloadService } from "@bitwarden/common/platform/abstractions/file-download/file-download.service";
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 import { LogService } from "@bitwarden/common/platform/abstractions/log.service";
@@ -87,6 +88,7 @@ export class ViewComponent implements OnDestroy, OnInit {
     protected tokenService: TokenService,
     protected i18nService: I18nService,
     protected cryptoService: CryptoService,
+    protected encryptService: EncryptService,
     protected platformUtilsService: PlatformUtilsService,
     protected auditService: AuditService,
     protected win: Window,
@@ -442,7 +444,7 @@ export class ViewComponent implements OnDestroy, OnInit {
         attachment.key != null
           ? attachment.key
           : await this.cryptoService.getOrgKey(this.cipher.organizationId);
-      const decBuf = await this.cryptoService.decryptFromBytes(encBuf, key);
+      const decBuf = await this.encryptService.decryptToBytes(encBuf, key);
       this.fileDownloadService.download({
         fileName: attachment.fileName,
         blobData: decBuf,

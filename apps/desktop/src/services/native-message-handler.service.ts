@@ -3,7 +3,7 @@ import { firstValueFrom } from "rxjs";
 
 import { NativeMessagingVersion } from "@bitwarden/common/enums";
 import { CryptoFunctionService } from "@bitwarden/common/platform/abstractions/crypto-function.service";
-import { CryptoService } from "@bitwarden/common/platform/abstractions/crypto.service";
+import { EncryptService } from "@bitwarden/common/platform/abstractions/encrypt.service";
 import { MessagingService } from "@bitwarden/common/platform/abstractions/messaging.service";
 import { StateService } from "@bitwarden/common/platform/abstractions/state.service";
 import { Utils } from "@bitwarden/common/platform/misc/utils";
@@ -31,7 +31,7 @@ export class NativeMessageHandlerService {
 
   constructor(
     private stateService: StateService,
-    private cryptoService: CryptoService,
+    private encryptService: EncryptService,
     private cryptoFunctionService: CryptoFunctionService,
     private messagingService: MessagingService,
     private encryptedMessageHandlerService: EncryptedMessageHandlerService,
@@ -162,7 +162,7 @@ export class NativeMessageHandlerService {
     payload: DecryptedCommandData,
     key: SymmetricCryptoKey,
   ): Promise<EncString> {
-    return await this.cryptoService.encrypt(JSON.stringify(payload), key);
+    return await this.encryptService.encrypt(JSON.stringify(payload), key);
   }
 
   private async decryptPayload(message: EncryptedMessage): Promise<DecryptedCommandData> {
@@ -182,7 +182,7 @@ export class NativeMessageHandlerService {
     }
 
     try {
-      let decryptedResult = await this.cryptoService.decryptToUtf8(
+      let decryptedResult = await this.encryptService.decryptToUtf8(
         message.encryptedCommand as EncString,
         this.ddgSharedSecret,
       );

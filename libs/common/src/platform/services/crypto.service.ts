@@ -48,7 +48,6 @@ import { StateService } from "../abstractions/state.service";
 import { KeySuffixOptions, HashPurpose, EncryptionType } from "../enums";
 import { convertValues } from "../misc/convert-values";
 import { EFFLongWordList } from "../misc/wordlist";
-import { EncArrayBuffer } from "../models/domain/enc-array-buffer";
 import { EncString, EncryptedString } from "../models/domain/enc-string";
 import { SymmetricCryptoKey } from "../models/domain/symmetric-crypto-key";
 import { ActiveUserState, StateProvider } from "../state";
@@ -857,58 +856,6 @@ export class CryptoService implements CryptoServiceAbstraction {
     } else if (keySuffix === KeySuffixOptions.Pin) {
       await this.pinService.clearOldPinKeyEncryptedMasterKey(userId);
     }
-  }
-
-  // --DEPRECATED METHODS--
-
-  /**
-   * @deprecated July 25 2022: Get the key you need from CryptoService (getKeyForUserEncryption or getOrgKey)
-   * and then call encryptService.encrypt
-   */
-  async encrypt(plainValue: string | Uint8Array, key?: SymmetricCryptoKey): Promise<EncString> {
-    key ||= await this.getUserKeyWithLegacySupport();
-    return await this.encryptService.encrypt(plainValue, key);
-  }
-
-  /**
-   * @deprecated July 25 2022: Get the key you need from CryptoService (getKeyForUserEncryption or getOrgKey)
-   * and then call encryptService.encryptToBytes
-   */
-  async encryptToBytes(plainValue: Uint8Array, key?: SymmetricCryptoKey): Promise<EncArrayBuffer> {
-    key ||= await this.getUserKeyWithLegacySupport();
-    return this.encryptService.encryptToBytes(plainValue, key);
-  }
-
-  /**
-   * @deprecated July 25 2022: Get the key you need from CryptoService (getKeyForUserEncryption or getOrgKey)
-   * and then call encryptService.decryptToBytes
-   */
-  async decryptToBytes(encString: EncString, key?: SymmetricCryptoKey): Promise<Uint8Array> {
-    key ||= await this.getUserKeyWithLegacySupport();
-    return this.encryptService.decryptToBytes(encString, key);
-  }
-
-  /**
-   * @deprecated July 25 2022: Get the key you need from CryptoService (getKeyForUserEncryption or getOrgKey)
-   * and then call encryptService.decryptToUtf8
-   */
-  async decryptToUtf8(encString: EncString, key?: SymmetricCryptoKey): Promise<string> {
-    key ||= await this.getUserKeyWithLegacySupport();
-    return await this.encryptService.decryptToUtf8(encString, key);
-  }
-
-  /**
-   * @deprecated July 25 2022: Get the key you need from CryptoService (getKeyForUserEncryption or getOrgKey)
-   * and then call encryptService.decryptToBytes
-   */
-  async decryptFromBytes(encBuffer: EncArrayBuffer, key: SymmetricCryptoKey): Promise<Uint8Array> {
-    if (encBuffer == null) {
-      throw new Error("No buffer provided for decryption.");
-    }
-
-    key ||= await this.getUserKeyWithLegacySupport();
-
-    return this.encryptService.decryptToBytes(encBuffer, key);
   }
 
   userKey$(userId: UserId): Observable<UserKey> {

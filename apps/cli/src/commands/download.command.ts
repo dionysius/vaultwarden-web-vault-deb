@@ -1,6 +1,6 @@
 import * as fet from "node-fetch";
 
-import { CryptoService } from "@bitwarden/common/platform/abstractions/crypto.service";
+import { EncryptService } from "@bitwarden/common/platform/abstractions/encrypt.service";
 import { EncArrayBuffer } from "@bitwarden/common/platform/models/domain/enc-array-buffer";
 import { SymmetricCryptoKey } from "@bitwarden/common/platform/models/domain/symmetric-crypto-key";
 
@@ -9,7 +9,7 @@ import { FileResponse } from "../models/response/file.response";
 import { CliUtils } from "../utils";
 
 export abstract class DownloadCommand {
-  constructor(protected cryptoService: CryptoService) {}
+  constructor(protected encryptService: EncryptService) {}
 
   protected async saveAttachmentToFile(
     url: string,
@@ -26,7 +26,7 @@ export abstract class DownloadCommand {
 
     try {
       const encBuf = await EncArrayBuffer.fromResponse(response);
-      const decBuf = await this.cryptoService.decryptFromBytes(encBuf, key);
+      const decBuf = await this.encryptService.decryptToBytes(encBuf, key);
       if (process.env.BW_SERVE === "true") {
         const res = new FileResponse(Buffer.from(decBuf), fileName);
         return Response.success(res);

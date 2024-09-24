@@ -15,7 +15,6 @@ import {
   UserPublicKey,
 } from "../../types/key";
 import { KeySuffixOptions, HashPurpose } from "../enums";
-import { EncArrayBuffer } from "../models/domain/enc-array-buffer";
 import { EncString } from "../models/domain/enc-string";
 import { SymmetricCryptoKey } from "../models/domain/symmetric-crypto-key";
 
@@ -373,37 +372,6 @@ export abstract class CryptoService {
    * @param userId The desired user
    */
   abstract clearDeprecatedKeys(keySuffix: KeySuffixOptions, userId?: string): Promise<void>;
-  /**
-   * @deprecated July 25 2022: Get the key you need from CryptoService (getKeyForUserEncryption or getOrgKey)
-   * and then call encryptService.encrypt
-   */
-  abstract encrypt(plainValue: string | Uint8Array, key?: SymmetricCryptoKey): Promise<EncString>;
-  /**
-   * @deprecated July 25 2022: Get the key you need from CryptoService (getKeyForUserEncryption or getOrgKey)
-   * and then call encryptService.encryptToBytes
-   */
-  abstract encryptToBytes(
-    plainValue: Uint8Array,
-    key?: SymmetricCryptoKey,
-  ): Promise<EncArrayBuffer>;
-  /**
-   * @deprecated July 25 2022: Get the key you need from CryptoService (getKeyForUserEncryption or getOrgKey)
-   * and then call encryptService.decryptToBytes
-   */
-  abstract decryptToBytes(encString: EncString, key?: SymmetricCryptoKey): Promise<Uint8Array>;
-  /**
-   * @deprecated July 25 2022: Get the key you need from CryptoService (getKeyForUserEncryption or getOrgKey)
-   * and then call encryptService.decryptToUtf8
-   */
-  abstract decryptToUtf8(encString: EncString, key?: SymmetricCryptoKey): Promise<string>;
-  /**
-   * @deprecated July 25 2022: Get the key you need from CryptoService (getKeyForUserEncryption or getOrgKey)
-   * and then call encryptService.decryptToBytes
-   */
-  abstract decryptFromBytes(
-    encBuffer: EncArrayBuffer,
-    key: SymmetricCryptoKey,
-  ): Promise<Uint8Array>;
 
   /**
    * Retrieves all the keys needed for decrypting Ciphers

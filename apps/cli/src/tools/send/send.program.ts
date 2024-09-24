@@ -100,8 +100,8 @@ export class SendProgram extends BaseProgram {
       })
       .action(async (url: string, options: OptionValues) => {
         const cmd = new SendReceiveCommand(
-          this.serviceContainer.apiService,
           this.serviceContainer.cryptoService,
+          this.serviceContainer.encryptService,
           this.serviceContainer.cryptoFunctionService,
           this.serviceContainer.platformUtilsService,
           this.serviceContainer.environmentService,
@@ -143,6 +143,7 @@ export class SendProgram extends BaseProgram {
           this.serviceContainer.totpService,
           this.serviceContainer.auditService,
           this.serviceContainer.cryptoService,
+          this.serviceContainer.encryptService,
           this.serviceContainer.stateService,
           this.serviceContainer.searchService,
           this.serviceContainer.apiService,
@@ -187,7 +188,7 @@ export class SendProgram extends BaseProgram {
           this.serviceContainer.sendService,
           this.serviceContainer.environmentService,
           this.serviceContainer.searchService,
-          this.serviceContainer.cryptoService,
+          this.serviceContainer.encryptService,
         );
         const response = await cmd.run(id, options);
         this.processResponse(response);
@@ -246,7 +247,7 @@ export class SendProgram extends BaseProgram {
           this.serviceContainer.sendService,
           this.serviceContainer.environmentService,
           this.serviceContainer.searchService,
-          this.serviceContainer.cryptoService,
+          this.serviceContainer.encryptService,
         );
         const cmd = new SendEditCommand(
           this.serviceContainer.sendService,

@@ -2,6 +2,8 @@ import { Component } from "@angular/core";
 import { FormBuilder } from "@angular/forms";
 
 import { FolderAddEditComponent as BaseFolderAddEditComponent } from "@bitwarden/angular/vault/components/folder-add-edit.component";
+import { AccountService } from "@bitwarden/common/auth/abstractions/account.service";
+import { CryptoService } from "@bitwarden/common/platform/abstractions/crypto.service";
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 import { LogService } from "@bitwarden/common/platform/abstractions/log.service";
 import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
@@ -17,6 +19,8 @@ export class FolderAddEditComponent extends BaseFolderAddEditComponent {
   constructor(
     folderService: FolderService,
     folderApiService: FolderApiServiceAbstraction,
+    accountService: AccountService,
+    cryptoService: CryptoService,
     i18nService: I18nService,
     platformUtilsService: PlatformUtilsService,
     logService: LogService,
@@ -26,6 +30,8 @@ export class FolderAddEditComponent extends BaseFolderAddEditComponent {
     super(
       folderService,
       folderApiService,
+      accountService,
+      cryptoService,
       i18nService,
       platformUtilsService,
       logService,

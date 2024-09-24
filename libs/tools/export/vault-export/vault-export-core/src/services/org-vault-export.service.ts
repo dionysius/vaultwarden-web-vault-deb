@@ -8,6 +8,7 @@ import { KdfConfigService } from "@bitwarden/common/auth/abstractions/kdf-config
 import { CipherWithIdExport, CollectionWithIdExport } from "@bitwarden/common/models/export";
 import { CryptoFunctionService } from "@bitwarden/common/platform/abstractions/crypto-function.service";
 import { CryptoService } from "@bitwarden/common/platform/abstractions/crypto.service";
+import { EncryptService } from "@bitwarden/common/platform/abstractions/encrypt.service";
 import { Utils } from "@bitwarden/common/platform/misc/utils";
 import { OrganizationId } from "@bitwarden/common/types/guid";
 import { CipherService } from "@bitwarden/common/vault/abstractions/cipher.service";
@@ -39,13 +40,14 @@ export class OrganizationVaultExportService
     private cipherService: CipherService,
     private apiService: ApiService,
     pinService: PinServiceAbstraction,
-    cryptoService: CryptoService,
+    private cryptoService: CryptoService,
+    encryptService: EncryptService,
     cryptoFunctionService: CryptoFunctionService,
     private collectionService: CollectionService,
     kdfConfigService: KdfConfigService,
     private accountService: AccountService,
   ) {
-    super(pinService, cryptoService, cryptoFunctionService, kdfConfigService);
+    super(pinService, encryptService, cryptoFunctionService, kdfConfigService);
   }
 
   async getPasswordProtectedExport(
@@ -242,7 +244,7 @@ export class OrganizationVaultExportService
     ciphers: Cipher[],
   ): Promise<string> {
     const orgKey = await this.cryptoService.getOrgKey(organizationId);
-    const encKeyValidation = await this.cryptoService.encrypt(Utils.newGuid(), orgKey);
+    const encKeyValidation = await this.encryptService.encrypt(Utils.newGuid(), orgKey);
 
     const jsonDoc: BitwardenEncryptedOrgJsonExport = {
       encrypted: true,

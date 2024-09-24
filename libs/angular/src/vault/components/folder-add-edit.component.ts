@@ -1,6 +1,9 @@
 import { Directive, EventEmitter, Input, OnInit, Output } from "@angular/core";
 import { Validators, FormBuilder } from "@angular/forms";
+import { firstValueFrom } from "rxjs";
 
+import { AccountService } from "@bitwarden/common/auth/abstractions/account.service";
+import { CryptoService } from "@bitwarden/common/platform/abstractions/crypto.service";
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 import { LogService } from "@bitwarden/common/platform/abstractions/log.service";
 import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
@@ -29,6 +32,8 @@ export class FolderAddEditComponent implements OnInit {
   constructor(
     protected folderService: FolderService,
     protected folderApiService: FolderApiServiceAbstraction,
+    protected accountService: AccountService,
+    protected cryptoService: CryptoService,
     protected i18nService: I18nService,
     protected platformUtilsService: PlatformUtilsService,
     protected logService: LogService,
@@ -52,7 +57,9 @@ export class FolderAddEditComponent implements OnInit {
     }
 
     try {
-      const folder = await this.folderService.encrypt(this.folder);
+      const activeAccountId = await firstValueFrom(this.accountService.activeAccount$);
+      const userKey = await this.cryptoService.getUserKeyWithLegacySupport(activeAccountId.id);
+      const folder = await this.folderService.encrypt(this.folder, userKey);
       this.formPromise = this.folderApiService.save(folder);
       await this.formPromise;
       this.platformUtilsService.showToast(

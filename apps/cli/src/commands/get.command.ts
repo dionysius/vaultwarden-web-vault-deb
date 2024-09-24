@@ -20,6 +20,7 @@ import { LoginExport } from "@bitwarden/common/models/export/login.export";
 import { SecureNoteExport } from "@bitwarden/common/models/export/secure-note.export";
 import { ErrorResponse } from "@bitwarden/common/models/response/error.response";
 import { CryptoService } from "@bitwarden/common/platform/abstractions/crypto.service";
+import { EncryptService } from "@bitwarden/common/platform/abstractions/encrypt.service";
 import { StateService } from "@bitwarden/common/platform/abstractions/state.service";
 import { Utils } from "@bitwarden/common/platform/misc/utils";
 import { EncString } from "@bitwarden/common/platform/models/domain/enc-string";
@@ -56,7 +57,8 @@ export class GetCommand extends DownloadCommand {
     private collectionService: CollectionService,
     private totpService: TotpService,
     private auditService: AuditService,
-    cryptoService: CryptoService,
+    private cryptoService: CryptoService,
+    encryptService: EncryptService,
     private stateService: StateService,
     private searchService: SearchService,
     private apiService: ApiService,
@@ -65,7 +67,7 @@ export class GetCommand extends DownloadCommand {
     private accountProfileService: BillingAccountProfileStateService,
     private accountService: AccountService,
   ) {
-    super(cryptoService);
+    super(encryptService);
   }
 
   async run(object: string, id: string, cmdOptions: Record<string, any>): Promise<Response> {
@@ -451,7 +453,7 @@ export class GetCommand extends DownloadCommand {
 
       const response = await this.apiService.getCollectionAccessDetails(options.organizationId, id);
       const decCollection = new CollectionView(response);
-      decCollection.name = await this.cryptoService.decryptToUtf8(
+      decCollection.name = await this.encryptService.decryptToUtf8(
         new EncString(response.name),
         orgKey,
       );

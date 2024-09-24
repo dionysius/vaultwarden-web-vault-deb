@@ -6,6 +6,7 @@ import { AccountService } from "@bitwarden/common/auth/abstractions/account.serv
 import { BillingAccountProfileStateService } from "@bitwarden/common/billing/abstractions/account/billing-account-profile-state.service";
 import { ErrorResponse } from "@bitwarden/common/models/response/error.response";
 import { CryptoService } from "@bitwarden/common/platform/abstractions/crypto.service";
+import { EncryptService } from "@bitwarden/common/platform/abstractions/encrypt.service";
 import { FileDownloadService } from "@bitwarden/common/platform/abstractions/file-download/file-download.service";
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 import { LogService } from "@bitwarden/common/platform/abstractions/log.service";
@@ -40,6 +41,7 @@ export class AttachmentsComponent implements OnInit {
     protected cipherService: CipherService,
     protected i18nService: I18nService,
     protected cryptoService: CryptoService,
+    protected encryptService: EncryptService,
     protected platformUtilsService: PlatformUtilsService,
     protected apiService: ApiService,
     protected win: Window,
@@ -178,7 +180,7 @@ export class AttachmentsComponent implements OnInit {
         attachment.key != null
           ? attachment.key
           : await this.cryptoService.getOrgKey(this.cipher.organizationId);
-      const decBuf = await this.cryptoService.decryptFromBytes(encBuf, key);
+      const decBuf = await this.encryptService.decryptToBytes(encBuf, key);
       this.fileDownloadService.download({
         fileName: attachment.fileName,
         blobData: decBuf,
@@ -249,7 +251,7 @@ export class AttachmentsComponent implements OnInit {
             attachment.key != null
               ? attachment.key
               : await this.cryptoService.getOrgKey(this.cipher.organizationId);
-          const decBuf = await this.cryptoService.decryptFromBytes(encBuf, key);
+          const decBuf = await this.encryptService.decryptToBytes(encBuf, key);
           const activeUserId = await firstValueFrom(
             this.accountService.activeAccount$.pipe(map((a) => a?.id)),
           );

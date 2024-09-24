@@ -11,8 +11,11 @@ import {
 } from "@angular/core";
 import { takeUntilDestroyed } from "@angular/core/rxjs-interop";
 import { FormBuilder, ReactiveFormsModule, Validators } from "@angular/forms";
+import { firstValueFrom } from "rxjs";
 
 import { JslibModule } from "@bitwarden/angular/jslib.module";
+import { AccountService } from "@bitwarden/common/auth/abstractions/account.service";
+import { CryptoService } from "@bitwarden/common/platform/abstractions/crypto.service";
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 import { LogService } from "@bitwarden/common/platform/abstractions/log.service";
 import { FolderApiServiceAbstraction } from "@bitwarden/common/vault/abstractions/folder/folder-api.service.abstraction";
@@ -68,6 +71,8 @@ export class AddEditFolderDialogComponent implements AfterViewInit, OnInit {
     private formBuilder: FormBuilder,
     private folderService: FolderService,
     private folderApiService: FolderApiServiceAbstraction,
+    private accountService: AccountService,
+    private cryptoService: CryptoService,
     private toastService: ToastService,
     private i18nService: I18nService,
     private logService: LogService,
@@ -107,7 +112,9 @@ export class AddEditFolderDialogComponent implements AfterViewInit, OnInit {
     this.folder.name = this.folderForm.controls.name.value;
 
     try {
-      const folder = await this.folderService.encrypt(this.folder);
+      const activeUserId = await firstValueFrom(this.accountService.activeAccount$);
+      const userKey = await this.cryptoService.getUserKeyWithLegacySupport(activeUserId.id);
+      const folder = await this.folderService.encrypt(this.folder, userKey);
       await this.folderApiService.save(folder);
 
       this.toastService.showToast({

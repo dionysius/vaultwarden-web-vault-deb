@@ -27,7 +27,7 @@ export class WebProviderService {
     const orgKey = await this.cryptoService.getOrgKey(organizationId);
     const providerKey = await this.cryptoService.getProviderKey(providerId);
 
-    const encryptedOrgKey = await this.cryptoService.encrypt(orgKey.key, providerKey);
+    const encryptedOrgKey = await this.encryptService.encrypt(orgKey.key, providerKey);
 
     const request = new ProviderAddOrganizationRequest();
     request.organizationId = organizationId;

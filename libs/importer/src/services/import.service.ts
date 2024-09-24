@@ -7,6 +7,7 @@ import { ImportOrganizationCiphersRequest } from "@bitwarden/common/models/reque
 import { KvpRequest } from "@bitwarden/common/models/request/kvp.request";
 import { ErrorResponse } from "@bitwarden/common/models/response/error.response";
 import { CryptoService } from "@bitwarden/common/platform/abstractions/crypto.service";
+import { EncryptService } from "@bitwarden/common/platform/abstractions/encrypt.service";
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 import { Utils } from "@bitwarden/common/platform/misc/utils";
 import { CipherService } from "@bitwarden/common/vault/abstractions/cipher.service";
@@ -104,6 +105,7 @@ export class ImportService implements ImportServiceAbstraction {
     private i18nService: I18nService,
     private collectionService: CollectionService,
     private cryptoService: CryptoService,
+    private encryptService: EncryptService,
     private pinService: PinServiceAbstraction,
     private accountService: AccountService,
   ) {}
@@ -207,6 +209,7 @@ export class ImportService implements ImportServiceAbstraction {
       case "bitwardenpasswordprotected":
         return new BitwardenPasswordProtectedImporter(
           this.cryptoService,
+          this.encryptService,
           this.i18nService,
           this.cipherService,
           this.pinService,
@@ -344,9 +347,10 @@ export class ImportService implements ImportServiceAbstraction {
       const c = await this.cipherService.encrypt(importResult.ciphers[i], activeUserId);
       request.ciphers.push(new CipherRequest(c));
     }
+    const userKey = await this.cryptoService.getUserKeyWithLegacySupport(activeUserId);
     if (importResult.folders != null) {
       for (let i = 0; i < importResult.folders.length; i++) {
-        const f = await this.folderService.encrypt(importResult.folders[i]);
+        const f = await this.folderService.encrypt(importResult.folders[i], userKey);
         request.folders.push(new FolderWithIdRequest(f));
       }
     }

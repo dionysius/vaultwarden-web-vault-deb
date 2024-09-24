@@ -57,6 +57,7 @@ export class OssServeConfigurator {
       this.serviceContainer.totpService,
       this.serviceContainer.auditService,
       this.serviceContainer.cryptoService,
+      this.serviceContainer.encryptService,
       this.serviceContainer.stateService,
       this.serviceContainer.searchService,
       this.serviceContainer.apiService,
@@ -79,6 +80,7 @@ export class OssServeConfigurator {
       this.serviceContainer.cipherService,
       this.serviceContainer.folderService,
       this.serviceContainer.cryptoService,
+      this.serviceContainer.encryptService,
       this.serviceContainer.apiService,
       this.serviceContainer.folderApiService,
       this.serviceContainer.billingAccountProfileStateService,
@@ -89,6 +91,7 @@ export class OssServeConfigurator {
       this.serviceContainer.cipherService,
       this.serviceContainer.folderService,
       this.serviceContainer.cryptoService,
+      this.serviceContainer.encryptService,
       this.serviceContainer.apiService,
       this.serviceContainer.folderApiService,
       this.serviceContainer.accountService,
@@ -150,7 +153,7 @@ export class OssServeConfigurator {
       this.serviceContainer.sendService,
       this.serviceContainer.environmentService,
       this.serviceContainer.searchService,
-      this.serviceContainer.cryptoService,
+      this.serviceContainer.encryptService,
     );
     this.sendEditCommand = new SendEditCommand(
       this.serviceContainer.sendService,

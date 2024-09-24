@@ -317,6 +317,7 @@ export class LoginStrategyService implements LoginStrategyServiceAbstraction {
       this.accountService,
       this.masterPasswordService,
       this.cryptoService,
+      this.encryptService,
       this.apiService,
       this.tokenService,
       this.appIdService,

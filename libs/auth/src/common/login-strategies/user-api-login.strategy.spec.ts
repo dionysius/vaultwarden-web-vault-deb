@@ -11,6 +11,7 @@ import { BillingAccountProfileStateService } from "@bitwarden/common/billing/abs
 import { VaultTimeoutAction } from "@bitwarden/common/enums/vault-timeout-action.enum";
 import { AppIdService } from "@bitwarden/common/platform/abstractions/app-id.service";
 import { CryptoService } from "@bitwarden/common/platform/abstractions/crypto.service";
+import { EncryptService } from "@bitwarden/common/platform/abstractions/encrypt.service";
 import {
   Environment,
   EnvironmentService,
@@ -39,6 +40,7 @@ describe("UserApiLoginStrategy", () => {
   let masterPasswordService: FakeMasterPasswordService;
 
   let cryptoService: MockProxy<CryptoService>;
+  let encryptService: MockProxy<EncryptService>;
   let apiService: MockProxy<ApiService>;
   let tokenService: MockProxy<TokenService>;
   let appIdService: MockProxy<AppIdService>;
@@ -99,6 +101,7 @@ describe("UserApiLoginStrategy", () => {
       accountService,
       masterPasswordService,
       cryptoService,
+      encryptService,
       apiService,
       tokenService,
       appIdService,

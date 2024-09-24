@@ -5,6 +5,7 @@ import { ApiService } from "@bitwarden/common/abstractions/api.service";
 import { AccountService } from "@bitwarden/common/auth/abstractions/account.service";
 import { BillingAccountProfileStateService } from "@bitwarden/common/billing/abstractions/account/billing-account-profile-state.service";
 import { CryptoService } from "@bitwarden/common/platform/abstractions/crypto.service";
+import { EncryptService } from "@bitwarden/common/platform/abstractions/encrypt.service";
 import { FileDownloadService } from "@bitwarden/common/platform/abstractions/file-download/file-download.service";
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 import { LogService } from "@bitwarden/common/platform/abstractions/log.service";
@@ -25,6 +26,7 @@ export class AttachmentsComponent extends BaseAttachmentsComponent {
     cipherService: CipherService,
     i18nService: I18nService,
     cryptoService: CryptoService,
+    encryptService: EncryptService,
     stateService: StateService,
     platformUtilsService: PlatformUtilsService,
     apiService: ApiService,
@@ -39,6 +41,7 @@ export class AttachmentsComponent extends BaseAttachmentsComponent {
       cipherService,
       i18nService,
       cryptoService,
+      encryptService,
       platformUtilsService,
       apiService,
       window,

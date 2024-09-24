@@ -6,6 +6,7 @@ import { AuthService } from "@bitwarden/common/auth/abstractions/auth.service";
 import { AuthenticationStatus } from "@bitwarden/common/auth/enums/authentication-status";
 import { CryptoFunctionService } from "@bitwarden/common/platform/abstractions/crypto-function.service";
 import { CryptoService } from "@bitwarden/common/platform/abstractions/crypto.service";
+import { EncryptService } from "@bitwarden/common/platform/abstractions/encrypt.service";
 import { LogService } from "@bitwarden/common/platform/abstractions/log.service";
 import { MessagingService } from "@bitwarden/common/platform/abstractions/messaging.service";
 import { BiometricStateService } from "@bitwarden/common/platform/biometrics/biometric-state.service";
@@ -33,6 +34,7 @@ export class NativeMessagingService {
   constructor(
     private cryptoFunctionService: CryptoFunctionService,
     private cryptoService: CryptoService,
+    private encryptService: EncryptService,
     private logService: LogService,
     private messagingService: MessagingService,
     private desktopSettingService: DesktopSettingsService,
@@ -111,7 +113,7 @@ export class NativeMessagingService {
     }
 
     const message: LegacyMessage = JSON.parse(
-      await this.cryptoService.decryptToUtf8(
+      await this.encryptService.decryptToUtf8(
         rawMessage as EncString,
         SymmetricCryptoKey.fromString(await ipc.platform.ephemeralStore.getEphemeralValue(appId)),
       ),
@@ -224,7 +226,7 @@ export class NativeMessagingService {
   private async send(message: any, appId: string) {
     message.timestamp = Date.now();
 
-    const encrypted = await this.cryptoService.encrypt(
+    const encrypted = await this.encryptService.encrypt(
       JSON.stringify(message),
       SymmetricCryptoKey.fromString(await ipc.platform.ephemeralStore.getEphemeralValue(appId)),
     );

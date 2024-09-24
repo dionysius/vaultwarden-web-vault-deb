@@ -7,6 +7,7 @@ import { CipherExport } from "@bitwarden/common/models/export/cipher.export";
 import { CollectionExport } from "@bitwarden/common/models/export/collection.export";
 import { FolderExport } from "@bitwarden/common/models/export/folder.export";
 import { CryptoService } from "@bitwarden/common/platform/abstractions/crypto.service";
+import { EncryptService } from "@bitwarden/common/platform/abstractions/encrypt.service";
 import { Utils } from "@bitwarden/common/platform/misc/utils";
 import { CipherService } from "@bitwarden/common/vault/abstractions/cipher.service";
 import { FolderApiServiceAbstraction } from "@bitwarden/common/vault/abstractions/folder/folder-api.service.abstraction";
@@ -25,6 +26,7 @@ export class EditCommand {
     private cipherService: CipherService,
     private folderService: FolderService,
     private cryptoService: CryptoService,
+    private encryptService: EncryptService,
     private apiService: ApiService,
     private folderApiService: FolderApiServiceAbstraction,
     private accountService: AccountService,
@@ -139,7 +141,10 @@ export class EditCommand {
 
     let folderView = await folder.decrypt();
     folderView = FolderExport.toView(req, folderView);
-    const encFolder = await this.folderService.encrypt(folderView);
+
+    const activeUserId = await firstValueFrom(this.accountService.activeAccount$);
+    const userKey = await this.cryptoService.getUserKeyWithLegacySupport(activeUserId.id);
+    const encFolder = await this.folderService.encrypt(folderView, userKey);
     try {
       await this.folderApiService.save(encFolder);
       const updatedFolder = await this.folderService.get(folder.id);
@@ -187,7 +192,7 @@ export class EditCommand {
               (u) => new SelectionReadOnlyRequest(u.id, u.readOnly, u.hidePasswords, u.manage),
             );
       const request = new CollectionRequest();
-      request.name = (await this.cryptoService.encrypt(req.name, orgKey)).encryptedString;
+      request.name = (await this.encryptService.encrypt(req.name, orgKey)).encryptedString;
       request.externalId = req.externalId;
       request.groups = groups;
       request.users = users;

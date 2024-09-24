@@ -3,6 +3,7 @@ import { Injectable } from "@angular/core";
 import { ApiService } from "@bitwarden/common/abstractions/api.service";
 import { SelectionReadOnlyRequest } from "@bitwarden/common/admin-console/models/request/selection-read-only.request";
 import { CryptoService } from "@bitwarden/common/platform/abstractions/crypto.service";
+import { EncryptService } from "@bitwarden/common/platform/abstractions/encrypt.service";
 import { EncString } from "@bitwarden/common/platform/models/domain/enc-string";
 import { CollectionService } from "@bitwarden/common/vault/abstractions/collection.service";
 import { CollectionData } from "@bitwarden/common/vault/models/data/collection.data";
@@ -23,6 +24,7 @@ export class CollectionAdminService {
   constructor(
     private apiService: ApiService,
     private cryptoService: CryptoService,
+    private encryptService: EncryptService,
     private collectionService: CollectionService,
   ) {}
 
@@ -116,7 +118,7 @@ export class CollectionAdminService {
     const promises = collections.map(async (c) => {
       const view = new CollectionAdminView();
       view.id = c.id;
-      view.name = await this.cryptoService.decryptToUtf8(new EncString(c.name), orgKey);
+      view.name = await this.encryptService.decryptToUtf8(new EncString(c.name), orgKey);
       view.externalId = c.externalId;
       view.organizationId = c.organizationId;
 
@@ -146,7 +148,7 @@ export class CollectionAdminService {
     }
     const collection = new CollectionRequest();
     collection.externalId = model.externalId;
-    collection.name = (await this.cryptoService.encrypt(model.name, key)).encryptedString;
+    collection.name = (await this.encryptService.encrypt(model.name, key)).encryptedString;
     collection.groups = model.groups.map(
       (group) =>
         new SelectionReadOnlyRequest(group.id, group.readOnly, group.hidePasswords, group.manage),

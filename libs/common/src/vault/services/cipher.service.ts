@@ -1,6 +1,7 @@
 import { firstValueFrom, map, Observable, skipWhile, switchMap } from "rxjs";
 import { SemVer } from "semver";
 
+import { AccountService } from "@bitwarden/common/auth/abstractions/account.service";
 import { FeatureFlag } from "@bitwarden/common/enums/feature-flag.enum";
 import { BulkEncryptService } from "@bitwarden/common/platform/abstractions/bulk-encrypt.service";
 
@@ -108,6 +109,7 @@ export class CipherService implements CipherServiceAbstraction {
     private cipherFileUploadService: CipherFileUploadService,
     private configService: ConfigService,
     private stateProvider: StateProvider,
+    private accountService: AccountService,
   ) {
     this.localDataState = this.stateProvider.getActive(LOCAL_DATA_KEY);
     this.encryptedCiphersState = this.stateProvider.getActive(ENCRYPTED_CIPHERS);
@@ -165,7 +167,7 @@ export class CipherService implements CipherServiceAbstraction {
   async encrypt(
     model: CipherView,
     userId: UserId,
-    keyForEncryption?: SymmetricCryptoKey,
+    keyForCipherEncryption?: SymmetricCryptoKey,
     keyForCipherKeyDecryption?: SymmetricCryptoKey,
     originalCipher: Cipher = null,
   ): Promise<Cipher> {
@@ -195,26 +197,21 @@ export class CipherService implements CipherServiceAbstraction {
       const userOrOrgKey = await this.getKeyForCipherKeyDecryption(cipher, userId);
       // The keyForEncryption is only used for encrypting the cipher key, not the cipher itself, since cipher key encryption is enabled.
       // If the caller has provided a key for cipher key encryption, use it. Otherwise, use the user or org key.
-      keyForEncryption ||= userOrOrgKey;
+      keyForCipherEncryption ||= userOrOrgKey;
       // If the caller has provided a key for cipher key decryption, use it. Otherwise, use the user or org key.
       keyForCipherKeyDecryption ||= userOrOrgKey;
       return this.encryptCipherWithCipherKey(
         model,
         cipher,
-        keyForEncryption,
+        keyForCipherEncryption,
         keyForCipherKeyDecryption,
       );
     } else {
-      if (keyForEncryption == null && cipher.organizationId != null) {
-        keyForEncryption = await this.cryptoService.getOrgKey(cipher.organizationId);
-        if (keyForEncryption == null) {
-          throw new Error("Cannot encrypt cipher for organization. No key.");
-        }
-      }
+      keyForCipherEncryption ||= await this.getKeyForCipherKeyDecryption(cipher, userId);
       // We want to ensure that the cipher key is null if cipher key encryption is disabled
       // so that decryption uses the proper key.
       cipher.key = null;
-      return this.encryptCipher(model, cipher, keyForEncryption);
+      return this.encryptCipher(model, cipher, keyForCipherEncryption);
     }
   }
 
@@ -243,7 +240,7 @@ export class CipherService implements CipherServiceAbstraction {
         key,
       ).then(async () => {
         if (model.key != null) {
-          attachment.key = await this.cryptoService.encrypt(model.key.key, key);
+          attachment.key = await this.encryptService.encrypt(model.key.key, key);
         }
         encAttachments.push(attachment);
       });
@@ -1348,7 +1345,9 @@ export class CipherService implements CipherServiceAbstraction {
     }
 
     const encBuf = await EncArrayBuffer.fromResponse(attachmentResponse);
-    const decBuf = await this.cryptoService.decryptFromBytes(encBuf, null);
+    const activeUserId = await firstValueFrom(this.accountService.activeAccount$);
+    const userKey = await this.cryptoService.getUserKeyWithLegacySupport(activeUserId.id);
+    const decBuf = await this.encryptService.decryptToBytes(encBuf, userKey);
 
     let encKey: UserKey | OrgKey;
     encKey = await this.cryptoService.getOrgKey(organizationId);
@@ -1412,7 +1411,7 @@ export class CipherService implements CipherServiceAbstraction {
           .then(() => {
             const modelProp = (model as any)[map[theProp] || theProp];
             if (modelProp && modelProp !== "") {
-              return self.cryptoService.encrypt(modelProp, key);
+              return self.encryptService.encrypt(modelProp, key);
             }
             return null;
           })
@@ -1458,7 +1457,7 @@ export class CipherService implements CipherServiceAbstraction {
               key,
             );
             const uriHash = await this.encryptService.hash(model.login.uris[i].uri, "sha256");
-            loginUri.uriChecksum = await this.cryptoService.encrypt(uriHash, key);
+            loginUri.uriChecksum = await this.encryptService.encrypt(uriHash, key);
             cipher.login.uris.push(loginUri);
           }
         }
@@ -1485,8 +1484,8 @@ export class CipherService implements CipherServiceAbstraction {
                 },
                 key,
               );
-              domainKey.counter = await this.cryptoService.encrypt(String(viewKey.counter), key);
-              domainKey.discoverable = await this.cryptoService.encrypt(
+              domainKey.counter = await this.encryptService.encrypt(String(viewKey.counter), key);
+              domainKey.discoverable = await this.encryptService.encrypt(
                 String(viewKey.discoverable),
                 key,
               );
@@ -1605,11 +1604,23 @@ export class CipherService implements CipherServiceAbstraction {
     this.sortedCiphersCache.clear();
   }
 
+  /**
+   * Encrypts a cipher object.
+   * @param model The cipher view model.
+   * @param cipher The cipher object.
+   * @param key The encryption key to encrypt with. This can be the org key, user key or cipher key, but must never be null
+   */
   private async encryptCipher(
     model: CipherView,
     cipher: Cipher,
     key: SymmetricCryptoKey,
   ): Promise<Cipher> {
+    if (key == null) {
+      throw new Error(
+        "Key to encrypt cipher must not be null. Use the org key, user key or cipher key.",
+      );
+    }
+
     await Promise.all([
       this.encryptObjProperty(
         model,

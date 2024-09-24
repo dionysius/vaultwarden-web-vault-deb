@@ -80,7 +80,7 @@ export class WebAuthnLoginStrategy extends LoginStrategy {
       }
 
       // decrypt prf encrypted private key
-      const privateKey = await this.cryptoService.decryptToBytes(
+      const privateKey = await this.encryptService.decryptToBytes(
         webAuthnPrfOption.encryptedPrivateKey,
         credentials.prfKey,
       );

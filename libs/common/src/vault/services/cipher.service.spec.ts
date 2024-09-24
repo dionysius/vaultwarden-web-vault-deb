@@ -145,6 +145,7 @@ describe("Cipher Service", () => {
       cipherFileUploadService,
       configService,
       stateProvider,
+      accountService,
     );
 
     cipherObj = new Cipher(cipherData);
@@ -273,7 +274,7 @@ describe("Cipher Service", () => {
       cryptoService.makeCipherKey.mockReturnValue(
         Promise.resolve(new SymmetricCryptoKey(makeStaticByteArray(64)) as CipherKey),
       );
-      cryptoService.encrypt.mockImplementation(encryptText);
+      encryptService.encrypt.mockImplementation(encryptText);
 
       jest.spyOn(cipherService as any, "getAutofillOnPageLoadDefault").mockResolvedValue(true);
     });
@@ -284,6 +285,10 @@ describe("Cipher Service", () => {
         cipherView.login.uris = [
           { uri: "uri", match: UriMatchStrategy.RegularExpression } as LoginUriView,
         ];
+
+        cryptoService.getOrgKey.mockReturnValue(
+          Promise.resolve<any>(new SymmetricCryptoKey(new Uint8Array(32)) as OrgKey),
+        );
 
         const domain = await cipherService.encrypt(cipherView, userId);
 
@@ -301,6 +306,9 @@ describe("Cipher Service", () => {
       it("is null when feature flag is false", async () => {
         configService.getFeatureFlag.mockResolvedValue(false);
 
+        cryptoService.getOrgKey.mockReturnValue(
+          Promise.resolve<any>(new SymmetricCryptoKey(new Uint8Array(32)) as OrgKey),
+        );
         const cipher = await cipherService.encrypt(cipherView, userId);
 
         expect(cipher.key).toBeNull();
@@ -322,6 +330,9 @@ describe("Cipher Service", () => {
 
       it("is not called when feature flag is false", async () => {
         configService.getFeatureFlag.mockResolvedValue(false);
+        cryptoService.getOrgKey.mockReturnValue(
+          Promise.resolve<any>(new SymmetricCryptoKey(new Uint8Array(32)) as OrgKey),
+        );
 
         await cipherService.encrypt(cipherView, userId);
 
@@ -330,6 +341,9 @@ describe("Cipher Service", () => {
 
       it("is called when feature flag is true", async () => {
         configService.getFeatureFlag.mockResolvedValue(true);
+        cryptoService.getOrgKey.mockReturnValue(
+          Promise.resolve<any>(new SymmetricCryptoKey(new Uint8Array(32)) as OrgKey),
+        );
 
         await cipherService.encrypt(cipherView, userId);
 
