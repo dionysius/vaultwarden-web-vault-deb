@@ -318,8 +318,8 @@ export class VaultComponent implements OnInit, OnDestroy {
       shareReplay({ refCount: true, bufferSize: 1 }),
     );
 
-    const allCiphers$ = organization$.pipe(
-      concatMap(async (organization) => {
+    const allCiphers$ = combineLatest([organization$, this.refresh$]).pipe(
+      switchMap(async ([organization]) => {
         // If user swaps organization reset the addAccessToggle
         if (!this.showAddAccessToggle || organization) {
           this.addAccessToggle(0);
