@@ -11,7 +11,6 @@ import { DisableTwoFactorAuthenticatorRequest } from "@bitwarden/common/auth/mod
 import { UpdateTwoFactorAuthenticatorRequest } from "@bitwarden/common/auth/models/request/update-two-factor-authenticator.request";
 import { TwoFactorAuthenticatorResponse } from "@bitwarden/common/auth/models/response/two-factor-authenticator.response";
 import { AuthResponse } from "@bitwarden/common/auth/types/auth-response";
-import { FeatureFlag } from "@bitwarden/common/enums/feature-flag.enum";
 import { ConfigService } from "@bitwarden/common/platform/abstractions/config/config.service";
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 import { LogService } from "@bitwarden/common/platform/abstractions/log.service";
@@ -127,13 +126,6 @@ export class TwoFactorAuthenticatorComponent
   }
 
   protected override async disableMethod() {
-    const twoFactorAuthenticatorTokenFeatureFlag = await this.configService.getFeatureFlag(
-      FeatureFlag.AuthenticatorTwoFactorToken,
-    );
-    if (twoFactorAuthenticatorTokenFeatureFlag === false) {
-      return super.disableMethod();
-    }
-
     const confirmed = await this.dialogService.openSimpleDialog({
       title: { key: "disable" },
       content: { key: "twoStepDisableDesc" },
