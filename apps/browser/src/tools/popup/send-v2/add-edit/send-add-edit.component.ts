@@ -8,8 +8,16 @@ import { map, switchMap } from "rxjs";
 import { JslibModule } from "@bitwarden/angular/jslib.module";
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 import { SendType } from "@bitwarden/common/tools/send/enums/send-type";
+import { SendApiService } from "@bitwarden/common/tools/send/services/send-api.service.abstraction";
 import { SendId } from "@bitwarden/common/types/guid";
-import { AsyncActionsModule, ButtonModule, SearchModule } from "@bitwarden/components";
+import {
+  AsyncActionsModule,
+  ButtonModule,
+  DialogService,
+  IconButtonModule,
+  SearchModule,
+  ToastService,
+} from "@bitwarden/components";
 import {
   DefaultSendFormConfigService,
   SendFormConfig,
@@ -58,6 +66,7 @@ export type AddEditQueryParams = Partial<Record<keyof QueryParams, string>>;
     JslibModule,
     FormsModule,
     ButtonModule,
+    IconButtonModule,
     PopupPageComponent,
     PopupHeaderComponent,
     PopupFooterComponent,
@@ -81,6 +90,9 @@ export class SendAddEditComponent {
     private location: Location,
     private i18nService: I18nService,
     private addEditFormConfigService: SendFormConfigService,
+    private sendApiService: SendApiService,
+    private toastService: ToastService,
+    private dialogService: DialogService,
   ) {
     this.subscribeToParams();
   }
@@ -91,6 +103,37 @@ export class SendAddEditComponent {
   onSendSaved() {
     this.location.back();
   }
+
+  deleteSend = async () => {
+    const confirmed = await this.dialogService.openSimpleDialog({
+      title: { key: "deleteSend" },
+      content: { key: "deleteSendPermanentConfirmation" },
+      type: "warning",
+    });
+
+    if (!confirmed) {
+      return;
+    }
+
+    try {
+      await this.sendApiService.delete(this.config.originalSend?.id);
+    } catch (e) {
+      this.toastService.showToast({
+        variant: "error",
+        title: null,
+        message: e.message,
+      });
+      return;
+    }
+
+    this.location.back();
+
+    this.toastService.showToast({
+      variant: "success",
+      title: null,
+      message: this.i18nService.t("deletedSend"),
+    });
+  };
 
   /**
    * Subscribes to the route query parameters and builds the configuration based on the parameters.
