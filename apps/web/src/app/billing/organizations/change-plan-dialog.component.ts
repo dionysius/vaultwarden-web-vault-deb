@@ -403,11 +403,13 @@ export class ChangePlanDialogComponent implements OnInit, OnDestroy {
   }
 
   get upgradeRequiresPaymentMethod() {
-    return (
-      this.organization?.productTierType === ProductTierType.Free &&
-      !this.showFree &&
-      !this.billing?.paymentSource
-    );
+    const isFreeTier = this.organization?.productTierType === ProductTierType.Free;
+    const shouldHideFree = !this.showFree;
+    const hasNoPaymentSource = this.deprecateStripeSourcesAPI
+      ? !this.paymentSource
+      : !this.billing?.paymentSource;
+
+    return isFreeTier && shouldHideFree && hasNoPaymentSource;
   }
 
   get selectedSecretsManagerPlan() {
