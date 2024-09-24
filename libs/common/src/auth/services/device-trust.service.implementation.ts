@@ -2,7 +2,6 @@ import { firstValueFrom, map, Observable } from "rxjs";
 
 import { UserDecryptionOptionsServiceAbstraction } from "@bitwarden/auth/common";
 
-import { FeatureFlag } from "../../enums/feature-flag.enum";
 import { AppIdService } from "../../platform/abstractions/app-id.service";
 import { ConfigService } from "../../platform/abstractions/config/config.service";
 import { CryptoFunctionService } from "../../platform/abstractions/crypto-function.service";
@@ -334,9 +333,6 @@ export class DeviceTrustService implements DeviceTrustServiceAbstraction {
   }
 
   async recordDeviceTrustLoss(): Promise<void> {
-    if (!(await this.configService.getFeatureFlag(FeatureFlag.DeviceTrustLogging))) {
-      return;
-    }
     const deviceIdentifier = await this.appIdService.getAppId();
     await this.devicesApiService.postDeviceTrustLoss(deviceIdentifier);
   }
