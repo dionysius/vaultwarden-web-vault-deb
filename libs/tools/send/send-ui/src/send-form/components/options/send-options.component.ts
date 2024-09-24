@@ -102,7 +102,7 @@ export class SendOptionsComponent implements OnInit {
       this.sendOptionsForm.patchValue({
         maxAccessCount: this.sendFormContainer.originalSendView.maxAccessCount,
         accessCount: this.sendFormContainer.originalSendView.accessCount,
-        password: this.sendFormContainer.originalSendView.password,
+        password: null,
         hideEmail: this.sendFormContainer.originalSendView.hideEmail,
         notes: this.sendFormContainer.originalSendView.notes,
       });

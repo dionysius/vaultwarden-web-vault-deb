@@ -16,6 +16,7 @@ import { takeUntilDestroyed } from "@angular/core/rxjs-interop";
 import { FormBuilder, ReactiveFormsModule } from "@angular/forms";
 
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
+import { Utils } from "@bitwarden/common/platform/misc/utils";
 import { SendType } from "@bitwarden/common/tools/send/enums/send-type";
 import { SendView } from "@bitwarden/common/tools/send/models/view/send.view";
 import {
@@ -197,6 +198,10 @@ export class SendFormComponent implements AfterViewInit, OnInit, OnChanges, Send
     if (this.sendForm.invalid) {
       this.sendForm.markAllAsTouched();
       return;
+    }
+
+    if (Utils.isNullOrWhitespace(this.updatedSendView.password)) {
+      this.updatedSendView.password = null;
     }
 
     await this.addEditFormService.saveSend(this.updatedSendView, this.file, this.config);
