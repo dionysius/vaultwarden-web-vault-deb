@@ -7,7 +7,12 @@ import { JslibModule } from "@bitwarden/angular/jslib.module";
 import { SendType } from "@bitwarden/common/tools/send/enums/send-type";
 import { SendFileView } from "@bitwarden/common/tools/send/models/view/send-file.view";
 import { SendView } from "@bitwarden/common/tools/send/models/view/send.view";
-import { ButtonModule, FormFieldModule, SectionComponent } from "@bitwarden/components";
+import {
+  ButtonModule,
+  FormFieldModule,
+  SectionComponent,
+  TypographyModule,
+} from "@bitwarden/components";
 
 import { SendFormConfig } from "../../abstractions/send-form-config.service";
 import { SendFormContainer } from "../../send-form-container";
@@ -24,6 +29,7 @@ import { SendFormContainer } from "../../send-form-container";
     FormFieldModule,
     SectionComponent,
     FormsModule,
+    TypographyModule,
   ],
 })
 export class SendFileDetailsComponent implements OnInit {

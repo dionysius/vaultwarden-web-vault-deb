@@ -1,6 +1,6 @@
 <bit-section [formGroup]="sendOptionsForm">
   <bit-section-header>
-    <h2 class="tw-mt-4" bitTypography="h5">{{ "additionalOptions" | i18n }}</h2>
+    <h2 class="tw-mt-4" bitTypography="h6">{{ "additionalOptions" | i18n }}</h2>
   </bit-section-header>
   <bit-card>
     <bit-form-field>
@@ -16,16 +16,21 @@
       <bit-label *ngIf="hasPassword">{{ "newPassword" | i18n }}</bit-label>
       <input bitInput type="password" formControlName="password" />
       <button type="button" bitIconButton bitSuffix bitPasswordInputToggle></button>
-      <button type="button" bitIconButton="bwi-refresh" bitSuffix></button>
+      <button
+        type="button"
+        bitIconButton="bwi-generate"
+        bitSuffix
+        [appA11yTitle]="'generatePassword' | i18n"
+      ></button>
       <bit-hint>{{ "sendPasswordDescV2" | i18n }}</bit-hint>
     </bit-form-field>
     <bit-form-control *ngIf="!disableHideEmail">
       <input bitCheckbox type="checkbox" formControlName="hideEmail" />
       <bit-label>{{ "hideYourEmail" | i18n }}</bit-label>
     </bit-form-control>
-    <bit-form-field>
+    <bit-form-field disableMargin>
       <bit-label>{{ "privateNote" | i18n }}</bit-label>
-      <textarea bitInput rows="4" formControlName="notes"></textarea>
+      <textarea bitInput rows="3" formControlName="notes"></textarea>
     </bit-form-field>
   </bit-card>
 </bit-section>

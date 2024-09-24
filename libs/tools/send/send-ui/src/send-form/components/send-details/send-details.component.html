@@ -1,6 +1,6 @@
 <bit-section [formGroup]="sendDetailsForm">
-  <bit-section-header class="tw-mt-4">
-    <h2 bitTypography="h5">{{ "sendDetails" | i18n }}</h2>
+  <bit-section-header class="tw-mt-2">
+    <h2 bitTypography="h6">{{ "sendDetails" | i18n }}</h2>
   </bit-section-header>
 
   <bit-card>
@@ -34,7 +34,7 @@
       ></button>
     </bit-form-field>
 
-    <bit-form-field>
+    <bit-form-field disableMargin>
       <bit-label>{{ "deletionDate" | i18n }}</bit-label>
       <bit-select
         id="deletionDate"
