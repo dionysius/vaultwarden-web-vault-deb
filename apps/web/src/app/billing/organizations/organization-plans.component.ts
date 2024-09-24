@@ -23,8 +23,11 @@ import { OrganizationKeysRequest } from "@bitwarden/common/admin-console/models/
 import { OrganizationUpgradeRequest } from "@bitwarden/common/admin-console/models/request/organization-upgrade.request";
 import { ProviderOrganizationCreateRequest } from "@bitwarden/common/admin-console/models/request/provider/provider-organization-create.request";
 import { ProviderResponse } from "@bitwarden/common/admin-console/models/response/provider/provider.response";
+import { BillingApiServiceAbstraction } from "@bitwarden/common/billing/abstractions";
 import { PaymentMethodType, PlanType, ProductTierType } from "@bitwarden/common/billing/enums";
+import { ExpandedTaxInfoUpdateRequest } from "@bitwarden/common/billing/models/request/expanded-tax-info-update.request";
 import { PaymentRequest } from "@bitwarden/common/billing/models/request/payment.request";
+import { UpdatePaymentMethodRequest } from "@bitwarden/common/billing/models/request/update-payment-method.request";
 import { BillingResponse } from "@bitwarden/common/billing/models/response/billing.response";
 import { OrganizationSubscriptionResponse } from "@bitwarden/common/billing/models/response/organization-subscription.response";
 import { PlanResponse } from "@bitwarden/common/billing/models/response/plan.response";
@@ -33,7 +36,6 @@ import { ConfigService } from "@bitwarden/common/platform/abstractions/config/co
 import { CryptoService } from "@bitwarden/common/platform/abstractions/crypto.service";
 import { EncryptService } from "@bitwarden/common/platform/abstractions/encrypt.service";
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
-import { LogService } from "@bitwarden/common/platform/abstractions/log.service";
 import { MessagingService } from "@bitwarden/common/platform/abstractions/messaging.service";
 import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
 import { EncString } from "@bitwarden/common/platform/models/domain/enc-string";
@@ -153,15 +155,15 @@ export class OrganizationPlansComponent implements OnInit, OnDestroy {
     private syncService: SyncService,
     private policyService: PolicyService,
     private organizationService: OrganizationService,
-    private logService: LogService,
     private messagingService: MessagingService,
     private formBuilder: FormBuilder,
     private organizationApiService: OrganizationApiServiceAbstraction,
     private providerApiService: ProviderApiServiceAbstraction,
     private toastService: ToastService,
     private configService: ConfigService,
+    private billingApiService: BillingApiServiceAbstraction,
   ) {
-    this.selfHosted = platformUtilsService.isSelfHost();
+    this.selfHosted = this.platformUtilsService.isSelfHost();
   }
 
   async ngOnInit() {
@@ -660,21 +662,26 @@ export class OrganizationPlansComponent implements OnInit, OnDestroy {
     this.buildSecretsManagerRequest(request);
 
     if (this.upgradeRequiresPaymentMethod) {
-      let type: PaymentMethodType;
-      let token: string;
-
       if (this.deprecateStripeSourcesAPI) {
-        ({ type, token } = await this.paymentV2Component.tokenize());
+        const updatePaymentMethodRequest = new UpdatePaymentMethodRequest();
+        updatePaymentMethodRequest.paymentSource = await this.paymentV2Component.tokenize();
+        const expandedTaxInfoUpdateRequest = new ExpandedTaxInfoUpdateRequest();
+        expandedTaxInfoUpdateRequest.country = this.taxComponent.country;
+        expandedTaxInfoUpdateRequest.postalCode = this.taxComponent.postalCode;
+        updatePaymentMethodRequest.taxInformation = expandedTaxInfoUpdateRequest;
+        await this.billingApiService.updateOrganizationPaymentMethod(
+          this.organizationId,
+          updatePaymentMethodRequest,
+        );
       } else {
-        [token, type] = await this.paymentComponent.createPaymentToken();
+        const [paymentToken, paymentMethodType] = await this.paymentComponent.createPaymentToken();
+        const paymentRequest = new PaymentRequest();
+        paymentRequest.paymentToken = paymentToken;
+        paymentRequest.paymentMethodType = paymentMethodType;
+        paymentRequest.country = this.taxComponent.taxFormGroup?.value.country;
+        paymentRequest.postalCode = this.taxComponent.taxFormGroup?.value.postalCode;
+        await this.organizationApiService.updatePayment(this.organizationId, paymentRequest);
       }
-
-      const paymentRequest = new PaymentRequest();
-      paymentRequest.paymentToken = token;
-      paymentRequest.paymentMethodType = type;
-      paymentRequest.country = this.taxComponent.taxFormGroup?.value.country;
-      paymentRequest.postalCode = this.taxComponent.taxFormGroup?.value.postalCode;
-      await this.organizationApiService.updatePayment(this.organizationId, paymentRequest);
     }
 
     // Backfill pub/priv key if necessary
