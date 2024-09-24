@@ -343,6 +343,7 @@ export class VaultComponent implements OnInit, OnDestroy {
         await this.searchService.indexCiphers(ciphers, organization.id);
         return ciphers;
       }),
+      shareReplay({ refCount: true, bufferSize: 1 }),
     );
 
     const allCipherMap$ = allCiphers$.pipe(
