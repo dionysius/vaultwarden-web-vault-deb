@@ -20,6 +20,7 @@ import {
 import { AutofillSettingsServiceAbstraction } from "@bitwarden/common/autofill/services/autofill-settings.service";
 import { DomainSettingsService } from "@bitwarden/common/autofill/services/domain-settings.service";
 import { InlineMenuVisibilitySetting } from "@bitwarden/common/autofill/types";
+import { parseYearMonthExpiry } from "@bitwarden/common/autofill/utils";
 import { NeverDomains } from "@bitwarden/common/models/domain/domain-service";
 import { EnvironmentService } from "@bitwarden/common/platform/abstractions/environment.service";
 import {
@@ -1898,10 +1899,20 @@ export class OverlayBackground implements OverlayBackgroundInterface {
     const cardView = new CardView();
     cardView.cardholderName = card.cardholderName || "";
     cardView.number = card.number || "";
-    cardView.expMonth = card.expirationMonth || "";
-    cardView.expYear = card.expirationYear || "";
     cardView.code = card.cvv || "";
     cardView.brand = card.number ? CardView.getCardBrandByPatterns(card.number) : "";
+
+    // If there's a combined expiration date value and no individual month or year values,
+    // try to parse them from the combined value
+    if (card.expirationDate && !card.expirationMonth && !card.expirationYear) {
+      const [parsedYear, parsedMonth] = parseYearMonthExpiry(card.expirationDate);
+
+      cardView.expMonth = parsedMonth || "";
+      cardView.expYear = parsedYear || "";
+    } else {
+      cardView.expMonth = card.expirationMonth || "";
+      cardView.expYear = card.expirationYear || "";
+    }
 
     const cipherView = new CipherView();
     cipherView.name = "";

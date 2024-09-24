@@ -1,5 +1,6 @@
 import * as papa from "papaparse";
 
+import { normalizeExpiryYearFormat } from "@bitwarden/common/autofill/utils";
 import { LogService } from "@bitwarden/common/platform/abstractions/log.service";
 import { Utils } from "@bitwarden/common/platform/misc/utils";
 import { ConsoleLogService } from "@bitwarden/common/platform/services/console-log.service";
@@ -11,7 +12,6 @@ import { FolderView } from "@bitwarden/common/vault/models/view/folder.view";
 import { LoginUriView } from "@bitwarden/common/vault/models/view/login-uri.view";
 import { LoginView } from "@bitwarden/common/vault/models/view/login.view";
 import { SecureNoteView } from "@bitwarden/common/vault/models/view/secure-note.view";
-import { normalizeExpiryYearFormat } from "@bitwarden/common/vault/utils";
 
 import { ImportResult } from "../models/import-result";
 

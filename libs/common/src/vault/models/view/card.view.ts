@@ -1,8 +1,8 @@
 import { Jsonify } from "type-fest";
 
+import { normalizeExpiryYearFormat } from "../../../autofill/utils";
 import { CardLinkedId as LinkedId } from "../../enums";
 import { linkedFieldOption } from "../../linked-field-option.decorator";
-import { normalizeExpiryYearFormat } from "../../utils";
 
 import { ItemView } from "./item.view";
 
