@@ -117,6 +117,10 @@ export abstract class OrganizationService {
    * Emits true if the user can create or manage a Free Bitwarden Families sponsorship.
    */
   canManageSponsorships$: Observable<boolean>;
+  /**
+   * Emits true if any of the user's organizations have a Free Bitwarden Families sponsorship available.
+   */
+  familySponsorshipAvailable$: Observable<boolean>;
   hasOrganizations: () => Promise<boolean>;
   get$: (id: string) => Observable<Organization | undefined>;
   get: (id: string) => Promise<Organization>;
