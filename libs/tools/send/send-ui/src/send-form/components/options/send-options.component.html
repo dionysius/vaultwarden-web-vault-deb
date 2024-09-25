@@ -15,12 +15,19 @@
       <bit-label *ngIf="!hasPassword">{{ "password" | i18n }}</bit-label>
       <bit-label *ngIf="hasPassword">{{ "newPassword" | i18n }}</bit-label>
       <input bitInput type="password" formControlName="password" />
-      <button type="button" bitIconButton bitSuffix bitPasswordInputToggle></button>
+      <button
+        data-testid="toggle-visibility-for-password"
+        type="button"
+        bitIconButton
+        bitSuffix
+        bitPasswordInputToggle
+      ></button>
       <button
         type="button"
         bitIconButton="bwi-generate"
         bitSuffix
         [appA11yTitle]="'generatePassword' | i18n"
+        data-testid="generate-password"
       ></button>
       <bit-hint>{{ "sendPasswordDescV2" | i18n }}</bit-hint>
     </bit-form-field>
