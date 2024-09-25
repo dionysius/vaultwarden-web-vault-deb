@@ -72,7 +72,7 @@ export class CollectionsComponent implements OnInit {
         if (this.organization.canEditAllCiphers) {
           return !!(c as any).checked;
         } else {
-          return !!(c as any).checked && c.readOnly == null;
+          return !!(c as any).checked && !c.readOnly;
         }
       })
       .map((c) => c.id);
