@@ -10,6 +10,7 @@ $border-color: #ced4dc;
 $border-color-dark: #ddd;
 $border-radius: 3px;
 $focus-outline-color: #1252a3;
+$muted-blue: #5a6d91;
 
 $brand-primary: #175ddc;
 
@@ -45,6 +46,7 @@ $themes: (
     focusOutlineColor: $focus-outline-color,
     successColor: $success-color-light,
     errorColor: $error-color-light,
+    passkeysAuthenticating: $muted-blue,
   ),
   dark: (
     textColor: #ffffff,
@@ -60,6 +62,7 @@ $themes: (
     focusOutlineColor: lighten($focus-outline-color, 25%),
     successColor: $success-color-dark,
     errorColor: $error-color-dark,
+    passkeysAuthenticating: #bac0ce,
   ),
   nord: (
     textColor: $nord5,
@@ -74,6 +77,7 @@ $themes: (
     borderColor: $nord0,
     focusOutlineColor: lighten($focus-outline-color, 25%),
     successColor: $success-color-dark,
+    passkeysAuthenticating: $nord4,
   ),
   solarizedDark: (
     textColor: $solarizedDarkBase2,
@@ -89,6 +93,7 @@ $themes: (
     borderColor: $solarizedDarkBase2,
     focusOutlineColor: lighten($focus-outline-color, 15%),
     successColor: $success-color-dark,
+    passkeysAuthenticating: $solarizedDarkBase2,
   ),
 );
 

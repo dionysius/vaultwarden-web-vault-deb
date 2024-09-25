@@ -61,6 +61,7 @@ import {
   triggerPortOnDisconnectEvent,
   triggerPortOnMessageEvent,
   triggerWebNavigationOnCommittedEvent,
+  triggerWebRequestOnCompletedEvent,
 } from "../spec/testing-utils";
 
 import {
@@ -3003,37 +3004,95 @@ describe("OverlayBackground", () => {
         expect(copyToClipboardSpy).toHaveBeenCalledWith("totp-code");
       });
 
-      it("triggers passkey authentication through mediated conditional UI", async () => {
-        const fido2Credential = mock<Fido2CredentialView>({ credentialId: "credential-id" });
-        const cipher1 = mock<CipherView>({
-          id: "inline-menu-cipher-1",
-          login: {
-            username: "username1",
-            password: "password1",
-            fido2Credentials: [fido2Credential],
-          },
-        });
-        overlayBackground["inlineMenuCiphers"] = new Map([["inline-menu-cipher-1", cipher1]]);
-        const pageDetailsForTab = {
-          frameId: sender.frameId,
-          tab: sender.tab,
-          details: pageDetails,
-        };
-        overlayBackground["pageDetailsForTab"][sender.tab.id] = new Map([
-          [sender.frameId, pageDetailsForTab],
-        ]);
-        autofillService.isPasswordRepromptRequired.mockResolvedValue(false);
-        jest.spyOn(fido2ActiveRequestManager, "getActiveRequest");
+      describe("triggering passkey authentication", () => {
+        let cipher1: CipherView;
 
-        sendPortMessage(listMessageConnectorSpy, {
-          command: "fillAutofillInlineMenuCipher",
-          inlineMenuCipherId: "inline-menu-cipher-1",
-          usePasskey: true,
-          portKey,
+        beforeEach(() => {
+          const fido2Credential = mock<Fido2CredentialView>({ credentialId: "credential-id" });
+          cipher1 = mock<CipherView>({
+            id: "inline-menu-cipher-1",
+            login: {
+              username: "username1",
+              password: "password1",
+              fido2Credentials: [fido2Credential],
+            },
+          });
+          const pageDetailsForTab = {
+            frameId: sender.frameId,
+            tab: sender.tab,
+            details: pageDetails,
+          };
+          overlayBackground["inlineMenuCiphers"] = new Map([["inline-menu-cipher-1", cipher1]]);
+          overlayBackground["pageDetailsForTab"][sender.tab.id] = new Map([
+            [sender.frameId, pageDetailsForTab],
+          ]);
+          autofillService.isPasswordRepromptRequired.mockResolvedValue(false);
         });
-        await flushPromises();
 
-        expect(fido2ActiveRequestManager.getActiveRequest).toHaveBeenCalledWith(sender.tab.id);
+        it("logs an error if the authentication could not complete due to a missing FIDO2 request", async () => {
+          jest.spyOn(logService, "error");
+
+          sendPortMessage(listMessageConnectorSpy, {
+            command: "fillAutofillInlineMenuCipher",
+            inlineMenuCipherId: "inline-menu-cipher-1",
+            usePasskey: true,
+            portKey,
+          });
+          await flushPromises();
+
+          expect(logService.error).toHaveBeenCalled();
+        });
+
+        describe("when the FIDO2 request is present", () => {
+          beforeEach(async () => {
+            void fido2ActiveRequestManager.newActiveRequest(
+              sender.tab.id,
+              cipher1.login.fido2Credentials,
+              new AbortController(),
+            );
+          });
+
+          it("aborts all active FIDO2 requests if the subsequent request after the authentication is invalid", async () => {
+            jest.spyOn(fido2ActiveRequestManager, "removeActiveRequest");
+
+            sendPortMessage(listMessageConnectorSpy, {
+              command: "fillAutofillInlineMenuCipher",
+              inlineMenuCipherId: "inline-menu-cipher-1",
+              usePasskey: true,
+              portKey,
+            });
+            await flushPromises();
+            triggerWebRequestOnCompletedEvent(
+              mock<chrome.webRequest.WebResponseCacheDetails>({
+                statusCode: 401,
+              }),
+            );
+
+            expect(fido2ActiveRequestManager.removeActiveRequest).toHaveBeenCalled();
+          });
+
+          it("triggers a closure of the inline menu if the subsequent request after the authentication is valid", async () => {
+            jest.useFakeTimers();
+
+            await initOverlayElementPorts();
+            sendPortMessage(listMessageConnectorSpy, {
+              command: "fillAutofillInlineMenuCipher",
+              inlineMenuCipherId: "inline-menu-cipher-1",
+              usePasskey: true,
+              portKey,
+            });
+            triggerWebRequestOnCompletedEvent(
+              mock<chrome.webRequest.WebResponseCacheDetails>({
+                statusCode: 200,
+              }),
+            );
+            jest.advanceTimersByTime(3100);
+
+            expect(listPortSpy.postMessage).toHaveBeenCalledWith({
+              command: "triggerDelayedAutofillInlineMenuClosure",
+            });
+          });
+        });
       });
     });
 

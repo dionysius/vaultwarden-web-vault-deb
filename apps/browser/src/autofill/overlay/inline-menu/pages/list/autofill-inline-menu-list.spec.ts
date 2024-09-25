@@ -230,21 +230,56 @@ describe("AutofillInlineMenuList", () => {
           postWindowMessage(createInitAutofillInlineMenuListMessageMock({ portKey }));
         });
 
-        it("allows the user to fill a cipher on click", () => {
-          const fillCipherButton =
-            autofillInlineMenuList["inlineMenuListContainer"].querySelector(".fill-cipher-button");
+        describe("filling a cipher", () => {
+          it("allows the user to fill a cipher on click", () => {
+            const fillCipherButton =
+              autofillInlineMenuList["inlineMenuListContainer"].querySelector(
+                ".fill-cipher-button",
+              );
 
-          fillCipherButton.dispatchEvent(new Event("click"));
+            fillCipherButton.dispatchEvent(new Event("click"));
 
-          expect(globalThis.parent.postMessage).toHaveBeenCalledWith(
-            {
-              command: "fillAutofillInlineMenuCipher",
-              inlineMenuCipherId: "1",
-              usePasskey: false,
-              portKey,
-            },
-            "*",
-          );
+            expect(globalThis.parent.postMessage).toHaveBeenCalledWith(
+              {
+                command: "fillAutofillInlineMenuCipher",
+                inlineMenuCipherId: "1",
+                usePasskey: false,
+                portKey,
+              },
+              "*",
+            );
+          });
+
+          it("displays an `Authenticating` loader when a passkey cipher is filled", async () => {
+            postWindowMessage(
+              createInitAutofillInlineMenuListMessageMock({
+                ciphers: [
+                  createAutofillOverlayCipherDataMock(1, {
+                    name: "https://example.com",
+                    login: {
+                      username: "username1",
+                      passkey: {
+                        rpName: "https://example.com",
+                        userName: "username1",
+                      },
+                    },
+                  }),
+                ],
+                showPasskeysLabels: true,
+                portKey,
+              }),
+            );
+            await flushPromises();
+
+            const fillCipherButton =
+              autofillInlineMenuList["inlineMenuListContainer"].querySelector(
+                ".fill-cipher-button",
+              );
+
+            fillCipherButton.dispatchEvent(new Event("click"));
+
+            expect(autofillInlineMenuList["inlineMenuListContainer"]).toMatchSnapshot();
+          });
         });
 
         it("allows the user to move keyboard focus to the next cipher element on ArrowDown", () => {

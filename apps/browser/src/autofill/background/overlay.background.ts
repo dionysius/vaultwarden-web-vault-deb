@@ -55,7 +55,11 @@ import {
   MAX_SUB_FRAME_DEPTH,
 } from "../enums/autofill-overlay.enum";
 import { AutofillService } from "../services/abstractions/autofill.service";
-import { generateRandomChars } from "../utils";
+import {
+  generateDomainMatchPatterns,
+  generateRandomChars,
+  isInvalidResponseStatusCode,
+} from "../utils";
 
 import { LockedVaultPendingNotificationsData } from "./abstractions/notification.background";
 import {
@@ -151,7 +155,7 @@ export class OverlayBackground implements OverlayBackgroundInterface {
     addEditCipherSubmitted: () => this.updateOverlayCiphers(),
     editedCipher: () => this.updateOverlayCiphers(),
     deletedCipher: () => this.updateOverlayCiphers(),
-    fido2AbortRequest: ({ sender }) => this.abortFido2ActiveRequest(sender),
+    fido2AbortRequest: ({ sender }) => this.abortFido2ActiveRequest(sender.tab.id),
   };
   private readonly inlineMenuButtonPortMessageHandlers: InlineMenuButtonPortMessageHandlers = {
     triggerDelayedAutofillInlineMenuClosure: () => this.triggerDelayedInlineMenuClosure(),
@@ -672,10 +676,10 @@ export class OverlayBackground implements OverlayBackgroundInterface {
   /**
    * Aborts an active FIDO2 request for a given tab and updates the inline menu ciphers.
    *
-   * @param sender - The sender of the message
+   * @param tabId - The id of the tab to abort the request for
    */
-  private async abortFido2ActiveRequest(sender: chrome.runtime.MessageSender) {
-    this.fido2ActiveRequestManager.removeActiveRequest(sender.tab.id);
+  private async abortFido2ActiveRequest(tabId: number) {
+    this.fido2ActiveRequestManager.removeActiveRequest(tabId);
     await this.updateOverlayCiphers(false);
   }
 
@@ -939,11 +943,10 @@ export class OverlayBackground implements OverlayBackgroundInterface {
 
     if (usePasskey && cipher.login?.hasFido2Credentials) {
       await this.authenticatePasskeyCredential(
-        sender.tab.id,
+        sender,
         cipher.login.fido2Credentials[0].credentialId,
       );
       this.updateLastUsedInlineMenuCipher(inlineMenuCipherId, cipher);
-      this.closeInlineMenu(sender, { forceCloseInlineMenu: true });
 
       return;
     }
@@ -969,11 +972,11 @@ export class OverlayBackground implements OverlayBackgroundInterface {
   /**
    * Triggers a FIDO2 authentication from the inline menu using the passed credential ID.
    *
-   * @param tabId - The tab ID to trigger the authentication for
+   * @param sender - The sender of the port message
    * @param credentialId - The credential ID to authenticate
    */
-  async authenticatePasskeyCredential(tabId: number, credentialId: string) {
-    const request = this.fido2ActiveRequestManager.getActiveRequest(tabId);
+  async authenticatePasskeyCredential(sender: chrome.runtime.MessageSender, credentialId: string) {
+    const request = this.fido2ActiveRequestManager.getActiveRequest(sender.tab.id);
     if (!request) {
       this.logService.error(
         "Could not complete passkey autofill due to missing active Fido2 request",
@@ -981,8 +984,34 @@ export class OverlayBackground implements OverlayBackgroundInterface {
       return;
     }
 
+    chrome.webRequest.onCompleted.addListener(this.handlePasskeyAuthenticationOnCompleted, {
+      urls: generateDomainMatchPatterns(sender.tab.url),
+    });
     request.subject.next({ type: Fido2ActiveRequestEvents.Continue, credentialId });
   }
+
+  /**
+   * Handles the next web request that occurs after a passkey authentication has been completed.
+   * Ensures that the inline menu closes after the request, and that the FIDO2 request is aborted
+   * if the request is not successful.
+   *
+   * @param details - The web request details
+   */
+  private handlePasskeyAuthenticationOnCompleted = (
+    details: chrome.webRequest.WebResponseCacheDetails,
+  ) => {
+    chrome.webRequest.onCompleted.removeListener(this.handlePasskeyAuthenticationOnCompleted);
+
+    if (isInvalidResponseStatusCode(details.statusCode)) {
+      this.closeInlineMenu({ tab: { id: details.tabId } } as chrome.runtime.MessageSender, {
+        forceCloseInlineMenu: true,
+      });
+      this.abortFido2ActiveRequest(details.tabId).catch((error) => this.logService.error(error));
+      return;
+    }
+
+    globalThis.setTimeout(() => this.triggerDelayedInlineMenuClosure(), 3000);
+  };
 
   /**
    * Sets the most recently used cipher at the top of the list of ciphers.
@@ -1587,6 +1616,7 @@ export class OverlayBackground implements OverlayBackgroundInterface {
         passkeys: this.i18nService.translate("passkeys"),
         passwords: this.i18nService.translate("passwords"),
         logInWithPasskey: this.i18nService.translate("logInWithPasskeyAriaLabel"),
+        authenticating: this.i18nService.translate("authenticating"),
       };
     }
 

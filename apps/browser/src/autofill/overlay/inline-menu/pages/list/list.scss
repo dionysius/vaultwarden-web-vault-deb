@@ -15,6 +15,8 @@ body {
   width: 100%;
   padding: 0;
   margin: 0;
+  font-family: $font-family-sans-serif;
+  font-weight: 400;
 
   @include themify($themes) {
     color: themed("textColor");
@@ -23,8 +25,6 @@ body {
 }
 
 .inline-menu-list-message {
-  font-family: $font-family-sans-serif;
-  font-weight: 400;
   font-size: 1.4rem;
   line-height: 1.5;
   width: 100%;
@@ -389,6 +389,41 @@ body {
             fill: themed("mutedTextColor") !important;
           }
         }
+      }
+    }
+  }
+}
+
+@keyframes bwi-spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(359deg);
+  }
+}
+
+.passkey-authenticating-loader {
+  display: flex;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 1rem 0.8rem;
+  font-size: 1.4rem;
+  font-weight: 400;
+
+  @include themify($themes) {
+    color: themed("passkeysAuthenticating");
+  }
+
+  svg {
+    animation: bwi-spin 2s infinite linear;
+    margin-left: 1rem;
+
+    path {
+      @include themify($themes) {
+        fill: themed("passkeysAuthenticating") !important;
       }
     }
   }

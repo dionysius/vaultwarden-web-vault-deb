@@ -2131,6 +2131,44 @@ exports[`AutofillInlineMenuList initAutofillInlineMenuList the list of ciphers f
 </div>
 `;
 
+exports[`AutofillInlineMenuList initAutofillInlineMenuList the list of ciphers for an authenticated user fill cipher button event listeners filling a cipher displays an \`Authenticating\` loader when a passkey cipher is filled 1`] = `
+<div
+  class="inline-menu-list-container theme_light"
+>
+  <div
+    class="passkey-authenticating-loader"
+  >
+    <svg
+      aria-hidden="true"
+      fill="none"
+      height="16"
+      viewBox="0 0 16 16"
+      width="16"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <g
+        clip-path="url(#a)"
+      >
+        <path
+          d="M4.869 15.015a.588.588 0 1 0 0-1.177.588.588 0 0 0 0 1.177ZM8.252 16a.588.588 0 1 0 0-1.176.588.588 0 0 0 0 1.176Zm3.683-.911a.589.589 0 1 0 0-1.177.589.589 0 0 0 0 1.177ZM2.43 12.882a.693.693 0 1 0 0-1.387.693.693 0 0 0 0 1.387ZM1.318 9.738a.82.82 0 1 0 0-1.64.82.82 0 0 0 0 1.64Zm.69-3.578a.968.968 0 1 0 0-1.937.968.968 0 0 0 0 1.937ZM4.81 3.337a1.175 1.175 0 1 0 0-2.35 1.175 1.175 0 0 0 0 2.35Zm4.597-.676a1.33 1.33 0 1 0 0-2.661 1.33 1.33 0 0 0 0 2.66Zm4.543 2.954a1.553 1.553 0 1 0 0-3.105 1.553 1.553 0 0 0 0 3.105Z"
+          fill="#5A6D91"
+        />
+      </g>
+      <defs>
+        <clippath
+          id="a"
+        >
+          <path
+            d="M0 0h16v16H0z"
+            fill="#fff"
+          />
+        </clippath>
+      </defs>
+    </svg>
+  </div>
+</div>
+`;
+
 exports[`AutofillInlineMenuList initAutofillInlineMenuList the locked inline menu for an unauthenticated user creates the views for the locked inline menu 1`] = `
 <div
   class="inline-menu-list-container theme_light"
