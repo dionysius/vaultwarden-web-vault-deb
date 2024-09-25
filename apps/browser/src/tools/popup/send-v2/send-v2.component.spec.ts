@@ -7,6 +7,7 @@ import { of, BehaviorSubject } from "rxjs";
 
 import { JslibModule } from "@bitwarden/angular/jslib.module";
 import { SearchService } from "@bitwarden/common/abstractions/search.service";
+import { PolicyService } from "@bitwarden/common/admin-console/abstractions/policy/policy.service.abstraction";
 import { AccountService } from "@bitwarden/common/auth/abstractions/account.service";
 import { AuthService } from "@bitwarden/common/auth/abstractions/auth.service";
 import { AvatarService } from "@bitwarden/common/auth/abstractions/avatar.service";
@@ -46,6 +47,7 @@ describe("SendV2Component", () => {
   let sendListFiltersServiceFilters$: BehaviorSubject<{ sendType: SendType | null }>;
   let sendItemsServiceEmptyList$: BehaviorSubject<boolean>;
   let sendItemsServiceNoFilteredResults$: BehaviorSubject<boolean>;
+  let policyService: MockProxy<PolicyService>;
 
   beforeEach(async () => {
     sendListFiltersServiceFilters$ = new BehaviorSubject({ sendType: null });
@@ -59,6 +61,9 @@ describe("SendV2Component", () => {
       ] as SendView[]),
       latestSearchText$: of(""),
     });
+
+    policyService = mock<PolicyService>();
+    policyService.policyAppliesToActiveUser$.mockReturnValue(of(true)); // Return `true` by default
 
     sendListFiltersService = new SendListFiltersService(mock(), new FormBuilder());
 
@@ -104,6 +109,7 @@ describe("SendV2Component", () => {
         { provide: I18nService, useValue: { t: (key: string) => key } },
         { provide: SendListFiltersService, useValue: sendListFiltersService },
         { provide: PopupRouterCacheService, useValue: mock<PopupRouterCacheService>() },
+        { provide: PolicyService, useValue: policyService },
       ],
     }).compileComponents();
 

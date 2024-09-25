@@ -3,7 +3,9 @@ import { Component, importProvidersFrom } from "@angular/core";
 import { RouterModule } from "@angular/router";
 import { Meta, StoryObj, applicationConfig, moduleMetadata } from "@storybook/angular";
 
+import { PolicyService } from "@bitwarden/common/admin-console/abstractions/policy/policy.service.abstraction";
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
+import { SendService } from "@bitwarden/common/tools/send/services/send.service.abstraction";
 import {
   AvatarModule,
   BadgeModule,
@@ -316,6 +318,30 @@ export default {
               loading: "Loading",
               search: "Search",
             });
+          },
+        },
+        {
+          provide: PolicyService,
+          useFactory: () => {
+            return {
+              policyAppliesToActiveUser$: () => {
+                return {
+                  pipe: () => ({
+                    subscribe: () => ({}),
+                  }),
+                };
+              },
+            };
+          },
+        },
+        {
+          provide: SendService,
+          useFactory: () => {
+            return {
+              sends$: () => {
+                return { pipe: () => ({}) };
+              },
+            };
           },
         },
       ],
