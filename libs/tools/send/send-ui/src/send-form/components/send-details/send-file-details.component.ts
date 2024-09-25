@@ -73,5 +73,9 @@ export class SendFileDetailsComponent implements OnInit {
         file: this.originalSendView.file,
       });
     }
+
+    if (!this.config.areSendsAllowed) {
+      this.sendFileDetailsForm.disable();
+    }
   }
 }

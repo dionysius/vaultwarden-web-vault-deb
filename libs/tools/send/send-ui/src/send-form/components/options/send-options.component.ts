@@ -97,6 +97,7 @@ export class SendOptionsComponent implements OnInit {
       });
     });
   }
+
   ngOnInit() {
     if (this.sendFormContainer.originalSendView) {
       this.sendOptionsForm.patchValue({
@@ -106,6 +107,9 @@ export class SendOptionsComponent implements OnInit {
         hideEmail: this.sendFormContainer.originalSendView.hideEmail,
         notes: this.sendFormContainer.originalSendView.notes,
       });
+    }
+    if (!this.config.areSendsAllowed) {
+      this.sendOptionsForm.disable();
     }
   }
 }

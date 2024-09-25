@@ -57,5 +57,9 @@ export class SendTextDetailsComponent implements OnInit {
         hidden: this.originalSendView.text?.hidden || false,
       });
     }
+
+    if (!this.config.areSendsAllowed) {
+      this.sendTextDetailsForm.disable();
+    }
   }
 }
