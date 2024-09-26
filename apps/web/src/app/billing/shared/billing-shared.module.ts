@@ -13,6 +13,8 @@ import { OffboardingSurveyComponent } from "./offboarding-survey.component";
 import { PaymentV2Component } from "./payment/payment-v2.component";
 import { PaymentComponent } from "./payment/payment.component";
 import { PaymentMethodComponent } from "./payment-method.component";
+import { IndividualSelfHostingLicenseUploaderComponent } from "./self-hosting-license-uploader/individual-self-hosting-license-uploader.component";
+import { OrganizationSelfHostingLicenseUploaderComponent } from "./self-hosting-license-uploader/organization-self-hosting-license-uploader.component";
 import { SecretsManagerSubscribeComponent } from "./sm-subscribe.component";
 import { TaxInfoComponent } from "./tax-info.component";
 import { UpdateLicenseDialogComponent } from "./update-license-dialog.component";
@@ -40,6 +42,8 @@ import { VerifyBankAccountComponent } from "./verify-bank-account/verify-bank-ac
     OffboardingSurveyComponent,
     AdjustPaymentDialogV2Component,
     AdjustStorageDialogV2Component,
+    IndividualSelfHostingLicenseUploaderComponent,
+    OrganizationSelfHostingLicenseUploaderComponent,
   ],
   exports: [
     SharedModule,
@@ -53,6 +57,8 @@ import { VerifyBankAccountComponent } from "./verify-bank-account/verify-bank-ac
     OffboardingSurveyComponent,
     VerifyBankAccountComponent,
     PaymentV2Component,
+    IndividualSelfHostingLicenseUploaderComponent,
+    OrganizationSelfHostingLicenseUploaderComponent,
   ],
 })
 export class BillingSharedModule {}

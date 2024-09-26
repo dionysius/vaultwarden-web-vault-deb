@@ -7,6 +7,8 @@ import { combineLatest, concatMap, from, Observable, of } from "rxjs";
 import { ApiService } from "@bitwarden/common/abstractions/api.service";
 import { TokenService } from "@bitwarden/common/auth/abstractions/token.service";
 import { BillingAccountProfileStateService } from "@bitwarden/common/billing/abstractions";
+import { FeatureFlag } from "@bitwarden/common/enums/feature-flag.enum";
+import { ConfigService } from "@bitwarden/common/platform/abstractions/config/config.service";
 import { EnvironmentService } from "@bitwarden/common/platform/abstractions/environment.service";
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
@@ -36,6 +38,10 @@ export class PremiumV2Component {
   protected cloudWebVaultURL: string;
   protected isSelfHost = false;
 
+  protected useLicenseUploaderComponent$ = this.configService.getFeatureFlag$(
+    FeatureFlag.PM11901_RefactorSelfHostingLicenseUploader,
+  );
+
   protected readonly familyPlanMaxUserCount = 6;
   protected readonly premiumPrice = 10;
   protected readonly storageGBPrice = 4;
@@ -44,6 +50,7 @@ export class PremiumV2Component {
     private activatedRoute: ActivatedRoute,
     private apiService: ApiService,
     private billingAccountProfileStateService: BillingAccountProfileStateService,
+    private configService: ConfigService,
     private environmentService: EnvironmentService,
     private i18nService: I18nService,
     private platformUtilsService: PlatformUtilsService,
@@ -78,6 +85,9 @@ export class PremiumV2Component {
   finalizeUpgrade = async () => {
     await this.apiService.refreshIdentityToken();
     await this.syncService.fullSync(true);
+  };
+
+  postFinalizeUpgrade = async () => {
     this.toastService.showToast({
       variant: "success",
       title: null,
@@ -119,6 +129,7 @@ export class PremiumV2Component {
 
     await this.apiService.postAccountLicense(formData);
     await this.finalizeUpgrade();
+    await this.postFinalizeUpgrade();
   };
 
   submitPayment = async (): Promise<void> => {
@@ -138,6 +149,7 @@ export class PremiumV2Component {
 
     await this.apiService.postPremium(formData);
     await this.finalizeUpgrade();
+    await this.postFinalizeUpgrade();
   };
 
   protected get additionalStorageCost(): number {
@@ -160,5 +172,9 @@ export class PremiumV2Component {
 
   protected get total(): number {
     return this.subtotal + this.estimatedTax;
+  }
+
+  protected async onLicenseFileSelectedChanged(): Promise<void> {
+    await this.postFinalizeUpgrade();
   }
 }
