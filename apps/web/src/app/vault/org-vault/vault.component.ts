@@ -27,6 +27,7 @@ import {
   switchMap,
   takeUntil,
   tap,
+  withLatestFrom,
 } from "rxjs/operators";
 
 import {
@@ -476,15 +477,13 @@ export class VaultComponent implements OnInit, OnDestroy {
 
     firstSetup$
       .pipe(
-        switchMap(() =>
-          combineLatest([this.route.queryParams, allCipherMap$, allCollections$, organization$]),
-        ),
+        switchMap(() => this.route.queryParams),
+        withLatestFrom(allCipherMap$, allCollections$, organization$),
         switchMap(async ([qParams, allCiphersMap, allCollections]) => {
           const cipherId = getCipherIdFromParams(qParams);
           if (!cipherId) {
             return;
           }
-
           const cipher = allCiphersMap[cipherId];
           const cipherCollections = allCollections.filter((c) =>
             cipher.collectionIds.includes(c.id),
