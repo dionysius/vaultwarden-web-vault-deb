@@ -209,7 +209,8 @@
     "@storybook/angular": {
       "zone.js": "$zone.js"
     },
-    "replacestream": "4.0.3"
+    "replacestream": "4.0.3",
+    "@types/minimatch": "3.0.5"
   },
   "lint-staged": {
     "*": "prettier --cache --ignore-unknown --write",
