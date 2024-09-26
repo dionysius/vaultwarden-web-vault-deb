@@ -129,38 +129,13 @@ export class InputPasswordComponent {
 
     const password = this.formGroup.controls.password.value;
 
-    // Check if password is breached (if breached, user chooses to accept and continue or not)
-    const passwordIsBreached =
-      this.formGroup.controls.checkForBreaches.value &&
-      (await this.auditService.passwordLeaked(password));
+    const passwordEvaluatedSuccessfully = await this.evaluatePassword(
+      password,
+      this.passwordStrengthScore,
+      this.formGroup.controls.checkForBreaches.value,
+    );
 
-    if (passwordIsBreached) {
-      const userAcceptedDialog = await this.dialogService.openSimpleDialog({
-        title: { key: "exposedMasterPassword" },
-        content: { key: "exposedMasterPasswordDesc" },
-        type: "warning",
-      });
-
-      if (!userAcceptedDialog) {
-        return;
-      }
-    }
-
-    // Check if password meets org policy requirements
-    if (
-      this.masterPasswordPolicyOptions != null &&
-      !this.policyService.evaluateMasterPassword(
-        this.passwordStrengthScore,
-        password,
-        this.masterPasswordPolicyOptions,
-      )
-    ) {
-      this.toastService.showToast({
-        variant: "error",
-        title: this.i18nService.t("errorOccurred"),
-        message: this.i18nService.t("masterPasswordPolicyRequirementsNotMet"),
-      });
-
+    if (!passwordEvaluatedSuccessfully) {
       return;
     }
 
@@ -194,4 +169,69 @@ export class InputPasswordComponent {
       password,
     });
   };
+
+  // Returns true if the password passes all checks, false otherwise
+  private async evaluatePassword(
+    password: string,
+    passwordStrengthScore: PasswordStrengthScore,
+    checkForBreaches: boolean,
+  ) {
+    // Check if the password is breached, weak, or both
+    const passwordIsBreached =
+      checkForBreaches && (await this.auditService.passwordLeaked(password));
+
+    const passwordWeak = passwordStrengthScore != null && passwordStrengthScore < 3;
+
+    if (passwordIsBreached && passwordWeak) {
+      const userAcceptedDialog = await this.dialogService.openSimpleDialog({
+        title: { key: "weakAndExposedMasterPassword" },
+        content: { key: "weakAndBreachedMasterPasswordDesc" },
+        type: "warning",
+      });
+
+      if (!userAcceptedDialog) {
+        return false;
+      }
+    } else if (passwordWeak) {
+      const userAcceptedDialog = await this.dialogService.openSimpleDialog({
+        title: { key: "weakMasterPasswordDesc" },
+        content: { key: "weakMasterPasswordDesc" },
+        type: "warning",
+      });
+
+      if (!userAcceptedDialog) {
+        return false;
+      }
+    } else if (passwordIsBreached) {
+      const userAcceptedDialog = await this.dialogService.openSimpleDialog({
+        title: { key: "exposedMasterPassword" },
+        content: { key: "exposedMasterPasswordDesc" },
+        type: "warning",
+      });
+
+      if (!userAcceptedDialog) {
+        return false;
+      }
+    }
+
+    // Check if password meets org policy requirements
+    if (
+      this.masterPasswordPolicyOptions != null &&
+      !this.policyService.evaluateMasterPassword(
+        this.passwordStrengthScore,
+        password,
+        this.masterPasswordPolicyOptions,
+      )
+    ) {
+      this.toastService.showToast({
+        variant: "error",
+        title: this.i18nService.t("errorOccurred"),
+        message: this.i18nService.t("masterPasswordPolicyRequirementsNotMet"),
+      });
+
+      return false;
+    }
+
+    return true;
+  }
 }
