@@ -1475,6 +1475,10 @@
   "includeNumber": {
     "message": "И цифри"
   },
+  "generatorPolicyInEffect": {
+    "message": "Изискванията на политиката за големи компании бяха приложени към настройките на генератора.",
+    "description": "Indicates that a policy limits the credential generator screen."
+  },
   "passwordHistory": {
     "message": "Хронология на паролата"
   },

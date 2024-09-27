@@ -1475,6 +1475,10 @@
   "includeNumber": {
     "message": "包含数字"
   },
+  "generatorPolicyInEffect": {
+    "message": "企业策略要求应用到您的生成器选项中。",
+    "description": "Indicates that a policy limits the credential generator screen."
+  },
   "passwordHistory": {
     "message": "密码历史记录"
   },
@@ -8684,13 +8688,13 @@
     "message": "从提供商门户管理账单"
   },
   "continueSettingUpFreeTrial": {
-    "message": "Continue setting up your free trial of Bitwarden"
+    "message": "继续设置您的免费试用版 Bitwarden"
   },
   "continueSettingUpFreeTrialPasswordManager": {
-    "message": "Continue setting up your free trial of Bitwarden Password Manager"
+    "message": "继续设置您的免费试用版 Bitwarden 密码管理器"
   },
   "continueSettingUpFreeTrialSecretsManager": {
-    "message": "Continue setting up your free trial of Bitwarden Secrets Manager"
+    "message": "继续设置您的免费试用版 Bitwarden 机密管理器"
   },
   "enterTeamsOrgInfo": {
     "message": "输入您的团队组织信息"

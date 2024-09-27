@@ -1475,6 +1475,10 @@
   "includeNumber": {
     "message": "Убаци број"
   },
+  "generatorPolicyInEffect": {
+    "message": "Захтеви политике предузећа су примењени на опције генератора.",
+    "description": "Indicates that a policy limits the credential generator screen."
+  },
   "passwordHistory": {
     "message": "Историја Лозинке"
   },
@@ -9003,22 +9007,22 @@
     "message": "купљена места уклоњена"
   },
   "environmentVariables": {
-    "message": "Environment variables"
+    "message": "Променљиве окружења"
   },
   "organizationId": {
-    "message": "Organization ID"
+    "message": "ИД Организације"
   },
   "projectIds": {
-    "message": "Project IDs"
+    "message": "ИД Пројекте"
   },
   "projectId": {
-    "message": "Project ID"
+    "message": "ИД Пројекта"
   },
   "projectsAccessedByMachineAccount": {
-    "message": "The following projects can be accessed by this machine account."
+    "message": "Следећим пројектима се може приступити преко овог машинског налога."
   },
   "config": {
-    "message": "Config"
+    "message": "Подешавање"
   },
   "learnMoreAboutEmergencyAccess": {
     "message": "Сазнајте више о приступу у хитним случајевима"

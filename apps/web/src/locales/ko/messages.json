@@ -1475,6 +1475,10 @@
   "includeNumber": {
     "message": "숫자 추가"
   },
+  "generatorPolicyInEffect": {
+    "message": "Enterprise policy requirements have been applied to your generator options.",
+    "description": "Indicates that a policy limits the credential generator screen."
+  },
   "passwordHistory": {
     "message": "비밀번호 변경 기록"
   },

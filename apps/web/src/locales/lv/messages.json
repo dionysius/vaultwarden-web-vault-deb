@@ -1475,6 +1475,10 @@
   "includeNumber": {
     "message": "Iekļaut ciparu"
   },
+  "generatorPolicyInEffect": {
+    "message": "Veidotāja iespējām tika piemērotas uzņēmējdarbības nosacījumu prasības.",
+    "description": "Indicates that a policy limits the credential generator screen."
+  },
   "passwordHistory": {
     "message": "Paroles izmaiņu vēsture"
   },

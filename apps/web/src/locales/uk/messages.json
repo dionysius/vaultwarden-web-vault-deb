@@ -1475,6 +1475,10 @@
   "includeNumber": {
     "message": "Включити число"
   },
+  "generatorPolicyInEffect": {
+    "message": "До налаштувань генератора застосовано вимоги політики компанії.",
+    "description": "Indicates that a policy limits the credential generator screen."
+  },
   "passwordHistory": {
     "message": "Історія паролів"
   },

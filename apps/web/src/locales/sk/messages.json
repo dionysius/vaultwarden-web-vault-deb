@@ -1475,6 +1475,10 @@
   "includeNumber": {
     "message": "Zahrnúť číslo"
   },
+  "generatorPolicyInEffect": {
+    "message": "Na nastavenie generátora boli uplatnené požiadavky pravidiel spoločnosti.",
+    "description": "Indicates that a policy limits the credential generator screen."
+  },
   "passwordHistory": {
     "message": "História hesla"
   },

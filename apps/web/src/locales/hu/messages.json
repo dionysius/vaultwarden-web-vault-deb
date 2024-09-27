@@ -1475,6 +1475,10 @@
   "includeNumber": {
     "message": "Szám is"
   },
+  "generatorPolicyInEffect": {
+    "message": "A vállalati házirend követelményei kerülnek alkalmazásra a generátor beállításaira.",
+    "description": "Indicates that a policy limits the credential generator screen."
+  },
   "passwordHistory": {
     "message": "Jelszóelőzmények"
   },

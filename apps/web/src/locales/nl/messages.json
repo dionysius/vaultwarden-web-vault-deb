@@ -1475,6 +1475,10 @@
   "includeNumber": {
     "message": "Cijfer toevoegen"
   },
+  "generatorPolicyInEffect": {
+    "message": "Bedrijfsbeleidseisen zijn toegepast op je generator-instellingen.",
+    "description": "Indicates that a policy limits the credential generator screen."
+  },
   "passwordHistory": {
     "message": "Geschiedenis"
   },

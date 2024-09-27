@@ -1475,6 +1475,10 @@
   "includeNumber": {
     "message": "Ziffern einschließen"
   },
+  "generatorPolicyInEffect": {
+    "message": "Die Unternehmensrichtlinien-Anforderungen wurden auf deine Generator-Optionen angewendet.",
+    "description": "Indicates that a policy limits the credential generator screen."
+  },
   "passwordHistory": {
     "message": "Passwortverlauf"
   },

@@ -46,7 +46,7 @@
     "message": "持卡人姓名"
   },
   "loginCredentials": {
-    "message": "Login credentials"
+    "message": "登入憑證"
   },
   "personalDetails": {
     "message": "Personal details"
@@ -641,7 +641,7 @@
     "message": "Copy phone"
   },
   "copyEmail": {
-    "message": "Copy email"
+    "message": "複製電子郵件地址"
   },
   "copyCompany": {
     "message": "Copy company"
@@ -1474,6 +1474,10 @@
   },
   "includeNumber": {
     "message": "包含數字"
+  },
+  "generatorPolicyInEffect": {
+    "message": "Enterprise policy requirements have been applied to your generator options.",
+    "description": "Indicates that a policy limits the credential generator screen."
   },
   "passwordHistory": {
     "message": "密碼歷史記錄"

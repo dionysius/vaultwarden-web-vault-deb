@@ -1475,6 +1475,10 @@
   "includeNumber": {
     "message": "数字を含む"
   },
+  "generatorPolicyInEffect": {
+    "message": "生成オプションにエンタープライズポリシー要件を適用しました",
+    "description": "Indicates that a policy limits the credential generator screen."
+  },
   "passwordHistory": {
     "message": "パスワードの履歴"
   },

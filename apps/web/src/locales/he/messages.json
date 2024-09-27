@@ -1475,6 +1475,10 @@
   "includeNumber": {
     "message": "כלול מספרים"
   },
+  "generatorPolicyInEffect": {
+    "message": "Enterprise policy requirements have been applied to your generator options.",
+    "description": "Indicates that a policy limits the credential generator screen."
+  },
   "passwordHistory": {
     "message": "היסטוריית סיסמאות"
   },

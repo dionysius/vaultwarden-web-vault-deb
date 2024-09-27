@@ -1475,6 +1475,10 @@
   "includeNumber": {
     "message": "Rakam ekle"
   },
+  "generatorPolicyInEffect": {
+    "message": "Üreteç seçeneklerinize kurumsal ilke gereksinimleri uygulandı.",
+    "description": "Indicates that a policy limits the credential generator screen."
+  },
   "passwordHistory": {
     "message": "Parola geçmişi"
   },

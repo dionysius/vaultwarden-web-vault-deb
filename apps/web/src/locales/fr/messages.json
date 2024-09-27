@@ -1475,6 +1475,10 @@
   "includeNumber": {
     "message": "Inclure un Chiffre"
   },
+  "generatorPolicyInEffect": {
+    "message": "Les exigences de la politique de sécurité de l'entreprise ont été appliquées aux options de votre générateur.",
+    "description": "Indicates that a policy limits the credential generator screen."
+  },
   "passwordHistory": {
     "message": "Historique des mots de passe"
   },

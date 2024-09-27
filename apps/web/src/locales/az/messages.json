@@ -1475,6 +1475,10 @@
   "includeNumber": {
     "message": "Rəqəm əlavə et"
   },
+  "generatorPolicyInEffect": {
+    "message": "Müəssisə siyasət tələbləri, yaradıcı seçimlərinizə tətbiq edildi.",
+    "description": "Indicates that a policy limits the credential generator screen."
+  },
   "passwordHistory": {
     "message": "Parol tarixçəsi"
   },

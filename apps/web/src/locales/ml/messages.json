@@ -1475,6 +1475,10 @@
   "includeNumber": {
     "message": "നമ്പർ ഉൾപ്പെടുത്തുക"
   },
+  "generatorPolicyInEffect": {
+    "message": "Enterprise policy requirements have been applied to your generator options.",
+    "description": "Indicates that a policy limits the credential generator screen."
+  },
   "passwordHistory": {
     "message": "പാസ്സ്‌വേഡ് ചരിത്രം"
   },

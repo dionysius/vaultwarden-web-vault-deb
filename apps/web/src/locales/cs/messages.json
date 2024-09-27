@@ -1475,6 +1475,10 @@
   "includeNumber": {
     "message": "Zahrnout číslice"
   },
+  "generatorPolicyInEffect": {
+    "message": "Na volby generátoru byly uplatněny požadavky podnikových zásad.",
+    "description": "Indicates that a policy limits the credential generator screen."
+  },
   "passwordHistory": {
     "message": "Historie hesel"
   },
@@ -9003,22 +9007,22 @@
     "message": "zakoupení uživatelé odebráni"
   },
   "environmentVariables": {
-    "message": "Environment variables"
+    "message": "Proměnné prostředí"
   },
   "organizationId": {
-    "message": "Organization ID"
+    "message": "ID organizace"
   },
   "projectIds": {
-    "message": "Project IDs"
+    "message": "ID projektu"
   },
   "projectId": {
-    "message": "Project ID"
+    "message": "ID projektu"
   },
   "projectsAccessedByMachineAccount": {
-    "message": "The following projects can be accessed by this machine account."
+    "message": "Následující projekty mohou být přístupné z tohoto počítačového účtu."
   },
   "config": {
-    "message": "Config"
+    "message": "Nastavení"
   },
   "learnMoreAboutEmergencyAccess": {
     "message": "Další informace o nouzovém přístupu"

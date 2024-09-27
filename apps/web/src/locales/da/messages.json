@@ -1475,6 +1475,10 @@
   "includeNumber": {
     "message": "Inkludér ciffer"
   },
+  "generatorPolicyInEffect": {
+    "message": "Virksomhedspolitikkrav gør sig gældende på generatorvalgmulighder.",
+    "description": "Indicates that a policy limits the credential generator screen."
+  },
   "passwordHistory": {
     "message": "Adgangskodehistorik"
   },
