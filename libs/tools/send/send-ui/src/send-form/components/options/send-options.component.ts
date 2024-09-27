@@ -102,7 +102,7 @@ export class SendOptionsComponent implements OnInit {
 
   generatePassword = async () => {
     const generatedCredential = await firstValueFrom(
-      this.generatorService.generate$(Generators.Password),
+      this.generatorService.generate$(Generators.password),
     );
 
     this.sendOptionsForm.patchValue({
