@@ -444,6 +444,10 @@
   "ambiguous": {
     "message": "Izbjegavaj dvosmislene znakove"
   },
+  "generatorPolicyInEffect": {
+    "message": "Enterprise policy requirements have been applied to your generator options.",
+    "description": "Indicates that a policy limits the credential generator screen."
+  },
   "searchCollection": {
     "message": "Pretraživanje zbirke"
   },
@@ -1771,8 +1775,8 @@
   "enableBrowserIntegration": {
     "message": "Uključi integraciju s web preglednikom"
   },
-  "enableBrowserIntegrationDesc": {
-    "message": "Integracija s preglednikom koristi se za biometriju u pregledniku."
+  "enableBrowserIntegrationDesc1": {
+    "message": "Used to allow biometric unlock in browsers that are not Safari."
   },
   "enableDuckDuckGoBrowserIntegration": {
     "message": "Dozvoli integraciju s DuckDuckGo preglednikom"

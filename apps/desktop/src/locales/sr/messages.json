@@ -444,6 +444,10 @@
   "ambiguous": {
     "message": "Избегавај двосмислене карактере"
   },
+  "generatorPolicyInEffect": {
+    "message": "Захтеви политике предузећа су примењени на опције гнератора.",
+    "description": "Indicates that a policy limits the credential generator screen."
+  },
   "searchCollection": {
     "message": "Претражи колекцију"
   },
@@ -1771,8 +1775,8 @@
   "enableBrowserIntegration": {
     "message": "Укључи интеграцију са претраживачем"
   },
-  "enableBrowserIntegrationDesc": {
-    "message": "Интеграција прегледача се користи за биометрију у прегледачу."
+  "enableBrowserIntegrationDesc1": {
+    "message": "Користи се за омогућавање биометријског откључавања у прегледачима који то нису Safari."
   },
   "enableDuckDuckGoBrowserIntegration": {
     "message": "Дозволи DuckDuckGo интерграцију претраживача"

@@ -444,6 +444,10 @@
   "ambiguous": {
     "message": "Vermy dubbelsinnige karakters"
   },
+  "generatorPolicyInEffect": {
+    "message": "Enterprise policy requirements have been applied to your generator options.",
+    "description": "Indicates that a policy limits the credential generator screen."
+  },
   "searchCollection": {
     "message": "Deursoek versameling"
   },
@@ -1771,8 +1775,8 @@
   "enableBrowserIntegration": {
     "message": "Aktiveer blaaierintegrasie"
   },
-  "enableBrowserIntegrationDesc": {
-    "message": "Blaaierintegrasie word gebruik vir biometrie in blaaier."
+  "enableBrowserIntegrationDesc1": {
+    "message": "Used to allow biometric unlock in browsers that are not Safari."
   },
   "enableDuckDuckGoBrowserIntegration": {
     "message": "Staan DuckDuckGo-blaaierintegrasie toe"

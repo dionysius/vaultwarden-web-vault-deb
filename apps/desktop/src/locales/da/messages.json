@@ -444,6 +444,10 @@
   "ambiguous": {
     "message": "Undgå tvetydige tegn"
   },
+  "generatorPolicyInEffect": {
+    "message": "Virksomhedspolitikkrav gør sig gældende på generatorvalgmulighder.",
+    "description": "Indicates that a policy limits the credential generator screen."
+  },
   "searchCollection": {
     "message": "Søg i samling"
   },
@@ -1771,8 +1775,8 @@
   "enableBrowserIntegration": {
     "message": "Tillad browserintegration"
   },
-  "enableBrowserIntegrationDesc": {
-    "message": "Bruges til biometri i browser."
+  "enableBrowserIntegrationDesc1": {
+    "message": "Bruges til at tillade biometrisk oplåsning i ikke-Safari webbrowsere."
   },
   "enableDuckDuckGoBrowserIntegration": {
     "message": "Tillad DuckDuckGo-browserintegration"

@@ -444,6 +444,10 @@
   "ambiguous": {
     "message": "Evitare de caractere ambigue"
   },
+  "generatorPolicyInEffect": {
+    "message": "Enterprise policy requirements have been applied to your generator options.",
+    "description": "Indicates that a policy limits the credential generator screen."
+  },
   "searchCollection": {
     "message": "Căutare în colecție"
   },
@@ -1771,8 +1775,8 @@
   "enableBrowserIntegration": {
     "message": "Permiteți integrarea în browser"
   },
-  "enableBrowserIntegrationDesc": {
-    "message": "Folosit pentru biometrie în browser."
+  "enableBrowserIntegrationDesc1": {
+    "message": "Used to allow biometric unlock in browsers that are not Safari."
   },
   "enableDuckDuckGoBrowserIntegration": {
     "message": "Permiteți integrarea de browser DuckDuckGo"

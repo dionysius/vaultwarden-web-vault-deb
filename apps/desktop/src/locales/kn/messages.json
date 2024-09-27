@@ -444,6 +444,10 @@
   "ambiguous": {
     "message": "ಅಸ್ಪಷ್ಟ ಅಕ್ಷರಗಳನ್ನು ತಪ್ಪಿಸಿ"
   },
+  "generatorPolicyInEffect": {
+    "message": "Enterprise policy requirements have been applied to your generator options.",
+    "description": "Indicates that a policy limits the credential generator screen."
+  },
   "searchCollection": {
     "message": "ಸಂಗ್ರಹಣೆ ಹುಡುಕಿ"
   },
@@ -1771,8 +1775,8 @@
   "enableBrowserIntegration": {
     "message": "ಬ್ರೌಸರ್ ಏಕೀಕರಣವನ್ನು ಸಕ್ರಿಯಗೊಳಿಸಿ"
   },
-  "enableBrowserIntegrationDesc": {
-    "message": "ಬ್ರೌಸರ್ನಲ್ಲಿ ಬಯೋಮೆಟ್ರಿಕ್ಸ್ಗಾಗಿ ಬ್ರೌಸರ್ ಏಕೀಕರಣವನ್ನು ಬಳಸಲಾಗುತ್ತದೆ."
+  "enableBrowserIntegrationDesc1": {
+    "message": "Used to allow biometric unlock in browsers that are not Safari."
   },
   "enableDuckDuckGoBrowserIntegration": {
     "message": "Allow DuckDuckGo browser integration"

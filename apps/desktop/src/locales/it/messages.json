@@ -444,6 +444,10 @@
   "ambiguous": {
     "message": "Evita caratteri ambigui"
   },
+  "generatorPolicyInEffect": {
+    "message": "Enterprise policy requirements have been applied to your generator options.",
+    "description": "Indicates that a policy limits the credential generator screen."
+  },
   "searchCollection": {
     "message": "Cerca nella raccolta"
   },
@@ -1771,8 +1775,8 @@
   "enableBrowserIntegration": {
     "message": "Consenti l'integrazione del browser"
   },
-  "enableBrowserIntegrationDesc": {
-    "message": "Usata per i dati biometrici nel browser."
+  "enableBrowserIntegrationDesc1": {
+    "message": "Used to allow biometric unlock in browsers that are not Safari."
   },
   "enableDuckDuckGoBrowserIntegration": {
     "message": "Consenti l'integrazione del browser DuckDuckGo"

@@ -444,6 +444,10 @@
   "ambiguous": {
     "message": "Vermijd dubbelzinnige tekens"
   },
+  "generatorPolicyInEffect": {
+    "message": "Bedrijfsbeleidseisen zijn toegepast op je generator-instellingen.",
+    "description": "Indicates that a policy limits the credential generator screen."
+  },
   "searchCollection": {
     "message": "Doorzoek collectie"
   },
@@ -1771,8 +1775,8 @@
   "enableBrowserIntegration": {
     "message": "Browserintegratie inschakelen"
   },
-  "enableBrowserIntegrationDesc": {
-    "message": "Browserintegratie wordt gebruikt voor biometrie in de browser."
+  "enableBrowserIntegrationDesc1": {
+    "message": "Wordt gebruikt voor het toestaan van biometrische ontgrendelen in andere browsers dan Safari."
   },
   "enableDuckDuckGoBrowserIntegration": {
     "message": "DuckDuckGo browserintegratie toestaan"

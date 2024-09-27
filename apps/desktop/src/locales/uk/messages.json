@@ -444,6 +444,10 @@
   "ambiguous": {
     "message": "Уникати неоднозначних символів"
   },
+  "generatorPolicyInEffect": {
+    "message": "До налаштувань генератора застосовано вимоги політики компанії.",
+    "description": "Indicates that a policy limits the credential generator screen."
+  },
   "searchCollection": {
     "message": "Шукати в збірці"
   },
@@ -1771,8 +1775,8 @@
   "enableBrowserIntegration": {
     "message": "Дозволити інтеграцію з браузером"
   },
-  "enableBrowserIntegrationDesc": {
-    "message": "Використовується для біометрії в браузері."
+  "enableBrowserIntegrationDesc1": {
+    "message": "Використовується для біометричного розблокування у браузерах, крім Safari."
   },
   "enableDuckDuckGoBrowserIntegration": {
     "message": "Дозволити інтеграцію з браузером DuckDuckGo"

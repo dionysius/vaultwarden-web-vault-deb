@@ -444,6 +444,10 @@
   "ambiguous": {
     "message": "Tránh các ký tự dễ gây nhầm lẫn"
   },
+  "generatorPolicyInEffect": {
+    "message": "Enterprise policy requirements have been applied to your generator options.",
+    "description": "Indicates that a policy limits the credential generator screen."
+  },
   "searchCollection": {
     "message": "Tìm kiếm bộ sưu tập"
   },
@@ -1771,8 +1775,8 @@
   "enableBrowserIntegration": {
     "message": "Cho phép tích hợp với trình duyệt"
   },
-  "enableBrowserIntegrationDesc": {
-    "message": "Sử dụng để xác thực sinh trắc học trên trình duyệt."
+  "enableBrowserIntegrationDesc1": {
+    "message": "Used to allow biometric unlock in browsers that are not Safari."
   },
   "enableDuckDuckGoBrowserIntegration": {
     "message": "Cho phép tích hợp trình duyệt DuckDuckGo"

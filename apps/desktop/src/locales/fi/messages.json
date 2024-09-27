@@ -444,6 +444,10 @@
   "ambiguous": {
     "message": "Vältä epäselviä merkkejä"
   },
+  "generatorPolicyInEffect": {
+    "message": "Enterprise policy requirements have been applied to your generator options.",
+    "description": "Indicates that a policy limits the credential generator screen."
+  },
   "searchCollection": {
     "message": "Etsi kokoelmasta"
   },
@@ -1771,8 +1775,8 @@
   "enableBrowserIntegration": {
     "message": "Salli selainintegraatio"
   },
-  "enableBrowserIntegrationDesc": {
-    "message": "Käytetään verkkoselainten biometriatukeen."
+  "enableBrowserIntegrationDesc1": {
+    "message": "Used to allow biometric unlock in browsers that are not Safari."
   },
   "enableDuckDuckGoBrowserIntegration": {
     "message": "Salli integraatio DuckDuckGo-selaimeen"

@@ -444,6 +444,10 @@
   "ambiguous": {
     "message": "המנע מאותיות ותווים דומים"
   },
+  "generatorPolicyInEffect": {
+    "message": "Enterprise policy requirements have been applied to your generator options.",
+    "description": "Indicates that a policy limits the credential generator screen."
+  },
   "searchCollection": {
     "message": "חפש אוסף"
   },
@@ -500,7 +504,7 @@
     "message": "צור חשבון"
   },
   "setAStrongPassword": {
-    "message": "Set a strong password"
+    "message": "הגדרת סיסמה חזקה"
   },
   "finishCreatingYourAccountBySettingAPassword": {
     "message": "Finish creating your account by setting a password"
@@ -1771,8 +1775,8 @@
   "enableBrowserIntegration": {
     "message": "אפשר אינטגרציה עם הדפדפן"
   },
-  "enableBrowserIntegrationDesc": {
-    "message": "אינטגרצייה עם הדפדפן מאפשרת שימוש באמצעיים ביומטריים בדפדפן."
+  "enableBrowserIntegrationDesc1": {
+    "message": "משמש כדי לאפשר שחרור עם אמצעים ביומטריים בדפדפנים שאינם Safari."
   },
   "enableDuckDuckGoBrowserIntegration": {
     "message": "אפשר שילוב דפדפן DuckDuckGo"

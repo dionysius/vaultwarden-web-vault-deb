@@ -444,6 +444,10 @@
   "ambiguous": {
     "message": "Nepoužívat zaměnitelné znaky"
   },
+  "generatorPolicyInEffect": {
+    "message": "Na volby generátoru byly uplatněny požadavky podnikových zásad.",
+    "description": "Indicates that a policy limits the credential generator screen."
+  },
   "searchCollection": {
     "message": "Prohledat kolekci"
   },
@@ -1771,8 +1775,8 @@
   "enableBrowserIntegration": {
     "message": "Povolit integraci prohlížeče"
   },
-  "enableBrowserIntegrationDesc": {
-    "message": "Integrace prohlížeče se používá pro biometriku v prohlížeči."
+  "enableBrowserIntegrationDesc1": {
+    "message": "Použito k povolení biometrického odemknutí v prohlížečích, které nejsou Safari."
   },
   "enableDuckDuckGoBrowserIntegration": {
     "message": "Povolit integraci prohlížeče DuckDuckGo"

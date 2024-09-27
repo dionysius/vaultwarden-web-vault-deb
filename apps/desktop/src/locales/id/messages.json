@@ -444,6 +444,10 @@
   "ambiguous": {
     "message": "Hindari Karakter Ambigu"
   },
+  "generatorPolicyInEffect": {
+    "message": "Enterprise policy requirements have been applied to your generator options.",
+    "description": "Indicates that a policy limits the credential generator screen."
+  },
   "searchCollection": {
     "message": "Cari koleksi"
   },
@@ -1771,8 +1775,8 @@
   "enableBrowserIntegration": {
     "message": "Aktifkan integrasi browser"
   },
-  "enableBrowserIntegrationDesc": {
-    "message": "Integrasi browser digunakan untuk biometrik di browser."
+  "enableBrowserIntegrationDesc1": {
+    "message": "Used to allow biometric unlock in browsers that are not Safari."
   },
   "enableDuckDuckGoBrowserIntegration": {
     "message": "Izinkan integrasi browser DuckDuckGo"

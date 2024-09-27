@@ -444,6 +444,10 @@
   "ambiguous": {
     "message": "از کاراکترهای مبهم اجتناب کن"
   },
+  "generatorPolicyInEffect": {
+    "message": "Enterprise policy requirements have been applied to your generator options.",
+    "description": "Indicates that a policy limits the credential generator screen."
+  },
   "searchCollection": {
     "message": "جستجوی مجموعه"
   },
@@ -1771,8 +1775,8 @@
   "enableBrowserIntegration": {
     "message": "فعال کردن ادغام مرورگر"
   },
-  "enableBrowserIntegrationDesc": {
-    "message": "یکپارچه سازی مرورگر برای بیومتریک در مرورگر استفاده می‌شود."
+  "enableBrowserIntegrationDesc1": {
+    "message": "Used to allow biometric unlock in browsers that are not Safari."
   },
   "enableDuckDuckGoBrowserIntegration": {
     "message": "اجازه ادغام مرورگر DuckDuckGo را بدهید"

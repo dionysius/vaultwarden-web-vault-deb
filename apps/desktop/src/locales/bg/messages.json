@@ -444,6 +444,10 @@
   "ambiguous": {
     "message": "Без нееднозначни знаци"
   },
+  "generatorPolicyInEffect": {
+    "message": "Изискванията на политиката за големи компании бяха приложени към настройките на генератора.",
+    "description": "Indicates that a policy limits the credential generator screen."
+  },
   "searchCollection": {
     "message": "Търсене в колекцията"
   },
@@ -1771,8 +1775,8 @@
   "enableBrowserIntegration": {
     "message": "Включване на интеграцията с браузър"
   },
-  "enableBrowserIntegrationDesc": {
-    "message": "За потвърждаване с биометрични данни е необходима интеграция с браузъра."
+  "enableBrowserIntegrationDesc1": {
+    "message": "Used to allow biometric unlock in browsers that are not Safari."
   },
   "enableDuckDuckGoBrowserIntegration": {
     "message": "Разрешаване на интеграцията на DuckDuckGo в браузъра"

@@ -444,6 +444,10 @@
   "ambiguous": {
     "message": "Vyhnúť sa zameniteľným znakom"
   },
+  "generatorPolicyInEffect": {
+    "message": "Na nastavenie generátora boli uplatnené požiadavky pravidiel spoločnosti.",
+    "description": "Indicates that a policy limits the credential generator screen."
+  },
   "searchCollection": {
     "message": "Hľadať v zbierke"
   },
@@ -1771,8 +1775,8 @@
   "enableBrowserIntegration": {
     "message": "Povoliť integráciu v prehliadiači"
   },
-  "enableBrowserIntegrationDesc": {
-    "message": "Integrácia v prehliadači sa používa na biometriu v prehliadači."
+  "enableBrowserIntegrationDesc1": {
+    "message": "Slúži na povolenie biometrického odomykania v prehliadačoch iných ako Safari."
   },
   "enableDuckDuckGoBrowserIntegration": {
     "message": "Povoliť integráciu prehliadača DuckDuckGo"

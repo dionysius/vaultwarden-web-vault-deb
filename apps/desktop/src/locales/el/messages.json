@@ -444,6 +444,10 @@
   "ambiguous": {
     "message": "Αποφυγή αμφιλεγόμενων χαρακτήρων"
   },
+  "generatorPolicyInEffect": {
+    "message": "Οι απαιτήσεις της εταιρικής πολιτικής έχουν εφαρμοστεί στις επιλογές γεννήτριάς σας.",
+    "description": "Indicates that a policy limits the credential generator screen."
+  },
   "searchCollection": {
     "message": "Αναζήτηση στη συλλογή"
   },
@@ -1771,8 +1775,8 @@
   "enableBrowserIntegration": {
     "message": "Να επιτρέπεται η ενσωμάτωση περιηγητή"
   },
-  "enableBrowserIntegrationDesc": {
-    "message": "Χρησιμοποιείται για βιομετρικά στοιχεία στον περιηγητή."
+  "enableBrowserIntegrationDesc1": {
+    "message": "Used to allow biometric unlock in browsers that are not Safari."
   },
   "enableDuckDuckGoBrowserIntegration": {
     "message": "Επίτρεψε ενσωμάτωση περιηγητή DuckDuckGo"

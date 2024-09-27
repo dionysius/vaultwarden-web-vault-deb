@@ -444,6 +444,10 @@
   "ambiguous": {
     "message": "Anlaşılmaz simvollardan çəkinin"
   },
+  "generatorPolicyInEffect": {
+    "message": "Müəssisə siyasət tələbləri, yaradıcı seçimlərinizə tətbiq edildi.",
+    "description": "Indicates that a policy limits the credential generator screen."
+  },
   "searchCollection": {
     "message": "Kolleksiya axtar"
   },
@@ -1771,8 +1775,8 @@
   "enableBrowserIntegration": {
     "message": "Brauzer inteqrasiyasını fəallaşdır"
   },
-  "enableBrowserIntegrationDesc": {
-    "message": "Brauzerdə biometriklər üçün istifadə olunur."
+  "enableBrowserIntegrationDesc1": {
+    "message": "Used to allow biometric unlock in browsers that are not Safari."
   },
   "enableDuckDuckGoBrowserIntegration": {
     "message": "DuckDuckGo brauzer inteqrasiyasına icazə ver"

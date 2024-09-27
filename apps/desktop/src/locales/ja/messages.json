@@ -444,6 +444,10 @@
   "ambiguous": {
     "message": "あいまいな文字を省く"
   },
+  "generatorPolicyInEffect": {
+    "message": "生成オプションにエンタープライズポリシー要件を適用しました",
+    "description": "Indicates that a policy limits the credential generator screen."
+  },
   "searchCollection": {
     "message": "コレクションの検索"
   },
@@ -1771,8 +1775,8 @@
   "enableBrowserIntegration": {
     "message": "ブラウザ統合を有効にする"
   },
-  "enableBrowserIntegrationDesc": {
-    "message": "ブラウザでの生体認証のためにブラウザ統合を使用します。"
+  "enableBrowserIntegrationDesc1": {
+    "message": "Safari 以外のブラウザで生体認証によるロック解除を許可するために使用されます。"
   },
   "enableDuckDuckGoBrowserIntegration": {
     "message": "DuckDuckGo ブラウザの統合を許可する"

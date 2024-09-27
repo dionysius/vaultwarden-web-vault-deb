@@ -444,6 +444,10 @@
   "ambiguous": {
     "message": "Izvairīties no viegli sajaucamām rakstzīmēm"
   },
+  "generatorPolicyInEffect": {
+    "message": "Veidotāja iespējām tika piemērotas uzņēmējdarbības nosacījumu prasības.",
+    "description": "Indicates that a policy limits the credential generator screen."
+  },
   "searchCollection": {
     "message": "Meklēt krājumā"
   },
@@ -1771,8 +1775,8 @@
   "enableBrowserIntegration": {
     "message": "Iespējot sasaistīšanu ar pārlūku"
   },
-  "enableBrowserIntegrationDesc": {
-    "message": "Tiek izmantota biometrijai pārlūkā."
+  "enableBrowserIntegrationDesc1": {
+    "message": "Used to allow biometric unlock in browsers that are not Safari."
   },
   "enableDuckDuckGoBrowserIntegration": {
     "message": "Atļaut sasaistīšanu ar DuckDuckGo pārlūku"

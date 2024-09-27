@@ -444,6 +444,10 @@
   "ambiguous": {
     "message": "避免易混淆的字符"
   },
+  "generatorPolicyInEffect": {
+    "message": "企业策略要求应用到您的生成器选项中。",
+    "description": "Indicates that a policy limits the credential generator screen."
+  },
   "searchCollection": {
     "message": "搜索集合"
   },
@@ -1771,8 +1775,8 @@
   "enableBrowserIntegration": {
     "message": "允许浏览器集成"
   },
-  "enableBrowserIntegrationDesc": {
-    "message": "用于在浏览器中提供生物识别。"
+  "enableBrowserIntegrationDesc1": {
+    "message": "用于在非 Safari 浏览器中允许生物识别解锁。"
   },
   "enableDuckDuckGoBrowserIntegration": {
     "message": "允许 DuckDuckGo 浏览器集成"

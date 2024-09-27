@@ -444,6 +444,10 @@
   "ambiguous": {
     "message": "Okurken karışabilecek karakterleri kullanma"
   },
+  "generatorPolicyInEffect": {
+    "message": "Üreteç seçeneklerinize kurumsal ilke gereksinimleri uygulandı.",
+    "description": "Indicates that a policy limits the credential generator screen."
+  },
   "searchCollection": {
     "message": "Koleksiyonda ara"
   },
@@ -1771,8 +1775,8 @@
   "enableBrowserIntegration": {
     "message": "Tarayıcı entegrasyonuna izin ver"
   },
-  "enableBrowserIntegrationDesc": {
-    "message": "Tarayıcıda biyometrik doğrulama için kullanılır."
+  "enableBrowserIntegrationDesc1": {
+    "message": "Safari dışındaki tarayıcılarda biyometrik kilit açmaya izin vermek için kullanılır."
   },
   "enableDuckDuckGoBrowserIntegration": {
     "message": "DuckDuckGo tarayıcı entegrasyonuna izin ver"

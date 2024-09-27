@@ -444,6 +444,10 @@
   "ambiguous": {
     "message": "Félreérthető karakterek mellőzése"
   },
+  "generatorPolicyInEffect": {
+    "message": "A vállalati házirend követelményei kerülnek alkalmazásra a generátor beállításaira.",
+    "description": "Indicates that a policy limits the credential generator screen."
+  },
   "searchCollection": {
     "message": "Gyűjtemény keresése"
   },
@@ -1771,8 +1775,8 @@
   "enableBrowserIntegration": {
     "message": "Böngésző integráció engedélyezése"
   },
-  "enableBrowserIntegrationDesc": {
-    "message": "A böngésző integrációt a biometrikus adatokhoz használják a böngészőben."
+  "enableBrowserIntegrationDesc1": {
+    "message": "A biometrikus feloldás engedélyezésére szolgál olyan böngészőkben, amelyek nem Safari."
   },
   "enableDuckDuckGoBrowserIntegration": {
     "message": "DuckDuckGo böngésző integráció engedélyezése"

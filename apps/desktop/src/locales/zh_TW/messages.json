@@ -444,6 +444,10 @@
   "ambiguous": {
     "message": "避免易混淆的字元"
   },
+  "generatorPolicyInEffect": {
+    "message": "Enterprise policy requirements have been applied to your generator options.",
+    "description": "Indicates that a policy limits the credential generator screen."
+  },
   "searchCollection": {
     "message": "搜尋集合"
   },
@@ -1771,8 +1775,8 @@
   "enableBrowserIntegration": {
     "message": "允許瀏覽器整合"
   },
-  "enableBrowserIntegrationDesc": {
-    "message": "用於在瀏覽器中提供生物特徵辨識。"
+  "enableBrowserIntegrationDesc1": {
+    "message": "Used to allow biometric unlock in browsers that are not Safari."
   },
   "enableDuckDuckGoBrowserIntegration": {
     "message": "允許 DuckDuckGo 瀏覽器整合"
