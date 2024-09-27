@@ -490,7 +490,7 @@
     "description": "Label for the avoid ambiguous characters checkbox."
   },
   "generatorPolicyInEffect": {
-    "message": "Enterprise policy requirements have been applied to your generator options.",
+    "message": "Os requisitos da política empresarial foram aplicados às suas opções de gerador.",
     "description": "Indicates that a policy limits the credential generator screen."
   },
   "searchVault": {
@@ -2374,6 +2374,10 @@
     "message": "Tem a certeza de que pretende eliminar este Send?",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
+  "deleteSendPermanentConfirmation": {
+    "message": "Tem a certeza de que pretende eliminar permanentemente este Send?",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
   "editSend": {
     "message": "Editar Send",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
@@ -2500,6 +2504,14 @@
     "message": "Send editado",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
+  "sendFilePopoutDialogText": {
+    "message": "Abrir a extensão numa nova janela?",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendFilePopoutDialogDesc": {
+    "message": "Para criar um ficheiro Send, precisa de abrir a extensão para uma nova janela.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
   "sendLinuxChromiumFileWarning": {
     "message": "Para escolher um ficheiro, abra a extensão na barra lateral (se possível) ou abra uma nova janela clicando neste banner."
   },
@@ -2508,6 +2520,9 @@
   },
   "sendSafariFileWarning": {
     "message": "Para escolher um ficheiro utilizando o Safari, abra uma nova janela clicando neste banner."
+  },
+  "popOut": {
+    "message": "Abrir numa nova janela"
   },
   "sendFileCalloutHeader": {
     "message": "Antes de começar"
@@ -4201,6 +4216,9 @@
   "enableAnimations": {
     "message": "Ativar animações"
   },
+  "showAnimations": {
+    "message": "Mostrar animações"
+  },
   "addAccount": {
     "message": "Adicionar conta"
   },
@@ -4478,5 +4496,8 @@
   },
   "noEditPermissions": {
     "message": "Não tem permissão para editar este item"
+  },
+  "authenticating": {
+    "message": "A autenticar"
   }
 }

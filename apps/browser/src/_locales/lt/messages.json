@@ -1144,7 +1144,7 @@
     "message": "Failas"
   },
   "fileToShare": {
-    "message": "File to share"
+    "message": "Failas, kuri bendrinti"
   },
   "selectFile": {
     "message": "Pasirinkite failą."
@@ -2374,6 +2374,10 @@
     "message": "Ar tikrai norite ištrinti šį „Send“?",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
+  "deleteSendPermanentConfirmation": {
+    "message": "Are you sure you want to permanently delete this Send?",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
   "editSend": {
     "message": "Redaguoti „Send“",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
@@ -2500,6 +2504,14 @@
     "message": "Siuntinys išsaugotas",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
+  "sendFilePopoutDialogText": {
+    "message": "Pop out extension?",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendFilePopoutDialogDesc": {
+    "message": "To create a file Send, you need to pop out te extension to a new window.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
   "sendLinuxChromiumFileWarning": {
     "message": "Norėdami pasirinkti failą, atidarykite plėtinį šoninėje juostoje (jei įmanoma) arba iššokkite į naują langą spustelėdami šią reklamjuostę."
   },
@@ -2508,6 +2520,9 @@
   },
   "sendSafariFileWarning": {
     "message": "Norėdami pasirinkti failą naudodami „Safari“, iššokkite į naują langą spustelėdami šią reklamjuostę."
+  },
+  "popOut": {
+    "message": "Pop out"
   },
   "sendFileCalloutHeader": {
     "message": "Prieš pradedant"
@@ -4201,6 +4216,9 @@
   "enableAnimations": {
     "message": "Enable animations"
   },
+  "showAnimations": {
+    "message": "Show animations"
+  },
   "addAccount": {
     "message": "Pridėti paskyrą"
   },
@@ -4478,5 +4496,8 @@
   },
   "noEditPermissions": {
     "message": "You don't have permission to edit this item"
+  },
+  "authenticating": {
+    "message": "Authenticating"
   }
 }

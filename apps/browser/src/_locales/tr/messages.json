@@ -490,7 +490,7 @@
     "description": "Label for the avoid ambiguous characters checkbox."
   },
   "generatorPolicyInEffect": {
-    "message": "Enterprise policy requirements have been applied to your generator options.",
+    "message": "Üreteç seçeneklerinize kurumsal ilke gereksinimleri uygulandı.",
     "description": "Indicates that a policy limits the credential generator screen."
   },
   "searchVault": {
@@ -2374,6 +2374,10 @@
     "message": "Bu Send'i silmek istediğinizden emin misiniz?",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
+  "deleteSendPermanentConfirmation": {
+    "message": "Bu Send'i kalıcı olarak silmek istediğinizden emin misiniz?",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
   "editSend": {
     "message": "Send'i düzenle",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
@@ -2500,6 +2504,14 @@
     "message": "Send kaydedildi",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
+  "sendFilePopoutDialogText": {
+    "message": "Uzantı dışarı alınsın mı?",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendFilePopoutDialogDesc": {
+    "message": "Dosya Send'i oluşturmak için uzantıyı yeni bir pencere halinde dışarı almalısınız.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
   "sendLinuxChromiumFileWarning": {
     "message": "Dosya seçmek için eklentiyi kenar çubuğunda açın (mümkünse) veya bu banner'a tıklayarak yeni bir pencerede açın."
   },
@@ -2508,6 +2520,9 @@
   },
   "sendSafariFileWarning": {
     "message": "Safari ile dosya seçmek için bu banner'a tıklayarak eklentiyi yeni bir pencerede açın."
+  },
+  "popOut": {
+    "message": "Dışarı al"
   },
   "sendFileCalloutHeader": {
     "message": "Başlamadan önce"
@@ -4201,6 +4216,9 @@
   "enableAnimations": {
     "message": "Animasyonları etkinleştir"
   },
+  "showAnimations": {
+    "message": "Animasyonları göster"
+  },
   "addAccount": {
     "message": "Hesap ekle"
   },
@@ -4478,5 +4496,8 @@
   },
   "noEditPermissions": {
     "message": "Bu kaydı düzenleme yetkisine sahip değilsiniz"
+  },
+  "authenticating": {
+    "message": "Kimlik doğrulanıyor"
   }
 }

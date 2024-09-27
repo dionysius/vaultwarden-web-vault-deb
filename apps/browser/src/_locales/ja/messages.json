@@ -490,7 +490,7 @@
     "description": "Label for the avoid ambiguous characters checkbox."
   },
   "generatorPolicyInEffect": {
-    "message": "Enterprise policy requirements have been applied to your generator options.",
+    "message": "生成オプションにエンタープライズポリシー要件を適用しました",
     "description": "Indicates that a policy limits the credential generator screen."
   },
   "searchVault": {
@@ -2374,6 +2374,10 @@
     "message": "この Send を削除してもよろしいですか?",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
+  "deleteSendPermanentConfirmation": {
+    "message": "この Send を完全に削除してもよろしいですか？",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
   "editSend": {
     "message": "Send を編集",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
@@ -2500,6 +2504,14 @@
     "message": "編集済みの Send",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
+  "sendFilePopoutDialogText": {
+    "message": "拡張機能をポップアウトしますか？",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendFilePopoutDialogDesc": {
+    "message": "ファイル Send を作成するには、拡張機能を新しいウィンドウでポップアウト表示する必要があります。",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
   "sendLinuxChromiumFileWarning": {
     "message": "ファイルを選択するには、可能な場合サイドバーで拡張子を開くか、このバナーをクリックして新しいウィンドウにポップアップしてください。"
   },
@@ -2508,6 +2520,9 @@
   },
   "sendSafariFileWarning": {
     "message": "Safari を使用してファイルを選択するには、このバナーをクリックして新しいウィンドウで開いてください。"
+  },
+  "popOut": {
+    "message": "ポップアウト"
   },
   "sendFileCalloutHeader": {
     "message": "はじめる前に"
@@ -4201,6 +4216,9 @@
   "enableAnimations": {
     "message": "アニメーションを有効化"
   },
+  "showAnimations": {
+    "message": "アニメーションを表示"
+  },
   "addAccount": {
     "message": "アカウントを追加"
   },
@@ -4478,5 +4496,8 @@
   },
   "noEditPermissions": {
     "message": "このアイテムを編集する権限がありません"
+  },
+  "authenticating": {
+    "message": "認証中"
   }
 }

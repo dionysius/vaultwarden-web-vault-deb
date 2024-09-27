@@ -14,16 +14,16 @@
     "message": "登入或建立帳戶以存取您的安全密碼庫。"
   },
   "inviteAccepted": {
-    "message": "Invitation accepted"
+    "message": "邀請已接受"
   },
   "createAccount": {
     "message": "建立帳戶"
   },
   "setAStrongPassword": {
-    "message": "Set a strong password"
+    "message": "設定一個強密碼"
   },
   "finishCreatingYourAccountBySettingAPassword": {
-    "message": "Finish creating your account by setting a password"
+    "message": "設定密碼以完成創建您的帳戶。"
   },
   "enterpriseSingleSignOn": {
     "message": "企業單一登入"
@@ -69,7 +69,7 @@
     "message": "主密碼提示（選用）"
   },
   "joinOrganization": {
-    "message": "Join organization"
+    "message": "加入組織"
   },
   "finishJoiningThisOrganizationBySettingAMasterPassword": {
     "message": "Finish joining this organization by setting a master password."
@@ -114,16 +114,16 @@
     "message": "複製安全代碼"
   },
   "copyName": {
-    "message": "Copy name"
+    "message": "複製名稱"
   },
   "copyCompany": {
-    "message": "Copy company"
+    "message": "複製公司名稱"
   },
   "copySSN": {
-    "message": "Copy Social Security number"
+    "message": "複製社會保險號碼"
   },
   "copyPassportNumber": {
-    "message": "Copy passport number"
+    "message": "複製護照號碼"
   },
   "copyLicenseNumber": {
     "message": "Copy license number"
@@ -2374,6 +2374,10 @@
     "message": "您確定要刪除此 Send 嗎？",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
+  "deleteSendPermanentConfirmation": {
+    "message": "Are you sure you want to permanently delete this Send?",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
   "editSend": {
     "message": "編輯 Send",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
@@ -2500,6 +2504,14 @@
     "message": "Send 已儲存",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
+  "sendFilePopoutDialogText": {
+    "message": "Pop out extension?",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendFilePopoutDialogDesc": {
+    "message": "To create a file Send, you need to pop out te extension to a new window.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
   "sendLinuxChromiumFileWarning": {
     "message": "要選擇檔案，請在側邊欄中開啟擴充套件（若可以），或點選此橫幅彈出至新視窗。"
   },
@@ -2508,6 +2520,9 @@
   },
   "sendSafariFileWarning": {
     "message": "要使用 Safari 來選擇檔案，請點選此橫幅彈出至新視窗。"
+  },
+  "popOut": {
+    "message": "Pop out"
   },
   "sendFileCalloutHeader": {
     "message": "在開始之前"
@@ -4201,6 +4216,9 @@
   "enableAnimations": {
     "message": "Enable animations"
   },
+  "showAnimations": {
+    "message": "Show animations"
+  },
   "addAccount": {
     "message": "Add account"
   },
@@ -4478,5 +4496,8 @@
   },
   "noEditPermissions": {
     "message": "You don't have permission to edit this item"
+  },
+  "authenticating": {
+    "message": "Authenticating"
   }
 }

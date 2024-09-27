@@ -490,7 +490,7 @@
     "description": "Label for the avoid ambiguous characters checkbox."
   },
   "generatorPolicyInEffect": {
-    "message": "Enterprise policy requirements have been applied to your generator options.",
+    "message": "企业策略要求应用到您的生成器选项中。",
     "description": "Indicates that a policy limits the credential generator screen."
   },
   "searchVault": {
@@ -2374,6 +2374,10 @@
     "message": "确定要删除此 Send 吗？",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
+  "deleteSendPermanentConfirmation": {
+    "message": "您确定要永久删除这个 Send 吗？",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
   "editSend": {
     "message": "编辑 Send",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
@@ -2500,6 +2504,14 @@
     "message": "Send 已保存",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
+  "sendFilePopoutDialogText": {
+    "message": "弹出扩展？",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendFilePopoutDialogDesc": {
+    "message": "要创建文件 Send，您需要弹出扩展到一个新窗口。",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
   "sendLinuxChromiumFileWarning": {
     "message": "要选择文件，请在侧边栏中打开扩展（如果可以），或者点击此横幅来弹出一个新窗口。"
   },
@@ -2508,6 +2520,9 @@
   },
   "sendSafariFileWarning": {
     "message": "要在 Safari 中选择文件，请点击此横幅来弹出一个新窗口。"
+  },
+  "popOut": {
+    "message": "弹出"
   },
   "sendFileCalloutHeader": {
     "message": "在开始之前"
@@ -2613,7 +2628,7 @@
     "message": "分钟"
   },
   "vaultTimeoutPolicyAffectingOptions": {
-    "message": "企业策略要求已应用到您的超时选项"
+    "message": "企业策略要求已应用到您的超时选项中"
   },
   "vaultTimeoutPolicyInEffect": {
     "message": "您的组织策略已将您最大允许的密码库超时时间设置为 $HOURS$ 小时 $MINUTES$ 分钟。",
@@ -4201,6 +4216,9 @@
   "enableAnimations": {
     "message": "启用动画"
   },
+  "showAnimations": {
+    "message": "显示动画"
+  },
   "addAccount": {
     "message": "添加账户"
   },
@@ -4478,5 +4496,8 @@
   },
   "noEditPermissions": {
     "message": "您没有编辑此项目的权限"
+  },
+  "authenticating": {
+    "message": "正在验证"
   }
 }

@@ -490,7 +490,7 @@
     "description": "Label for the avoid ambiguous characters checkbox."
   },
   "generatorPolicyInEffect": {
-    "message": "Enterprise policy requirements have been applied to your generator options.",
+    "message": "До налаштувань генератора застосовано вимоги політики компанії.",
     "description": "Indicates that a policy limits the credential generator screen."
   },
   "searchVault": {
@@ -2374,6 +2374,10 @@
     "message": "Ви дійсно хочете видалити це відправлення?",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
+  "deleteSendPermanentConfirmation": {
+    "message": "Ви дійсно хочете остаточно видалити це відправлення?",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
   "editSend": {
     "message": "Редагування",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
@@ -2500,6 +2504,14 @@
     "message": "Відправлення збережено",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
+  "sendFilePopoutDialogText": {
+    "message": "Відкріпити розширення?",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendFilePopoutDialogDesc": {
+    "message": "Щоб створити відправлення файлу, необхідно відкріпити розширення в окреме вікно.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
   "sendLinuxChromiumFileWarning": {
     "message": "Щоб вибрати файл, відкрийте розширення в бічній панелі (якщо можливо) або в новому вікні, натиснувши цей банер."
   },
@@ -2508,6 +2520,9 @@
   },
   "sendSafariFileWarning": {
     "message": "Щоб вибрати файл з використанням Safari, відкрийте розширення в новому вікні, натиснувши на цей банер."
+  },
+  "popOut": {
+    "message": "Відкріпити"
   },
   "sendFileCalloutHeader": {
     "message": "Перед початком"
@@ -4201,6 +4216,9 @@
   "enableAnimations": {
     "message": "Увімкнути анімацію"
   },
+  "showAnimations": {
+    "message": "Показати анімації"
+  },
   "addAccount": {
     "message": "Додати обліковий запис"
   },
@@ -4478,5 +4496,8 @@
   },
   "noEditPermissions": {
     "message": "Вам не дозволено редагувати цей запис"
+  },
+  "authenticating": {
+    "message": "Аутентифікація"
   }
 }

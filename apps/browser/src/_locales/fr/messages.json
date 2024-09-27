@@ -490,7 +490,7 @@
     "description": "Label for the avoid ambiguous characters checkbox."
   },
   "generatorPolicyInEffect": {
-    "message": "Enterprise policy requirements have been applied to your generator options.",
+    "message": "Les exigences de la politique d'entreprise ont été appliquées à vos options de générateur.",
     "description": "Indicates that a policy limits the credential generator screen."
   },
   "searchVault": {
@@ -2374,6 +2374,10 @@
     "message": "Êtes-vous sûr de vouloir supprimer ce Send ?",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
+  "deleteSendPermanentConfirmation": {
+    "message": "Êtes-vous sûr de vouloir supprimer définitivement ce Send ?",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
   "editSend": {
     "message": "Modifier le Send",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
@@ -2500,6 +2504,14 @@
     "message": "Send sauvegardé",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
+  "sendFilePopoutDialogText": {
+    "message": "Détacher l'extension ?",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendFilePopoutDialogDesc": {
+    "message": "Pour créer un envoi de fichier Send, vous devez détacher l'extension dans une nouvelle fenêtre.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
   "sendLinuxChromiumFileWarning": {
     "message": "Pour choisir un fichier, ouvrez l'extension dans la barre latérale (si possible) ou ouvrez une nouvelle fenêtre en cliquant sur cette bannière."
   },
@@ -2508,6 +2520,9 @@
   },
   "sendSafariFileWarning": {
     "message": "Pour choisir un fichier avec Safari, ouvrez une nouvelle fenêtre en cliquant sur cette bannière."
+  },
+  "popOut": {
+    "message": "Détacher"
   },
   "sendFileCalloutHeader": {
     "message": "Avant de commencer"
@@ -4201,6 +4216,9 @@
   "enableAnimations": {
     "message": "Activer les animations"
   },
+  "showAnimations": {
+    "message": "Afficher les animations"
+  },
   "addAccount": {
     "message": "Ajouter un compte"
   },
@@ -4478,5 +4496,8 @@
   },
   "noEditPermissions": {
     "message": "Vous n'êtes pas autorisé à modifier cet élément"
+  },
+  "authenticating": {
+    "message": "Authentification"
   }
 }

@@ -490,7 +490,7 @@
     "description": "Label for the avoid ambiguous characters checkbox."
   },
   "generatorPolicyInEffect": {
-    "message": "Enterprise policy requirements have been applied to your generator options.",
+    "message": "Изискванията на политиката за големи компании бяха приложени към настройките на генератора.",
     "description": "Indicates that a policy limits the credential generator screen."
   },
   "searchVault": {
@@ -2374,6 +2374,10 @@
     "message": "Сигурни ли сте, че искате да изтриете това изпращане?",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
+  "deleteSendPermanentConfirmation": {
+    "message": "Наистина ли искате да изтриете завинаги това Изпращане?",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
   "editSend": {
     "message": "Редактиране на изпращане",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
@@ -2500,6 +2504,14 @@
     "message": "Редактирано изпращане",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
+  "sendFilePopoutDialogText": {
+    "message": "Отваряне на разширението в нов прозорец?",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendFilePopoutDialogDesc": {
+    "message": "За да създадете файлово Изпращане, трябва да отворите разширението в нов прозорец.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
   "sendLinuxChromiumFileWarning": {
     "message": "За да изберете файл, отворете разширението в страничната лента (ако е възможно) или в нов прозорец, като натиснете това съобщение."
   },
@@ -2508,6 +2520,9 @@
   },
   "sendSafariFileWarning": {
     "message": "За да изберете файл в Safari, отворете разширението в нов прозорец, като натиснете това съобщение."
+  },
+  "popOut": {
+    "message": "Отваряне в прозорец"
   },
   "sendFileCalloutHeader": {
     "message": "Преди да почнете"
@@ -4201,6 +4216,9 @@
   "enableAnimations": {
     "message": "Включване на анимациите"
   },
+  "showAnimations": {
+    "message": "Показване на анимации"
+  },
   "addAccount": {
     "message": "Добавяне на регистрация"
   },
@@ -4478,5 +4496,8 @@
   },
   "noEditPermissions": {
     "message": "Нямате право за редактиране на този елемент"
+  },
+  "authenticating": {
+    "message": "Удостоверяване"
   }
 }

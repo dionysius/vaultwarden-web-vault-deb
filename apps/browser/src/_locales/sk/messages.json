@@ -490,7 +490,7 @@
     "description": "Label for the avoid ambiguous characters checkbox."
   },
   "generatorPolicyInEffect": {
-    "message": "Enterprise policy requirements have been applied to your generator options.",
+    "message": "Na nastavenie generátora boli uplatnené požiadavky pravidiel spoločnosti.",
     "description": "Indicates that a policy limits the credential generator screen."
   },
   "searchVault": {
@@ -2374,6 +2374,10 @@
     "message": "Ste si istý, že chcete odstrániť Send?",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
+  "deleteSendPermanentConfirmation": {
+    "message": "Naozaj chcete natrvalo odstrániť tento Send?",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
   "editSend": {
     "message": "Upraviť Send",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
@@ -2500,6 +2504,14 @@
     "message": "Send upravený",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
+  "sendFilePopoutDialogText": {
+    "message": "Zobraziť rozšírenie v novom okne?",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendFilePopoutDialogDesc": {
+    "message": "Na vytvorenie Sendu so súborom musíte zobraziť rozšírenie v novom okne.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
   "sendLinuxChromiumFileWarning": {
     "message": "Ak chcete zvoliť súbor, otvorte rozšírenie v bočnom paneli (ak je to možné) alebo kliknite do tohto okna kliknutím na tento banner."
   },
@@ -2508,6 +2520,9 @@
   },
   "sendSafariFileWarning": {
     "message": "Ak chcete zvoliť súbor pomocou Safari, kliknite na tento banner a otvorte nové okno."
+  },
+  "popOut": {
+    "message": "Zobraziť v novom okne"
   },
   "sendFileCalloutHeader": {
     "message": "Skôr než začnete"
@@ -4201,6 +4216,9 @@
   "enableAnimations": {
     "message": "Povoliť animácie"
   },
+  "showAnimations": {
+    "message": "Zobraziť animácie"
+  },
   "addAccount": {
     "message": "Pridať účet"
   },
@@ -4478,5 +4496,8 @@
   },
   "noEditPermissions": {
     "message": "Na úpravu tejto položky nemáte oprávnenie"
+  },
+  "authenticating": {
+    "message": "Overuje sa"
   }
 }

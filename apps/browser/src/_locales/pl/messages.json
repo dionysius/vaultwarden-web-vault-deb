@@ -129,7 +129,7 @@
     "message": "Kopiuj numer licencji"
   },
   "copyCustomField": {
-    "message": "Copy $FIELD$",
+    "message": "Kopiuj $FIELD$",
     "placeholders": {
       "field": {
         "content": "$1",
@@ -138,10 +138,10 @@
     }
   },
   "copyWebsite": {
-    "message": "Copy website"
+    "message": "Kopiuj stronę internetową"
   },
   "copyNotes": {
-    "message": "Copy notes"
+    "message": "Kopiuj notatki"
   },
   "autoFill": {
     "message": "Autouzupełnianie"
@@ -195,16 +195,16 @@
     "message": "Dodaj element"
   },
   "accountEmail": {
-    "message": "Account email"
+    "message": "Adres e-mail konta"
   },
   "requestHint": {
-    "message": "Request hint"
+    "message": "Poproś o podpowiedź"
   },
   "requestPasswordHint": {
-    "message": "Request password hint"
+    "message": "Poproś o podpowiedź do hasła"
   },
   "enterYourAccountEmailAddressAndYourPasswordHintWillBeSentToYou": {
-    "message": "Enter your account email address and your password hint will be sent to you"
+    "message": "Wprowadź adres e-mail swojego konta, a podpowiedź hasła zostanie wysłana do Ciebie"
   },
   "passwordHint": {
     "message": "Podpowiedź do hasła"
@@ -329,22 +329,22 @@
     "message": "Edytuj folder"
   },
   "newFolder": {
-    "message": "New folder"
+    "message": "Nowy folder"
   },
   "folderName": {
-    "message": "Folder name"
+    "message": "Nazwa folderu"
   },
   "folderHintText": {
-    "message": "Nest a folder by adding the parent folder's name followed by a “/”. Example: Social/Forums"
+    "message": "Zagnieżdżaj foldery dodając nazwę folderu nadrzędnego, a następnie “/”. Przykład: Społeczne/Fora"
   },
   "noFoldersAdded": {
-    "message": "No folders added"
+    "message": "Nie dodano folderów"
   },
   "createFoldersToOrganize": {
-    "message": "Create folders to organize your vault items"
+    "message": "Twórz foldery, aby zorganizować elementy swojego sejfu"
   },
   "deleteFolderPermanently": {
-    "message": "Are you sure you want to permanently delete this folder?"
+    "message": "Czy na pewno chcesz trwale usunąć ten folder?"
   },
   "deleteFolder": {
     "message": "Usuń folder"
@@ -427,11 +427,11 @@
     "description": "deprecated. Use specialCharactersLabel instead."
   },
   "include": {
-    "message": "Include",
+    "message": "Uwzględnij",
     "description": "Card header for password generator include block"
   },
   "uppercaseDescription": {
-    "message": "Include uppercase characters",
+    "message": "Uwzględnij wielkie litery",
     "description": "Tooltip for the password generator uppercase character checkbox"
   },
   "uppercaseLabel": {
@@ -439,7 +439,7 @@
     "description": "Label for the password generator uppercase character checkbox"
   },
   "lowercaseDescription": {
-    "message": "Include lowercase characters",
+    "message": "Uwzględnij małe litery",
     "description": "Full description for the password generator lowercase character checkbox"
   },
   "lowercaseLabel": {
@@ -447,7 +447,7 @@
     "description": "Label for the password generator lowercase character checkbox"
   },
   "numbersDescription": {
-    "message": "Include numbers",
+    "message": "Uwzględnij cyfry",
     "description": "Full description for the password generator numbers checkbox"
   },
   "numbersLabel": {
@@ -455,7 +455,7 @@
     "description": "Label for the password generator numbers checkbox"
   },
   "specialCharactersDescription": {
-    "message": "Include special characters",
+    "message": "Uwzględnij znaki specjalne",
     "description": "Full description for the password generator special characters checkbox"
   },
   "specialCharactersLabel": {
@@ -486,11 +486,11 @@
     "description": "deprecated. Use avoidAmbiguous instead."
   },
   "avoidAmbiguous": {
-    "message": "Avoid ambiguous characters",
+    "message": "Unikaj niejednoznacznych znaków",
     "description": "Label for the avoid ambiguous characters checkbox."
   },
   "generatorPolicyInEffect": {
-    "message": "Enterprise policy requirements have been applied to your generator options.",
+    "message": "Wymagania polityki przedsiębiorstwa zostały użyte do ustawienia opcji generatora.",
     "description": "Indicates that a policy limits the credential generator screen."
   },
   "searchVault": {
@@ -536,7 +536,7 @@
     "message": "Notatki"
   },
   "privateNote": {
-    "message": "Private note"
+    "message": "Prywatna notatka"
   },
   "note": {
     "message": "Notatka"
@@ -584,7 +584,7 @@
     "message": "Limit czasu sesji"
   },
   "vaultTimeoutHeader": {
-    "message": "Vault timeout"
+    "message": "Blokowanie sejfu"
   },
   "otherOptions": {
     "message": "Pozostałe opcje"
@@ -627,7 +627,7 @@
     "message": "Blokowanie sejfu"
   },
   "vaultTimeout1": {
-    "message": "Timeout"
+    "message": "Limit czasu"
   },
   "lockNow": {
     "message": "Zablokuj"
@@ -724,10 +724,10 @@
     "message": "Konto zostało utworzone! Teraz możesz się zalogować."
   },
   "newAccountCreated2": {
-    "message": "Your new account has been created!"
+    "message": "Twoje nowe konto zostało utworzone!"
   },
   "youHaveBeenLoggedIn": {
-    "message": "You have been logged in!"
+    "message": "Zalogowano Cię!"
   },
   "youSuccessfullyLoggedIn": {
     "message": "Zalogowałeś się pomyślnie"
@@ -779,7 +779,7 @@
     "message": "Bitwarden może przechowywać i wypełniać kody weryfikacyjne. Wybierz ikonę aparatu, aby zrobić zrzut ekranu z kodem QR lub skopiuj i wklej klucz do tego pola."
   },
   "learnMoreAboutAuthenticators": {
-    "message": "Learn more about authenticators"
+    "message": "Dowiedz się więcej o uwierzytelniaczach"
   },
   "copyTOTP": {
     "message": "Kopiuj klucz uwierzytelniający (TOTP)"
@@ -830,10 +830,10 @@
     "message": "Logowanie dwustopniowe sprawia, że konto jest bardziej bezpieczne poprzez wymuszenie potwierdzenia logowania z innego urządzenia, takiego jak z klucza bezpieczeństwa, aplikacji uwierzytelniającej, wiadomości SMS, telefonu lub adresu e-mail. Logowanie dwustopniowe możesz włączyć w sejfie internetowym bitwarden.com. Czy chcesz przejść do tej strony?"
   },
   "twoStepLoginConfirmationContent": {
-    "message": "Make your account more secure by setting up two-step login in the Bitwarden web app."
+    "message": "Spraw, aby Twoje konto było bezpieczniejsze poprzez skonfigurowanie dwustopniowego logowania w aplikacji internetowej Bitwarden."
   },
   "twoStepLoginConfirmationTitle": {
-    "message": "Continue to web app?"
+    "message": "Kontynuować do aplikacji internetowej?"
   },
   "editedFolder": {
     "message": "Folder został zapisany"
@@ -938,7 +938,7 @@
     "message": "Pokaż elementy karty na stronie głównej, aby ułatwić autouzupełnianie."
   },
   "showIdentitiesInVaultView": {
-    "message": "Show identities as Autofill suggestions on Vault view"
+    "message": "Pokaż tożsamośći jako sugestie autouzupełniania w widoku sejfu"
   },
   "showIdentitiesCurrentTab": {
     "message": "Pokaż tożsamości na stronie głównej"
@@ -1144,7 +1144,7 @@
     "message": "Plik"
   },
   "fileToShare": {
-    "message": "File to share"
+    "message": "Plik do udostępnienia"
   },
   "selectFile": {
     "message": "Wybierz plik"
@@ -1180,7 +1180,7 @@
     "message": "1 GB miejsca na zaszyfrowane załączniki."
   },
   "premiumSignUpEmergency": {
-    "message": "Emergency access."
+    "message": "Dostęp awaryjny."
   },
   "premiumSignUpTwoStepOptions": {
     "message": "Własnościowe opcje logowania dwuetapowego, takie jak YubiKey i Duo."
@@ -1204,7 +1204,7 @@
     "message": "Konto Premium możesz zakupić na stronie sejfu bitwarden.com. Czy chcesz otworzyć tę stronę?"
   },
   "premiumPurchaseAlertV2": {
-    "message": "You can purchase Premium from your account settings on the Bitwarden web app."
+    "message": "Możesz kupić Premium w ustawieniach konta w aplikacji internetowej Bitwarden."
   },
   "premiumCurrentMember": {
     "message": "Posiadasz konto Premium!"
@@ -1213,7 +1213,7 @@
     "message": "Dziękujemy za wspieranie Bitwarden."
   },
   "premiumFeatures": {
-    "message": "Upgrade to Premium and receive:"
+    "message": "Uaktualnij do wersji Premium i otrzymaj:"
   },
   "premiumPrice": {
     "message": "Wszystko to jedynie za $PRICE$ /rok!",
@@ -1225,7 +1225,7 @@
     }
   },
   "premiumPriceV2": {
-    "message": "All for just $PRICE$ per year!",
+    "message": "Wszystko tylko za $PRICE$ rocznie!",
     "placeholders": {
       "price": {
         "content": "$1",
@@ -1846,13 +1846,13 @@
     "message": "Brak haseł."
   },
   "clearHistory": {
-    "message": "Clear history"
+    "message": "Wyczyść historię"
   },
   "noPasswordsToShow": {
-    "message": "No passwords to show"
+    "message": "Brak haseł do wyświetlenia"
   },
   "noRecentlyGeneratedPassword": {
-    "message": "You haven't generated a password recently"
+    "message": "W ostatnim czasie nie wygenerowano hasła"
   },
   "remove": {
     "message": "Usuń"
@@ -1913,16 +1913,16 @@
     "message": "Odblokuj kodem PIN"
   },
   "setYourPinTitle": {
-    "message": "Set PIN"
+    "message": "Ustaw kod PIN"
   },
   "setYourPinButton": {
-    "message": "Set PIN"
+    "message": "Ustaw kod PIN"
   },
   "setYourPinCode": {
     "message": "Ustaw kod PIN do odblokowywania aplikacji Bitwarden. Ustawienia odblokowywania kodem PIN zostaną zresetowane po wylogowaniu."
   },
   "setYourPinCode1": {
-    "message": "Your PIN will be used to unlock Bitwarden instead of your master password. Your PIN will reset if you ever fully log out of Bitwarden."
+    "message": "Twój PIN będzie używany do odblokowania Bitwardena zamiast hasła głównego. Twój kod PIN zostanie zresetowany jeśli kiedykolwiek wylogujesz się z Bitwarden."
   },
   "pinRequired": {
     "message": "Kod PIN jest wymagany."
@@ -1946,7 +1946,7 @@
     "message": "Zablokuj hasłem głównym po uruchomieniu przeglądarki"
   },
   "lockWithMasterPassOnRestart1": {
-    "message": "Require master password on browser restart"
+    "message": "Wymagaj hasła głównego przy ponownym uruchomieniu przeglądarki"
   },
   "selectOneCollection": {
     "message": "Musisz wybrać co najmniej jedną kolekcję."
@@ -1961,33 +1961,33 @@
     "message": "Co najmniej jedna zasada organizacji wpływa na ustawienia generatora."
   },
   "passwordGenerator": {
-    "message": "Password generator"
+    "message": "Generator hasła"
   },
   "usernameGenerator": {
-    "message": "Username generator"
+    "message": "Generator nazw użytkownika"
   },
   "useThisPassword": {
-    "message": "Use this password"
+    "message": "Użyj tego hasła"
   },
   "useThisUsername": {
-    "message": "Use this username"
+    "message": "Użyj tej nazwy użytkownika"
   },
   "securePasswordGenerated": {
-    "message": "Secure password generated! Don't forget to also update your password on the website."
+    "message": "Wygenerowane bezpieczne hasło! Nie zapomnij również zaktualizować hasła na stronie."
   },
   "useGeneratorHelpTextPartOne": {
-    "message": "Use the generator",
+    "message": "Użyj generatora",
     "description": "This will be used as part of a larger sentence, broken up to include the generator icon. The full sentence will read 'Use the generator [GENERATOR_ICON] to create a strong unique password'"
   },
   "useGeneratorHelpTextPartTwo": {
-    "message": "to create a strong unique password",
+    "message": ", aby utworzyć mocne unikalne hasło",
     "description": "This will be used as part of a larger sentence, broken up to include the generator icon. The full sentence will read 'Use the generator [GENERATOR_ICON] to create a strong unique password'"
   },
   "vaultTimeoutAction": {
     "message": "Sposób blokowania sejfu"
   },
   "vaultTimeoutAction1": {
-    "message": "Timeout action"
+    "message": "Akcja po przekroczeniu limitu czasu"
   },
   "lock": {
     "message": "Zablokuj",
@@ -2208,10 +2208,10 @@
     "message": "Odblokuj tego użytkownika w aplikacji desktopowej i spróbuj ponownie."
   },
   "biometricsNotAvailableTitle": {
-    "message": "Biometric unlock unavailable"
+    "message": "Odblokowanie biometryczne jest niedostępne"
   },
   "biometricsNotAvailableDesc": {
-    "message": "Biometric unlock is currently unavailable. Please try again later."
+    "message": "Odblokowanie biometryczne jest obecnie niedostępne. Spróbuj ponownie później."
   },
   "biometricsFailedTitle": {
     "message": "Dane biometryczne są błędne"
@@ -2275,14 +2275,14 @@
     "message": "Zmiany w wykluczonych domenach zapisane"
   },
   "limitSendViews": {
-    "message": "Limit views"
+    "message": "Limit wyświetleń"
   },
   "limitSendViewsHint": {
-    "message": "No one can view this Send after the limit is reached.",
+    "message": "Nikt nie może wyświetlić Send po osiągnieciu limitu.",
     "description": "Displayed under the limit views field on Send"
   },
   "limitSendViewsCount": {
-    "message": "$ACCESSCOUNT$ views left",
+    "message": "Zostało wyświetleń: $ACCESSCOUNT$",
     "description": "Displayed under the limit views field on Send",
     "placeholders": {
       "accessCount": {
@@ -2296,7 +2296,7 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendDetails": {
-    "message": "Send details",
+    "message": "Szczegóły Send",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "searchSends": {
@@ -2311,7 +2311,7 @@
     "message": "Tekst"
   },
   "sendTypeTextToShare": {
-    "message": "Text to share"
+    "message": "Tekst do udostępnienia"
   },
   "sendTypeFile": {
     "message": "Plik"
@@ -2321,7 +2321,7 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "hideTextByDefault": {
-    "message": "Hide text by default"
+    "message": "Domyślnie ukryj tekst"
   },
   "maxAccessCountReached": {
     "message": "Maksymalna liczba dostępów została osiągnięta",
@@ -2374,6 +2374,10 @@
     "message": "Czy na pewno chcesz usunąć tę wysyłkę?",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
+  "deleteSendPermanentConfirmation": {
+    "message": "Czy na pewno chcesz trwale usunąć to Send?",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
   "editSend": {
     "message": "Edytuj wysyłkę",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
@@ -2397,7 +2401,7 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "deletionDateDescV2": {
-    "message": "The Send will be permanently deleted on this date.",
+    "message": "Send zostanie trwale usunięte w tej dacie.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "expirationDate": {
@@ -2434,7 +2438,7 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendPasswordDescV2": {
-    "message": "Require this password to view the Send.",
+    "message": "Wymagaj tego hasła aby wyświetlić Send.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendNotesDesc": {
@@ -2479,11 +2483,11 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "createdSendSuccessfully": {
-    "message": "Send created successfully!",
+    "message": "Send został stworzony!",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendAvailability": {
-    "message": "The Send will be available to anyone with the link for the next $DAYS$ days.",
+    "message": "Send będzie dostępny dla każdego kto ma link przez następującą liczbę dni: $DAYS$.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated.",
     "placeholders": {
       "days": {
@@ -2493,11 +2497,19 @@
     }
   },
   "sendLinkCopied": {
-    "message": "Send link copied",
+    "message": "Link Send został skopiowany",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "editedSend": {
     "message": "Wysyłka została zapisana",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendFilePopoutDialogText": {
+    "message": "Pop out extension?",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendFilePopoutDialogDesc": {
+    "message": "To create a file Send, you need to pop out te extension to a new window.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendLinuxChromiumFileWarning": {
@@ -2508,6 +2520,9 @@
   },
   "sendSafariFileWarning": {
     "message": "Aby wybrać plik za pomocą przeglądarki Safari, otwórz rozszerzenie w nowym oknie."
+  },
+  "popOut": {
+    "message": "Pop out"
   },
   "sendFileCalloutHeader": {
     "message": "Zanim zaczniesz"
@@ -2543,7 +2558,7 @@
     "message": "Ukryj mój adres e-mail przed odbiorcami."
   },
   "hideYourEmail": {
-    "message": "Hide your email address from viewers."
+    "message": "Ukryj mój adres e-mail przed oglądającymi."
   },
   "sendOptionsPolicyInEffect": {
     "message": "Co najmniej jedna zasada organizacji wpływa na ustawienia wysyłek."
@@ -2579,7 +2594,7 @@
     "message": "Twoje hasło główne nie spełnia jednej lub kilku zasad organizacji. Aby uzyskać dostęp do sejfu, musisz teraz zaktualizować swoje hasło główne. Kontynuacja wyloguje Cię z bieżącej sesji, wymagając zalogowania się ponownie. Aktywne sesje na innych urządzeniach mogą pozostać aktywne przez maksymalnie jedną godzinę."
   },
   "tdeDisabledMasterPasswordRequired": {
-    "message": "Your organization has disabled trusted device encryption. Please set a master password to access your vault."
+    "message": "Twoja organizacja wyłączyła szyfrowanie zaufanego urządzenia. Ustaw hasło główne, aby uzyskać dostęp do sejfu."
   },
   "resetPasswordPolicyAutoEnroll": {
     "message": "Automatyczne rejestrowanie użytkowników"
@@ -2613,7 +2628,7 @@
     "message": "Minuty"
   },
   "vaultTimeoutPolicyAffectingOptions": {
-    "message": "Enterprise policy requirements have been applied to your timeout options"
+    "message": "Wymagania polityki przedsiębiorstwa zostały zastosowane do twoich opcji przekrocznia limitu czasu"
   },
   "vaultTimeoutPolicyInEffect": {
     "message": "Zasady organizacji mają wpływ czas blokowania sejfu. Maksymalny dozwolony czas wynosi $HOURS$ godz. i $MINUTES$ min.",
@@ -2629,7 +2644,7 @@
     }
   },
   "vaultTimeoutPolicyInEffect1": {
-    "message": "$HOURS$ hour(s) and $MINUTES$ minute(s) maximum.",
+    "message": "$HOURS$ godzin(y) i $MINUTES$ minut(y) maksymalnie.",
     "placeholders": {
       "hours": {
         "content": "$1",
@@ -2642,7 +2657,7 @@
     }
   },
   "vaultTimeoutPolicyMaximumError": {
-    "message": "Timeout exceeds the restriction set by your organization: $HOURS$ hour(s) and $MINUTES$ minute(s) maximum",
+    "message": "Limit czasu przekracza ograniczenie ustawione przez Twoją organizację: $HOURS$ godzin(y) i $MINUTES$ minut(y) maksymalnie",
     "placeholders": {
       "hours": {
         "content": "$1",
@@ -3618,7 +3633,7 @@
     "message": "Weryfikacja jest wymagana przez stronę inicjującą. Ta funkcja nie jest jeszcze zaimplementowana dla kont bez hasła głównego."
   },
   "logInWithPasskeyQuestion": {
-    "message": "Log in with passkey?"
+    "message": "Zaloguj się za pomocą passkey?"
   },
   "passkeyAlreadyExists": {
     "message": "Passkey już istnieje dla tej aplikacji."
@@ -3630,7 +3645,7 @@
     "message": "Nie masz pasujących danych logowania do tej witryny."
   },
   "noMatchingLoginsForSite": {
-    "message": "No matching logins for this site"
+    "message": "Brak pasujących loginów dla tej witryny"
   },
   "confirm": {
     "message": "Potwierdź"
@@ -3642,10 +3657,10 @@
     "message": "Zapisz passkey jako nowe dane logowania"
   },
   "chooseCipherForPasskeySave": {
-    "message": "Choose a login to save this passkey to"
+    "message": "Wybierz dane logowania do których przypisać passkey"
   },
   "chooseCipherForPasskeyAuth": {
-    "message": "Choose a passkey to log in with"
+    "message": "Wybierz passkey żeby się zalogować"
   },
   "passkeyItem": {
     "message": "Element Passkey"
@@ -3843,7 +3858,7 @@
     "description": "Notification message for when saving credentials has succeeded."
   },
   "passwordSaved": {
-    "message": "Password saved!",
+    "message": "Hasło zostało zapisane!",
     "description": "Notification message for when saving credentials has succeeded."
   },
   "updateCipherAttemptSuccess": {
@@ -3851,7 +3866,7 @@
     "description": "Notification message for when updating credentials has succeeded."
   },
   "passwordUpdated": {
-    "message": "Password updated!",
+    "message": "Hasło zostało zaktualizowane!",
     "description": "Notification message for when updating credentials has succeeded."
   },
   "saveCipherAttemptFailed": {
@@ -4131,7 +4146,7 @@
     "message": "Strona internetowa (URI)"
   },
   "websiteUriCount": {
-    "message": "Website (URI) $COUNT$",
+    "message": "Strona internetowa (URI) $COUNT$",
     "description": "Label for an input field that contains a website URI. The input field is part of a list of fields, and the count indicates the position of the field in the list.",
     "placeholders": {
       "count": {
@@ -4160,7 +4175,7 @@
     }
   },
   "showMatchDetection": {
-    "message": "Show match detection $WEBSITE$",
+    "message": "Pokaż wykrywanie dopasowań $WEBSITE$",
     "placeholders": {
       "website": {
         "content": "$1",
@@ -4169,7 +4184,7 @@
     }
   },
   "hideMatchDetection": {
-    "message": "Hide match detection $WEBSITE$",
+    "message": "Ukryj wykrywanie dopasowań $WEBSITE$",
     "placeholders": {
       "website": {
         "content": "$1",
@@ -4181,10 +4196,10 @@
     "message": "Włącz autouzupełnianie po załadowaniu strony?"
   },
   "cardExpiredTitle": {
-    "message": "Expired card"
+    "message": "Karta wygasła"
   },
   "cardExpiredMessage": {
-    "message": "If you've renewed it, update the card's information"
+    "message": "Jeśli ją wznowiłeś, zaktualizuj informacje o karcie"
   },
   "cardDetails": {
     "message": "Szczegóły karty"
@@ -4199,7 +4214,10 @@
     }
   },
   "enableAnimations": {
-    "message": "Enable animations"
+    "message": "Włącz animacje"
+  },
+  "showAnimations": {
+    "message": "Pokaż animacje"
   },
   "addAccount": {
     "message": "Dodaj konto"
@@ -4215,11 +4233,11 @@
     "description": "A section header for a list of passkeys."
   },
   "passwords": {
-    "message": "Passwords",
+    "message": "Hasła",
     "description": "A section header for a list of passwords."
   },
   "logInWithPasskeyAriaLabel": {
-    "message": "Log in with passkey",
+    "message": "Zaloguj się za pomocą passkey",
     "description": "ARIA label for the inline menu button that logs in with a passkey."
   },
   "assign": {
@@ -4429,54 +4447,57 @@
     "message": "Auto wypełnianie i szukanie na zakładce sejfu jest teraz prostsze i bardziej intuicyjne. Rozejrzyj się tam!"
   },
   "accountActions": {
-    "message": "Account actions"
+    "message": "Akcje konta"
   },
   "showNumberOfAutofillSuggestions": {
-    "message": "Show number of login autofill suggestions on extension icon"
+    "message": "Pokaż liczbę sugestii autouzupełniania logowania na ikonie rozszerzenia"
   },
   "systemDefault": {
-    "message": "System default"
+    "message": "Domyślny systemu"
   },
   "enterprisePolicyRequirementsApplied": {
-    "message": "Enterprise policy requirements have been applied to this setting"
+    "message": "Do tego ustalenia zastosowano wymogi polityki przedsiębiorstw"
   },
   "retry": {
-    "message": "Retry"
+    "message": "Powtórz"
   },
   "vaultCustomTimeoutMinimum": {
-    "message": "Minimum custom timeout is 1 minute."
+    "message": "Minimalny limit czasu niestandardowego wynosi 1 minutę."
   },
   "additionalContentAvailable": {
-    "message": "Additional content is available"
+    "message": "Dostępna jest dodatkowa zawartość"
   },
   "fileSavedToDevice": {
-    "message": "File saved to device. Manage from your device downloads."
+    "message": "Plik zapisany na urządzeniu. Zarządzaj plikiem na swoim urządzeniu."
   },
   "showCharacterCount": {
-    "message": "Show character count"
+    "message": "Pokaż liczbę znaków"
   },
   "hideCharacterCount": {
-    "message": "Hide character count"
+    "message": "Ukryj liczbę znaków"
   },
   "itemsInTrash": {
-    "message": "Items in trash"
+    "message": "Elementy w koszu"
   },
   "noItemsInTrash": {
-    "message": "No items in trash"
+    "message": "Brak elementów w koszu"
   },
   "noItemsInTrashDesc": {
-    "message": "Items you delete will appear here and be permanently deleted after 30 days"
+    "message": "Usunięte elementy pojawią się tutaj i zostaną trwale usunięte po 30 dniach"
   },
   "trashWarning": {
-    "message": "Items that have been in trash more than 30 days will automatically be deleted"
+    "message": "Elementy znajdujące się w koszu ponad 30 dni zostaną automatycznie usunięte"
   },
   "restore": {
-    "message": "Restore"
+    "message": "Przywróć"
   },
   "deleteForever": {
-    "message": "Delete forever"
+    "message": "Usuń na zawsze"
   },
   "noEditPermissions": {
-    "message": "You don't have permission to edit this item"
+    "message": "Nie masz uprawnień do edycji tego elementu"
+  },
+  "authenticating": {
+    "message": "Authenticating"
   }
 }

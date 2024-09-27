@@ -490,7 +490,7 @@
     "description": "Label for the avoid ambiguous characters checkbox."
   },
   "generatorPolicyInEffect": {
-    "message": "Enterprise policy requirements have been applied to your generator options.",
+    "message": "Müəssisə siyasət tələbləri, yaradıcı seçimlərinizə tətbiq edildi.",
     "description": "Indicates that a policy limits the credential generator screen."
   },
   "searchVault": {
@@ -2374,6 +2374,10 @@
     "message": "Bu \"Send\"i silmək istədiyinizə əminsiniz?",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
+  "deleteSendPermanentConfirmation": {
+    "message": "Bu Send-i həmişəlik silmək istədiyinizə əminsiniz?",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
   "editSend": {
     "message": "\"Send\"ə düzəliş et",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
@@ -2500,6 +2504,14 @@
     "message": "\"Send\" saxlanıldı",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
+  "sendFilePopoutDialogText": {
+    "message": "Pop out extension?",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendFilePopoutDialogDesc": {
+    "message": "To create a file Send, you need to pop out te extension to a new window.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
   "sendLinuxChromiumFileWarning": {
     "message": "Bir fayl seçmək üçün (mümkünsə) yan çubuqdakı uzantını açın və ya bu bannerə klikləyərək yeni bir pəncərədə açın."
   },
@@ -2508,6 +2520,9 @@
   },
   "sendSafariFileWarning": {
     "message": "Safari istifadə edərək bir fayl seçmək üçün bu bannerə klikləyərək yeni bir pəncərədə açın."
+  },
+  "popOut": {
+    "message": "Pop out"
   },
   "sendFileCalloutHeader": {
     "message": "Başlamazdan əvvəl"
@@ -4201,6 +4216,9 @@
   "enableAnimations": {
     "message": "Animasiyaları fəallaşdır"
   },
+  "showAnimations": {
+    "message": "Animasiyaları göstər"
+  },
   "addAccount": {
     "message": "Hesab əlavə et"
   },
@@ -4478,5 +4496,8 @@
   },
   "noEditPermissions": {
     "message": "Bu elementə düzəliş etmə icazəniz yoxdur"
+  },
+  "authenticating": {
+    "message": "Authenticating"
   }
 }

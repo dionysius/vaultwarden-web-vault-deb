@@ -490,7 +490,7 @@
     "description": "Label for the avoid ambiguous characters checkbox."
   },
   "generatorPolicyInEffect": {
-    "message": "Enterprise policy requirements have been applied to your generator options.",
+    "message": "Veidotāja iespējām tika piemērotas uzņēmējdarbības nosacījumu prasības.",
     "description": "Indicates that a policy limits the credential generator screen."
   },
   "searchVault": {
@@ -2374,6 +2374,10 @@
     "message": "Vai tiešām izdzēst šo Send?",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
+  "deleteSendPermanentConfirmation": {
+    "message": "Vai tiešām neatgriezeniski izdzēst šo Send?",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
   "editSend": {
     "message": "Labot Send",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
@@ -2500,6 +2504,14 @@
     "message": "Send saglabāts",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
+  "sendFilePopoutDialogText": {
+    "message": "Atvērt paplašinājumu atsevišķi?",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendFilePopoutDialogDesc": {
+    "message": "Lai izveidotu datņu Send, nepieciešams atvērt paplašinājumu atsevišķā logā.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
   "sendLinuxChromiumFileWarning": {
     "message": "Lai izvēlētos datni, paplašinājums ir jāatver sānjoslā (ja iespējams) vai atsevišķā logā, klikšķinot uz šī paziņojuma."
   },
@@ -2508,6 +2520,9 @@
   },
   "sendSafariFileWarning": {
     "message": "Lai izvēlētos datni, ja tiek izmantots Safari, paplašinājums ir jāatver jaunā logā, klikšķinot uz šī paziņojuma."
+  },
+  "popOut": {
+    "message": "Atvērt atsevišķi"
   },
   "sendFileCalloutHeader": {
     "message": "Pirms sākšanas"
@@ -4201,6 +4216,9 @@
   "enableAnimations": {
     "message": "Iespējot animācijas"
   },
+  "showAnimations": {
+    "message": "Rādīt animācijas"
+  },
   "addAccount": {
     "message": "Pievienot kontu"
   },
@@ -4478,5 +4496,8 @@
   },
   "noEditPermissions": {
     "message": "Nav nepieciešamo atļauju, lai labotu šo vienumu"
+  },
+  "authenticating": {
+    "message": "Autentificē"
   }
 }

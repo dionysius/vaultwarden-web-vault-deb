@@ -490,7 +490,7 @@
     "description": "Label for the avoid ambiguous characters checkbox."
   },
   "generatorPolicyInEffect": {
-    "message": "Enterprise policy requirements have been applied to your generator options.",
+    "message": "A vállalati házirend követelményei kerülnek alkalmazásra a generátor beállításaira.",
     "description": "Indicates that a policy limits the credential generator screen."
   },
   "searchVault": {
@@ -2374,6 +2374,10 @@
     "message": "Biztosan törlésre kerüljön ez a Send?",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
+  "deleteSendPermanentConfirmation": {
+    "message": "Biztosan véglegesen törlésre kerüljön ez a Send elem?",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
   "editSend": {
     "message": "Send szerkesztése",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
@@ -2500,6 +2504,14 @@
     "message": "A Send mentésre került.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
+  "sendFilePopoutDialogText": {
+    "message": "Bővítmény átthelyezése?",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendFilePopoutDialogDesc": {
+    "message": "A Send fájl létrehozásához át kell helyezni a bővítményt egy új ablakba.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
   "sendLinuxChromiumFileWarning": {
     "message": "A fájl kiválasztásához nyissuk meg a kiterjesztést az oldalsávon (ha lehetséges) vagy kattintsunk erre a sávra új ablak felbukkanásához."
   },
@@ -2508,6 +2520,9 @@
   },
   "sendSafariFileWarning": {
     "message": "A fájl kiválasztásához Safariban kattintsunk erre a hirdetőtáblára kattintva új ablak nyílik meg."
+  },
+  "popOut": {
+    "message": "Áthelyezés"
   },
   "sendFileCalloutHeader": {
     "message": "Mielőtt belevágnánk"
@@ -4201,6 +4216,9 @@
   "enableAnimations": {
     "message": "Animációk engedélyezése"
   },
+  "showAnimations": {
+    "message": "Animációk megjelenítése"
+  },
   "addAccount": {
     "message": "Fiók hozzáadása"
   },
@@ -4478,5 +4496,8 @@
   },
   "noEditPermissions": {
     "message": "Nincs jogosulltság ezen elem szerkesztéséheu."
+  },
+  "authenticating": {
+    "message": "Authenticating"
   }
 }

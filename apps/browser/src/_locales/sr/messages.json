@@ -490,7 +490,7 @@
     "description": "Label for the avoid ambiguous characters checkbox."
   },
   "generatorPolicyInEffect": {
-    "message": "Enterprise policy requirements have been applied to your generator options.",
+    "message": "Захтеви политике предузећа су примењени на опције генератора.",
     "description": "Indicates that a policy limits the credential generator screen."
   },
   "searchVault": {
@@ -2374,6 +2374,10 @@
     "message": "Сигурно избрисати овај „Send“?",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
+  "deleteSendPermanentConfirmation": {
+    "message": "Да ли сте сигурни да желите да трајно избришете овај Send?",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
   "editSend": {
     "message": "Уреди „Send“",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
@@ -2500,6 +2504,14 @@
     "message": "Измењено слање",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
+  "sendFilePopoutDialogText": {
+    "message": "Искачући додатак?",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendFilePopoutDialogDesc": {
+    "message": "Да бисте креирали датотеку Send, потребно је да искочите екстензију у нови прозор.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
   "sendLinuxChromiumFileWarning": {
     "message": "Да бисте изабрали датотеку, отворите екстензију на бочној траци (ако је могуће) или отворите у нови прозор кликом на овај банер."
   },
@@ -2508,6 +2520,9 @@
   },
   "sendSafariFileWarning": {
     "message": "Да бисте изабрали датотеку са Safari-ом, отворите у нови прозор кликом на овај банер."
+  },
+  "popOut": {
+    "message": "Искочити"
   },
   "sendFileCalloutHeader": {
     "message": "Пре него што почнеш"
@@ -4201,6 +4216,9 @@
   "enableAnimations": {
     "message": "Омогући анимације"
   },
+  "showAnimations": {
+    "message": "Прикажи анимације"
+  },
   "addAccount": {
     "message": "Додај налог"
   },
@@ -4478,5 +4496,8 @@
   },
   "noEditPermissions": {
     "message": "Немате дозволу да уређујете ову ставку"
+  },
+  "authenticating": {
+    "message": "Аутентификација"
   }
 }

@@ -490,7 +490,7 @@
     "description": "Label for the avoid ambiguous characters checkbox."
   },
   "generatorPolicyInEffect": {
-    "message": "Enterprise policy requirements have been applied to your generator options.",
+    "message": "К настройкам генератора были применены требования корпоративной политики.",
     "description": "Indicates that a policy limits the credential generator screen."
   },
   "searchVault": {
@@ -2374,6 +2374,10 @@
     "message": "Вы действительно хотите удалить эту Send?",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
+  "deleteSendPermanentConfirmation": {
+    "message": "Вы уверены, что хотите безвозвратно удалить эту Send?",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
   "editSend": {
     "message": "Изменить Send",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
@@ -2500,6 +2504,14 @@
     "message": "Send сохранена",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
+  "sendFilePopoutDialogText": {
+    "message": "Открепить расширение?",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendFilePopoutDialogDesc": {
+    "message": "Чтобы создать файл Send, необходимо открыть расширение в новом окне.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
   "sendLinuxChromiumFileWarning": {
     "message": "Для выбора файла откройте расширение в боковой панели (если возможно) или перейдите в новое окно, нажав на этот баннер."
   },
@@ -2508,6 +2520,9 @@
   },
   "sendSafariFileWarning": {
     "message": "Для выбора файла с помощью Safari, перейдите в новое окно, нажав на этот баннер."
+  },
+  "popOut": {
+    "message": "Открепить"
   },
   "sendFileCalloutHeader": {
     "message": "Перед тем, как начать"
@@ -4201,6 +4216,9 @@
   "enableAnimations": {
     "message": "Включить анимацию"
   },
+  "showAnimations": {
+    "message": "Показать анимацию"
+  },
   "addAccount": {
     "message": "Добавить аккаунт"
   },
@@ -4478,5 +4496,8 @@
   },
   "noEditPermissions": {
     "message": "У вас нет разрешения на редактирование этого элемента"
+  },
+  "authenticating": {
+    "message": "Аутентификация"
   }
 }
