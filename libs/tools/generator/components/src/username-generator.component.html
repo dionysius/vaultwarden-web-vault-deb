@@ -1,0 +1,51 @@
+<bit-card class="tw-flex tw-justify-between tw-mb-4">
+  <div class="tw-grow tw-flex tw-items-center">
+    <bit-color-password class="tw-font-mono" [password]="value$ | async"></bit-color-password>
+  </div>
+  <div class="tw-space-x-1">
+    <button type="button" bitIconButton="bwi-generate" buttonType="main" (click)="generate$.next()">
+      {{ "generatePassword" | i18n }}
+    </button>
+    <button
+      type="button"
+      bitIconButton="bwi-clone"
+      buttonType="main"
+      [appCopyClick]="value$ | async"
+    >
+      {{ "copyPassword" | i18n }}
+    </button>
+  </div>
+</bit-card>
+<bit-section>
+  <bit-section-header>
+    <h6 bitTypography="h6">{{ "options" | i18n }}</h6>
+  </bit-section-header>
+  <div class="tw-mb-4">
+    <bit-card>
+      <form class="box" [formGroup]="credential" class="tw-container">
+        <bit-form-field>
+          <bit-label>{{ "type" | i18n }}</bit-label>
+          <bit-select [items]="typeOptions$ | async" formControlName="type"> </bit-select>
+          <bit-hint *ngIf="!!(credentialTypeHint$ | async)">{{
+            credentialTypeHint$ | async
+          }}</bit-hint>
+        </bit-form-field>
+      </form>
+      <tools-catchall-settings
+        *ngIf="(algorithm$ | async)?.id === 'catchall'"
+        [userId]="this.userId$ | async"
+        (onUpdated)="generate$.next()"
+      />
+      <tools-subaddress-settings
+        *ngIf="(algorithm$ | async)?.id === 'subaddress'"
+        [userId]="this.userId$ | async"
+        (onUpdated)="generate$.next()"
+      />
+      <tools-username-settings
+        *ngIf="(algorithm$ | async)?.id === 'username'"
+        [userId]="this.userId$ | async"
+        (onUpdated)="generate$.next()"
+      />
+    </bit-card>
+  </div>
+</bit-section>

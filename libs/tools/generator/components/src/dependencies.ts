@@ -19,6 +19,7 @@ import {
   ItemModule,
   SectionComponent,
   SectionHeaderComponent,
+  SelectModule,
   ToggleGroupModule,
 } from "@bitwarden/components";
 import {
@@ -46,6 +47,7 @@ const RANDOMIZER = new SafeInjectionToken<Randomizer>("Randomizer");
     ReactiveFormsModule,
     SectionComponent,
     SectionHeaderComponent,
+    SelectModule,
     ToggleGroupModule,
   ],
   providers: [

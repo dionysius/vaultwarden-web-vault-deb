@@ -1,10 +1,13 @@
 import { EFFLongWordList } from "@bitwarden/common/platform/misc/wordlist";
+import { GenerationRequest } from "@bitwarden/common/tools/types";
+
+import { CredentialGenerator, EffUsernameGenerationOptions, GeneratedCredential } from "../types";
 
 import { Randomizer } from "./abstractions";
 import { WordsRequest } from "./types";
 
 /** Generation algorithms that produce randomized usernames */
-export class UsernameRandomizer {
+export class UsernameRandomizer implements CredentialGenerator<EffUsernameGenerationOptions> {
   /** Instantiates the username randomizer
    *  @param random data source for random data
    */
@@ -44,4 +47,21 @@ export class UsernameRandomizer {
 
     return result;
   }
+
+  async generate(_request: GenerationRequest, settings: EffUsernameGenerationOptions) {
+    if (isEffUsernameGenerationOptions(settings)) {
+      const username = await this.randomWords({
+        digits: settings.wordIncludeNumber ? 1 : 0,
+        casing: settings.wordCapitalize ? "TitleCase" : "lowercase",
+      });
+
+      return new GeneratedCredential(username, "username", Date.now());
+    }
+
+    throw new Error("Invalid settings received by generator.");
+  }
+}
+
+function isEffUsernameGenerationOptions(settings: any): settings is EffUsernameGenerationOptions {
+  return "wordIncludeNumber" in (settings ?? {});
 }

@@ -1,0 +1,10 @@
+<form class="box" [formGroup]="settings" class="tw-container">
+  <bit-form-control>
+    <input bitCheckbox formControlName="wordCapitalize" type="checkbox" />
+    <bit-label>{{ "capitalize" | i18n }}</bit-label>
+  </bit-form-control>
+  <bit-form-control>
+    <input bitCheckbox formControlName="wordIncludeNumber" type="checkbox" />
+    <bit-label>{{ "includeNumber" | i18n }}</bit-label>
+  </bit-form-control>
+</form>

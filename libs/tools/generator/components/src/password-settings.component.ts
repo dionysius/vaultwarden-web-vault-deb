@@ -67,14 +67,14 @@ export class PasswordSettingsComponent implements OnInit, OnDestroy {
   readonly onUpdated = new EventEmitter<PasswordGenerationOptions>();
 
   protected settings = this.formBuilder.group({
-    [Controls.length]: [Generators.Password.settings.initial.length],
-    [Controls.uppercase]: [Generators.Password.settings.initial.uppercase],
-    [Controls.lowercase]: [Generators.Password.settings.initial.lowercase],
-    [Controls.number]: [Generators.Password.settings.initial.number],
-    [Controls.special]: [Generators.Password.settings.initial.special],
-    [Controls.minNumber]: [Generators.Password.settings.initial.minNumber],
-    [Controls.minSpecial]: [Generators.Password.settings.initial.minSpecial],
-    [Controls.avoidAmbiguous]: [!Generators.Password.settings.initial.ambiguous],
+    [Controls.length]: [Generators.password.settings.initial.length],
+    [Controls.uppercase]: [Generators.password.settings.initial.uppercase],
+    [Controls.lowercase]: [Generators.password.settings.initial.lowercase],
+    [Controls.number]: [Generators.password.settings.initial.number],
+    [Controls.special]: [Generators.password.settings.initial.special],
+    [Controls.minNumber]: [Generators.password.settings.initial.minNumber],
+    [Controls.minSpecial]: [Generators.password.settings.initial.minSpecial],
+    [Controls.avoidAmbiguous]: [!Generators.password.settings.initial.ambiguous],
   });
 
   private get numbers() {
@@ -95,7 +95,7 @@ export class PasswordSettingsComponent implements OnInit, OnDestroy {
 
   async ngOnInit() {
     const singleUserId$ = this.singleUserId$();
-    const settings = await this.generatorService.settings(Generators.Password, { singleUserId$ });
+    const settings = await this.generatorService.settings(Generators.password, { singleUserId$ });
 
     // bind settings to the UI
     settings
@@ -116,19 +116,19 @@ export class PasswordSettingsComponent implements OnInit, OnDestroy {
 
     // bind policy to the template
     this.generatorService
-      .policy$(Generators.Password, { userId$: singleUserId$ })
+      .policy$(Generators.password, { userId$: singleUserId$ })
       .pipe(takeUntil(this.destroyed$))
       .subscribe(({ constraints }) => {
         this.settings
           .get(Controls.length)
-          .setValidators(toValidators(Controls.length, Generators.Password, constraints));
+          .setValidators(toValidators(Controls.length, Generators.password, constraints));
 
         this.minNumber.setValidators(
-          toValidators(Controls.minNumber, Generators.Password, constraints),
+          toValidators(Controls.minNumber, Generators.password, constraints),
         );
 
         this.minSpecial.setValidators(
-          toValidators(Controls.minSpecial, Generators.Password, constraints),
+          toValidators(Controls.minSpecial, Generators.password, constraints),
         );
 
         // forward word boundaries to the template (can't do it through the rx form)

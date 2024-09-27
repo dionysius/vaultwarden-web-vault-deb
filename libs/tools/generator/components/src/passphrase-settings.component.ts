@@ -39,7 +39,7 @@ export class PassphraseSettingsComponent implements OnInit, OnDestroy {
     private accountService: AccountService,
   ) {}
 
-  /** Binds the passphrase component to a specific user's settings.
+  /** Binds the component to a specific user's settings.
    *  When this input is not provided, the form binds to the active
    *  user
    */
@@ -59,15 +59,15 @@ export class PassphraseSettingsComponent implements OnInit, OnDestroy {
   readonly onUpdated = new EventEmitter<PassphraseGenerationOptions>();
 
   protected settings = this.formBuilder.group({
-    [Controls.numWords]: [Generators.Passphrase.settings.initial.numWords],
-    [Controls.wordSeparator]: [Generators.Passphrase.settings.initial.wordSeparator],
-    [Controls.capitalize]: [Generators.Passphrase.settings.initial.capitalize],
-    [Controls.includeNumber]: [Generators.Passphrase.settings.initial.includeNumber],
+    [Controls.numWords]: [Generators.passphrase.settings.initial.numWords],
+    [Controls.wordSeparator]: [Generators.passphrase.settings.initial.wordSeparator],
+    [Controls.capitalize]: [Generators.passphrase.settings.initial.capitalize],
+    [Controls.includeNumber]: [Generators.passphrase.settings.initial.includeNumber],
   });
 
   async ngOnInit() {
     const singleUserId$ = this.singleUserId$();
-    const settings = await this.generatorService.settings(Generators.Passphrase, { singleUserId$ });
+    const settings = await this.generatorService.settings(Generators.passphrase, { singleUserId$ });
 
     // skips reactive event emissions to break a subscription cycle
     settings.pipe(takeUntil(this.destroyed$)).subscribe((s) => {
@@ -79,16 +79,16 @@ export class PassphraseSettingsComponent implements OnInit, OnDestroy {
 
     // dynamic policy enforcement
     this.generatorService
-      .policy$(Generators.Passphrase, { userId$: singleUserId$ })
+      .policy$(Generators.passphrase, { userId$: singleUserId$ })
       .pipe(takeUntil(this.destroyed$))
       .subscribe(({ constraints }) => {
         this.settings
           .get(Controls.numWords)
-          .setValidators(toValidators(Controls.numWords, Generators.Passphrase, constraints));
+          .setValidators(toValidators(Controls.numWords, Generators.passphrase, constraints));
 
         this.settings
           .get(Controls.wordSeparator)
-          .setValidators(toValidators(Controls.wordSeparator, Generators.Passphrase, constraints));
+          .setValidators(toValidators(Controls.wordSeparator, Generators.passphrase, constraints));
 
         // forward word boundaries to the template (can't do it through the rx form)
         this.minNumWords = constraints.numWords.min;

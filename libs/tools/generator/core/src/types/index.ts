@@ -1,6 +1,7 @@
+import { CredentialAlgorithm, PasswordAlgorithm } from "./generator-type";
+
 export * from "./boundary";
 export * from "./catchall-generator-options";
-export * from "./credential-category";
 export * from "./credential-generator";
 export * from "./credential-generator-configuration";
 export * from "./eff-username-generator-options";
@@ -17,3 +18,13 @@ export * from "./password-generator-policy";
 export * from "./policy-configuration";
 export * from "./subaddress-generator-options";
 export * from "./word-options";
+
+/** Provided for backwards compatibility only.
+ *  @deprecated Use one of the Algorithm types instead.
+ */
+export type GeneratorType = CredentialAlgorithm;
+
+/** Provided for backwards compatibility only.
+ *  @deprecated Use one of the Algorithm types instead.
+ */
+export type PasswordType = PasswordAlgorithm;

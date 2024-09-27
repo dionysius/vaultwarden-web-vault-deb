@@ -1,0 +1,6 @@
+<form class="box" [formGroup]="settings" class="tw-container">
+  <bit-form-field>
+    <bit-label>{{ "domainName" | i18n }}</bit-label>
+    <input bitInput formControlName="catchallDomain" type="text" />
+  </bit-form-field>
+</form>
