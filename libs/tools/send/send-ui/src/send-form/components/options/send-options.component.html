@@ -27,6 +27,7 @@
         bitIconButton="bwi-generate"
         bitSuffix
         [appA11yTitle]="'generatePassword' | i18n"
+        (click)="generatePassword()"
         data-testid="generate-password"
       ></button>
       <bit-hint>{{ "sendPasswordDescV2" | i18n }}</bit-hint>
