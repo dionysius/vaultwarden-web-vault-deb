@@ -59,6 +59,7 @@ describe("SendV2Component", () => {
         { id: "1", name: "Send A" },
         { id: "2", name: "Send B" },
       ] as SendView[]),
+      loading$: of(false),
       latestSearchText$: of(""),
     });
 
