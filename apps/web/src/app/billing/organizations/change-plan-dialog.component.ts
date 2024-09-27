@@ -497,7 +497,7 @@ export class ChangePlanDialogComponent implements OnInit, OnDestroy {
       return 0;
     }
 
-    const result = plan.PasswordManager.seatPrice * Math.abs(this.organization.seats || 0);
+    const result = plan.PasswordManager.seatPrice * Math.abs(this.sub?.seats || 0);
     return result;
   }
 
