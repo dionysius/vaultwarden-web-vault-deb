@@ -237,7 +237,9 @@ export default class AutofillService implements AutofillServiceInterface {
       FeatureFlag.InlineMenuPositioningImprovements,
     );
     if (!inlineMenuPositioningImprovements) {
-      return "bootstrap-legacy-autofill-overlay.js";
+      return !inlineMenuVisibility
+        ? "bootstrap-autofill.js"
+        : "bootstrap-legacy-autofill-overlay.js";
     }
 
     const enableChangedPasswordPrompt = await firstValueFrom(
