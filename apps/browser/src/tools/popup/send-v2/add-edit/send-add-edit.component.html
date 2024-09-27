@@ -19,7 +19,7 @@
       *ngIf="config?.mode !== 'add'"
       type="button"
       buttonType="danger"
-      class="tw-ml-auto bwi-lg"
+      slot="end"
       bitIconButton="bwi-trash"
       [bitAction]="deleteSend"
       appA11yTitle="{{ 'delete' | i18n }}"
