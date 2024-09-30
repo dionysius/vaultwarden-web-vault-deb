@@ -1,8 +1,8 @@
 import { Injectable } from "@angular/core";
 
-import { BiometricsService } from "@bitwarden/common/platform/biometrics/biometric.service";
+import { BiometricsService } from "@bitwarden/key-management";
 
-import { BrowserApi } from "../browser/browser-api";
+import { BrowserApi } from "../../platform/browser/browser-api";
 
 @Injectable()
 export abstract class BrowserBiometricsService extends BiometricsService {

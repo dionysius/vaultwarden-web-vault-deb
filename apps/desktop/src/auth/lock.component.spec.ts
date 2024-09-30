@@ -27,16 +27,18 @@ import { LogService } from "@bitwarden/common/platform/abstractions/log.service"
 import { MessagingService } from "@bitwarden/common/platform/abstractions/messaging.service";
 import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
 import { StateService } from "@bitwarden/common/platform/abstractions/state.service";
-import { BiometricStateService } from "@bitwarden/common/platform/biometrics/biometric-state.service";
-import { BiometricsService as AbstractBiometricService } from "@bitwarden/common/platform/biometrics/biometric.service";
 import { Utils } from "@bitwarden/common/platform/misc/utils";
 import { FakeAccountService, mockAccountServiceWith } from "@bitwarden/common/spec";
 import { PasswordStrengthServiceAbstraction } from "@bitwarden/common/tools/password-strength";
 import { UserId } from "@bitwarden/common/types/guid";
 import { SyncService } from "@bitwarden/common/vault/abstractions/sync/sync.service.abstraction";
 import { DialogService, ToastService } from "@bitwarden/components";
+import {
+  BiometricsService as AbstractBiometricService,
+  BiometricStateService,
+} from "@bitwarden/key-management";
 
-import { BiometricsService } from "src/platform/main/biometric";
+import { BiometricsService } from "../key-management/biometrics/biometrics.service";
 
 import { LockComponent } from "./lock.component";
 
@@ -44,10 +46,12 @@ import { LockComponent } from "./lock.component";
 const isWindowVisibleMock = jest.fn();
 (global as any).ipc = {
   platform: {
+    isWindowVisible: isWindowVisibleMock,
+  },
+  keyManagement: {
     biometric: {
       enabled: jest.fn(),
     },
-    isWindowVisible: isWindowVisibleMock,
   },
 };
 
@@ -461,7 +465,7 @@ describe("LockComponent", () => {
       stateServiceMock.getUserId.mockResolvedValue("userId");
       await component["canUseBiometric"]();
 
-      expect(ipc.platform.biometric.enabled).toHaveBeenCalledWith("userId");
+      expect(ipc.keyManagement.biometric.enabled).toHaveBeenCalledWith("userId");
     });
   });
 

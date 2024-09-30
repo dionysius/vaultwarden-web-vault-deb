@@ -1,7 +1,7 @@
 import { ipcRenderer } from "electron";
 
 import { DeviceType } from "@bitwarden/common/enums";
-import { ThemeType, KeySuffixOptions, LogLevelType } from "@bitwarden/common/platform/enums";
+import { ThemeType, LogLevelType } from "@bitwarden/common/platform/enums";
 import { EncString } from "@bitwarden/common/platform/models/domain/enc-string";
 
 import {
@@ -10,7 +10,6 @@ import {
   Message,
   UnencryptedMessageResponse,
 } from "../models/native-messaging";
-import { BiometricMessage, BiometricAction } from "../types/biometric-message";
 import { isAppImage, isDev, isFlatpak, isMacAppStore, isSnapStore, isWindowsStore } from "../utils";
 
 import { ClipboardWriteMessage } from "./types/clipboard";
@@ -34,36 +33,6 @@ const passwords = {
     ipcRenderer.invoke("keytar", { action: "setPassword", key, keySuffix, value }),
   delete: (key: string, keySuffix: string): Promise<void> =>
     ipcRenderer.invoke("keytar", { action: "deletePassword", key, keySuffix }),
-};
-
-const biometric = {
-  enabled: (userId: string): Promise<boolean> =>
-    ipcRenderer.invoke("biometric", {
-      action: BiometricAction.EnabledForUser,
-      key: `${userId}_user_biometric`,
-      keySuffix: KeySuffixOptions.Biometric,
-      userId: userId,
-    } satisfies BiometricMessage),
-  osSupported: (): Promise<boolean> =>
-    ipcRenderer.invoke("biometric", {
-      action: BiometricAction.OsSupported,
-    } satisfies BiometricMessage),
-  biometricsNeedsSetup: (): Promise<boolean> =>
-    ipcRenderer.invoke("biometric", {
-      action: BiometricAction.NeedsSetup,
-    } satisfies BiometricMessage),
-  biometricsSetup: (): Promise<void> =>
-    ipcRenderer.invoke("biometric", {
-      action: BiometricAction.Setup,
-    } satisfies BiometricMessage),
-  biometricsCanAutoSetup: (): Promise<boolean> =>
-    ipcRenderer.invoke("biometric", {
-      action: BiometricAction.CanAutoSetup,
-    } satisfies BiometricMessage),
-  authenticate: (): Promise<boolean> =>
-    ipcRenderer.invoke("biometric", {
-      action: BiometricAction.Authenticate,
-    } satisfies BiometricMessage),
 };
 
 const clipboard = {
@@ -180,7 +149,6 @@ export default {
 
   storage,
   passwords,
-  biometric,
   clipboard,
   powermonitor,
   nativeMessaging,

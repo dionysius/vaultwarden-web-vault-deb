@@ -4,7 +4,7 @@ import { EncString } from "@bitwarden/common/platform/models/domain/enc-string";
 import { SymmetricCryptoKey } from "@bitwarden/common/platform/models/domain/symmetric-crypto-key";
 import { biometrics, passwords } from "@bitwarden/desktop-napi";
 
-import { WindowMain } from "../../../main/window.main";
+import { WindowMain } from "../../main/window.main";
 
 import { OsBiometricService } from "./desktop.biometrics.service";
 

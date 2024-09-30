@@ -1,5 +1,7 @@
 import { firstValueFrom, map, Subscription, timeout } from "rxjs";
 
+import { BiometricStateService } from "@bitwarden/key-management";
+
 import { PinServiceAbstraction } from "../../../../auth/src/common/abstractions";
 import { VaultTimeoutSettingsService } from "../../abstractions/vault-timeout/vault-timeout-settings.service";
 import { AccountService } from "../../auth/abstractions/account.service";
@@ -11,7 +13,6 @@ import { UserId } from "../../types/guid";
 import { MessagingService } from "../abstractions/messaging.service";
 import { PlatformUtilsService } from "../abstractions/platform-utils.service";
 import { SystemService as SystemServiceAbstraction } from "../abstractions/system.service";
-import { BiometricStateService } from "../biometrics/biometric-state.service";
 import { Utils } from "../misc/utils";
 import { ScheduledTaskNames } from "../scheduling/scheduled-task-name.enum";
 import { TaskSchedulerService } from "../scheduling/task-scheduler.service";

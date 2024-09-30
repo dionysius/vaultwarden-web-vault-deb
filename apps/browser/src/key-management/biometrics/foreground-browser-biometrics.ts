@@ -1,4 +1,4 @@
-import { BrowserApi } from "../browser/browser-api";
+import { BrowserApi } from "../../platform/browser/browser-api";
 
 import { BrowserBiometricsService } from "./browser-biometrics.service";
 

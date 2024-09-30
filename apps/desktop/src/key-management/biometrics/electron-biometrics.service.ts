@@ -1,6 +1,6 @@
 import { Injectable } from "@angular/core";
 
-import { BiometricsService } from "@bitwarden/common/platform/biometrics/biometric.service";
+import { BiometricsService } from "@bitwarden/key-management";
 
 /**
  * This service implement the base biometrics service to provide desktop specific functions,
@@ -9,11 +9,11 @@ import { BiometricsService } from "@bitwarden/common/platform/biometrics/biometr
 @Injectable()
 export class ElectronBiometricsService extends BiometricsService {
   async supportsBiometric(): Promise<boolean> {
-    return await ipc.platform.biometric.osSupported();
+    return await ipc.keyManagement.biometric.osSupported();
   }
 
   async isBiometricUnlockAvailable(): Promise<boolean> {
-    return await ipc.platform.biometric.osSupported();
+    return await ipc.keyManagement.biometric.osSupported();
   }
 
   /** This method is used to authenticate the user presence _only_.
@@ -21,18 +21,18 @@ export class ElectronBiometricsService extends BiometricsService {
    * biometric keys, which has a separate authentication mechanism.
    * For biometric keys, invoke "keytar" with a biometric key suffix */
   async authenticateBiometric(): Promise<boolean> {
-    return await ipc.platform.biometric.authenticate();
+    return await ipc.keyManagement.biometric.authenticate();
   }
 
   async biometricsNeedsSetup(): Promise<boolean> {
-    return await ipc.platform.biometric.biometricsNeedsSetup();
+    return await ipc.keyManagement.biometric.biometricsNeedsSetup();
   }
 
   async biometricsSupportsAutoSetup(): Promise<boolean> {
-    return await ipc.platform.biometric.biometricsCanAutoSetup();
+    return await ipc.keyManagement.biometric.biometricsCanAutoSetup();
   }
 
   async biometricsSetup(): Promise<void> {
-    return await ipc.platform.biometric.biometricsSetup();
+    return await ipc.keyManagement.biometric.biometricsSetup();
   }
 }

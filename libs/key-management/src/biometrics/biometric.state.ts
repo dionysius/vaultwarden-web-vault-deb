@@ -1,6 +1,10 @@
-import { UserId } from "../../types/guid";
-import { EncryptedString } from "../models/domain/enc-string";
-import { KeyDefinition, BIOMETRIC_SETTINGS_DISK, UserKeyDefinition } from "../state";
+import { EncryptedString } from "../../../common/src/platform/models/domain/enc-string";
+import {
+  KeyDefinition,
+  BIOMETRIC_SETTINGS_DISK,
+  UserKeyDefinition,
+} from "../../../common/src/platform/state";
+import { UserId } from "../../../common/src/types/guid";
 
 /**
  * Indicates whether the user elected to store a biometric key to unlock their vault.
@@ -9,7 +13,7 @@ export const BIOMETRIC_UNLOCK_ENABLED = new UserKeyDefinition<boolean>(
   BIOMETRIC_SETTINGS_DISK,
   "biometricUnlockEnabled",
   {
-    deserializer: (obj) => obj,
+    deserializer: (obj: any) => obj,
     clearOn: [],
   },
 );
@@ -23,7 +27,7 @@ export const REQUIRE_PASSWORD_ON_START = new UserKeyDefinition<boolean>(
   BIOMETRIC_SETTINGS_DISK,
   "requirePasswordOnStart",
   {
-    deserializer: (value) => value,
+    deserializer: (value: any) => value,
     clearOn: [],
   },
 );

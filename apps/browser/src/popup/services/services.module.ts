@@ -62,8 +62,6 @@ import {
   AbstractStorageService,
   ObservableStorageService,
 } from "@bitwarden/common/platform/abstractions/storage.service";
-import { BiometricStateService } from "@bitwarden/common/platform/biometrics/biometric-state.service";
-import { BiometricsService } from "@bitwarden/common/platform/biometrics/biometric.service";
 import { Message, MessageListener, MessageSender } from "@bitwarden/common/platform/messaging";
 // eslint-disable-next-line no-restricted-imports -- Used for dependency injection
 import { SubjectMessageSender } from "@bitwarden/common/platform/messaging/internal";
@@ -89,6 +87,7 @@ import { FolderService as FolderServiceAbstraction } from "@bitwarden/common/vau
 import { TotpService as TotpServiceAbstraction } from "@bitwarden/common/vault/abstractions/totp.service";
 import { TotpService } from "@bitwarden/common/vault/services/totp.service";
 import { DialogService, ToastService } from "@bitwarden/components";
+import { BiometricsService, BiometricStateService } from "@bitwarden/key-management";
 import { PasswordRepromptService } from "@bitwarden/vault";
 
 import { ForegroundLockService } from "../../auth/popup/accounts/foreground-lock.service";
@@ -96,6 +95,7 @@ import { ExtensionAnonLayoutWrapperDataService } from "../../auth/popup/extensio
 import { AutofillService as AutofillServiceAbstraction } from "../../autofill/services/abstractions/autofill.service";
 import AutofillService from "../../autofill/services/autofill.service";
 import MainBackground from "../../background/main.background";
+import { ForegroundBrowserBiometricsService } from "../../key-management/biometrics/foreground-browser-biometrics";
 import { BrowserApi } from "../../platform/browser/browser-api";
 import { runInsideAngular } from "../../platform/browser/run-inside-angular.operator";
 /* eslint-disable no-restricted-imports */
@@ -111,7 +111,6 @@ import { BrowserCryptoService } from "../../platform/services/browser-crypto.ser
 import { BrowserEnvironmentService } from "../../platform/services/browser-environment.service";
 import BrowserLocalStorageService from "../../platform/services/browser-local-storage.service";
 import { BrowserScriptInjectorService } from "../../platform/services/browser-script-injector.service";
-import { ForegroundBrowserBiometricsService } from "../../platform/services/foreground-browser-biometrics";
 import I18nService from "../../platform/services/i18n.service";
 import { ForegroundPlatformUtilsService } from "../../platform/services/platform-utils/foreground-platform-utils.service";
 import { ForegroundTaskSchedulerService } from "../../platform/services/task-scheduler/foreground-task-scheduler.service";

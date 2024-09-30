@@ -8,6 +8,7 @@ import {
 } from "@bitwarden/auth/common";
 import { Utils } from "@bitwarden/common/platform/misc/utils";
 import { UserId } from "@bitwarden/common/types/guid";
+import { BiometricStateService } from "@bitwarden/key-management";
 
 import { FakeAccountService, mockAccountServiceWith, FakeStateProvider } from "../../../spec";
 import { VaultTimeoutSettingsService as VaultTimeoutSettingsServiceAbstraction } from "../../abstractions/vault-timeout/vault-timeout-settings.service";
@@ -17,7 +18,6 @@ import { TokenService } from "../../auth/abstractions/token.service";
 import { VaultTimeoutAction } from "../../enums/vault-timeout-action.enum";
 import { CryptoService } from "../../platform/abstractions/crypto.service";
 import { LogService } from "../../platform/abstractions/log.service";
-import { BiometricStateService } from "../../platform/biometrics/biometric-state.service";
 import {
   VAULT_TIMEOUT,
   VAULT_TIMEOUT_ACTION,

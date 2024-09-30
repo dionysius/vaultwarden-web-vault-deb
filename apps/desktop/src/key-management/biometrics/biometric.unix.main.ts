@@ -4,8 +4,8 @@ import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.servic
 import { EncString } from "@bitwarden/common/platform/models/domain/enc-string";
 import { biometrics, passwords } from "@bitwarden/desktop-napi";
 
-import { WindowMain } from "../../../main/window.main";
-import { isFlatpak, isLinux, isSnapStore } from "../../../utils";
+import { WindowMain } from "../../main/window.main";
+import { isFlatpak, isLinux, isSnapStore } from "../../utils";
 
 import { OsBiometricService } from "./desktop.biometrics.service";
 

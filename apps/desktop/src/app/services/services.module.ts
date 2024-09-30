@@ -55,8 +55,6 @@ import { PlatformUtilsService as PlatformUtilsServiceAbstraction } from "@bitwar
 import { StateService as StateServiceAbstraction } from "@bitwarden/common/platform/abstractions/state.service";
 import { AbstractStorageService } from "@bitwarden/common/platform/abstractions/storage.service";
 import { SystemService as SystemServiceAbstraction } from "@bitwarden/common/platform/abstractions/system.service";
-import { BiometricStateService } from "@bitwarden/common/platform/biometrics/biometric-state.service";
-import { BiometricsService } from "@bitwarden/common/platform/biometrics/biometric.service";
 import { Message, MessageListener, MessageSender } from "@bitwarden/common/platform/messaging";
 // eslint-disable-next-line no-restricted-imports -- Used for dependency injection
 import { SubjectMessageSender } from "@bitwarden/common/platform/messaging/internal";
@@ -71,10 +69,11 @@ import { VaultTimeoutStringType } from "@bitwarden/common/types/vault-timeout.ty
 import { CipherService as CipherServiceAbstraction } from "@bitwarden/common/vault/abstractions/cipher.service";
 import { DialogService } from "@bitwarden/components";
 import { PasswordGenerationServiceAbstraction } from "@bitwarden/generator-legacy";
+import { BiometricStateService, BiometricsService } from "@bitwarden/key-management";
 
 import { DesktopAutofillSettingsService } from "../../autofill/services/desktop-autofill-settings.service";
+import { ElectronBiometricsService } from "../../key-management/biometrics/electron-biometrics.service";
 import { DesktopSettingsService } from "../../platform/services/desktop-settings.service";
-import { ElectronBiometricsService } from "../../platform/services/electron-biometrics.service";
 import { ElectronCryptoService } from "../../platform/services/electron-crypto.service";
 import { ElectronLogRendererService } from "../../platform/services/electron-log.renderer.service";
 import {
