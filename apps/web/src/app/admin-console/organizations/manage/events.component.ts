@@ -83,7 +83,9 @@ export class EventsComponent extends BaseEventsComponent implements OnInit, OnDe
   }
 
   async load() {
-    const response = await this.organizationUserApiService.getAllUsers(this.organizationId);
+    const response = await this.organizationUserApiService.getAllMiniUserDetails(
+      this.organizationId,
+    );
     response.data.forEach((u) => {
       const name = this.userNamePipe.transform(u);
       this.orgUsersUserIdMap.set(u.userId, { name: name, email: u.email });

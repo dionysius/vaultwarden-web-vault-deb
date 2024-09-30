@@ -34,6 +34,7 @@ export enum FeatureFlag {
   AC2476_DeprecateStripeSourcesAPI = "AC-2476-deprecate-stripe-sources-api",
   CipherKeyEncryption = "cipher-key-encryption",
   PM11901_RefactorSelfHostingLicenseUploader = "PM-11901-refactor-self-hosting-license-uploader",
+  Pm3478RefactorOrganizationUserApi = "pm-3478-refactor-organizationuser-api",
 }
 
 export type AllowedFeatureFlagTypes = boolean | number | string;
@@ -78,6 +79,7 @@ export const DefaultFeatureFlagValue = {
   [FeatureFlag.AC2476_DeprecateStripeSourcesAPI]: FALSE,
   [FeatureFlag.CipherKeyEncryption]: FALSE,
   [FeatureFlag.PM11901_RefactorSelfHostingLicenseUploader]: FALSE,
+  [FeatureFlag.Pm3478RefactorOrganizationUserApi]: FALSE,
 } satisfies Record<FeatureFlag, AllowedFeatureFlagTypes>;
 
 export type DefaultFeatureFlagValueType = typeof DefaultFeatureFlagValue;

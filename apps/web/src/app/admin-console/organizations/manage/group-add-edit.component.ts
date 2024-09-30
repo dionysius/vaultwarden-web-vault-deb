@@ -131,7 +131,7 @@ export class GroupAddEditComponent implements OnInit, OnDestroy {
   );
 
   private get orgMembers$(): Observable<Array<AccessItemView & { userId: UserId }>> {
-    return from(this.organizationUserApiService.getAllUsers(this.organizationId)).pipe(
+    return from(this.organizationUserApiService.getAllMiniUserDetails(this.organizationId)).pipe(
       map((response) =>
         response.data.map((m) => ({
           id: m.id,

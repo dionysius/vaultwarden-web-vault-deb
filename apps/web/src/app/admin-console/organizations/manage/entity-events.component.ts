@@ -78,7 +78,7 @@ export class EntityEventsComponent implements OnInit {
   async load() {
     try {
       if (this.showUser) {
-        const response = await this.organizationUserApiService.getAllUsers(
+        const response = await this.organizationUserApiService.getAllMiniUserDetails(
           this.params.organizationId,
         );
         response.data.forEach((u) => {

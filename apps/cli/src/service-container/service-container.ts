@@ -498,8 +498,6 @@ export class ServiceContainer {
 
     this.providerService = new ProviderService(this.stateProvider);
 
-    this.organizationUserApiService = new DefaultOrganizationUserApiService(this.apiService);
-
     this.policyApiService = new PolicyApiService(this.policyService, this.apiService);
 
     this.keyConnectorService = new KeyConnectorService(
@@ -778,6 +776,11 @@ export class ServiceContainer {
     this.organizationApiService = new OrganizationApiService(this.apiService, this.syncService);
 
     this.providerApiService = new ProviderApiService(this.apiService);
+
+    this.organizationUserApiService = new DefaultOrganizationUserApiService(
+      this.apiService,
+      this.configService,
+    );
   }
 
   async logout() {

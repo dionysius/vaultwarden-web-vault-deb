@@ -79,7 +79,7 @@ export class BulkCollectionsDialogComponent implements OnDestroy {
     combineLatest([
       organization$,
       groups$,
-      this.organizationUserApiService.getAllUsers(this.params.organizationId),
+      this.organizationUserApiService.getAllMiniUserDetails(this.params.organizationId),
     ])
       .pipe(takeUntil(this.destroy$))
       .subscribe(([organization, groups, users]) => {
