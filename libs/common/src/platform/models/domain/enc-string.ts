@@ -1,10 +1,13 @@
 import { Jsonify, Opaque } from "type-fest";
 
+import { EncryptService } from "../../abstractions/encrypt.service";
 import { EncryptionType, EXPECTED_NUM_PARTS_BY_ENCRYPTION_TYPE } from "../../enums";
 import { Encrypted } from "../../interfaces/encrypted";
 import { Utils } from "../../misc/utils";
 
 import { SymmetricCryptoKey } from "./symmetric-crypto-key";
+
+export const DECRYPT_ERROR = "[error: cannot decrypt]";
 
 export class EncString implements Encrypted {
   encryptedString?: EncryptedString;
@@ -167,11 +170,24 @@ export class EncString implements Encrypted {
       const encryptService = Utils.getContainerService().getEncryptService();
       this.decryptedValue = await encryptService.decryptToUtf8(this, key);
     } catch (e) {
-      this.decryptedValue = "[error: cannot decrypt]";
+      this.decryptedValue = DECRYPT_ERROR;
     }
     return this.decryptedValue;
   }
 
+  async decryptWithKey(key: SymmetricCryptoKey, encryptService: EncryptService) {
+    try {
+      if (key == null) {
+        throw new Error("No key to decrypt EncString");
+      }
+
+      this.decryptedValue = await encryptService.decryptToUtf8(this, key);
+    } catch (e) {
+      this.decryptedValue = DECRYPT_ERROR;
+    }
+
+    return this.decryptedValue;
+  }
   private async getKeyForDecryption(orgId: string) {
     const cryptoService = Utils.getContainerService().getCryptoService();
     return orgId != null
