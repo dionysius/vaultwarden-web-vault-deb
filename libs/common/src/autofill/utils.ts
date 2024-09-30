@@ -82,10 +82,10 @@ export function isCardExpired(cipherCard: CardView): boolean {
 
       const parsedYear = parseInt(normalizedYear, 10);
 
-      // First day of the next month minus one, to get last day of the card month
-      const cardExpiry = new Date(parsedYear, parsedMonth + 1, 0);
+      // First day of the next month
+      const cardExpiry = new Date(parsedYear, parsedMonth + 1, 1);
 
-      return cardExpiry < now;
+      return cardExpiry <= now;
     }
   }
 
