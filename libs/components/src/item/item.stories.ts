@@ -322,6 +322,30 @@ export const SingleActionList: Story = {
   }),
 };
 
+export const SingleActionWithBadge: Story = {
+  render: (args) => ({
+    props: args,
+    template: /*html*/ `
+      <bit-item-group aria-label="Single Action With Badge">
+        <bit-item>
+          <a bit-item-content href="#">
+            Foobar
+            <span bitBadge variant="primary" slot="default-trailing">Auto-fill</span>
+            <i slot="end" class="bwi bwi-angle-right" aria-hidden="true"></i>
+          </a>          
+        </bit-item>
+        <bit-item>
+          <a bit-item-content href="#">
+            Helloooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo!
+            <span bitBadge variant="primary" slot="default-trailing">Auto-fill</span>
+            <i slot="end" class="bwi bwi-angle-right" aria-hidden="true"></i>
+          </a>          
+        </bit-item>
+      </bit-item-group>
+    `,
+  }),
+};
+
 export const VirtualScrolling: Story = {
   render: (_args) => ({
     props: {
@@ -329,7 +353,7 @@ export const VirtualScrolling: Story = {
     },
     template: /*html*/ `
       <cdk-virtual-scroll-viewport [itemSize]="46" class="tw-h-[500px]">
-        <bit-item-group aria-label="Single Action List">
+        <bit-item-group aria-label="Virtual Scrolling">
           <bit-item *cdkVirtualFor="let item of data">
             <button bit-item-content>
               <i slot="start" class="bwi bwi-globe tw-text-3xl tw-text-muted" aria-hidden="true"></i>
