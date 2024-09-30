@@ -71,6 +71,7 @@ jobs:
       retrieve-secrets-keyvault: ${{ steps.config.outputs.retrieve-secrets-keyvault }}
       sync-utility: ${{ steps.config.outputs.sync-utility }}
       sync-delete-destination-files: ${{ steps.config.outputs.sync-delete-destination-files }}
+      slack-channel-name: ${{ steps.config.outputs.slack-channel-name }}
     steps:
       - name: Configure
         id: config
@@ -86,6 +87,7 @@ jobs:
               echo "environment-artifact=web-*-cloud-QA.zip" >> $GITHUB_OUTPUT
               echo "environment-name=Web Vault - US QA Cloud" >> $GITHUB_OUTPUT
               echo "environment-url=http://vault.$ENV_NAME_LOWER.bitwarden.pw" >> $GITHUB_OUTPUT
+              echo "slack-channel-name=alerts-deploy-qa"  >> $GITHUB_OUTPUT
               ;;
             "EUQA")
               echo "azure-login-creds=AZURE_KV_EU_QA_SERVICE_PRINCIPAL" >> $GITHUB_OUTPUT
@@ -93,6 +95,7 @@ jobs:
               echo "environment-artifact=web-*-cloud-euqa.zip" >> $GITHUB_OUTPUT
               echo "environment-name=Web Vault - EU QA Cloud" >> $GITHUB_OUTPUT
               echo "environment-url=http://vault.$ENV_NAME_LOWER.bitwarden.pw" >> $GITHUB_OUTPUT
+              echo "slack-channel-name=alerts-deploy-qa"  >> $GITHUB_OUTPUT
               ;;
             "USPROD")
               echo "azure-login-creds=AZURE_KV_US_PROD_SERVICE_PRINCIPAL" >> $GITHUB_OUTPUT
@@ -100,6 +103,7 @@ jobs:
               echo "environment-artifact=web-*-cloud-COMMERCIAL.zip" >> $GITHUB_OUTPUT
               echo "environment-name=Web Vault - US Production Cloud" >> $GITHUB_OUTPUT
               echo "environment-url=http://vault.bitwarden.com" >> $GITHUB_OUTPUT
+              echo "slack-channel-name=alerts-deploy-prd"  >> $GITHUB_OUTPUT
               ;;
             "EUPROD")
               echo "azure-login-creds=AZURE_KV_EU_PRD_SERVICE_PRINCIPAL" >> $GITHUB_OUTPUT
@@ -107,6 +111,7 @@ jobs:
               echo "environment-artifact=web-*-cloud-euprd.zip" >> $GITHUB_OUTPUT
               echo "environment-name=Web Vault - EU Production Cloud" >> $GITHUB_OUTPUT
               echo "environment-url=http://vault.bitwarden.eu" >> $GITHUB_OUTPUT
+              echo "slack-channel-name=alerts-deploy-prd"  >> $GITHUB_OUTPUT
               ;;
             "USDEV")
               echo "azure-login-creds=AZURE_KV_US_DEV_SERVICE_PRINCIPAL" >> $GITHUB_OUTPUT
@@ -114,6 +119,7 @@ jobs:
               echo "environment-artifact=web-*-cloud-usdev.zip" >> $GITHUB_OUTPUT
               echo "environment-name=Web Vault - US Development Cloud" >> $GITHUB_OUTPUT
               echo "environment-url=http://vault.$ENV_NAME_LOWER.bitwarden.pw" >> $GITHUB_OUTPUT
+              echo "slack-channel-name=alerts-deploy-dev"  >> $GITHUB_OUTPUT
               ;;
           esac
           # Set the sync utility to use for deployment to the environment (az-sync or azcopy)
@@ -267,7 +273,7 @@ jobs:
           project: Clients
           environment: ${{ needs.setup.outputs.environment-name }}
           tag: ${{ inputs.branch-or-tag }}
-          slack-channel: alerts-deploy-qa
+          slack-channel: ${{ needs.setup.outputs.slack-channel-name }}
           event: 'start'
           commit-sha: ${{ needs.artifact-check.outputs.artifact-build-commit }}
           url: https://github.com/bitwarden/clients/actions/runs/${{ github.run_id }}
