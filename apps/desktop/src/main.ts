@@ -227,6 +227,7 @@ export class Main {
       this.windowMain,
       app.getPath("userData"),
       app.getPath("exe"),
+      app.getAppPath(),
     );
 
     this.desktopAutofillSettingsService = new DesktopAutofillSettingsService(stateProvider);
@@ -273,13 +274,21 @@ export class Main {
         if (browserIntegrationEnabled || ddgIntegrationEnabled) {
           // Re-register the native messaging host integrations on startup, in case they are not present
           if (browserIntegrationEnabled) {
-            this.nativeMessagingMain.generateManifests().catch(this.logService.error);
+            this.nativeMessagingMain
+              .generateManifests()
+              .catch((err) => this.logService.error("Error while generating manifests", err));
           }
           if (ddgIntegrationEnabled) {
-            this.nativeMessagingMain.generateDdgManifests().catch(this.logService.error);
+            this.nativeMessagingMain
+              .generateDdgManifests()
+              .catch((err) => this.logService.error("Error while generating DDG manifests", err));
           }
 
-          this.nativeMessagingMain.listen();
+          this.nativeMessagingMain
+            .listen()
+            .catch((err) =>
+              this.logService.error("Error while starting native message listener", err),
+            );
         }
 
         app.removeAsDefaultProtocolClient("bitwarden");
