@@ -17,10 +17,14 @@
     {{ description }}
   </div>
   <bit-item-group>
-    <cdk-virtual-scroll-viewport [itemSize]="ItemHeight">
+    <cdk-virtual-scroll-viewport
+      [itemSize]="ItemHeight"
+      class="tw-overflow-visible [&>.cdk-virtual-scroll-content-wrapper]:[contain:layout_style]"
+    >
       <bit-item *cdkVirtualFor="let cipher of ciphers">
-        <a
+        <button
           bit-item-content
+          type="button"
           (click)="onViewCipher(cipher)"
           [appA11yTitle]="'viewItemTitle' | i18n: cipher.name"
           class="{{ ItemHeightClass }}"
@@ -40,7 +44,7 @@
             [appA11yTitle]="'attachments' | i18n"
           ></i>
           <span slot="secondary">{{ cipher.subTitle }}</span>
-        </a>
+        </button>
         <ng-container slot="end">
           <bit-item-action *ngIf="showAutofillButton">
             <button
