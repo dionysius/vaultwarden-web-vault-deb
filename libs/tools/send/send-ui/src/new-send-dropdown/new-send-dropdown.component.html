@@ -1,6 +1,6 @@
 <button bitButton [bitMenuTriggerFor]="itemOptions" buttonType="primary" type="button">
-  <i class="bwi bwi-plus-f" aria-hidden="true"></i>
-  {{ "new" | i18n }}
+  <i *ngIf="!hideIcon" class="bwi bwi-plus-f" aria-hidden="true"></i>
+  {{ (hideIcon ? "createSend" : "new") | i18n }}
 </button>
 <bit-menu #itemOptions>
   <a type="button" bitMenuItem (click)="newItemNavigate(sendType.Text)">
