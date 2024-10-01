@@ -1,8 +1,9 @@
+import { Unassigned } from "@bitwarden/admin-console/common";
 import { CipherType } from "@bitwarden/common/vault/enums";
 import { CipherView } from "@bitwarden/common/vault/models/view/cipher.view";
 
 import { createFilterFunction } from "./filter-function";
-import { Unassigned, All } from "./routed-vault-filter.model";
+import { All } from "./routed-vault-filter.model";
 
 describe("createFilter", () => {
   describe("given a generic cipher", () => {

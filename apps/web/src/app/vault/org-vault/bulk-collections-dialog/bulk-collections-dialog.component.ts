@@ -3,7 +3,10 @@ import { Component, Inject, OnDestroy } from "@angular/core";
 import { FormBuilder } from "@angular/forms";
 import { combineLatest, of, Subject, switchMap, takeUntil } from "rxjs";
 
-import { OrganizationUserApiService } from "@bitwarden/admin-console/common";
+import {
+  CollectionAdminService,
+  OrganizationUserApiService,
+} from "@bitwarden/admin-console/common";
 import { OrganizationService } from "@bitwarden/common/admin-console/abstractions/organization/organization.service.abstraction";
 import { Organization } from "@bitwarden/common/admin-console/models/domain/organization";
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
@@ -23,7 +26,6 @@ import {
   PermissionMode,
 } from "../../../admin-console/organizations/shared/components/access-selector";
 import { SharedModule } from "../../../shared";
-import { CollectionAdminService } from "../../core/collection-admin.service";
 
 export interface BulkCollectionsDialogParams {
   organizationId: string;

@@ -2,8 +2,9 @@ import { Organization } from "@bitwarden/common/admin-console/models/domain/orga
 import { CollectionAccessDetailsResponse } from "@bitwarden/common/src/vault/models/response/collection.response";
 import { CollectionView } from "@bitwarden/common/vault/models/view/collection.view";
 
-import { CollectionAccessSelectionView } from "../../../admin-console/organizations/core/views/collection-access-selection.view";
-import { Unassigned } from "../../individual-vault/vault-filter/shared/models/routed-vault-filter.model";
+import { CollectionAccessSelectionView } from "../models";
+
+export const Unassigned = "unassigned";
 
 export class CollectionAdminView extends CollectionView {
   groups: CollectionAccessSelectionView[] = [];

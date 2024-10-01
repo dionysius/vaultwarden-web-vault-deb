@@ -10,6 +10,7 @@ import {
   switchMap,
 } from "rxjs";
 
+import { CollectionAdminView } from "@bitwarden/admin-console/common";
 import { OrganizationService } from "@bitwarden/common/admin-console/abstractions/organization/organization.service.abstraction";
 import { PolicyService } from "@bitwarden/common/admin-console/abstractions/policy/policy.service.abstraction";
 import { PolicyType } from "@bitwarden/common/admin-console/enums";
@@ -26,7 +27,6 @@ import { FolderView } from "@bitwarden/common/vault/models/view/folder.view";
 import { ServiceUtils } from "@bitwarden/common/vault/service-utils";
 import { COLLAPSED_GROUPINGS } from "@bitwarden/common/vault/services/key-state/collapsed-groupings.state";
 
-import { CollectionAdminView } from "../../../core/views/collection-admin.view";
 import {
   CipherTypeFilter,
   CollectionFilter,

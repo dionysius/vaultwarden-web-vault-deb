@@ -13,7 +13,12 @@ import {
   takeUntil,
 } from "rxjs";
 
-import { OrganizationUserApiService } from "@bitwarden/admin-console/common";
+import {
+  CollectionAccessSelectionView,
+  CollectionAdminService,
+  CollectionAdminView,
+  OrganizationUserApiService,
+} from "@bitwarden/admin-console/common";
 import { OrganizationService } from "@bitwarden/common/admin-console/abstractions/organization/organization.service.abstraction";
 import {
   OrganizationUserStatusType,
@@ -24,14 +29,10 @@ import { Organization } from "@bitwarden/common/admin-console/models/domain/orga
 import { AccountService } from "@bitwarden/common/auth/abstractions/account.service";
 import { ProductTierType } from "@bitwarden/common/billing/enums";
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
-import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
 import { CollectionView } from "@bitwarden/common/vault/models/view/collection.view";
 import { DialogService, ToastService } from "@bitwarden/components";
 
-import { CollectionAdminService } from "../../../../../vault/core/collection-admin.service";
-import { CollectionAdminView } from "../../../../../vault/core/views/collection-admin.view";
 import {
-  CollectionAccessSelectionView,
   GroupService,
   GroupView,
   OrganizationUserAdminView,
@@ -133,7 +134,6 @@ export class MemberDialogComponent implements OnDestroy {
     @Inject(DIALOG_DATA) protected params: MemberDialogParams,
     private dialogRef: DialogRef<MemberDialogResult>,
     private i18nService: I18nService,
-    private platformUtilsService: PlatformUtilsService,
     private formBuilder: FormBuilder,
     // TODO: We should really look into consolidating naming conventions for these services
     private collectionAdminService: CollectionAdminService,

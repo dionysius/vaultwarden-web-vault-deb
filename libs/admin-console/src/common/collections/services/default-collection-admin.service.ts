@@ -1,5 +1,3 @@
-import { Injectable } from "@angular/core";
-
 import { ApiService } from "@bitwarden/common/abstractions/api.service";
 import { SelectionReadOnlyRequest } from "@bitwarden/common/admin-console/models/request/selection-read-only.request";
 import { CryptoService } from "@bitwarden/common/platform/abstractions/crypto.service";
@@ -14,13 +12,14 @@ import {
   CollectionResponse,
 } from "@bitwarden/common/vault/models/response/collection.response";
 
-import { CollectionAccessSelectionView } from "../../admin-console/organizations/core";
+import { CollectionAdminService } from "../abstractions";
+import {
+  BulkCollectionAccessRequest,
+  CollectionAccessSelectionView,
+  CollectionAdminView,
+} from "../models";
 
-import { BulkCollectionAccessRequest } from "./bulk-collection-access.request";
-import { CollectionAdminView } from "./views/collection-admin.view";
-
-@Injectable()
-export class CollectionAdminService {
+export class DefaultCollectionAdminService implements CollectionAdminService {
   constructor(
     private apiService: ApiService,
     private cryptoService: CryptoService,

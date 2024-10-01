@@ -9,6 +9,7 @@ import {
 } from "@angular/core";
 import { firstValueFrom } from "rxjs";
 
+import { Unassigned } from "@bitwarden/admin-console/common";
 import { JslibModule } from "@bitwarden/angular/jslib.module";
 import { Organization } from "@bitwarden/common/admin-console/models/domain/organization";
 import { FeatureFlag } from "@bitwarden/common/enums/feature-flag.enum";
@@ -26,7 +27,6 @@ import { PipesModule } from "../pipes/pipes.module";
 import {
   All,
   RoutedVaultFilterModel,
-  Unassigned,
 } from "../vault-filter/shared/models/routed-vault-filter.model";
 
 @Component({

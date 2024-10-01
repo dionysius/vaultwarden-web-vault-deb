@@ -1,7 +1,11 @@
 import { CommonModule } from "@angular/common";
 import { APP_INITIALIZER, NgModule, Optional, SkipSelf } from "@angular/core";
 
-import { OrganizationUserApiService } from "@bitwarden/admin-console/common";
+import {
+  CollectionAdminService,
+  DefaultCollectionAdminService,
+  OrganizationUserApiService,
+} from "@bitwarden/admin-console/common";
 import { SafeProvider, safeProvider } from "@bitwarden/angular/platform/utils/safe-provider";
 import {
   CLIENT_TYPE,
@@ -60,6 +64,7 @@ import {
   ThemeStateService,
 } from "@bitwarden/common/platform/theming/theme-state.service";
 import { VaultTimeout, VaultTimeoutStringType } from "@bitwarden/common/types/vault-timeout.type";
+import { CollectionService } from "@bitwarden/common/vault/abstractions/collection.service";
 import { BiometricsService } from "@bitwarden/key-management";
 
 import { PolicyListService } from "../admin-console/core/policy-list.service";
@@ -75,7 +80,6 @@ import { WebBiometricsService } from "../key-management/web-biometric.service";
 import { WebEnvironmentService } from "../platform/web-environment.service";
 import { WebMigrationRunner } from "../platform/web-migration-runner";
 import { WebStorageServiceProvider } from "../platform/web-storage-service.provider";
-import { CollectionAdminService } from "../vault/core/collection-admin.service";
 
 import { EventService } from "./event.service";
 import { InitService } from "./init.service";
@@ -149,7 +153,6 @@ const safeProviders: SafeProvider[] = [
     useClass: WebFileDownloadService,
     useAngularDecorators: true,
   }),
-  safeProvider(CollectionAdminService),
   safeProvider({
     provide: WindowStorageService,
     useFactory: () => new WindowStorageService(window.localStorage),
@@ -226,6 +229,11 @@ const safeProviders: SafeProvider[] = [
     provide: AppIdService,
     useClass: DefaultAppIdService,
     deps: [OBSERVABLE_DISK_LOCAL_STORAGE, LogService],
+  }),
+  safeProvider({
+    provide: CollectionAdminService,
+    useClass: DefaultCollectionAdminService,
+    deps: [ApiService, CryptoServiceAbstraction, EncryptService, CollectionService],
   }),
 ];
 

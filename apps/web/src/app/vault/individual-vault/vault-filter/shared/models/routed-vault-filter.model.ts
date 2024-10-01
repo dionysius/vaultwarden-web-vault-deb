@@ -1,5 +1,3 @@
-export const Unassigned = "unassigned";
-
 export const All = "all";
 
 // TODO: Remove `All` when moving to vertical navigation.

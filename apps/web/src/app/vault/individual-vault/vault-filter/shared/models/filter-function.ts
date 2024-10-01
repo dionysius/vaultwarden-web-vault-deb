@@ -1,7 +1,8 @@
+import { Unassigned } from "@bitwarden/admin-console/common";
 import { CipherType } from "@bitwarden/common/vault/enums";
 import { CipherView } from "@bitwarden/common/vault/models/view/cipher.view";
 
-import { All, RoutedVaultFilterModel, Unassigned } from "./routed-vault-filter.model";
+import { All, RoutedVaultFilterModel } from "./routed-vault-filter.model";
 
 export type FilterFunction = (cipher: CipherView) => boolean;
 

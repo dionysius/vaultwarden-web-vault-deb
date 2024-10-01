@@ -28,6 +28,7 @@ import {
   tap,
 } from "rxjs/operators";
 
+import { Unassigned } from "@bitwarden/admin-console/common";
 import { SearchPipe } from "@bitwarden/angular/pipes/search.pipe";
 import { ModalService } from "@bitwarden/angular/services/modal.service";
 import { ApiService } from "@bitwarden/common/abstractions/api.service";
@@ -118,7 +119,6 @@ import { createFilterFunction } from "./vault-filter/shared/models/filter-functi
 import {
   All,
   RoutedVaultFilterModel,
-  Unassigned,
 } from "./vault-filter/shared/models/routed-vault-filter.model";
 import { VaultFilter } from "./vault-filter/shared/models/vault-filter.model";
 import { FolderFilter, OrganizationFilter } from "./vault-filter/shared/models/vault-filter.type";

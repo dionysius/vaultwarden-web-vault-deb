@@ -30,6 +30,11 @@ import {
   withLatestFrom,
 } from "rxjs/operators";
 
+import {
+  CollectionAdminService,
+  CollectionAdminView,
+  Unassigned,
+} from "@bitwarden/admin-console/common";
 import { SearchPipe } from "@bitwarden/angular/pipes/search.pipe";
 import { ModalService } from "@bitwarden/angular/services/modal.service";
 import { ApiService } from "@bitwarden/common/abstractions/api.service";
@@ -72,8 +77,6 @@ import {
 } from "../components/collection-dialog";
 import { VaultItemEvent } from "../components/vault-items/vault-item-event";
 import { VaultItemsModule } from "../components/vault-items/vault-items.module";
-import { CollectionAdminService } from "../core/collection-admin.service";
-import { CollectionAdminView } from "../core/views/collection-admin.view";
 import {
   BulkDeleteDialogResult,
   openBulkDeleteDialog,
@@ -85,7 +88,6 @@ import { createFilterFunction } from "../individual-vault/vault-filter/shared/mo
 import {
   All,
   RoutedVaultFilterModel,
-  Unassigned,
 } from "../individual-vault/vault-filter/shared/models/routed-vault-filter.model";
 import {
   openViewCipherDialog,

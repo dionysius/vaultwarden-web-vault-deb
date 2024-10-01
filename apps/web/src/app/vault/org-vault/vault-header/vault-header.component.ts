@@ -3,6 +3,11 @@ import { Component, EventEmitter, Input, OnInit, Output } from "@angular/core";
 import { Router } from "@angular/router";
 import { firstValueFrom } from "rxjs";
 
+import {
+  CollectionAdminService,
+  CollectionAdminView,
+  Unassigned,
+} from "@bitwarden/admin-console/common";
 import { JslibModule } from "@bitwarden/angular/jslib.module";
 import { OrganizationService } from "@bitwarden/common/admin-console/abstractions/organization/organization.service.abstraction";
 import { Organization } from "@bitwarden/common/admin-console/models/domain/organization";
@@ -22,13 +27,10 @@ import {
 
 import { HeaderModule } from "../../../layouts/header/header.module";
 import { SharedModule } from "../../../shared";
-import { CollectionAdminView } from "../../../vault/core/views/collection-admin.view";
 import { CollectionDialogTabType } from "../../components/collection-dialog";
-import { CollectionAdminService } from "../../core/collection-admin.service";
 import {
   All,
   RoutedVaultFilterModel,
-  Unassigned,
 } from "../../individual-vault/vault-filter/shared/models/routed-vault-filter.model";
 
 @Component({

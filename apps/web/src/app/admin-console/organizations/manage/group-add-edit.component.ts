@@ -14,7 +14,11 @@ import {
   takeUntil,
 } from "rxjs";
 
-import { OrganizationUserApiService } from "@bitwarden/admin-console/common";
+import {
+  CollectionAdminService,
+  CollectionAdminView,
+  OrganizationUserApiService,
+} from "@bitwarden/admin-console/common";
 import { ApiService } from "@bitwarden/common/abstractions/api.service";
 import { OrganizationService } from "@bitwarden/common/admin-console/abstractions/organization/organization.service.abstraction";
 import { Organization } from "@bitwarden/common/admin-console/models/domain/organization";
@@ -26,8 +30,6 @@ import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/pl
 import { UserId } from "@bitwarden/common/types/guid";
 import { DialogService, ToastService } from "@bitwarden/components";
 
-import { CollectionAdminService } from "../../../vault/core/collection-admin.service";
-import { CollectionAdminView } from "../../../vault/core/views/collection-admin.view";
 import { InternalGroupService as GroupService, GroupView } from "../core";
 import {
   AccessItemType,
