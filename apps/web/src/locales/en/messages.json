@@ -1099,8 +1099,11 @@
   "yourVaultIsLockedV2": {
     "message": "Your vault is locked"
   },
-  "uuid": {
-    "message": "UUID"
+  "yourAccountIsLocked": {
+    "message": "Your account is locked"
+  },
+  "uuid":{
+    "message" : "UUID"
   },
   "unlock": {
     "message": "Unlock"
@@ -3168,6 +3171,10 @@
   },
   "incorrectPin": {
     "message": "Incorrect PIN"
+  },
+  "pin": {
+    "message": "PIN",
+    "description": "PIN code. Ex. The short code (often numeric) that you use to unlock a device."
   },
   "exportedVault": {
     "message": "Vault exported"
@@ -7462,6 +7469,15 @@
   },
   "or": {
     "message": "or"
+  },
+  "unlockWithBiometrics": {
+    "message": "Unlock with biometrics"
+  },
+  "unlockWithPin": {
+    "message": "Unlock with PIN"
+  },
+  "unlockWithMasterPassword": {
+    "message": "Unlock with master password"
   },
   "licenseAndBillingManagement": {
     "message": "License and billing management"

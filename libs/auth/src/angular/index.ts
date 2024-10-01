@@ -43,5 +43,9 @@ export * from "./registration/registration-env-selector/registration-env-selecto
 export * from "./registration/registration-finish/registration-finish.service";
 export * from "./registration/registration-finish/default-registration-finish.service";
 
+// lock
+export * from "./lock/lock.component";
+export * from "./lock/lock-component.service";
+
 // vault timeout
 export * from "./vault-timeout-input/vault-timeout-input.component";

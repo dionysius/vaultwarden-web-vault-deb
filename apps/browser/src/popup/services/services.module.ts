@@ -16,7 +16,7 @@ import {
   CLIENT_TYPE,
 } from "@bitwarden/angular/services/injection-tokens";
 import { JslibServicesModule } from "@bitwarden/angular/services/jslib-services.module";
-import { AnonLayoutWrapperDataService } from "@bitwarden/auth/angular";
+import { AnonLayoutWrapperDataService, LockComponentService } from "@bitwarden/auth/angular";
 import { LockService, PinServiceAbstraction } from "@bitwarden/auth/common";
 import { EventCollectionService as EventCollectionServiceAbstraction } from "@bitwarden/common/abstractions/event/event-collection.service";
 import { NotificationsService } from "@bitwarden/common/abstractions/notifications.service";
@@ -117,6 +117,7 @@ import { ForegroundTaskSchedulerService } from "../../platform/services/task-sch
 import { BrowserStorageServiceProvider } from "../../platform/storage/browser-storage-service.provider";
 import { ForegroundMemoryStorageService } from "../../platform/storage/foreground-memory-storage.service";
 import { fromChromeRuntimeMessaging } from "../../platform/utils/from-chrome-runtime-messaging";
+import { ExtensionLockComponentService } from "../../services/extension-lock-component.service";
 import { ForegroundVaultTimeoutService } from "../../services/vault-timeout/foreground-vault-timeout.service";
 import { BrowserSendStateService } from "../../tools/popup/services/browser-send-state.service";
 import { FilePopoutUtilsService } from "../../tools/popup/services/file-popout-utils.service";
@@ -535,6 +536,11 @@ const safeProviders: SafeProvider[] = [
   safeProvider({
     provide: CLIENT_TYPE,
     useValue: ClientType.Browser,
+  }),
+  safeProvider({
+    provide: LockComponentService,
+    useClass: ExtensionLockComponentService,
+    deps: [],
   }),
   safeProvider({
     provide: Fido2UserVerificationService,

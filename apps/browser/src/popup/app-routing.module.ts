@@ -17,6 +17,8 @@ import { extensionRefreshSwap } from "@bitwarden/angular/utils/extension-refresh
 import {
   AnonLayoutWrapperComponent,
   AnonLayoutWrapperData,
+  LockIcon,
+  LockV2Component,
   PasswordHintComponent,
   RegistrationFinishComponent,
   RegistrationStartComponent,
@@ -181,6 +183,7 @@ const routes: Routes = [
     path: "lock",
     component: LockComponent,
     canActivate: [lockGuard()],
+    canMatch: [extensionRefreshRedirect("/lockV2")],
     data: { state: "lock", doNotSaveUrl: true } satisfies RouteDataProperties,
   },
   ...twofactorRefactorSwap(
@@ -438,6 +441,28 @@ const routes: Routes = [
       ],
     },
   ),
+  {
+    path: "",
+    component: ExtensionAnonLayoutWrapperComponent,
+    children: [
+      {
+        path: "lockV2",
+        canActivate: [canAccessFeature(FeatureFlag.ExtensionRefresh), lockGuard()],
+        data: {
+          pageIcon: LockIcon,
+          pageTitle: "yourVaultIsLockedV2",
+          showReadonlyHostname: true,
+          showAcctSwitcher: true,
+        } satisfies ExtensionAnonLayoutWrapperData,
+        children: [
+          {
+            path: "",
+            component: LockV2Component,
+          },
+        ],
+      },
+    ],
+  },
   {
     path: "",
     component: AnonLayoutWrapperComponent,
