@@ -35,6 +35,7 @@
         bitIconButton="bwi-clone"
         bitSuffix
         [appA11yTitle]="'copyPassword' | i18n"
+        [disabled]="!sendOptionsForm.get('password').value"
         [valueLabel]="'password' | i18n"
         [appCopyClick]="sendOptionsForm.get('password').value"
         showToast
