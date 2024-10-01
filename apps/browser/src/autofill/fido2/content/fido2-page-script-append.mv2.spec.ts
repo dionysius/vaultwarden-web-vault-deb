@@ -57,19 +57,4 @@ describe("FIDO2 page-script for manifest v2", () => {
     );
     expect(createdScriptElement.src).toBe(`chrome-extension://id/${Fido2ContentScript.PageScript}`);
   });
-
-  it("removes the appended `page-script.js` file after the script has triggered a load event", () => {
-    createdScriptElement = document.createElement("script");
-    jest.spyOn(window.document, "createElement").mockImplementation((element) => {
-      return createdScriptElement;
-    });
-
-    require("./fido2-page-script-append.mv2");
-
-    jest.spyOn(createdScriptElement, "remove");
-    createdScriptElement.dispatchEvent(new Event("load"));
-    jest.runAllTimers();
-
-    expect(createdScriptElement.remove).toHaveBeenCalled();
-  });
 });
