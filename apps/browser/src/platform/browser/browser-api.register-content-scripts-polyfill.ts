@@ -43,17 +43,23 @@ function buildRegisterContentScriptsPolyfill() {
   function NestedProxy<T extends object>(target: T): T {
     return new Proxy(target, {
       get(target, prop) {
-        if (!target[prop as keyof T]) {
+        const propertyValue = target[prop as keyof T];
+
+        if (!propertyValue) {
           return;
         }
 
-        if (typeof target[prop as keyof T] !== "function") {
-          return NestedProxy(target[prop as keyof T]);
+        if (typeof propertyValue === "object") {
+          return NestedProxy<typeof propertyValue>(propertyValue);
+        }
+
+        if (typeof propertyValue !== "function") {
+          return propertyValue;
         }
 
         return (...arguments_: any[]) =>
           new Promise((resolve, reject) => {
-            target[prop as keyof T](...arguments_, (result: any) => {
+            propertyValue(...arguments_, (result: any) => {
               if (chrome.runtime.lastError) {
                 reject(new Error(chrome.runtime.lastError.message));
               } else {
