@@ -287,6 +287,7 @@ const safeProviders: SafeProvider[] = [
     deps: [
       ApiService,
       CryptoService,
+      EncryptService,
       I18nServiceAbstraction,
       KdfConfigService,
       InternalMasterPasswordServiceAbstraction,

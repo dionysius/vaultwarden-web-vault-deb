@@ -17,7 +17,7 @@ import { EncryptService } from "@bitwarden/common/platform/abstractions/encrypt.
 import { LogService } from "@bitwarden/common/platform/abstractions/log.service";
 import { KdfType } from "@bitwarden/common/platform/enums";
 import { Utils } from "@bitwarden/common/platform/misc/utils";
-import { EncryptedString } from "@bitwarden/common/platform/models/domain/enc-string";
+import { EncryptedString, EncString } from "@bitwarden/common/platform/models/domain/enc-string";
 import { SymmetricCryptoKey } from "@bitwarden/common/platform/models/domain/symmetric-crypto-key";
 import { UserId } from "@bitwarden/common/types/guid";
 import { UserKey } from "@bitwarden/common/types/key";
@@ -224,8 +224,8 @@ export class EmergencyAccessService
       throw new Error("Active user does not have a private key, cannot get view only ciphers.");
     }
 
-    const grantorKeyBuffer = await this.cryptoService.rsaDecrypt(
-      response.keyEncrypted,
+    const grantorKeyBuffer = await this.encryptService.rsaDecrypt(
+      new EncString(response.keyEncrypted),
       activeUserPrivateKey,
     );
     const grantorUserKey = new SymmetricCryptoKey(grantorKeyBuffer) as UserKey;
@@ -261,8 +261,8 @@ export class EmergencyAccessService
       throw new Error("Active user does not have a private key, cannot complete a takeover.");
     }
 
-    const grantorKeyBuffer = await this.cryptoService.rsaDecrypt(
-      takeoverResponse.keyEncrypted,
+    const grantorKeyBuffer = await this.encryptService.rsaDecrypt(
+      new EncString(takeoverResponse.keyEncrypted),
       activeUserPrivateKey,
     );
     if (grantorKeyBuffer == null) {
@@ -355,6 +355,6 @@ export class EmergencyAccessService
   }
 
   private async encryptKey(userKey: UserKey, publicKey: Uint8Array): Promise<EncryptedString> {
-    return (await this.cryptoService.rsaEncrypt(userKey.key, publicKey)).encryptedString;
+    return (await this.encryptService.rsaEncrypt(userKey.key, publicKey)).encryptedString;
   }
 }

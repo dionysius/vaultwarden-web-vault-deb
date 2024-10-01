@@ -14,6 +14,7 @@ import { PBKDF2KdfConfig } from "@bitwarden/common/auth/models/domain/kdf-config
 import { SetPasswordRequest } from "@bitwarden/common/auth/models/request/set-password.request";
 import { KeysRequest } from "@bitwarden/common/models/request/keys.request";
 import { CryptoService } from "@bitwarden/common/platform/abstractions/crypto.service";
+import { EncryptService } from "@bitwarden/common/platform/abstractions/encrypt.service";
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 import { Utils } from "@bitwarden/common/platform/misc/utils";
 import { EncString } from "@bitwarden/common/platform/models/domain/enc-string";
@@ -29,6 +30,7 @@ export class DefaultSetPasswordJitService implements SetPasswordJitService {
   constructor(
     protected apiService: ApiService,
     protected cryptoService: CryptoService,
+    protected encryptService: EncryptService,
     protected i18nService: I18nService,
     protected kdfConfigService: KdfConfigService,
     protected masterPasswordService: InternalMasterPasswordServiceAbstraction,
@@ -157,7 +159,7 @@ export class DefaultSetPasswordJitService implements SetPasswordJitService {
       throw new Error("userKey not found. Could not handle reset password auto enroll.");
     }
 
-    const encryptedUserKey = await this.cryptoService.rsaEncrypt(userKey.key, publicKey);
+    const encryptedUserKey = await this.encryptService.rsaEncrypt(userKey.key, publicKey);
 
     const resetRequest = new OrganizationUserResetPasswordEnrollmentRequest();
     resetRequest.masterPasswordHash = masterKeyHash;

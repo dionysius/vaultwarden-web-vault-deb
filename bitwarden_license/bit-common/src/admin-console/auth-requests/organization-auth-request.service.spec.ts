@@ -124,8 +124,8 @@ describe("OrganizationAuthRequestService", () => {
       );
 
       const encryptedUserKey = new EncString("encryptedUserKey");
-      cryptoService.rsaDecrypt.mockResolvedValue(new Uint8Array(32));
-      cryptoService.rsaEncrypt.mockResolvedValue(encryptedUserKey);
+      encryptService.rsaDecrypt.mockResolvedValue(new Uint8Array(32));
+      encryptService.rsaEncrypt.mockResolvedValue(encryptedUserKey);
 
       const mockPendingAuthRequest = new PendingAuthRequestView();
       mockPendingAuthRequest.id = "requestId1";
@@ -166,8 +166,8 @@ describe("OrganizationAuthRequestService", () => {
       );
 
       const encryptedUserKey = new EncString("encryptedUserKey");
-      cryptoService.rsaDecrypt.mockResolvedValue(new Uint8Array(32));
-      cryptoService.rsaEncrypt.mockResolvedValue(encryptedUserKey);
+      encryptService.rsaDecrypt.mockResolvedValue(new Uint8Array(32));
+      encryptService.rsaEncrypt.mockResolvedValue(encryptedUserKey);
 
       const mockPendingAuthRequest = new PendingAuthRequestView();
       mockPendingAuthRequest.id = "requestId1";

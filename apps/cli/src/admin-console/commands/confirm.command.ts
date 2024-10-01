@@ -4,6 +4,7 @@ import {
 } from "@bitwarden/admin-console/common";
 import { ApiService } from "@bitwarden/common/abstractions/api.service";
 import { CryptoService } from "@bitwarden/common/platform/abstractions/crypto.service";
+import { EncryptService } from "@bitwarden/common/platform/abstractions/encrypt.service";
 import { Utils } from "@bitwarden/common/platform/misc/utils";
 
 import { Response } from "../../models/response";
@@ -12,6 +13,7 @@ export class ConfirmCommand {
   constructor(
     private apiService: ApiService,
     private cryptoService: CryptoService,
+    private encryptService: EncryptService,
     private organizationUserApiService: OrganizationUserApiService,
   ) {}
 
@@ -53,7 +55,7 @@ export class ConfirmCommand {
       }
       const publicKeyResponse = await this.apiService.getUserPublicKey(orgUser.userId);
       const publicKey = Utils.fromB64ToArray(publicKeyResponse.publicKey);
-      const key = await this.cryptoService.rsaEncrypt(orgKey.key, publicKey);
+      const key = await this.encryptService.rsaEncrypt(orgKey.key, publicKey);
       const req = new OrganizationUserConfirmRequest();
       req.key = key.encryptedString;
       await this.organizationUserApiService.postOrganizationUserConfirm(

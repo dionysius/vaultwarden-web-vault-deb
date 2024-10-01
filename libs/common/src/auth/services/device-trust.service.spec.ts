@@ -372,7 +372,7 @@ describe("deviceTrustService", () => {
           .mockResolvedValue(mockUserKey);
 
         cryptoSvcRsaEncryptSpy = jest
-          .spyOn(cryptoService, "rsaEncrypt")
+          .spyOn(encryptService, "rsaEncrypt")
           .mockResolvedValue(mockDevicePublicKeyEncryptedUserKey);
 
         encryptServiceEncryptSpy = jest
@@ -577,7 +577,7 @@ describe("deviceTrustService", () => {
           .spyOn(encryptService, "decryptToBytes")
           .mockResolvedValue(new Uint8Array(userKeyBytesLength));
         const rsaDecryptSpy = jest
-          .spyOn(cryptoService, "rsaDecrypt")
+          .spyOn(encryptService, "rsaDecrypt")
           .mockResolvedValue(new Uint8Array(userKeyBytesLength));
 
         const result = await deviceTrustService.decryptUserKeyWithDeviceKey(
@@ -696,7 +696,7 @@ describe("deviceTrustService", () => {
           });
 
           // Mock the encryption of the new user key with the decrypted public key
-          cryptoService.rsaEncrypt.mockImplementationOnce((data, publicKey) => {
+          encryptService.rsaEncrypt.mockImplementationOnce((data, publicKey) => {
             expect(data.byteLength).toBe(64); // New key should also be 64 bytes
             expect(new Uint8Array(data)[0]).toBe(FakeNewUserKeyMarker); // New key should have the first byte be '1';
 

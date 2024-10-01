@@ -15,6 +15,7 @@ import { DEFAULT_KDF_CONFIG } from "@bitwarden/common/auth/models/domain/kdf-con
 import { SetPasswordRequest } from "@bitwarden/common/auth/models/request/set-password.request";
 import { KeysRequest } from "@bitwarden/common/models/request/keys.request";
 import { CryptoService } from "@bitwarden/common/platform/abstractions/crypto.service";
+import { EncryptService } from "@bitwarden/common/platform/abstractions/encrypt.service";
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 import { Utils } from "@bitwarden/common/platform/misc/utils";
 import { EncString } from "@bitwarden/common/platform/models/domain/enc-string";
@@ -33,6 +34,7 @@ describe("DefaultSetPasswordJitService", () => {
 
   let apiService: MockProxy<ApiService>;
   let cryptoService: MockProxy<CryptoService>;
+  let encryptService: MockProxy<EncryptService>;
   let i18nService: MockProxy<I18nService>;
   let kdfConfigService: MockProxy<KdfConfigService>;
   let masterPasswordService: MockProxy<InternalMasterPasswordServiceAbstraction>;
@@ -43,6 +45,7 @@ describe("DefaultSetPasswordJitService", () => {
   beforeEach(() => {
     apiService = mock<ApiService>();
     cryptoService = mock<CryptoService>();
+    encryptService = mock<EncryptService>();
     i18nService = mock<I18nService>();
     kdfConfigService = mock<KdfConfigService>();
     masterPasswordService = mock<InternalMasterPasswordServiceAbstraction>();
@@ -53,6 +56,7 @@ describe("DefaultSetPasswordJitService", () => {
     sut = new DefaultSetPasswordJitService(
       apiService,
       cryptoService,
+      encryptService,
       i18nService,
       kdfConfigService,
       masterPasswordService,
@@ -168,7 +172,7 @@ describe("DefaultSetPasswordJitService", () => {
       }
 
       cryptoService.userKey$.mockReturnValue(of(userKey));
-      cryptoService.rsaEncrypt.mockResolvedValue(userKeyEncString);
+      encryptService.rsaEncrypt.mockResolvedValue(userKeyEncString);
 
       organizationUserApiService.putOrganizationUserResetPasswordEnrollment.mockResolvedValue(
         undefined,
@@ -210,7 +214,7 @@ describe("DefaultSetPasswordJitService", () => {
       // Assert
       expect(apiService.setPassword).toHaveBeenCalledWith(setPasswordRequest);
       expect(organizationApiService.getKeys).toHaveBeenCalledWith(orgId);
-      expect(cryptoService.rsaEncrypt).toHaveBeenCalledWith(userKey.key, orgPublicKey);
+      expect(encryptService.rsaEncrypt).toHaveBeenCalledWith(userKey.key, orgPublicKey);
       expect(
         organizationUserApiService.putOrganizationUserResetPasswordEnrollment,
       ).toHaveBeenCalled();

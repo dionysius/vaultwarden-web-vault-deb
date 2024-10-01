@@ -15,6 +15,7 @@ import { ProviderUserConfirmRequest } from "@bitwarden/common/admin-console/mode
 import { ProviderUserUserDetailsResponse } from "@bitwarden/common/admin-console/models/response/provider/provider-user.response";
 import { ListResponse } from "@bitwarden/common/models/response/list.response";
 import { CryptoService } from "@bitwarden/common/platform/abstractions/crypto.service";
+import { EncryptService } from "@bitwarden/common/platform/abstractions/encrypt.service";
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 import { LogService } from "@bitwarden/common/platform/abstractions/log.service";
 import { ValidationService } from "@bitwarden/common/platform/abstractions/validation.service";
@@ -66,6 +67,7 @@ export class MembersComponent extends BaseMembersComponent<ProviderUser> {
     toastService: ToastService,
     userNamePipe: UserNamePipe,
     validationService: ValidationService,
+    private encryptService: EncryptService,
     private activatedRoute: ActivatedRoute,
     private providerService: ProviderService,
     private router: Router,
@@ -184,7 +186,7 @@ export class MembersComponent extends BaseMembersComponent<ProviderUser> {
 
   async confirmUser(user: ProviderUser, publicKey: Uint8Array): Promise<void> {
     const providerKey = await this.cryptoService.getProviderKey(this.providerId);
-    const key = await this.cryptoService.rsaEncrypt(providerKey.key, publicKey);
+    const key = await this.encryptService.rsaEncrypt(providerKey.key, publicKey);
     const request = new ProviderUserConfirmRequest();
     request.key = key.encryptedString;
     await this.apiService.postProviderUserConfirm(this.providerId, user.id, request);

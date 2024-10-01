@@ -13,6 +13,7 @@ import { ProviderUserBulkPublicKeyResponse } from "@bitwarden/common/admin-conso
 import { ProviderUserBulkResponse } from "@bitwarden/common/admin-console/models/response/provider/provider-user-bulk.response";
 import { ListResponse } from "@bitwarden/common/models/response/list.response";
 import { CryptoService } from "@bitwarden/common/platform/abstractions/crypto.service";
+import { EncryptService } from "@bitwarden/common/platform/abstractions/encrypt.service";
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 import { SymmetricCryptoKey } from "@bitwarden/common/platform/models/domain/symmetric-crypto-key";
 import { DialogService } from "@bitwarden/components";
@@ -34,10 +35,11 @@ export class BulkConfirmDialogComponent extends BaseBulkConfirmComponent {
   constructor(
     private apiService: ApiService,
     protected cryptoService: CryptoService,
+    protected encryptService: EncryptService,
     @Inject(DIALOG_DATA) protected dialogParams: BulkConfirmDialogParams,
     protected i18nService: I18nService,
   ) {
-    super(cryptoService, i18nService);
+    super(cryptoService, encryptService, i18nService);
 
     this.providerId = dialogParams.providerId;
     this.users = dialogParams.users;

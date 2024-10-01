@@ -35,7 +35,7 @@ describe("RotateableKeySetService", () => {
       const encryptedPrivateKey = Symbol();
       cryptoService.makeKeyPair.mockResolvedValue(["publicKey", encryptedPrivateKey as any]);
       cryptoService.getUserKey.mockResolvedValue({ key: userKey.key } as any);
-      cryptoService.rsaEncrypt.mockResolvedValue(encryptedUserKey as any);
+      encryptService.rsaEncrypt.mockResolvedValue(encryptedUserKey as any);
       encryptService.encrypt.mockResolvedValue(encryptedPublicKey as any);
 
       const result = await service.createKeySet(externalKey as any);

@@ -4,6 +4,7 @@ import {
   OrganizationUserApiService,
   OrganizationUserResetPasswordEnrollmentRequest,
 } from "@bitwarden/admin-console/common";
+import { EncryptService } from "@bitwarden/common/platform/abstractions/encrypt.service";
 
 import { OrganizationApiServiceAbstraction } from "../../admin-console/abstractions/organization/organization-api.service.abstraction";
 import { CryptoService } from "../../platform/abstractions/crypto.service";
@@ -20,6 +21,7 @@ export class PasswordResetEnrollmentServiceImplementation
     protected organizationApiService: OrganizationApiServiceAbstraction,
     protected accountService: AccountService,
     protected cryptoService: CryptoService,
+    protected encryptService: EncryptService,
     protected organizationUserApiService: OrganizationUserApiService,
     protected i18nService: I18nService,
   ) {}
@@ -47,7 +49,7 @@ export class PasswordResetEnrollmentServiceImplementation
       userId ?? (await firstValueFrom(this.accountService.activeAccount$.pipe(map((a) => a?.id))));
     userKey = userKey ?? (await this.cryptoService.getUserKey(userId));
     // RSA Encrypt user's userKey.key with organization public key
-    const encryptedKey = await this.cryptoService.rsaEncrypt(userKey.key, orgPublicKey);
+    const encryptedKey = await this.encryptService.rsaEncrypt(userKey.key, orgPublicKey);
 
     const resetRequest = new OrganizationUserResetPasswordEnrollmentRequest();
     resetRequest.resetPasswordKey = encryptedKey.encryptedString;

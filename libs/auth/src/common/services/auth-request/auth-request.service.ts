@@ -10,7 +10,9 @@ import { AuthRequestResponse } from "@bitwarden/common/auth/models/response/auth
 import { AuthRequestPushNotification } from "@bitwarden/common/models/response/notification.response";
 import { AppIdService } from "@bitwarden/common/platform/abstractions/app-id.service";
 import { CryptoService } from "@bitwarden/common/platform/abstractions/crypto.service";
+import { EncryptService } from "@bitwarden/common/platform/abstractions/encrypt.service";
 import { Utils } from "@bitwarden/common/platform/misc/utils";
+import { EncString } from "@bitwarden/common/platform/models/domain/enc-string";
 import { SymmetricCryptoKey } from "@bitwarden/common/platform/models/domain/symmetric-crypto-key";
 import {
   AUTH_REQUEST_DISK_LOCAL,
@@ -44,6 +46,7 @@ export class AuthRequestService implements AuthRequestServiceAbstraction {
     private accountService: AccountService,
     private masterPasswordService: InternalMasterPasswordServiceAbstraction,
     private cryptoService: CryptoService,
+    private encryptService: EncryptService,
     private apiService: ApiService,
     private stateProvider: StateProvider,
   ) {
@@ -102,7 +105,7 @@ export class AuthRequestService implements AuthRequestServiceAbstraction {
     if (masterKey && masterKeyHash) {
       // Only encrypt the master password hash if masterKey exists as
       // we won't have a masterKeyHash without a masterKey
-      encryptedMasterKeyHash = await this.cryptoService.rsaEncrypt(
+      encryptedMasterKeyHash = await this.encryptService.rsaEncrypt(
         Utils.fromUtf8ToArray(masterKeyHash),
         pubKey,
       );
@@ -112,7 +115,7 @@ export class AuthRequestService implements AuthRequestServiceAbstraction {
       keyToEncrypt = userKey.key;
     }
 
-    const encryptedKey = await this.cryptoService.rsaEncrypt(keyToEncrypt, pubKey);
+    const encryptedKey = await this.encryptService.rsaEncrypt(keyToEncrypt, pubKey);
 
     const response = new PasswordlessAuthRequest(
       encryptedKey.encryptedString,
@@ -161,8 +164,8 @@ export class AuthRequestService implements AuthRequestServiceAbstraction {
     pubKeyEncryptedUserKey: string,
     privateKey: Uint8Array,
   ): Promise<UserKey> {
-    const decryptedUserKeyBytes = await this.cryptoService.rsaDecrypt(
-      pubKeyEncryptedUserKey,
+    const decryptedUserKeyBytes = await this.encryptService.rsaDecrypt(
+      new EncString(pubKeyEncryptedUserKey),
       privateKey,
     );
 
@@ -174,13 +177,13 @@ export class AuthRequestService implements AuthRequestServiceAbstraction {
     pubKeyEncryptedMasterKeyHash: string,
     privateKey: Uint8Array,
   ): Promise<{ masterKey: MasterKey; masterKeyHash: string }> {
-    const decryptedMasterKeyArrayBuffer = await this.cryptoService.rsaDecrypt(
-      pubKeyEncryptedMasterKey,
+    const decryptedMasterKeyArrayBuffer = await this.encryptService.rsaDecrypt(
+      new EncString(pubKeyEncryptedMasterKey),
       privateKey,
     );
 
-    const decryptedMasterKeyHashArrayBuffer = await this.cryptoService.rsaDecrypt(
-      pubKeyEncryptedMasterKeyHash,
+    const decryptedMasterKeyHashArrayBuffer = await this.encryptService.rsaDecrypt(
+      new EncString(pubKeyEncryptedMasterKeyHash),
       privateKey,
     );
 

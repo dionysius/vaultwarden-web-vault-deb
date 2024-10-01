@@ -57,7 +57,7 @@ export class OrganizationUserResetPasswordService
     if (userKey == null) {
       throw new Error("No user key found");
     }
-    const encryptedKey = await this.cryptoService.rsaEncrypt(userKey.key, publicKey);
+    const encryptedKey = await this.encryptService.rsaEncrypt(userKey.key, publicKey);
 
     return encryptedKey.encryptedString;
   }
@@ -96,7 +96,10 @@ export class OrganizationUserResetPasswordService
     );
 
     // Decrypt User's Reset Password Key to get UserKey
-    const decValue = await this.cryptoService.rsaDecrypt(response.resetPasswordKey, decPrivateKey);
+    const decValue = await this.encryptService.rsaDecrypt(
+      new EncString(response.resetPasswordKey),
+      decPrivateKey,
+    );
     const existingUserKey = new SymmetricCryptoKey(decValue) as UserKey;
 
     // determine Kdf Algorithm

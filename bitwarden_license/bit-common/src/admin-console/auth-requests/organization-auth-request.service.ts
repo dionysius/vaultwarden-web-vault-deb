@@ -117,10 +117,13 @@ export class OrganizationAuthRequestService {
     );
 
     // Decrypt user key with decrypted org private key
-    const decValue = await this.cryptoService.rsaDecrypt(encryptedUserKey, decOrgPrivateKey);
+    const decValue = await this.encryptService.rsaDecrypt(
+      new EncString(encryptedUserKey),
+      decOrgPrivateKey,
+    );
     const userKey = new SymmetricCryptoKey(decValue);
 
     // Re-encrypt user Key with the Device Public Key
-    return await this.cryptoService.rsaEncrypt(userKey.key, devicePubKey);
+    return await this.encryptService.rsaEncrypt(userKey.key, devicePubKey);
   }
 }

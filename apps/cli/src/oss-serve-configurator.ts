@@ -117,6 +117,7 @@ export class OssServeConfigurator {
     this.confirmCommand = new ConfirmCommand(
       this.serviceContainer.apiService,
       this.serviceContainer.cryptoService,
+      this.serviceContainer.encryptService,
       this.serviceContainer.organizationUserApiService,
     );
     this.restoreCommand = new RestoreCommand(this.serviceContainer.cipherService);

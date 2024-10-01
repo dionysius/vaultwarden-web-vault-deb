@@ -132,7 +132,7 @@ describe("EmergencyAccessService", () => {
         cryptoService.getUserKey.mockResolvedValueOnce(mockUserKey);
         apiService.getUserPublicKey.mockResolvedValueOnce(mockUserPublicKeyResponse);
 
-        cryptoService.rsaEncrypt.mockResolvedValueOnce(mockUserPublicKeyEncryptedUserKey);
+        encryptService.rsaEncrypt.mockResolvedValueOnce(mockUserPublicKeyEncryptedUserKey);
 
         emergencyAccessApiService.postEmergencyAccessConfirm.mockResolvedValueOnce();
 
@@ -162,7 +162,7 @@ describe("EmergencyAccessService", () => {
 
       const mockDecryptedGrantorUserKey = new Uint8Array(64);
       cryptoService.getPrivateKey.mockResolvedValue(new Uint8Array(64));
-      cryptoService.rsaDecrypt.mockResolvedValueOnce(mockDecryptedGrantorUserKey);
+      encryptService.rsaDecrypt.mockResolvedValueOnce(mockDecryptedGrantorUserKey);
 
       const mockMasterKey = new SymmetricCryptoKey(new Uint8Array(64) as CsprngArray) as MasterKey;
 
@@ -200,7 +200,7 @@ describe("EmergencyAccessService", () => {
     });
 
     it("should not post a new password if decryption fails", async () => {
-      cryptoService.rsaDecrypt.mockResolvedValueOnce(null);
+      encryptService.rsaDecrypt.mockResolvedValueOnce(null);
       emergencyAccessApiService.postEmergencyAccessTakeover.mockResolvedValueOnce({
         keyEncrypted: "EncryptedKey",
         kdf: KdfType.PBKDF2_SHA256,
@@ -259,7 +259,7 @@ describe("EmergencyAccessService", () => {
         publicKey: "mockPublicKey",
       } as UserKeyResponse);
 
-      cryptoService.rsaEncrypt.mockImplementation((plainValue, publicKey) => {
+      encryptService.rsaEncrypt.mockImplementation((plainValue, publicKey) => {
         return Promise.resolve(
           new EncString(EncryptionType.Rsa2048_OaepSha1_B64, "Encrypted: " + plainValue),
         );
