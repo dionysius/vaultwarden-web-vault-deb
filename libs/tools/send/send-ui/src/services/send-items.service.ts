@@ -83,7 +83,7 @@ export class SendItemsService {
   );
 
   /**
-   * Observable that indicates whether the user's vault is empty.
+   * Observable that indicates whether the user's send list is empty.
    */
   emptyList$: Observable<boolean> = this._sendList$.pipe(map((sends) => !sends.length));
 
