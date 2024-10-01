@@ -85,9 +85,14 @@ export class SendFormComponent implements AfterViewInit, OnInit, OnChanges, Send
   submitBtn?: ButtonComponent;
 
   /**
-   * Event emitted when the send is saved successfully.
+   * Event emitted when the send is created successfully.
    */
-  @Output() sendSaved = new EventEmitter<SendView>();
+  @Output() onSendCreated = new EventEmitter<SendView>();
+
+  /**
+   * Event emitted when the send is updated successfully.
+   */
+  @Output() onSendUpdated = new EventEmitter<SendView>();
 
   /**
    * The original send being edited or cloned. Null for add mode.
@@ -200,22 +205,26 @@ export class SendFormComponent implements AfterViewInit, OnInit, OnChanges, Send
       return;
     }
 
+    const sendView = await this.addEditFormService.saveSend(
+      this.updatedSendView,
+      this.file,
+      this.config,
+    );
+
+    if (this.config.mode === "add") {
+      this.onSendCreated.emit(sendView);
+      return;
+    }
+
     if (Utils.isNullOrWhitespace(this.updatedSendView.password)) {
       this.updatedSendView.password = null;
     }
 
-    await this.addEditFormService.saveSend(this.updatedSendView, this.file, this.config);
-
     this.toastService.showToast({
       variant: "success",
       title: null,
-      message: this.i18nService.t(
-        this.config.mode === "edit" || this.config.mode === "partial-edit"
-          ? "editedItem"
-          : "addedItem",
-      ),
+      message: this.i18nService.t("editedItem"),
     });
-
-    this.sendSaved.emit(this.updatedSendView);
+    this.onSendUpdated.emit(this.updatedSendView);
   };
 }

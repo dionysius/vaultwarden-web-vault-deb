@@ -1,6 +1,6 @@
 import { CommonModule, Location } from "@angular/common";
 import { ComponentFixture, TestBed } from "@angular/core/testing";
-import { ActivatedRoute, RouterLink } from "@angular/router";
+import { ActivatedRoute, Router, RouterLink } from "@angular/router";
 import { RouterTestingModule } from "@angular/router/testing";
 import { MockProxy, mock } from "jest-mock-extended";
 import { of } from "rxjs";
@@ -33,6 +33,7 @@ describe("SendCreatedComponent", () => {
   let location: MockProxy<Location>;
   let activatedRoute: MockProxy<ActivatedRoute>;
   let environmentService: MockProxy<EnvironmentService>;
+  let router: MockProxy<Router>;
 
   const sendId = "test-send-id";
   const deletionDate = new Date();
@@ -52,6 +53,7 @@ describe("SendCreatedComponent", () => {
     location = mock<Location>();
     activatedRoute = mock<ActivatedRoute>();
     environmentService = mock<EnvironmentService>();
+    router = mock<Router>();
     Object.defineProperty(environmentService, "environment$", {
       configurable: true,
       get: () => of(new SelfHostedEnvironment({ webVault: "https://example.com" })),
@@ -89,6 +91,7 @@ describe("SendCreatedComponent", () => {
         { provide: ConfigService, useValue: mock<ConfigService>() },
         { provide: EnvironmentService, useValue: environmentService },
         { provide: PopupRouterCacheService, useValue: mock<PopupRouterCacheService>() },
+        { provide: Router, useValue: router },
       ],
     }).compileComponents();
   });
@@ -109,10 +112,10 @@ describe("SendCreatedComponent", () => {
     expect(component["daysAvailable"]).toBe(7);
   });
 
-  it("should navigate back on close", () => {
+  it("should navigate back to send list on close", async () => {
     fixture.detectChanges();
-    component.close();
-    expect(location.back).toHaveBeenCalled();
+    await component.close();
+    expect(router.navigate).toHaveBeenCalledWith(["/tabs/send"]);
   });
 
   describe("getDaysAvailable", () => {

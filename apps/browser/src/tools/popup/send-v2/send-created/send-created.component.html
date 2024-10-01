@@ -1,6 +1,11 @@
 <main class="tw-top-0">
   <popup-page>
-    <popup-header slot="header" [pageTitle]="'createdSend' | i18n" showBackButton>
+    <popup-header
+      slot="header"
+      [pageTitle]="'createdSend' | i18n"
+      showBackButton
+      [backAction]="close.bind(this)"
+    >
       <ng-container slot="end">
         <app-pop-out></app-pop-out>
       </ng-container>

@@ -4,7 +4,8 @@
   <tools-send-form
     formId="sendForm"
     [config]="config"
-    (sendSaved)="onSendSaved()"
+    (onSendCreated)="onSendCreated($event)"
+    (onSendUpdated)="onSendUpdated($event)"
     [submitBtn]="submitBtn"
   >
   </tools-send-form>
