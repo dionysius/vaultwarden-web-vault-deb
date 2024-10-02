@@ -1,6 +1,6 @@
 import { Directive, ElementRef, NgZone, OnDestroy, OnInit, ViewChild } from "@angular/core";
 import { FormBuilder, Validators } from "@angular/forms";
-import { ActivatedRoute, Router } from "@angular/router";
+import { ActivatedRoute, NavigationSkipped, Router } from "@angular/router";
 import { Subject, firstValueFrom, of } from "rxjs";
 import { switchMap, take, takeUntil } from "rxjs/operators";
 
@@ -120,6 +120,14 @@ export class LoginComponent extends CaptchaProtectedComponent implements OnInit,
         takeUntil(this.destroy$),
       )
       .subscribe();
+
+    // If the user navigates to /login from /login, reset the validatedEmail flag
+    // This should bring the user back to the login screen with the email field
+    this.router.events.pipe(takeUntil(this.destroy$)).subscribe((event) => {
+      if (event instanceof NavigationSkipped && event.url === "/login") {
+        this.validatedEmail = false;
+      }
+    });
 
     // Backup check to handle unknown case where activatedRoute is not available
     // This shouldn't happen under normal circumstances

@@ -1,5 +1,6 @@
 import { CommonModule } from "@angular/common";
 import { Component, Input, OnChanges, OnInit, SimpleChanges } from "@angular/core";
+import { RouterModule } from "@angular/router";
 import { firstValueFrom } from "rxjs";
 
 import { ClientType } from "@bitwarden/common/enums";
@@ -15,7 +16,7 @@ import { BitwardenLogo, BitwardenShield } from "../icons";
   standalone: true,
   selector: "auth-anon-layout",
   templateUrl: "./anon-layout.component.html",
-  imports: [IconModule, CommonModule, TypographyModule, SharedModule],
+  imports: [IconModule, CommonModule, TypographyModule, SharedModule, RouterModule],
 })
 export class AnonLayoutComponent implements OnInit, OnChanges {
   @Input() title: string;

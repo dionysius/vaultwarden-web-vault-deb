@@ -8,7 +8,9 @@
     attr.aria-hidden="{{ showingModal }}"
   >
     <div id="content" class="content" style="padding-top: 50px">
-      <img class="logo-image" alt="Bitwarden" />
+      <a (click)="invalidateEmail()" class="tw-cursor-pointer">
+        <img class="logo-image" alt="Bitwarden" />
+      </a>
       <p class="lead">{{ "loginOrCreateNewAccount" | i18n }}</p>
       <!-- start email -->
       <ng-container *ngIf="!validatedEmail; else loginPage">
