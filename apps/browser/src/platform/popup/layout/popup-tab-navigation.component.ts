@@ -56,7 +56,7 @@ export class PopupTabNavigationComponent {
       .pipe(
         filter((policyAppliesToActiveUser) => policyAppliesToActiveUser),
         switchMap(() => this.sendService.sends$),
-        map((sends) => sends.length > 1),
+        map((sends) => sends.length > 0),
         takeUntilDestroyed(),
       )
       .subscribe((hasSends) => {
