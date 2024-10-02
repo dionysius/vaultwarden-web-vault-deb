@@ -6,10 +6,7 @@ import { OrganizationId } from "@bitwarden/common/types/guid";
 import { PremiumUpgradePromptService } from "@bitwarden/common/vault/abstractions/premium-upgrade-prompt.service";
 import { DialogService } from "@bitwarden/components";
 
-import {
-  ViewCipherDialogCloseResult,
-  ViewCipherDialogResult,
-} from "../individual-vault/view.component";
+import { VaultItemDialogResult } from "../components/vault-item-dialog/vault-item-dialog.component";
 
 /**
  * This service is used to prompt the user to upgrade to premium.
@@ -19,7 +16,7 @@ export class WebVaultPremiumUpgradePromptService implements PremiumUpgradePrompt
   constructor(
     private dialogService: DialogService,
     private router: Router,
-    private dialog: DialogRef<ViewCipherDialogCloseResult>,
+    private dialog: DialogRef<VaultItemDialogResult>,
   ) {}
 
   /**
@@ -51,7 +48,7 @@ export class WebVaultPremiumUpgradePromptService implements PremiumUpgradePrompt
     }
 
     if (upgradeConfirmed) {
-      this.dialog.close({ action: ViewCipherDialogResult.PremiumUpgrade });
+      this.dialog.close(VaultItemDialogResult.PremiumUpgrade);
     }
   }
 }

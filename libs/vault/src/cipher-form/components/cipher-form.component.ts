@@ -1,6 +1,7 @@
 import { NgIf } from "@angular/common";
 import {
   AfterViewInit,
+  ChangeDetectorRef,
   Component,
   DestroyRef,
   EventEmitter,
@@ -14,6 +15,7 @@ import {
 } from "@angular/core";
 import { takeUntilDestroyed } from "@angular/core/rxjs-interop";
 import { FormBuilder, FormGroup, ReactiveFormsModule } from "@angular/forms";
+import { Subject } from "rxjs";
 
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 import { CipherType, SecureNoteType } from "@bitwarden/common/vault/enums";
@@ -101,6 +103,10 @@ export class CipherFormComponent implements AfterViewInit, OnInit, OnChanges, Ci
    */
   @Output() cipherSaved = new EventEmitter<CipherView>();
 
+  private formReadySubject = new Subject<void>();
+
+  @Output() formReady = this.formReadySubject.asObservable();
+
   /**
    * The original cipher being edited or cloned. Null for add mode.
    */
@@ -173,9 +179,13 @@ export class CipherFormComponent implements AfterViewInit, OnInit, OnChanges, Ci
 
   async init() {
     this.loading = true;
+
+    // Force change detection so that all child components are destroyed and re-created
+    this.changeDetectorRef.detectChanges();
+
     this.updatedCipherView = new CipherView();
     this.originalCipherView = null;
-    this.cipherForm.reset();
+    this.cipherForm = this.formBuilder.group<CipherForm>({});
 
     if (this.config == null) {
       return;
@@ -207,6 +217,7 @@ export class CipherFormComponent implements AfterViewInit, OnInit, OnChanges, Ci
     }
 
     this.loading = false;
+    this.formReadySubject.next();
   }
 
   constructor(
@@ -214,6 +225,7 @@ export class CipherFormComponent implements AfterViewInit, OnInit, OnChanges, Ci
     private addEditFormService: CipherFormService,
     private toastService: ToastService,
     private i18nService: I18nService,
+    private changeDetectorRef: ChangeDetectorRef,
   ) {}
 
   /**

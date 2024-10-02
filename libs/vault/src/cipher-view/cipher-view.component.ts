@@ -1,5 +1,5 @@
 import { CommonModule } from "@angular/common";
-import { Component, Input, OnDestroy, OnInit } from "@angular/core";
+import { Component, Input, OnChanges, OnDestroy } from "@angular/core";
 import { firstValueFrom, Observable, Subject, takeUntil } from "rxjs";
 
 import { JslibModule } from "@bitwarden/angular/jslib.module";
@@ -44,7 +44,7 @@ import { ViewIdentitySectionsComponent } from "./view-identity-sections/view-ide
     AutofillOptionsViewComponent,
   ],
 })
-export class CipherViewComponent implements OnInit, OnDestroy {
+export class CipherViewComponent implements OnChanges, OnDestroy {
   @Input({ required: true }) cipher: CipherView;
 
   /**
@@ -63,7 +63,11 @@ export class CipherViewComponent implements OnInit, OnDestroy {
     private folderService: FolderService,
   ) {}
 
-  async ngOnInit() {
+  async ngOnChanges() {
+    if (this.cipher == null) {
+      return;
+    }
+
     await this.loadCipherData();
 
     this.cardIsExpired = isCardExpired(this.cipher.card);

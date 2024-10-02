@@ -3,10 +3,8 @@ import { CommonModule } from "@angular/common";
 import { Component, Inject } from "@angular/core";
 
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
-import { ButtonModule, DialogService } from "@bitwarden/components";
+import { ButtonModule, DialogModule, DialogService } from "@bitwarden/components";
 import { CipherFormGeneratorComponent } from "@bitwarden/vault";
-
-import { DialogModule } from "../../../../../../libs/components/src/dialog";
 
 export interface WebVaultGeneratorDialogParams {
   type: "password" | "username";

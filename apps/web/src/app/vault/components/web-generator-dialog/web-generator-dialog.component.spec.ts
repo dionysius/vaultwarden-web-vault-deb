@@ -1,4 +1,4 @@
-import { DialogRef, DIALOG_DATA } from "@angular/cdk/dialog";
+import { DIALOG_DATA, DialogRef } from "@angular/cdk/dialog";
 import { ComponentFixture, TestBed } from "@angular/core/testing";
 import { NoopAnimationsModule } from "@angular/platform-browser/animations";
 import { mock, MockProxy } from "jest-mock-extended";
@@ -6,15 +6,16 @@ import { BehaviorSubject } from "rxjs";
 
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
-import { PasswordGenerationServiceAbstraction } from "@bitwarden/generator-legacy";
-
-import { UsernameGenerationServiceAbstraction } from "../../../../../../libs/tools/generator/extensions/legacy/src/username-generation.service.abstraction";
-import { CipherFormGeneratorComponent } from "../cipher-generator/cipher-form-generator.component";
+import {
+  PasswordGenerationServiceAbstraction,
+  UsernameGenerationServiceAbstraction,
+} from "@bitwarden/generator-legacy";
+import { CipherFormGeneratorComponent } from "@bitwarden/vault";
 
 import {
+  WebVaultGeneratorDialogAction,
   WebVaultGeneratorDialogComponent,
   WebVaultGeneratorDialogParams,
-  WebVaultGeneratorDialogAction,
 } from "./web-generator-dialog.component";
 
 describe("WebVaultGeneratorDialogComponent", () => {

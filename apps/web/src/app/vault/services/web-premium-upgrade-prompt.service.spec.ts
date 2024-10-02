@@ -1,15 +1,12 @@
 import { DialogRef } from "@angular/cdk/dialog";
 import { TestBed } from "@angular/core/testing";
 import { Router } from "@angular/router";
-import { of, lastValueFrom } from "rxjs";
+import { lastValueFrom, of } from "rxjs";
 
 import { OrganizationId } from "@bitwarden/common/types/guid";
 import { DialogService } from "@bitwarden/components";
 
-import {
-  ViewCipherDialogCloseResult,
-  ViewCipherDialogResult,
-} from "../individual-vault/view.component";
+import { VaultItemDialogResult } from "../components/vault-item-dialog/vault-item-dialog.component";
 
 import { WebVaultPremiumUpgradePromptService } from "./web-premium-upgrade-prompt.service";
 
@@ -17,7 +14,7 @@ describe("WebVaultPremiumUpgradePromptService", () => {
   let service: WebVaultPremiumUpgradePromptService;
   let dialogServiceMock: jest.Mocked<DialogService>;
   let routerMock: jest.Mocked<Router>;
-  let dialogRefMock: jest.Mocked<DialogRef<ViewCipherDialogCloseResult>>;
+  let dialogRefMock: jest.Mocked<DialogRef<VaultItemDialogResult>>;
 
   beforeEach(() => {
     dialogServiceMock = {
@@ -30,7 +27,7 @@ describe("WebVaultPremiumUpgradePromptService", () => {
 
     dialogRefMock = {
       close: jest.fn(),
-    } as unknown as jest.Mocked<DialogRef<ViewCipherDialogCloseResult>>;
+    } as unknown as jest.Mocked<DialogRef<VaultItemDialogResult>>;
 
     TestBed.configureTestingModule({
       providers: [
@@ -62,9 +59,7 @@ describe("WebVaultPremiumUpgradePromptService", () => {
       "billing",
       "subscription",
     ]);
-    expect(dialogRefMock.close).toHaveBeenCalledWith({
-      action: ViewCipherDialogResult.PremiumUpgrade,
-    });
+    expect(dialogRefMock.close).toHaveBeenCalledWith(VaultItemDialogResult.PremiumUpgrade);
   });
 
   it("prompts for premium upgrade and navigates to premium subscription if organizationId is not provided", async () => {
@@ -79,9 +74,7 @@ describe("WebVaultPremiumUpgradePromptService", () => {
       type: "success",
     });
     expect(routerMock.navigate).toHaveBeenCalledWith(["settings/subscription/premium"]);
-    expect(dialogRefMock.close).toHaveBeenCalledWith({
-      action: ViewCipherDialogResult.PremiumUpgrade,
-    });
+    expect(dialogRefMock.close).toHaveBeenCalledWith(VaultItemDialogResult.PremiumUpgrade);
   });
 
   it("does not navigate or close dialog if upgrade is no action is taken", async () => {

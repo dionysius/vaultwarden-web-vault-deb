@@ -1,6 +1,6 @@
 import { DIALOG_DATA, DialogConfig, DialogRef } from "@angular/cdk/dialog";
 import { CommonModule } from "@angular/common";
-import { Component, Inject, OnInit, EventEmitter } from "@angular/core";
+import { Component, EventEmitter, Inject, OnInit } from "@angular/core";
 
 import { OrganizationService } from "@bitwarden/common/admin-console/abstractions/organization/organization.service.abstraction";
 import { Organization } from "@bitwarden/common/admin-console/models/domain/organization";
@@ -52,6 +52,7 @@ export interface ViewCipherDialogCloseResult {
 
 /**
  * Component for viewing a cipher, presented in a dialog.
+ * @deprecated Use the VaultItemDialogComponent instead.
  */
 @Component({
   selector: "app-vault-view",
