@@ -54,8 +54,10 @@ function redirectToDuoFrameless(redirectUrl: string) {
 
   if (
     validateUrl.protocol !== "https:" ||
-    !validateUrl.hostname.endsWith("duosecurity.com") ||
-    !validateUrl.hostname.endsWith("duofederal.com")
+    !(
+      validateUrl.hostname.endsWith("duosecurity.com") ||
+      validateUrl.hostname.endsWith("duofederal.com")
+    )
   ) {
     throw new Error("Invalid redirect URL");
   }
