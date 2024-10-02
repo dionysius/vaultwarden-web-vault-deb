@@ -1,7 +1,7 @@
 <form [formGroup]="formGroup" [bitSubmit]="submit">
   <bit-dialog>
     <h1 bitDialogTitle>
-      {{ (hasBillingToken ? "viewBillingSyncToken" : "generateBillingSyncToken") | i18n }}
+      {{ (hasBillingToken ? "viewBillingToken" : "generateBillingToken") | i18n }}
     </h1>
     <div bitDialogContent>
       <app-user-verification formControlName="verification" *ngIf="!clientSecret">

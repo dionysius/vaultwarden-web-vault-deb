@@ -90,7 +90,7 @@
             </a>
           </bit-label>
           <bit-hint>
-            {{ "billingSyncDesc" | i18n }}
+            {{ "automaticBillingSyncDesc" | i18n }}
           </bit-hint>
         </bit-radio-button>
         <ng-container *ngIf="updateMethod === licenseOptions.SYNC">
@@ -100,7 +100,7 @@
             type="button"
             (click)="manageBillingSyncSelfHosted()"
           >
-            {{ "manageBillingSync" | i18n }}
+            {{ "manageBillingTokenSync" | i18n }}
           </button>
           <button
             bitButton
@@ -121,7 +121,7 @@
         >
           <bit-label>{{ "manualUpload" | i18n }}</bit-label>
           <bit-hint>
-            {{ "manualUploadDesc" | i18n }}
+            {{ "manualBillingTokenUploadDesc" | i18n }}
           </bit-hint>
         </bit-radio-button>
         <ng-container *ngIf="updateMethod === licenseOptions.UPLOAD">
