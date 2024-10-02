@@ -1,3 +1,4 @@
+import { Router } from "@angular/router";
 import { ReplaySubject } from "rxjs";
 
 import { AccountService } from "@bitwarden/common/auth/abstractions/account.service";
@@ -23,6 +24,7 @@ export class WebEnvironmentService extends DefaultEnvironmentService {
     private win: Window,
     stateProvider: StateProvider,
     accountService: AccountService,
+    private router: Router,
   ) {
     super(stateProvider, accountService);
 
@@ -47,9 +49,34 @@ export class WebEnvironmentService extends DefaultEnvironmentService {
     this.environment$ = subject.asObservable();
   }
 
-  // Web cannot set environment
-  async setEnvironment(region: Region, urls?: Urls): Promise<Urls> {
-    return;
+  // Web setting env means navigating to a new location
+  setEnvironment(region: Region, urls?: Urls): Promise<Urls> {
+    if (region === Region.SelfHosted) {
+      throw new Error("setEnvironment does not work in web for self-hosted.");
+    }
+
+    const currentDomain = Utils.getDomain(this.win.location.href);
+    const currentRegion = this.availableRegions().find(
+      (r) => Utils.getDomain(r.urls.webVault) === currentDomain,
+    );
+
+    if (currentRegion.key === region) {
+      // They have selected the current region, nothing to do
+      return Promise.resolve(currentRegion.urls);
+    }
+
+    const chosenRegion = this.availableRegions().find((r) => r.key === region);
+
+    if (chosenRegion == null) {
+      throw new Error("The selected region is not known as an available region.");
+    }
+
+    // Preserve the current in app route + params in the new location
+    const routeAndParams = `/#${this.router.url}`;
+    this.win.location.href = chosenRegion.urls.webVault + routeAndParams;
+
+    // This return shouldn't matter as we are about to leave the current window
+    return Promise.resolve(chosenRegion.urls);
   }
 }
 
