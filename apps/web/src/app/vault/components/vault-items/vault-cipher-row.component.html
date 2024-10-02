@@ -106,38 +106,13 @@
       </a>
     </ng-container>
 
-    <button
-      bitMenuItem
-      *ngIf="showAttachments || !vaultBulkManagementActionEnabled"
-      type="button"
-      (click)="attachments()"
-    >
+    <button bitMenuItem *ngIf="showAttachments" type="button" (click)="attachments()">
       <i class="bwi bwi-fw bwi-paperclip" aria-hidden="true"></i>
       {{ "attachments" | i18n }}
     </button>
     <button bitMenuItem *ngIf="showClone" type="button" (click)="clone()">
       <i class="bwi bwi-fw bwi-files" aria-hidden="true"></i>
       {{ "clone" | i18n }}
-    </button>
-    <!-- This option will be phased out in future releases -->
-    <button
-      bitMenuItem
-      *ngIf="!cipher.organizationId && !cipher.isDeleted && !vaultBulkManagementActionEnabled"
-      type="button"
-      (click)="moveToOrganization()"
-    >
-      <i class="bwi bwi-fw bwi-arrow-circle-right" aria-hidden="true"></i>
-      {{ "moveToOrganization" | i18n }}
-    </button>
-    <!-- This option will be phased out in future releases -->
-    <button
-      bitMenuItem
-      *ngIf="cipher.organizationId && !cipher.isDeleted && !vaultBulkManagementActionEnabled"
-      type="button"
-      (click)="editCollections()"
-    >
-      <i class="bwi bwi-fw bwi-collection" aria-hidden="true"></i>
-      {{ "collections" | i18n }}
     </button>
     <button
       bitMenuItem
@@ -156,12 +131,7 @@
       <i class="bwi bwi-fw bwi-undo" aria-hidden="true"></i>
       {{ "restore" | i18n }}
     </button>
-    <button
-      bitMenuItem
-      *ngIf="canEditCipher || !vaultBulkManagementActionEnabled"
-      (click)="deleteCipher()"
-      type="button"
-    >
+    <button bitMenuItem *ngIf="canEditCipher" (click)="deleteCipher()" type="button">
       <span class="tw-text-danger">
         <i class="bwi bwi-fw bwi-trash" aria-hidden="true"></i>
         {{ (cipher.isDeleted ? "permanentlyDelete" : "delete") | i18n }}

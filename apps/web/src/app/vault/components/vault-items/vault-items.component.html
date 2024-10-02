@@ -38,7 +38,7 @@
           <bit-menu #headerMenu>
             <button *ngIf="bulkMoveAllowed" type="button" bitMenuItem (click)="bulkMoveToFolder()">
               <i class="bwi bwi-fw bwi-folder" aria-hidden="true"></i>
-              {{ (vaultBulkManagementActionEnabled ? "addToFolder" : "moveSelected") | i18n }}
+              {{ "addToFolder" | i18n }}
             </button>
             <button
               *ngIf="showAdminActions && showBulkEditCollectionAccess"
@@ -60,21 +60,12 @@
               <i class="bwi bwi-fw bwi-collection" aria-hidden="true"></i>
               {{ "assignToCollections" | i18n }}
             </button>
-            <button
-              *ngIf="bulkMoveAllowed && !vaultBulkManagementActionEnabled"
-              type="button"
-              bitMenuItem
-              (click)="bulkMoveToOrganization()"
-            >
-              <i class="bwi bwi-fw bwi-arrow-circle-right" aria-hidden="true"></i>
-              {{ "moveSelectedToOrg" | i18n }}
-            </button>
             <button *ngIf="showBulkTrashOptions" type="button" bitMenuItem (click)="bulkRestore()">
               <i class="bwi bwi-fw bwi-undo" aria-hidden="true"></i>
               {{ "restoreSelected" | i18n }}
             </button>
             <button
-              *ngIf="deleteAllowed || showBulkTrashOptions"
+              *ngIf="showDelete() || showBulkTrashOptions"
               type="button"
               bitMenuItem
               (click)="bulkDelete()"
@@ -131,8 +122,7 @@
           [organizations]="allOrganizations"
           [collections]="allCollections"
           [checked]="selection.isSelected(item)"
-          [canEditCipher]="canEditCipher(item.cipher) && vaultBulkManagementActionEnabled"
-          [vaultBulkManagementActionEnabled]="vaultBulkManagementActionEnabled"
+          [canEditCipher]="canEditCipher(item.cipher)"
           (checkedToggled)="selection.toggle(item)"
           (onEvent)="event($event)"
         ></tr>

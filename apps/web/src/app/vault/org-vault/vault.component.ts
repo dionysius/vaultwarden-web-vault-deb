@@ -598,9 +598,6 @@ export class VaultComponent implements OnInit, OnDestroy {
         case "viewAttachments":
           await this.editCipherAttachments(event.item);
           break;
-        case "viewCipherCollections":
-          await this.editCipherCollections(event.item);
-          break;
         case "clone":
           await this.cloneCipher(event.item);
           break;
