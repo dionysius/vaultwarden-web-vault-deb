@@ -7,14 +7,15 @@
   </bit-section-header>
   <bit-item-group>
     <bit-item *ngFor="let cipher of ciphers">
-      <a
+      <button
         bit-item-content
+        type="button"
         [appA11yTitle]="'viewItemTitle' | i18n: cipher.name"
         (click)="onViewCipher(cipher)"
       >
         <app-vault-icon slot="start" [cipher]="cipher"></app-vault-icon>
         <span data-testid="item-name">{{ cipher.name }}</span>
-      </a>
+      </button>
       <ng-container slot="end" *ngIf="cipher.edit">
         <bit-item-action>
           <button
