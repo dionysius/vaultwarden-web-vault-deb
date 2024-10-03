@@ -283,7 +283,7 @@ export default class MainBackground {
   folderService: InternalFolderServiceAbstraction;
   userDecryptionOptionsService: InternalUserDecryptionOptionsServiceAbstraction;
   collectionService: CollectionServiceAbstraction;
-  vaultTimeoutService: VaultTimeoutService;
+  vaultTimeoutService?: VaultTimeoutService;
   vaultTimeoutSettingsService: VaultTimeoutSettingsServiceAbstraction;
   passwordGenerationService: PasswordGenerationServiceAbstraction;
   syncService: SyncService;
@@ -842,24 +842,26 @@ export default class MainBackground {
 
     this.vaultSettingsService = new VaultSettingsService(this.stateProvider);
 
-    this.vaultTimeoutService = new VaultTimeoutService(
-      this.accountService,
-      this.masterPasswordService,
-      this.cipherService,
-      this.folderService,
-      this.collectionService,
-      this.platformUtilsService,
-      this.messagingService,
-      this.searchService,
-      this.stateService,
-      this.authService,
-      this.vaultTimeoutSettingsService,
-      this.stateEventRunnerService,
-      this.taskSchedulerService,
-      this.logService,
-      lockedCallback,
-      logoutCallback,
-    );
+    if (!this.popupOnlyContext) {
+      this.vaultTimeoutService = new VaultTimeoutService(
+        this.accountService,
+        this.masterPasswordService,
+        this.cipherService,
+        this.folderService,
+        this.collectionService,
+        this.platformUtilsService,
+        this.messagingService,
+        this.searchService,
+        this.stateService,
+        this.authService,
+        this.vaultTimeoutSettingsService,
+        this.stateEventRunnerService,
+        this.taskSchedulerService,
+        this.logService,
+        lockedCallback,
+        logoutCallback,
+      );
+    }
     this.containerService = new ContainerService(this.cryptoService, this.encryptService);
 
     this.sendStateProvider = new SendStateProvider(this.stateProvider);
