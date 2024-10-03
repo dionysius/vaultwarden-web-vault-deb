@@ -287,7 +287,7 @@ export class Fido2Component implements OnInit, OnDestroy {
         const confirmed = await this.dialogService.openSimpleDialog({
           title: { key: "overwritePasskey" },
           content: { key: "overwritePasskeyAlert" },
-          type: "info",
+          type: "warning",
         });
 
         if (!confirmed) {
