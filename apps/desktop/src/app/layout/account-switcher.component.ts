@@ -201,8 +201,11 @@ export class AccountSwitcherComponent implements OnInit {
   }): Promise<{ [userId: string]: InactiveAccount }> {
     const inactiveAccounts: { [userId: string]: InactiveAccount } = {};
 
+    const activeUserId = await firstValueFrom(
+      this.accountService.activeAccount$.pipe(map((a) => a?.id)),
+    );
     for (const userId in baseAccounts) {
-      if (userId == null || userId === (await this.stateService.getUserId())) {
+      if (userId == null || userId === activeUserId) {
         continue;
       }
 

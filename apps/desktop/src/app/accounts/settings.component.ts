@@ -196,22 +196,23 @@ export class SettingsComponent implements OnInit, OnDestroy {
 
   async ngOnInit() {
     this.vaultTimeoutOptions = await this.generateVaultTimeoutOptions();
-
-    this.userHasMasterPassword = await this.userVerificationService.hasMasterPassword();
-
-    this.isWindows = (await this.platformUtilsService.getDevice()) === DeviceType.WindowsDesktop;
+    const activeAccount = await firstValueFrom(this.accountService.activeAccount$);
     this.isLinux = (await this.platformUtilsService.getDevice()) === DeviceType.LinuxDesktop;
 
-    if ((await this.stateService.getUserId()) == null) {
+    if (activeAccount == null || activeAccount.id == null) {
       return;
     }
-    this.currentUserEmail = await firstValueFrom(
-      this.accountService.activeAccount$.pipe(map((a) => a?.email)),
-    );
-    this.currentUserId = (await this.stateService.getUserId()) as UserId;
+    this.userHasMasterPassword = await this.userVerificationService.hasMasterPassword();
+
+    this.isWindows = this.platformUtilsService.getDevice() === DeviceType.WindowsDesktop;
+
+    this.currentUserEmail = activeAccount.email;
+    this.currentUserId = activeAccount.id;
 
     this.availableVaultTimeoutActions$ = this.refreshTimeoutSettings$.pipe(
-      switchMap(() => this.vaultTimeoutSettingsService.availableVaultTimeoutActions$()),
+      switchMap(() =>
+        this.vaultTimeoutSettingsService.availableVaultTimeoutActions$(activeAccount.id),
+      ),
     );
 
     // Load timeout policy
@@ -236,12 +237,8 @@ export class SettingsComponent implements OnInit, OnDestroy {
       }),
     );
 
-    const userId = (await firstValueFrom(this.accountService.activeAccount$))?.id;
-
     // Load initial values
-    this.userHasPinSet = await this.pinService.isPinSet(userId);
-
-    const activeAccount = await firstValueFrom(this.accountService.activeAccount$);
+    this.userHasPinSet = await this.pinService.isPinSet(activeAccount.id);
 
     const initialValues = {
       vaultTimeout: await firstValueFrom(

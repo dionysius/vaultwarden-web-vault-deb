@@ -138,8 +138,6 @@ describe("VaultTimeoutService", () => {
       return new BehaviorSubject<VaultTimeout>(accounts[userId]?.vaultTimeout);
     });
 
-    stateService.getUserId.mockResolvedValue(globalSetups?.userId);
-
     // Set desired user active and known users on accounts service : note the only thing that matters here is that the ID are set
     if (globalSetups?.userId) {
       accountService.activeAccountSubject.next({

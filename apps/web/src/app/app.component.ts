@@ -23,7 +23,6 @@ import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/pl
 import { StateService } from "@bitwarden/common/platform/abstractions/state.service";
 import { StateEventRunnerService } from "@bitwarden/common/platform/state";
 import { SyncService } from "@bitwarden/common/platform/sync";
-import { UserId } from "@bitwarden/common/types/guid";
 import { CipherService } from "@bitwarden/common/vault/abstractions/cipher.service";
 import { CollectionService } from "@bitwarden/common/vault/abstractions/collection.service";
 import { InternalFolderService } from "@bitwarden/common/vault/abstractions/folder/folder.service.abstraction";
@@ -277,7 +276,7 @@ export class AppComponent implements OnDestroy, OnInit {
     await this.displayLogoutReason(logoutReason);
 
     await this.eventUploadService.uploadEvents();
-    const userId = (await this.stateService.getUserId()) as UserId;
+    const userId = await firstValueFrom(this.accountService.activeAccount$.pipe(map((a) => a?.id)));
 
     const logoutPromise = firstValueFrom(
       this.authService.authStatusFor$(userId).pipe(

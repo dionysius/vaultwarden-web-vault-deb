@@ -1,8 +1,9 @@
 import { Component, OnInit, ViewChild, ViewContainerRef } from "@angular/core";
+import { firstValueFrom, map } from "rxjs";
 
 import { ApiService } from "@bitwarden/common/abstractions/api.service";
+import { AccountService } from "@bitwarden/common/auth/abstractions/account.service";
 import { UserVerificationService } from "@bitwarden/common/auth/abstractions/user-verification/user-verification.service.abstraction";
-import { StateService } from "@bitwarden/common/platform/abstractions/state.service";
 import { DialogService } from "@bitwarden/components";
 
 import { ApiKeyComponent } from "./api-key.component";
@@ -21,7 +22,7 @@ export class SecurityKeysComponent implements OnInit {
 
   constructor(
     private userVerificationService: UserVerificationService,
-    private stateService: StateService,
+    private accountService: AccountService,
     private apiService: ApiService,
     private dialogService: DialogService,
   ) {}
@@ -31,7 +32,9 @@ export class SecurityKeysComponent implements OnInit {
   }
 
   async viewUserApiKey() {
-    const entityId = await this.stateService.getUserId();
+    const entityId = await firstValueFrom(
+      this.accountService.activeAccount$.pipe(map((a) => a?.id)),
+    );
     await ApiKeyComponent.open(this.dialogService, {
       data: {
         keyType: "user",
@@ -47,7 +50,9 @@ export class SecurityKeysComponent implements OnInit {
   }
 
   async rotateUserApiKey() {
-    const entityId = await this.stateService.getUserId();
+    const entityId = await firstValueFrom(
+      this.accountService.activeAccount$.pipe(map((a) => a?.id)),
+    );
     await ApiKeyComponent.open(this.dialogService, {
       data: {
         keyType: "user",

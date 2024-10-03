@@ -235,7 +235,8 @@ export class AppComponent implements OnInit, OnDestroy {
             this.modalService.closeAll();
             if (
               message.userId == null ||
-              message.userId === (await this.stateService.getUserId())
+              message.userId ===
+                (await firstValueFrom(this.accountService.activeAccount$.pipe(map((a) => a?.id))))
             ) {
               await this.router.navigate(["lock"]);
             }
@@ -274,9 +275,11 @@ export class AppComponent implements OnInit, OnDestroy {
             await this.openModal<PremiumComponent>(PremiumComponent, this.premiumRef);
             break;
           case "showFingerprintPhrase": {
-            const fingerprint = await this.cryptoService.getFingerprint(
-              await this.stateService.getUserId(),
+            const activeUserId = await firstValueFrom(
+              this.accountService.activeAccount$.pipe(map((a) => a?.id)),
             );
+            const publicKey = await firstValueFrom(this.cryptoService.userPublicKey$(activeUserId));
+            const fingerprint = await this.cryptoService.getFingerprint(activeUserId, publicKey);
             const dialogRef = FingerprintDialogComponent.open(this.dialogService, { fingerprint });
             await firstValueFrom(dialogRef.closed);
             break;

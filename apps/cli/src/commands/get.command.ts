@@ -551,7 +551,11 @@ export class GetCommand extends DownloadCommand {
   private async getFingerprint(id: string) {
     let fingerprint: string[] = null;
     if (id === "me") {
-      fingerprint = await this.cryptoService.getFingerprint(await this.stateService.getUserId());
+      const activeUserId = await firstValueFrom(
+        this.accountService.activeAccount$.pipe(map((a) => a?.id)),
+      );
+      const publicKey = await firstValueFrom(this.cryptoService.userPublicKey$(activeUserId));
+      fingerprint = await this.cryptoService.getFingerprint(activeUserId, publicKey);
     } else if (Utils.isGuid(id)) {
       try {
         const response = await this.apiService.getUserPublicKey(id);

@@ -1,6 +1,6 @@
 import { Component, NgZone, OnDestroy, OnInit } from "@angular/core";
 import { ActivatedRoute, Router } from "@angular/router";
-import { firstValueFrom, switchMap } from "rxjs";
+import { firstValueFrom, map, switchMap } from "rxjs";
 
 import { LockComponent as BaseLockComponent } from "@bitwarden/angular/auth/components/lock.component";
 import { PinServiceAbstraction } from "@bitwarden/auth/common";
@@ -182,7 +182,7 @@ export class LockComponent extends BaseLockComponent implements OnInit, OnDestro
   }
 
   private async canUseBiometric() {
-    const userId = await this.stateService.getUserId();
+    const userId = await firstValueFrom(this.accountService.activeAccount$.pipe(map((a) => a?.id)));
     return await ipc.keyManagement.biometric.enabled(userId);
   }
 
