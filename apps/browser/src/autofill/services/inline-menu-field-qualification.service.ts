@@ -30,7 +30,6 @@ export class InlineMenuFieldQualificationService
     this.webAuthnAutocompleteValue,
   ]);
   private fieldIgnoreListString = AutoFillConstants.FieldIgnoreList.join(",");
-  private passwordFieldExcludeListString = AutoFillConstants.PasswordFieldExcludeList.join(",");
   private currentPasswordAutocompleteValue = "current-password";
   private newPasswordAutoCompleteValue = "new-password";
   private autofillFieldKeywordsMap: AutofillKeywordsMap = new WeakMap();
@@ -927,7 +926,7 @@ export class InlineMenuFieldQualificationService
       return false;
     }
 
-    return !(this.passwordFieldExcludeListString.indexOf(cleanedValue) > -1);
+    return !AutoFillConstants.PasswordFieldExcludeList.some((i) => cleanedValue.indexOf(i) > -1);
   }
 
   /**
@@ -1094,13 +1093,29 @@ export class InlineMenuFieldQualificationService
       ];
       const keywordsSet = new Set<string>();
       for (let i = 0; i < keywords.length; i++) {
-        if (typeof keywords[i] === "string") {
-          keywords[i]
-            .toLowerCase()
-            .replace(/-/g, "")
-            .replace(/[^a-zA-Z0-9]+/g, "|")
-            .split("|")
-            .forEach((keyword) => keywordsSet.add(keyword));
+        if (keywords[i] && typeof keywords[i] === "string") {
+          let keywordEl = keywords[i].toLowerCase();
+          keywordsSet.add(keywordEl);
+
+          // Remove hyphens from all potential keywords, we want to treat these as a single word.
+          keywordEl = keywordEl.replace(/-/g, "");
+
+          // Split the keyword by non-alphanumeric characters to get the keywords without treating a space as a separator.
+          keywordEl.split(/[^\p{L}\d]+/gu).forEach((keyword) => {
+            if (keyword) {
+              keywordsSet.add(keyword);
+            }
+          });
+
+          // Collapse all spaces and split by non-alphanumeric characters to get the keywords
+          keywordEl
+            .replace(/\s/g, "")
+            .split(/[^\p{L}\d]+/gu)
+            .forEach((keyword) => {
+              if (keyword) {
+                keywordsSet.add(keyword);
+              }
+            });
         }
       }
 
