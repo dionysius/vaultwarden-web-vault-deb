@@ -627,12 +627,14 @@ export class VaultComponent implements OnInit, OnDestroy {
   }
 
   async addCipher(cipherType?: CipherType) {
+    const type = cipherType ?? this.activeFilter.cipherType;
+
     if (this.extensionRefreshEnabled) {
-      return this.addCipherV2(cipherType);
+      return this.addCipherV2(type);
     }
 
     const component = (await this.editCipher(null)) as AddEditComponent;
-    component.type = cipherType || this.activeFilter.cipherType;
+    component.type = type;
     if (
       this.activeFilter.organizationId !== "MyVault" &&
       this.activeFilter.organizationId != null
