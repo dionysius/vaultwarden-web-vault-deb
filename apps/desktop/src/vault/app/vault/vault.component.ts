@@ -137,9 +137,6 @@ export class VaultComponent implements OnInit, OnDestroy {
             (document.querySelector("#search") as HTMLInputElement).select();
             detectChanges = false;
             break;
-          case "openGenerator":
-            await this.openGenerator(false);
-            break;
           case "syncCompleted":
             await this.vaultItemsComponent.reload(this.activeFilter.buildFilter());
             await this.vaultFilterComponent.reloadCollectionsAndFolders(this.activeFilter);
@@ -623,6 +620,7 @@ export class VaultComponent implements OnInit, OnDestroy {
   }
 
   async openGenerator(comingFromAddEdit: boolean, passwordType = true) {
+    // FIXME: Will need to be extended to use the cipher-form-generator component introduced with https://github.com/bitwarden/clients/pull/11350
     if (this.modal != null) {
       this.modal.close();
     }
