@@ -207,6 +207,7 @@ export class VaultItemDialogComponent implements OnInit, OnDestroy {
     private accountService: AccountService,
     private router: Router,
     private billingAccountProfileStateService: BillingAccountProfileStateService,
+    private premiumUpgradeService: PremiumUpgradePromptService,
   ) {
     this.updateTitle();
   }
@@ -297,6 +298,13 @@ export class VaultItemDialogComponent implements OnInit, OnDestroy {
   };
 
   openAttachmentsDialog = async () => {
+    const canAccessAttachments = await firstValueFrom(this.canAccessAttachments$);
+
+    if (!canAccessAttachments) {
+      await this.premiumUpgradeService.promptForPremium();
+      return;
+    }
+
     const dialogRef = this.dialogService.open<AttachmentDialogCloseResult, { cipherId: CipherId }>(
       AttachmentsV2Component,
       {

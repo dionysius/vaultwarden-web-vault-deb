@@ -611,6 +611,12 @@ export class VaultComponent implements OnInit, OnDestroy {
     const result = await lastValueFrom(this.vaultItemDialogRef.closed);
     this.vaultItemDialogRef = undefined;
 
+    // When the dialog is closed for a premium upgrade, return early as the user
+    // should be navigated to the subscription settings elsewhere
+    if (result === VaultItemDialogResult.PremiumUpgrade) {
+      return;
+    }
+
     // If the dialog was closed by deleting the cipher, refresh the vault.
     if (result === VaultItemDialogResult.Deleted || result === VaultItemDialogResult.Saved) {
       this.refresh();
