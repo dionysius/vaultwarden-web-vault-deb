@@ -149,12 +149,12 @@ export class UriOptionComponent implements ControlValueAccessor {
   }
 
   // NG_VALUE_ACCESSOR implementation
-  writeValue(value: any): void {
+  writeValue(value: { uri: string; matchDetection: UriMatchStrategySetting | null }): void {
     if (value) {
       this.uriForm.setValue(
         {
           uri: value.uri ?? "",
-          matchDetection: value.match ?? null,
+          matchDetection: value.matchDetection ?? null,
         },
         { emitEvent: false },
       );

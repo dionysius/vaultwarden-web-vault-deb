@@ -96,6 +96,17 @@ describe("UriOptionComponent", () => {
     expect(component["uriForm"].enabled).toBe(false);
   });
 
+  it("should update form when `writeValue` is invoked", () => {
+    expect(component["uriForm"].value).toEqual({ uri: null, matchDetection: null });
+
+    component.writeValue({ uri: "example.com", matchDetection: UriMatchStrategy.Exact });
+
+    expect(component["uriForm"].value).toEqual({
+      uri: "example.com",
+      matchDetection: UriMatchStrategy.Exact,
+    });
+  });
+
   describe("match detection", () => {
     it("should hide the match detection select by default", () => {
       fixture.detectChanges();
