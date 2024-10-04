@@ -1099,6 +1099,9 @@
   "yourVaultIsLockedV2": {
     "message": "Twój sejf jest zablokowany."
   },
+  "yourAccountIsLocked": {
+    "message": "Your account is locked"
+  },
   "uuid": {
     "message": "UUID"
   },
@@ -2199,6 +2202,9 @@
   "checkExposedPasswords": {
     "message": "Sprawdź ujawnione hasła"
   },
+  "timesExposed": {
+    "message": "Times exposed"
+  },
   "exposedXTimes": {
     "message": "Ujawnione $COUNT$ raz(y)",
     "placeholders": {
@@ -2233,6 +2239,9 @@
   "noWeakPasswords": {
     "message": "Brak elementów zawierających słabe hasła."
   },
+  "weakness": {
+    "message": "Weakness"
+  },
   "reusedPasswordsReport": {
     "message": "Identyczne hasła"
   },
@@ -2257,6 +2266,9 @@
   },
   "noReusedPasswords": {
     "message": "Nie znaleźliśmy identycznych haseł w sejfie."
+  },
+  "timesReused": {
+    "message": "Times reused"
   },
   "reusedXTimes": {
     "message": "Wykorzystane $COUNT$ razy",
@@ -2554,6 +2566,9 @@
   },
   "downloadLicense": {
     "message": "Pobierz licencję"
+  },
+  "viewBillingToken": {
+    "message": "View Billing Token"
   },
   "updateLicense": {
     "message": "Zaktualizuj licencję"
@@ -3159,6 +3174,10 @@
   },
   "incorrectPin": {
     "message": "Niepoprawny PIN"
+  },
+  "pin": {
+    "message": "PIN",
+    "description": "PIN code. Ex. The short code (often numeric) that you use to unlock a device."
   },
   "exportedVault": {
     "message": "Sejf został wyeksportowany"
@@ -5985,8 +6004,8 @@
   "viewBillingSyncToken": {
     "message": "Pokaż token synchronizacji płatności"
   },
-  "generateBillingSyncToken": {
-    "message": "Wygeneruj token synchronizacji płatności"
+  "generateBillingToken": {
+    "message": "Generate billing token"
   },
   "copyPasteBillingSync": {
     "message": "Skopiuj i wklej ten token do ustawień synchronizacji rozliczeniowej swojej organizacji."
@@ -5994,8 +6013,8 @@
   "billingSyncCanAccess": {
     "message": "Twój token synchronizacji płatności może edytować ustawienia subskrypcji tej organizacji."
   },
-  "manageBillingSync": {
-    "message": "Zarządzaj synchronizacją płatności"
+  "manageBillingTokenSync": {
+    "message": "Manage Billing Token"
   },
   "setUpBillingSync": {
     "message": "Skonfiguruj synchronizację płatności"
@@ -6054,14 +6073,14 @@
   "billingSyncApiKeyRotated": {
     "message": "Token został zmieniony"
   },
-  "billingSyncDesc": {
-    "message": "Synchronizacja płatności zapewnia darmowe plany rodzinne dla członków i zaawansowane możliwości rozliczeniowe, łącząc Twój własny hostowany Bitwarden z serwerem w chmurze Bitwarden."
-  },
   "billingSyncKeyDesc": {
     "message": "Token synchronizacji płatności z ustawieniami subskrypcji Twojej organizacji w chmurze jest wymagany do wypełnienia tego formularza."
   },
   "billingSyncKey": {
     "message": "Token synchronizacji płatności"
+  },
+  "automaticBillingSyncDesc": {
+    "message": "Automatic sync unlocks Families sponsorships and allows you to sync your license without uploading a file. After making updates in the Bitwarden cloud server, select Sync License to apply changes."
   },
   "active": {
     "message": "Aktywny"
@@ -6579,6 +6598,18 @@
       "count": {
         "content": "$1",
         "example": "4"
+      }
+    }
+  },
+  "singleFieldNeedsAttention": {
+    "message": "1 field needs your attention."
+  },
+  "multipleFieldsNeedAttention": {
+    "message": "$COUNT$ fields need your attention.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "2"
       }
     }
   },
@@ -7442,6 +7473,15 @@
   "or": {
     "message": "lub"
   },
+  "unlockWithBiometrics": {
+    "message": "Unlock with biometrics"
+  },
+  "unlockWithPin": {
+    "message": "Unlock with PIN"
+  },
+  "unlockWithMasterPassword": {
+    "message": "Unlock with master password"
+  },
   "licenseAndBillingManagement": {
     "message": "Zarządzanie licencjami i rozliczeniami"
   },
@@ -7451,8 +7491,8 @@
   "manualUpload": {
     "message": "Przesyłanie ręczne"
   },
-  "manualUploadDesc": {
-    "message": "Jeśli nie chcesz włączać synchronizacji rozliczeń, ręcznie prześlij swoją licencję tutaj."
+  "manualBillingTokenUploadDesc": {
+    "message": "If you do not want to opt into billing sync, manually upload your license here. This will not automatically unlock Families sponsorships."
   },
   "syncLicense": {
     "message": "Synchronizuj licencję"
@@ -9225,5 +9265,14 @@
   },
   "editAccess": {
     "message": "Edytuj dostęp"
+  },
+  "addAttachment": {
+    "message": "Add attachment"
+  },
+  "maxFileSizeSansPunctuation": {
+    "message": "Maximum file size is 500 MB"
+  },
+  "permanentlyDeleteAttachmentConfirmation": {
+    "message": "Are you sure you want to permanently delete this attachment?"
   }
 }

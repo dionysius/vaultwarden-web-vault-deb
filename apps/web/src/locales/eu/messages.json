@@ -1099,6 +1099,9 @@
   "yourVaultIsLockedV2": {
     "message": "Your vault is locked"
   },
+  "yourAccountIsLocked": {
+    "message": "Your account is locked"
+  },
   "uuid": {
     "message": "UUID"
   },
@@ -2199,6 +2202,9 @@
   "checkExposedPasswords": {
     "message": "Egiaztatu ikusgai dauden pasahitzik dagoen"
   },
+  "timesExposed": {
+    "message": "Times exposed"
+  },
   "exposedXTimes": {
     "message": "$COUNT$ aldiz ikusgai egina",
     "placeholders": {
@@ -2233,6 +2239,9 @@
   "noWeakPasswords": {
     "message": "Zure kutxa gotorrean ez dago pasahitz ahulik duen elementurik."
   },
+  "weakness": {
+    "message": "Weakness"
+  },
   "reusedPasswordsReport": {
     "message": "Pasahitz berrerabiliak"
   },
@@ -2257,6 +2266,9 @@
   },
   "noReusedPasswords": {
     "message": "Zure kutxa gotorrean ez dago pasahitz berrerabilik duen elementurik."
+  },
+  "timesReused": {
+    "message": "Times reused"
   },
   "reusedXTimes": {
     "message": "$COUNT$ aldiz berrerabilia",
@@ -2554,6 +2566,9 @@
   },
   "downloadLicense": {
     "message": "Lizentzia deskargatu"
+  },
+  "viewBillingToken": {
+    "message": "View Billing Token"
   },
   "updateLicense": {
     "message": "Lizentzia eguneratu"
@@ -3159,6 +3174,10 @@
   },
   "incorrectPin": {
     "message": "Incorrect PIN"
+  },
+  "pin": {
+    "message": "PIN",
+    "description": "PIN code. Ex. The short code (often numeric) that you use to unlock a device."
   },
   "exportedVault": {
     "message": "Kutxa gotorra esportatua."
@@ -5985,8 +6004,8 @@
   "viewBillingSyncToken": {
     "message": "Ikusi fakturazioren sinkronizazio tokena"
   },
-  "generateBillingSyncToken": {
-    "message": "Sortu fakturazioren sinkronizazio tokena"
+  "generateBillingToken": {
+    "message": "Generate billing token"
   },
   "copyPasteBillingSync": {
     "message": "Kopiatu eta itsatsi token hau zure erakundearen fakturazio sinkronizazioaren ezarpenetan."
@@ -5994,8 +6013,8 @@
   "billingSyncCanAccess": {
     "message": "Zure fakturazioa sinkronizatzeko tokena erakunde honen harpidetza ezarpenetara sartu eta editatu dezakezu."
   },
-  "manageBillingSync": {
-    "message": "Kudeatu fakturazioaren sinkronizazioa"
+  "manageBillingTokenSync": {
+    "message": "Manage Billing Token"
   },
   "setUpBillingSync": {
     "message": "Ezarri fakturazioaren sinkronizazioa"
@@ -6054,14 +6073,14 @@
   "billingSyncApiKeyRotated": {
     "message": "Tokena berritua."
   },
-  "billingSyncDesc": {
-    "message": "Doako Familia planak kideentzako fakturazioaren sinkronizazioa eta fakturatzeko gaitasun aurreratuak eskaintzen ditu, Bitwarden ostatatze propioa Bitwarden zerbitzariarekin konektatuz."
-  },
   "billingSyncKeyDesc": {
     "message": "Formulario hau osatzeko, zure erakundearen hodeiko harpidetza ezarpenetan fakturazioaren sinkronizatzeko tokena behar da."
   },
   "billingSyncKey": {
     "message": "Fakturazioren sinkronizazio tokena"
+  },
+  "automaticBillingSyncDesc": {
+    "message": "Automatic sync unlocks Families sponsorships and allows you to sync your license without uploading a file. After making updates in the Bitwarden cloud server, select Sync License to apply changes."
   },
   "active": {
     "message": "Gaitua"
@@ -6579,6 +6598,18 @@
       "count": {
         "content": "$1",
         "example": "4"
+      }
+    }
+  },
+  "singleFieldNeedsAttention": {
+    "message": "1 field needs your attention."
+  },
+  "multipleFieldsNeedAttention": {
+    "message": "$COUNT$ fields need your attention.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "2"
       }
     }
   },
@@ -7442,6 +7473,15 @@
   "or": {
     "message": "or"
   },
+  "unlockWithBiometrics": {
+    "message": "Unlock with biometrics"
+  },
+  "unlockWithPin": {
+    "message": "Unlock with PIN"
+  },
+  "unlockWithMasterPassword": {
+    "message": "Unlock with master password"
+  },
   "licenseAndBillingManagement": {
     "message": "License and billing management"
   },
@@ -7451,11 +7491,11 @@
   "manualUpload": {
     "message": "Manual upload"
   },
-  "manualUploadDesc": {
-    "message": "If you do not want to opt into billing sync, manually upload your license here."
+  "manualBillingTokenUploadDesc": {
+    "message": "If you do not want to opt into billing sync, manually upload your license here. This will not automatically unlock Families sponsorships."
   },
   "syncLicense": {
-    "message": "Sync license"
+    "message": "Sync License"
   },
   "licenseSyncSuccess": {
     "message": "Successfully synced license"
@@ -9225,5 +9265,14 @@
   },
   "editAccess": {
     "message": "Edit access"
+  },
+  "addAttachment": {
+    "message": "Add attachment"
+  },
+  "maxFileSizeSansPunctuation": {
+    "message": "Maximum file size is 500 MB"
+  },
+  "permanentlyDeleteAttachmentConfirmation": {
+    "message": "Are you sure you want to permanently delete this attachment?"
   }
 }

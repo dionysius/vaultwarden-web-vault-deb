@@ -1099,6 +1099,9 @@
   "yourVaultIsLockedV2": {
     "message": "Holvisi on lukittu"
   },
+  "yourAccountIsLocked": {
+    "message": "Your account is locked"
+  },
   "uuid": {
     "message": "UUID"
   },
@@ -1476,7 +1479,7 @@
     "message": "Sisällytä numero"
   },
   "generatorPolicyInEffect": {
-    "message": "Enterprise policy requirements have been applied to your generator options.",
+    "message": "Yrityskäytännön säännöt vaikuttavat generaattoriasetuksiisi.",
     "description": "Indicates that a policy limits the credential generator screen."
   },
   "passwordHistory": {
@@ -2199,6 +2202,9 @@
   "checkExposedPasswords": {
     "message": "Tarkasta paljastuneet salasanat"
   },
+  "timesExposed": {
+    "message": "Paljastumiskertaa"
+  },
   "exposedXTimes": {
     "message": "Paljastunut $COUNT$ kertaa",
     "placeholders": {
@@ -2233,6 +2239,9 @@
   "noWeakPasswords": {
     "message": "Holviisi tallennetuista kirjautumistiedoista ei löydetty heikkoja salasanoja."
   },
+  "weakness": {
+    "message": "Heikkous"
+  },
   "reusedPasswordsReport": {
     "message": "Toistuvat salasanat"
   },
@@ -2257,6 +2266,9 @@
   },
   "noReusedPasswords": {
     "message": "Holvissasi ei ole toistuvasti käytettyjä salasanoja."
+  },
+  "timesReused": {
+    "message": "Uudelleenkäyttökertaa"
   },
   "reusedXTimes": {
     "message": "Käytetty toistuvasti $COUNT$ kertaa",
@@ -2554,6 +2566,9 @@
   },
   "downloadLicense": {
     "message": "Lataa lisenssi"
+  },
+  "viewBillingToken": {
+    "message": "View Billing Token"
   },
   "updateLicense": {
     "message": "Päivitä lisenssi"
@@ -3159,6 +3174,10 @@
   },
   "incorrectPin": {
     "message": "Virheellinen PIN-koodi"
+  },
+  "pin": {
+    "message": "PIN",
+    "description": "PIN code. Ex. The short code (often numeric) that you use to unlock a device."
   },
   "exportedVault": {
     "message": "Holvi vietiin"
@@ -5985,8 +6004,8 @@
   "viewBillingSyncToken": {
     "message": "Näytä laskutuksen synkronointitunniste"
   },
-  "generateBillingSyncToken": {
-    "message": "Luo laskutuksen synkronointitunniste"
+  "generateBillingToken": {
+    "message": "Generate billing token"
   },
   "copyPasteBillingSync": {
     "message": "Kopioi ja liitä tämä tunniste itse ylläpitämäsi organisaation laskutuksen synkronoinnin asetuksiin."
@@ -5994,8 +6013,8 @@
   "billingSyncCanAccess": {
     "message": "Laskutuksen synkronointitunniste mahdollistaa organisaation tilausasetusten tarkastelun ja muokkauksen."
   },
-  "manageBillingSync": {
-    "message": "Hallitse laskutuksen synkronointia"
+  "manageBillingTokenSync": {
+    "message": "Manage Billing Token"
   },
   "setUpBillingSync": {
     "message": "Määritä laskutuksen synkronointi"
@@ -6054,14 +6073,14 @@
   "billingSyncApiKeyRotated": {
     "message": "Tunniste uudistettiin"
   },
-  "billingSyncDesc": {
-    "message": "Laskutuksen synkronointi avaa palvelimellesi Families-sponsoroinnin ja automaattisen lisenssin synkronoinnin. Tehtyäsi muutokset Bitwardenin pilvipalvelimelle, ota ne käyttöön valitsemalla \"Synkronoi lisenssi\"."
-  },
   "billingSyncKeyDesc": {
     "message": "Lomakkeen täyttöön tarvitaan laskutuksen synkronointitunniste pilviorganisaatiosi tilausasetuksista."
   },
   "billingSyncKey": {
     "message": "Laskutuksen synkronointitunniste"
+  },
+  "automaticBillingSyncDesc": {
+    "message": "Automatic sync unlocks Families sponsorships and allows you to sync your license without uploading a file. After making updates in the Bitwarden cloud server, select Sync License to apply changes."
   },
   "active": {
     "message": "Aktiivinen"
@@ -6579,6 +6598,18 @@
       "count": {
         "content": "$1",
         "example": "4"
+      }
+    }
+  },
+  "singleFieldNeedsAttention": {
+    "message": "1 field needs your attention."
+  },
+  "multipleFieldsNeedAttention": {
+    "message": "$COUNT$ fields need your attention.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "2"
       }
     }
   },
@@ -7442,6 +7473,15 @@
   "or": {
     "message": "tai"
   },
+  "unlockWithBiometrics": {
+    "message": "Unlock with biometrics"
+  },
+  "unlockWithPin": {
+    "message": "Unlock with PIN"
+  },
+  "unlockWithMasterPassword": {
+    "message": "Unlock with master password"
+  },
   "licenseAndBillingManagement": {
     "message": "Lisenssien ja laskutuksen hallinta"
   },
@@ -7451,8 +7491,8 @@
   "manualUpload": {
     "message": "Manuaalinen tallennus"
   },
-  "manualUploadDesc": {
-    "message": "Jos et halua liittyä laskutuksen synkronointiin, tallenna lisenssisi tänne manuallisesti."
+  "manualBillingTokenUploadDesc": {
+    "message": "If you do not want to opt into billing sync, manually upload your license here. This will not automatically unlock Families sponsorships."
   },
   "syncLicense": {
     "message": "Synkronoi lisenssi"
@@ -9225,5 +9265,14 @@
   },
   "editAccess": {
     "message": "Muokkaa käyttöoikeuksia"
+  },
+  "addAttachment": {
+    "message": "Add attachment"
+  },
+  "maxFileSizeSansPunctuation": {
+    "message": "Maximum file size is 500 MB"
+  },
+  "permanentlyDeleteAttachmentConfirmation": {
+    "message": "Are you sure you want to permanently delete this attachment?"
   }
 }

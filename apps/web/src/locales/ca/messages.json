@@ -1099,6 +1099,9 @@
   "yourVaultIsLockedV2": {
     "message": "La caixa forta està bloquejada"
   },
+  "yourAccountIsLocked": {
+    "message": "Your account is locked"
+  },
   "uuid": {
     "message": "UUID"
   },
@@ -2199,6 +2202,9 @@
   "checkExposedPasswords": {
     "message": "Comprova les contrasenyes exposades"
   },
+  "timesExposed": {
+    "message": "Times exposed"
+  },
   "exposedXTimes": {
     "message": "S'han exposat $COUNT$ vegades",
     "placeholders": {
@@ -2233,6 +2239,9 @@
   "noWeakPasswords": {
     "message": "Cap element de la vostra caixa forta té contrasenyes poc segures."
   },
+  "weakness": {
+    "message": "Weakness"
+  },
   "reusedPasswordsReport": {
     "message": "Contrasenyes reutilitzades"
   },
@@ -2257,6 +2266,9 @@
   },
   "noReusedPasswords": {
     "message": "Cap inici de sessió a la vostra caixa forta té contrasenyes que s'estiguen reutilitzant."
+  },
+  "timesReused": {
+    "message": "Times reused"
   },
   "reusedXTimes": {
     "message": "S'ha reutilitzat $COUNT$ vegades",
@@ -2554,6 +2566,9 @@
   },
   "downloadLicense": {
     "message": "Baixa la llicència"
+  },
+  "viewBillingToken": {
+    "message": "View Billing Token"
   },
   "updateLicense": {
     "message": "Actualitza la llicència"
@@ -3159,6 +3174,10 @@
   },
   "incorrectPin": {
     "message": "PIN incorrecte"
+  },
+  "pin": {
+    "message": "PIN",
+    "description": "PIN code. Ex. The short code (often numeric) that you use to unlock a device."
   },
   "exportedVault": {
     "message": "S'ha exportat la caixa forta"
@@ -5985,8 +6004,8 @@
   "viewBillingSyncToken": {
     "message": "Mostra el token de sincronització de facturació"
   },
-  "generateBillingSyncToken": {
-    "message": "Genera el token de sincronització de facturació"
+  "generateBillingToken": {
+    "message": "Generate billing token"
   },
   "copyPasteBillingSync": {
     "message": "Copieu i enganxeu aquest token a la configuració de sincronització de facturació de la vostra organització autoallotjada."
@@ -5994,8 +6013,8 @@
   "billingSyncCanAccess": {
     "message": "El vostre tokende sincronització de facturació pot accedir i editar la configuració de subscripció d'aquesta organització."
   },
-  "manageBillingSync": {
-    "message": "Gestiona la sincronització de facturació"
+  "manageBillingTokenSync": {
+    "message": "Manage Billing Token"
   },
   "setUpBillingSync": {
     "message": "Configura la sincronització de facturació"
@@ -6054,14 +6073,14 @@
   "billingSyncApiKeyRotated": {
     "message": "Token girat."
   },
-  "billingSyncDesc": {
-    "message": "La sincronització de facturació ofereix plans familiars gratuïts i capacitats de facturació avançades enllaçant el vostre Bitwarden autoallotjat amb el vostre servidor al núvol de Bitwarden."
-  },
   "billingSyncKeyDesc": {
     "message": "Per omplir aquest formulari, cal un token de sincronització de facturació de la configuració de subscripció de la vostra organització al núvol."
   },
   "billingSyncKey": {
     "message": "Token de sincronització de facturació"
+  },
+  "automaticBillingSyncDesc": {
+    "message": "Automatic sync unlocks Families sponsorships and allows you to sync your license without uploading a file. After making updates in the Bitwarden cloud server, select Sync License to apply changes."
   },
   "active": {
     "message": "Actiu"
@@ -6579,6 +6598,18 @@
       "count": {
         "content": "$1",
         "example": "4"
+      }
+    }
+  },
+  "singleFieldNeedsAttention": {
+    "message": "1 field needs your attention."
+  },
+  "multipleFieldsNeedAttention": {
+    "message": "$COUNT$ fields need your attention.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "2"
       }
     }
   },
@@ -7442,6 +7473,15 @@
   "or": {
     "message": "o"
   },
+  "unlockWithBiometrics": {
+    "message": "Unlock with biometrics"
+  },
+  "unlockWithPin": {
+    "message": "Unlock with PIN"
+  },
+  "unlockWithMasterPassword": {
+    "message": "Unlock with master password"
+  },
   "licenseAndBillingManagement": {
     "message": "Gestió de llicències i facturació"
   },
@@ -7451,8 +7491,8 @@
   "manualUpload": {
     "message": "Pujada manual"
   },
-  "manualUploadDesc": {
-    "message": "Si no voleu activar la sincronització de facturació, pugeu manualment la vostra llicència ací."
+  "manualBillingTokenUploadDesc": {
+    "message": "If you do not want to opt into billing sync, manually upload your license here. This will not automatically unlock Families sponsorships."
   },
   "syncLicense": {
     "message": "Sincronització de la llicència"
@@ -9225,5 +9265,14 @@
   },
   "editAccess": {
     "message": "Edit access"
+  },
+  "addAttachment": {
+    "message": "Add attachment"
+  },
+  "maxFileSizeSansPunctuation": {
+    "message": "Maximum file size is 500 MB"
+  },
+  "permanentlyDeleteAttachmentConfirmation": {
+    "message": "Are you sure you want to permanently delete this attachment?"
   }
 }

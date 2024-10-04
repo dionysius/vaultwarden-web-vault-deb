@@ -1099,6 +1099,9 @@
   "yourVaultIsLockedV2": {
     "message": "Anbarınız kilidlənib."
   },
+  "yourAccountIsLocked": {
+    "message": "Hesabınız kilidlənib"
+  },
   "uuid": {
     "message": "UUID"
   },
@@ -2199,6 +2202,9 @@
   "checkExposedPasswords": {
     "message": "İfşa olunmuş parolları yoxla"
   },
+  "timesExposed": {
+    "message": "Dəfə ifşa olundu"
+  },
   "exposedXTimes": {
     "message": "$COUNT$ dəfə ifşa olunub",
     "placeholders": {
@@ -2233,6 +2239,9 @@
   "noWeakPasswords": {
     "message": "Anbarınızdakı heç bir elementin zəif parolu yoxdur."
   },
+  "weakness": {
+    "message": "Zəiflik"
+  },
   "reusedPasswordsReport": {
     "message": "Təkrar istifadə edilmiş parollar"
   },
@@ -2257,6 +2266,9 @@
   },
   "noReusedPasswords": {
     "message": "Anbarınızda heç bir hesabda təkrar istifadə olunan parollar yoxdur."
+  },
+  "timesReused": {
+    "message": "Dəfə təkrar istifadə olundu"
   },
   "reusedXTimes": {
     "message": "$COUNT$ dəfə təkrar istifadə olunub",
@@ -2554,6 +2566,9 @@
   },
   "downloadLicense": {
     "message": "Lisenziyanı endir"
+  },
+  "viewBillingToken": {
+    "message": "View Billing Token"
   },
   "updateLicense": {
     "message": "Lisenziyanı güncəllə"
@@ -3159,6 +3174,10 @@
   },
   "incorrectPin": {
     "message": "Yanlış PIN"
+  },
+  "pin": {
+    "message": "PIN",
+    "description": "PIN code. Ex. The short code (often numeric) that you use to unlock a device."
   },
   "exportedVault": {
     "message": "Anbar ixrac edildi."
@@ -5017,7 +5036,7 @@
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Learn more, see how it works, **or** try it now.'"
   },
   "developmentDevOpsAndITTeamsChooseBWSecret": {
-    "message": "Development, DevOps, and IT teams choose Bitwarden Secrets Manager to securely manage and deploy their infrastructure and machine secrets."
+    "message": "Development, DevOps və IT komandları, infrastrukturlarını və maşın sirlərini güvənli şəkildə idarə etmək və yerləşdirmək üçün Bitwarden Sirr Menecerini seçir."
   },
   "centralizeSecretsManagement": {
     "message": "Sirlərin idarə edilməsini mərkəzləşdirin."
@@ -5985,8 +6004,8 @@
   "viewBillingSyncToken": {
     "message": "Faktura sinxr tokeninə bax"
   },
-  "generateBillingSyncToken": {
-    "message": "Faktura sinxr tokenini yarat"
+  "generateBillingToken": {
+    "message": "Generate billing token"
   },
   "copyPasteBillingSync": {
     "message": "Bu tokeni kopyalayın və self-hosted təşkilatınızın faktura sinxronlaşdırma ayarlarında yapışdırın."
@@ -5994,8 +6013,8 @@
   "billingSyncCanAccess": {
     "message": "Faktura sinxr tokeniniz, bu təşkilatın abunəlik ayarlarına müraciət edə və düzəliş edə bilər."
   },
-  "manageBillingSync": {
-    "message": "Faktura sinxr idarə et"
+  "manageBillingTokenSync": {
+    "message": "Manage Billing Token"
   },
   "setUpBillingSync": {
     "message": "Faktura sinxr quraşdır"
@@ -6054,14 +6073,14 @@
   "billingSyncApiKeyRotated": {
     "message": "Token döndərildi."
   },
-  "billingSyncDesc": {
-    "message": "Faktura sinxr, öz-özünə sahiblik edən Bitwarden-inizi Bitwarden bulud serveri ilə əlaqələndirərək ailələr üçün Ödənişsiz Ailələr planını və qabaqcıl faktura özəlliklərini təmin edir."
-  },
   "billingSyncKeyDesc": {
     "message": "Bu forumu tamamlamaq üçün bulud təşkilatınızın abunəlik ayarlarından Faktura sinxr tokeni tələb olunur."
   },
   "billingSyncKey": {
     "message": "Faktura sinxr tokeni"
+  },
+  "automaticBillingSyncDesc": {
+    "message": "Automatic sync unlocks Families sponsorships and allows you to sync your license without uploading a file. After making updates in the Bitwarden cloud server, select Sync License to apply changes."
   },
   "active": {
     "message": "Aktiv"
@@ -6579,6 +6598,18 @@
       "count": {
         "content": "$1",
         "example": "4"
+      }
+    }
+  },
+  "singleFieldNeedsAttention": {
+    "message": "1 xananın diqqətinizə ehtiyacı var."
+  },
+  "multipleFieldsNeedAttention": {
+    "message": "$COUNT$ xananın diqqətinizə ehtiyacı var.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "2"
       }
     }
   },
@@ -7442,6 +7473,15 @@
   "or": {
     "message": "və ya"
   },
+  "unlockWithBiometrics": {
+    "message": "Biometriklə kilidi aç"
+  },
+  "unlockWithPin": {
+    "message": "PIN ilə kilidi aç"
+  },
+  "unlockWithMasterPassword": {
+    "message": "Ana parollar kilidi aç"
+  },
   "licenseAndBillingManagement": {
     "message": "Lisenziya və faktura idarəetməsi"
   },
@@ -7451,8 +7491,8 @@
   "manualUpload": {
     "message": "Əllə yükləmə"
   },
-  "manualUploadDesc": {
-    "message": "Faktura sinxronlaşdırmasını fəallaşdırmaq istəmirsinizsə, lisenziyanızı burada əllə yükləyin."
+  "manualBillingTokenUploadDesc": {
+    "message": "If you do not want to opt into billing sync, manually upload your license here. This will not automatically unlock Families sponsorships."
   },
   "syncLicense": {
     "message": "Lisenziyanı sinxronlaşdır"
@@ -7893,7 +7933,7 @@
     "message": "Tələb edilən cihaz təsdiqi."
   },
   "tdeOffboardingPasswordSet": {
-    "message": "User set a master password during TDE offboarding."
+    "message": "İstifadəçi, TDE offboarding zamanı ana parolu təyin etdi."
   },
   "startYour7DayFreeTrialOfBitwardenFor": {
     "message": "$ORG$ üçün Bitwarden 7 günlük ödənişsiz sınağı başladın",
@@ -9091,7 +9131,7 @@
     }
   },
   "optionalOnPremHosting": {
-    "message": "Optional on-premises hosting"
+    "message": "İxtiyari şirkətdaxili hostinq"
   },
   "upgradeFreeOrganization": {
     "message": "$NAME$ təşkilatınızı yüksəldin ",
@@ -9225,5 +9265,14 @@
   },
   "editAccess": {
     "message": "Müraciətə düzəliş et"
+  },
+  "addAttachment": {
+    "message": "Add attachment"
+  },
+  "maxFileSizeSansPunctuation": {
+    "message": "Maximum file size is 500 MB"
+  },
+  "permanentlyDeleteAttachmentConfirmation": {
+    "message": "Are you sure you want to permanently delete this attachment?"
   }
 }

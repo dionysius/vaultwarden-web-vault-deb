@@ -1099,6 +1099,9 @@
   "yourVaultIsLockedV2": {
     "message": "Your vault is locked"
   },
+  "yourAccountIsLocked": {
+    "message": "Your account is locked"
+  },
   "uuid": {
     "message": "UUID"
   },
@@ -2199,6 +2202,9 @@
   "checkExposedPasswords": {
     "message": "Sjekk eksponerte passord"
   },
+  "timesExposed": {
+    "message": "Times exposed"
+  },
   "exposedXTimes": {
     "message": "Eksponert $COUNT$ gang(er)",
     "placeholders": {
@@ -2233,6 +2239,9 @@
   "noWeakPasswords": {
     "message": "Ingen objekter i hvelvet ditt har svake passord."
   },
+  "weakness": {
+    "message": "Weakness"
+  },
   "reusedPasswordsReport": {
     "message": "Rapport om gjenbrukte passord"
   },
@@ -2257,6 +2266,9 @@
   },
   "noReusedPasswords": {
     "message": "Ingen innlogginger i hvelvet ditt har passord som blir gjenbrukt."
+  },
+  "timesReused": {
+    "message": "Times reused"
   },
   "reusedXTimes": {
     "message": "Gjenbrukt $COUNT$ ganger",
@@ -2554,6 +2566,9 @@
   },
   "downloadLicense": {
     "message": "Last ned lisens"
+  },
+  "viewBillingToken": {
+    "message": "View Billing Token"
   },
   "updateLicense": {
     "message": "Oppdater lisens"
@@ -3159,6 +3174,10 @@
   },
   "incorrectPin": {
     "message": "Incorrect PIN"
+  },
+  "pin": {
+    "message": "PIN",
+    "description": "PIN code. Ex. The short code (often numeric) that you use to unlock a device."
   },
   "exportedVault": {
     "message": "Eksportert hvelv."
@@ -5985,8 +6004,8 @@
   "viewBillingSyncToken": {
     "message": "Vis faktureringssynkroniseringstoken"
   },
-  "generateBillingSyncToken": {
-    "message": "Generer faktureringssynkroniseringstoken"
+  "generateBillingToken": {
+    "message": "Generate billing token"
   },
   "copyPasteBillingSync": {
     "message": "Kopier og lim inn dette tokenet i faktureringsynkroniserings-innstillingene for din selvbetjente organisasjon."
@@ -5994,8 +6013,8 @@
   "billingSyncCanAccess": {
     "message": "Din faktureringssynkroniserings-token kan få tilgang til og endre denne organisasjonens abonnementsinnstillinger."
   },
-  "manageBillingSync": {
-    "message": "Administrer faktureringssynkronisering"
+  "manageBillingTokenSync": {
+    "message": "Manage Billing Token"
   },
   "setUpBillingSync": {
     "message": "Sett opp faktureringssynkronisering"
@@ -6054,14 +6073,14 @@
   "billingSyncApiKeyRotated": {
     "message": "Token rotert."
   },
-  "billingSyncDesc": {
-    "message": "Faktureringssynkronisering gir gratis familie-planer for medlemmer og avanserte faktureringsmuligheter ved å koble din selvbetjente Bitwarden til Bitwardens sky-server."
-  },
   "billingSyncKeyDesc": {
     "message": "Det kreves en faktureringssynkroniserings-token fra skyens abonnementsinnstillinger for å fylle ut dette skjemaet."
   },
   "billingSyncKey": {
     "message": "Vis faktureringssynkroniseringstoken"
+  },
+  "automaticBillingSyncDesc": {
+    "message": "Automatic sync unlocks Families sponsorships and allows you to sync your license without uploading a file. After making updates in the Bitwarden cloud server, select Sync License to apply changes."
   },
   "active": {
     "message": "Aktiv"
@@ -6579,6 +6598,18 @@
       "count": {
         "content": "$1",
         "example": "4"
+      }
+    }
+  },
+  "singleFieldNeedsAttention": {
+    "message": "1 field needs your attention."
+  },
+  "multipleFieldsNeedAttention": {
+    "message": "$COUNT$ fields need your attention.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "2"
       }
     }
   },
@@ -7442,6 +7473,15 @@
   "or": {
     "message": "eller"
   },
+  "unlockWithBiometrics": {
+    "message": "Unlock with biometrics"
+  },
+  "unlockWithPin": {
+    "message": "Unlock with PIN"
+  },
+  "unlockWithMasterPassword": {
+    "message": "Unlock with master password"
+  },
   "licenseAndBillingManagement": {
     "message": "Håndtering av lisens og fakturering"
   },
@@ -7451,8 +7491,8 @@
   "manualUpload": {
     "message": "Manuell opplasting"
   },
-  "manualUploadDesc": {
-    "message": "Hvis du ikke ønsker å innmelding i faktureringssynkronisering kan du laste opp lisensen din her."
+  "manualBillingTokenUploadDesc": {
+    "message": "If you do not want to opt into billing sync, manually upload your license here. This will not automatically unlock Families sponsorships."
   },
   "syncLicense": {
     "message": "Synkroniser lisens"
@@ -9225,5 +9265,14 @@
   },
   "editAccess": {
     "message": "Edit access"
+  },
+  "addAttachment": {
+    "message": "Add attachment"
+  },
+  "maxFileSizeSansPunctuation": {
+    "message": "Maximum file size is 500 MB"
+  },
+  "permanentlyDeleteAttachmentConfirmation": {
+    "message": "Are you sure you want to permanently delete this attachment?"
   }
 }

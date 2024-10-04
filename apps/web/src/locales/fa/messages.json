@@ -1099,6 +1099,9 @@
   "yourVaultIsLockedV2": {
     "message": "Your vault is locked"
   },
+  "yourAccountIsLocked": {
+    "message": "Your account is locked"
+  },
   "uuid": {
     "message": "UUID"
   },
@@ -2199,6 +2202,9 @@
   "checkExposedPasswords": {
     "message": "کلمه‌های عبور افشا شده را بررسی کنید"
   },
+  "timesExposed": {
+    "message": "Times exposed"
+  },
   "exposedXTimes": {
     "message": "$COUNT$ بار در معرض نمایش قرار گرفت",
     "placeholders": {
@@ -2233,6 +2239,9 @@
   "noWeakPasswords": {
     "message": "هیچ موردی در گاوصندوق شما کلمه‌ی عبور ضعیفی ندارد."
   },
+  "weakness": {
+    "message": "Weakness"
+  },
   "reusedPasswordsReport": {
     "message": "کلمه‌های عبور مجدد استفاده شده"
   },
@@ -2257,6 +2266,9 @@
   },
   "noReusedPasswords": {
     "message": "هیچ ورودی در گاوصندوق شما کلمه عبوری ندارد که مجدداً مورد استفاده قرار می‌گیرد."
+  },
+  "timesReused": {
+    "message": "Times reused"
   },
   "reusedXTimes": {
     "message": "$COUNT$ بار دوباره استفاده شد",
@@ -2554,6 +2566,9 @@
   },
   "downloadLicense": {
     "message": "دانلود مجوز"
+  },
+  "viewBillingToken": {
+    "message": "View Billing Token"
   },
   "updateLicense": {
     "message": "به‌روزرسانی مجوز"
@@ -3159,6 +3174,10 @@
   },
   "incorrectPin": {
     "message": "Incorrect PIN"
+  },
+  "pin": {
+    "message": "PIN",
+    "description": "PIN code. Ex. The short code (often numeric) that you use to unlock a device."
   },
   "exportedVault": {
     "message": "گاوصندوق برون ریزی شد"
@@ -5985,8 +6004,8 @@
   "viewBillingSyncToken": {
     "message": "توکن همگام‌سازی صورتحساب را مشاهده کنید"
   },
-  "generateBillingSyncToken": {
-    "message": "توکن همگام‌سازی صورتحساب را ایجاد کنید"
+  "generateBillingToken": {
+    "message": "Generate billing token"
   },
   "copyPasteBillingSync": {
     "message": "این توکن را کپی کرده و در تنظیمات همگام‌سازی صورتحساب سازمان خود میزبان جای‌گذاری کنید."
@@ -5994,8 +6013,8 @@
   "billingSyncCanAccess": {
     "message": "توکن همگام‌سازی صورتحساب شما می‌تواند به تنظیمات اشتراک این سازمان دسترسی داشته باشد و آن را ویرایش کند."
   },
-  "manageBillingSync": {
-    "message": "مدیریت همگام‌سازی صورتحساب"
+  "manageBillingTokenSync": {
+    "message": "Manage Billing Token"
   },
   "setUpBillingSync": {
     "message": "همگام‌سازی صورتحساب را تنظیم کنید"
@@ -6054,14 +6073,14 @@
   "billingSyncApiKeyRotated": {
     "message": "توکن چرخانده شد"
   },
-  "billingSyncDesc": {
-    "message": "همگام‌سازی صورتحساب با پیوند دادن Bitwarden خود میزبان شما به سرور ابری Bitwarden، برنامه‌های خانواده رایگان را برای اعضا و قابلیت‌های پیشرفته صورتحساب ارائه می‌کند."
-  },
   "billingSyncKeyDesc": {
     "message": "برای تکمیل این فرم، یک توکن همگام‌سازی صورتحساب از تنظیمات اشتراک سازمان ابری شما لازم است."
   },
   "billingSyncKey": {
     "message": "توکن همگام‌سازی صورتحساب"
+  },
+  "automaticBillingSyncDesc": {
+    "message": "Automatic sync unlocks Families sponsorships and allows you to sync your license without uploading a file. After making updates in the Bitwarden cloud server, select Sync License to apply changes."
   },
   "active": {
     "message": "فعال"
@@ -6579,6 +6598,18 @@
       "count": {
         "content": "$1",
         "example": "4"
+      }
+    }
+  },
+  "singleFieldNeedsAttention": {
+    "message": "1 field needs your attention."
+  },
+  "multipleFieldsNeedAttention": {
+    "message": "$COUNT$ fields need your attention.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "2"
       }
     }
   },
@@ -7442,6 +7473,15 @@
   "or": {
     "message": "یا"
   },
+  "unlockWithBiometrics": {
+    "message": "Unlock with biometrics"
+  },
+  "unlockWithPin": {
+    "message": "Unlock with PIN"
+  },
+  "unlockWithMasterPassword": {
+    "message": "Unlock with master password"
+  },
   "licenseAndBillingManagement": {
     "message": "مدیریت مجوز و صورتحساب"
   },
@@ -7451,8 +7491,8 @@
   "manualUpload": {
     "message": "آپلود دستی"
   },
-  "manualUploadDesc": {
-    "message": "اگر نمی‌خواهید همگام‌سازی صورتحساب را انتخاب کنید، مجوز خود را به‌صورت دستی در اینجا آپلود کنید."
+  "manualBillingTokenUploadDesc": {
+    "message": "If you do not want to opt into billing sync, manually upload your license here. This will not automatically unlock Families sponsorships."
   },
   "syncLicense": {
     "message": "مجوز همگام‌سازی"
@@ -9225,5 +9265,14 @@
   },
   "editAccess": {
     "message": "Edit access"
+  },
+  "addAttachment": {
+    "message": "Add attachment"
+  },
+  "maxFileSizeSansPunctuation": {
+    "message": "Maximum file size is 500 MB"
+  },
+  "permanentlyDeleteAttachmentConfirmation": {
+    "message": "Are you sure you want to permanently delete this attachment?"
   }
 }

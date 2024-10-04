@@ -34,7 +34,7 @@
     "message": "Heslová fráze"
   },
   "notes": {
-    "message": "Poznámky"
+    "message": "Poznámka"
   },
   "note": {
     "message": "Poznámka"
@@ -153,7 +153,7 @@
     "message": "Společnost"
   },
   "ssn": {
-    "message": "Číslo sociálního pojištění"
+    "message": "Rodné číslo"
   },
   "passportNumber": {
     "message": "Číslo cestovního pasu"
@@ -219,7 +219,7 @@
     "message": "Mx"
   },
   "dr": {
-    "message": "MUDr."
+    "message": "Dr."
   },
   "cardExpiredTitle": {
     "message": "Prošlá karta"
@@ -234,7 +234,7 @@
     "message": "Rok expirace"
   },
   "authenticatorKeyTotp": {
-    "message": "Autentizační klíč (TOTP)"
+    "message": "Ověřovací klíč (TOTP)"
   },
   "totpHelperTitle": {
     "message": "Bezproblémové dvoufázové ověřování"
@@ -548,7 +548,7 @@
     }
   },
   "new": {
-    "message": "Nový",
+    "message": "Nová",
     "description": "for adding new items"
   },
   "item": {
@@ -1098,6 +1098,9 @@
   },
   "yourVaultIsLockedV2": {
     "message": "Váš trezor je uzamčen"
+  },
+  "yourAccountIsLocked": {
+    "message": "Váš účet je uzamčen"
   },
   "uuid": {
     "message": "UUID"
@@ -2128,7 +2131,7 @@
     "message": "Nalezena nezabezpečená webová stránka"
   },
   "unsecuredWebsitesFoundReportDesc": {
-    "message": "Nalezli jsme $COUNT$ položek ve Vašem trezoru $VAULT$, které používají nezabezpečené URI. Schémata URI by měla být změněna na https://, pokud to web umožňuje.",
+    "message": "Našli jsme $COUNT$ položek ve Vašem trezoru $VAULT$, které používají nezabezpečené URI. Schémata URI by měla být změněna na https://, pokud to web umožňuje.",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -2153,7 +2156,7 @@
     "message": "Nalezena přihlášení bez dvoufázového ověření"
   },
   "inactive2faFoundReportDesc": {
-    "message": "Nalezli jsme $COUNT$ webových stránek ve Vašem trezoru $VAULT$, které zřejmě nejsou nakonfigurovány pro použití dvoufaktorového přihlášení. Pro lepší ochranu Vašich účtů byste měli dvoufaktorové přihlášení povolit.",
+    "message": "Našli jsme $COUNT$ webových stránek ve Vašem trezoru $VAULT$, které zřejmě nejsou nakonfigurovány pro použití dvoufaktorového přihlášení. Pro lepší ochranu Vašich účtů byste měli dvoufaktorové přihlášení povolit.",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -2199,6 +2202,9 @@
   "checkExposedPasswords": {
     "message": "Zkontrolovat odhalená hesla"
   },
+  "timesExposed": {
+    "message": "Počet vystavení"
+  },
   "exposedXTimes": {
     "message": "Počet odhalení: $COUNT$",
     "placeholders": {
@@ -2233,6 +2239,9 @@
   "noWeakPasswords": {
     "message": "Žádné položky ve Vašem trezoru nemají slabá hesla."
   },
+  "weakness": {
+    "message": "Slabost"
+  },
   "reusedPasswordsReport": {
     "message": "Opakovaně použitá hesla"
   },
@@ -2243,7 +2252,7 @@
     "message": "Nalezena opakovaně použitá hesla"
   },
   "reusedPasswordsFoundReportDesc": {
-    "message": "Nalezli jsme $COUNT$ opakovaně použitých hesel ve Vašem trezoru $VAULT$. Doporučujeme je změnit, aby byly unikátní.",
+    "message": "Našli jsme $COUNT$ opakovaně použitých hesel ve Vašem trezoru $VAULT$. Doporučujeme je změnit, aby byly unikátní.",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -2257,6 +2266,9 @@
   },
   "noReusedPasswords": {
     "message": "Žádná přihlášení ve Vašem trezoru nemají opakovaně použitá hesla."
+  },
+  "timesReused": {
+    "message": "Počet použití"
   },
   "reusedXTimes": {
     "message": "Heslo bylo opakovaně použito $COUNT$x",
@@ -2555,6 +2567,9 @@
   "downloadLicense": {
     "message": "Stáhnout licenci"
   },
+  "viewBillingToken": {
+    "message": "Zobrazit fakturační token"
+  },
   "updateLicense": {
     "message": "Aktualizovat licenci"
   },
@@ -2816,7 +2831,7 @@
     }
   },
   "addShareLimitedUsers": {
-    "message": "Přidání a sdílení až s $COUNT$ uživateli",
+    "message": "Přidání a sdílení s až $COUNT$ uživateli",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -2879,7 +2894,7 @@
     }
   },
   "trialSecretsManagerThankYou": {
-    "message": "Děkujeme za registraci do Správce klíčů Bitwardenu s plánem $PLAN$!",
+    "message": "Děkujeme za registraci do Správce tajných klíčů Bitwarden s plánem $PLAN$!",
     "placeholders": {
       "plan": {
         "content": "$1",
@@ -3128,7 +3143,7 @@
     "message": "Webový trezor Bitwardenu"
   },
   "bitSecretsManager": {
-    "message": "Správce tajných klíčů Bitwardenu"
+    "message": "Správce tajných klíčů Bitwarden"
   },
   "loggedIn": {
     "message": "Přihlášen"
@@ -3159,6 +3174,10 @@
   },
   "incorrectPin": {
     "message": "Nesprávný PIN"
+  },
+  "pin": {
+    "message": "PIN",
+    "description": "PIN code. Ex. The short code (often numeric) that you use to unlock a device."
   },
   "exportedVault": {
     "message": "Trezor byl exportován"
@@ -3842,7 +3861,7 @@
     "message": "Nastavte limit počtu uživatelů pro Vaše předplatné. Jakmile tohoto limitu dosáhnete, nebudete moci pozvat nové členy."
   },
   "limitSmSubscriptionDesc": {
-    "message": "Nastavte limit počtu uživatelů pro předplatné správce klíčů. Jakmile tohoto limitu dosáhnete, nebudete moci pozvat nové členy."
+    "message": "Nastavte limit počtu uživatelů pro předplatné do Správce tajných klíčů. Jakmile tohoto limitu dosáhnete, nebudete moci pozvat nové členy."
   },
   "maxSeatLimit": {
     "message": "Limit uživatelů (volitelné)",
@@ -3881,7 +3900,7 @@
     "message": "Předplatné bylo aktualizováno"
   },
   "subscribedToSecretsManager": {
-    "message": "Předplatné bylo aktualizováno. Nyní máte přístup ke správci tajných klíčů."
+    "message": "Předplatné bylo aktualizováno. Nyní máte přístup ke Správci tajných klíčů."
   },
   "additionalOptions": {
     "message": "Další volby"
@@ -4449,7 +4468,7 @@
     "message": "Toto okno můžete zavřít"
   },
   "includeAllTeamsFeatures": {
-    "message": "Všechny funkce týmů, navíc:"
+    "message": "Všechny funkce týmů a navíc:"
   },
   "includeAllTeamsStarterFeatures": {
     "message": "Všechny funkce Teams Starter, plus:"
@@ -4621,10 +4640,10 @@
     "message": "Opravdu chcete odebrat heslo?"
   },
   "hideEmail": {
-    "message": "Skrýt moji e-mailovou adresu před příjemci."
+    "message": "Skrýt moji e-mailovou adresu před příjemci"
   },
   "disableThisSend": {
-    "message": "Deaktivuje tento Send, díky čemuž k němu nebude moci nikdo přistoupit.",
+    "message": "Deaktivovat tento Send, takže k němu nebude moci nikdo přistoupit",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "allSends": {
@@ -4979,7 +4998,7 @@
     "message": "Soubor, který chcete odeslat."
   },
   "copySendLinkOnSave": {
-    "message": "Zkopírujte odkaz pro sdílení tohoto Send do mé schránky při uložení."
+    "message": "Kopírovat odkaz pro sdílení tohoto Send do mé schránky při uložení"
   },
   "sendLinkLabel": {
     "message": "Odkaz tohoto Send",
@@ -5017,7 +5036,7 @@
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Learn more, see how it works, **or** try it now.'"
   },
   "developmentDevOpsAndITTeamsChooseBWSecret": {
-    "message": "Vývojáři i IT týmy si vybírají Správce tajných klíčů Bitwardenu pro bezpečnou správu a nasazení do jejich své infrastruktury a tajných klíčů."
+    "message": "Vývojáři i IT týmy si vybírají Správce tajných klíčů Bitwarden pro bezpečnou správu a nasazení do jejich své infrastruktury a tajných klíčů."
   },
   "centralizeSecretsManagement": {
     "message": "Centralizujte správu tajných klíčů."
@@ -5053,28 +5072,28 @@
     "message": "Přidat poznámku"
   },
   "bitwardenSecretsManager": {
-    "message": "Správce tajných klíčů Bitwardenu"
+    "message": "Správce tajných klíčů Bitwarden"
   },
   "moreProductsFromBitwarden": {
     "message": "Více produktů od Bitwardenu"
   },
   "requestAccessToSecretsManager": {
-    "message": "Požádat o přístup ke správci tajných klíčů"
+    "message": "Požádat o přístup ke Správci tajných klíčů"
   },
   "youNeedApprovalFromYourAdminToTrySecretsManager": {
-    "message": "Potřebujete schválení správce, abyste mohli vyzkoušet správce tajných klíčů."
+    "message": "Potřebujete schválení správce, abyste mohli vyzkoušet Správce tajných klíčů."
   },
   "smAccessRequestEmailSent": {
-    "message": "Žádost o přístup k e-mailu správce tajných klíčů odeslaná administrátorům."
+    "message": "Žádost o přístup ke Správci tajných klíčů byla odeslána e-mailem administrátorům."
   },
   "requestAccessSMDefaultEmailContent": {
-    "message": "Zdravím,\n\nžádám o předplatné Správce tajných klíčů Bitwardenu pro náš tým. Vaše podpora by pro nás znamenala mnoho!\n\nSprávce tajných klíčů Bitwardenu je end-to-end řešení pro správu šifrovaných tajných klíčů pro bezpečné ukládání, sdílení a nasazení strojových pověření, jako jsou klíče API, databázová hesla a ověřovací certifikáty.\n\nSprávce klíčů nám pomůže:\n\n- zlepšit zabezpečení\n- zjednodušit provoz\n- zabránit nákladným únikům tajných klíčů\n\nChcete-li požádat o bezplatnou zkušební verzi pro náš tým, obraťte se na společnost Bitwarden.\n\nDěkujeme Vám za pomoc!"
+    "message": "Zdravím,\n\nžádám o předplatné Správce tajných klíčů Bitwarden pro náš tým. Vaše podpora by pro nás znamenala mnoho!\n\nSprávce tajných klíčů Bitwarden je end-to-end řešení pro správu šifrovaných tajných klíčů pro bezpečné ukládání, sdílení a nasazení strojových pověření, jako jsou klíče API, databázová hesla a ověřovací certifikáty.\n\nSprávce klíčů nám pomůže:\n\n- zlepšit zabezpečení\n- zjednodušit provoz\n- zabránit nákladným únikům tajných klíčů\n\nChcete-li požádat o bezplatnou zkušební verzi pro náš tým, obraťte se na společnost Bitwarden.\n\nDěkujeme Vám za pomoc!"
   },
   "giveMembersAccess": {
     "message": "Umožnit členům přístup:"
   },
   "viewAndSelectTheMembers": {
-    "message": "zobrazit a vybrat členy, které chcete povolit přístup do správce tajných klíčů."
+    "message": "zobrazit a vybrat členy, kterým chcete povolit přístup do Správce tajných klíčů."
   },
   "openYourOrganizations": {
     "message": "Otevřít"
@@ -5296,7 +5315,7 @@
     "message": "Motiv"
   },
   "themeDesc": {
-    "message": "Zvolte šablonu pro Váš webový trezor."
+    "message": "Zvolte motiv pro Váš webový trezor."
   },
   "themeSystem": {
     "message": "Použít systémový motiv"
@@ -5731,16 +5750,16 @@
     "message": "Konfigurace jednotného přihlášení byla uložena"
   },
   "sponsoredFamilies": {
-    "message": "Free Bitwarden Families"
+    "message": "Bitwarden pro rodinu zdarma"
   },
   "sponsoredFamiliesEligible": {
-    "message": "Vy a Vaše rodina máte nárok na Free Bitwarden Families. Nárok můžete uplatnit Vaším osobním e-mailem, abyste zajistili bezpečnost Vašich dat, i když nejste v práci."
+    "message": "Vy a Vaše rodina máte nárok na Bitwarden pro rodinu zdarma. Nárok můžete uplatnit Vaším osobním e-mailem, abyste zajistili bezpečnost Vašich dat, i když nejste v práci."
   },
   "sponsoredFamiliesEligibleCard": {
-    "message": "Uplatněte ještě dnes svůj plán Free Bitwarden for Families, aby byla Vaše data bezpečná, i když nejste v práci."
+    "message": "Uplatněte ještě dnes svůj plán Bitwarden pro rodinu zdarma, aby byla Vaše data bezpečná, i když nejste v práci."
   },
   "sponsoredFamiliesInclude": {
-    "message": "Plán Bitwarden for Families obsahuje"
+    "message": "Plán Bitwarden pro rodinu zdarma obsahuje"
   },
   "sponsoredFamiliesPremiumAccess": {
     "message": "Prémiový přístup až pro 6 uživatelů"
@@ -5761,7 +5780,7 @@
     "message": "Vyberte organizaci, kterou chcete sponzorovat"
   },
   "familiesSponsoringOrgSelect": {
-    "message": "Kterou nabídku Bitwarden Families chcete uplatnit?"
+    "message": "Kterou nabídku Bitwarden pro rodinu zdarma chcete uplatnit?"
   },
   "sponsoredFamiliesEmail": {
     "message": "Pro uplatnění Bitwarden Families zadejte Váš osobní e-mail"
@@ -5773,7 +5792,7 @@
     "message": "Přijmout nabídku pro existující organizaci nebo vytvořit novou organizaci rodin."
   },
   "setupSponsoredFamiliesLoginDesc": {
-    "message": "Byla Vám nabídnuta bezplatná organizace plánu Bitwarden Families. Chcete-li pokračovat, musíte se přihlásit k účtu, který obdržel nabídku."
+    "message": "Byl Vám nabídnut bezplatný plán organizace Bitwarden pro rodinu zdarma. Chcete-li pokračovat, musíte se přihlásit k účtu, který obdržel nabídku."
   },
   "sponsoredFamiliesAcceptFailed": {
     "message": "Nelze přijmout nabídku. Znovu odešlete e-mail s nabídkou z účtu Enterprise a zkuste to znovu."
@@ -5788,10 +5807,10 @@
     }
   },
   "sponsoredFamiliesOffer": {
-    "message": "Přijmout Free Bitwarden Families"
+    "message": "Přijmout Bitwarden pro rodinu zdarma"
   },
   "sponsoredFamiliesOfferRedeemed": {
-    "message": "Nabídka Free Bitwarden Families byla úspěšně uplatněna"
+    "message": "Nabídka Bitwarden pro rodinu zdarma byla úspěšně uplatněna"
   },
   "redeemed": {
     "message": "Uplatněno"
@@ -5818,7 +5837,7 @@
     }
   },
   "freeFamiliesPlan": {
-    "message": "Plán Free Families"
+    "message": "Plán Rodina zdarma"
   },
   "redeemNow": {
     "message": "Uplatnit nyní"
@@ -5985,8 +6004,8 @@
   "viewBillingSyncToken": {
     "message": "Zobrazit fakturační synchronizační token"
   },
-  "generateBillingSyncToken": {
-    "message": "Vygenerovat fakturační synchronizační token"
+  "generateBillingToken": {
+    "message": "Vygenerovat fakturační token"
   },
   "copyPasteBillingSync": {
     "message": "Zkopírujte a vložte tento token do nastavení fakturační synchronizace vlastní organizace."
@@ -5994,8 +6013,8 @@
   "billingSyncCanAccess": {
     "message": "Fakturační synchronizační token může přistupovat k nastavení předplatného této organizace a upravovat jej."
   },
-  "manageBillingSync": {
-    "message": "Spravovat fakturační synchronizaci"
+  "manageBillingTokenSync": {
+    "message": "Spravovat fakturační token"
   },
   "setUpBillingSync": {
     "message": "Nastavit fakturační synchronizaci"
@@ -6049,19 +6068,19 @@
     "message": "Vlastní hosting"
   },
   "selfHostingEnterpriseOrganizationSectionCopy": {
-    "message": "Pro nastavení organizace na vlastním serveru musíte nahrát licenční soubor. Chcete-li podporovat plány Free Families a pokročilé možnosti fakturace pro Vaši organizaci na vlastním serveru, budete muset nastavit synchronizaci fakturace."
+    "message": "Pro nastavení organizace na vlastním serveru musíte nahrát licenční soubor. Chcete-li podporovat plány Rodina zdarma a pokročilé možnosti fakturace pro Vaši organizaci na vlastním serveru, budete muset nastavit synchronizaci fakturace."
   },
   "billingSyncApiKeyRotated": {
     "message": "Token byl vyměněn"
-  },
-  "billingSyncDesc": {
-    "message": "Synchronizace fakturace odemkne sponzorství Families a automatickou synchronizaci licencí na serveru. Po provedení aktualizací na cloudovém serveru Bitwardenu použijte pro použití změn funkci \"Synchronizovat licenci\"."
   },
   "billingSyncKeyDesc": {
     "message": "K vyplnění tohoto formuláře je vyžadován fakturační synchronizační token z nastavení předplatného Vaší cloudové organizace."
   },
   "billingSyncKey": {
     "message": "Fakturační synchronizační token"
+  },
+  "automaticBillingSyncDesc": {
+    "message": "Automatická synchronizace odemkne sponzorství Families a automatickou synchronizaci licencí na serveru bez nutnosti nahrát soubor. Po provedení aktualizací na cloudovém serveru Bitwardenu použijte pro použití změn funkci \"Synchronizovat licenci\"."
   },
   "active": {
     "message": "Aktivní"
@@ -6579,6 +6598,18 @@
       "count": {
         "content": "$1",
         "example": "4"
+      }
+    }
+  },
+  "singleFieldNeedsAttention": {
+    "message": "1 pole vyžaduje Vaši pozornost."
+  },
+  "multipleFieldsNeedAttention": {
+    "message": "$COUNT$ polí vyžaduje Vaši pozornost.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "2"
       }
     }
   },
@@ -7419,7 +7450,7 @@
     "message": "Exportování tajných dat organizace"
   },
   "exportingOrganizationSecretDataDescription": {
-    "message": "Exportována budou jen tajná data organizace přidružená k položce $ORGANIZATION$. Položky v ostatních produktech a položky z jiných organizací nebudou zahrnuty.",
+    "message": "Exportována budou jen data Správce tajných klíčů přidružená k položce $ORGANIZATION$. Položky v ostatních produktech a položky z jiných organizací nebudou zahrnuty.",
     "placeholders": {
       "ORGANIZATION": {
         "content": "$1",
@@ -7442,6 +7473,15 @@
   "or": {
     "message": "nebo"
   },
+  "unlockWithBiometrics": {
+    "message": "Odemknout pomocí biometrie"
+  },
+  "unlockWithPin": {
+    "message": "Odemknout pomocí PIN"
+  },
+  "unlockWithMasterPassword": {
+    "message": "Odemknout pomocí hlavního hesla"
+  },
   "licenseAndBillingManagement": {
     "message": "Správa licencí a fakturace"
   },
@@ -7451,8 +7491,8 @@
   "manualUpload": {
     "message": "Ruční nahrání"
   },
-  "manualUploadDesc": {
-    "message": "Pokud se nechcete rozhodnout pro synchronizaci fakturace, nahrajte licenci ručně zde."
+  "manualBillingTokenUploadDesc": {
+    "message": "Pokud se nechcete rozhodnout pro synchronizaci fakturace, nahrajte licenci ručně zde. Tím se automaticky neodemkne sponzorství Families."
   },
   "syncLicense": {
     "message": "Synchronizovat licenci"
@@ -7530,10 +7570,10 @@
     "message": "Správce tajných klíčů"
   },
   "secretsManagerAccessDescription": {
-    "message": "Aktivuje přístup uživatele ke správci tajných klíčů."
+    "message": "Aktivuje přístup uživatele ke Správci tajných klíčů."
   },
   "userAccessSecretsManagerGA": {
-    "message": "Tento uživatel může přistupovat ke správci tajných klíčů"
+    "message": "Tento uživatel může přistupovat ke Správci tajných klíčů"
   },
   "important": {
     "message": "Důležité:"
@@ -7593,7 +7633,7 @@
     "description": "Link to a downloadable resource. This will be used as part of a larger phrase. Example: Download the Secrets Manager CLI"
   },
   "smCLI": {
-    "message": "Secrets Manager CLI"
+    "message": "CLI Správce tajných klíčů"
   },
   "importSecrets": {
     "message": "Importovat tajné klíče"
@@ -7800,18 +7840,18 @@
     "message": "Uživatel aktualizoval heslo vydané prostřednictvím obnovení účtu."
   },
   "activatedAccessToSecretsManager": {
-    "message": "Aktivován přístup uživatele ke správci tajných klíčů",
+    "message": "Aktivován přístup uživatele ke Správci tajných klíčů",
     "description": "Confirmation message that one or more users gained access to Secrets Manager"
   },
   "activateAccess": {
     "message": "Aktivovat přístup"
   },
   "bulkEnableSecretsManagerDescription": {
-    "message": "Udělte následujícím členům přístup ke správci tajných klíčů. Role udělená ve správci hesel se bude vztahovat na správce tajných klíčů.",
+    "message": "Udělte následujícím členům přístup ke Správci tajných klíčů. Role udělená ve Správci hesel se bude vztahovat na Správce tajných klíčů.",
     "description": "This description is shown to an admin when they are attempting to add more users to Secrets Manager."
   },
   "activateSecretsManager": {
-    "message": "Aktivovat správce tajných klíčů"
+    "message": "Aktivovat Správce tajných klíčů"
   },
   "yourOrganizationsFingerprint": {
     "message": "Fráze otisku prstu Vaší organizace",
@@ -7905,7 +7945,7 @@
     }
   },
   "startYour7DayFreeTrialOfBitwardenSecretsManagerFor": {
-    "message": "Začněte 7denní bezplatnou zkušební verzi Správce klíšu Bitwardenu pro $ORG$",
+    "message": "Začněte 7denní bezplatnou zkušební verzi Správce tajných klíčů Bitwarden pro $ORG$",
     "placeholders": {
       "org": {
         "content": "$1",
@@ -7958,7 +7998,7 @@
     "message": "Pozvat uživatele"
   },
   "secretsManagerForPlan": {
-    "message": "Správce klíčů pro $PLAN$",
+    "message": "Správce tajných klíčů pro $PLAN$",
     "placeholders": {
       "plan": {
         "content": "$1",
@@ -7970,7 +8010,7 @@
     "message": "Pro inženýrské týmy a týmy DevOps ke správě klíčů v celém životním cyklu vývoje softwaru."
   },
   "free2PersonOrganization": {
-    "message": "Zdarma organizace do 2 osob"
+    "message": "Zdarma a organizace do 2 osob"
   },
   "unlimitedSecrets": {
     "message": "Neomezené klíče"
@@ -8006,10 +8046,10 @@
     }
   },
   "subscribeToSecretsManager": {
-    "message": "Přihlásit se ke správci klíčů"
+    "message": "Používat Správce tajných klíčů"
   },
   "addSecretsManagerUpgradeDesc": {
-    "message": "Přidáním správce klíčů k aktualizovanému plánu si zachováte přístup ke všem klíčům vytvořeným v předchozím plánu."
+    "message": "Přidáním Správce tajných klíčů k aktualizovanému plánu si zachováte přístup ke všem klíčům vytvořeným v předchozím plánu."
   },
   "additionalServiceAccounts": {
     "message": "Další účty služby"
@@ -8048,10 +8088,10 @@
     "message": "Aktualizované nastavení správy kolekce"
   },
   "passwordManagerPlanPrice": {
-    "message": "Cena předplatného správce hesel"
+    "message": "Cena předplatného Správce hesel"
   },
   "secretsManagerPlanPrice": {
-    "message": "Cena předplatného správce klíčů"
+    "message": "Cena předplatného Správce tajných klíčů"
   },
   "passwordManager": {
     "message": "Správce hesel"
@@ -8193,7 +8233,7 @@
     "message": "Detaily potvrzení"
   },
   "smFreeTrialThankYou": {
-    "message": "Děkujeme za registraci do Správce klíčů Bitwardenu!"
+    "message": "Děkujeme za registraci do Správce tajných klíčů Bitwarden!"
   },
   "smFreeTrialConfirmationEmail": {
     "message": "Potvrzovací e-mail byl odeslán na "
@@ -8601,13 +8641,13 @@
     "message": "Integrace"
   },
   "integrationsDesc": {
-    "message": "Automaticky synchronizuje tajné klíče se správce tajných klíčů Bitwardenu do služby třetí strany."
+    "message": "Automaticky synchronizuje tajné klíče se Správce tajných klíčů Bitwarden do služby třetí strany."
   },
   "sdks": {
     "message": "SDK"
   },
   "sdksDesc": {
-    "message": "Použije SDK správce tajných klíčů Bitwardenu v následujících programovacích jazycích k vytvoření vlastních aplikací."
+    "message": "Použije SDK Správce tajných klíčů Bitwarden v následujících programovacích jazycích k vytvoření vlastních aplikací."
   },
   "setUpGithubActions": {
     "message": "Nastavit akce GitHubu"
@@ -8694,7 +8734,7 @@
     "message": "Pokračujte v nastavení bezplatného zkušebního období Správce hesel Bitwarden"
   },
   "continueSettingUpFreeTrialSecretsManager": {
-    "message": "Pokračujte v nastavení bezplatného zkušebního období Správce hesel Bitwarden"
+    "message": "Pokračujte v nastavení bezplatného zkušebního období Správce tajných klíčů Bitwarden"
   },
   "enterTeamsOrgInfo": {
     "message": "Zadejte informace o Teams Vaší organizace"
@@ -9205,7 +9245,7 @@
     "message": "Vaše předplatné Správce tajných klíčů bude aktualizováno na základě vybraného tarifu"
   },
   "bitwardenPasswordManager": {
-    "message": "Bitwarden - Správce hesel"
+    "message": "Správce hesel Bitwarden"
   },
   "secretsManagerComplimentaryPasswordManager": {
     "message": "Vaše doplňkové roční předplatné Správce hesel bude aktualizováno na vybraný plán. Poplatek Vám bude účtován až po skončení bezplatného období."
@@ -9225,5 +9265,14 @@
   },
   "editAccess": {
     "message": "Upravit přístup"
+  },
+  "addAttachment": {
+    "message": "Přidat přílohu"
+  },
+  "maxFileSizeSansPunctuation": {
+    "message": "Maximální velikost souboru je 500 MB"
+  },
+  "permanentlyDeleteAttachmentConfirmation": {
+    "message": "Opravdu chcete tuto přílohu navždy smazat?"
   }
 }

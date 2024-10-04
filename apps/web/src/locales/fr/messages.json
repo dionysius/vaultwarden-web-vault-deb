@@ -1099,6 +1099,9 @@
   "yourVaultIsLockedV2": {
     "message": "Votre coffre est verrouillé."
   },
+  "yourAccountIsLocked": {
+    "message": "Votre compte est verrouillé"
+  },
   "uuid": {
     "message": "UUID"
   },
@@ -2199,6 +2202,9 @@
   "checkExposedPasswords": {
     "message": "Vérifier les mots de passe exposés"
   },
+  "timesExposed": {
+    "message": "Nombre d'expositions"
+  },
   "exposedXTimes": {
     "message": "Exposé $COUNT$ fois",
     "placeholders": {
@@ -2233,6 +2239,9 @@
   "noWeakPasswords": {
     "message": "Aucun élément dans votre coffre n'a de mots de passe faibles."
   },
+  "weakness": {
+    "message": "Faiblesse"
+  },
   "reusedPasswordsReport": {
     "message": "Mots de passe réutilisés"
   },
@@ -2257,6 +2266,9 @@
   },
   "noReusedPasswords": {
     "message": "Aucun identifiant dans votre coffre n'a de mots de passe qui sont réutilisés."
+  },
+  "timesReused": {
+    "message": "Nombre de réutilisations"
   },
   "reusedXTimes": {
     "message": "Réutilisé $COUNT$ fois",
@@ -2554,6 +2566,9 @@
   },
   "downloadLicense": {
     "message": "Télécharger la licence"
+  },
+  "viewBillingToken": {
+    "message": "Voir le Jeton de Facturation"
   },
   "updateLicense": {
     "message": "Mettre à jour la licence"
@@ -3159,6 +3174,10 @@
   },
   "incorrectPin": {
     "message": "Code PIN incorrect"
+  },
+  "pin": {
+    "message": "NIP",
+    "description": "PIN code. Ex. The short code (often numeric) that you use to unlock a device."
   },
   "exportedVault": {
     "message": "Le coffre a été exporté."
@@ -5985,8 +6004,8 @@
   "viewBillingSyncToken": {
     "message": "Voir le Jeton de Synchronisation de Facturation"
   },
-  "generateBillingSyncToken": {
-    "message": "Générer un Jeton de Synchronisation de Facturation"
+  "generateBillingToken": {
+    "message": "Générer un jeton de facturation"
   },
   "copyPasteBillingSync": {
     "message": "Copiez et collez ce jeton dans les paramètres de la Synchronisation de Facturation de votre organisation auto-hébergée."
@@ -5994,8 +6013,8 @@
   "billingSyncCanAccess": {
     "message": "Votre Jeton de Synchronisation de Facturation peut accéder et modifier les paramètres d'abonnement de cette organisation."
   },
-  "manageBillingSync": {
-    "message": "Gérer la Synchronisation de Facturation"
+  "manageBillingTokenSync": {
+    "message": "Gérer le Jeton de Facturation"
   },
   "setUpBillingSync": {
     "message": "Configurer la Synchronisation de Facturation"
@@ -6054,14 +6073,14 @@
   "billingSyncApiKeyRotated": {
     "message": "Jeton régénéré"
   },
-  "billingSyncDesc": {
-    "message": "La Synchronisation de Facturation fournit des forfaits Familles Gratuits pour les membres et des capacités de facturation avancées en liant votre Bitwarden auto-hébergé au serveur cloud Bitwarden."
-  },
   "billingSyncKeyDesc": {
     "message": "Un jeton de synchronisation de facturation provenant des paramètres d'abonnement de votre organisation dans le cloud est nécessaire pour remplir ce formulaire."
   },
   "billingSyncKey": {
     "message": "Jeton de Synchronisation de Facturation"
+  },
+  "automaticBillingSyncDesc": {
+    "message": "La synchronisation automatique déverrouille les parrainages des Familles et vous permet de synchroniser votre licence sans téléverser de fichier. Après avoir effectué des mises à jour sur le serveur cloud de Bitwarden, sélectionnez la licence de synchronisation pour appliquer les modifications."
   },
   "active": {
     "message": "Actif"
@@ -6579,6 +6598,18 @@
       "count": {
         "content": "$1",
         "example": "4"
+      }
+    }
+  },
+  "singleFieldNeedsAttention": {
+    "message": "1 champ nécessite votre attention."
+  },
+  "multipleFieldsNeedAttention": {
+    "message": "$COUNT$ champs nécessitent votre attention.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "2"
       }
     }
   },
@@ -7442,6 +7473,15 @@
   "or": {
     "message": "ou"
   },
+  "unlockWithBiometrics": {
+    "message": "Déverrouiller par biométrie"
+  },
+  "unlockWithPin": {
+    "message": "Déverrouiller avec le NIP"
+  },
+  "unlockWithMasterPassword": {
+    "message": "Déverrouiller avec le mot de passe principal"
+  },
   "licenseAndBillingManagement": {
     "message": "Gestion des licences et de la facturation"
   },
@@ -7451,8 +7491,8 @@
   "manualUpload": {
     "message": "Téléversement manuel"
   },
-  "manualUploadDesc": {
-    "message": "Si vous ne voulez pas opter pour la synchronisation de la facturation, téléchargez manuellement votre licence ici."
+  "manualBillingTokenUploadDesc": {
+    "message": "Si vous ne voulez pas opter pour la synchronisation de facturation, téléverser manuellement votre licence ici. Cela ne déverrouillera pas automatiquement les parrainages des Familles."
   },
   "syncLicense": {
     "message": "Synchroniser la licence"
@@ -9225,5 +9265,14 @@
   },
   "editAccess": {
     "message": "Modifier l'accès"
+  },
+  "addAttachment": {
+    "message": "Ajouter une pièce jointe"
+  },
+  "maxFileSizeSansPunctuation": {
+    "message": "La taille maximale du fichier est de 500 Mo"
+  },
+  "permanentlyDeleteAttachmentConfirmation": {
+    "message": "Êtes-vous sûr de vouloir supprimer définitivement cette pièce jointe ?"
   }
 }

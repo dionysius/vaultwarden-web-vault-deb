@@ -1099,6 +1099,9 @@
   "yourVaultIsLockedV2": {
     "message": "Ваше хранилище заблокировано."
   },
+  "yourAccountIsLocked": {
+    "message": "Ваш аккаунт заблокирован"
+  },
   "uuid": {
     "message": "UUID"
   },
@@ -2199,6 +2202,9 @@
   "checkExposedPasswords": {
     "message": "Проверить пароли на компрометацию"
   },
+  "timesExposed": {
+    "message": "Times exposed"
+  },
   "exposedXTimes": {
     "message": "Скомпрометирован $COUNT$ раз(а)",
     "placeholders": {
@@ -2233,6 +2239,9 @@
   "noWeakPasswords": {
     "message": "В вашем хранилище нет слабых паролей."
   },
+  "weakness": {
+    "message": "Weakness"
+  },
   "reusedPasswordsReport": {
     "message": "Повторно использованные пароли"
   },
@@ -2257,6 +2266,9 @@
   },
   "noReusedPasswords": {
     "message": "В вашем хранилище нет повторно использованных паролей."
+  },
+  "timesReused": {
+    "message": "Times reused"
   },
   "reusedXTimes": {
     "message": "Повторно использован $COUNT$ раз(а)",
@@ -2554,6 +2566,9 @@
   },
   "downloadLicense": {
     "message": "Загрузить лицензию"
+  },
+  "viewBillingToken": {
+    "message": "Просмотр токена биллинга"
   },
   "updateLicense": {
     "message": "Обновить лицензию"
@@ -3159,6 +3174,10 @@
   },
   "incorrectPin": {
     "message": "Неверный PIN-код"
+  },
+  "pin": {
+    "message": "PIN-код",
+    "description": "PIN code. Ex. The short code (often numeric) that you use to unlock a device."
   },
   "exportedVault": {
     "message": "Хранилище экспортировано."
@@ -5985,8 +6004,8 @@
   "viewBillingSyncToken": {
     "message": "Просмотр токена синхронизации биллинга"
   },
-  "generateBillingSyncToken": {
-    "message": "Создание токена синхронизации биллинга"
+  "generateBillingToken": {
+    "message": "Создание токена биллинга"
   },
   "copyPasteBillingSync": {
     "message": "Скопируйте и вставьте этот токен в настройки синхронизации биллинга вашей организации."
@@ -5994,8 +6013,8 @@
   "billingSyncCanAccess": {
     "message": "Ваш токен синхронизации биллинга может получить доступ и изменить настройки подписки этой организации."
   },
-  "manageBillingSync": {
-    "message": "Управление синхронизацией биллинга"
+  "manageBillingTokenSync": {
+    "message": "Управление токеном биллинга"
   },
   "setUpBillingSync": {
     "message": "Настроить синхронизацию биллинга"
@@ -6054,14 +6073,14 @@
   "billingSyncApiKeyRotated": {
     "message": "Токен сменен"
   },
-  "billingSyncDesc": {
-    "message": "Синхронизация биллинга разблокирует предоставление участникам планов Families и автоматическую синхронизацию лицензий на вашем сервере. После внесения изменений на облачном сервере Bitwarden выберите Sync License для применения изменений."
-  },
   "billingSyncKeyDesc": {
     "message": "Для заполнения этой формы необходим токен синхронизации биллинга из настроек подписки вашей организации."
   },
   "billingSyncKey": {
     "message": "Токен синхронизации биллинга"
+  },
+  "automaticBillingSyncDesc": {
+    "message": "Автоматическая синхронизация разблокирует спонсорство Families и позволит синхронизировать лицензию без загрузки файла. После внесения обновлений на облачном сервере Bitwarden выберите 'Синхронизировать лицензию', чтобы применить изменения."
   },
   "active": {
     "message": "Активен"
@@ -6579,6 +6598,18 @@
       "count": {
         "content": "$1",
         "example": "4"
+      }
+    }
+  },
+  "singleFieldNeedsAttention": {
+    "message": "1 поле требует вашего внимания."
+  },
+  "multipleFieldsNeedAttention": {
+    "message": "$COUNT$ полей требуют вашего внимания.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "2"
       }
     }
   },
@@ -7442,6 +7473,15 @@
   "or": {
     "message": "или"
   },
+  "unlockWithBiometrics": {
+    "message": "Разблокировать с помощью биометрии"
+  },
+  "unlockWithPin": {
+    "message": "Разблокировать с помощью PIN-кода"
+  },
+  "unlockWithMasterPassword": {
+    "message": "Разблокировать мастер-паролем"
+  },
   "licenseAndBillingManagement": {
     "message": "Управление лицензиями и выставлением счетов"
   },
@@ -7451,8 +7491,8 @@
   "manualUpload": {
     "message": "Ручная загрузка"
   },
-  "manualUploadDesc": {
-    "message": "Если вы не хотите включать синхронизацию биллинга, загрузите свою лицензию вручную здесь."
+  "manualBillingTokenUploadDesc": {
+    "message": "Если вы не хотите использовать синхронизацию биллинга, загрузите свою лицензию вручную здесь. Это не приведет к автоматическому разблокированию спонсорства Families."
   },
   "syncLicense": {
     "message": "Синхронизировать лицензию"
@@ -9225,5 +9265,14 @@
   },
   "editAccess": {
     "message": "Изменить доступ"
+  },
+  "addAttachment": {
+    "message": "Добавить вложение"
+  },
+  "maxFileSizeSansPunctuation": {
+    "message": "Максимальный размер файла 500 МБ"
+  },
+  "permanentlyDeleteAttachmentConfirmation": {
+    "message": "Вы уверены, что хотите навсегда удалить это вложение?"
   }
 }

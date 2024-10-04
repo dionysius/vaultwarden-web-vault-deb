@@ -1099,6 +1099,9 @@
   "yourVaultIsLockedV2": {
     "message": "Boksen er låst."
   },
+  "yourAccountIsLocked": {
+    "message": "Kontoen er låst"
+  },
   "uuid": {
     "message": "UUID"
   },
@@ -2199,6 +2202,9 @@
   "checkExposedPasswords": {
     "message": "Tjek for kompromitterede adgangskoder"
   },
+  "timesExposed": {
+    "message": "Afsløret antal gange"
+  },
   "exposedXTimes": {
     "message": "$COUNT$ kompromittering(er)",
     "placeholders": {
@@ -2233,6 +2239,9 @@
   "noWeakPasswords": {
     "message": "Ingen elementer i din boks har svage adgangskoder."
   },
+  "weakness": {
+    "message": "Svaghed"
+  },
   "reusedPasswordsReport": {
     "message": "Genbrugte adgangskoder"
   },
@@ -2257,6 +2266,9 @@
   },
   "noReusedPasswords": {
     "message": "Ingen logins i din boks har adgangskoder, der genbruges."
+  },
+  "timesReused": {
+    "message": "Genbrugt antal gange"
   },
   "reusedXTimes": {
     "message": "Genbrugt $COUNT$ gange",
@@ -2554,6 +2566,9 @@
   },
   "downloadLicense": {
     "message": "Download licens"
+  },
+  "viewBillingToken": {
+    "message": "Vis fakturerings-token"
   },
   "updateLicense": {
     "message": "Opdatér licens"
@@ -3159,6 +3174,10 @@
   },
   "incorrectPin": {
     "message": "Forkert PIN-kode"
+  },
+  "pin": {
+    "message": "PIN-kode",
+    "description": "PIN code. Ex. The short code (often numeric) that you use to unlock a device."
   },
   "exportedVault": {
     "message": "Boks eksporteret"
@@ -5985,8 +6004,8 @@
   "viewBillingSyncToken": {
     "message": "Vis faktureringssynk-token"
   },
-  "generateBillingSyncToken": {
-    "message": "Generering af faktureringssynk-token"
+  "generateBillingToken": {
+    "message": "Generér fakturerings-token"
   },
   "copyPasteBillingSync": {
     "message": "Kopiér og indsæt dette token i indstillingerne Faktureringssynk i din selv-hostede organisation."
@@ -5994,8 +6013,8 @@
   "billingSyncCanAccess": {
     "message": "Din faktureringssynk-token kan tilgå og redigere denne organisations abonnementsindstillinger."
   },
-  "manageBillingSync": {
-    "message": "Håndtering af faktureringssynk"
+  "manageBillingTokenSync": {
+    "message": "Håndtér fakturerings-token"
   },
   "setUpBillingSync": {
     "message": "Opsæt faktureringssynk"
@@ -6054,14 +6073,14 @@
   "billingSyncApiKeyRotated": {
     "message": "Token roteret."
   },
-  "billingSyncDesc": {
-    "message": "Faktureringssynk oplåser Familier-sponsorater og automatisk licenssynk på din server. Når opdateringer i Bitwarden cloud-serveren er foretaget, så vælg Synk licens for at anvende ændringer."
-  },
   "billingSyncKeyDesc": {
     "message": "Et faktureringssynk-token fra din cloud-organisations abonnementsindstillinger kræves for at udfylde denne formular."
   },
   "billingSyncKey": {
     "message": "Faktureringssynk-token"
+  },
+  "automaticBillingSyncDesc": {
+    "message": "Automatisk synk oplåser Familier-sponsorater og muliggør synk af licenser uden at uploade en fil. Når opdateringer på Bitwarden cloud-serveren er foretaget, vælg Synk licens for at anvende ændringer."
   },
   "active": {
     "message": "Aktiv"
@@ -6579,6 +6598,18 @@
       "count": {
         "content": "$1",
         "example": "4"
+      }
+    }
+  },
+  "singleFieldNeedsAttention": {
+    "message": "1 felt kræver opmærksomhed."
+  },
+  "multipleFieldsNeedAttention": {
+    "message": "$COUNT$ felter kræver opmærksomhed.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "2"
       }
     }
   },
@@ -7442,6 +7473,15 @@
   "or": {
     "message": "eller"
   },
+  "unlockWithBiometrics": {
+    "message": "Oplås med biometri"
+  },
+  "unlockWithPin": {
+    "message": "Oplås med PIN-kode"
+  },
+  "unlockWithMasterPassword": {
+    "message": "Oplås med hovedadgangskode"
+  },
   "licenseAndBillingManagement": {
     "message": "Håndtering af licens og fakturering"
   },
@@ -7451,8 +7491,8 @@
   "manualUpload": {
     "message": "Manuel upload"
   },
-  "manualUploadDesc": {
-    "message": "Ønskes ikke tilmelding til faktureringssynk, så upload manuelt din licens her."
+  "manualBillingTokenUploadDesc": {
+    "message": "Ønsker man ikke at tilvælge faktureringssynk, skal licensen manuelt uploades her. Dette oplåser ikke automatisk Familier-sponsorater."
   },
   "syncLicense": {
     "message": "Synk licens"
@@ -9225,5 +9265,14 @@
   },
   "editAccess": {
     "message": "Redigér adgang"
+  },
+  "addAttachment": {
+    "message": "Tilføj vedhæftning"
+  },
+  "maxFileSizeSansPunctuation": {
+    "message": "Maks. filstørrelse er 500 MB"
+  },
+  "permanentlyDeleteAttachmentConfirmation": {
+    "message": "Sikker på, at denne vedhæftning skal slettes permanent?"
   }
 }

@@ -1099,6 +1099,9 @@
   "yourVaultIsLockedV2": {
     "message": "保管庫はロックされています。"
   },
+  "yourAccountIsLocked": {
+    "message": "アカウントがロックされています"
+  },
   "uuid": {
     "message": "UUID"
   },
@@ -2199,6 +2202,9 @@
   "checkExposedPasswords": {
     "message": "流出したパスワードを確認"
   },
+  "timesExposed": {
+    "message": "流出した回数"
+  },
   "exposedXTimes": {
     "message": "流出 $COUNT$回",
     "placeholders": {
@@ -2233,6 +2239,9 @@
   "noWeakPasswords": {
     "message": "脆弱なパスワードは見つかりませんでした。"
   },
+  "weakness": {
+    "message": "弱さ"
+  },
   "reusedPasswordsReport": {
     "message": "再利用パスワード調査"
   },
@@ -2257,6 +2266,9 @@
   },
   "noReusedPasswords": {
     "message": "再利用しているパスワードは見つかりませんでした。"
+  },
+  "timesReused": {
+    "message": "再利用した回数"
   },
   "reusedXTimes": {
     "message": "再利用 $COUNT$回",
@@ -2554,6 +2566,9 @@
   },
   "downloadLicense": {
     "message": "ライセンスのダウンロード"
+  },
+  "viewBillingToken": {
+    "message": "請求トークンを表示"
   },
   "updateLicense": {
     "message": "ライセンスの更新"
@@ -3159,6 +3174,10 @@
   },
   "incorrectPin": {
     "message": "PIN が正しくありません"
+  },
+  "pin": {
+    "message": "PIN",
+    "description": "PIN code. Ex. The short code (often numeric) that you use to unlock a device."
   },
   "exportedVault": {
     "message": "保管庫をエクスポートしました。"
@@ -5983,10 +6002,10 @@
     "message": "スポンサーシップにより無償"
   },
   "viewBillingSyncToken": {
-    "message": "請求書同期トークンを表示"
+    "message": "請求同期トークンを表示"
   },
-  "generateBillingSyncToken": {
-    "message": "請求同期トークンを生成"
+  "generateBillingToken": {
+    "message": "請求トークンを生成する"
   },
   "copyPasteBillingSync": {
     "message": "セルフホスト組織の請求同期設定にこのトークンをコピーして貼り付けてください。"
@@ -5994,8 +6013,8 @@
   "billingSyncCanAccess": {
     "message": "請求同期トークンは、この組織のサブスクリプション設定にアクセスして編集できます。"
   },
-  "manageBillingSync": {
-    "message": "請求書同期の管理"
+  "manageBillingTokenSync": {
+    "message": "請求トークンの管理"
   },
   "setUpBillingSync": {
     "message": "請求書同期の設定"
@@ -6010,7 +6029,7 @@
     "message": "続行する場合は、セルフホストサーバー上で請求同期を再設定する必要があります。"
   },
   "rotateBillingSyncTokenTitle": {
-    "message": "請求同期トークンを更新すると、前のトークンは無効になります。"
+    "message": "請求同期トークンをロテートすると、前のトークンは無効になります。"
   },
   "selfHostedServer": {
     "message": "自己ホスト型"
@@ -6052,16 +6071,16 @@
     "message": "組織を自分のサーバーにセットアップするには、ライセンスファイルをアップロードする必要があります。 セルフホスト組織の Free Families プランと高度な課金機能をサポートするには、 請求同期を設定する必要があります。"
   },
   "billingSyncApiKeyRotated": {
-    "message": "トークンを更新しました。"
-  },
-  "billingSyncDesc": {
-    "message": "請求同期は、あなたのサーバー上のファミリースポンサーシップと自動ライセンス同期を解除します。 Bitwarden クラウドサーバーで更新を行ったら、ライセンス同期を選択して変更を適用してください。"
+    "message": "トークンをロテートしました"
   },
   "billingSyncKeyDesc": {
     "message": "このフォームを完了するには、クラウド組織のサブスクリプション設定からの請求同期トークンが必要です。"
   },
   "billingSyncKey": {
     "message": "請求同期トークン"
+  },
+  "automaticBillingSyncDesc": {
+    "message": "Automatic sync unlocks Families sponsorships and allows you to sync your license without uploading a file. After making updates in the Bitwarden cloud server, select Sync License to apply changes."
   },
   "active": {
     "message": "有効"
@@ -6579,6 +6598,18 @@
       "count": {
         "content": "$1",
         "example": "4"
+      }
+    }
+  },
+  "singleFieldNeedsAttention": {
+    "message": "1 フィールドは注意が必要です。"
+  },
+  "multipleFieldsNeedAttention": {
+    "message": "$COUNT$ フィールドは注意が必要です。",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "2"
       }
     }
   },
@@ -7442,6 +7473,15 @@
   "or": {
     "message": "または"
   },
+  "unlockWithBiometrics": {
+    "message": "生体認証でロック解除"
+  },
+  "unlockWithPin": {
+    "message": "PIN でロック解除"
+  },
+  "unlockWithMasterPassword": {
+    "message": "マスターパスワードでロック解除"
+  },
   "licenseAndBillingManagement": {
     "message": "ライセンスと請求管理"
   },
@@ -7451,8 +7491,8 @@
   "manualUpload": {
     "message": "手動アップロード"
   },
-  "manualUploadDesc": {
-    "message": "請求を同期したくない場合は、ここでライセンスを手動でアップロードしてください。"
+  "manualBillingTokenUploadDesc": {
+    "message": "請求同期にオプトインしない場合は、ここでライセンスを手動でアップロードしてください。ファミリースポンサーシップは自動的にアンロックされません。"
   },
   "syncLicense": {
     "message": "ライセンスを同期"
@@ -9225,5 +9265,14 @@
   },
   "editAccess": {
     "message": "編集権限"
+  },
+  "addAttachment": {
+    "message": "添付ファイルを追加"
+  },
+  "maxFileSizeSansPunctuation": {
+    "message": "ファイルサイズの上限は 500MB です"
+  },
+  "permanentlyDeleteAttachmentConfirmation": {
+    "message": "この添付ファイルを完全に削除してもよろしいですか？"
   }
 }
