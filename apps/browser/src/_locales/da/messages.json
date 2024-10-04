@@ -604,6 +604,15 @@
   "yourVaultIsLocked": {
     "message": "Din boks er låst. Bekræft din identitet for at fortsætte."
   },
+  "yourVaultIsLockedV2": {
+    "message": "Boksen er låst"
+  },
+  "yourAccountIsLocked": {
+    "message": "Kontoen er låst"
+  },
+  "or": {
+    "message": "eller"
+  },
   "unlock": {
     "message": "Lås op"
   },
@@ -1935,6 +1944,9 @@
   },
   "unlockWithBiometrics": {
     "message": "Lås op med biometri"
+  },
+  "unlockWithMasterPassword": {
+    "message": "Oplås med hovedadgangskode"
   },
   "awaitDesktop": {
     "message": "Afventer bekræftelse fra skrivebordet"
@@ -3622,6 +3634,9 @@
   },
   "typePasskey": {
     "message": "Adgangsnøgle"
+  },
+  "accessing": {
+    "message": "Tilgår"
   },
   "passkeyNotCopied": {
     "message": "Adgangsnøglen kopieres ikke"

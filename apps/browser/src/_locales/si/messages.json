@@ -604,6 +604,15 @@
   "yourVaultIsLocked": {
     "message": "ඔබේ සුරක්ෂිතාගාරය අගුළු දමා ඇත. දිගටම කරගෙන යාමට ඔබේ අනන්යතාවය සත්යාපනය කරන්න."
   },
+  "yourVaultIsLockedV2": {
+    "message": "Your vault is locked"
+  },
+  "yourAccountIsLocked": {
+    "message": "Your account is locked"
+  },
+  "or": {
+    "message": "or"
+  },
   "unlock": {
     "message": "අගුලුහරින්න"
   },
@@ -1936,6 +1945,9 @@
   "unlockWithBiometrics": {
     "message": "ජෛව විද්යාව සමඟ අගුළු ඇරීම"
   },
+  "unlockWithMasterPassword": {
+    "message": "Unlock with master password"
+  },
   "awaitDesktop": {
     "message": "ඩෙස්ක්ටොප් සිට තහවුරු කිරීම බලාපොරොත්තුවෙන්"
   },
@@ -2509,7 +2521,7 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendFilePopoutDialogDesc": {
-    "message": "To create a file Send, you need to pop out te extension to a new window.",
+    "message": "To create a file Send, you need to pop out the extension to a new window.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendLinuxChromiumFileWarning": {
@@ -3622,6 +3634,9 @@
   },
   "typePasskey": {
     "message": "Passkey"
+  },
+  "accessing": {
+    "message": "Accessing"
   },
   "passkeyNotCopied": {
     "message": "Passkey will not be copied"

@@ -604,6 +604,15 @@
   "yourVaultIsLocked": {
     "message": "Το vault σας είναι κλειδωμένο. Επαληθεύστε τον κύριο κωδικό πρόσβασης για να συνεχίσετε."
   },
+  "yourVaultIsLockedV2": {
+    "message": "Η κρύπτη σας έχει κλειδωθεί"
+  },
+  "yourAccountIsLocked": {
+    "message": "Ο λογαριασμός σας έχει κλειδωθεί"
+  },
+  "or": {
+    "message": "ή"
+  },
   "unlock": {
     "message": "Ξεκλείδωμα"
   },
@@ -1936,6 +1945,9 @@
   "unlockWithBiometrics": {
     "message": "Ξεκλείδωμα με βιομετρικά στοιχεία"
   },
+  "unlockWithMasterPassword": {
+    "message": "Ξεκλείδωμα με κύριο κωδικό πρόσβασης"
+  },
   "awaitDesktop": {
     "message": "Αναμονή επιβεβαίωσης από την επιφάνεια εργασίας"
   },
@@ -2505,11 +2517,11 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendFilePopoutDialogText": {
-    "message": "Pop out extension?",
+    "message": "Άνοιγμα επέκτασης σε αναδυόμενο παράθυρο;",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendFilePopoutDialogDesc": {
-    "message": "To create a file Send, you need to pop out te extension to a new window.",
+    "message": "Για να δημιουργήσετε ένα Send αρχείου, θα πρέπει να ανοίξετε την επέκταση σε νέο αναδυόμενο παράθυρο.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendLinuxChromiumFileWarning": {
@@ -2522,7 +2534,7 @@
     "message": "Για να επιλέξετε ένα αρχείο χρησιμοποιώντας το Safari, βγαίνετε σε ένα νέο παράθυρο κάνοντας κλικ σε αυτή τη διαφήμιση."
   },
   "popOut": {
-    "message": "Pop out"
+    "message": "Άνοιγμα σε αναδυόμενο παράθυρο"
   },
   "sendFileCalloutHeader": {
     "message": "Πριν ξεκινήσετε"
@@ -3623,6 +3635,9 @@
   "typePasskey": {
     "message": "Κλειδί πρόσβασης"
   },
+  "accessing": {
+    "message": "Πρόσβαση"
+  },
   "passkeyNotCopied": {
     "message": "Το κλειδί πρόσβασης δε θα αντιγραφεί"
   },
@@ -4498,6 +4513,6 @@
     "message": "Δεν έχετε δικαίωμα να επεξεργαστείτε αυτό το αντικείμενο"
   },
   "authenticating": {
-    "message": "Authenticating"
+    "message": "Ταυτοποίηση"
   }
 }

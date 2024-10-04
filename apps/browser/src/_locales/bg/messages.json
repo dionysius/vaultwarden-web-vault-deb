@@ -604,6 +604,15 @@
   "yourVaultIsLocked": {
     "message": "Трезорът е заключен — въведете главната си парола, за да продължите."
   },
+  "yourVaultIsLockedV2": {
+    "message": "Трезорът Ви е заключен"
+  },
+  "yourAccountIsLocked": {
+    "message": "Регистрацията Ви е заключена"
+  },
+  "or": {
+    "message": "или"
+  },
   "unlock": {
     "message": "Отключване"
   },
@@ -1935,6 +1944,9 @@
   },
   "unlockWithBiometrics": {
     "message": "Отключване с биометрични данни"
+  },
+  "unlockWithMasterPassword": {
+    "message": "Отключване с главната парола"
   },
   "awaitDesktop": {
     "message": "Чака се потвърждение от самостоятелното приложение"
@@ -3622,6 +3634,9 @@
   },
   "typePasskey": {
     "message": "Секретен ключ"
+  },
+  "accessing": {
+    "message": "Използване на"
   },
   "passkeyNotCopied": {
     "message": "Секретният ключ няма да бъде копиран"

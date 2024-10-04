@@ -604,6 +604,15 @@
   "yourVaultIsLocked": {
     "message": "Je kluis is vergrendeld. Bevestig je identiteit om door te gaan."
   },
+  "yourVaultIsLockedV2": {
+    "message": "Je kluis is vergrendeld"
+  },
+  "yourAccountIsLocked": {
+    "message": "Je account is vergrendeld"
+  },
+  "or": {
+    "message": "of"
+  },
   "unlock": {
     "message": "Ontgrendelen"
   },
@@ -1935,6 +1944,9 @@
   },
   "unlockWithBiometrics": {
     "message": "Biometrisch ontgrendelen"
+  },
+  "unlockWithMasterPassword": {
+    "message": "Ontgrendelen met hoofdwachtwoord"
   },
   "awaitDesktop": {
     "message": "Wacht op bevestiging van de desktop"
@@ -3623,6 +3635,9 @@
   "typePasskey": {
     "message": "Passkey"
   },
+  "accessing": {
+    "message": "Toegang verkrijgen"
+  },
   "passkeyNotCopied": {
     "message": "Passkey wordt niet gekopieerd"
   },
@@ -4100,7 +4115,7 @@
     }
   },
   "permanentlyDeleteAttachmentConfirmation": {
-    "message": "Weet je zeker dat je deze bijlage definitief permanen wilt verwijderen?"
+    "message": "Weet je zeker dat je deze bijlage definitief wilt verwijderen?"
   },
   "premium": {
     "message": "Premium"

@@ -604,6 +604,15 @@
   "yourVaultIsLocked": {
     "message": "Your vault is locked. Verify your identity to continue."
   },
+  "yourVaultIsLockedV2": {
+    "message": "Your vault is locked"
+  },
+  "yourAccountIsLocked": {
+    "message": "Your account is locked"
+  },
+  "or": {
+    "message": "or"
+  },
   "unlock": {
     "message": "Unlock"
   },
@@ -1935,6 +1944,9 @@
   },
   "unlockWithBiometrics": {
     "message": "Unlock with biometrics"
+  },
+  "unlockWithMasterPassword": {
+    "message": "Unlock with master password"
   },
   "awaitDesktop": {
     "message": "Awaiting confirmation from desktop"
@@ -3622,6 +3634,9 @@
   },
   "typePasskey": {
     "message": "Passkey"
+  },
+  "accessing": {
+    "message": "Accessing"
   },
   "passkeyNotCopied": {
     "message": "Passkey will not be copied"

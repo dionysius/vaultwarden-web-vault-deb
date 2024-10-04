@@ -50,7 +50,7 @@
     "message": "主密碼提示可以在您忘記主密碼時幫助您回憶主密碼。"
   },
   "masterPassHintText": {
-    "message": "If you forget your password, the password hint can be sent to your email. $CURRENT$/$MAXIMUM$ character maximum.",
+    "message": "如果您忘記了密碼，可以傳送密碼提示到您的電子郵件。$CURRENT$ / 最多 $MAXIMUM$ 個字元",
     "placeholders": {
       "current": {
         "content": "$1",
@@ -72,7 +72,7 @@
     "message": "加入組織"
   },
   "finishJoiningThisOrganizationBySettingAMasterPassword": {
-    "message": "Finish joining this organization by setting a master password."
+    "message": "設定主密碼以完成加入這個組織"
   },
   "tab": {
     "message": "分頁"
@@ -126,10 +126,10 @@
     "message": "複製護照號碼"
   },
   "copyLicenseNumber": {
-    "message": "Copy license number"
+    "message": "複製駕照號碼"
   },
   "copyCustomField": {
-    "message": "Copy $FIELD$",
+    "message": "複製 $FIELD$",
     "placeholders": {
       "field": {
         "content": "$1",
@@ -138,10 +138,10 @@
     }
   },
   "copyWebsite": {
-    "message": "Copy website"
+    "message": "複製網站"
   },
   "copyNotes": {
-    "message": "Copy notes"
+    "message": "複製備註"
   },
   "autoFill": {
     "message": "自動填入"
@@ -195,16 +195,16 @@
     "message": "新增項目"
   },
   "accountEmail": {
-    "message": "Account email"
+    "message": "帳號電子郵件"
   },
   "requestHint": {
-    "message": "Request hint"
+    "message": "請求提示"
   },
   "requestPasswordHint": {
-    "message": "Request password hint"
+    "message": "請求密碼提示"
   },
   "enterYourAccountEmailAddressAndYourPasswordHintWillBeSentToYou": {
-    "message": "Enter your account email address and your password hint will be sent to you"
+    "message": "輸入您的帳號電子郵件，您的密碼提示會傳送給您"
   },
   "passwordHint": {
     "message": "密碼提示"
@@ -237,25 +237,25 @@
     "message": "變更主密碼"
   },
   "continueToWebApp": {
-    "message": "Continue to web app?"
+    "message": "接下來造訪 Web App 嗎？"
   },
   "continueToWebAppDesc": {
-    "message": "Explore more features of your Bitwarden account on the web app."
+    "message": "在 Web 應用程式上探索 Bitwarden 帳戶的更多功能。"
   },
   "continueToHelpCenter": {
-    "message": "Continue to Help Center?"
+    "message": "接下來前往說明中心嗎？"
   },
   "continueToHelpCenterDesc": {
-    "message": "Learn more about how to use Bitwarden on the Help Center."
+    "message": "在說明中心了解有關如何使用 Bitwarden 的更多資訊。"
   },
   "continueToBrowserExtensionStore": {
-    "message": "Continue to browser extension store?"
+    "message": "接下來到瀏覽器的擴充套件商店？"
   },
   "continueToBrowserExtensionStoreDesc": {
-    "message": "Help others find out if Bitwarden is right for them. Visit your browser's extension store and leave a rating now."
+    "message": "幫助其他人了解 Bitwarden 是否適合他們。立即造訪瀏覽器的擴充套件商店並留下評分。"
   },
   "changeMasterPasswordOnWebConfirmation": {
-    "message": "You can change your master password on the Bitwarden web app."
+    "message": "您可以在 Bitwarden Web 應用程式上變更主密碼。"
   },
   "fingerprintPhrase": {
     "message": "指紋短語",
@@ -272,22 +272,22 @@
     "message": "登出"
   },
   "aboutBitwarden": {
-    "message": "About Bitwarden"
+    "message": "關於 Bitwarden"
   },
   "about": {
     "message": "關於"
   },
   "moreFromBitwarden": {
-    "message": "More from Bitwarden"
+    "message": "來自 Bitwarden 的更多產品"
   },
   "continueToBitwardenDotCom": {
-    "message": "Continue to bitwarden.com?"
+    "message": "接下來到 bitwarden.com？"
   },
   "bitwardenForBusiness": {
-    "message": "Bitwarden for Business"
+    "message": "Bitwarden 商業版"
   },
   "bitwardenAuthenticator": {
-    "message": "Bitwarden Authenticator"
+    "message": "Bitwarden 驗證器"
   },
   "continueToAuthenticatorPageDesc": {
     "message": "Bitwarden Authenticator allows you to store authenticator keys and generate TOTP codes for 2-step verification flows. Learn more on the bitwarden.com website"
@@ -604,6 +604,15 @@
   "yourVaultIsLocked": {
     "message": "您的密碼庫已鎖定。請驗證身分以繼續。"
   },
+  "yourVaultIsLockedV2": {
+    "message": "Your vault is locked"
+  },
+  "yourAccountIsLocked": {
+    "message": "Your account is locked"
+  },
+  "or": {
+    "message": "or"
+  },
   "unlock": {
     "message": "解鎖"
   },
@@ -690,7 +699,7 @@
     "message": "Your master password cannot be recovered if you forget it!"
   },
   "masterPassHintLabel": {
-    "message": "Master password hint"
+    "message": "您已成功創建新帳戶！"
   },
   "errorOccurred": {
     "message": "發生錯誤"
@@ -724,7 +733,7 @@
     "message": "帳戶已建立！現在可以登入了。"
   },
   "newAccountCreated2": {
-    "message": "Your new account has been created!"
+    "message": "您已成功創建新帳戶！"
   },
   "youHaveBeenLoggedIn": {
     "message": "You have been logged in!"
@@ -788,13 +797,13 @@
     "message": "已登出"
   },
   "loggedOutDesc": {
-    "message": "You have been logged out of your account."
+    "message": "你已經登出了你的帳號。"
   },
   "loginExpired": {
     "message": "您的登入階段已過期。"
   },
   "logIn": {
-    "message": "Log in"
+    "message": "登入"
   },
   "restartRegistration": {
     "message": "Restart registration"
@@ -1936,6 +1945,9 @@
   "unlockWithBiometrics": {
     "message": "使用生物特徵辨識解鎖"
   },
+  "unlockWithMasterPassword": {
+    "message": "Unlock with master password"
+  },
   "awaitDesktop": {
     "message": "等待來自桌面應用程式的確認"
   },
@@ -2509,7 +2521,7 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendFilePopoutDialogDesc": {
-    "message": "To create a file Send, you need to pop out te extension to a new window.",
+    "message": "To create a file Send, you need to pop out the extension to a new window.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendLinuxChromiumFileWarning": {
@@ -3622,6 +3634,9 @@
   },
   "typePasskey": {
     "message": "密碼金鑰"
+  },
+  "accessing": {
+    "message": "Accessing"
   },
   "passkeyNotCopied": {
     "message": "密碼金鑰不會被複製"

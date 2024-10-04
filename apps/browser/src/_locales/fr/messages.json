@@ -604,6 +604,15 @@
   "yourVaultIsLocked": {
     "message": "Votre coffre est verrouillé. Vérifiez votre identité pour continuer."
   },
+  "yourVaultIsLockedV2": {
+    "message": "Votre coffre est verrouillé"
+  },
+  "yourAccountIsLocked": {
+    "message": "Votre compte est verrouillé"
+  },
+  "or": {
+    "message": "ou"
+  },
   "unlock": {
     "message": "Déverrouiller"
   },
@@ -1935,6 +1944,9 @@
   },
   "unlockWithBiometrics": {
     "message": "Déverrouiller par biométrie"
+  },
+  "unlockWithMasterPassword": {
+    "message": "Déverrouiller avec le mot de passe principal"
   },
   "awaitDesktop": {
     "message": "En attente de confirmation de l'application de bureau"
@@ -3622,6 +3634,9 @@
   },
   "typePasskey": {
     "message": "Clé d'identification (passkey)"
+  },
+  "accessing": {
+    "message": "Accès en cours"
   },
   "passkeyNotCopied": {
     "message": "La clé d'identification (passkey) ne sera pas copiée"

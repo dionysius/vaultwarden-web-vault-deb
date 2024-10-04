@@ -604,6 +604,15 @@
   "yourVaultIsLocked": {
     "message": "保管庫がロックされています。続行するには本人確認を行ってください。"
   },
+  "yourVaultIsLockedV2": {
+    "message": "保管庫がロックされています"
+  },
+  "yourAccountIsLocked": {
+    "message": "アカウントがロックされています"
+  },
+  "or": {
+    "message": "または"
+  },
   "unlock": {
     "message": "ロック解除"
   },
@@ -1935,6 +1944,9 @@
   },
   "unlockWithBiometrics": {
     "message": "生体認証でロック解除"
+  },
+  "unlockWithMasterPassword": {
+    "message": "マスターパスワードでロック解除"
   },
   "awaitDesktop": {
     "message": "デスクトップからの確認待ち"
@@ -3622,6 +3634,9 @@
   },
   "typePasskey": {
     "message": "パスキー"
+  },
+  "accessing": {
+    "message": "アクセス中"
   },
   "passkeyNotCopied": {
     "message": "パスキーはコピーされません"

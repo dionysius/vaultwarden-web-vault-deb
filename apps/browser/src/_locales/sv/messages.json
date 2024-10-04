@@ -604,6 +604,15 @@
   "yourVaultIsLocked": {
     "message": "Ditt valv är låst. Verifiera din identitet för att fortsätta."
   },
+  "yourVaultIsLockedV2": {
+    "message": "Ditt valv är låst"
+  },
+  "yourAccountIsLocked": {
+    "message": "Ditt konto är låst"
+  },
+  "or": {
+    "message": "eller"
+  },
   "unlock": {
     "message": "Lås upp"
   },
@@ -1936,6 +1945,9 @@
   "unlockWithBiometrics": {
     "message": "Lås upp med biometri"
   },
+  "unlockWithMasterPassword": {
+    "message": "Lås upp med huvudlösenord"
+  },
   "awaitDesktop": {
     "message": "Väntar på bekräftelse från skrivbordsprogrammet"
   },
@@ -2509,7 +2521,7 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendFilePopoutDialogDesc": {
-    "message": "To create a file Send, you need to pop out te extension to a new window.",
+    "message": "To create a file Send, you need to pop out the extension to a new window.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendLinuxChromiumFileWarning": {
@@ -3622,6 +3634,9 @@
   },
   "typePasskey": {
     "message": "Nyckel"
+  },
+  "accessing": {
+    "message": "Accessing"
   },
   "passkeyNotCopied": {
     "message": "Lösennyckeln kommer inte kopieras"

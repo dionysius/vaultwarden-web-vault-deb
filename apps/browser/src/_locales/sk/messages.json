@@ -604,6 +604,15 @@
   "yourVaultIsLocked": {
     "message": "Váš trezor je uzamknutý. Ak chcete pokračovať, overte svoju identitu."
   },
+  "yourVaultIsLockedV2": {
+    "message": "Váš trezor je zamknutý"
+  },
+  "yourAccountIsLocked": {
+    "message": "Váš účet je zamknutý"
+  },
+  "or": {
+    "message": "alebo"
+  },
   "unlock": {
     "message": "Odomknúť"
   },
@@ -1935,6 +1944,9 @@
   },
   "unlockWithBiometrics": {
     "message": "Odomknúť pomocou biometrie"
+  },
+  "unlockWithMasterPassword": {
+    "message": "Odomknúť pomocou hlavného hesla"
   },
   "awaitDesktop": {
     "message": "Čaká sa na potvrdenie z desktopu"
@@ -3622,6 +3634,9 @@
   },
   "typePasskey": {
     "message": "Prístupový kľúč"
+  },
+  "accessing": {
+    "message": "Accessing"
   },
   "passkeyNotCopied": {
     "message": "Prístupový kód sa neskopíruje"

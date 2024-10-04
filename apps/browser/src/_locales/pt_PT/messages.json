@@ -604,6 +604,15 @@
   "yourVaultIsLocked": {
     "message": "O seu cofre está bloqueado. Verifique a sua identidade para continuar."
   },
+  "yourVaultIsLockedV2": {
+    "message": "O seu cofre está bloqueado"
+  },
+  "yourAccountIsLocked": {
+    "message": "A sua conta está bloqueada"
+  },
+  "or": {
+    "message": "ou"
+  },
   "unlock": {
     "message": "Desbloquear"
   },
@@ -1935,6 +1944,9 @@
   },
   "unlockWithBiometrics": {
     "message": "Desbloquear com biometria"
+  },
+  "unlockWithMasterPassword": {
+    "message": "Desbloquear com a palavra-passe mestra"
   },
   "awaitDesktop": {
     "message": "A aguardar confirmação da aplicação para computador"
@@ -3622,6 +3634,9 @@
   },
   "typePasskey": {
     "message": "Chave de acesso"
+  },
+  "accessing": {
+    "message": "A aceder"
   },
   "passkeyNotCopied": {
     "message": "A chave de acesso não será copiada"

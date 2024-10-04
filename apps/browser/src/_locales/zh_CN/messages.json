@@ -490,7 +490,7 @@
     "description": "Label for the avoid ambiguous characters checkbox."
   },
   "generatorPolicyInEffect": {
-    "message": "企业策略要求应用到您的生成器选项中。",
+    "message": "企业策略要求已应用到您的生成器选项中。",
     "description": "Indicates that a policy limits the credential generator screen."
   },
   "searchVault": {
@@ -603,6 +603,15 @@
   },
   "yourVaultIsLocked": {
     "message": "您的密码库已锁定。请先验证您的身份。"
+  },
+  "yourVaultIsLockedV2": {
+    "message": "您的密码库已锁定"
+  },
+  "yourAccountIsLocked": {
+    "message": "您的账户已锁定"
+  },
+  "or": {
+    "message": "或"
   },
   "unlock": {
     "message": "解锁"
@@ -1935,6 +1944,9 @@
   },
   "unlockWithBiometrics": {
     "message": "使用生物识别解锁"
+  },
+  "unlockWithMasterPassword": {
+    "message": "使用主密码解锁"
   },
   "awaitDesktop": {
     "message": "等待来自桌面应用程序的确认"
@@ -3529,7 +3541,7 @@
     }
   },
   "duoHealthCheckResultsInNullAuthUrlError": {
-    "message": "与 Duo 服务连接时出错。使用不同的两步登录方式或联系 Duo 寻求帮助。"
+    "message": "与 Duo 服务连接时出错。请使用不同的两步登录方式或联系 Duo 寻求帮助。"
   },
   "launchDuoAndFollowStepsToFinishLoggingIn": {
     "message": "启动 DUO 并按照步骤完成登录。"
@@ -3622,6 +3634,9 @@
   },
   "typePasskey": {
     "message": "通行密钥"
+  },
+  "accessing": {
+    "message": "Accessing"
   },
   "passkeyNotCopied": {
     "message": "通行密钥不会被复制"

@@ -604,6 +604,15 @@
   "yourVaultIsLocked": {
     "message": "Váš trezor je uzamčen. Pro pokračování musíte zadat hlavní heslo."
   },
+  "yourVaultIsLockedV2": {
+    "message": "Váš trezor je uzamčen"
+  },
+  "yourAccountIsLocked": {
+    "message": "Váš účet je uzamčen"
+  },
+  "or": {
+    "message": "nebo"
+  },
   "unlock": {
     "message": "Odemknout"
   },
@@ -1935,6 +1944,9 @@
   },
   "unlockWithBiometrics": {
     "message": "Odemknout pomocí biometrie"
+  },
+  "unlockWithMasterPassword": {
+    "message": "Odemknout pomocí hlavního hesla"
   },
   "awaitDesktop": {
     "message": "Čeká se na potvrzení z aplikace v počítači"
@@ -3622,6 +3634,9 @@
   },
   "typePasskey": {
     "message": "Přístupový klíč"
+  },
+  "accessing": {
+    "message": "Přistupování"
   },
   "passkeyNotCopied": {
     "message": "Přístupový klíč nebude zkopírován"

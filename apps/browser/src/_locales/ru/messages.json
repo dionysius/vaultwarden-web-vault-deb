@@ -604,6 +604,15 @@
   "yourVaultIsLocked": {
     "message": "Ваше хранилище заблокировано. Подтвердите свою личность, чтобы продолжить"
   },
+  "yourVaultIsLockedV2": {
+    "message": "Ваше хранилище заблокировано"
+  },
+  "yourAccountIsLocked": {
+    "message": "Ваш аккаунт заблокирован"
+  },
+  "or": {
+    "message": "или"
+  },
   "unlock": {
     "message": "Разблокировать"
   },
@@ -1935,6 +1944,9 @@
   },
   "unlockWithBiometrics": {
     "message": "Разблокировать с помощью биометрии"
+  },
+  "unlockWithMasterPassword": {
+    "message": "Разблокировать мастер-паролем"
   },
   "awaitDesktop": {
     "message": "Ожидание подтверждения с компьютера"
@@ -3622,6 +3634,9 @@
   },
   "typePasskey": {
     "message": "Passkey"
+  },
+  "accessing": {
+    "message": "Доступ"
   },
   "passkeyNotCopied": {
     "message": "Passkey не будет скопирован"

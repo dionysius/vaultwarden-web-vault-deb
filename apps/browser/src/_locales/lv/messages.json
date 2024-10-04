@@ -604,6 +604,15 @@
   "yourVaultIsLocked": {
     "message": "Glabātava ir aizslēgta. Jāapliecina sava identitāte, lai turpinātu."
   },
+  "yourVaultIsLockedV2": {
+    "message": "Glabātava ir slēgta"
+  },
+  "yourAccountIsLocked": {
+    "message": "Konts ir slēgts"
+  },
+  "or": {
+    "message": "vai"
+  },
   "unlock": {
     "message": "Atslēgt"
   },
@@ -1935,6 +1944,9 @@
   },
   "unlockWithBiometrics": {
     "message": "Atslēgt ar biometriju"
+  },
+  "unlockWithMasterPassword": {
+    "message": "Atslēgt ar galveno paroli"
   },
   "awaitDesktop": {
     "message": "Tiek gaidīts apstiprinājums no darbvirsmas"
@@ -3383,7 +3395,7 @@
     "description": "Page title in overlay"
   },
   "unlockYourAccountToViewMatchingLogins": {
-    "message": "Jāatslēdz savs konts, lai apskatītu atbilstošus pieteikšanās vienumus",
+    "message": "Jāatslēdz savs konts, lai apskatītu atbilstošos pieteikšanās vienumus",
     "description": "Text to display in overlay when the account is locked."
   },
   "unlockYourAccountToViewAutofillSuggestions": {
@@ -3623,6 +3635,9 @@
   "typePasskey": {
     "message": "Piekļuves atslēga"
   },
+  "accessing": {
+    "message": "Piekļūst"
+  },
   "passkeyNotCopied": {
     "message": "Piekļuves atslēga netiks ievietota starpliktuvē"
   },
@@ -3657,7 +3672,7 @@
     "message": "Saglabāt piekļuves atslēgu kā jaunu pieteikšanās vienumu"
   },
   "chooseCipherForPasskeySave": {
-    "message": "Izvēlēties pieteikšanās vienumu, kurā saglabāt šo piekļuves atslēgu"
+    "message": "Jāizvēlas pieteikšanās vienumu, kurā saglabāt šo piekļuves atslēgu"
   },
   "chooseCipherForPasskeyAuth": {
     "message": "Izvēlēties piekļuves atslēgu, ar kuru pieteikties"

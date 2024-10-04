@@ -604,6 +604,15 @@
   "yourVaultIsLocked": {
     "message": "Ваше сховище заблоковане. Для продовження виконайте перевірку."
   },
+  "yourVaultIsLockedV2": {
+    "message": "Ваше сховище заблоковано"
+  },
+  "yourAccountIsLocked": {
+    "message": "Ваш обліковий запис заблоковано"
+  },
+  "or": {
+    "message": "або"
+  },
   "unlock": {
     "message": "Розблокувати"
   },
@@ -1935,6 +1944,9 @@
   },
   "unlockWithBiometrics": {
     "message": "Розблокувати з біометрією"
+  },
+  "unlockWithMasterPassword": {
+    "message": "Розблокувати з головним паролем"
   },
   "awaitDesktop": {
     "message": "Очікується підтвердження з комп'ютера"
@@ -3622,6 +3634,9 @@
   },
   "typePasskey": {
     "message": "Ключ доступу"
+  },
+  "accessing": {
+    "message": "Доступ"
   },
   "passkeyNotCopied": {
     "message": "Ключ доступу не буде скопійовано"

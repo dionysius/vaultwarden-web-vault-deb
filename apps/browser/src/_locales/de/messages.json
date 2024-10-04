@@ -604,6 +604,15 @@
   "yourVaultIsLocked": {
     "message": "Dein Tresor ist gesperrt. Verifiziere deine Identität, um fortzufahren."
   },
+  "yourVaultIsLockedV2": {
+    "message": "Dein Tresor ist gesperrt"
+  },
+  "yourAccountIsLocked": {
+    "message": "Dein Konto ist gesperrt"
+  },
+  "or": {
+    "message": "oder"
+  },
   "unlock": {
     "message": "Entsperren"
   },
@@ -1936,6 +1945,9 @@
   "unlockWithBiometrics": {
     "message": "Mit Biometrie entsperren"
   },
+  "unlockWithMasterPassword": {
+    "message": "Mit Master-Passwort entsperren"
+  },
   "awaitDesktop": {
     "message": "Warte auf Bestätigung vom Desktop"
   },
@@ -2505,11 +2517,11 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendFilePopoutDialogText": {
-    "message": "Pop out extension?",
+    "message": "Erweiterung in einem neuen Fenster öffnen?",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendFilePopoutDialogDesc": {
-    "message": "To create a file Send, you need to pop out te extension to a new window.",
+    "message": "Um ein Datei-Send zu erstellen, musst du die Erweiterung in einem neuen Fenster öffnen.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendLinuxChromiumFileWarning": {
@@ -2522,7 +2534,7 @@
     "message": "Um eine Datei mit Safari auszuwählen, öffne ein neues Fenster, indem du auf dieses Banner klickst."
   },
   "popOut": {
-    "message": "Pop out"
+    "message": "Abkoppeln"
   },
   "sendFileCalloutHeader": {
     "message": "Bevor du beginnst"
@@ -3623,6 +3635,9 @@
   "typePasskey": {
     "message": "Passkey"
   },
+  "accessing": {
+    "message": "Zugriff auf"
+  },
   "passkeyNotCopied": {
     "message": "Passkey wird nicht kopiert"
   },
@@ -4498,6 +4513,6 @@
     "message": "Du bist nicht berechtigt, diesen Eintrag zu bearbeiten"
   },
   "authenticating": {
-    "message": "Authenticating"
+    "message": "Authentifizierung"
   }
 }

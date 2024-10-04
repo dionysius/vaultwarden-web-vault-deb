@@ -604,6 +604,15 @@
   "yourVaultIsLocked": {
     "message": "Anbarınız kilidlənib. Davam etmək üçün kimliyinizi doğrulayın."
   },
+  "yourVaultIsLockedV2": {
+    "message": "Anbarınız kilidlənib"
+  },
+  "yourAccountIsLocked": {
+    "message": "Hesabınız kilidlənib"
+  },
+  "or": {
+    "message": "və ya"
+  },
   "unlock": {
     "message": "Kilidi aç"
   },
@@ -1936,6 +1945,9 @@
   "unlockWithBiometrics": {
     "message": "Kilidi biometriklə açın"
   },
+  "unlockWithMasterPassword": {
+    "message": "Ana parolla kilidi aç"
+  },
   "awaitDesktop": {
     "message": "Masaüstündən təsdiq gözlənilir"
   },
@@ -2505,11 +2517,11 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendFilePopoutDialogText": {
-    "message": "Pop out extension?",
+    "message": "Uzantı yeni pəncərədə açılsın?",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendFilePopoutDialogDesc": {
-    "message": "To create a file Send, you need to pop out te extension to a new window.",
+    "message": "Bir fayl \"Send\"i yaratmaq üçün uzantını yeni bir pəncərədə açmalısınız.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendLinuxChromiumFileWarning": {
@@ -2522,7 +2534,7 @@
     "message": "Safari istifadə edərək bir fayl seçmək üçün bu bannerə klikləyərək yeni bir pəncərədə açın."
   },
   "popOut": {
-    "message": "Pop out"
+    "message": "Pəncərədə aç"
   },
   "sendFileCalloutHeader": {
     "message": "Başlamazdan əvvəl"
@@ -3623,6 +3635,9 @@
   "typePasskey": {
     "message": "Keçid açarı"
   },
+  "accessing": {
+    "message": "Müraciət edilir"
+  },
   "passkeyNotCopied": {
     "message": "Keçid açarı kopyalanmır"
   },
@@ -4498,6 +4513,6 @@
     "message": "Bu elementə düzəliş etmə icazəniz yoxdur"
   },
   "authenticating": {
-    "message": "Authenticating"
+    "message": "Kimlik doğrulama"
   }
 }

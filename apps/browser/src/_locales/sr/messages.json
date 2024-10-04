@@ -604,6 +604,15 @@
   "yourVaultIsLocked": {
     "message": "Сеф је закључан. Унесите главну лозинку за наставак."
   },
+  "yourVaultIsLockedV2": {
+    "message": "Your vault is locked"
+  },
+  "yourAccountIsLocked": {
+    "message": "Your account is locked"
+  },
+  "or": {
+    "message": "or"
+  },
   "unlock": {
     "message": "Откључај"
   },
@@ -1935,6 +1944,9 @@
   },
   "unlockWithBiometrics": {
     "message": "Откључавајте помоћу биометрије"
+  },
+  "unlockWithMasterPassword": {
+    "message": "Unlock with master password"
   },
   "awaitDesktop": {
     "message": "Чекање потврде са десктопа"
@@ -3622,6 +3634,9 @@
   },
   "typePasskey": {
     "message": "Приступачни кључ"
+  },
+  "accessing": {
+    "message": "Accessing"
   },
   "passkeyNotCopied": {
     "message": "Приступачни кључ неће бити копиран"

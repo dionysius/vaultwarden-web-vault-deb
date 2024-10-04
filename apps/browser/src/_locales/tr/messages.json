@@ -604,6 +604,15 @@
   "yourVaultIsLocked": {
     "message": "Kasanız kilitli. Devam etmek için kimliğinizi doğrulayın."
   },
+  "yourVaultIsLockedV2": {
+    "message": "Kasanız kilitli"
+  },
+  "yourAccountIsLocked": {
+    "message": "Hesabınız kilitlendi"
+  },
+  "or": {
+    "message": "veya"
+  },
   "unlock": {
     "message": "Kilidi aç"
   },
@@ -1935,6 +1944,9 @@
   },
   "unlockWithBiometrics": {
     "message": "Kilidi biyometri ile aç"
+  },
+  "unlockWithMasterPassword": {
+    "message": "Kilidi ana parola ile aç"
   },
   "awaitDesktop": {
     "message": "Masaüstünden onay bekleniyor"
@@ -3622,6 +3634,9 @@
   },
   "typePasskey": {
     "message": "Geçiş anahtarı"
+  },
+  "accessing": {
+    "message": "Accessing"
   },
   "passkeyNotCopied": {
     "message": "Geçiş anahtarı kopyalanmayacak"
