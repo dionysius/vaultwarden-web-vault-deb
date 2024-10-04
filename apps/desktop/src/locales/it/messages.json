@@ -918,6 +918,18 @@
   "yourVaultIsLocked": {
     "message": "La tua cassaforte è bloccata. Verifica la tua identità per continuare."
   },
+  "yourAccountIsLocked": {
+    "message": "Your account is locked"
+  },
+  "or": {
+    "message": "or"
+  },
+  "unlockWithBiometrics": {
+    "message": "Unlock with biometrics"
+  },
+  "unlockWithMasterPassword": {
+    "message": "Unlock with master password"
+  },
   "unlock": {
     "message": "Sblocca"
   },
@@ -2256,6 +2268,9 @@
   "locked": {
     "message": "Bloccato"
   },
+  "yourVaultIsLockedV2": {
+    "message": "Your vault is locked"
+  },
   "unlocked": {
     "message": "Sbloccato"
   },
@@ -2607,6 +2622,9 @@
   },
   "important": {
     "message": "Importante:"
+  },
+  "accessing": {
+    "message": "Accessing"
   },
   "accessTokenUnableToBeDecrypted": {
     "message": "Sei stato fatto uscire perché non è stato possibile decrittografare il tuo token di accesso. Entra di nuovo per risolvere il problema."

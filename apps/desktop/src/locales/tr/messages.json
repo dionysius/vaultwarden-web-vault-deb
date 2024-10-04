@@ -918,6 +918,18 @@
   "yourVaultIsLocked": {
     "message": "Kasanız kilitli. Devam etmek için kimliğinizi doğrulayın."
   },
+  "yourAccountIsLocked": {
+    "message": "Hesabınız kilitlendi"
+  },
+  "or": {
+    "message": "veya"
+  },
+  "unlockWithBiometrics": {
+    "message": "Kilidi biyometri ile aç"
+  },
+  "unlockWithMasterPassword": {
+    "message": "Kilidi ana parola ile aç"
+  },
   "unlock": {
     "message": "Kilidi aç"
   },
@@ -2256,6 +2268,9 @@
   "locked": {
     "message": "Kilitli"
   },
+  "yourVaultIsLockedV2": {
+    "message": "Kasanız kilitli"
+  },
   "unlocked": {
     "message": "Kilitli değil"
   },
@@ -2607,6 +2622,9 @@
   },
   "important": {
     "message": "Önemli:"
+  },
+  "accessing": {
+    "message": "Accessing"
   },
   "accessTokenUnableToBeDecrypted": {
     "message": "You have been logged out because your access token could not be decrypted. Please log in again to resolve this issue."

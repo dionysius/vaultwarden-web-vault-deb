@@ -918,6 +918,18 @@
   "yourVaultIsLocked": {
     "message": "Hvelvet ditt er låst. Bekreft hovedpassordet ditt for å fortsette."
   },
+  "yourAccountIsLocked": {
+    "message": "Your account is locked"
+  },
+  "or": {
+    "message": "or"
+  },
+  "unlockWithBiometrics": {
+    "message": "Unlock with biometrics"
+  },
+  "unlockWithMasterPassword": {
+    "message": "Unlock with master password"
+  },
   "unlock": {
     "message": "Lås opp"
   },
@@ -947,7 +959,7 @@
     "message": "Tidsavbrudd i hvelvet"
   },
   "vaultTimeout1": {
-    "message": "Timeout"
+    "message": "Tidsavbrudd"
   },
   "vaultTimeoutDesc": {
     "message": "Velg når hvelvet ditt skal tidsavbrytes og utføre den valgte handlingen."
@@ -2035,7 +2047,7 @@
     "message": "E-postbekreftelse kreves"
   },
   "emailVerifiedV2": {
-    "message": "Email verified"
+    "message": "E-post bekreftet"
   },
   "emailVerificationRequiredDesc": {
     "message": "Du må bekrefte E-postadressen din for å bruke denne funksjonen."
@@ -2255,6 +2267,9 @@
   },
   "locked": {
     "message": "Låst"
+  },
+  "yourVaultIsLockedV2": {
+    "message": "Your vault is locked"
   },
   "unlocked": {
     "message": "Opplåst"
@@ -2582,10 +2597,10 @@
     "message": "and continue creating your account."
   },
   "noEmail": {
-    "message": "No email?"
+    "message": "Ingen e-post?"
   },
   "goBack": {
-    "message": "Go back"
+    "message": "Gå tilbake"
   },
   "toEditYourEmailAddress": {
     "message": "to edit your email address."
@@ -2607,6 +2622,9 @@
   },
   "important": {
     "message": "Viktig:"
+  },
+  "accessing": {
+    "message": "Accessing"
   },
   "accessTokenUnableToBeDecrypted": {
     "message": "You have been logged out because your access token could not be decrypted. Please log in again to resolve this issue."

@@ -918,6 +918,18 @@
   "yourVaultIsLocked": {
     "message": "Tvoj trezor je zaključan. Potvrdi glavnu lozinku za nastavak."
   },
+  "yourAccountIsLocked": {
+    "message": "Your account is locked"
+  },
+  "or": {
+    "message": "or"
+  },
+  "unlockWithBiometrics": {
+    "message": "Unlock with biometrics"
+  },
+  "unlockWithMasterPassword": {
+    "message": "Unlock with master password"
+  },
   "unlock": {
     "message": "Otključaj"
   },
@@ -2256,6 +2268,9 @@
   "locked": {
     "message": "Zaključano"
   },
+  "yourVaultIsLockedV2": {
+    "message": "Your vault is locked"
+  },
   "unlocked": {
     "message": "Otključano"
   },
@@ -2607,6 +2622,9 @@
   },
   "important": {
     "message": "Važno:"
+  },
+  "accessing": {
+    "message": "Accessing"
   },
   "accessTokenUnableToBeDecrypted": {
     "message": "Napravljena je odjava ste jer se tvoj pristupni token nije mogao dešifrirati. Ponovno se prijavi."

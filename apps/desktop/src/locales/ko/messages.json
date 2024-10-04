@@ -918,6 +918,18 @@
   "yourVaultIsLocked": {
     "message": "보관함이 잠겨 있습니다. 마스터 비밀번호를 입력하여 계속하세요."
   },
+  "yourAccountIsLocked": {
+    "message": "Your account is locked"
+  },
+  "or": {
+    "message": "or"
+  },
+  "unlockWithBiometrics": {
+    "message": "Unlock with biometrics"
+  },
+  "unlockWithMasterPassword": {
+    "message": "Unlock with master password"
+  },
   "unlock": {
     "message": "잠금 해제"
   },
@@ -2256,6 +2268,9 @@
   "locked": {
     "message": "잠김"
   },
+  "yourVaultIsLockedV2": {
+    "message": "Your vault is locked"
+  },
   "unlocked": {
     "message": "잠금 해제됨"
   },
@@ -2607,6 +2622,9 @@
   },
   "important": {
     "message": "중요:"
+  },
+  "accessing": {
+    "message": "Accessing"
   },
   "accessTokenUnableToBeDecrypted": {
     "message": "You have been logged out because your access token could not be decrypted. Please log in again to resolve this issue."

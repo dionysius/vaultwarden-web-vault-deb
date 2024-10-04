@@ -918,6 +918,18 @@
   "yourVaultIsLocked": {
     "message": "U kluis is vergrendel. Verifieer u hoofwagwoord om voort te gaan."
   },
+  "yourAccountIsLocked": {
+    "message": "Your account is locked"
+  },
+  "or": {
+    "message": "or"
+  },
+  "unlockWithBiometrics": {
+    "message": "Unlock with biometrics"
+  },
+  "unlockWithMasterPassword": {
+    "message": "Unlock with master password"
+  },
   "unlock": {
     "message": "Ontgrendel"
   },
@@ -2256,6 +2268,9 @@
   "locked": {
     "message": "Vergrendel"
   },
+  "yourVaultIsLockedV2": {
+    "message": "Your vault is locked"
+  },
   "unlocked": {
     "message": "Ontgrendel"
   },
@@ -2607,6 +2622,9 @@
   },
   "important": {
     "message": "Belangrik:"
+  },
+  "accessing": {
+    "message": "Accessing"
   },
   "accessTokenUnableToBeDecrypted": {
     "message": "You have been logged out because your access token could not be decrypted. Please log in again to resolve this issue."

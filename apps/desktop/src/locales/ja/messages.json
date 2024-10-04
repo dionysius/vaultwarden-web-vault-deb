@@ -918,6 +918,18 @@
   "yourVaultIsLocked": {
     "message": "保管庫がロックされています。開くにはマスターパスワードを入力してください。"
   },
+  "yourAccountIsLocked": {
+    "message": "アカウントがロックされています"
+  },
+  "or": {
+    "message": "または"
+  },
+  "unlockWithBiometrics": {
+    "message": "生体認証でロック解除"
+  },
+  "unlockWithMasterPassword": {
+    "message": "マスターパスワードでロック解除"
+  },
   "unlock": {
     "message": "ロック解除"
   },
@@ -2256,6 +2268,9 @@
   "locked": {
     "message": "ロック中"
   },
+  "yourVaultIsLockedV2": {
+    "message": "保管庫がロックされています"
+  },
   "unlocked": {
     "message": "ロック解除済み"
   },
@@ -2607,6 +2622,9 @@
   },
   "important": {
     "message": "重要"
+  },
+  "accessing": {
+    "message": "アクセス中"
   },
   "accessTokenUnableToBeDecrypted": {
     "message": "アクセストークンを復号できなかったためログアウトしました。この問題を解決するためには再度ログインしてください。"

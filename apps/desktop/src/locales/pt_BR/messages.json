@@ -918,6 +918,18 @@
   "yourVaultIsLocked": {
     "message": "Seu cofre está trancado. Verifique sua identidade para continuar."
   },
+  "yourAccountIsLocked": {
+    "message": "Your account is locked"
+  },
+  "or": {
+    "message": "or"
+  },
+  "unlockWithBiometrics": {
+    "message": "Unlock with biometrics"
+  },
+  "unlockWithMasterPassword": {
+    "message": "Unlock with master password"
+  },
   "unlock": {
     "message": "Desbloquear"
   },
@@ -2256,6 +2268,9 @@
   "locked": {
     "message": "Bloqueado"
   },
+  "yourVaultIsLockedV2": {
+    "message": "Your vault is locked"
+  },
   "unlocked": {
     "message": "Desbloqueado"
   },
@@ -2607,6 +2622,9 @@
   },
   "important": {
     "message": "Importante:"
+  },
+  "accessing": {
+    "message": "Accessing"
   },
   "accessTokenUnableToBeDecrypted": {
     "message": "Você foi desconectado porque seu token de acesso não pôde ser descriptografado. Por favor, faça o login novamente para resolver esse problema."

@@ -445,7 +445,7 @@
     "message": "避免易混淆的字符"
   },
   "generatorPolicyInEffect": {
-    "message": "企业策略要求应用到您的生成器选项中。",
+    "message": "企业策略要求已应用到您的生成器选项中。",
     "description": "Indicates that a policy limits the credential generator screen."
   },
   "searchCollection": {
@@ -917,6 +917,18 @@
   },
   "yourVaultIsLocked": {
     "message": "您的密码库已锁定。请先验证您的身份。"
+  },
+  "yourAccountIsLocked": {
+    "message": "您的账户已锁定"
+  },
+  "or": {
+    "message": "或"
+  },
+  "unlockWithBiometrics": {
+    "message": "使用生物识别解锁"
+  },
+  "unlockWithMasterPassword": {
+    "message": "使用主密码解锁"
   },
   "unlock": {
     "message": "解锁​​​​"
@@ -2256,6 +2268,9 @@
   "locked": {
     "message": "已锁定"
   },
+  "yourVaultIsLockedV2": {
+    "message": "您的密码库已锁定"
+  },
   "unlocked": {
     "message": "已解锁"
   },
@@ -2608,6 +2623,9 @@
   "important": {
     "message": "重要事项："
   },
+  "accessing": {
+    "message": "Accessing"
+  },
   "accessTokenUnableToBeDecrypted": {
     "message": "由于无法解密您的访问令牌，您已被注销。请重新登录以解决此问题。"
   },
@@ -2852,7 +2870,7 @@
     }
   },
   "duoHealthCheckResultsInNullAuthUrlError": {
-    "message": "与 Duo 服务连接时出错。使用不同的两步登录方式或联系 Duo 寻求帮助。"
+    "message": "与 Duo 服务连接时出错。请使用不同的两步登录方式或联系 Duo 寻求帮助。"
   },
   "launchDuoAndFollowStepsToFinishLoggingIn": {
     "message": "启动 Duo 然后按照步骤完成登录。"

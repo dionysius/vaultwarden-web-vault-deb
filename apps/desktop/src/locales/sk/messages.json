@@ -918,6 +918,18 @@
   "yourVaultIsLocked": {
     "message": "Váš trezor je uzamknutý. Ak chcete pokračovať, overte svoju identitu."
   },
+  "yourAccountIsLocked": {
+    "message": "Váš účet je zamknutý"
+  },
+  "or": {
+    "message": "alebo"
+  },
+  "unlockWithBiometrics": {
+    "message": "Odomknúť pomocou biometrie"
+  },
+  "unlockWithMasterPassword": {
+    "message": "Odomknúť pomocou hlavného hesla"
+  },
   "unlock": {
     "message": "Odomknúť"
   },
@@ -2256,6 +2268,9 @@
   "locked": {
     "message": "Zamknutý"
   },
+  "yourVaultIsLockedV2": {
+    "message": "Váš trezor je zamknutý"
+  },
   "unlocked": {
     "message": "Odomknutý"
   },
@@ -2607,6 +2622,9 @@
   },
   "important": {
     "message": "Dôležité:"
+  },
+  "accessing": {
+    "message": "Accessing"
   },
   "accessTokenUnableToBeDecrypted": {
     "message": "Boli ste odhlásení, pretože váš prístupový token nebolo možné dešifrovať. Na vyriešenie tohto problému sa znova prihláste."

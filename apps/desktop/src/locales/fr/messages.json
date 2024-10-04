@@ -918,6 +918,18 @@
   "yourVaultIsLocked": {
     "message": "Votre coffre est verrouillé. Vérifiez votre identité pour continuer."
   },
+  "yourAccountIsLocked": {
+    "message": "Votre compte est verrouillé"
+  },
+  "or": {
+    "message": "ou"
+  },
+  "unlockWithBiometrics": {
+    "message": "Déverrouiller par biométrie"
+  },
+  "unlockWithMasterPassword": {
+    "message": "Déverrouiller avec le mot de passe principal"
+  },
   "unlock": {
     "message": "Déverrouiller"
   },
@@ -1776,7 +1788,7 @@
     "message": "Activer l'intégration avec le navigateur"
   },
   "enableBrowserIntegrationDesc1": {
-    "message": "Used to allow biometric unlock in browsers that are not Safari."
+    "message": "Utilisé pour permettre le déverrouillage biométrique dans les navigateurs autres que Safari."
   },
   "enableDuckDuckGoBrowserIntegration": {
     "message": "Autoriser l'intégration DuckDuckGo au navigateur"
@@ -2256,6 +2268,9 @@
   "locked": {
     "message": "Verrouillé"
   },
+  "yourVaultIsLockedV2": {
+    "message": "Votre coffre est verrouillé"
+  },
   "unlocked": {
     "message": "Déverrouillé"
   },
@@ -2607,6 +2622,9 @@
   },
   "important": {
     "message": "Important :"
+  },
+  "accessing": {
+    "message": "Accès en cours"
   },
   "accessTokenUnableToBeDecrypted": {
     "message": "Vous avez été déconnecté car votre jeton d'accès n'a pas pu être déchiffré.  Veuillez vous reconnecter pour résoudre ce problème."

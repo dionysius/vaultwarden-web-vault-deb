@@ -918,6 +918,18 @@
   "yourVaultIsLocked": {
     "message": "O seu cofre está bloqueado. Verifique a sua identidade para continuar."
   },
+  "yourAccountIsLocked": {
+    "message": "A sua conta está bloqueada"
+  },
+  "or": {
+    "message": "ou"
+  },
+  "unlockWithBiometrics": {
+    "message": "Desbloquear com biometria"
+  },
+  "unlockWithMasterPassword": {
+    "message": "Desbloquear com a palavra-passe mestra"
+  },
   "unlock": {
     "message": "Desbloquear"
   },
@@ -2256,6 +2268,9 @@
   "locked": {
     "message": "Bloqueado"
   },
+  "yourVaultIsLockedV2": {
+    "message": "O seu cofre está bloqueado"
+  },
   "unlocked": {
     "message": "Desbloqueado"
   },
@@ -2607,6 +2622,9 @@
   },
   "important": {
     "message": "Importante:"
+  },
+  "accessing": {
+    "message": "A aceder"
   },
   "accessTokenUnableToBeDecrypted": {
     "message": "A sua sessão foi encerrada porque o seu token de acesso não pôde ser desencriptado. Por favor, inicie sessão novamente para resolver este problema."

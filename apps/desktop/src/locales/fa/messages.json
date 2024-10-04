@@ -918,6 +918,18 @@
   "yourVaultIsLocked": {
     "message": "گاوصندوق شما قفل شده است. برای ادامه هویت خود را تأیید کنید."
   },
+  "yourAccountIsLocked": {
+    "message": "Your account is locked"
+  },
+  "or": {
+    "message": "or"
+  },
+  "unlockWithBiometrics": {
+    "message": "Unlock with biometrics"
+  },
+  "unlockWithMasterPassword": {
+    "message": "Unlock with master password"
+  },
   "unlock": {
     "message": "باز کردن قفل"
   },
@@ -2256,6 +2268,9 @@
   "locked": {
     "message": "قفل شده"
   },
+  "yourVaultIsLockedV2": {
+    "message": "Your vault is locked"
+  },
   "unlocked": {
     "message": "باز شده"
   },
@@ -2607,6 +2622,9 @@
   },
   "important": {
     "message": "مهم:"
+  },
+  "accessing": {
+    "message": "Accessing"
   },
   "accessTokenUnableToBeDecrypted": {
     "message": "You have been logged out because your access token could not be decrypted. Please log in again to resolve this issue."

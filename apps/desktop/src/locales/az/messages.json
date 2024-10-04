@@ -918,6 +918,18 @@
   "yourVaultIsLocked": {
     "message": "Anbarınız kilidlənib. Davam etmək üçün kimliyinizi doğrulayın."
   },
+  "yourAccountIsLocked": {
+    "message": "Hesabınız kilidlənib"
+  },
+  "or": {
+    "message": "və ya"
+  },
+  "unlockWithBiometrics": {
+    "message": "Biometriklə kilidi aç"
+  },
+  "unlockWithMasterPassword": {
+    "message": "Ana parolla kilidi aç"
+  },
   "unlock": {
     "message": "Kilidi aç"
   },
@@ -1776,7 +1788,7 @@
     "message": "Brauzer inteqrasiyasını fəallaşdır"
   },
   "enableBrowserIntegrationDesc1": {
-    "message": "Used to allow biometric unlock in browsers that are not Safari."
+    "message": "Safari xaricindəki brauzerlərdə biometrik kilid açmağa icazə vermək üçün istifadə olunur."
   },
   "enableDuckDuckGoBrowserIntegration": {
     "message": "DuckDuckGo brauzer inteqrasiyasına icazə ver"
@@ -2256,6 +2268,9 @@
   "locked": {
     "message": "Kilidli"
   },
+  "yourVaultIsLockedV2": {
+    "message": "Anbarınız kilidlənib"
+  },
   "unlocked": {
     "message": "Kilidi açıldı"
   },
@@ -2607,6 +2622,9 @@
   },
   "important": {
     "message": "Vacib:"
+  },
+  "accessing": {
+    "message": "Müraciət edilir"
   },
   "accessTokenUnableToBeDecrypted": {
     "message": "Müraciət tokeninizin şifrəsi açıla bilmədiyi üçün çıxış etdiniz. Bu problemi həll etmək üçün lütfən yenidən giriş edin."

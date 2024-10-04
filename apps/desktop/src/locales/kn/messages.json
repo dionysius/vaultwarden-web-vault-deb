@@ -918,6 +918,18 @@
   "yourVaultIsLocked": {
     "message": "ನಿಮ್ಮ ವಾಲ್ಟ್ ಲಾಕ್ ಆಗಿದೆ. ಮುಂದುವರೆಯಲು ನಿಮ್ಮ ಮಾಸ್ಟರ್ ಪಾಸ್‌ವರ್ಡ್ ಅನ್ನು ಪರಿಶೀಲಿಸಿ."
   },
+  "yourAccountIsLocked": {
+    "message": "Your account is locked"
+  },
+  "or": {
+    "message": "or"
+  },
+  "unlockWithBiometrics": {
+    "message": "Unlock with biometrics"
+  },
+  "unlockWithMasterPassword": {
+    "message": "Unlock with master password"
+  },
   "unlock": {
     "message": "ಅನ್‌ಲಾಕ್ ಮಾಡಿ"
   },
@@ -2256,6 +2268,9 @@
   "locked": {
     "message": "Locked"
   },
+  "yourVaultIsLockedV2": {
+    "message": "Your vault is locked"
+  },
   "unlocked": {
     "message": "Unlocked"
   },
@@ -2607,6 +2622,9 @@
   },
   "important": {
     "message": "Important:"
+  },
+  "accessing": {
+    "message": "Accessing"
   },
   "accessTokenUnableToBeDecrypted": {
     "message": "You have been logged out because your access token could not be decrypted. Please log in again to resolve this issue."

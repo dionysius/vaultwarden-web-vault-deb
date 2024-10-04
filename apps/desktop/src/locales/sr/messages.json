@@ -918,6 +918,18 @@
   "yourVaultIsLocked": {
     "message": "Сеф је закљчан. Унесите главну лозинку за наставак."
   },
+  "yourAccountIsLocked": {
+    "message": "Your account is locked"
+  },
+  "or": {
+    "message": "or"
+  },
+  "unlockWithBiometrics": {
+    "message": "Unlock with biometrics"
+  },
+  "unlockWithMasterPassword": {
+    "message": "Unlock with master password"
+  },
   "unlock": {
     "message": "Откључај"
   },
@@ -2256,6 +2268,9 @@
   "locked": {
     "message": "Закључано"
   },
+  "yourVaultIsLockedV2": {
+    "message": "Your vault is locked"
+  },
   "unlocked": {
     "message": "Откључано"
   },
@@ -2607,6 +2622,9 @@
   },
   "important": {
     "message": "Важно:"
+  },
+  "accessing": {
+    "message": "Accessing"
   },
   "accessTokenUnableToBeDecrypted": {
     "message": "Одјављени сте јер ваш токен за приступ није могао да се дешифрује. Пријавите се поново да бисте решили овај проблем."

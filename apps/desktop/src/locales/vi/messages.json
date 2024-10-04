@@ -918,6 +918,18 @@
   "yourVaultIsLocked": {
     "message": "Kho của bạn đã bị khóa. Xác minh danh tính của bạn để mở khoá."
   },
+  "yourAccountIsLocked": {
+    "message": "Your account is locked"
+  },
+  "or": {
+    "message": "or"
+  },
+  "unlockWithBiometrics": {
+    "message": "Unlock with biometrics"
+  },
+  "unlockWithMasterPassword": {
+    "message": "Unlock with master password"
+  },
   "unlock": {
     "message": "Mở khóa"
   },
@@ -2256,6 +2268,9 @@
   "locked": {
     "message": "Đã khóa"
   },
+  "yourVaultIsLockedV2": {
+    "message": "Your vault is locked"
+  },
   "unlocked": {
     "message": "Đã mở khóa"
   },
@@ -2607,6 +2622,9 @@
   },
   "important": {
     "message": "Quan trọng:"
+  },
+  "accessing": {
+    "message": "Accessing"
   },
   "accessTokenUnableToBeDecrypted": {
     "message": "Bạn đã bị đăng xuất do khoá truy cập của bạn không thể giải mã. Vui lòng đăng nhập lại để khắc phục sự cố này."

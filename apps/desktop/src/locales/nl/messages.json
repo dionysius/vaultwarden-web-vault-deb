@@ -918,6 +918,18 @@
   "yourVaultIsLocked": {
     "message": "Je kluis is vergrendeld. Voer je hoofdwachtwoord in om door te gaan."
   },
+  "yourAccountIsLocked": {
+    "message": "Je account is vergrendeld"
+  },
+  "or": {
+    "message": "of"
+  },
+  "unlockWithBiometrics": {
+    "message": "Biometrisch ontgrendelen"
+  },
+  "unlockWithMasterPassword": {
+    "message": "Ontgrendelen met hoofdwachtwoord"
+  },
   "unlock": {
     "message": "Ontgrendelen"
   },
@@ -2256,6 +2268,9 @@
   "locked": {
     "message": "Vergrendeld"
   },
+  "yourVaultIsLockedV2": {
+    "message": "Je kluis is vergrendeld"
+  },
   "unlocked": {
     "message": "Ontgrendeld"
   },
@@ -2607,6 +2622,9 @@
   },
   "important": {
     "message": "Belangrijk:"
+  },
+  "accessing": {
+    "message": "Toegang verkrijgen"
   },
   "accessTokenUnableToBeDecrypted": {
     "message": "U bent uitgelogd omdat uw toegangstoken niet kon worden gedecodeerd. Log opnieuw in om dit probleem op te lossen."

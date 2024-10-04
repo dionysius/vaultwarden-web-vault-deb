@@ -918,6 +918,18 @@
   "yourVaultIsLocked": {
     "message": "Din boks er låst. Bekræft din identitet for at fortsætte."
   },
+  "yourAccountIsLocked": {
+    "message": "Kontoen er låst"
+  },
+  "or": {
+    "message": "eller"
+  },
+  "unlockWithBiometrics": {
+    "message": "Oplås med biometri"
+  },
+  "unlockWithMasterPassword": {
+    "message": "Oplås med hovedadgangskode"
+  },
   "unlock": {
     "message": "Oplås"
   },
@@ -2256,6 +2268,9 @@
   "locked": {
     "message": "Låst"
   },
+  "yourVaultIsLockedV2": {
+    "message": "Boksen er låst"
+  },
   "unlocked": {
     "message": "Oplåst"
   },
@@ -2607,6 +2622,9 @@
   },
   "important": {
     "message": "Vigtigt:"
+  },
+  "accessing": {
+    "message": "Tilgår"
   },
   "accessTokenUnableToBeDecrypted": {
     "message": "Kontoen er blevet logget ud, fordi adgangstokenet ikke kunne dekrypteres. Log ind igen for at løse problemet."

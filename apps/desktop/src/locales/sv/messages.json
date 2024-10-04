@@ -918,6 +918,18 @@
   "yourVaultIsLocked": {
     "message": "Ditt valv är låst. Bekräfta din identitet för att fortsätta."
   },
+  "yourAccountIsLocked": {
+    "message": "Ditt konto är låst"
+  },
+  "or": {
+    "message": "eller"
+  },
+  "unlockWithBiometrics": {
+    "message": "Lås upp med biometri"
+  },
+  "unlockWithMasterPassword": {
+    "message": "Lås upp med huvudlösenord"
+  },
   "unlock": {
     "message": "Lås upp"
   },
@@ -2256,6 +2268,9 @@
   "locked": {
     "message": "Låst"
   },
+  "yourVaultIsLockedV2": {
+    "message": "Ditt valv är låst"
+  },
   "unlocked": {
     "message": "Upplåst"
   },
@@ -2607,6 +2622,9 @@
   },
   "important": {
     "message": "Viktigt:"
+  },
+  "accessing": {
+    "message": "Accessing"
   },
   "accessTokenUnableToBeDecrypted": {
     "message": "You have been logged out because your access token could not be decrypted. Please log in again to resolve this issue."

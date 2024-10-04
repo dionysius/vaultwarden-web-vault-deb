@@ -918,6 +918,18 @@
   "yourVaultIsLocked": {
     "message": "Η κρύπτη σας είναι κλειδωμένη. Επαληθεύστε την ταυτότητά σας για να συνεχίσετε."
   },
+  "yourAccountIsLocked": {
+    "message": "Ο λογαριασμός σας έχει κλειδωθεί"
+  },
+  "or": {
+    "message": "ή"
+  },
+  "unlockWithBiometrics": {
+    "message": "Ξεκλείδωμα με βιομετρικά στοιχεία"
+  },
+  "unlockWithMasterPassword": {
+    "message": "Ξεκλείδωμα με κύριο κωδικό πρόσβασης"
+  },
   "unlock": {
     "message": "Ξεκλείδωμα"
   },
@@ -1776,7 +1788,7 @@
     "message": "Να επιτρέπεται η ενσωμάτωση περιηγητή"
   },
   "enableBrowserIntegrationDesc1": {
-    "message": "Used to allow biometric unlock in browsers that are not Safari."
+    "message": "Χρησιμοποιείται για την ενεργοποίηση του ξεκλειδώματος με βιομετρικά στοιχεία, σε προγράμματα περιήγησης εκτός του Safari."
   },
   "enableDuckDuckGoBrowserIntegration": {
     "message": "Επίτρεψε ενσωμάτωση περιηγητή DuckDuckGo"
@@ -2256,6 +2268,9 @@
   "locked": {
     "message": "Κλειδωμένο"
   },
+  "yourVaultIsLockedV2": {
+    "message": "Η κρύπτη σας έχει κλειδωθεί"
+  },
   "unlocked": {
     "message": "Ξεκλείδωτο"
   },
@@ -2607,6 +2622,9 @@
   },
   "important": {
     "message": "Σημαντικό:"
+  },
+  "accessing": {
+    "message": "Πρόσβαση"
   },
   "accessTokenUnableToBeDecrypted": {
     "message": "Έχετε αποσυνδεθεί επειδή το διακριτικό πρόσβασής σας δεν μπορεί να αποκρυπτογραφηθεί. Παρακαλώ συνδεθείτε ξανά για να επιλύσετε αυτό το ζήτημα."

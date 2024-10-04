@@ -157,7 +157,7 @@
     "message": "Empresa"
   },
   "ssn": {
-    "message": "Nº de la seguridad social"
+    "message": "Nº de seguridad social"
   },
   "passportNumber": {
     "message": "Nº de pasaporte"
@@ -556,25 +556,25 @@
     "message": "Pista de la contraseña maestra"
   },
   "joinOrganization": {
-    "message": "Join organization"
+    "message": "Unirse a organización"
   },
   "finishJoiningThisOrganizationBySettingAMasterPassword": {
-    "message": "Finish joining this organization by setting a master password."
+    "message": "Termina de unirte a esta organización estableciendo una contraseña maestra."
   },
   "settings": {
     "message": "Ajustes"
   },
   "accountEmail": {
-    "message": "Account email"
+    "message": "Correo electrónico de la cuenta"
   },
   "requestHint": {
-    "message": "Request hint"
+    "message": "Solicitar pista"
   },
   "requestPasswordHint": {
-    "message": "Request password hint"
+    "message": "Solicitar pista de la contraseña"
   },
   "enterYourAccountEmailAddressAndYourPasswordHintWillBeSentToYou": {
-    "message": "Enter your account email address and your password hint will be sent to you"
+    "message": "Introduce la dirección de correo electrónico de tu cuenta y se te enviará la pista de tu contraseña"
   },
   "passwordHint": {
     "message": "Pista de contraseña"
@@ -620,10 +620,10 @@
     "message": "¡Tu nueva cuenta ha sido creada! Ahora puedes acceder."
   },
   "newAccountCreated2": {
-    "message": "Your new account has been created!"
+    "message": "¡Tu nueva cuenta ha sido creada!"
   },
   "youHaveBeenLoggedIn": {
-    "message": "You have been logged in!"
+    "message": "¡Has iniciado sesión!"
   },
   "masterPassSent": {
     "message": "Te hemos enviado un correo electrónico con la pista de tu contraseña maestra."
@@ -656,7 +656,7 @@
     "message": "Código de verificación requerido."
   },
   "webauthnCancelOrTimeout": {
-    "message": "The authentication was cancelled or took too long. Please try again."
+    "message": "La autenticación fue cancelada o tardó demasiado. Por favor, inténtalo de nuevo."
   },
   "invalidVerificationCode": {
     "message": "Código de verificación incorrecto"
@@ -821,16 +821,16 @@
     "message": "Tu sesión ha expirado."
   },
   "restartRegistration": {
-    "message": "Restart registration"
+    "message": "Reiniciar registro"
   },
   "expiredLink": {
-    "message": "Expired link"
+    "message": "Enlace expirado"
   },
   "pleaseRestartRegistrationOrTryLoggingIn": {
-    "message": "Please restart registration or try logging in."
+    "message": "Por favor, reinicia el registro o intenta iniciar sesión."
   },
   "youMayAlreadyHaveAnAccount": {
-    "message": "You may already have an account"
+    "message": "Puede que ya tengas una cuenta"
   },
   "logOutConfirmation": {
     "message": "¿Estás seguro de querer cerrar sesión?"
@@ -917,6 +917,18 @@
   },
   "yourVaultIsLocked": {
     "message": "Tu caja fuerte está bloqueada. Verifica tu contraseña maestra para continuar."
+  },
+  "yourAccountIsLocked": {
+    "message": "Your account is locked"
+  },
+  "or": {
+    "message": "or"
+  },
+  "unlockWithBiometrics": {
+    "message": "Unlock with biometrics"
+  },
+  "unlockWithMasterPassword": {
+    "message": "Unlock with master password"
   },
   "unlock": {
     "message": "Desbloquear"
@@ -2149,7 +2161,7 @@
     "message": "El tiempo de espera de tu caja fuerte excede las restricciones establecidas por tu organización."
   },
   "inviteAccepted": {
-    "message": "Invitation accepted"
+    "message": "Invitación aceptada"
   },
   "resetPasswordPolicyAutoEnroll": {
     "message": "Inscripción automática"
@@ -2255,6 +2267,9 @@
   },
   "locked": {
     "message": "Bloqueado"
+  },
+  "yourVaultIsLockedV2": {
+    "message": "Your vault is locked"
   },
   "unlocked": {
     "message": "Desbloqueado"
@@ -2608,6 +2623,9 @@
   "important": {
     "message": "Importante:"
   },
+  "accessing": {
+    "message": "Accessing"
+  },
   "accessTokenUnableToBeDecrypted": {
     "message": "Se ha cerrado la sesión porque tu token de acceso no pudo ser descifrado. Por favor, inicia sesión de nuevo para resolver este problema."
   },
@@ -2876,7 +2894,7 @@
     "message": "Contraseña de archivo no válida, por favor utiliza la contraseña que introdujiste cuando creaste el archivo de exportación."
   },
   "destination": {
-    "message": "Destination"
+    "message": "Destino"
   },
   "learnAboutImportOptions": {
     "message": "Aprende acerca de tus opciones de importación"
@@ -3073,16 +3091,16 @@
     }
   },
   "data": {
-    "message": "Data"
+    "message": "Datos"
   },
   "fileSends": {
-    "message": "File Sends"
+    "message": "Envío de archivo"
   },
   "textSends": {
-    "message": "Text Sends"
+    "message": "Envío de texto"
   },
   "allowScreenshots": {
-    "message": "Allow screen capture"
+    "message": "Permitir captura de pantalla"
   },
   "allowScreenshotsDesc": {
     "message": "Allow screen capture of the Bitwarden desktop application."

@@ -445,7 +445,7 @@
     "message": "Vältä epäselviä merkkejä"
   },
   "generatorPolicyInEffect": {
-    "message": "Enterprise policy requirements have been applied to your generator options.",
+    "message": "Yrityskäytännön säännöt vaikuttavat generaattoriasetuksiisi.",
     "description": "Indicates that a policy limits the credential generator screen."
   },
   "searchCollection": {
@@ -917,6 +917,18 @@
   },
   "yourVaultIsLocked": {
     "message": "Holvisi on lukittu. Jatka vahvistamalla henkilöllisyytesi."
+  },
+  "yourAccountIsLocked": {
+    "message": "Your account is locked"
+  },
+  "or": {
+    "message": "or"
+  },
+  "unlockWithBiometrics": {
+    "message": "Unlock with biometrics"
+  },
+  "unlockWithMasterPassword": {
+    "message": "Unlock with master password"
   },
   "unlock": {
     "message": "Avaa"
@@ -1776,7 +1788,7 @@
     "message": "Salli selainintegraatio"
   },
   "enableBrowserIntegrationDesc1": {
-    "message": "Used to allow biometric unlock in browsers that are not Safari."
+    "message": "Käytetään biometrisen avauksen sallimiseen muissa selaimissa kuin Safarissa."
   },
   "enableDuckDuckGoBrowserIntegration": {
     "message": "Salli integraatio DuckDuckGo-selaimeen"
@@ -2256,6 +2268,9 @@
   "locked": {
     "message": "Lukittu"
   },
+  "yourVaultIsLockedV2": {
+    "message": "Your vault is locked"
+  },
   "unlocked": {
     "message": "Avattu"
   },
@@ -2607,6 +2622,9 @@
   },
   "important": {
     "message": "Tärkeää:"
+  },
+  "accessing": {
+    "message": "Accessing"
   },
   "accessTokenUnableToBeDecrypted": {
     "message": "Sinut on kirjattu ulos, koska käyttötunnisteesi salausta ei voitu purkaa. Ratkaise ongelma kirjautumalla sisään uudelleen."

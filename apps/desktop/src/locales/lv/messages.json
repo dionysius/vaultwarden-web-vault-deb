@@ -918,6 +918,18 @@
   "yourVaultIsLocked": {
     "message": "Glabātava ir aizslēgta. Jāapliecina sava identitāte, lai turpinātu."
   },
+  "yourAccountIsLocked": {
+    "message": "Konts ir slēgts"
+  },
+  "or": {
+    "message": "vai"
+  },
+  "unlockWithBiometrics": {
+    "message": "Atslēgt ar biometriju"
+  },
+  "unlockWithMasterPassword": {
+    "message": "Atslēgt ar galveno paroli"
+  },
   "unlock": {
     "message": "Atslēgt"
   },
@@ -1776,7 +1788,7 @@
     "message": "Iespējot sasaistīšanu ar pārlūku"
   },
   "enableBrowserIntegrationDesc1": {
-    "message": "Used to allow biometric unlock in browsers that are not Safari."
+    "message": "Tiek izmantots, lai ļautu atslēgšanu pārlūkos, kas nav Safari."
   },
   "enableDuckDuckGoBrowserIntegration": {
     "message": "Atļaut sasaistīšanu ar DuckDuckGo pārlūku"
@@ -2256,6 +2268,9 @@
   "locked": {
     "message": "Aizslēgta"
   },
+  "yourVaultIsLockedV2": {
+    "message": "Glabātava ir slēgta"
+  },
   "unlocked": {
     "message": "Atslēgta"
   },
@@ -2607,6 +2622,9 @@
   },
   "important": {
     "message": "Svarīgi:"
+  },
+  "accessing": {
+    "message": "Piekļūst"
   },
   "accessTokenUnableToBeDecrypted": {
     "message": "Notika izrakstīšanās, jo Tavu piekļuves pilnvaru nevarēja atšifrēt. Lūgums pieteikties atkārtoti, lai novērstu šo sarežģījumu."

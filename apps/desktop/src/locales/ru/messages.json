@@ -918,6 +918,18 @@
   "yourVaultIsLocked": {
     "message": "Ваше xранилище заблокировано. Подтвердите свою личность для продолжения."
   },
+  "yourAccountIsLocked": {
+    "message": "Ваш аккаунт заблокирован"
+  },
+  "or": {
+    "message": "или"
+  },
+  "unlockWithBiometrics": {
+    "message": "Разблокировать с помощью биометрии"
+  },
+  "unlockWithMasterPassword": {
+    "message": "Разблокировать мастер-паролем"
+  },
   "unlock": {
     "message": "Разблокировать"
   },
@@ -2256,6 +2268,9 @@
   "locked": {
     "message": "Заблокировано"
   },
+  "yourVaultIsLockedV2": {
+    "message": "Ваше хранилище заблокировано"
+  },
   "unlocked": {
     "message": "Разблокировано"
   },
@@ -2607,6 +2622,9 @@
   },
   "important": {
     "message": "Важно:"
+  },
+  "accessing": {
+    "message": "Доступ"
   },
   "accessTokenUnableToBeDecrypted": {
     "message": "Вы были деавторизованы, поскольку ваш токен доступа не удалось расшифровать. Чтобы решить эту проблему, авторизуйтесь снова."

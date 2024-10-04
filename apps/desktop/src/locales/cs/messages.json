@@ -918,6 +918,18 @@
   "yourVaultIsLocked": {
     "message": "Váš trezor je uzamčen. Pro pokračování musíte zadat hlavní heslo."
   },
+  "yourAccountIsLocked": {
+    "message": "Váš účet je uzamčen"
+  },
+  "or": {
+    "message": "nebo"
+  },
+  "unlockWithBiometrics": {
+    "message": "Odemknout pomocí biometrie"
+  },
+  "unlockWithMasterPassword": {
+    "message": "Odemknout pomocí hlavního hesla"
+  },
   "unlock": {
     "message": "Odemknout"
   },
@@ -2256,6 +2268,9 @@
   "locked": {
     "message": "Uzamčeno"
   },
+  "yourVaultIsLockedV2": {
+    "message": "Váš trezor je uzamčen"
+  },
   "unlocked": {
     "message": "Odemčeno"
   },
@@ -2607,6 +2622,9 @@
   },
   "important": {
     "message": "Důležité:"
+  },
+  "accessing": {
+    "message": "Přistupování"
   },
   "accessTokenUnableToBeDecrypted": {
     "message": "Byli jste odhlášeni, protože Váš přístupový token nelze dešifrovat. Pro vyřešení tohoto problému se přihlaste znovu."

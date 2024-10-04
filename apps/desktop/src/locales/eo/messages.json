@@ -918,6 +918,18 @@
   "yourVaultIsLocked": {
     "message": "Via trezorejo estas ŝlosita. Kontrolu vian identecon por daŭrigi."
   },
+  "yourAccountIsLocked": {
+    "message": "Your account is locked"
+  },
+  "or": {
+    "message": "or"
+  },
+  "unlockWithBiometrics": {
+    "message": "Unlock with biometrics"
+  },
+  "unlockWithMasterPassword": {
+    "message": "Unlock with master password"
+  },
   "unlock": {
     "message": "Malŝlosi"
   },
@@ -2256,6 +2268,9 @@
   "locked": {
     "message": "Ŝlosita"
   },
+  "yourVaultIsLockedV2": {
+    "message": "Your vault is locked"
+  },
   "unlocked": {
     "message": "Malŝlosita"
   },
@@ -2607,6 +2622,9 @@
   },
   "important": {
     "message": "Important:"
+  },
+  "accessing": {
+    "message": "Accessing"
   },
   "accessTokenUnableToBeDecrypted": {
     "message": "You have been logged out because your access token could not be decrypted. Please log in again to resolve this issue."

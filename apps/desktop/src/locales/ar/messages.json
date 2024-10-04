@@ -918,6 +918,18 @@
   "yourVaultIsLocked": {
     "message": "خزنتك مقفلة. تحقق من هويتك للمتابعة."
   },
+  "yourAccountIsLocked": {
+    "message": "Your account is locked"
+  },
+  "or": {
+    "message": "or"
+  },
+  "unlockWithBiometrics": {
+    "message": "Unlock with biometrics"
+  },
+  "unlockWithMasterPassword": {
+    "message": "Unlock with master password"
+  },
   "unlock": {
     "message": "فتح"
   },
@@ -2256,6 +2268,9 @@
   "locked": {
     "message": "مقفل"
   },
+  "yourVaultIsLockedV2": {
+    "message": "Your vault is locked"
+  },
   "unlocked": {
     "message": "غير مقفل"
   },
@@ -2607,6 +2622,9 @@
   },
   "important": {
     "message": "مهم:"
+  },
+  "accessing": {
+    "message": "Accessing"
   },
   "accessTokenUnableToBeDecrypted": {
     "message": "لقد قمت بتسجيل الخروج لأنه لا يمكن فك تشفير الرمز المميز الخاص بك. الرجاء تسجيل الدخول مرة أخرى لحل هذه المشكلة."

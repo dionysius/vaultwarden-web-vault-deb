@@ -918,6 +918,18 @@
   "yourVaultIsLocked": {
     "message": "Sejf jest zablokowany. Zweryfikuj swoją tożsamość, aby kontynuować."
   },
+  "yourAccountIsLocked": {
+    "message": "Your account is locked"
+  },
+  "or": {
+    "message": "or"
+  },
+  "unlockWithBiometrics": {
+    "message": "Unlock with biometrics"
+  },
+  "unlockWithMasterPassword": {
+    "message": "Unlock with master password"
+  },
   "unlock": {
     "message": "Odblokuj"
   },
@@ -2256,6 +2268,9 @@
   "locked": {
     "message": "Zablokowany"
   },
+  "yourVaultIsLockedV2": {
+    "message": "Your vault is locked"
+  },
   "unlocked": {
     "message": "Odblokowany"
   },
@@ -2607,6 +2622,9 @@
   },
   "important": {
     "message": "Ważne:"
+  },
+  "accessing": {
+    "message": "Accessing"
   },
   "accessTokenUnableToBeDecrypted": {
     "message": "Zostałeś wylogowany, ponieważ token dostępu nie mógł zostać odszyfrowany. Zaloguj się ponownie, aby rozwiązać ten problem."

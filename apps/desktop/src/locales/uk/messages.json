@@ -918,6 +918,18 @@
   "yourVaultIsLocked": {
     "message": "Сховище заблоковано. Пройдіть ідентифікацію для продовження."
   },
+  "yourAccountIsLocked": {
+    "message": "Ваш обліковий запис заблоковано"
+  },
+  "or": {
+    "message": "або"
+  },
+  "unlockWithBiometrics": {
+    "message": "Розблокувати з біометрією"
+  },
+  "unlockWithMasterPassword": {
+    "message": "Розблокувати з головним паролем"
+  },
   "unlock": {
     "message": "Розблокувати"
   },
@@ -2256,6 +2268,9 @@
   "locked": {
     "message": "Заблоковано"
   },
+  "yourVaultIsLockedV2": {
+    "message": "Ваше сховище заблоковано"
+  },
   "unlocked": {
     "message": "Розблоковано"
   },
@@ -2607,6 +2622,9 @@
   },
   "important": {
     "message": "Важливо:"
+  },
+  "accessing": {
+    "message": "Доступ"
   },
   "accessTokenUnableToBeDecrypted": {
     "message": "Ви вийшли з системи, оскільки неможливо розшифрувати ваш токен доступу. Увійдіть знову, щоб виправити цю проблему."
