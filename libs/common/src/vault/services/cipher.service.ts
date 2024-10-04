@@ -858,6 +858,11 @@ export class CipherService implements CipherServiceAbstraction {
     return new Cipher(updated[cipher.id as CipherId], cipher.localData);
   }
 
+  async saveCollectionsWithServerAdmin(cipher: Cipher): Promise<void> {
+    const request = new CipherCollectionsRequest(cipher.collectionIds);
+    await this.apiService.putCipherCollectionsAdmin(cipher.id, request);
+  }
+
   /**
    * Bulk update collections for many ciphers with the server
    * @param orgId

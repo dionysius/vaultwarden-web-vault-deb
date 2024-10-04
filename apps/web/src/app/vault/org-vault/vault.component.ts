@@ -1249,6 +1249,8 @@ export class VaultComponent implements OnInit, OnDestroy {
         organizationId: this.organization?.id as OrganizationId,
         availableCollections,
         activeCollection: this.activeFilter?.selectedCollectionNode?.node,
+        isSingleCipherAdmin:
+          items.length === 1 && (this.organization?.canEditAllCiphers || items[0].isUnassigned),
       },
     });
 
