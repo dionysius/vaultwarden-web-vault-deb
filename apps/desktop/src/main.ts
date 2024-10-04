@@ -5,6 +5,7 @@ import { Subject, firstValueFrom } from "rxjs";
 
 import { AccountServiceImplementation } from "@bitwarden/common/auth/services/account.service";
 import { ClientType } from "@bitwarden/common/enums";
+import { RegionConfig } from "@bitwarden/common/platform/abstractions/environment.service";
 import { Message, MessageSender } from "@bitwarden/common/platform/messaging";
 // eslint-disable-next-line no-restricted-imports -- For dependency creation
 import { SubjectMessageSender } from "@bitwarden/common/platform/messaging/internal";
@@ -152,7 +153,11 @@ export class Main {
       new DefaultDerivedStateProvider(),
     );
 
-    this.environmentService = new DefaultEnvironmentService(stateProvider, accountService);
+    this.environmentService = new DefaultEnvironmentService(
+      stateProvider,
+      accountService,
+      process.env.ADDITIONAL_REGIONS as unknown as RegionConfig[],
+    );
 
     this.migrationRunner = new MigrationRunner(
       this.storageService,

@@ -1,7 +1,7 @@
 import { firstValueFrom } from "rxjs";
 
 import { AccountService } from "@bitwarden/common/auth/abstractions/account.service";
-import { Region } from "@bitwarden/common/platform/abstractions/environment.service";
+import { Region, RegionConfig } from "@bitwarden/common/platform/abstractions/environment.service";
 import { LogService } from "@bitwarden/common/platform/abstractions/log.service";
 import { DefaultEnvironmentService } from "@bitwarden/common/platform/services/default-environment.service";
 import { StateProvider } from "@bitwarden/common/platform/state";
@@ -14,8 +14,9 @@ export class BrowserEnvironmentService extends DefaultEnvironmentService {
     private logService: LogService,
     stateProvider: StateProvider,
     accountService: AccountService,
+    additionalRegionConfigs: RegionConfig[] = [],
   ) {
-    super(stateProvider, accountService);
+    super(stateProvider, accountService, additionalRegionConfigs);
   }
 
   async hasManagedEnvironment(): Promise<boolean> {

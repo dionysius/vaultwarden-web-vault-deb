@@ -11,6 +11,7 @@ import { SafeProvider, safeProvider } from "@bitwarden/angular/platform/utils/sa
 import {
   CLIENT_TYPE,
   DEFAULT_VAULT_TIMEOUT,
+  ENV_ADDITIONAL_REGIONS,
   LOCALES_DIRECTORY,
   MEMORY_STORAGE,
   OBSERVABLE_DISK_LOCAL_STORAGE,
@@ -42,7 +43,10 @@ import { AppIdService } from "@bitwarden/common/platform/abstractions/app-id.ser
 import { ConfigService } from "@bitwarden/common/platform/abstractions/config/config.service";
 import { CryptoService as CryptoServiceAbstraction } from "@bitwarden/common/platform/abstractions/crypto.service";
 import { EncryptService } from "@bitwarden/common/platform/abstractions/encrypt.service";
-import { EnvironmentService } from "@bitwarden/common/platform/abstractions/environment.service";
+import {
+  EnvironmentService,
+  Urls,
+} from "@bitwarden/common/platform/abstractions/environment.service";
 import { FileDownloadService } from "@bitwarden/common/platform/abstractions/file-download/file-download.service";
 import { I18nService as I18nServiceAbstraction } from "@bitwarden/common/platform/abstractions/i18n.service";
 import { LogService } from "@bitwarden/common/platform/abstractions/log.service";
@@ -84,6 +88,7 @@ import { WebStorageServiceProvider } from "../platform/web-storage-service.provi
 
 import { EventService } from "./event.service";
 import { InitService } from "./init.service";
+import { ENV_URLS } from "./injection-tokens";
 import { ModalService } from "./modal.service";
 import { RouterService } from "./router.service";
 import { WebFileDownloadService } from "./web-file-download.service";
@@ -174,9 +179,13 @@ const safeProviders: SafeProvider[] = [
     deps: [AbstractStorageService, LogService, MigrationBuilderService, WindowStorageService],
   }),
   safeProvider({
+    provide: ENV_URLS,
+    useValue: process.env.URLS as Urls,
+  }),
+  safeProvider({
     provide: EnvironmentService,
     useClass: WebEnvironmentService,
-    deps: [WINDOW, StateProvider, AccountService, Router],
+    deps: [WINDOW, StateProvider, AccountService, ENV_ADDITIONAL_REGIONS, Router, ENV_URLS],
   }),
   safeProvider({
     provide: BiometricsService,

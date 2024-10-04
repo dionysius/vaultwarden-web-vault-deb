@@ -3,6 +3,7 @@ import { Observable, Subject } from "rxjs";
 
 import { LogoutReason } from "@bitwarden/auth/common";
 import { ClientType } from "@bitwarden/common/enums";
+import { RegionConfig } from "@bitwarden/common/platform/abstractions/environment.service";
 import {
   AbstractStorageService,
   ObservableStorageService,
@@ -57,4 +58,13 @@ export const CLIENT_TYPE = new SafeInjectionToken<ClientType>("CLIENT_TYPE");
 
 export const REFRESH_ACCESS_TOKEN_ERROR_CALLBACK = new SafeInjectionToken<() => void>(
   "REFRESH_ACCESS_TOKEN_ERROR_CALLBACK",
+);
+
+/**
+ * Injection token for injecting the NodeJS process.env additional regions into services.
+ * Using an injection token allows services to be tested without needing to
+ * mock the process.env.
+ */
+export const ENV_ADDITIONAL_REGIONS = new SafeInjectionToken<RegionConfig[]>(
+  "ENV_ADDITIONAL_REGIONS",
 );
