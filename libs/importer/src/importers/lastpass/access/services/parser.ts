@@ -22,7 +22,7 @@ export class Parser {
   /*
   May return null when the chunk does not represent an account.
   All secure notes are ACCTs but not all of them store account information.
-  
+
   TODO: Add a test for the folder case!
   TODO: Add a test case that covers secure note account!
   */
@@ -60,9 +60,17 @@ export class Parser {
 
       // 3: url
       step = 3;
-      let url = Utils.fromBufferToUtf8(
-        this.decodeHexLoose(Utils.fromBufferToUtf8(this.readItem(reader))),
-      );
+      const urlEncoded = this.readItem(reader);
+      let url =
+        urlEncoded.length > 0 && urlEncoded[0] === 33 // 33 = '!'
+          ? // URL is encrypted
+            await this.cryptoUtils.decryptAes256PlainWithDefault(
+              urlEncoded,
+              encryptionKey,
+              placeholder,
+            )
+          : // URL is not encrypted
+            Utils.fromBufferToUtf8(this.decodeHexLoose(Utils.fromBufferToUtf8(urlEncoded)));
 
       // Ignore "group" accounts. They have no credentials.
       if (url == "http://group") {
