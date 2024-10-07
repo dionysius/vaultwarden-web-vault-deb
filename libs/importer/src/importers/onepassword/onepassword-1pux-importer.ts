@@ -37,7 +37,7 @@ export class OnePassword1PuxImporter extends BaseImporter implements Importer {
     // const personalVaults = account.vaults[0].filter((v) => v.attrs.type === VaultAttributeTypeEnum.Personal);
     account.vaults.forEach((vault: VaultsEntity) => {
       vault.items.forEach((item: Item) => {
-        if (item.trashed === true) {
+        if (item.state === "archived") {
           return;
         }
 
