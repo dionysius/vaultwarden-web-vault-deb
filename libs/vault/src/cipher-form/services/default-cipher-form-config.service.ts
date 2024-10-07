@@ -1,5 +1,5 @@
 import { inject, Injectable } from "@angular/core";
-import { combineLatest, firstValueFrom, map } from "rxjs";
+import { combineLatest, filter, firstValueFrom, map, switchMap } from "rxjs";
 
 import { OrganizationService } from "@bitwarden/common/admin-console/abstractions/organization/organization.service.abstraction";
 import { PolicyService } from "@bitwarden/common/admin-console/abstractions/policy/policy.service.abstraction";
@@ -39,9 +39,21 @@ export class DefaultCipherFormConfigService implements CipherFormConfigService {
       await firstValueFrom(
         combineLatest([
           this.organizations$,
-          this.collectionService.decryptedCollections$,
+          this.collectionService.encryptedCollections$.pipe(
+            switchMap((c) =>
+              this.collectionService.decryptedCollections$.pipe(
+                filter((d) => d.length === c.length), // Ensure all collections have been decrypted
+              ),
+            ),
+          ),
           this.allowPersonalOwnership$,
-          this.folderService.folderViews$,
+          this.folderService.folders$.pipe(
+            switchMap((f) =>
+              this.folderService.folderViews$.pipe(
+                filter((d) => d.length - 1 === f.length), // -1 for "No Folder" in folderViews$
+              ),
+            ),
+          ),
           this.getCipher(cipherId),
         ]),
       );

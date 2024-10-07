@@ -65,7 +65,7 @@
     >
       {{ "cancel" | i18n }}
     </button>
-    <div class="tw-ml-auto">
+    <div class="tw-ml-auto" *ngIf="showDelete">
       <button
         bitIconButton="bwi-trash"
         type="button"
@@ -73,6 +73,7 @@
         [appA11yTitle]="'delete' | i18n"
         [bitAction]="delete"
         [disabled]="!canDelete"
+        data-testid="delete-cipher-btn"
       ></button>
     </div>
   </ng-container>
