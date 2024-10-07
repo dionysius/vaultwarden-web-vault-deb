@@ -331,7 +331,7 @@ export class NativeMessagingMain {
     const ext = process.platform === "win32" ? ".exe" : "";
 
     if (isDev()) {
-      return path.join(
+      const devPath = path.join(
         this.appPath,
         "..",
         "desktop_native",
@@ -339,6 +339,12 @@ export class NativeMessagingMain {
         "debug",
         `desktop_proxy${ext}`,
       );
+
+      // isDev() returns true when using a production build with ELECTRON_IS_DEV=1,
+      // so we need to fall back to the prod binary if the dev binary doesn't exist.
+      if (existsSync(devPath)) {
+        return devPath;
+      }
     }
 
     return path.join(path.dirname(this.exePath), `desktop_proxy${ext}`);
