@@ -79,6 +79,9 @@ type BaseCipherFormConfig = {
    * List of organizations that the user can create ciphers for.
    */
   organizations?: Organization[];
+
+  /** Hides the fields that are only applicable to individuals, useful in the Admin Console where folders aren't applicable */
+  hideIndividualVaultFields?: true;
 };
 
 /**
