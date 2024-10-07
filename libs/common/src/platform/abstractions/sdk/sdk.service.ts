@@ -5,4 +5,6 @@ import { BitwardenClient } from "@bitwarden/sdk-internal";
 export abstract class SdkService {
   client$: Observable<BitwardenClient>;
   supported$: Observable<boolean>;
+
+  abstract failedToInitialize(): Promise<void>;
 }

@@ -1,8 +1,9 @@
 import { DOCUMENT } from "@angular/common";
 import { Component, Inject, NgZone, OnDestroy, OnInit } from "@angular/core";
+import { takeUntilDestroyed } from "@angular/core/rxjs-interop";
 import { NavigationEnd, Router } from "@angular/router";
 import * as jq from "jquery";
-import { Subject, filter, firstValueFrom, map, takeUntil, timeout } from "rxjs";
+import { Subject, filter, firstValueFrom, map, takeUntil, timeout, catchError, of } from "rxjs";
 
 import { LogoutReason } from "@bitwarden/auth/common";
 import { EventUploadService } from "@bitwarden/common/abstractions/event/event-upload.service";
@@ -19,7 +20,9 @@ import { BroadcasterService } from "@bitwarden/common/platform/abstractions/broa
 import { ConfigService } from "@bitwarden/common/platform/abstractions/config/config.service";
 import { CryptoService } from "@bitwarden/common/platform/abstractions/crypto.service";
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
+import { LogService } from "@bitwarden/common/platform/abstractions/log.service";
 import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
+import { SdkService } from "@bitwarden/common/platform/abstractions/sdk/sdk.service";
 import { StateService } from "@bitwarden/common/platform/abstractions/state.service";
 import { StateEventRunnerService } from "@bitwarden/common/platform/state";
 import { SyncService } from "@bitwarden/common/platform/sync";
@@ -29,6 +32,8 @@ import { InternalFolderService } from "@bitwarden/common/vault/abstractions/fold
 import { DialogService, ToastOptions, ToastService } from "@bitwarden/components";
 import { PasswordGenerationServiceAbstraction } from "@bitwarden/generator-legacy";
 import { BiometricStateService } from "@bitwarden/key-management";
+
+import { flagEnabled } from "../utils/flags";
 
 import { PolicyListService } from "./admin-console/core/policy-list.service";
 import {
@@ -85,7 +90,28 @@ export class AppComponent implements OnDestroy, OnInit {
     private stateEventRunnerService: StateEventRunnerService,
     private organizationService: InternalOrganizationServiceAbstraction,
     private accountService: AccountService,
-  ) {}
+    private logService: LogService,
+    private sdkService: SdkService,
+  ) {
+    if (flagEnabled("sdk")) {
+      // Warn if the SDK for some reason can't be initialized
+      this.sdkService.supported$
+        .pipe(
+          takeUntilDestroyed(),
+          catchError(() => {
+            return of(false);
+          }),
+        )
+        .subscribe((supported) => {
+          if (!supported) {
+            this.logService.debug("SDK is not supported");
+            this.sdkService.failedToInitialize().catch(this.logService.error);
+          } else {
+            this.logService.debug("SDK is supported");
+          }
+        });
+    }
+  }
 
   ngOnInit() {
     this.i18nService.locale$.pipe(takeUntil(this.destroy$)).subscribe((locale) => {

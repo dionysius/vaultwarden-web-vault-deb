@@ -535,6 +535,7 @@ export class ServiceContainer {
       sdkClientFactory,
       this.environmentService,
       this.platformUtilsService,
+      this.apiService,
       customUserAgent,
     );
 
@@ -846,5 +847,19 @@ export class ServiceContainer {
     }
 
     this.inited = true;
+
+    if (flagEnabled("sdk")) {
+      // Warn if the SDK for some reason can't be initialized
+      let supported = false;
+      try {
+        supported = await firstValueFrom(this.sdkService.supported$);
+      } catch (e) {
+        // Do nothing.
+      }
+
+      if (!supported) {
+        this.sdkService.failedToInitialize().catch(this.logService.error);
+      }
+    }
   }
 }

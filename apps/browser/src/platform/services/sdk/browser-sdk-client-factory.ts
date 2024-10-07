@@ -28,6 +28,11 @@ if (supported) {
   import("./fallback");
 }
 
+/**
+ * SDK client factory with a js fallback for when WASM is not supported.
+ *
+ * Works both in popup and service worker.
+ */
 export class BrowserSdkClientFactory implements SdkClientFactory {
   async createSdkClient(
     ...args: ConstructorParameters<typeof BitwardenClient>

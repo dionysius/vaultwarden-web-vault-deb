@@ -1330,7 +1330,12 @@ const safeProviders: SafeProvider[] = [
   safeProvider({
     provide: SdkService,
     useClass: DefaultSdkService,
-    deps: [SdkClientFactory, EnvironmentService, PlatformUtilsServiceAbstraction],
+    deps: [
+      SdkClientFactory,
+      EnvironmentService,
+      PlatformUtilsServiceAbstraction,
+      ApiServiceAbstraction,
+    ],
   }),
 ];
 

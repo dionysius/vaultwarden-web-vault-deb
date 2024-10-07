@@ -732,6 +732,7 @@ export default class MainBackground {
       sdkClientFactory,
       this.environmentService,
       this.platformUtilsService,
+      this.apiService,
     );
 
     this.passwordStrengthService = new PasswordStrengthService();
@@ -1329,6 +1330,20 @@ export default class MainBackground {
     }
 
     await this.initOverlayAndTabsBackground();
+
+    if (flagEnabled("sdk")) {
+      // Warn if the SDK for some reason can't be initialized
+      let supported = false;
+      try {
+        supported = await firstValueFrom(this.sdkService.supported$);
+      } catch (e) {
+        // Do nothing.
+      }
+
+      if (!supported) {
+        this.sdkService.failedToInitialize().catch(this.logService.error);
+      }
+    }
 
     return new Promise<void>((resolve) => {
       setTimeout(async () => {

@@ -1,7 +1,8 @@
-import { concatMap, shareReplay } from "rxjs";
+import { concatMap, firstValueFrom, shareReplay } from "rxjs";
 
 import { LogLevel, DeviceType as SdkDeviceType } from "@bitwarden/sdk-internal";
 
+import { ApiService } from "../../../abstractions/api.service";
 import { DeviceType } from "../../../enums/device-type.enum";
 import { EnvironmentService } from "../../abstractions/environment.service";
 import { PlatformUtilsService } from "../../abstractions/platform-utils.service";
@@ -33,8 +34,23 @@ export class DefaultSdkService implements SdkService {
     private sdkClientFactory: SdkClientFactory,
     private environmentService: EnvironmentService,
     private platformUtilsService: PlatformUtilsService,
+    private apiService: ApiService, // Yes we shouldn't import ApiService, but it's temporary
     private userAgent: string = null,
   ) {}
+
+  async failedToInitialize(): Promise<void> {
+    // Only log on cloud instances
+    if (
+      this.platformUtilsService.isDev() ||
+      !(await firstValueFrom(this.environmentService.environment$)).isCloud
+    ) {
+      return;
+    }
+
+    return this.apiService.send("POST", "/wasm-debug", null, false, false, null, (headers) => {
+      headers.append("SDK-Version", "1.0.0");
+    });
+  }
 
   private toDevice(device: DeviceType): SdkDeviceType {
     switch (device) {
