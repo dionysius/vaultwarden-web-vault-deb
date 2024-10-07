@@ -673,6 +673,8 @@ export class CipherService implements CipherServiceAbstraction {
     if (orgAdmin && cipher.organizationId != null) {
       const request = new CipherCreateRequest(cipher);
       response = await this.apiService.postCipherAdmin(request);
+      const data = new CipherData(response, cipher.collectionIds);
+      return new Cipher(data);
     } else if (cipher.collectionIds != null) {
       const request = new CipherCreateRequest(cipher);
       response = await this.apiService.postCipherCreate(request);
@@ -697,6 +699,8 @@ export class CipherService implements CipherServiceAbstraction {
     if (orgAdmin && isNotClone) {
       const request = new CipherRequest(cipher);
       response = await this.apiService.putCipherAdmin(cipher.id, request);
+      const data = new CipherData(response, cipher.collectionIds);
+      return new Cipher(data, cipher.localData);
     } else if (cipher.edit) {
       const request = new CipherRequest(cipher);
       response = await this.apiService.putCipher(cipher.id, request);
