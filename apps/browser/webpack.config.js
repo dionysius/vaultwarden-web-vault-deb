@@ -316,6 +316,8 @@ const mainConfig = {
   },
   output: {
     filename: "[name].js",
+    chunkFilename: "assets/[name].js",
+    webassemblyModuleFilename: "assets/[modulehash].wasm",
     path: path.resolve(__dirname, "build"),
     clean: true,
   },
