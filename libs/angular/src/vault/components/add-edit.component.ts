@@ -605,6 +605,10 @@ export class AddEditComponent implements OnInit, OnDestroy {
       this.collections = this.writeableCollections?.filter(
         (c) => c.organizationId === this.cipher.organizationId,
       );
+      // If there's only one collection, check it by default
+      if (this.collections.length === 1) {
+        (this.collections[0] as any).checked = true;
+      }
       const org = await this.organizationService.get(this.cipher.organizationId);
       if (org != null) {
         this.cipher.organizationUseTotp = org.useTotp;
