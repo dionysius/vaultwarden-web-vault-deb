@@ -2616,8 +2616,11 @@
   "invoices": {
     "message": "Invoices"
   },
-  "noInvoices": {
-    "message": "No invoices."
+  "noUnpaidInvoices": {
+    "message": "No unpaid invoices."
+  },
+  "noPaidInvoices": {
+    "message": "No paid invoices."
   },
   "paid": {
     "message": "Paid",

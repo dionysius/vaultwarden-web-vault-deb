@@ -12,7 +12,10 @@ import {
 })
 export class BillingHistoryComponent {
   @Input()
-  invoices: BillingInvoiceResponse[];
+  openInvoices: BillingInvoiceResponse[];
+
+  @Input()
+  paidInvoices: BillingInvoiceResponse[];
 
   @Input()
   transactions: BillingTransactionResponse[];

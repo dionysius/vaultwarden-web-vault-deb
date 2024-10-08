@@ -14,7 +14,8 @@ import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/pl
 export class BillingHistoryViewComponent implements OnInit {
   loading = false;
   firstLoaded = false;
-  invoices: BillingInvoiceResponse[] = [];
+  openInvoices: BillingInvoiceResponse[] = [];
+  paidInvoices: BillingInvoiceResponse[] = [];
   transactions: BillingTransactionResponse[] = [];
   hasAdditionalHistory: boolean = false;
 
@@ -41,8 +42,14 @@ export class BillingHistoryViewComponent implements OnInit {
     }
     this.loading = true;
 
-    const invoicesPromise = this.accountBillingApiService.getBillingInvoices(
-      this.invoices.length > 0 ? this.invoices[this.invoices.length - 1].id : null,
+    const openInvoicesPromise = this.accountBillingApiService.getBillingInvoices(
+      "open",
+      this.openInvoices.length > 0 ? this.openInvoices[this.openInvoices.length - 1].id : null,
+    );
+
+    const paidInvoicesPromise = this.accountBillingApiService.getBillingInvoices(
+      "paid",
+      this.paidInvoices.length > 0 ? this.paidInvoices[this.paidInvoices.length - 1].id : null,
     );
 
     const transactionsPromise = this.accountBillingApiService.getBillingTransactions(
@@ -51,15 +58,20 @@ export class BillingHistoryViewComponent implements OnInit {
         : null,
     );
 
-    const accountInvoices = await invoicesPromise;
-    const accountTransactions = await transactionsPromise;
+    const openInvoices = await openInvoicesPromise;
+    const paidInvoices = await paidInvoicesPromise;
+    const transactions = await transactionsPromise;
+
     const pageSize = 5;
 
-    this.invoices = [...this.invoices, ...accountInvoices];
-    this.transactions = [...this.transactions, ...accountTransactions];
-    this.hasAdditionalHistory = !(
-      accountInvoices.length < pageSize && accountTransactions.length < pageSize
-    );
+    this.openInvoices = [...this.openInvoices, ...openInvoices];
+    this.paidInvoices = [...this.paidInvoices, ...paidInvoices];
+    this.transactions = [...this.transactions, ...transactions];
+
+    this.hasAdditionalHistory =
+      openInvoices.length >= pageSize ||
+      paidInvoices.length >= pageSize ||
+      transactions.length >= pageSize;
 
     this.loading = false;
   }
