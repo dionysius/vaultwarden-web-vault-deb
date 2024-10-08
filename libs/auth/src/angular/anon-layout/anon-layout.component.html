@@ -5,8 +5,7 @@
     'tw-pt-0': decreaseTopPadding,
     'tw-pt-8': !decreaseTopPadding,
     'tw-min-h-screen': clientType === 'web',
-    'tw-min-h-[calc(100vh-72px)]': clientType === 'browser',
-    'tw-min-h-[calc(100vh-54px)]': clientType === 'desktop',
+    'tw-min-h-full': clientType === 'browser' || clientType === 'desktop',
   }"
 >
   <a *ngIf="!hideLogo" [routerLink]="['/']" class="tw-w-[128px] [&>*]:tw-align-top">
@@ -33,7 +32,7 @@
   </div>
 
   <div
-    class="tw-mb-auto tw-w-full tw-max-w-md tw-mx-auto tw-flex tw-flex-col tw-items-center sm:tw-min-w-[28rem]"
+    class="tw-grow tw-w-full tw-max-w-md tw-mx-auto tw-flex tw-flex-col tw-items-center sm:tw-min-w-[28rem]"
     [ngClass]="{ 'tw-max-w-md': maxWidth === 'md', 'tw-max-w-3xl': maxWidth === '3xl' }"
   >
     <div
@@ -45,13 +44,15 @@
   </div>
 
   <footer *ngIf="!hideFooter" class="tw-text-center">
-    <div *ngIf="showReadonlyHostname">{{ "accessing" | i18n }} {{ hostname }}</div>
+    <div *ngIf="showReadonlyHostname" bitTypography="body2">
+      {{ "accessing" | i18n }} {{ hostname }}
+    </div>
     <ng-container *ngIf="!showReadonlyHostname">
       <ng-content select="[slot=environment-selector]"></ng-content>
     </ng-container>
     <ng-container *ngIf="!hideYearAndVersion">
-      <div>&copy; {{ year }} Bitwarden Inc.</div>
-      <div>{{ version }}</div>
+      <div bitTypography="body2">&copy; {{ year }} Bitwarden Inc.</div>
+      <div bitTypography="body2">{{ version }}</div>
     </ng-container>
   </footer>
 </main>
