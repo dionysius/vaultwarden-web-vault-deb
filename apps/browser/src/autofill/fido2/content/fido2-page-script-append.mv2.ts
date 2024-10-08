@@ -9,6 +9,7 @@
 
   const script = globalContext.document.createElement("script");
   script.src = chrome.runtime.getURL("content/fido2-page-script.js");
+  script.async = false;
 
   const scriptInsertionPoint =
     globalContext.document.head || globalContext.document.documentElement;

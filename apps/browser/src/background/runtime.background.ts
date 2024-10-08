@@ -21,7 +21,6 @@ import {
   openTwoFactorAuthPopout,
 } from "../auth/popup/utils/auth-popout-window";
 import { LockedVaultPendingNotificationsData } from "../autofill/background/abstractions/notification.background";
-import { Fido2Background } from "../autofill/fido2/background/abstractions/fido2.background";
 import { AutofillService } from "../autofill/services/abstractions/autofill.service";
 import { BrowserApi } from "../platform/browser/browser-api";
 import { BrowserEnvironmentService } from "../platform/services/browser-environment.service";
@@ -46,7 +45,6 @@ export default class RuntimeBackground {
     private messagingService: MessagingService,
     private logService: LogService,
     private configService: ConfigService,
-    private fido2Background: Fido2Background,
     private messageListener: MessageListener,
     private accountService: AccountService,
     private readonly lockService: LockService,
@@ -365,7 +363,6 @@ export default class RuntimeBackground {
 
   private async checkOnInstalled() {
     setTimeout(async () => {
-      void this.fido2Background.injectFido2ContentScriptsInAllTabs();
       void this.autofillService.loadAutofillScriptsOnInstall();
 
       if (this.onInstalledReason != null) {

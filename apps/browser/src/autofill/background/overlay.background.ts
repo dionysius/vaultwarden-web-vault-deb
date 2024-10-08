@@ -1484,9 +1484,7 @@ export class OverlayBackground implements OverlayBackgroundInterface {
   }
 
   /**
-   * Gets the user's authentication status from the auth service. If the user's authentication
-   * status has changed, the inline menu button's authentication status will be updated
-   * and the inline menu list's ciphers will be updated.
+   * Gets the user's authentication status from the auth service.
    */
   private async getAuthStatus() {
     return await firstValueFrom(this.authService.activeAccountStatus$);

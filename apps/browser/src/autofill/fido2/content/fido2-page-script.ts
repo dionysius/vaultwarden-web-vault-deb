@@ -4,6 +4,12 @@ import { MessageType } from "./messaging/message";
 import { Messenger } from "./messaging/messenger";
 
 (function (globalContext) {
+  if (globalContext.document.currentScript) {
+    globalContext.document.currentScript.parentNode.removeChild(
+      globalContext.document.currentScript,
+    );
+  }
+
   const shouldExecuteContentScript =
     globalContext.document.contentType === "text/html" &&
     (globalContext.document.location.protocol === "https:" ||

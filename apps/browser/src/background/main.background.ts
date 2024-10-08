@@ -1103,6 +1103,7 @@ export default class MainBackground {
         this.vaultSettingsService,
         this.scriptInjectorService,
         this.configService,
+        this.authService,
       );
 
       const lockService = new DefaultLockService(this.accountService, this.vaultTimeoutService);
@@ -1118,7 +1119,6 @@ export default class MainBackground {
         this.messagingService,
         this.logService,
         this.configService,
-        this.fido2Background,
         messageListener,
         this.accountService,
         lockService,

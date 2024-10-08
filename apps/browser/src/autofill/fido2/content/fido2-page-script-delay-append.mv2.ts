@@ -9,6 +9,7 @@
 
   const script = globalContext.document.createElement("script");
   script.src = chrome.runtime.getURL("content/fido2-page-script.js");
+  script.async = false;
 
   // We are ensuring that the script injection is delayed in the event that we are loading
   // within an iframe element. This prevents an issue with web mail clients that load content
