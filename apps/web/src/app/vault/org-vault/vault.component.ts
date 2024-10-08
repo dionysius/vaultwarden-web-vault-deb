@@ -788,8 +788,8 @@ export class VaultComponent implements OnInit, OnDestroy {
   }
 
   /**
-   * Edit the given cipher
-   * @param cipherView - The cipher to be edited
+   * Edit the given cipher or add a new cipher
+   * @param cipherView - When set, the cipher to be edited
    * @param cloneCipher - `true` when the cipher should be cloned.
    * Used in place of the `additionalComponentParameters`, as
    * the `editCipherIdV2` method has a differing implementation.
@@ -797,7 +797,7 @@ export class VaultComponent implements OnInit, OnDestroy {
    * the `AddEditComponent` to edit methods directly.
    */
   async editCipher(
-    cipher: CipherView,
+    cipher: CipherView | null,
     cloneCipher: boolean,
     additionalComponentParameters?: (comp: AddEditComponent) => void,
   ) {
@@ -805,7 +805,7 @@ export class VaultComponent implements OnInit, OnDestroy {
   }
 
   async editCipherId(
-    cipher: CipherView,
+    cipher: CipherView | null,
     cloneCipher: boolean,
     additionalComponentParameters?: (comp: AddEditComponent) => void,
   ) {
@@ -827,7 +827,7 @@ export class VaultComponent implements OnInit, OnDestroy {
     const defaultComponentParameters = (comp: AddEditComponent) => {
       comp.organization = this.organization;
       comp.organizationId = this.organization.id;
-      comp.cipherId = cipher.id;
+      comp.cipherId = cipher?.id;
       comp.onSavedCipher.pipe(takeUntil(this.destroy$)).subscribe(() => {
         modal.close();
         this.refresh();
@@ -866,10 +866,10 @@ export class VaultComponent implements OnInit, OnDestroy {
    * Edit a cipher using the new AddEditCipherDialogV2 component.
    * Only to be used behind the ExtensionRefresh feature flag.
    */
-  private async editCipherIdV2(cipher: CipherView, cloneCipher: boolean) {
+  private async editCipherIdV2(cipher: CipherView | null, cloneCipher: boolean) {
     const cipherFormConfig = await this.cipherFormConfigService.buildConfig(
       cloneCipher ? "clone" : "edit",
-      cipher.id as CipherId,
+      cipher?.id as CipherId | null,
     );
 
     await this.openVaultItemDialog("form", cipherFormConfig, cipher);
