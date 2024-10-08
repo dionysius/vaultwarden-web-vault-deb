@@ -18,6 +18,7 @@ import {
   CollectionAdminService,
   CollectionAdminView,
   OrganizationUserApiService,
+  CollectionView,
 } from "@bitwarden/admin-console/common";
 import { OrganizationService } from "@bitwarden/common/admin-console/abstractions/organization/organization.service.abstraction";
 import {
@@ -29,7 +30,6 @@ import { Organization } from "@bitwarden/common/admin-console/models/domain/orga
 import { AccountService } from "@bitwarden/common/auth/abstractions/account.service";
 import { ProductTierType } from "@bitwarden/common/billing/enums";
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
-import { CollectionView } from "@bitwarden/common/vault/models/view/collection.view";
 import { DialogService, ToastService } from "@bitwarden/components";
 
 import {

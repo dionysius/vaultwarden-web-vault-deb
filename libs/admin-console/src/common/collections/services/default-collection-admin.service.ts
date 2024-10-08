@@ -3,17 +3,14 @@ import { SelectionReadOnlyRequest } from "@bitwarden/common/admin-console/models
 import { CryptoService } from "@bitwarden/common/platform/abstractions/crypto.service";
 import { EncryptService } from "@bitwarden/common/platform/abstractions/encrypt.service";
 import { EncString } from "@bitwarden/common/platform/models/domain/enc-string";
-import { CollectionService } from "@bitwarden/common/vault/abstractions/collection.service";
-import { CollectionData } from "@bitwarden/common/vault/models/data/collection.data";
-import { CollectionRequest } from "@bitwarden/common/vault/models/request/collection.request";
+
+import { CollectionAdminService, CollectionService } from "../abstractions";
 import {
+  CollectionData,
+  CollectionRequest,
   CollectionAccessDetailsResponse,
   CollectionDetailsResponse,
   CollectionResponse,
-} from "@bitwarden/common/vault/models/response/collection.response";
-
-import { CollectionAdminService } from "../abstractions";
-import {
   BulkCollectionAccessRequest,
   CollectionAccessSelectionView,
   CollectionAdminView,

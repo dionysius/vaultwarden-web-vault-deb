@@ -1,7 +1,8 @@
 import { Jsonify } from "type-fest";
 
-import { CollectionId, OrganizationId } from "../../../types/guid";
-import { CollectionDetailsResponse } from "../response/collection.response";
+import { CollectionId, OrganizationId } from "@bitwarden/common/types/guid";
+
+import { CollectionDetailsResponse } from "./collection.response";
 
 export class CollectionData {
   id: CollectionId;

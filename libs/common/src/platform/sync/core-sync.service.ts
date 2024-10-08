@@ -1,5 +1,7 @@
 import { firstValueFrom, map, Observable, of, switchMap } from "rxjs";
 
+import { CollectionService } from "@bitwarden/admin-console/common";
+
 import { ApiService } from "../../abstractions/api.service";
 import { AccountService } from "../../auth/abstractions/account.service";
 import { AuthService } from "../../auth/abstractions/auth.service";
@@ -14,7 +16,6 @@ import { SendApiService } from "../../tools/send/services/send-api.service.abstr
 import { InternalSendService } from "../../tools/send/services/send.service.abstraction";
 import { UserId } from "../../types/guid";
 import { CipherService } from "../../vault/abstractions/cipher.service";
-import { CollectionService } from "../../vault/abstractions/collection.service";
 import { FolderApiServiceAbstraction } from "../../vault/abstractions/folder/folder-api.service.abstraction";
 import { InternalFolderService } from "../../vault/abstractions/folder/folder.service.abstraction";
 import { SyncService } from "../../vault/abstractions/sync/sync.service.abstraction";

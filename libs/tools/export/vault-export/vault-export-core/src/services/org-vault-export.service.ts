@@ -1,6 +1,13 @@
 import * as papa from "papaparse";
 import { firstValueFrom, map } from "rxjs";
 
+import {
+  CollectionService,
+  CollectionData,
+  Collection,
+  CollectionDetailsResponse,
+  CollectionView,
+} from "@bitwarden/admin-console/common";
 import { PinServiceAbstraction } from "@bitwarden/auth/common";
 import { ApiService } from "@bitwarden/common/abstractions/api.service";
 import { AccountService } from "@bitwarden/common/auth/abstractions/account.service";
@@ -12,15 +19,10 @@ import { EncryptService } from "@bitwarden/common/platform/abstractions/encrypt.
 import { Utils } from "@bitwarden/common/platform/misc/utils";
 import { OrganizationId } from "@bitwarden/common/types/guid";
 import { CipherService } from "@bitwarden/common/vault/abstractions/cipher.service";
-import { CollectionService } from "@bitwarden/common/vault/abstractions/collection.service";
 import { CipherType } from "@bitwarden/common/vault/enums";
 import { CipherData } from "@bitwarden/common/vault/models/data/cipher.data";
-import { CollectionData } from "@bitwarden/common/vault/models/data/collection.data";
 import { Cipher } from "@bitwarden/common/vault/models/domain/cipher";
-import { Collection } from "@bitwarden/common/vault/models/domain/collection";
-import { CollectionDetailsResponse } from "@bitwarden/common/vault/models/response/collection.response";
 import { CipherView } from "@bitwarden/common/vault/models/view/cipher.view";
-import { CollectionView } from "@bitwarden/common/vault/models/view/collection.view";
 
 import {
   BitwardenCsvOrgExportType,

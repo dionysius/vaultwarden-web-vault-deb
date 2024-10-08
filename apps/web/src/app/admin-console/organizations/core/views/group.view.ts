@@ -1,5 +1,5 @@
 import { CollectionAccessSelectionView } from "@bitwarden/admin-console/common";
-import { View } from "@bitwarden/common/src/models/view/view";
+import { View } from "@bitwarden/common/models/view/view";
 
 import { GroupDetailsResponse, GroupResponse } from "../services/group/responses/group.response";
 

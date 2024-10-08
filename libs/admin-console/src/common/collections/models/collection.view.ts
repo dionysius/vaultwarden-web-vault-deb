@@ -1,10 +1,11 @@
 import { Jsonify } from "type-fest";
 
-import { Organization } from "../../../admin-console/models/domain/organization";
-import { View } from "../../../models/view/view";
-import { Collection } from "../domain/collection";
-import { ITreeNodeObject } from "../domain/tree-node";
-import { CollectionAccessDetailsResponse } from "../response/collection.response";
+import { Organization } from "@bitwarden/common/admin-console/models/domain/organization";
+import { View } from "@bitwarden/common/models/view/view";
+import { ITreeNodeObject } from "@bitwarden/common/vault/models/domain/tree-node";
+
+import { Collection } from "./collection";
+import { CollectionAccessDetailsResponse } from "./collection.response";
 
 export const NestingDelimiter = "/";
 

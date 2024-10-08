@@ -1,5 +1,6 @@
-import { SelectionReadOnlyRequest } from "../../../admin-console/models/request/selection-read-only.request";
-import { Collection } from "../domain/collection";
+import { SelectionReadOnlyRequest } from "@bitwarden/common/admin-console/models/request/selection-read-only.request";
+
+import { Collection } from "./collection";
 
 export class CollectionRequest {
   name: string;

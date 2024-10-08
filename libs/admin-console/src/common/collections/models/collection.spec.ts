@@ -1,9 +1,9 @@
-import { makeSymmetricCryptoKey, mockEnc } from "../../../../spec";
-import { CollectionId, OrganizationId } from "../../../types/guid";
-import { OrgKey } from "../../../types/key";
-import { CollectionData } from "../data/collection.data";
+import { makeSymmetricCryptoKey, mockEnc } from "@bitwarden/common/spec";
+import { CollectionId, OrganizationId } from "@bitwarden/common/types/guid";
+import { OrgKey } from "@bitwarden/common/types/key";
 
 import { Collection } from "./collection";
+import { CollectionData } from "./collection.data";
 
 describe("Collection", () => {
   let data: CollectionData;

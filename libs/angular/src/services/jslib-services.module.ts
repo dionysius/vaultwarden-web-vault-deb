@@ -4,6 +4,8 @@ import { Subject } from "rxjs";
 import {
   OrganizationUserApiService,
   DefaultOrganizationUserApiService,
+  CollectionService,
+  DefaultCollectionService,
 } from "@bitwarden/admin-console/common";
 import {
   SetPasswordJitService,
@@ -232,7 +234,6 @@ import {
   SendService as SendServiceAbstraction,
 } from "@bitwarden/common/tools/send/services/send.service.abstraction";
 import { CipherService as CipherServiceAbstraction } from "@bitwarden/common/vault/abstractions/cipher.service";
-import { CollectionService as CollectionServiceAbstraction } from "@bitwarden/common/vault/abstractions/collection.service";
 import { CipherFileUploadService as CipherFileUploadServiceAbstraction } from "@bitwarden/common/vault/abstractions/file-upload/cipher-file-upload.service";
 import { FolderApiServiceAbstraction } from "@bitwarden/common/vault/abstractions/folder/folder-api.service.abstraction";
 import {
@@ -242,7 +243,6 @@ import {
 import { TotpService as TotpServiceAbstraction } from "@bitwarden/common/vault/abstractions/totp.service";
 import { VaultSettingsService as VaultSettingsServiceAbstraction } from "@bitwarden/common/vault/abstractions/vault-settings/vault-settings.service";
 import { CipherService } from "@bitwarden/common/vault/services/cipher.service";
-import { CollectionService } from "@bitwarden/common/vault/services/collection.service";
 import { CipherFileUploadService } from "@bitwarden/common/vault/services/file-upload/cipher-file-upload.service";
 import { FolderApiService } from "@bitwarden/common/vault/services/folder/folder-api.service";
 import { FolderService } from "@bitwarden/common/vault/services/folder/folder.service";
@@ -533,8 +533,8 @@ const safeProviders: SafeProvider[] = [
   }),
   safeProvider({ provide: LogService, useFactory: () => new ConsoleLogService(false), deps: [] }),
   safeProvider({
-    provide: CollectionServiceAbstraction,
-    useClass: CollectionService,
+    provide: CollectionService,
+    useClass: DefaultCollectionService,
     deps: [CryptoServiceAbstraction, EncryptService, I18nServiceAbstraction, StateProvider],
   }),
   safeProvider({
@@ -691,7 +691,7 @@ const safeProviders: SafeProvider[] = [
       InternalFolderService,
       CipherServiceAbstraction,
       CryptoServiceAbstraction,
-      CollectionServiceAbstraction,
+      CollectionService,
       MessagingServiceAbstraction,
       InternalPolicyService,
       InternalSendService,
@@ -740,7 +740,7 @@ const safeProviders: SafeProvider[] = [
       InternalMasterPasswordServiceAbstraction,
       CipherServiceAbstraction,
       FolderServiceAbstraction,
-      CollectionServiceAbstraction,
+      CollectionService,
       PlatformUtilsServiceAbstraction,
       MessagingServiceAbstraction,
       SearchServiceAbstraction,
@@ -795,7 +795,7 @@ const safeProviders: SafeProvider[] = [
       FolderServiceAbstraction,
       ImportApiServiceAbstraction,
       I18nServiceAbstraction,
-      CollectionServiceAbstraction,
+      CollectionService,
       CryptoServiceAbstraction,
       EncryptService,
       PinServiceAbstraction,
@@ -826,7 +826,7 @@ const safeProviders: SafeProvider[] = [
       CryptoServiceAbstraction,
       EncryptService,
       CryptoFunctionServiceAbstraction,
-      CollectionServiceAbstraction,
+      CollectionService,
       KdfConfigServiceAbstraction,
       AccountServiceAbstraction,
     ],

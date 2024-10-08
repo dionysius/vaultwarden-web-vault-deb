@@ -1,4 +1,4 @@
-import { CollectionDetailsResponse } from "@bitwarden/common/vault/models/response/collection.response";
+import { CollectionDetailsResponse } from "@bitwarden/admin-console/common";
 
 import { CollectionAccessSelectionView, CollectionAdminView } from "../models";
 

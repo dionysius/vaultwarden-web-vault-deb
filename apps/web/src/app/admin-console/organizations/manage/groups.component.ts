@@ -14,18 +14,18 @@ import {
 } from "rxjs";
 import { debounceTime, first } from "rxjs/operators";
 
+import {
+  CollectionService,
+  CollectionData,
+  Collection,
+  CollectionDetailsResponse,
+  CollectionResponse,
+  CollectionView,
+} from "@bitwarden/admin-console/common";
 import { ApiService } from "@bitwarden/common/abstractions/api.service";
 import { ListResponse } from "@bitwarden/common/models/response/list.response";
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 import { LogService } from "@bitwarden/common/platform/abstractions/log.service";
-import { CollectionService } from "@bitwarden/common/vault/abstractions/collection.service";
-import { CollectionData } from "@bitwarden/common/vault/models/data/collection.data";
-import { Collection } from "@bitwarden/common/vault/models/domain/collection";
-import {
-  CollectionDetailsResponse,
-  CollectionResponse,
-} from "@bitwarden/common/vault/models/response/collection.response";
-import { CollectionView } from "@bitwarden/common/vault/models/view/collection.view";
 import { DialogService, TableDataSource, ToastService } from "@bitwarden/components";
 
 import { InternalGroupService as GroupService, GroupView } from "../core";

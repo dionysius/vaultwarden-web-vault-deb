@@ -7,6 +7,7 @@ import { firstValueFrom, map } from "rxjs";
 import {
   OrganizationUserApiService,
   DefaultOrganizationUserApiService,
+  DefaultCollectionService,
 } from "@bitwarden/admin-console/common";
 import {
   InternalUserDecryptionOptionsServiceAbstraction,
@@ -129,7 +130,6 @@ import { SendService } from "@bitwarden/common/tools/send/services/send.service"
 import { VaultTimeoutStringType } from "@bitwarden/common/types/vault-timeout.type";
 import { InternalFolderService } from "@bitwarden/common/vault/abstractions/folder/folder.service.abstraction";
 import { CipherService } from "@bitwarden/common/vault/services/cipher.service";
-import { CollectionService } from "@bitwarden/common/vault/services/collection.service";
 import { CipherFileUploadService } from "@bitwarden/common/vault/services/file-upload/cipher-file-upload.service";
 import { FolderApiService } from "@bitwarden/common/vault/services/folder/folder-api.service";
 import { FolderService } from "@bitwarden/common/vault/services/folder/folder.service";
@@ -191,7 +191,7 @@ export class ServiceContainer {
   cipherService: CipherService;
   folderService: InternalFolderService;
   organizationUserApiService: OrganizationUserApiService;
-  collectionService: CollectionService;
+  collectionService: DefaultCollectionService;
   vaultTimeoutService: VaultTimeoutService;
   masterPasswordService: InternalMasterPasswordServiceAbstraction;
   vaultTimeoutSettingsService: VaultTimeoutSettingsService;
@@ -498,7 +498,7 @@ export class ServiceContainer {
 
     this.searchService = new SearchService(this.logService, this.i18nService, this.stateProvider);
 
-    this.collectionService = new CollectionService(
+    this.collectionService = new DefaultCollectionService(
       this.cryptoService,
       this.encryptService,
       this.i18nService,

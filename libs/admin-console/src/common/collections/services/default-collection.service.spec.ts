@@ -1,25 +1,29 @@
 import { mock } from "jest-mock-extended";
 import { firstValueFrom, of } from "rxjs";
 
+import { CryptoService } from "@bitwarden/common/platform/abstractions/crypto.service";
+import { EncryptService } from "@bitwarden/common/platform/abstractions/encrypt.service";
+import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
+import { Utils } from "@bitwarden/common/platform/misc/utils";
+import { EncString } from "@bitwarden/common/platform/models/domain/enc-string";
+import { ContainerService } from "@bitwarden/common/platform/services/container.service";
 import {
   FakeStateProvider,
   makeEncString,
   makeSymmetricCryptoKey,
   mockAccountServiceWith,
-} from "../../../spec";
-import { CryptoService } from "../../platform/abstractions/crypto.service";
-import { EncryptService } from "../../platform/abstractions/encrypt.service";
-import { I18nService } from "../../platform/abstractions/i18n.service";
-import { Utils } from "../../platform/misc/utils";
-import { EncString } from "../../platform/models/domain/enc-string";
-import { ContainerService } from "../../platform/services/container.service";
-import { CollectionId, OrganizationId, UserId } from "../../types/guid";
-import { OrgKey } from "../../types/key";
-import { CollectionData } from "../models/data/collection.data";
+} from "@bitwarden/common/spec";
+import { CollectionId, OrganizationId, UserId } from "@bitwarden/common/types/guid";
+import { OrgKey } from "@bitwarden/common/types/key";
 
-import { CollectionService, ENCRYPTED_COLLECTION_DATA_KEY } from "./collection.service";
+import { CollectionData } from "../models";
 
-describe("CollectionService", () => {
+import {
+  DefaultCollectionService,
+  ENCRYPTED_COLLECTION_DATA_KEY,
+} from "./default-collection.service";
+
+describe("DefaultCollectionService", () => {
   afterEach(() => {
     delete (window as any).bitwardenContainerService;
   });
@@ -49,7 +53,7 @@ describe("CollectionService", () => {
         }),
       );
 
-      const collectionService = new CollectionService(
+      const collectionService = new DefaultCollectionService(
         cryptoService,
         mock<EncryptService>(),
         mockI18nService(),
@@ -86,7 +90,7 @@ describe("CollectionService", () => {
         }),
       );
 
-      const collectionService = new CollectionService(
+      const collectionService = new DefaultCollectionService(
         cryptoService,
         mock<EncryptService>(),
         mockI18nService(),

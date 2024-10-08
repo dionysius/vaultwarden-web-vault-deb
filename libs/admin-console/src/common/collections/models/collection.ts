@@ -1,8 +1,9 @@
-import Domain from "../../../platform/models/domain/domain-base";
-import { EncString } from "../../../platform/models/domain/enc-string";
-import { OrgKey } from "../../../types/key";
-import { CollectionData } from "../data/collection.data";
-import { CollectionView } from "../view/collection.view";
+import Domain from "@bitwarden/common/platform/models/domain/domain-base";
+import { EncString } from "@bitwarden/common/platform/models/domain/enc-string";
+import { OrgKey } from "@bitwarden/common/types/key";
+
+import { CollectionData } from "./collection.data";
+import { CollectionView } from "./collection.view";
 
 export class Collection extends Domain {
   id: string;

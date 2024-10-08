@@ -9,7 +9,7 @@ import {
 } from "@angular/core";
 import { firstValueFrom } from "rxjs";
 
-import { Unassigned } from "@bitwarden/admin-console/common";
+import { Unassigned, CollectionView } from "@bitwarden/admin-console/common";
 import { JslibModule } from "@bitwarden/angular/jslib.module";
 import { Organization } from "@bitwarden/common/admin-console/models/domain/organization";
 import { FeatureFlag } from "@bitwarden/common/enums/feature-flag.enum";
@@ -17,7 +17,6 @@ import { ConfigService } from "@bitwarden/common/platform/abstractions/config/co
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 import { CipherType } from "@bitwarden/common/vault/enums";
 import { TreeNode } from "@bitwarden/common/vault/models/domain/tree-node";
-import { CollectionView } from "@bitwarden/common/vault/models/view/collection.view";
 import { BreadcrumbsModule, MenuModule } from "@bitwarden/components";
 
 import { HeaderModule } from "../../../layouts/header/header.module";

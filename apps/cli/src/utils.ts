@@ -4,10 +4,10 @@ import * as path from "path";
 import * as inquirer from "inquirer";
 import * as JSZip from "jszip";
 
+import { CollectionView } from "@bitwarden/admin-console/common";
 import { Organization } from "@bitwarden/common/admin-console/models/domain/organization";
 import { LogService } from "@bitwarden/common/platform/abstractions/log.service";
 import { Utils } from "@bitwarden/common/platform/misc/utils";
-import { CollectionView } from "@bitwarden/common/vault/models/view/collection.view";
 import { FolderView } from "@bitwarden/common/vault/models/view/folder.view";
 import { NodeUtils } from "@bitwarden/node/node-utils";
 

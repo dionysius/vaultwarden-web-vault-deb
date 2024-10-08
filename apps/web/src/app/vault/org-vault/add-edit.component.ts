@@ -1,6 +1,7 @@
 import { DatePipe } from "@angular/common";
 import { Component } from "@angular/core";
 
+import { CollectionService } from "@bitwarden/admin-console/common";
 import { ApiService } from "@bitwarden/common/abstractions/api.service";
 import { AuditService } from "@bitwarden/common/abstractions/audit.service";
 import { EventCollectionService } from "@bitwarden/common/abstractions/event/event-collection.service";
@@ -16,7 +17,6 @@ import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/pl
 import { SendApiService } from "@bitwarden/common/tools/send/services/send-api.service.abstraction";
 import { UserId } from "@bitwarden/common/types/guid";
 import { CipherService } from "@bitwarden/common/vault/abstractions/cipher.service";
-import { CollectionService } from "@bitwarden/common/vault/abstractions/collection.service";
 import { FolderService } from "@bitwarden/common/vault/abstractions/folder/folder.service.abstraction";
 import { TotpService } from "@bitwarden/common/vault/abstractions/totp.service";
 import { CipherData } from "@bitwarden/common/vault/models/data/cipher.data";

@@ -12,6 +12,7 @@ import {
 import { ReactiveFormsModule, UntypedFormBuilder, Validators } from "@angular/forms";
 import { combineLatest, map, merge, Observable, startWith, Subject, takeUntil } from "rxjs";
 
+import { CollectionService } from "@bitwarden/admin-console/common";
 import { JslibModule } from "@bitwarden/angular/jslib.module";
 import { PasswordStrengthV2Component } from "@bitwarden/angular/tools/password-strength/password-strength-v2.component";
 import { UserVerificationDialogComponent } from "@bitwarden/auth/angular";
@@ -26,7 +27,6 @@ import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.servic
 import { LogService } from "@bitwarden/common/platform/abstractions/log.service";
 import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
 import { Utils } from "@bitwarden/common/platform/misc/utils";
-import { CollectionService } from "@bitwarden/common/vault/abstractions/collection.service";
 import {
   AsyncActionsModule,
   BitSubmitDirective,

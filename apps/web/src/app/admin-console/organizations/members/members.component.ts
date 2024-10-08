@@ -17,6 +17,10 @@ import {
   OrganizationUserApiService,
   OrganizationUserConfirmRequest,
   OrganizationUserUserDetailsResponse,
+  CollectionService,
+  CollectionData,
+  Collection,
+  CollectionDetailsResponse,
 } from "@bitwarden/admin-console/common";
 import { UserNamePipe } from "@bitwarden/angular/pipes/user-name.pipe";
 import { ModalService } from "@bitwarden/angular/services/modal.service";
@@ -43,11 +47,7 @@ import { EncryptService } from "@bitwarden/common/platform/abstractions/encrypt.
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 import { LogService } from "@bitwarden/common/platform/abstractions/log.service";
 import { ValidationService } from "@bitwarden/common/platform/abstractions/validation.service";
-import { CollectionService } from "@bitwarden/common/vault/abstractions/collection.service";
 import { SyncService } from "@bitwarden/common/vault/abstractions/sync/sync.service.abstraction";
-import { CollectionData } from "@bitwarden/common/vault/models/data/collection.data";
-import { Collection } from "@bitwarden/common/vault/models/domain/collection";
-import { CollectionDetailsResponse } from "@bitwarden/common/vault/models/response/collection.response";
 import { DialogService, SimpleDialogOptions, ToastService } from "@bitwarden/components";
 
 import {
