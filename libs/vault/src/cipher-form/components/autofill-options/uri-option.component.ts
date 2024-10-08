@@ -83,6 +83,11 @@ export class UriOptionComponent implements ControlValueAccessor {
    */
   @Input({ required: true })
   set defaultMatchDetection(value: UriMatchStrategySetting) {
+    // The default selection has a value of `null` avoid showing "Default (Default)"
+    if (!value) {
+      return;
+    }
+
     this.uriMatchOptions[0].label = this.i18nService.t(
       "defaultLabel",
       this.uriMatchOptions.find((o) => o.value === value)?.label,
