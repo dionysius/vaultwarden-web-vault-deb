@@ -1,4 +1,5 @@
 import { mock, MockProxy } from "jest-mock-extended";
+import { BehaviorSubject } from "rxjs";
 
 import { CLEAR_NOTIFICATION_LOGIN_DATA_DURATION } from "@bitwarden/common/autofill/constants";
 import { ConfigService } from "@bitwarden/common/platform/abstractions/config/config.service";
@@ -24,6 +25,7 @@ import { OverlayNotificationsBackground } from "./overlay-notifications.backgrou
 
 describe("OverlayNotificationsBackground", () => {
   let logService: MockProxy<LogService>;
+  let getFeatureFlagMock$: BehaviorSubject<boolean>;
   let configService: MockProxy<ConfigService>;
   let notificationBackground: NotificationBackground;
   let getEnableChangedPasswordPromptSpy: jest.SpyInstance;
@@ -33,7 +35,10 @@ describe("OverlayNotificationsBackground", () => {
   beforeEach(async () => {
     jest.useFakeTimers();
     logService = mock<LogService>();
-    configService = mock<ConfigService>();
+    getFeatureFlagMock$ = new BehaviorSubject(true);
+    configService = mock<ConfigService>({
+      getFeatureFlag$: jest.fn().mockReturnValue(getFeatureFlagMock$),
+    });
     notificationBackground = mock<NotificationBackground>();
     getEnableChangedPasswordPromptSpy = jest
       .spyOn(notificationBackground, "getEnableChangedPasswordPrompt")

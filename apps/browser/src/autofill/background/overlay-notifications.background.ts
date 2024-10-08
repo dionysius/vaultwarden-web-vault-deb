@@ -1,4 +1,5 @@
-import { Subject, switchMap, timer } from "rxjs";
+import { startWith, Subject, Subscription, switchMap, timer } from "rxjs";
+import { pairwise } from "rxjs/operators";
 
 import { CLEAR_NOTIFICATION_LOGIN_DATA_DURATION } from "@bitwarden/common/autofill/constants";
 import { FeatureFlag } from "@bitwarden/common/enums/feature-flag.enum";
@@ -23,6 +24,7 @@ export class OverlayNotificationsBackground implements OverlayNotificationsBackg
   private websiteOriginsWithFields: WebsiteOriginsWithFields = new Map();
   private activeFormSubmissionRequests: ActiveFormSubmissionRequests = new Set();
   private modifyLoginCipherFormData: ModifyLoginCipherFormDataForTab = new Map();
+  private featureFlagState$: Subscription;
   private clearLoginCipherFormDataSubject: Subject<void> = new Subject();
   private notificationFallbackTimeout: number | NodeJS.Timeout | null;
   private readonly formSubmissionRequestMethods: Set<string> = new Set(["POST", "PUT", "PATCH"]);
@@ -42,18 +44,34 @@ export class OverlayNotificationsBackground implements OverlayNotificationsBackg
    * Initialize the overlay notifications background service.
    */
   async init() {
-    const featureFlagActive = await this.configService.getFeatureFlag(
-      FeatureFlag.NotificationBarAddLoginImprovements,
-    );
-    if (!featureFlagActive) {
-      return;
-    }
-
-    this.setupExtensionListeners();
+    this.featureFlagState$ = this.configService
+      .getFeatureFlag$(FeatureFlag.NotificationBarAddLoginImprovements)
+      .pipe(startWith(undefined), pairwise())
+      .subscribe(([prev, current]) => this.handleInitFeatureFlagChange(prev, current));
     this.clearLoginCipherFormDataSubject
       .pipe(switchMap(() => timer(CLEAR_NOTIFICATION_LOGIN_DATA_DURATION)))
       .subscribe(() => this.modifyLoginCipherFormData.clear());
   }
+
+  /**
+   * Handles enabling/disabling the extension listeners that trigger the
+   * overlay notifications based on the feature flag state.
+   *
+   * @param previousValue - The previous value of the feature flag
+   * @param currentValue - The current value of the feature flag
+   */
+  private handleInitFeatureFlagChange = (previousValue: boolean, currentValue: boolean) => {
+    if (previousValue === currentValue) {
+      return;
+    }
+
+    if (currentValue) {
+      this.setupExtensionListeners();
+      return;
+    }
+
+    this.removeExtensionListeners();
+  };
 
   /**
    * Handles the response from the content script with the page details. Triggers an initialization
@@ -495,9 +513,18 @@ export class OverlayNotificationsBackground implements OverlayNotificationsBackg
    * Sets up the listeners for the extension messages and the tab events.
    */
   private setupExtensionListeners() {
-    BrowserApi.messageListener("overlay-notifications", this.handleExtensionMessage);
+    BrowserApi.addListener(chrome.runtime.onMessage, this.handleExtensionMessage);
     chrome.tabs.onRemoved.addListener(this.handleTabRemoved);
     chrome.tabs.onUpdated.addListener(this.handleTabUpdated);
+  }
+
+  /**
+   * Removes the listeners for the extension messages and the tab events.
+   */
+  private removeExtensionListeners() {
+    BrowserApi.removeListener(chrome.runtime.onMessage, this.handleExtensionMessage);
+    chrome.tabs.onRemoved.removeListener(this.handleTabRemoved);
+    chrome.tabs.onUpdated.removeListener(this.handleTabUpdated);
   }
 
   /**
