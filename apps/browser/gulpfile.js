@@ -14,7 +14,6 @@ const betaBuild = process.env.BETA_BUILD === "1";
 const paths = {
   build: "./build/",
   dist: "./dist/",
-  coverage: "./coverage/",
   node_modules: "./node_modules/",
   popupDir: "./src/popup/",
   cssDir: "./src/popup/css/",
@@ -276,17 +275,6 @@ function stdOutProc(proc) {
   proc.stderr.on("data", (data) => console.error(data.toString()));
 }
 
-async function ciCoverage(cb) {
-  const { default: zip } = await import("gulp-zip");
-  const { default: filter } = await import("gulp-filter");
-
-  return gulp
-    .src(paths.coverage + "**/*")
-    .pipe(filter(["**", "!coverage/coverage*.zip"]))
-    .pipe(zip(`coverage${buildString()}.zip`))
-    .pipe(gulp.dest(paths.coverage));
-}
-
 function applyBetaLabels(manifest) {
   manifest.name = "Bitwarden Password Manager BETA";
   manifest.short_name = "Bitwarden BETA";
@@ -320,5 +308,3 @@ exports["dist:safari:mas"] = distSafariMas;
 exports["dist:safari:masdev"] = distSafariMasDev;
 exports["dist:safari:dmg"] = distSafariDmg;
 exports.dist = gulp.parallel(distFirefox, distChrome, distOpera, distEdge);
-exports["ci:coverage"] = ciCoverage;
-exports.ci = ciCoverage;

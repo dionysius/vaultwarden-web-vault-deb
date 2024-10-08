@@ -26,7 +26,6 @@
     "dist:safari:masdev": "npm run build:prod && gulp dist:safari:masdev",
     "dist:safari:dmg": "npm run build:prod && gulp dist:safari:dmg",
     "test": "jest",
-    "test:coverage": "jest --coverage --coverageDirectory=coverage",
     "test:watch": "jest --watch",
     "test:watch:all": "jest --watchAll"
   }
