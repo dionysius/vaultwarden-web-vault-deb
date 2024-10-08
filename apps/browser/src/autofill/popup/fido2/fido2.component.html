@@ -50,7 +50,7 @@
       <ng-container *ngIf="!displayedCiphers.length">
         <bit-no-items class="tw-text-main" [icon]="noResultsIcon">
           <ng-container slot="title">{{ "noMatchingLoginsForSite" | i18n }}</ng-container>
-          <ng-container slot="description">Search or save passkey as new login</ng-container>
+          <ng-container slot="description">{{ "searchSavePasskeyNewLogin" | i18n }}</ng-container>
           <button
             bitButton
             buttonType="primary"
@@ -100,8 +100,8 @@
       <!-- Display when no matching ciphers exist -->
       <ng-container *ngIf="!displayedCiphers.length">
         <bit-no-items class="tw-text-main" [icon]="noResultsIcon">
-          <ng-container slot="title">No matching logins for this site</ng-container>
-          <ng-container slot="description">Search or save passkey as new login</ng-container>
+          <ng-container slot="title">{{ "noItemsMatchSearch" | i18n }}</ng-container>
+          <ng-container slot="description">{{ "clearFiltersOrTryAnother" | i18n }}</ng-container>
           <button
             bitButton
             buttonType="primary"
