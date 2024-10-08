@@ -92,7 +92,12 @@ export class VaultItemsComponent {
   }
 
   get disableMenu() {
-    return !this.bulkMoveAllowed && !this.showAssignToCollections() && !this.showDelete();
+    return (
+      !this.bulkMoveAllowed &&
+      !this.showAssignToCollections() &&
+      !this.showDelete() &&
+      !this.showBulkEditCollectionAccess
+    );
   }
 
   get bulkAssignToCollectionsAllowed() {
