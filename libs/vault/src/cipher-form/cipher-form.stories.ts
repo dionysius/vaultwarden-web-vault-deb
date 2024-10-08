@@ -15,7 +15,9 @@ import { EventCollectionService } from "@bitwarden/common/abstractions/event/eve
 import { Organization } from "@bitwarden/common/admin-console/models/domain/organization";
 import { AutofillSettingsServiceAbstraction } from "@bitwarden/common/autofill/services/autofill-settings.service";
 import { DomainSettingsService } from "@bitwarden/common/autofill/services/domain-settings.service";
+import { ClientType } from "@bitwarden/common/enums";
 import { UriMatchStrategy } from "@bitwarden/common/models/domain/domain-service";
+import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
 import { CipherType } from "@bitwarden/common/vault/enums";
 import { Cipher } from "@bitwarden/common/vault/models/domain/cipher";
 import { CipherView } from "@bitwarden/common/vault/models/view/cipher.view";
@@ -173,6 +175,12 @@ export default {
           provide: EventCollectionService,
           useValue: {
             collect: () => Promise.resolve(),
+          },
+        },
+        {
+          provide: PlatformUtilsService,
+          useValue: {
+            getClientType: () => ClientType.Browser,
           },
         },
       ],
