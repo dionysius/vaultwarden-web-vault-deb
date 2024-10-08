@@ -164,7 +164,16 @@ describe("OverlayNotificationsBackground", () => {
   });
 
   describe("storing the modified login form data", () => {
+    const pageDetails = mock<AutofillPageDetails>({ fields: [mock<AutofillField>()] });
     const sender = mock<chrome.runtime.MessageSender>({ tab: { id: 1 } });
+
+    beforeEach(async () => {
+      sendMockExtensionMessage(
+        { command: "collectPageDetailsResponse", details: pageDetails },
+        sender,
+      );
+      await flushPromises();
+    });
 
     it("stores the modified login cipher form data", async () => {
       sendMockExtensionMessage(
@@ -349,8 +358,14 @@ describe("OverlayNotificationsBackground", () => {
 
     describe("web requests that trigger notifications", () => {
       const requestId = "123345";
+      const pageDetails = mock<AutofillPageDetails>({ fields: [mock<AutofillField>()] });
 
       beforeEach(async () => {
+        sendMockExtensionMessage(
+          { command: "collectPageDetailsResponse", details: pageDetails },
+          sender,
+        );
+        await flushPromises();
         sendMockExtensionMessage(
           {
             command: "formFieldSubmitted",
@@ -446,6 +461,11 @@ describe("OverlayNotificationsBackground", () => {
 
       it("triggers the notification on the beforeRequest listener when a post-submission redirection is encountered", async () => {
         sender.tab = mock<chrome.tabs.Tab>({ id: 4 });
+        sendMockExtensionMessage(
+          { command: "collectPageDetailsResponse", details: pageDetails },
+          sender,
+        );
+        await flushPromises();
         sendMockExtensionMessage(
           {
             command: "formFieldSubmitted",
