@@ -1,0 +1,9 @@
+{
+  "extends": "../libs/shared/tsconfig",
+  "compilerOptions": {
+    "outDir": "dist",
+    "module": "NodeNext",
+    "target": "ESNext"
+  },
+  "include": ["*.ts"]
+}
