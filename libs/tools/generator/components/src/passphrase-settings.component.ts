@@ -10,7 +10,6 @@ import {
   PassphraseGenerationOptions,
 } from "@bitwarden/generator-core";
 
-import { DependenciesModule } from "./dependencies";
 import { completeOnAccountSwitch, toValidators } from "./util";
 
 const Controls = Object.freeze({
@@ -22,10 +21,8 @@ const Controls = Object.freeze({
 
 /** Options group for passphrases */
 @Component({
-  standalone: true,
   selector: "tools-passphrase-settings",
   templateUrl: "passphrase-settings.component.html",
-  imports: [DependenciesModule],
 })
 export class PassphraseSettingsComponent implements OnInit, OnDestroy {
   /** Instantiates the component

@@ -1,11 +1,7 @@
 import { CommonModule } from "@angular/common";
 import { Component, EventEmitter, Input, Output } from "@angular/core";
 
-import { SectionComponent } from "@bitwarden/components";
-import {
-  PasswordGeneratorComponent,
-  UsernameGeneratorComponent,
-} from "@bitwarden/generator-components";
+import { GeneratorModule } from "@bitwarden/generator-components";
 import { GeneratedCredential } from "@bitwarden/generator-core";
 
 /**
@@ -16,7 +12,7 @@ import { GeneratedCredential } from "@bitwarden/generator-core";
   selector: "vault-cipher-form-generator",
   templateUrl: "./cipher-form-generator.component.html",
   standalone: true,
-  imports: [CommonModule, SectionComponent, PasswordGeneratorComponent, UsernameGeneratorComponent],
+  imports: [CommonModule, GeneratorModule],
 })
 export class CipherFormGeneratorComponent {
   /**

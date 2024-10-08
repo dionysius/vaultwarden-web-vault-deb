@@ -3,10 +3,7 @@ import { ComponentFixture, TestBed } from "@angular/core/testing";
 import { By } from "@angular/platform-browser";
 
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
-import {
-  PasswordGeneratorComponent,
-  UsernameGeneratorComponent,
-} from "@bitwarden/generator-components";
+import { GeneratorModule } from "@bitwarden/generator-components";
 import { CipherFormGeneratorComponent } from "@bitwarden/vault";
 
 @Component({
@@ -37,7 +34,7 @@ describe("CipherFormGeneratorComponent", () => {
       providers: [{ provide: I18nService, useValue: { t: (key: string) => key } }],
     })
       .overrideComponent(CipherFormGeneratorComponent, {
-        remove: { imports: [PasswordGeneratorComponent, UsernameGeneratorComponent] },
+        remove: { imports: [GeneratorModule] },
         add: { imports: [MockPasswordGeneratorComponent, MockUsernameGeneratorComponent] },
       })
       .compileComponents();

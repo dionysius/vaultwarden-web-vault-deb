@@ -10,7 +10,6 @@ import {
   PasswordGenerationOptions,
 } from "@bitwarden/generator-core";
 
-import { DependenciesModule } from "./dependencies";
 import { completeOnAccountSwitch, toValidators } from "./util";
 
 const Controls = Object.freeze({
@@ -26,10 +25,8 @@ const Controls = Object.freeze({
 
 /** Options group for passwords */
 @Component({
-  standalone: true,
   selector: "tools-password-settings",
   templateUrl: "password-settings.component.html",
-  imports: [DependenciesModule],
 })
 export class PasswordSettingsComponent implements OnInit, OnDestroy {
   /** Instantiates the component

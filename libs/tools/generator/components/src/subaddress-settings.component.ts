@@ -10,15 +10,12 @@ import {
   SubaddressGenerationOptions,
 } from "@bitwarden/generator-core";
 
-import { DependenciesModule } from "./dependencies";
 import { completeOnAccountSwitch } from "./util";
 
 /** Options group for plus-addressed emails */
 @Component({
-  standalone: true,
   selector: "tools-subaddress-settings",
   templateUrl: "subaddress-settings.component.html",
-  imports: [DependenciesModule],
 })
 export class SubaddressSettingsComponent implements OnInit, OnDestroy {
   /** Instantiates the component

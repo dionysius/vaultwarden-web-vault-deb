@@ -10,15 +10,12 @@ import {
   Generators,
 } from "@bitwarden/generator-core";
 
-import { DependenciesModule } from "./dependencies";
 import { completeOnAccountSwitch } from "./util";
 
 /** Options group for catchall emails */
 @Component({
-  standalone: true,
   selector: "tools-catchall-settings",
   templateUrl: "catchall-settings.component.html",
-  imports: [DependenciesModule],
 })
 export class CatchallSettingsComponent implements OnInit, OnDestroy {
   /** Instantiates the component

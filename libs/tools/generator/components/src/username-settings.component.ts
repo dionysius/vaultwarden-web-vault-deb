@@ -10,15 +10,12 @@ import {
   Generators,
 } from "@bitwarden/generator-core";
 
-import { DependenciesModule } from "./dependencies";
 import { completeOnAccountSwitch } from "./util";
 
 /** Options group for usernames */
 @Component({
-  standalone: true,
   selector: "tools-username-settings",
   templateUrl: "username-settings.component.html",
-  imports: [DependenciesModule],
 })
 export class UsernameSettingsComponent implements OnInit, OnDestroy {
   /** Instantiates the component
