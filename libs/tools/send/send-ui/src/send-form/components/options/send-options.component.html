@@ -12,8 +12,7 @@
       >
     </bit-form-field>
     <bit-form-field>
-      <bit-label *ngIf="!hasPassword">{{ "password" | i18n }}</bit-label>
-      <bit-label *ngIf="hasPassword">{{ "newPassword" | i18n }}</bit-label>
+      <bit-label>{{ "password" | i18n }}</bit-label>
       <input bitInput type="password" formControlName="password" />
       <button
         data-testid="toggle-visibility-for-password"
