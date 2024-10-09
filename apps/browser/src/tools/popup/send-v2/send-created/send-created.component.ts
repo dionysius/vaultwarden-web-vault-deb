@@ -39,6 +39,7 @@ export class SendCreatedComponent {
   protected sendCreatedIcon = SendCreatedIcon;
   protected send: SendView;
   protected daysAvailable = 0;
+  protected hoursAvailable = 0;
 
   constructor(
     private i18nService: I18nService,
@@ -54,14 +55,26 @@ export class SendCreatedComponent {
     this.sendService.sendViews$.pipe(takeUntilDestroyed()).subscribe((sendViews) => {
       this.send = sendViews.find((s) => s.id === sendId);
       if (this.send) {
-        this.daysAvailable = this.getDaysAvailable(this.send);
+        this.hoursAvailable = this.getHoursAvailable(this.send);
+        this.daysAvailable = Math.ceil(this.hoursAvailable / 24);
       }
     });
   }
 
-  getDaysAvailable(send: SendView): number {
+  formatExpirationDate(): string {
+    if (this.hoursAvailable < 24) {
+      return this.hoursAvailable === 1
+        ? this.i18nService.t("sendExpiresInHoursSingle")
+        : this.i18nService.t("sendExpiresInHours", this.hoursAvailable);
+    }
+    return this.daysAvailable === 1
+      ? this.i18nService.t("sendExpiresInDaysSingle")
+      : this.i18nService.t("sendExpiresInDays", this.daysAvailable);
+  }
+
+  getHoursAvailable(send: SendView): number {
     const now = new Date().getTime();
-    return Math.max(0, Math.ceil((send.deletionDate.getTime() - now) / (1000 * 60 * 60 * 24)));
+    return Math.max(0, Math.ceil((send.deletionDate.getTime() - now) / (1000 * 60 * 60)));
   }
 
   async close() {

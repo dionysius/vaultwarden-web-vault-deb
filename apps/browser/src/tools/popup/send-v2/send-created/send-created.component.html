@@ -16,7 +16,9 @@
     >
       <bit-icon [icon]="sendCreatedIcon"></bit-icon>
       <h3 class="tw-font-semibold">{{ "createdSendSuccessfully" | i18n }}</h3>
-      <p class="tw-text-center">{{ "sendAvailability" | i18n: daysAvailable }}</p>
+      <p class="tw-text-center">
+        {{ formatExpirationDate() }}
+      </p>
       <button bitButton type="button" buttonType="primary" (click)="copyLink()">
         <b>{{ "copyLink" | i18n }}</b>
       </button>
