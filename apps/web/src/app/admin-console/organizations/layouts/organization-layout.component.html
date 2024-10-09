@@ -39,6 +39,11 @@
         *ngIf="organization.canAccessReports"
       ></bit-nav-item>
     </bit-nav-group>
+    <bit-nav-item
+      *ngIf="isAccessIntelligenceFeatureEnabled"
+      [text]="'accessIntelligence' | i18n"
+      route="access-intelligence"
+    ></bit-nav-item>
     <bit-nav-group
       icon="bwi-billing"
       [text]="'billing' | i18n"

@@ -51,6 +51,7 @@ export class OrganizationLayoutComponent implements OnInit, OnDestroy {
   showPaymentAndHistory$: Observable<boolean>;
   hideNewOrgButton$: Observable<boolean>;
   organizationIsUnmanaged$: Observable<boolean>;
+  isAccessIntelligenceFeatureEnabled = false;
 
   private _destroy = new Subject<void>();
 
@@ -69,6 +70,10 @@ export class OrganizationLayoutComponent implements OnInit, OnDestroy {
 
   async ngOnInit() {
     document.body.classList.remove("layout_frontend");
+
+    this.isAccessIntelligenceFeatureEnabled = await this.configService.getFeatureFlag(
+      FeatureFlag.AccessIntelligence,
+    );
 
     this.organization$ = this.route.params
       .pipe(takeUntil(this._destroy))
