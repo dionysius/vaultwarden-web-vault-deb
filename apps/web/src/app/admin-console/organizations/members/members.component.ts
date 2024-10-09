@@ -70,7 +70,10 @@ import {
   MemberDialogTab,
   openUserAddEditDialog,
 } from "./components/member-dialog";
-import { ResetPasswordComponent } from "./components/reset-password.component";
+import {
+  ResetPasswordComponent,
+  ResetPasswordDialogResult,
+} from "./components/reset-password.component";
 
 class MembersTableDataSource extends PeopleTableDataSource<OrganizationUserView> {
   protected statusType = OrganizationUserStatusType;
@@ -663,24 +666,19 @@ export class MembersComponent extends BaseMembersComponent<OrganizationUserView>
   }
 
   async resetPassword(user: OrganizationUserView) {
-    const [modal] = await this.modalService.openViewRef(
-      ResetPasswordComponent,
-      this.resetPasswordModalRef,
-      (comp) => {
-        comp.name = this.userNamePipe.transform(user);
-        comp.email = user != null ? user.email : null;
-        comp.organizationId = this.organization.id;
-        comp.id = user != null ? user.id : null;
-
-        // eslint-disable-next-line rxjs-angular/prefer-takeuntil
-        comp.passwordReset.subscribe(() => {
-          modal.close();
-          // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
-          // eslint-disable-next-line @typescript-eslint/no-floating-promises
-          this.load();
-        });
+    const dialogRef = ResetPasswordComponent.open(this.dialogService, {
+      data: {
+        name: this.userNamePipe.transform(user),
+        email: user != null ? user.email : null,
+        organizationId: this.organization.id,
+        id: user != null ? user.id : null,
       },
-    );
+    });
+
+    const result = await lastValueFrom(dialogRef.closed);
+    if (result === ResetPasswordDialogResult.Ok) {
+      await this.load();
+    }
   }
 
   protected async removeUserConfirmationDialog(user: OrganizationUserView) {
