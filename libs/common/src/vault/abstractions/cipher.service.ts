@@ -17,7 +17,7 @@ import { FieldView } from "../models/view/field.view";
 import { AddEditCipherInfo } from "../types/add-edit-cipher-info";
 
 export abstract class CipherService implements UserKeyRotationDataProvider<CipherWithIdRequest> {
-  cipherViews$: Observable<Record<CipherId, CipherView>>;
+  cipherViews$: Observable<CipherView[]>;
   ciphers$: Observable<Record<CipherId, CipherData>>;
   localData$: Observable<Record<CipherId, LocalData>>;
   /**
