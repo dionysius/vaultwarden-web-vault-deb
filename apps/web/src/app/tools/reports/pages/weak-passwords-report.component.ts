@@ -15,7 +15,7 @@ import { PasswordRepromptService } from "@bitwarden/vault";
 import { CipherReportComponent } from "./cipher-report.component";
 
 type ReportScore = { label: string; badgeVariant: BadgeVariant };
-type ReportResult = CipherView & { reportValue: ReportScore };
+type ReportResult = CipherView & { score: number; reportValue: ReportScore };
 
 @Component({
   selector: "app-weak-passwords-report",
@@ -100,7 +100,7 @@ export class WeakPasswordsReportComponent extends CipherReportComponent implemen
 
       if (result.score != null && result.score <= 2) {
         const scoreValue = this.scoreKey(result.score);
-        const row = { ...ciph, reportValue: scoreValue } as ReportResult;
+        const row = { ...ciph, score: result.score, reportValue: scoreValue } as ReportResult;
         this.weakPasswordCiphers.push(row);
       }
     });
