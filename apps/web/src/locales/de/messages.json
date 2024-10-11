@@ -1,4 +1,64 @@
 {
+  "allApplications": {
+    "message": "Alle Anwendungen"
+  },
+  "priorityApplications": {
+    "message": "Vorrangige Anwendungen"
+  },
+  "accessIntelligence": {
+    "message": "Access Intelligence"
+  },
+  "notifiedMembers": {
+    "message": "Benachrichtigte Mitglieder"
+  },
+  "allApplicationsWithCount": {
+    "message": "Alle Anwendungen ($COUNT$)",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "priorityApplicationsWithCount": {
+    "message": "Vorrangige Anwendungen ($COUNT$)",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "notifiedMembersWithCount": {
+    "message": "Benachrichtigte Mitglieder ($COUNT$)",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "application": {
+    "message": "Anwendung"
+  },
+  "atRiskPasswords": {
+    "message": "Risikoreiche Passwörter"
+  },
+  "totalPasswords": {
+    "message": "Passwörter insgesamt"
+  },
+  "atRiskMembers": {
+    "message": "Risikoreiche Mitglieder"
+  },
+  "totalMembers": {
+    "message": "Mitglieder insgesamt"
+  },
+  "atRiskApplications": {
+    "message": "Risikoreiche Anwendungen"
+  },
+  "totalApplications": {
+    "message": "Anwendungen insgesamt"
+  },
   "whatTypeOfItem": {
     "message": "Um welche Art von Eintrag handelt es sich hierbei?"
   },
@@ -1440,7 +1500,12 @@
     "description": "Minimum special characters"
   },
   "ambiguous": {
-    "message": "Mehrdeutige Zeichen vermeiden"
+    "message": "Mehrdeutige Zeichen vermeiden",
+    "description": "deprecated. Use avoidAmbiguous instead."
+  },
+  "avoidAmbiguous": {
+    "message": "Mehrdeutige Zeichen vermeiden",
+    "description": "Label for the avoid ambiguous characters checkbox."
   },
   "regeneratePassword": {
     "message": "Passwort neu generieren"
@@ -1453,17 +1518,50 @@
   },
   "uppercase": {
     "message": "Großbuchstaben (A-Z)",
-    "description": "Include uppercase letters in the password generator."
+    "description": "deprecated. Use uppercaseLabel instead."
   },
   "lowercase": {
     "message": "Kleinbuchstaben (a-z)",
-    "description": "Include lowercase letters in the password generator."
+    "description": "deprecated. Use lowercaseLabel instead."
   },
   "numbers": {
-    "message": "Zahlen (0-9)"
+    "message": "Zahlen (0-9)",
+    "description": "deprecated. Use numbersLabel instead."
   },
   "specialCharacters": {
     "message": "Sonderzeichen (!@#$%^&*)"
+  },
+  "uppercaseDescription": {
+    "message": "Großbuchstaben einschließen",
+    "description": "Tooltip for the password generator uppercase character checkbox"
+  },
+  "uppercaseLabel": {
+    "message": "A-Z",
+    "description": "Label for the password generator uppercase character checkbox"
+  },
+  "lowercaseDescription": {
+    "message": "Kleinbuchstaben einschließen",
+    "description": "Full description for the password generator lowercase character checkbox"
+  },
+  "lowercaseLabel": {
+    "message": "a-z",
+    "description": "Label for the password generator lowercase character checkbox"
+  },
+  "numbersDescription": {
+    "message": "Ziffern einschließen",
+    "description": "Full description for the password generator numbers checkbox"
+  },
+  "numbersLabel": {
+    "message": "0-9",
+    "description": "Label for the password generator numbers checkbox"
+  },
+  "specialCharactersDescription": {
+    "message": "Sonderzeichen einschließen",
+    "description": "Full description for the password generator special characters checkbox"
+  },
+  "specialCharactersLabel": {
+    "message": "!@#$%^&*",
+    "description": "Label for the password generator special characters checkbox"
   },
   "numWords": {
     "message": "Anzahl der Wörter"
@@ -2616,8 +2714,11 @@
   "invoices": {
     "message": "Rechnungen"
   },
-  "noInvoices": {
-    "message": "Keine Rechnungen."
+  "noUnpaidInvoices": {
+    "message": "Keine unbezahlten Rechnungen."
+  },
+  "noPaidInvoices": {
+    "message": "Keine bezahlten Rechnungen."
   },
   "paid": {
     "message": "Bezahlt",
@@ -6223,7 +6324,8 @@
     "message": "Kontoeinstellungen"
   },
   "generator": {
-    "message": "Generator"
+    "message": "Generator",
+    "description": "Short for 'credential generator'."
   },
   "whatWouldYouLikeToGenerate": {
     "message": "Was möchtest du generieren?"

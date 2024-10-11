@@ -1,4 +1,64 @@
 {
+  "allApplications": {
+    "message": "すべてのアプリ"
+  },
+  "priorityApplications": {
+    "message": "優先アプリ"
+  },
+  "accessIntelligence": {
+    "message": "インテリジェンスへのアクセス"
+  },
+  "notifiedMembers": {
+    "message": "通知済みメンバー"
+  },
+  "allApplicationsWithCount": {
+    "message": "すべてのアプリ ($COUNT$)",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "priorityApplicationsWithCount": {
+    "message": "優先アプリ ($COUNT$)",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "notifiedMembersWithCount": {
+    "message": "通知済みメンバー ($COUNT$)",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "application": {
+    "message": "アプリ"
+  },
+  "atRiskPasswords": {
+    "message": "リスクがあるパスワード"
+  },
+  "totalPasswords": {
+    "message": "合計パスワード数"
+  },
+  "atRiskMembers": {
+    "message": "リスクがあるメンバー"
+  },
+  "totalMembers": {
+    "message": "合計メンバー数"
+  },
+  "atRiskApplications": {
+    "message": "リスクがあるアプリ"
+  },
+  "totalApplications": {
+    "message": "合計アプリ数"
+  },
   "whatTypeOfItem": {
     "message": "このアイテムのタイプは何ですか？"
   },
@@ -1440,7 +1500,12 @@
     "description": "Minimum special characters"
   },
   "ambiguous": {
-    "message": "あいまいな文字を省く"
+    "message": "あいまいな文字を省く",
+    "description": "deprecated. Use avoidAmbiguous instead."
+  },
+  "avoidAmbiguous": {
+    "message": "あいまいな文字を避ける",
+    "description": "Label for the avoid ambiguous characters checkbox."
   },
   "regeneratePassword": {
     "message": "パスワードの再生成"
@@ -1453,17 +1518,50 @@
   },
   "uppercase": {
     "message": "大文字（A-Z）",
-    "description": "Include uppercase letters in the password generator."
+    "description": "deprecated. Use uppercaseLabel instead."
   },
   "lowercase": {
     "message": "小文字（a-z）",
-    "description": "Include lowercase letters in the password generator."
+    "description": "deprecated. Use lowercaseLabel instead."
   },
   "numbers": {
-    "message": "数字 (0～9)"
+    "message": "数字 (0～9)",
+    "description": "deprecated. Use numbersLabel instead."
   },
   "specialCharacters": {
     "message": "特殊文字（!@#$%^&*)"
+  },
+  "uppercaseDescription": {
+    "message": "大文字を含める",
+    "description": "Tooltip for the password generator uppercase character checkbox"
+  },
+  "uppercaseLabel": {
+    "message": "A～Z",
+    "description": "Label for the password generator uppercase character checkbox"
+  },
+  "lowercaseDescription": {
+    "message": "小文字を含める",
+    "description": "Full description for the password generator lowercase character checkbox"
+  },
+  "lowercaseLabel": {
+    "message": "a～z",
+    "description": "Label for the password generator lowercase character checkbox"
+  },
+  "numbersDescription": {
+    "message": "数字を含める",
+    "description": "Full description for the password generator numbers checkbox"
+  },
+  "numbersLabel": {
+    "message": "0～9",
+    "description": "Label for the password generator numbers checkbox"
+  },
+  "specialCharactersDescription": {
+    "message": "特殊記号を含める",
+    "description": "Full description for the password generator special characters checkbox"
+  },
+  "specialCharactersLabel": {
+    "message": "!@#$%^&*",
+    "description": "Label for the password generator special characters checkbox"
   },
   "numWords": {
     "message": "単語数"
@@ -2616,8 +2714,11 @@
   "invoices": {
     "message": "請求"
   },
-  "noInvoices": {
-    "message": "請求なし"
+  "noUnpaidInvoices": {
+    "message": "未払いの請求書はありません。"
+  },
+  "noPaidInvoices": {
+    "message": "支払い済みの請求書はありません。"
   },
   "paid": {
     "message": "支払済み",
@@ -6080,7 +6181,7 @@
     "message": "請求同期トークン"
   },
   "automaticBillingSyncDesc": {
-    "message": "Automatic sync unlocks Families sponsorships and allows you to sync your license without uploading a file. After making updates in the Bitwarden cloud server, select Sync License to apply changes."
+    "message": "自動同期はファミリースポンサーシップをアンロックし、ファイルをアップロードせずにライセンスを同期できます。 Bitwarden クラウドサーバーで更新を行った後、ライセンスの同期を選択すると変更を適用できます。"
   },
   "active": {
     "message": "有効"
@@ -6223,7 +6324,8 @@
     "message": "アカウント設定"
   },
   "generator": {
-    "message": "ジェネレーター"
+    "message": "ジェネレーター",
+    "description": "Short for 'credential generator'."
   },
   "whatWouldYouLikeToGenerate": {
     "message": "何を生成しますか？"

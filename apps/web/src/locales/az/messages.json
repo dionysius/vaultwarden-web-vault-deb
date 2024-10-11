@@ -1,4 +1,64 @@
 {
+  "allApplications": {
+    "message": "Bütün tətbiqlər"
+  },
+  "priorityApplications": {
+    "message": "Prioritet tətbiqlər"
+  },
+  "accessIntelligence": {
+    "message": "Müraciət Kəşfiyyatı"
+  },
+  "notifiedMembers": {
+    "message": "Məlumatlandırılan üzvlər"
+  },
+  "allApplicationsWithCount": {
+    "message": "Bütün tətbiqlər ($COUNT$)",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "priorityApplicationsWithCount": {
+    "message": "Prioritet tətbiqlər ($COUNT$)",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "notifiedMembersWithCount": {
+    "message": "Məlumatlandırılan üzvlər ($COUNT$)",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "application": {
+    "message": "Tətbiq"
+  },
+  "atRiskPasswords": {
+    "message": "Riskli parollar"
+  },
+  "totalPasswords": {
+    "message": "Cəmi parol"
+  },
+  "atRiskMembers": {
+    "message": "Riskli üzvlər"
+  },
+  "totalMembers": {
+    "message": "Cəmi üzv"
+  },
+  "atRiskApplications": {
+    "message": "Riskli tətbiqlər"
+  },
+  "totalApplications": {
+    "message": "Cəmi tətbiq"
+  },
   "whatTypeOfItem": {
     "message": "Bu elementin növü nədir?"
   },
@@ -1440,7 +1500,12 @@
     "description": "Minimum special characters"
   },
   "ambiguous": {
-    "message": "Anlaşılmaz simvollardan çəkinin"
+    "message": "Anlaşılmaz simvollardan çəkinin",
+    "description": "deprecated. Use avoidAmbiguous instead."
+  },
+  "avoidAmbiguous": {
+    "message": "Anlaşılmaz xarakterlərdən çəkin",
+    "description": "Label for the avoid ambiguous characters checkbox."
   },
   "regeneratePassword": {
     "message": "Parolu yenidən yarat"
@@ -1453,17 +1518,50 @@
   },
   "uppercase": {
     "message": "Böyük hərf (A-Z)",
-    "description": "Include uppercase letters in the password generator."
+    "description": "deprecated. Use uppercaseLabel instead."
   },
   "lowercase": {
     "message": "Kiçik hərf (a-z)",
-    "description": "Include lowercase letters in the password generator."
+    "description": "deprecated. Use lowercaseLabel instead."
   },
   "numbers": {
-    "message": "Rəqəmlər (0-9)"
+    "message": "Rəqəmlər (0-9)",
+    "description": "deprecated. Use numbersLabel instead."
   },
   "specialCharacters": {
     "message": "Xüsusi simvollar (!@#$%^&*)"
+  },
+  "uppercaseDescription": {
+    "message": "Böyük hərf xarakterlərini daxil et",
+    "description": "Tooltip for the password generator uppercase character checkbox"
+  },
+  "uppercaseLabel": {
+    "message": "A-Z",
+    "description": "Label for the password generator uppercase character checkbox"
+  },
+  "lowercaseDescription": {
+    "message": "Kiçik hərf xarakterlərini daxil et",
+    "description": "Full description for the password generator lowercase character checkbox"
+  },
+  "lowercaseLabel": {
+    "message": "a-z",
+    "description": "Label for the password generator lowercase character checkbox"
+  },
+  "numbersDescription": {
+    "message": "Rəqəmləri daxil et",
+    "description": "Full description for the password generator numbers checkbox"
+  },
+  "numbersLabel": {
+    "message": "0-9",
+    "description": "Label for the password generator numbers checkbox"
+  },
+  "specialCharactersDescription": {
+    "message": "Xüsusi xarakterləri daxil et",
+    "description": "Full description for the password generator special characters checkbox"
+  },
+  "specialCharactersLabel": {
+    "message": "!@#$%^&*",
+    "description": "Label for the password generator special characters checkbox"
   },
   "numWords": {
     "message": "Söz sayı"
@@ -2568,7 +2666,7 @@
     "message": "Lisenziyanı endir"
   },
   "viewBillingToken": {
-    "message": "View Billing Token"
+    "message": "Faktura tokeninə bax"
   },
   "updateLicense": {
     "message": "Lisenziyanı güncəllə"
@@ -2616,8 +2714,11 @@
   "invoices": {
     "message": "Fakturalar"
   },
-  "noInvoices": {
-    "message": "Faktura yoxdur."
+  "noUnpaidInvoices": {
+    "message": "Ödənilməmiş faktura yoxdur."
+  },
+  "noPaidInvoices": {
+    "message": "Ödənilmiş faktura yoxdur."
   },
   "paid": {
     "message": "Ödənilib",
@@ -5099,7 +5200,7 @@
     "message": "Təşkilatınızın"
   },
   "usingTheMenuSelect": {
-    "message": "Using the menu, select"
+    "message": "Menyunu istifadə edin və seçin"
   },
   "toGrantAccessToSelectedMembers": {
     "message": "seçilmiş üzvlərə müraciət verin."
@@ -6005,7 +6106,7 @@
     "message": "Faktura sinxr tokeninə bax"
   },
   "generateBillingToken": {
-    "message": "Generate billing token"
+    "message": "Faktura tokenini yarat"
   },
   "copyPasteBillingSync": {
     "message": "Bu tokeni kopyalayın və self-hosted təşkilatınızın faktura sinxronlaşdırma ayarlarında yapışdırın."
@@ -6014,7 +6115,7 @@
     "message": "Faktura sinxr tokeniniz, bu təşkilatın abunəlik ayarlarına müraciət edə və düzəliş edə bilər."
   },
   "manageBillingTokenSync": {
-    "message": "Manage Billing Token"
+    "message": "Faktura tokenini idarə et"
   },
   "setUpBillingSync": {
     "message": "Faktura sinxr quraşdır"
@@ -6080,7 +6181,7 @@
     "message": "Faktura sinxr tokeni"
   },
   "automaticBillingSyncDesc": {
-    "message": "Automatic sync unlocks Families sponsorships and allows you to sync your license without uploading a file. After making updates in the Bitwarden cloud server, select Sync License to apply changes."
+    "message": "Avto-sinxronlaşdırma, Ailələr sponsorluğunun kilidini açır və bir fayl yükləmədən lisenziyanızı sinxronlaşdırmağınıza imkan verir. Bitwarden bulud serverində güncəlləmələri etdikdən sonra dəyişiklikləri tətbiq etmək üçün \"Lisenziyanı sinxronlaşdır\"ı seçin."
   },
   "active": {
     "message": "Aktiv"
@@ -6223,7 +6324,8 @@
     "message": "Hesab ayarları"
   },
   "generator": {
-    "message": "Yaradıcı"
+    "message": "Yaradıcı",
+    "description": "Short for 'credential generator'."
   },
   "whatWouldYouLikeToGenerate": {
     "message": "Nə yaratmaq istəyirsiniz?"
@@ -7492,7 +7594,7 @@
     "message": "Əllə yükləmə"
   },
   "manualBillingTokenUploadDesc": {
-    "message": "If you do not want to opt into billing sync, manually upload your license here. This will not automatically unlock Families sponsorships."
+    "message": "Faktura sinxronlaşdırmanı açmaq istəmirsinizsə, lisenziyanızı manual olaraq bura yükləyin. Bu, Ailələr sponsorluğunun kilidini avtomatik açmayacaq."
   },
   "syncLicense": {
     "message": "Lisenziyanı sinxronlaşdır"
@@ -9267,12 +9369,12 @@
     "message": "Müraciətə düzəliş et"
   },
   "addAttachment": {
-    "message": "Add attachment"
+    "message": "Qoşma əlavə et"
   },
   "maxFileSizeSansPunctuation": {
-    "message": "Maximum file size is 500 MB"
+    "message": "Maksimal fayl həcmi 500 MB-dır"
   },
   "permanentlyDeleteAttachmentConfirmation": {
-    "message": "Are you sure you want to permanently delete this attachment?"
+    "message": "Bu qoşmanı birdəfəlik silmək istədiyinizə əminsiniz?"
   }
 }

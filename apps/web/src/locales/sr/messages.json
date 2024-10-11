@@ -1,4 +1,64 @@
 {
+  "allApplications": {
+    "message": "Све апликације"
+  },
+  "priorityApplications": {
+    "message": "Приоритетне апликације"
+  },
+  "accessIntelligence": {
+    "message": "Access Intelligence"
+  },
+  "notifiedMembers": {
+    "message": "Обавештени чланови"
+  },
+  "allApplicationsWithCount": {
+    "message": "Све апликације ($COUNT$)",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "priorityApplicationsWithCount": {
+    "message": "Приоритетне апликације ($COUNT$)",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "notifiedMembersWithCount": {
+    "message": "Обавештени чланови ($COUNT$)",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "application": {
+    "message": "Апликација"
+  },
+  "atRiskPasswords": {
+    "message": "Лозинке под ризиком"
+  },
+  "totalPasswords": {
+    "message": "Укупне лозинке"
+  },
+  "atRiskMembers": {
+    "message": "Чланови под ризиком"
+  },
+  "totalMembers": {
+    "message": "Укупно чланова"
+  },
+  "atRiskApplications": {
+    "message": "Апликације под ризиком"
+  },
+  "totalApplications": {
+    "message": "Укупно апликација"
+  },
   "whatTypeOfItem": {
     "message": "Који је ово тип елемента?"
   },
@@ -1100,7 +1160,7 @@
     "message": "Ваш сеф је блокиран"
   },
   "yourAccountIsLocked": {
-    "message": "Your account is locked"
+    "message": "Ваш налог је закључан"
   },
   "uuid": {
     "message": "UUID"
@@ -1440,7 +1500,12 @@
     "description": "Minimum special characters"
   },
   "ambiguous": {
-    "message": "Избегавај двосмислене карактере"
+    "message": "Избегавај двосмислене карактере",
+    "description": "deprecated. Use avoidAmbiguous instead."
+  },
+  "avoidAmbiguous": {
+    "message": "Избегавај двосмислене карактере",
+    "description": "Label for the avoid ambiguous characters checkbox."
   },
   "regeneratePassword": {
     "message": "Поново генериши лозинку"
@@ -1453,17 +1518,50 @@
   },
   "uppercase": {
     "message": "Велика слова (A-Z)",
-    "description": "Include uppercase letters in the password generator."
+    "description": "deprecated. Use uppercaseLabel instead."
   },
   "lowercase": {
     "message": "Мала слова (a-z)",
-    "description": "Include lowercase letters in the password generator."
+    "description": "deprecated. Use lowercaseLabel instead."
   },
   "numbers": {
-    "message": "Цифре (0-9)"
+    "message": "Цифре (0-9)",
+    "description": "deprecated. Use numbersLabel instead."
   },
   "specialCharacters": {
     "message": "Специјална слова (!@#$%^&*)"
+  },
+  "uppercaseDescription": {
+    "message": "Укључити велика слова",
+    "description": "Tooltip for the password generator uppercase character checkbox"
+  },
+  "uppercaseLabel": {
+    "message": "A-Z",
+    "description": "Label for the password generator uppercase character checkbox"
+  },
+  "lowercaseDescription": {
+    "message": "Укључити мала слова",
+    "description": "Full description for the password generator lowercase character checkbox"
+  },
+  "lowercaseLabel": {
+    "message": "a-z",
+    "description": "Label for the password generator lowercase character checkbox"
+  },
+  "numbersDescription": {
+    "message": "Укључити бројеве",
+    "description": "Full description for the password generator numbers checkbox"
+  },
+  "numbersLabel": {
+    "message": "0-9",
+    "description": "Label for the password generator numbers checkbox"
+  },
+  "specialCharactersDescription": {
+    "message": "Укључити специјална слова",
+    "description": "Full description for the password generator special characters checkbox"
+  },
+  "specialCharactersLabel": {
+    "message": "!@#$%^&*",
+    "description": "Label for the password generator special characters checkbox"
   },
   "numWords": {
     "message": "Број речи"
@@ -2568,7 +2666,7 @@
     "message": "Преузимање лиценце"
   },
   "viewBillingToken": {
-    "message": "View Billing Token"
+    "message": "Види токен наплате"
   },
   "updateLicense": {
     "message": "Ажурирање лиценце"
@@ -2616,8 +2714,11 @@
   "invoices": {
     "message": "Фактуре"
   },
-  "noInvoices": {
-    "message": "Нема фактуре."
+  "noUnpaidInvoices": {
+    "message": "Нема неплаћених фактура."
+  },
+  "noPaidInvoices": {
+    "message": "Нема плаћених фактура."
   },
   "paid": {
     "message": "Плаћено",
@@ -3176,7 +3277,7 @@
     "message": "Нетачан PIN"
   },
   "pin": {
-    "message": "PIN",
+    "message": "ПИН",
     "description": "PIN code. Ex. The short code (often numeric) that you use to unlock a device."
   },
   "exportedVault": {
@@ -6005,7 +6106,7 @@
     "message": "Види токен синхронизације наплате"
   },
   "generateBillingToken": {
-    "message": "Generate billing token"
+    "message": "Генериши токен наплате"
   },
   "copyPasteBillingSync": {
     "message": "Copy and paste this token into the billing sync settings of your self-hosted organization."
@@ -6014,7 +6115,7 @@
     "message": "Your billing sync token can access and edit this organization's subscription settings."
   },
   "manageBillingTokenSync": {
-    "message": "Manage Billing Token"
+    "message": "Управљати токеном наплате"
   },
   "setUpBillingSync": {
     "message": "Подесити синхронизацију наплате"
@@ -6080,7 +6181,7 @@
     "message": "Синхронизација токена наплате"
   },
   "automaticBillingSyncDesc": {
-    "message": "Automatic sync unlocks Families sponsorships and allows you to sync your license without uploading a file. After making updates in the Bitwarden cloud server, select Sync License to apply changes."
+    "message": "Аутоматска синхронизација откључава Families спонзорства и омогућава вам да синхронизујете лиценцу без отпремања датотеке. Након ажурирања на Bitwarden клауд серверу, изаберите Синх Лиценсе да бисте применили промене."
   },
   "active": {
     "message": "Активан"
@@ -6223,7 +6324,8 @@
     "message": "Подешавања налога"
   },
   "generator": {
-    "message": "Генератор"
+    "message": "Генератор",
+    "description": "Short for 'credential generator'."
   },
   "whatWouldYouLikeToGenerate": {
     "message": "Шта желите да генеришете?"
@@ -7474,13 +7576,13 @@
     "message": "или"
   },
   "unlockWithBiometrics": {
-    "message": "Unlock with biometrics"
+    "message": "Откључај са биометријом"
   },
   "unlockWithPin": {
-    "message": "Unlock with PIN"
+    "message": "Откључај са ПИН"
   },
   "unlockWithMasterPassword": {
-    "message": "Unlock with master password"
+    "message": "Откључај са главном лозинком"
   },
   "licenseAndBillingManagement": {
     "message": "Управљање лиценцама и наплатом"
@@ -7492,7 +7594,7 @@
     "message": "Ручно отпремање"
   },
   "manualBillingTokenUploadDesc": {
-    "message": "If you do not want to opt into billing sync, manually upload your license here. This will not automatically unlock Families sponsorships."
+    "message": "Ако не желите да омогућите синхронизацију обрачуна, ручно отпремите своју лиценцу овде. Ово неће аутоматски откључати Families спонзорства."
   },
   "syncLicense": {
     "message": "Синхронизација лиценце"
@@ -9267,12 +9369,12 @@
     "message": "Edit access"
   },
   "addAttachment": {
-    "message": "Add attachment"
+    "message": "Додај прилог"
   },
   "maxFileSizeSansPunctuation": {
-    "message": "Maximum file size is 500 MB"
+    "message": "Максимална величина је 500МБ"
   },
   "permanentlyDeleteAttachmentConfirmation": {
-    "message": "Are you sure you want to permanently delete this attachment?"
+    "message": "Да ли сте сигурни да желите да трајно избришете овај прилог?"
   }
 }

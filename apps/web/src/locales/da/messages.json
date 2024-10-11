@@ -1,4 +1,64 @@
 {
+  "allApplications": {
+    "message": "Alle applikationer"
+  },
+  "priorityApplications": {
+    "message": "Prioriterede applikationer"
+  },
+  "accessIntelligence": {
+    "message": "Adgangsintelligens"
+  },
+  "notifiedMembers": {
+    "message": "Underrettede medlemmer"
+  },
+  "allApplicationsWithCount": {
+    "message": "Alle applikationer ($COUNT$)",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "priorityApplicationsWithCount": {
+    "message": "Prioriterede applikationer ($COUNT$)",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "notifiedMembersWithCount": {
+    "message": "Underrettede medlemmer ($COUNT$)",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "application": {
+    "message": "Applikation"
+  },
+  "atRiskPasswords": {
+    "message": "Udsatte adgangskoder"
+  },
+  "totalPasswords": {
+    "message": "Adgangskoder i alt"
+  },
+  "atRiskMembers": {
+    "message": "Udsatte medlemmer"
+  },
+  "totalMembers": {
+    "message": "Medlemmer i alt"
+  },
+  "atRiskApplications": {
+    "message": "Udsatte applikationer"
+  },
+  "totalApplications": {
+    "message": "Applikationer i alt"
+  },
   "whatTypeOfItem": {
     "message": "Hvilken emnetype er denne?"
   },
@@ -1440,7 +1500,12 @@
     "description": "Minimum special characters"
   },
   "ambiguous": {
-    "message": "Undgå tvetydige tegn"
+    "message": "Undgå tvetydige tegn",
+    "description": "deprecated. Use avoidAmbiguous instead."
+  },
+  "avoidAmbiguous": {
+    "message": "Undgå tvetydige tegn",
+    "description": "Label for the avoid ambiguous characters checkbox."
   },
   "regeneratePassword": {
     "message": "Regenerér adgangskode"
@@ -1453,17 +1518,50 @@
   },
   "uppercase": {
     "message": "Majuskler (A-Z)",
-    "description": "Include uppercase letters in the password generator."
+    "description": "deprecated. Use uppercaseLabel instead."
   },
   "lowercase": {
     "message": "Minuskler (a-z)",
-    "description": "Include lowercase letters in the password generator."
+    "description": "deprecated. Use lowercaseLabel instead."
   },
   "numbers": {
-    "message": "Cifre (0-9)"
+    "message": "Cifre (0-9)",
+    "description": "deprecated. Use numbersLabel instead."
   },
   "specialCharacters": {
     "message": "Specialtegn (!@#$%^&*)"
+  },
+  "uppercaseDescription": {
+    "message": "Inkludér majuskler",
+    "description": "Tooltip for the password generator uppercase character checkbox"
+  },
+  "uppercaseLabel": {
+    "message": "A-Z",
+    "description": "Label for the password generator uppercase character checkbox"
+  },
+  "lowercaseDescription": {
+    "message": "Inkludér minuskler",
+    "description": "Full description for the password generator lowercase character checkbox"
+  },
+  "lowercaseLabel": {
+    "message": "a-z",
+    "description": "Label for the password generator lowercase character checkbox"
+  },
+  "numbersDescription": {
+    "message": "Inkludér tal",
+    "description": "Full description for the password generator numbers checkbox"
+  },
+  "numbersLabel": {
+    "message": "0-9",
+    "description": "Label for the password generator numbers checkbox"
+  },
+  "specialCharactersDescription": {
+    "message": "Inkludér specialtegn",
+    "description": "Full description for the password generator special characters checkbox"
+  },
+  "specialCharactersLabel": {
+    "message": "!@#$%^&*",
+    "description": "Label for the password generator special characters checkbox"
   },
   "numWords": {
     "message": "Antal ord"
@@ -2616,8 +2714,11 @@
   "invoices": {
     "message": "Fakturaer"
   },
-  "noInvoices": {
-    "message": "Ingen fakturaer."
+  "noUnpaidInvoices": {
+    "message": "Ingen ubetalte fakturaer."
+  },
+  "noPaidInvoices": {
+    "message": "Ingen betalte fakturaer."
   },
   "paid": {
     "message": "Betalt",
@@ -6223,7 +6324,8 @@
     "message": "Kontoindstillinger"
   },
   "generator": {
-    "message": "Generator"
+    "message": "Generator",
+    "description": "Short for 'credential generator'."
   },
   "whatWouldYouLikeToGenerate": {
     "message": "Hvad ønskes genereret?"

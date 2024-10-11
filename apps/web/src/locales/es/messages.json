@@ -1,4 +1,64 @@
 {
+  "allApplications": {
+    "message": "All applications"
+  },
+  "priorityApplications": {
+    "message": "Priority applications"
+  },
+  "accessIntelligence": {
+    "message": "Access Intelligence"
+  },
+  "notifiedMembers": {
+    "message": "Notified members"
+  },
+  "allApplicationsWithCount": {
+    "message": "All applications ($COUNT$)",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "priorityApplicationsWithCount": {
+    "message": "Priority applications ($COUNT$)",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "notifiedMembersWithCount": {
+    "message": "Notified members ($COUNT$)",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "application": {
+    "message": "Application"
+  },
+  "atRiskPasswords": {
+    "message": "At-risk passwords"
+  },
+  "totalPasswords": {
+    "message": "Total passwords"
+  },
+  "atRiskMembers": {
+    "message": "At-risk members"
+  },
+  "totalMembers": {
+    "message": "Total members"
+  },
+  "atRiskApplications": {
+    "message": "At-risk applications"
+  },
+  "totalApplications": {
+    "message": "Total applications"
+  },
   "whatTypeOfItem": {
     "message": "¿Qué tipo de elemento es este?"
   },
@@ -37,7 +97,7 @@
     "message": "Notas"
   },
   "note": {
-    "message": "Note"
+    "message": "Nota"
   },
   "customFields": {
     "message": "Campos personalizados"
@@ -46,22 +106,22 @@
     "message": "Nombre en la tarjeta"
   },
   "loginCredentials": {
-    "message": "Login credentials"
+    "message": "Credenciales de inicio de sesión"
   },
   "personalDetails": {
-    "message": "Personal details"
+    "message": "Datos personales"
   },
   "identification": {
-    "message": "Identification"
+    "message": "Identificación"
   },
   "contactInfo": {
-    "message": "Contact info"
+    "message": "Información de contacto"
   },
   "cardDetails": {
-    "message": "Card details"
+    "message": "Datos de la tarjeta"
   },
   "cardBrandDetails": {
-    "message": "$BRAND$ details",
+    "message": "Detalles de $BRAND$",
     "placeholders": {
       "brand": {
         "content": "$1",
@@ -70,19 +130,19 @@
     }
   },
   "itemHistory": {
-    "message": "Item history"
+    "message": "Historial del elemento"
   },
   "authenticatorKey": {
     "message": "Authenticator key"
   },
   "autofillOptions": {
-    "message": "Autofill options"
+    "message": "Opciones de autocompletar"
   },
   "websiteUri": {
-    "message": "Website (URI)"
+    "message": "Página web (URI)"
   },
   "websiteUriCount": {
-    "message": "Website (URI) $COUNT$",
+    "message": "Página web (URI) $COUNT$",
     "description": "Label for an input field that contains a website URI. The input field is part of a list of fields, and the count indicates the position of the field in the list.",
     "placeholders": {
       "count": {
@@ -92,16 +152,16 @@
     }
   },
   "websiteAdded": {
-    "message": "Website added"
+    "message": "Página web añadida"
   },
   "addWebsite": {
-    "message": "Add website"
+    "message": "Añadir página web"
   },
   "deleteWebsite": {
-    "message": "Delete website"
+    "message": "Eliminar página web"
   },
   "defaultLabel": {
-    "message": "Default ($VALUE$)",
+    "message": "Por defecto ($VALUE$)",
     "description": "A label that indicates the default value for a field with the current default value in parentheses.",
     "placeholders": {
       "value": {
@@ -111,7 +171,7 @@
     }
   },
   "showMatchDetection": {
-    "message": "Show match detection $WEBSITE$",
+    "message": "Mostrar detección de coincidencias $WEBSITE$",
     "placeholders": {
       "website": {
         "content": "$1",
@@ -120,7 +180,7 @@
     }
   },
   "hideMatchDetection": {
-    "message": "Hide match detection $WEBSITE$",
+    "message": "Ocultar detección de coincidencias $WEBSITE$",
     "placeholders": {
       "website": {
         "content": "$1",
@@ -129,7 +189,7 @@
     }
   },
   "autoFillOnPageLoad": {
-    "message": "Autofill on page load?"
+    "message": "¿Autocompletar al cargar la página?"
   },
   "number": {
     "message": "Número"
@@ -144,7 +204,7 @@
     "message": "Código de seguridad (CVV)"
   },
   "securityCodeSlashCVV": {
-    "message": "Security code / CVV"
+    "message": "Código de seguridad / CVV"
   },
   "identityName": {
     "message": "Nombre de la identidad"
@@ -222,10 +282,10 @@
     "message": "Dr"
   },
   "cardExpiredTitle": {
-    "message": "Expired card"
+    "message": "Tarjeta caducada"
   },
   "cardExpiredMessage": {
-    "message": "If you've renewed it, update the card's information"
+    "message": "Si la has renovado, actualiza los datos de la tarjeta"
   },
   "expirationMonth": {
     "message": "Mes de expiración"
@@ -246,7 +306,7 @@
     "message": "Bitwarden can store and fill 2-step verification codes. Select the camera icon to take a screenshot of this website's authenticator QR code, or copy and paste the key into this field."
   },
   "learnMoreAboutAuthenticators": {
-    "message": "Learn more about authenticators"
+    "message": "Más información sobre los autenticadores"
   },
   "folder": {
     "message": "Carpeta"
@@ -270,17 +330,17 @@
     "message": "Booleano"
   },
   "cfTypeCheckbox": {
-    "message": "Checkbox"
+    "message": "Casilla de verificación"
   },
   "cfTypeLinked": {
     "message": "Conectado",
     "description": "This describes a field that is 'linked' (related) to another field."
   },
   "fieldType": {
-    "message": "Field type"
+    "message": "Tipo de campo"
   },
   "fieldLabel": {
-    "message": "Field label"
+    "message": "Etiqueta del campo"
   },
   "remove": {
     "message": "Eliminar"
@@ -293,7 +353,7 @@
     "description": "This is the folder for uncategorized items"
   },
   "selfOwnershipLabel": {
-    "message": "You",
+    "message": "Tú",
     "description": "Used as a label to indicate that the user is the owner of an item."
   },
   "addFolder": {
@@ -476,7 +536,7 @@
     "message": "Nombre completo"
   },
   "address": {
-    "message": "Address"
+    "message": "Dirección"
   },
   "address1": {
     "message": "Dirección 1"
@@ -521,7 +581,7 @@
     "message": "Ver elemento"
   },
   "newItemHeader": {
-    "message": "New $TYPE$",
+    "message": "Nuevo $TYPE$",
     "placeholders": {
       "type": {
         "content": "$1",
@@ -530,7 +590,7 @@
     }
   },
   "editItemHeader": {
-    "message": "Edit $TYPE$",
+    "message": "Editar $TYPE$",
     "placeholders": {
       "type": {
         "content": "$1",
@@ -539,7 +599,7 @@
     }
   },
   "viewItemType": {
-    "message": "View $ITEMTYPE$",
+    "message": "Ver $ITEMTYPE$",
     "placeholders": {
       "itemtype": {
         "content": "$1",
@@ -555,13 +615,13 @@
     "message": "Elemento"
   },
   "itemDetails": {
-    "message": "Item details"
+    "message": "Detalles del elemento"
   },
   "itemName": {
-    "message": "Item name"
+    "message": "Nombre del elemento"
   },
   "cannotRemoveViewOnlyCollections": {
-    "message": "You cannot remove collections with View only permissions: $COLLECTIONS$",
+    "message": "No puedes eliminar colecciones con permisos de solo visualización: $COLLECTIONS$",
     "placeholders": {
       "collections": {
         "content": "$1",
@@ -1440,7 +1500,12 @@
     "description": "Minimum special characters"
   },
   "ambiguous": {
-    "message": "Evitar caracteres ambiguos"
+    "message": "Evitar caracteres ambiguos",
+    "description": "deprecated. Use avoidAmbiguous instead."
+  },
+  "avoidAmbiguous": {
+    "message": "Avoid ambiguous characters",
+    "description": "Label for the avoid ambiguous characters checkbox."
   },
   "regeneratePassword": {
     "message": "Regenerar contraseña"
@@ -1453,17 +1518,50 @@
   },
   "uppercase": {
     "message": "Mayúsculas (A-Z)",
-    "description": "Include uppercase letters in the password generator."
+    "description": "deprecated. Use uppercaseLabel instead."
   },
   "lowercase": {
     "message": "Minúsculas (a-z)",
-    "description": "Include lowercase letters in the password generator."
+    "description": "deprecated. Use lowercaseLabel instead."
   },
   "numbers": {
-    "message": "Números (0-9)"
+    "message": "Números (0-9)",
+    "description": "deprecated. Use numbersLabel instead."
   },
   "specialCharacters": {
     "message": "Carácteres especiales (!@#$%^&*)"
+  },
+  "uppercaseDescription": {
+    "message": "Include uppercase characters",
+    "description": "Tooltip for the password generator uppercase character checkbox"
+  },
+  "uppercaseLabel": {
+    "message": "A-Z",
+    "description": "Label for the password generator uppercase character checkbox"
+  },
+  "lowercaseDescription": {
+    "message": "Include lowercase characters",
+    "description": "Full description for the password generator lowercase character checkbox"
+  },
+  "lowercaseLabel": {
+    "message": "a-z",
+    "description": "Label for the password generator lowercase character checkbox"
+  },
+  "numbersDescription": {
+    "message": "Include numbers",
+    "description": "Full description for the password generator numbers checkbox"
+  },
+  "numbersLabel": {
+    "message": "0-9",
+    "description": "Label for the password generator numbers checkbox"
+  },
+  "specialCharactersDescription": {
+    "message": "Include special characters",
+    "description": "Full description for the password generator special characters checkbox"
+  },
+  "specialCharactersLabel": {
+    "message": "!@#$%^&*",
+    "description": "Label for the password generator special characters checkbox"
   },
   "numWords": {
     "message": "Número de palabras"
@@ -2616,8 +2714,11 @@
   "invoices": {
     "message": "Facturas"
   },
-  "noInvoices": {
-    "message": "Sin facturas."
+  "noUnpaidInvoices": {
+    "message": "No unpaid invoices."
+  },
+  "noPaidInvoices": {
+    "message": "No paid invoices."
   },
   "paid": {
     "message": "Pagado",
@@ -6223,7 +6324,8 @@
     "message": "Configuración de la cuenta"
   },
   "generator": {
-    "message": "Generador"
+    "message": "Generador",
+    "description": "Short for 'credential generator'."
   },
   "whatWouldYouLikeToGenerate": {
     "message": "¿Qué desea generar?"

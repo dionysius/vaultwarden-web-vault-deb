@@ -1,4 +1,64 @@
 {
+  "allApplications": {
+    "message": "Всички приложения"
+  },
+  "priorityApplications": {
+    "message": "Приложения с приоритет"
+  },
+  "accessIntelligence": {
+    "message": "Access Intelligence"
+  },
+  "notifiedMembers": {
+    "message": "Известени членове"
+  },
+  "allApplicationsWithCount": {
+    "message": "Всички приложения ($COUNT$)",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "priorityApplicationsWithCount": {
+    "message": "Приложения с приоритет ($COUNT$)",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "notifiedMembersWithCount": {
+    "message": "Известени членове ($COUNT$)",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "application": {
+    "message": "Приложение"
+  },
+  "atRiskPasswords": {
+    "message": "Пароли в риск"
+  },
+  "totalPasswords": {
+    "message": "Общо пароли"
+  },
+  "atRiskMembers": {
+    "message": "Членове в риск"
+  },
+  "totalMembers": {
+    "message": "Общо членове"
+  },
+  "atRiskApplications": {
+    "message": "Приложения в риск"
+  },
+  "totalApplications": {
+    "message": "Общо приложения"
+  },
   "whatTypeOfItem": {
     "message": "Вид на елемента"
   },
@@ -1440,7 +1500,12 @@
     "description": "Minimum special characters"
   },
   "ambiguous": {
-    "message": "Без нееднозначни знаци"
+    "message": "Без нееднозначни знаци",
+    "description": "deprecated. Use avoidAmbiguous instead."
+  },
+  "avoidAmbiguous": {
+    "message": "Без нееднозначни знаци",
+    "description": "Label for the avoid ambiguous characters checkbox."
   },
   "regeneratePassword": {
     "message": "Друга парола"
@@ -1453,17 +1518,50 @@
   },
   "uppercase": {
     "message": "Главни букви (A-Z)",
-    "description": "Include uppercase letters in the password generator."
+    "description": "deprecated. Use uppercaseLabel instead."
   },
   "lowercase": {
     "message": "Малки букви (a-z)",
-    "description": "Include lowercase letters in the password generator."
+    "description": "deprecated. Use lowercaseLabel instead."
   },
   "numbers": {
-    "message": "Числа (0-9)"
+    "message": "Числа (0-9)",
+    "description": "deprecated. Use numbersLabel instead."
   },
   "specialCharacters": {
     "message": "Специални знаци (!@#$%^&*)"
+  },
+  "uppercaseDescription": {
+    "message": "Включване на главни букви",
+    "description": "Tooltip for the password generator uppercase character checkbox"
+  },
+  "uppercaseLabel": {
+    "message": "A-Z",
+    "description": "Label for the password generator uppercase character checkbox"
+  },
+  "lowercaseDescription": {
+    "message": "Включване на малки букви",
+    "description": "Full description for the password generator lowercase character checkbox"
+  },
+  "lowercaseLabel": {
+    "message": "a-z",
+    "description": "Label for the password generator lowercase character checkbox"
+  },
+  "numbersDescription": {
+    "message": "Включване на цифри",
+    "description": "Full description for the password generator numbers checkbox"
+  },
+  "numbersLabel": {
+    "message": "0-9",
+    "description": "Label for the password generator numbers checkbox"
+  },
+  "specialCharactersDescription": {
+    "message": "Включване на специални знаци",
+    "description": "Full description for the password generator special characters checkbox"
+  },
+  "specialCharactersLabel": {
+    "message": "!@#$%^&*",
+    "description": "Label for the password generator special characters checkbox"
   },
   "numWords": {
     "message": "Брой думи"
@@ -2616,8 +2714,11 @@
   "invoices": {
     "message": "Фактури"
   },
-  "noInvoices": {
-    "message": "Няма фактури."
+  "noUnpaidInvoices": {
+    "message": "Няма неплатени фактури."
+  },
+  "noPaidInvoices": {
+    "message": "Няма платени фактури."
   },
   "paid": {
     "message": "Платено",
@@ -6223,7 +6324,8 @@
     "message": "Настройки на регистрацията"
   },
   "generator": {
-    "message": "Генератор"
+    "message": "Генератор",
+    "description": "Short for 'credential generator'."
   },
   "whatWouldYouLikeToGenerate": {
     "message": "Какво бихте искали да генерирате?"

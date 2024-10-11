@@ -1,4 +1,64 @@
 {
+  "allApplications": {
+    "message": "Alle applicaties"
+  },
+  "priorityApplications": {
+    "message": "Applicaties met prioriteit"
+  },
+  "accessIntelligence": {
+    "message": "Toegangsintelligentie"
+  },
+  "notifiedMembers": {
+    "message": "Geînformeerde leden"
+  },
+  "allApplicationsWithCount": {
+    "message": "Alle applicaties ($COUNT$)",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "priorityApplicationsWithCount": {
+    "message": "Applicaties met prioriteit ($COUNT$)",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "notifiedMembersWithCount": {
+    "message": "Geînformeerde leden ($COUNT$)",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "application": {
+    "message": "Applicatie"
+  },
+  "atRiskPasswords": {
+    "message": "Wachtwoorden in gevaar"
+  },
+  "totalPasswords": {
+    "message": "Totaal wachtwoorden"
+  },
+  "atRiskMembers": {
+    "message": "Leden in gevaar"
+  },
+  "totalMembers": {
+    "message": "Totaal leden"
+  },
+  "atRiskApplications": {
+    "message": "Applicaties in gevaar"
+  },
+  "totalApplications": {
+    "message": "Totaal applicaties"
+  },
   "whatTypeOfItem": {
     "message": "Van welke categorie is dit item?"
   },
@@ -1440,7 +1500,12 @@
     "description": "Minimum special characters"
   },
   "ambiguous": {
-    "message": "Dubbelzinnige tekens vermijden"
+    "message": "Dubbelzinnige tekens vermijden",
+    "description": "deprecated. Use avoidAmbiguous instead."
+  },
+  "avoidAmbiguous": {
+    "message": "Dubbelzinnige tekens vermijden",
+    "description": "Label for the avoid ambiguous characters checkbox."
   },
   "regeneratePassword": {
     "message": "Opnieuw genereren"
@@ -1453,17 +1518,50 @@
   },
   "uppercase": {
     "message": "Hoofdletters (A-Z)",
-    "description": "Include uppercase letters in the password generator."
+    "description": "deprecated. Use uppercaseLabel instead."
   },
   "lowercase": {
     "message": "Kleine letters (a-z)",
-    "description": "Include lowercase letters in the password generator."
+    "description": "deprecated. Use lowercaseLabel instead."
   },
   "numbers": {
-    "message": "Cijfers (0-9)"
+    "message": "Cijfers (0-9)",
+    "description": "deprecated. Use numbersLabel instead."
   },
   "specialCharacters": {
     "message": "Speciale tekens (!@#$%^&*)"
+  },
+  "uppercaseDescription": {
+    "message": "Hoofdletters toevoegen",
+    "description": "Tooltip for the password generator uppercase character checkbox"
+  },
+  "uppercaseLabel": {
+    "message": "A-Z",
+    "description": "Label for the password generator uppercase character checkbox"
+  },
+  "lowercaseDescription": {
+    "message": "Kleine letters toevoegen",
+    "description": "Full description for the password generator lowercase character checkbox"
+  },
+  "lowercaseLabel": {
+    "message": "a-z",
+    "description": "Label for the password generator lowercase character checkbox"
+  },
+  "numbersDescription": {
+    "message": "Nummers toevoegen",
+    "description": "Full description for the password generator numbers checkbox"
+  },
+  "numbersLabel": {
+    "message": "0-9",
+    "description": "Label for the password generator numbers checkbox"
+  },
+  "specialCharactersDescription": {
+    "message": "Speciale tekens toevoegen",
+    "description": "Full description for the password generator special characters checkbox"
+  },
+  "specialCharactersLabel": {
+    "message": "!@#$%^&*",
+    "description": "Label for the password generator special characters checkbox"
   },
   "numWords": {
     "message": "Aantal woorden"
@@ -2616,8 +2714,11 @@
   "invoices": {
     "message": "Facturen"
   },
-  "noInvoices": {
-    "message": "Geen facturen."
+  "noUnpaidInvoices": {
+    "message": "Geen onbetaalde facturen."
+  },
+  "noPaidInvoices": {
+    "message": "Geen betaalde facturen."
   },
   "paid": {
     "message": "Betaald",
@@ -6223,7 +6324,8 @@
     "message": "Accountinstellingen"
   },
   "generator": {
-    "message": "Generator"
+    "message": "Generator",
+    "description": "Short for 'credential generator'."
   },
   "whatWouldYouLikeToGenerate": {
     "message": "Wat wil je genereren?"

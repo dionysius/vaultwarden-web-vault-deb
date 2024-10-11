@@ -1,4 +1,64 @@
 {
+  "allApplications": {
+    "message": "Visas lietotnes"
+  },
+  "priorityApplications": {
+    "message": "Svarīgas lietotnes"
+  },
+  "accessIntelligence": {
+    "message": "Piekļuves inteliģence"
+  },
+  "notifiedMembers": {
+    "message": "Apziņotie dalībnieki"
+  },
+  "allApplicationsWithCount": {
+    "message": "Visas lietotnes ($COUNT$)",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "priorityApplicationsWithCount": {
+    "message": "Svarīgas lietotnes ($COUNT$)",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "notifiedMembersWithCount": {
+    "message": "Apziņotie dalībnieki ($COUNT$)",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "application": {
+    "message": "Lietotne"
+  },
+  "atRiskPasswords": {
+    "message": "Riskam pakļautās paroles"
+  },
+  "totalPasswords": {
+    "message": "Kopējais paroļu skaits"
+  },
+  "atRiskMembers": {
+    "message": "Riskam pakļautie dalībnieki"
+  },
+  "totalMembers": {
+    "message": "Kopējais dalībnieku skaits"
+  },
+  "atRiskApplications": {
+    "message": "Riskam pakļautās lietotnes"
+  },
+  "totalApplications": {
+    "message": "Kopējais lietotņu skaits"
+  },
   "whatTypeOfItem": {
     "message": "Kāda veida vienums tas ir?"
   },
@@ -1440,7 +1500,12 @@
     "description": "Minimum special characters"
   },
   "ambiguous": {
-    "message": "Izvairīties no viegli sajaucamām rakstzīmēm"
+    "message": "Izvairīties no viegli sajaucamām rakstzīmēm",
+    "description": "deprecated. Use avoidAmbiguous instead."
+  },
+  "avoidAmbiguous": {
+    "message": "Izvairīties no viegli sajaucamām rakstzīmēm",
+    "description": "Label for the avoid ambiguous characters checkbox."
   },
   "regeneratePassword": {
     "message": "Pārizveidot paroli"
@@ -1453,17 +1518,50 @@
   },
   "uppercase": {
     "message": "Lielie burti (A-Z)",
-    "description": "Include uppercase letters in the password generator."
+    "description": "deprecated. Use uppercaseLabel instead."
   },
   "lowercase": {
     "message": "Mazie burti (a-z)",
-    "description": "Include lowercase letters in the password generator."
+    "description": "deprecated. Use lowercaseLabel instead."
   },
   "numbers": {
-    "message": "Cipari (0-9)"
+    "message": "Cipari (0-9)",
+    "description": "deprecated. Use numbersLabel instead."
   },
   "specialCharacters": {
     "message": "Īpašās rakstzīmes (!@#$%^&*)"
+  },
+  "uppercaseDescription": {
+    "message": "Iekļaut lielos burtus",
+    "description": "Tooltip for the password generator uppercase character checkbox"
+  },
+  "uppercaseLabel": {
+    "message": "A-Z",
+    "description": "Label for the password generator uppercase character checkbox"
+  },
+  "lowercaseDescription": {
+    "message": "Iekļaut mazos burtus",
+    "description": "Full description for the password generator lowercase character checkbox"
+  },
+  "lowercaseLabel": {
+    "message": "a-z",
+    "description": "Label for the password generator lowercase character checkbox"
+  },
+  "numbersDescription": {
+    "message": "Iekļaut ciparus",
+    "description": "Full description for the password generator numbers checkbox"
+  },
+  "numbersLabel": {
+    "message": "0-9",
+    "description": "Label for the password generator numbers checkbox"
+  },
+  "specialCharactersDescription": {
+    "message": "Iekļaut īpašās rakstzīmes",
+    "description": "Full description for the password generator special characters checkbox"
+  },
+  "specialCharactersLabel": {
+    "message": "!@#$%^&*",
+    "description": "Label for the password generator special characters checkbox"
   },
   "numWords": {
     "message": "Vārdu skaits"
@@ -2616,8 +2714,11 @@
   "invoices": {
     "message": "Rēķini"
   },
-  "noInvoices": {
-    "message": "Nav rēķinu."
+  "noUnpaidInvoices": {
+    "message": "Nav neapmaksātu rēķinu."
+  },
+  "noPaidInvoices": {
+    "message": "Nav apmaksātu rēķinu."
   },
   "paid": {
     "message": "Apmaksāts",
@@ -6223,7 +6324,8 @@
     "message": "Konta iestatījumi"
   },
   "generator": {
-    "message": "Veidotājs"
+    "message": "Veidotājs",
+    "description": "Short for 'credential generator'."
   },
   "whatWouldYouLikeToGenerate": {
     "message": "Ko ir vēlme izveidot?"

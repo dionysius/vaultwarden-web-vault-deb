@@ -1,4 +1,64 @@
 {
+  "allApplications": {
+    "message": "Všechny aplikace"
+  },
+  "priorityApplications": {
+    "message": "Prioritní aplikace"
+  },
+  "accessIntelligence": {
+    "message": "Přístup k inteligenci"
+  },
+  "notifiedMembers": {
+    "message": "Obeznámení členové"
+  },
+  "allApplicationsWithCount": {
+    "message": "Všechny aplikace ($COUNT$)",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "priorityApplicationsWithCount": {
+    "message": "Prioritní aplikace ($COUNT$)",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "notifiedMembersWithCount": {
+    "message": "Obeznámení členové ($COUNT$)",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "application": {
+    "message": "Aplikace"
+  },
+  "atRiskPasswords": {
+    "message": "Ohrožená hesla"
+  },
+  "totalPasswords": {
+    "message": "Celkem hesel"
+  },
+  "atRiskMembers": {
+    "message": "Ohrožení členové"
+  },
+  "totalMembers": {
+    "message": "Celkem členů"
+  },
+  "atRiskApplications": {
+    "message": "Ohrožené aplikace"
+  },
+  "totalApplications": {
+    "message": "Celkem aplikací"
+  },
   "whatTypeOfItem": {
     "message": "O jaký typ položky se jedná?"
   },
@@ -1440,7 +1500,12 @@
     "description": "Minimum special characters"
   },
   "ambiguous": {
-    "message": "Nepoužívat zaměnitelné znaky"
+    "message": "Nepoužívat zaměnitelné znaky",
+    "description": "deprecated. Use avoidAmbiguous instead."
+  },
+  "avoidAmbiguous": {
+    "message": "Nepoužívat zaměnitelné znaky",
+    "description": "Label for the avoid ambiguous characters checkbox."
   },
   "regeneratePassword": {
     "message": "Vygenerovat jiné heslo"
@@ -1453,17 +1518,50 @@
   },
   "uppercase": {
     "message": "Velká písmena (A-Z)",
-    "description": "Include uppercase letters in the password generator."
+    "description": "deprecated. Use uppercaseLabel instead."
   },
   "lowercase": {
     "message": "Malá písmena (a-z)",
-    "description": "Include lowercase letters in the password generator."
+    "description": "deprecated. Use lowercaseLabel instead."
   },
   "numbers": {
-    "message": "Číslice (0-9)"
+    "message": "Číslice (0-9)",
+    "description": "deprecated. Use numbersLabel instead."
   },
   "specialCharacters": {
     "message": "Speciální znaky (!@#$%^&*)"
+  },
+  "uppercaseDescription": {
+    "message": "Zahrnout velká písmena",
+    "description": "Tooltip for the password generator uppercase character checkbox"
+  },
+  "uppercaseLabel": {
+    "message": "A-Z",
+    "description": "Label for the password generator uppercase character checkbox"
+  },
+  "lowercaseDescription": {
+    "message": "Zahrnout malá písmena",
+    "description": "Full description for the password generator lowercase character checkbox"
+  },
+  "lowercaseLabel": {
+    "message": "a-z",
+    "description": "Label for the password generator lowercase character checkbox"
+  },
+  "numbersDescription": {
+    "message": "Zahrnout číslice",
+    "description": "Full description for the password generator numbers checkbox"
+  },
+  "numbersLabel": {
+    "message": "0-9",
+    "description": "Label for the password generator numbers checkbox"
+  },
+  "specialCharactersDescription": {
+    "message": "Zahrnout speciální znaky",
+    "description": "Full description for the password generator special characters checkbox"
+  },
+  "specialCharactersLabel": {
+    "message": "!@#$%^&*",
+    "description": "Label for the password generator special characters checkbox"
   },
   "numWords": {
     "message": "Počet slov"
@@ -2616,8 +2714,11 @@
   "invoices": {
     "message": "Faktury"
   },
-  "noInvoices": {
-    "message": "Žádné faktury."
+  "noUnpaidInvoices": {
+    "message": "Žádné nezaplacené faktury."
+  },
+  "noPaidInvoices": {
+    "message": "Žádné zaplacené faktury."
   },
   "paid": {
     "message": "Zaplaceno",
@@ -6223,7 +6324,8 @@
     "message": "Nastavení účtu"
   },
   "generator": {
-    "message": "Generátor"
+    "message": "Generátor",
+    "description": "Short for 'credential generator'."
   },
   "whatWouldYouLikeToGenerate": {
     "message": "Co chcete vygenerovat?"

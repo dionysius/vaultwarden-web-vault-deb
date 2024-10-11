@@ -1,4 +1,64 @@
 {
+  "allApplications": {
+    "message": "Tüm uygulamalar"
+  },
+  "priorityApplications": {
+    "message": "Öncelikli uygulamalar"
+  },
+  "accessIntelligence": {
+    "message": "Access Intelligence"
+  },
+  "notifiedMembers": {
+    "message": "Notified members"
+  },
+  "allApplicationsWithCount": {
+    "message": "Tüm uygulamalar ($COUNT$)",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "priorityApplicationsWithCount": {
+    "message": "Öncelikli uygulamalar ($COUNT$)",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "notifiedMembersWithCount": {
+    "message": "Notified members ($COUNT$)",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "application": {
+    "message": "Uygulama"
+  },
+  "atRiskPasswords": {
+    "message": "Riskli parolalar"
+  },
+  "totalPasswords": {
+    "message": "Toplam parola"
+  },
+  "atRiskMembers": {
+    "message": "Riskli üyeler"
+  },
+  "totalMembers": {
+    "message": "Toplam üye"
+  },
+  "atRiskApplications": {
+    "message": "Riskli uygulamalar"
+  },
+  "totalApplications": {
+    "message": "Toplam uygulama"
+  },
   "whatTypeOfItem": {
     "message": "Bu kaydın türü nedir?"
   },
@@ -1440,7 +1500,12 @@
     "description": "Minimum special characters"
   },
   "ambiguous": {
-    "message": "Okurken karışabilecek karakterleri kullanma"
+    "message": "Okurken karışabilecek karakterleri kullanma",
+    "description": "deprecated. Use avoidAmbiguous instead."
+  },
+  "avoidAmbiguous": {
+    "message": "Okurken karışabilecek karakterleri kullanma",
+    "description": "Label for the avoid ambiguous characters checkbox."
   },
   "regeneratePassword": {
     "message": "Yeni parola oluştur"
@@ -1453,17 +1518,50 @@
   },
   "uppercase": {
     "message": "Büyük harf (A-Z)",
-    "description": "Include uppercase letters in the password generator."
+    "description": "deprecated. Use uppercaseLabel instead."
   },
   "lowercase": {
     "message": "Küçük harf (a-z)",
-    "description": "Include lowercase letters in the password generator."
+    "description": "deprecated. Use lowercaseLabel instead."
   },
   "numbers": {
-    "message": "Rakamlar (0-9)"
+    "message": "Rakamlar (0-9)",
+    "description": "deprecated. Use numbersLabel instead."
   },
   "specialCharacters": {
     "message": "Özel karakterler (!@#$%^&*)"
+  },
+  "uppercaseDescription": {
+    "message": "Büyük harfleri dahil et",
+    "description": "Tooltip for the password generator uppercase character checkbox"
+  },
+  "uppercaseLabel": {
+    "message": "A-Z",
+    "description": "Label for the password generator uppercase character checkbox"
+  },
+  "lowercaseDescription": {
+    "message": "Küçük harfleri dahil et",
+    "description": "Full description for the password generator lowercase character checkbox"
+  },
+  "lowercaseLabel": {
+    "message": "a-z",
+    "description": "Label for the password generator lowercase character checkbox"
+  },
+  "numbersDescription": {
+    "message": "Rakamları dahil et",
+    "description": "Full description for the password generator numbers checkbox"
+  },
+  "numbersLabel": {
+    "message": "0-9",
+    "description": "Label for the password generator numbers checkbox"
+  },
+  "specialCharactersDescription": {
+    "message": "Özel karakterleri dahil et",
+    "description": "Full description for the password generator special characters checkbox"
+  },
+  "specialCharactersLabel": {
+    "message": "!@#$%^&*",
+    "description": "Label for the password generator special characters checkbox"
   },
   "numWords": {
     "message": "Kelime sayısı"
@@ -2616,8 +2714,11 @@
   "invoices": {
     "message": "Faturalar"
   },
-  "noInvoices": {
-    "message": "Fatura yok."
+  "noUnpaidInvoices": {
+    "message": "Ödenmemiş fatura yok."
+  },
+  "noPaidInvoices": {
+    "message": "Ödenmiş fatura yok."
   },
   "paid": {
     "message": "Ödendi",
@@ -6223,7 +6324,8 @@
     "message": "Hesap ayarları"
   },
   "generator": {
-    "message": "Oluşturucu"
+    "message": "Oluşturucu",
+    "description": "Short for 'credential generator'."
   },
   "whatWouldYouLikeToGenerate": {
     "message": "Ne oluşturmak istersiniz?"
@@ -9267,12 +9369,12 @@
     "message": "Edit access"
   },
   "addAttachment": {
-    "message": "Add attachment"
+    "message": "Dosya ekle"
   },
   "maxFileSizeSansPunctuation": {
-    "message": "Maximum file size is 500 MB"
+    "message": "Maksimum dosya boyutu 500 MB'dir"
   },
   "permanentlyDeleteAttachmentConfirmation": {
-    "message": "Are you sure you want to permanently delete this attachment?"
+    "message": "Bu dosyayı kalıcı olarak silmek istediğinizden emin misiniz?"
   }
 }
