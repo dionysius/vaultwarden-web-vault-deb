@@ -381,7 +381,7 @@
   },
   "generator": {
     "message": "Generátor",
-    "description": "Short for 'Password Generator'."
+    "description": "Short for 'credential generator'."
   },
   "passGenInfo": {
     "message": "Automatikusan létrehoz erős, egyedi jelszavakat a bejelentkezéseidhez."
@@ -2498,7 +2498,25 @@
     "message": "A Send sikeresen létrejött!",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
-  "sendAvailability": {
+  "sendExpiresInHoursSingle": {
+    "message": "A Send bárki számára elérhető a hivatkozással a következő 1 órában.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendExpiresInHours": {
+    "message": "A Send bárki számára elérhető a hivatkozással a következő $HOURS$ órában.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated.",
+    "placeholders": {
+      "hours": {
+        "content": "$1",
+        "example": "5"
+      }
+    }
+  },
+  "sendExpiresInDaysSingle": {
+    "message": "A Send bárki számára elérhető a hivatkozással a következő 1 napban.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendExpiresInDays": {
     "message": "A Send bárki számára elérhető a hivatkozással a következő $DAYS$ napban.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated.",
     "placeholders": {
@@ -3661,6 +3679,9 @@
   },
   "noMatchingLoginsForSite": {
     "message": "Nincsenek egyező bejelentkezések ehhez a webhelyhez."
+  },
+  "searchSavePasskeyNewLogin": {
+    "message": "Keressés vagy a belépőkulcs mentése bejelentkezésként."
   },
   "confirm": {
     "message": "Megerősítés"

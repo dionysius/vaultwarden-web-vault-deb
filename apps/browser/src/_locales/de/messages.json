@@ -381,7 +381,7 @@
   },
   "generator": {
     "message": "Generator",
-    "description": "Short for 'Password Generator'."
+    "description": "Short for 'credential generator'."
   },
   "passGenInfo": {
     "message": "Generiert automatisch ein starkes und einzigartiges Passwort."
@@ -2498,7 +2498,25 @@
     "message": "Send erfolgreich erstellt!",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
-  "sendAvailability": {
+  "sendExpiresInHoursSingle": {
+    "message": "Das Send wird jedem mit dem Link für die nächste Stunde zur Verfügung stehen.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendExpiresInHours": {
+    "message": "Das Send wird jedem mit dem Link für die nächsten $HOURS$ Stunden zur Verfügung stehen.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated.",
+    "placeholders": {
+      "hours": {
+        "content": "$1",
+        "example": "5"
+      }
+    }
+  },
+  "sendExpiresInDaysSingle": {
+    "message": "Das Send wird jedem mit dem Link für den nächsten Tag zur Verfügung stehen.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendExpiresInDays": {
     "message": "Das Send wird jedem mit dem Link für die nächsten $DAYS$ Tage zur Verfügung stehen.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated.",
     "placeholders": {
@@ -3661,6 +3679,9 @@
   },
   "noMatchingLoginsForSite": {
     "message": "Keine passenden Zugangsdaten für diese Seite"
+  },
+  "searchSavePasskeyNewLogin": {
+    "message": "Passkeys suchen oder als neue Zugangsdaten speichern"
   },
   "confirm": {
     "message": "Bestätigen"

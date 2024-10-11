@@ -381,7 +381,7 @@
   },
   "generator": {
     "message": "Generaattori",
-    "description": "Short for 'Password Generator'."
+    "description": "Short for 'credential generator'."
   },
   "passGenInfo": {
     "message": "Luo kirjautumistiedoillesi automaattisesti vahvoja, ainutlaatuisia salasanoja."
@@ -605,13 +605,13 @@
     "message": "Holvisi on lukittu. Jatka vahvistamalla henkilöllisyytesi."
   },
   "yourVaultIsLockedV2": {
-    "message": "Your vault is locked"
+    "message": "Holvisi on lukittu"
   },
   "yourAccountIsLocked": {
-    "message": "Your account is locked"
+    "message": "Tilisi on lukittu"
   },
   "or": {
-    "message": "or"
+    "message": "tai"
   },
   "unlock": {
     "message": "Avaa"
@@ -1946,7 +1946,7 @@
     "message": "Avaa biometrialla"
   },
   "unlockWithMasterPassword": {
-    "message": "Unlock with master password"
+    "message": "Avaa pääsalasanalla"
   },
   "awaitDesktop": {
     "message": "Odottaa vahvistusta työpöydältä"
@@ -2498,8 +2498,26 @@
     "message": "Sendin luonti onnistui!",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
-  "sendAvailability": {
-    "message": "Tämän linkin välityksellä Send on kenen tahansa avattavissa seuraavien $DAYS$ päivän ajan.",
+  "sendExpiresInHoursSingle": {
+    "message": "The Send will be available to anyone with the link for the next 1 hour.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendExpiresInHours": {
+    "message": "The Send will be available to anyone with the link for the next $HOURS$ hours.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated.",
+    "placeholders": {
+      "hours": {
+        "content": "$1",
+        "example": "5"
+      }
+    }
+  },
+  "sendExpiresInDaysSingle": {
+    "message": "The Send will be available to anyone with the link for the next 1 day.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendExpiresInDays": {
+    "message": "The Send will be available to anyone with the link for the next $DAYS$ days.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated.",
     "placeholders": {
       "days": {
@@ -3636,7 +3654,7 @@
     "message": "Pääsyavain"
   },
   "accessing": {
-    "message": "Accessing"
+    "message": "Avataan"
   },
   "passkeyNotCopied": {
     "message": "Pääsyavainta ei kopioida"
@@ -3661,6 +3679,9 @@
   },
   "noMatchingLoginsForSite": {
     "message": "Tälle sivustolle sopivia kirjautumistietoja ei ole"
+  },
+  "searchSavePasskeyNewLogin": {
+    "message": "Search or save passkey as new login"
   },
   "confirm": {
     "message": "Vahvista"

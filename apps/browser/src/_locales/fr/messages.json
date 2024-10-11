@@ -381,7 +381,7 @@
   },
   "generator": {
     "message": "Générateur",
-    "description": "Short for 'Password Generator'."
+    "description": "Short for 'credential generator'."
   },
   "passGenInfo": {
     "message": "Générer automatiquement des mots de passe robustes et uniques pour vos identifiants."
@@ -2498,8 +2498,26 @@
     "message": "Send créé avec succès !",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
-  "sendAvailability": {
-    "message": "Le Send est disponible à toute personne ayant le lien durant les $DAYS$ prochains jours.",
+  "sendExpiresInHoursSingle": {
+    "message": "Le Send sera accessible à toute personne disposant du lien pendant une heure.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendExpiresInHours": {
+    "message": "Le Send sera accessible à toute personne disposant du lien pendant les prochaines $HOURS$ heures.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated.",
+    "placeholders": {
+      "hours": {
+        "content": "$1",
+        "example": "5"
+      }
+    }
+  },
+  "sendExpiresInDaysSingle": {
+    "message": "Le Send sera accessible à toute personne disposant du lien pendant un jour.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendExpiresInDays": {
+    "message": "Le Send sera accessible à toute personne disposant du lien pendant les prochains $DAYS$ jours.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated.",
     "placeholders": {
       "days": {
@@ -3661,6 +3679,9 @@
   },
   "noMatchingLoginsForSite": {
     "message": "Aucun identifiant correspondant pour ce site"
+  },
+  "searchSavePasskeyNewLogin": {
+    "message": "Rechercher ou enregistrer la clé d'accès comme nouvel identifiant"
   },
   "confirm": {
     "message": "Confirmer"

@@ -381,7 +381,7 @@
   },
   "generator": {
     "message": "Generator",
-    "description": "Short for 'Password Generator'."
+    "description": "Short for 'credential generator'."
   },
   "passGenInfo": {
     "message": "Automatski generiraj jake, jedinstvene lozinke."
@@ -490,7 +490,7 @@
     "description": "Label for the avoid ambiguous characters checkbox."
   },
   "generatorPolicyInEffect": {
-    "message": "Enterprise policy requirements have been applied to your generator options.",
+    "message": "Pravila tvrtke primjenjena su na generator.",
     "description": "Indicates that a policy limits the credential generator screen."
   },
   "searchVault": {
@@ -536,7 +536,7 @@
     "message": "Bilješke"
   },
   "privateNote": {
-    "message": "Private note"
+    "message": "Privatna bilješka"
   },
   "note": {
     "message": "Bilješka"
@@ -605,13 +605,13 @@
     "message": "Tvoj trezor je zaključan. Potvrdi glavnu lozinku za nastavak."
   },
   "yourVaultIsLockedV2": {
-    "message": "Your vault is locked"
+    "message": "Trezor je zaključan"
   },
   "yourAccountIsLocked": {
-    "message": "Your account is locked"
+    "message": "Račun je zaključan"
   },
   "or": {
-    "message": "or"
+    "message": "ili"
   },
   "unlock": {
     "message": "Otključaj"
@@ -1153,7 +1153,7 @@
     "message": "Datoteka"
   },
   "fileToShare": {
-    "message": "File to share"
+    "message": "Datoteka za dijeljenje"
   },
   "selectFile": {
     "message": "Odaberi datoteku."
@@ -1946,7 +1946,7 @@
     "message": "Otključaj biometrijom"
   },
   "unlockWithMasterPassword": {
-    "message": "Unlock with master password"
+    "message": "Otključaj glavnom lozinkom"
   },
   "awaitDesktop": {
     "message": "Čekanje potvrde iz desktop aplikacije"
@@ -2287,14 +2287,14 @@
     "message": "Spremljene promjene izuzete domene"
   },
   "limitSendViews": {
-    "message": "Limit views"
+    "message": "Ograniči broj pogleda"
   },
   "limitSendViewsHint": {
-    "message": "No one can view this Send after the limit is reached.",
+    "message": "Nakon dosegnutog broja, nitko neće moći pogledati Send",
     "description": "Displayed under the limit views field on Send"
   },
   "limitSendViewsCount": {
-    "message": "$ACCESSCOUNT$ views left",
+    "message": "Preostalo pogleda: $ACCESSCOUNT$",
     "description": "Displayed under the limit views field on Send",
     "placeholders": {
       "accessCount": {
@@ -2387,7 +2387,7 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "deleteSendPermanentConfirmation": {
-    "message": "Are you sure you want to permanently delete this Send?",
+    "message": "Sigurno želiš trajno izbrisati ovaj Send?",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "editSend": {
@@ -2450,7 +2450,7 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendPasswordDescV2": {
-    "message": "Require this password to view the Send.",
+    "message": "Zahtijevaj lozinku za pregled Senda.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendNotesDesc": {
@@ -2498,8 +2498,26 @@
     "message": "Send je uspješno stvoren!",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
-  "sendAvailability": {
-    "message": "Send će biti dostupan svakome s poveznicom ovoliko dana: $DAYS$.",
+  "sendExpiresInHoursSingle": {
+    "message": "Send će biti dostupan svakome s poveznicom sljedećih sat vremena.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendExpiresInHours": {
+    "message": "Send če biti dostupan svakome s poveznicom ovoliko sati: $HOURS$",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated.",
+    "placeholders": {
+      "hours": {
+        "content": "$1",
+        "example": "5"
+      }
+    }
+  },
+  "sendExpiresInDaysSingle": {
+    "message": "Send će biti dostupan svakome s poveznicom 1 dan.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendExpiresInDays": {
+    "message": "Send će biti dostupan svakome s poveznom ovoliko dana: $DAYS$",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated.",
     "placeholders": {
       "days": {
@@ -2517,11 +2535,11 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendFilePopoutDialogText": {
-    "message": "Pop out extension?",
+    "message": "Otvori proširenje?",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendFilePopoutDialogDesc": {
-    "message": "To create a file Send, you need to pop out the extension to a new window.",
+    "message": "Za stvaranje Senda, potrebno je otvoriti proširenje u novi prozor.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendLinuxChromiumFileWarning": {
@@ -2534,7 +2552,7 @@
     "message": "Za odabir datoteke u Safariju, otvori iskočni prozor klikom na ovu poruku."
   },
   "popOut": {
-    "message": "Pop out"
+    "message": "Otvori"
   },
   "sendFileCalloutHeader": {
     "message": "Prije početka"
@@ -2570,7 +2588,7 @@
     "message": "Sakrij moju adresu e-pošte od primatelja."
   },
   "hideYourEmail": {
-    "message": "Hide your email address from viewers."
+    "message": "Autentifikacija"
   },
   "sendOptionsPolicyInEffect": {
     "message": "Jedno ili više pravila organizacije utječe na postavke Senda."
@@ -3636,7 +3654,7 @@
     "message": "Pristupni ključ"
   },
   "accessing": {
-    "message": "Accessing"
+    "message": "Pristupanje"
   },
   "passkeyNotCopied": {
     "message": "Pristupni ključ neće biti kopiran"
@@ -3661,6 +3679,9 @@
   },
   "noMatchingLoginsForSite": {
     "message": "Nema prijava za ovu web stranicu"
+  },
+  "searchSavePasskeyNewLogin": {
+    "message": "Potraži ili spremi pristupni ključ kao novu prijavu"
   },
   "confirm": {
     "message": "Autoriziraj"
@@ -4232,7 +4253,7 @@
     "message": "Omogući animacije"
   },
   "showAnimations": {
-    "message": "Show animations"
+    "message": "Prikaži animacije"
   },
   "addAccount": {
     "message": "Dodaj račun"
@@ -4513,6 +4534,6 @@
     "message": "Nemaš prava za uređivanje ove stavke"
   },
   "authenticating": {
-    "message": "Authenticating"
+    "message": "Autentifikacija"
   }
 }

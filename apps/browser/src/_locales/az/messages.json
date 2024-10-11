@@ -381,7 +381,7 @@
   },
   "generator": {
     "message": "Yaradıcı",
-    "description": "Short for 'Password Generator'."
+    "description": "Short for 'credential generator'."
   },
   "passGenInfo": {
     "message": "Hesablarınız üçün avtomatik olaraq güclü, unikal parollar yaradın."
@@ -2498,8 +2498,26 @@
     "message": "Send uğurla yaradıldı!",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
-  "sendAvailability": {
-    "message": "Send, növbəti $DAYS$ ərzində keçidə sahib olan hər kəsə əlçatan olacaq.",
+  "sendExpiresInHoursSingle": {
+    "message": "Send, növbəti 1 saat ərzində keçidə sahib olan hər kəsə əlçatan olacaq.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendExpiresInHours": {
+    "message": "Send, növbəti $HOURS$ saat ərzində keçidə sahib olan hər kəsə əlçatan olacaq.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated.",
+    "placeholders": {
+      "hours": {
+        "content": "$1",
+        "example": "5"
+      }
+    }
+  },
+  "sendExpiresInDaysSingle": {
+    "message": "Send, növbəti 1 gün ərzində keçidə sahib olan hər kəsə əlçatan olacaq.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendExpiresInDays": {
+    "message": "Send, növbəti $DAYS$ gün ərzində keçidə sahib olan hər kəsə əlçatan olacaq.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated.",
     "placeholders": {
       "days": {
@@ -3661,6 +3679,9 @@
   },
   "noMatchingLoginsForSite": {
     "message": "Bu sayt üçün uyuşan giriş məlumatı yoxdur"
+  },
+  "searchSavePasskeyNewLogin": {
+    "message": "Axtarın və ya keçid açarını yeni bir giriş olaraq saxlayın"
   },
   "confirm": {
     "message": "Təsdiqlə"

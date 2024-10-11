@@ -381,7 +381,7 @@
   },
   "generator": {
     "message": "Generator",
-    "description": "Short for 'Password Generator'."
+    "description": "Short for 'credential generator'."
   },
   "passGenInfo": {
     "message": "Opret automatisk stærke, unikke adgangskoder til dine logins."
@@ -2498,8 +2498,26 @@
     "message": "Send er hermed oprettet!",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
-  "sendAvailability": {
-    "message": "Denne Send vil være tilgængelig for alle med linket i de næste $DAYS$ dage.",
+  "sendExpiresInHoursSingle": {
+    "message": "Denne Send vil være tilgængelig for alle med linket den kommende time.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendExpiresInHours": {
+    "message": "Denne Send vil være tilgængelig for alle med linket de kommende $HOURS$ timer.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated.",
+    "placeholders": {
+      "hours": {
+        "content": "$1",
+        "example": "5"
+      }
+    }
+  },
+  "sendExpiresInDaysSingle": {
+    "message": "Denne Send vil være tilgængelig for alle med linket den kommende dag.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendExpiresInDays": {
+    "message": "Denne Send vil være tilgængelig for alle med linket de kommende $DAYS$ dage.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated.",
     "placeholders": {
       "days": {
@@ -3661,6 +3679,9 @@
   },
   "noMatchingLoginsForSite": {
     "message": "Ingen matchende logins for dette websted"
+  },
+  "searchSavePasskeyNewLogin": {
+    "message": "Søg eller gem adgangsnøgle som nyt login"
   },
   "confirm": {
     "message": "Bekræft"

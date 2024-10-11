@@ -381,7 +381,7 @@
   },
   "generator": {
     "message": "Gerador",
-    "description": "Short for 'Password Generator'."
+    "description": "Short for 'credential generator'."
   },
   "passGenInfo": {
     "message": "Gera automaticamente palavras-passe fortes e únicas para as suas credenciais."
@@ -2498,7 +2498,25 @@
     "message": "Send criado com sucesso!",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
-  "sendAvailability": {
+  "sendExpiresInHoursSingle": {
+    "message": "O Send estará disponível para qualquer pessoa que tenha o link durante a próxima hora.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendExpiresInHours": {
+    "message": "O Send estará disponível para qualquer pessoa que tenha o link durante as próximas $HOURS$.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated.",
+    "placeholders": {
+      "hours": {
+        "content": "$1",
+        "example": "5"
+      }
+    }
+  },
+  "sendExpiresInDaysSingle": {
+    "message": "O Send estará disponível para qualquer pessoa que tenha o link durante o próximo dia.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendExpiresInDays": {
     "message": "O Send estará disponível para qualquer pessoa que tenha o link durante os próximos $DAYS$ dias.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated.",
     "placeholders": {
@@ -3662,6 +3680,9 @@
   "noMatchingLoginsForSite": {
     "message": "Sem credenciais correspondentes para este site"
   },
+  "searchSavePasskeyNewLogin": {
+    "message": "Procure ou guarde a chave de acesso como uma nova credencial"
+  },
   "confirm": {
     "message": "Confirmar"
   },
@@ -3669,7 +3690,7 @@
     "message": "Guardar a chave de acesso"
   },
   "savePasskeyNewLogin": {
-    "message": "Guardar a chave de acesso como uma nova credencial"
+    "message": "Guarde a chave de acesso como uma nova credencial"
   },
   "chooseCipherForPasskeySave": {
     "message": "Escolha uma credencial para guardar esta chave de acesso"

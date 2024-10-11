@@ -381,7 +381,7 @@
   },
   "generator": {
     "message": "Генератор",
-    "description": "Short for 'Password Generator'."
+    "description": "Short for 'credential generator'."
   },
   "passGenInfo": {
     "message": "Аутоматски генеришите јаке, јединствене лозинке за ваше пријаве."
@@ -605,13 +605,13 @@
     "message": "Сеф је закључан. Унесите главну лозинку за наставак."
   },
   "yourVaultIsLockedV2": {
-    "message": "Your vault is locked"
+    "message": "Ваш сеф је блокиран"
   },
   "yourAccountIsLocked": {
-    "message": "Your account is locked"
+    "message": "Ваш налог је закључан"
   },
   "or": {
-    "message": "or"
+    "message": "или"
   },
   "unlock": {
     "message": "Откључај"
@@ -1946,7 +1946,7 @@
     "message": "Откључавајте помоћу биометрије"
   },
   "unlockWithMasterPassword": {
-    "message": "Unlock with master password"
+    "message": "Откључај са главном лозинком"
   },
   "awaitDesktop": {
     "message": "Чекање потврде са десктопа"
@@ -2498,7 +2498,25 @@
     "message": "Send је успешно направљен!",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
-  "sendAvailability": {
+  "sendExpiresInHoursSingle": {
+    "message": "Send ће бити доступно свима који имају везу наредних 1 сат.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendExpiresInHours": {
+    "message": "The Send will be available to anyone with the link for the next $HOURS$ hours.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated.",
+    "placeholders": {
+      "hours": {
+        "content": "$1",
+        "example": "5"
+      }
+    }
+  },
+  "sendExpiresInDaysSingle": {
+    "message": "Send ће бити доступно свима који имају везу наредних 1 дан.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendExpiresInDays": {
     "message": "The Send will be available to anyone with the link for the next $DAYS$ days.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated.",
     "placeholders": {
@@ -3636,7 +3654,7 @@
     "message": "Приступачни кључ"
   },
   "accessing": {
-    "message": "Accessing"
+    "message": "Приступ"
   },
   "passkeyNotCopied": {
     "message": "Приступачни кључ неће бити копиран"
@@ -3661,6 +3679,9 @@
   },
   "noMatchingLoginsForSite": {
     "message": "Нема одговарајућих пријава за овај сајт"
+  },
+  "searchSavePasskeyNewLogin": {
+    "message": "Претражити или сачувати приступни кључ као нову пријаву"
   },
   "confirm": {
     "message": "Потврди"

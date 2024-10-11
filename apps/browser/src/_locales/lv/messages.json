@@ -381,7 +381,7 @@
   },
   "generator": {
     "message": "Veidotājs",
-    "description": "Short for 'Password Generator'."
+    "description": "Short for 'credential generator'."
   },
   "passGenInfo": {
     "message": "Automātiski veido spēcīgas, neatkārtojamas paroles visiem pieteikšanās vienumiem."
@@ -2498,7 +2498,25 @@
     "message": "Send tika veiksmīgi izveidots.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
-  "sendAvailability": {
+  "sendExpiresInHoursSingle": {
+    "message": "Send būs pieejams nākamo stundu ikvienam, kuram ir saite.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendExpiresInHours": {
+    "message": "Send būs pieejams nākamās $HOURS$ stundas ikvienam, kuram ir saite.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated.",
+    "placeholders": {
+      "hours": {
+        "content": "$1",
+        "example": "5"
+      }
+    }
+  },
+  "sendExpiresInDaysSingle": {
+    "message": "Send būs pieejams nākamo dienu ikvienam, kuram ir saite.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendExpiresInDays": {
     "message": "Send būs pieejams nākamās $DAYS$ dienas ikvienam, kuram ir saite.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated.",
     "placeholders": {
@@ -3661,6 +3679,9 @@
   },
   "noMatchingLoginsForSite": {
     "message": "Šai vietnei nav atbilstošu pieteikšanās vietnumu"
+  },
+  "searchSavePasskeyNewLogin": {
+    "message": "Meklēt vai saglabāt piekļuves atslēgu kā jaunu pieteikšanās vienumu"
   },
   "confirm": {
     "message": "Apstiprināt"

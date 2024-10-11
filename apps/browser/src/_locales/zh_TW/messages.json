@@ -195,7 +195,7 @@
     "message": "新增項目"
   },
   "accountEmail": {
-    "message": "帳號電子郵件"
+    "message": "帳戶電子郵件"
   },
   "requestHint": {
     "message": "請求提示"
@@ -329,10 +329,10 @@
     "message": "編輯資料夾"
   },
   "newFolder": {
-    "message": "New folder"
+    "message": "新增資料夾"
   },
   "folderName": {
-    "message": "Folder name"
+    "message": "資料夾名稱"
   },
   "folderHintText": {
     "message": "Nest a folder by adding the parent folder's name followed by a “/”. Example: Social/Forums"
@@ -381,7 +381,7 @@
   },
   "generator": {
     "message": "產生器",
-    "description": "Short for 'Password Generator'."
+    "description": "Short for 'credential generator'."
   },
   "passGenInfo": {
     "message": "自動產生安全、唯一的登入密碼。"
@@ -557,7 +557,7 @@
     "message": "前往"
   },
   "launchWebsite": {
-    "message": "Launch website"
+    "message": "開啟網站"
   },
   "website": {
     "message": "網站"
@@ -572,7 +572,7 @@
     "message": "其他"
   },
   "unlockMethods": {
-    "message": "Unlock options"
+    "message": "解鎖選項"
   },
   "unlockMethodNeededToChangeTimeoutActionDesc": {
     "message": "設定解鎖方法來變更您的密碼庫逾時動作。"
@@ -581,13 +581,13 @@
     "message": "在設定中設定一個解鎖方式"
   },
   "sessionTimeoutHeader": {
-    "message": "Session timeout"
+    "message": "工作階段逾時"
   },
   "vaultTimeoutHeader": {
-    "message": "Vault timeout"
+    "message": "密碼庫逾時時間"
   },
   "otherOptions": {
-    "message": "Other options"
+    "message": "其它選項"
   },
   "rateExtension": {
     "message": "為本套件評分"
@@ -608,10 +608,10 @@
     "message": "Your vault is locked"
   },
   "yourAccountIsLocked": {
-    "message": "Your account is locked"
+    "message": "您的帳戶已被鎖定。"
   },
   "or": {
-    "message": "or"
+    "message": "或"
   },
   "unlock": {
     "message": "解鎖"
@@ -636,7 +636,7 @@
     "message": "密碼庫逾時時間"
   },
   "vaultTimeout1": {
-    "message": "Timeout"
+    "message": "逾時"
   },
   "lockNow": {
     "message": "立即鎖定"
@@ -929,7 +929,7 @@
     "message": "詢問新增登入資料"
   },
   "vaultSaveOptionsTitle": {
-    "message": "Save to vault options"
+    "message": "儲存至密碼庫選項"
   },
   "addLoginNotificationDesc": {
     "message": "在密碼庫中找不到相符的項目時詢問是否新增項目。"
@@ -997,7 +997,7 @@
     "message": "解鎖"
   },
   "additionalOptions": {
-    "message": "Additional options"
+    "message": "額外選項"
   },
   "enableContextMenuItem": {
     "message": "顯示內容選單選項"
@@ -1033,7 +1033,7 @@
     "description": "Light color"
   },
   "solarizedDark": {
-    "message": "Solarized Dark 主題",
+    "message": "Solarized 深色主題",
     "description": "'Solarized' is a noun and the name of a color scheme. It should not be translated."
   },
   "exportFrom": {
@@ -1061,7 +1061,7 @@
     "message": "Set a file password to encrypt the export and import it to any Bitwarden account using the password for decryption."
   },
   "exportTypeHeading": {
-    "message": "Export type"
+    "message": "匯出類型"
   },
   "accountRestricted": {
     "message": "Account restricted"
@@ -1527,7 +1527,7 @@
     "message": "布林值"
   },
   "cfTypeCheckbox": {
-    "message": "Checkbox"
+    "message": "核取方塊"
   },
   "cfTypeLinked": {
     "message": "連結型",
@@ -1712,7 +1712,7 @@
     "message": "身分"
   },
   "newItemHeader": {
-    "message": "New $TYPE$",
+    "message": "新增 $TYPE$",
     "placeholders": {
       "type": {
         "content": "$1",
@@ -1721,7 +1721,7 @@
     }
   },
   "editItemHeader": {
-    "message": "Edit $TYPE$",
+    "message": "編輯 $TYPE$",
     "placeholders": {
       "type": {
         "content": "$1",
@@ -1730,7 +1730,7 @@
     }
   },
   "viewItemHeader": {
-    "message": "View $TYPE$",
+    "message": "檢視 $TYPE$",
     "placeholders": {
       "type": {
         "content": "$1",
@@ -1748,7 +1748,7 @@
     "message": "集合"
   },
   "nCollections": {
-    "message": "$COUNT$ collections",
+    "message": "$COUNT$ 個集合",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -1801,7 +1801,7 @@
     "description": "Domain name. Ex. website.com"
   },
   "baseDomainOptionRecommended": {
-    "message": "Base domain (recommended)",
+    "message": "基礎網域 (推薦)",
     "description": "Domain name. Ex. website.com"
   },
   "domainName": {
@@ -1855,7 +1855,7 @@
     "message": "沒有可列出的密碼。"
   },
   "clearHistory": {
-    "message": "Clear history"
+    "message": "清除歷史紀錄"
   },
   "noPasswordsToShow": {
     "message": "No passwords to show"
@@ -1922,10 +1922,10 @@
     "message": "使用 PIN 碼解鎖"
   },
   "setYourPinTitle": {
-    "message": "Set PIN"
+    "message": "設定 PIN 碼"
   },
   "setYourPinButton": {
-    "message": "Set PIN"
+    "message": "設定 PIN 碼"
   },
   "setYourPinCode": {
     "message": "設定您用來解鎖 Bitwarden 的 PIN 碼。您的 PIN 設定將在您完全登出本應用程式時被重設。"
@@ -1999,7 +1999,7 @@
     "message": "密碼庫逾時動作"
   },
   "vaultTimeoutAction1": {
-    "message": "Timeout action"
+    "message": "逾時後動作"
   },
   "lock": {
     "message": "鎖定",
@@ -2498,7 +2498,25 @@
     "message": "Send created successfully!",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
-  "sendAvailability": {
+  "sendExpiresInHoursSingle": {
+    "message": "The Send will be available to anyone with the link for the next 1 hour.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendExpiresInHours": {
+    "message": "The Send will be available to anyone with the link for the next $HOURS$ hours.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated.",
+    "placeholders": {
+      "hours": {
+        "content": "$1",
+        "example": "5"
+      }
+    }
+  },
+  "sendExpiresInDaysSingle": {
+    "message": "The Send will be available to anyone with the link for the next 1 day.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendExpiresInDays": {
     "message": "The Send will be available to anyone with the link for the next $DAYS$ days.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated.",
     "placeholders": {
@@ -3662,6 +3680,9 @@
   "noMatchingLoginsForSite": {
     "message": "No matching logins for this site"
   },
+  "searchSavePasskeyNewLogin": {
+    "message": "Search or save passkey as new login"
+  },
   "confirm": {
     "message": "確認"
   },
@@ -3913,7 +3934,7 @@
     "message": "Clear filters or try another search term"
   },
   "copyInfoTitle": {
-    "message": "Copy info - $ITEMNAME$",
+    "message": "複製資訊 - $ITEMNAME$",
     "description": "Title for a button that opens a menu with options to copy information from an item.",
     "placeholders": {
       "itemname": {
@@ -3933,7 +3954,7 @@
     }
   },
   "moreOptionsLabel": {
-    "message": "More options, $ITEMNAME$",
+    "message": "更多選項, $ITEMNAME$",
     "description": "Aria label for a button that opens a menu with more options for an item.",
     "placeholders": {
       "itemname": {
@@ -3943,7 +3964,7 @@
     }
   },
   "moreOptionsTitle": {
-    "message": "More options - $ITEMNAME$",
+    "message": "更多選項 - $ITEMNAME$",
     "description": "Title for a button that opens a menu with more options for an item.",
     "placeholders": {
       "itemname": {
@@ -3976,7 +3997,7 @@
     "message": "No values to copy"
   },
   "assignToCollections": {
-    "message": "Assign to collections"
+    "message": "指派至集合"
   },
   "copyEmail": {
     "message": "Copy email"
@@ -3991,13 +4012,13 @@
     "message": "Admin Console"
   },
   "accountSecurity": {
-    "message": "Account security"
+    "message": "帳戶安全性"
   },
   "notifications": {
-    "message": "Notifications"
+    "message": "通知"
   },
   "appearance": {
-    "message": "Appearance"
+    "message": "外觀"
   },
   "errorAssigningTargetCollection": {
     "message": "Error assigning target collection."
@@ -4029,7 +4050,7 @@
     "message": "New"
   },
   "removeItem": {
-    "message": "Remove $NAME$",
+    "message": "移除 $NAME$",
     "description": "Remove a selected option, such as a folder or collection",
     "placeholders": {
       "name": {
@@ -4155,7 +4176,7 @@
     "message": "Authenticator key"
   },
   "autofillOptions": {
-    "message": "Autofill options"
+    "message": "自動填入選項"
   },
   "websiteUri": {
     "message": "Website (URI)"
@@ -4229,13 +4250,13 @@
     }
   },
   "enableAnimations": {
-    "message": "Enable animations"
+    "message": "啟用動畫"
   },
   "showAnimations": {
-    "message": "Show animations"
+    "message": "顯示動畫"
   },
   "addAccount": {
-    "message": "Add account"
+    "message": "新增帳戶"
   },
   "loading": {
     "message": "Loading"
@@ -4360,7 +4381,7 @@
     }
   },
   "selectCollectionsToAssign": {
-    "message": "Select collections to assign"
+    "message": "選擇要指派的集合"
   },
   "personalItemTransferWarningSingular": {
     "message": "1 item will be permanently transferred to the selected organization. You will no longer own this item."
@@ -4397,7 +4418,7 @@
     }
   },
   "successfullyAssignedCollections": {
-    "message": "Successfully assigned collections"
+    "message": "指派集合成功"
   },
   "nothingSelected": {
     "message": "You have not selected anything."
