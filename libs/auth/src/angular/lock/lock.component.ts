@@ -233,10 +233,7 @@ export class LockV2Component implements OnInit, OnDestroy {
 
   private setEmailAsPageSubtitle(email: string) {
     this.anonLayoutWrapperDataService.setAnonLayoutWrapperData({
-      pageSubtitle: {
-        subtitle: email,
-        translate: false,
-      },
+      pageSubtitle: email,
     });
   }
 

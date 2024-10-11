@@ -157,8 +157,8 @@ export class AccessComponent implements OnInit {
     if (this.creatorIdentifier != null) {
       this.layoutWrapperDataService.setAnonLayoutWrapperData({
         pageSubtitle: {
-          subtitle: this.i18nService.t("sendAccessCreatorIdentifier", this.creatorIdentifier),
-          translate: false,
+          key: "sendAccessCreatorIdentifier",
+          placeholders: [this.creatorIdentifier],
         },
       });
     }

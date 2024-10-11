@@ -221,8 +221,12 @@ export const DefaultContentExample: Story = {
 
 // Dynamic Content Example
 const initialData: ExtensionAnonLayoutWrapperData = {
-  pageTitle: "setAStrongPassword",
-  pageSubtitle: "finishCreatingYourAccountBySettingAPassword",
+  pageTitle: {
+    key: "setAStrongPassword",
+  },
+  pageSubtitle: {
+    key: "finishCreatingYourAccountBySettingAPassword",
+  },
   pageIcon: LockIcon,
   showAcctSwitcher: true,
   showBackButton: true,
@@ -230,8 +234,12 @@ const initialData: ExtensionAnonLayoutWrapperData = {
 };
 
 const changedData: ExtensionAnonLayoutWrapperData = {
-  pageTitle: "enterpriseSingleSignOn",
-  pageSubtitle: "checkYourEmail",
+  pageTitle: {
+    key: "enterpriseSingleSignOn",
+  },
+  pageSubtitle: {
+    key: "checkYourEmail",
+  },
   pageIcon: RegistrationCheckEmailIcon,
   showAcctSwitcher: false,
   showBackButton: false,

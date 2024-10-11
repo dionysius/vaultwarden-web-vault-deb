@@ -1,10 +1,11 @@
 import { ActivatedRouteSnapshot, ResolveFn } from "@angular/router";
 
 import { ProductType } from "@bitwarden/common/billing/enums";
+import { Translation } from "@bitwarden/components";
 
-export const freeTrialTextResolver: ResolveFn<string | null> = (
+export const freeTrialTextResolver: ResolveFn<Translation | null> = (
   route: ActivatedRouteSnapshot,
-): string | null => {
+): Translation | null => {
   const { product } = route.queryParams;
   const products: ProductType[] = (product ?? "").split(",").map((p: string) => parseInt(p));
 
@@ -13,10 +14,16 @@ export const freeTrialTextResolver: ResolveFn<string | null> = (
 
   switch (true) {
     case onlyPasswordManager:
-      return "continueSettingUpFreeTrialPasswordManager";
+      return {
+        key: "continueSettingUpFreeTrialPasswordManager",
+      };
     case onlySecretsManager:
-      return "continueSettingUpFreeTrialSecretsManager";
+      return {
+        key: "continueSettingUpFreeTrialSecretsManager",
+      };
     default:
-      return "continueSettingUpFreeTrial";
+      return {
+        key: "continueSettingUpFreeTrial",
+      };
   }
 };

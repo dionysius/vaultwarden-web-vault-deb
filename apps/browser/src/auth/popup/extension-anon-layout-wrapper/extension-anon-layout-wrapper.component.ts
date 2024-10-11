@@ -9,7 +9,7 @@ import {
   AnonLayoutWrapperDataService,
 } from "@bitwarden/auth/angular";
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
-import { Icon, IconModule } from "@bitwarden/components";
+import { Icon, IconModule, Translation } from "@bitwarden/components";
 
 import { PopOutComponent } from "../../../platform/popup/components/pop-out.component";
 import { PopupHeaderComponent } from "../../../platform/popup/layout/popup-header.component";
@@ -90,11 +90,11 @@ export class ExtensionAnonLayoutWrapperComponent implements OnInit, OnDestroy {
     }
 
     if (firstChildRouteData["pageTitle"] !== undefined) {
-      this.pageTitle = this.i18nService.t(firstChildRouteData["pageTitle"]);
+      this.pageTitle = this.handleStringOrTranslation(firstChildRouteData["pageTitle"]);
     }
 
     if (firstChildRouteData["pageSubtitle"] !== undefined) {
-      this.pageSubtitle = this.i18nService.t(firstChildRouteData["pageSubtitle"]);
+      this.pageSubtitle = this.handleStringOrTranslation(firstChildRouteData["pageSubtitle"]);
     }
 
     if (firstChildRouteData["pageIcon"] !== undefined) {
@@ -132,19 +132,11 @@ export class ExtensionAnonLayoutWrapperComponent implements OnInit, OnDestroy {
     }
 
     if (data.pageTitle) {
-      this.pageTitle = this.i18nService.t(data.pageTitle);
+      this.pageTitle = this.handleStringOrTranslation(data.pageTitle);
     }
 
     if (data.pageSubtitle) {
-      // If you pass just a string, we translate it by default
-      if (typeof data.pageSubtitle === "string") {
-        this.pageSubtitle = this.i18nService.t(data.pageSubtitle);
-      } else {
-        // if you pass an object, you can specify if you want to translate it or not
-        this.pageSubtitle = data.pageSubtitle.translate
-          ? this.i18nService.t(data.pageSubtitle.subtitle)
-          : data.pageSubtitle.subtitle;
-      }
+      this.pageSubtitle = this.handleStringOrTranslation(data.pageSubtitle);
     }
 
     if (data.pageIcon) {
@@ -166,6 +158,16 @@ export class ExtensionAnonLayoutWrapperComponent implements OnInit, OnDestroy {
     if (data.showLogo != null) {
       this.showLogo = data.showLogo;
     }
+  }
+
+  private handleStringOrTranslation(value: string | Translation): string {
+    if (typeof value === "string") {
+      // If it's a string, return it as is
+      return value;
+    }
+
+    // If it's a Translation object, translate it
+    return this.i18nService.t(value.key, ...(value.placeholders ?? []));
   }
 
   private resetPageData() {

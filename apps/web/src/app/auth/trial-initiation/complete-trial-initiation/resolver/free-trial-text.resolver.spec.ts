@@ -14,22 +14,24 @@ describe("freeTrialTextResolver", () => {
   it("shows password manager text", () => {
     route.queryParams.product = `${ProductType.PasswordManager}`;
 
-    expect(freeTrialTextResolver(route, routerStateSnapshot)).toBe(
-      "continueSettingUpFreeTrialPasswordManager",
-    );
+    expect(freeTrialTextResolver(route, routerStateSnapshot)).toEqual({
+      key: "continueSettingUpFreeTrialPasswordManager",
+    });
   });
 
   it("shows secret manager text", () => {
     route.queryParams.product = `${ProductType.SecretsManager}`;
 
-    expect(freeTrialTextResolver(route, routerStateSnapshot)).toBe(
-      "continueSettingUpFreeTrialSecretsManager",
-    );
+    expect(freeTrialTextResolver(route, routerStateSnapshot)).toEqual({
+      key: "continueSettingUpFreeTrialSecretsManager",
+    });
   });
 
   it("shows default text", () => {
     route.queryParams.product = `${ProductType.PasswordManager},${ProductType.SecretsManager}`;
 
-    expect(freeTrialTextResolver(route, routerStateSnapshot)).toBe("continueSettingUpFreeTrial");
+    expect(freeTrialTextResolver(route, routerStateSnapshot)).toEqual({
+      key: "continueSettingUpFreeTrial",
+    });
   });
 });

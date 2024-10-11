@@ -4,20 +4,34 @@ import { Subject, filter, switchMap, takeUntil, tap } from "rxjs";
 
 import { AnonLayoutComponent } from "@bitwarden/auth/angular";
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
-import { Icon } from "@bitwarden/components";
+import { Icon, Translation } from "@bitwarden/components";
 
 import { AnonLayoutWrapperDataService } from "./anon-layout-wrapper-data.service";
 
 export interface AnonLayoutWrapperData {
-  pageTitle?: string;
-  pageSubtitle?:
-    | string
-    | {
-        subtitle: string;
-        translate: boolean;
-      };
+  /**
+   * The optional title of the page.
+   * If a string is provided, it will be presented as is (ex: Organization name)
+   * If a Translation object (supports placeholders) is provided, it will be translated
+   */
+  pageTitle?: string | Translation;
+  /**
+   * The optional subtitle of the page.
+   * If a string is provided, it will be presented as is (ex: user's email)
+   * If a Translation object (supports placeholders) is provided, it will be translated
+   */
+  pageSubtitle?: string | Translation;
+  /**
+   * The optional icon to display on the page.
+   */
   pageIcon?: Icon;
+  /**
+   * Optional flag to either show the optional environment selector (false) or just a readonly hostname (true).
+   */
   showReadonlyHostname?: boolean;
+  /**
+   * Optional flag to set the max-width of the page. Defaults to 'md' if not provided.
+   */
   maxWidth?: "md" | "3xl";
 }
 
@@ -71,11 +85,11 @@ export class AnonLayoutWrapperComponent implements OnInit, OnDestroy {
     }
 
     if (firstChildRouteData["pageTitle"] !== undefined) {
-      this.pageTitle = this.i18nService.t(firstChildRouteData["pageTitle"]);
+      this.pageTitle = this.handleStringOrTranslation(firstChildRouteData["pageTitle"]);
     }
 
     if (firstChildRouteData["pageSubtitle"] !== undefined) {
-      this.pageSubtitle = this.i18nService.t(firstChildRouteData["pageSubtitle"]);
+      this.pageSubtitle = this.handleStringOrTranslation(firstChildRouteData["pageSubtitle"]);
     }
 
     if (firstChildRouteData["pageIcon"] !== undefined) {
@@ -101,19 +115,11 @@ export class AnonLayoutWrapperComponent implements OnInit, OnDestroy {
     }
 
     if (data.pageTitle) {
-      this.pageTitle = this.i18nService.t(data.pageTitle);
+      this.pageTitle = this.handleStringOrTranslation(data.pageTitle);
     }
 
     if (data.pageSubtitle) {
-      // If you pass just a string, we translate it by default
-      if (typeof data.pageSubtitle === "string") {
-        this.pageSubtitle = this.i18nService.t(data.pageSubtitle);
-      } else {
-        // if you pass an object, you can specify if you want to translate it or not
-        this.pageSubtitle = data.pageSubtitle.translate
-          ? this.i18nService.t(data.pageSubtitle.subtitle)
-          : data.pageSubtitle.subtitle;
-      }
+      this.pageSubtitle = this.handleStringOrTranslation(data.pageSubtitle);
     }
 
     if (data.pageIcon) {
@@ -127,6 +133,16 @@ export class AnonLayoutWrapperComponent implements OnInit, OnDestroy {
     // Manually fire change detection to avoid ExpressionChangedAfterItHasBeenCheckedError
     // when setting the page data from a service
     this.changeDetectorRef.detectChanges();
+  }
+
+  private handleStringOrTranslation(value: string | Translation): string {
+    if (typeof value === "string") {
+      // If it's a string, return it as is
+      return value;
+    }
+
+    // If it's a Translation object, translate it
+    return this.i18nService.t(value.key, ...(value.placeholders ?? []));
   }
 
   private resetPageData() {
