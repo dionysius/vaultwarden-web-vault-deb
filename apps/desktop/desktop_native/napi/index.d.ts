@@ -51,7 +51,7 @@ export declare namespace powermonitors {
   export function onLock(callback: (err: Error | null, ) => any): Promise<void>
   export function isLockMonitorAvailable(): Promise<boolean>
 }
-export namespace ipc {
+export declare namespace ipc {
   export interface IpcMessage {
     clientId: number
     kind: IpcMessageType
