@@ -407,16 +407,55 @@
     "message": "Minimum jelszó hosszúság"
   },
   "uppercase": {
-    "message": "Nagybetűs (A-Z)"
+    "message": "Nagybetűs (A-Z)",
+    "description": "deprecated. Use uppercaseLabel instead."
   },
   "lowercase": {
-    "message": "Kisbetűs (a-z)"
+    "message": "Kisbetűs (a-z)",
+    "description": "deprecated. Use lowercaseLabel instead."
   },
   "numbers": {
-    "message": "Számok (0-9)"
+    "message": "Számok (0-9)",
+    "description": "deprecated. Use numbersLabel instead."
   },
   "specialCharacters": {
     "message": "Speciális karakterek (!@#$%^&*)"
+  },
+  "include": {
+    "message": "Bevonás",
+    "description": "Card header for password generator include block"
+  },
+  "uppercaseDescription": {
+    "message": "Nagybetűs karakterek bevonása",
+    "description": "Tooltip for the password generator uppercase character checkbox"
+  },
+  "uppercaseLabel": {
+    "message": "A-Z",
+    "description": "Label for the password generator uppercase character checkbox"
+  },
+  "lowercaseDescription": {
+    "message": "Kisbetűs karakterek bevonása",
+    "description": "Full description for the password generator lowercase character checkbox"
+  },
+  "lowercaseLabel": {
+    "message": "a-z",
+    "description": "Label for the password generator lowercase character checkbox"
+  },
+  "numbersDescription": {
+    "message": "Számok bevonása",
+    "description": "Full description for the password generator numbers checkbox"
+  },
+  "numbersLabel": {
+    "message": "0-9",
+    "description": "Label for the password generator numbers checkbox"
+  },
+  "specialCharactersDescription": {
+    "message": "Speciális karakterek bevonása",
+    "description": "Full description for the password generator special characters checkbox"
+  },
+  "specialCharactersLabel": {
+    "message": "!@#$%^&*",
+    "description": "Label for the password generator special characters checkbox"
   },
   "numWords": {
     "message": "Szavak száma"
@@ -442,7 +481,12 @@
     "description": "Minimum Special Characters"
   },
   "ambiguous": {
-    "message": "Félreérthető karakterek mellőzése"
+    "message": "Félreérthető karakterek mellőzése",
+    "description": "deprecated. Use avoidAmbiguous instead."
+  },
+  "avoidAmbiguous": {
+    "message": "Félreérthető karakterek mellőzése",
+    "description": "Label for the avoid ambiguous characters checkbox."
   },
   "generatorPolicyInEffect": {
     "message": "A vállalati házirend követelményei kerülnek alkalmazásra a generátor beállításaira.",
@@ -2275,7 +2319,8 @@
     "message": "Feloldva"
   },
   "generator": {
-    "message": "Generátor"
+    "message": "Generátor",
+    "description": "Short for 'credential generator'."
   },
   "whatWouldYouLikeToGenerate": {
     "message": "Mit szeretnénk generálni?"

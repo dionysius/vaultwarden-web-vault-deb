@@ -407,16 +407,55 @@
     "message": "最小密码长度"
   },
   "uppercase": {
-    "message": "大写 (A-Z)"
+    "message": "大写 (A-Z)",
+    "description": "deprecated. Use uppercaseLabel instead."
   },
   "lowercase": {
-    "message": "小写 (a-z)"
+    "message": "小写 (a-z)",
+    "description": "deprecated. Use lowercaseLabel instead."
   },
   "numbers": {
-    "message": "数字 (0-9)"
+    "message": "数字 (0-9)",
+    "description": "deprecated. Use numbersLabel instead."
   },
   "specialCharacters": {
     "message": "特殊字符 (!@#$%^&*)"
+  },
+  "include": {
+    "message": "包含",
+    "description": "Card header for password generator include block"
+  },
+  "uppercaseDescription": {
+    "message": "包含大写字符",
+    "description": "Tooltip for the password generator uppercase character checkbox"
+  },
+  "uppercaseLabel": {
+    "message": "A-Z",
+    "description": "Label for the password generator uppercase character checkbox"
+  },
+  "lowercaseDescription": {
+    "message": "包含小写字符",
+    "description": "Full description for the password generator lowercase character checkbox"
+  },
+  "lowercaseLabel": {
+    "message": "a-z",
+    "description": "Label for the password generator lowercase character checkbox"
+  },
+  "numbersDescription": {
+    "message": "包含数字",
+    "description": "Full description for the password generator numbers checkbox"
+  },
+  "numbersLabel": {
+    "message": "0-9",
+    "description": "Label for the password generator numbers checkbox"
+  },
+  "specialCharactersDescription": {
+    "message": "包含特殊字符",
+    "description": "Full description for the password generator special characters checkbox"
+  },
+  "specialCharactersLabel": {
+    "message": "!@#$%^&*",
+    "description": "Label for the password generator special characters checkbox"
   },
   "numWords": {
     "message": "单词数"
@@ -442,7 +481,12 @@
     "description": "Minimum Special Characters"
   },
   "ambiguous": {
-    "message": "避免易混淆的字符"
+    "message": "避免易混淆的字符",
+    "description": "deprecated. Use avoidAmbiguous instead."
+  },
+  "avoidAmbiguous": {
+    "message": "避免易混淆的字符",
+    "description": "Label for the avoid ambiguous characters checkbox."
   },
   "generatorPolicyInEffect": {
     "message": "企业策略要求已应用到您的生成器选项中。",
@@ -2275,7 +2319,8 @@
     "message": "已解锁"
   },
   "generator": {
-    "message": "生成器"
+    "message": "生成器",
+    "description": "Short for 'credential generator'."
   },
   "whatWouldYouLikeToGenerate": {
     "message": "您想要生成什么？"
@@ -2624,7 +2669,7 @@
     "message": "重要事项："
   },
   "accessing": {
-    "message": "Accessing"
+    "message": "正在访问"
   },
   "accessTokenUnableToBeDecrypted": {
     "message": "由于无法解密您的访问令牌，您已被注销。请重新登录以解决此问题。"

@@ -407,16 +407,55 @@
     "message": "Minsta tillåtna lösenordslängd"
   },
   "uppercase": {
-    "message": "Versaler (A-Ö)"
+    "message": "Versaler (A-Ö)",
+    "description": "deprecated. Use uppercaseLabel instead."
   },
   "lowercase": {
-    "message": "Gemener (a-ö)"
+    "message": "Gemener (a-ö)",
+    "description": "deprecated. Use lowercaseLabel instead."
   },
   "numbers": {
-    "message": "Siffror (0-9)"
+    "message": "Siffror (0-9)",
+    "description": "deprecated. Use numbersLabel instead."
   },
   "specialCharacters": {
     "message": "Specialtecken (!@#$%^&*)"
+  },
+  "include": {
+    "message": "Include",
+    "description": "Card header for password generator include block"
+  },
+  "uppercaseDescription": {
+    "message": "Include uppercase characters",
+    "description": "Tooltip for the password generator uppercase character checkbox"
+  },
+  "uppercaseLabel": {
+    "message": "A-Z",
+    "description": "Label for the password generator uppercase character checkbox"
+  },
+  "lowercaseDescription": {
+    "message": "Include lowercase characters",
+    "description": "Full description for the password generator lowercase character checkbox"
+  },
+  "lowercaseLabel": {
+    "message": "a-z",
+    "description": "Label for the password generator lowercase character checkbox"
+  },
+  "numbersDescription": {
+    "message": "Include numbers",
+    "description": "Full description for the password generator numbers checkbox"
+  },
+  "numbersLabel": {
+    "message": "0-9",
+    "description": "Label for the password generator numbers checkbox"
+  },
+  "specialCharactersDescription": {
+    "message": "Inkludera specialtecken",
+    "description": "Full description for the password generator special characters checkbox"
+  },
+  "specialCharactersLabel": {
+    "message": "!@#$%^&*",
+    "description": "Label for the password generator special characters checkbox"
   },
   "numWords": {
     "message": "Antal ord"
@@ -442,7 +481,12 @@
     "description": "Minimum Special Characters"
   },
   "ambiguous": {
-    "message": "Undvik tvetydiga tecken"
+    "message": "Undvik tvetydiga tecken",
+    "description": "deprecated. Use avoidAmbiguous instead."
+  },
+  "avoidAmbiguous": {
+    "message": "Undvik tvetydiga tecken",
+    "description": "Label for the avoid ambiguous characters checkbox."
   },
   "generatorPolicyInEffect": {
     "message": "Enterprise policy requirements have been applied to your generator options.",
@@ -2275,7 +2319,8 @@
     "message": "Upplåst"
   },
   "generator": {
-    "message": "Generator"
+    "message": "Generator",
+    "description": "Short for 'credential generator'."
   },
   "whatWouldYouLikeToGenerate": {
     "message": "Vad skulle du vilja generera?"

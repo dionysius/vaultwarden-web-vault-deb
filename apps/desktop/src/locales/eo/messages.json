@@ -15,7 +15,7 @@
     "message": "Tipoj"
   },
   "typeLogin": {
-    "message": "Ensaluti"
+    "message": "Ensalutiloj"
   },
   "typeCard": {
     "message": "Karto"
@@ -407,16 +407,55 @@
     "message": "Minimum password length"
   },
   "uppercase": {
-    "message": "Uppercase (A-Z)"
+    "message": "Uppercase (A-Z)",
+    "description": "deprecated. Use uppercaseLabel instead."
   },
   "lowercase": {
-    "message": "Lowercase (a-z)"
+    "message": "Lowercase (a-z)",
+    "description": "deprecated. Use lowercaseLabel instead."
   },
   "numbers": {
-    "message": "Numbers (0-9)"
+    "message": "Numbers (0-9)",
+    "description": "deprecated. Use numbersLabel instead."
   },
   "specialCharacters": {
     "message": "Special characters (!@#$%^&*)"
+  },
+  "include": {
+    "message": "Include",
+    "description": "Card header for password generator include block"
+  },
+  "uppercaseDescription": {
+    "message": "Include uppercase characters",
+    "description": "Tooltip for the password generator uppercase character checkbox"
+  },
+  "uppercaseLabel": {
+    "message": "A-Z",
+    "description": "Label for the password generator uppercase character checkbox"
+  },
+  "lowercaseDescription": {
+    "message": "Include lowercase characters",
+    "description": "Full description for the password generator lowercase character checkbox"
+  },
+  "lowercaseLabel": {
+    "message": "a-z",
+    "description": "Label for the password generator lowercase character checkbox"
+  },
+  "numbersDescription": {
+    "message": "Include numbers",
+    "description": "Full description for the password generator numbers checkbox"
+  },
+  "numbersLabel": {
+    "message": "0-9",
+    "description": "Label for the password generator numbers checkbox"
+  },
+  "specialCharactersDescription": {
+    "message": "Include special characters",
+    "description": "Full description for the password generator special characters checkbox"
+  },
+  "specialCharactersLabel": {
+    "message": "!@#$%^&*",
+    "description": "Label for the password generator special characters checkbox"
   },
   "numWords": {
     "message": "Number of words"
@@ -442,7 +481,12 @@
     "description": "Minimum Special Characters"
   },
   "ambiguous": {
-    "message": "Avoid ambiguous characters"
+    "message": "Avoid ambiguous characters",
+    "description": "deprecated. Use avoidAmbiguous instead."
+  },
+  "avoidAmbiguous": {
+    "message": "Avoid ambiguous characters",
+    "description": "Label for the avoid ambiguous characters checkbox."
   },
   "generatorPolicyInEffect": {
     "message": "Enterprise policy requirements have been applied to your generator options.",
@@ -839,7 +883,7 @@
     "message": "Elsaluti"
   },
   "addNewLogin": {
-    "message": "New login"
+    "message": "Nova ensaluto"
   },
   "addNewItem": {
     "message": "Nova ero"
@@ -922,7 +966,7 @@
     "message": "Your account is locked"
   },
   "or": {
-    "message": "or"
+    "message": "aŭ"
   },
   "unlockWithBiometrics": {
     "message": "Unlock with biometrics"
@@ -1629,7 +1673,7 @@
     "message": "You can manage your subscription from the App Store. Do you want to visit the App Store now?"
   },
   "legal": {
-    "message": "Legal",
+    "message": "Jura",
     "description": "Noun. As in 'legal documents', like our terms of service and privacy policy."
   },
   "termsOfService": {
@@ -1645,7 +1689,7 @@
     "message": "Nekonservitaj ŝanĝoj"
   },
   "clone": {
-    "message": "Clone"
+    "message": "Kloni"
   },
   "passwordGeneratorPolicyInEffect": {
     "message": "One or more organization policies are affecting your generator settings."
@@ -2077,7 +2121,7 @@
     "message": "Your organization has disabled trusted device encryption. Please set a master password to access your vault."
   },
   "tryAgain": {
-    "message": "Try again"
+    "message": "Reprovi"
   },
   "verificationRequiredForActionSetPinToContinue": {
     "message": "Verification required for this action. Set a PIN to continue."
@@ -2275,7 +2319,8 @@
     "message": "Malŝlosita"
   },
   "generator": {
-    "message": "Generilo"
+    "message": "Generilo",
+    "description": "Short for 'credential generator'."
   },
   "whatWouldYouLikeToGenerate": {
     "message": "What would you like to generate?"
@@ -2469,7 +2514,7 @@
     "message": "Remember email"
   },
   "notYou": {
-    "message": "Not you?"
+    "message": "Ĉu ne vi?"
   },
   "newAroundHere": {
     "message": "New around here?"

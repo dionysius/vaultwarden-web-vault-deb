@@ -407,16 +407,55 @@
     "message": "Minimální délka hesla"
   },
   "uppercase": {
-    "message": "Velká písmena (A-Z)"
+    "message": "Velká písmena (A-Z)",
+    "description": "deprecated. Use uppercaseLabel instead."
   },
   "lowercase": {
-    "message": "Malá písmena (a-z)"
+    "message": "Malá písmena (a-z)",
+    "description": "deprecated. Use lowercaseLabel instead."
   },
   "numbers": {
-    "message": "Číslice (0-9)"
+    "message": "Číslice (0-9)",
+    "description": "deprecated. Use numbersLabel instead."
   },
   "specialCharacters": {
     "message": "Speciální znaky (!@#$%^&*)"
+  },
+  "include": {
+    "message": "Zahrnout",
+    "description": "Card header for password generator include block"
+  },
+  "uppercaseDescription": {
+    "message": "Zahrnout velká písmena",
+    "description": "Tooltip for the password generator uppercase character checkbox"
+  },
+  "uppercaseLabel": {
+    "message": "A-Z",
+    "description": "Label for the password generator uppercase character checkbox"
+  },
+  "lowercaseDescription": {
+    "message": "Zahrnout malá písmena",
+    "description": "Full description for the password generator lowercase character checkbox"
+  },
+  "lowercaseLabel": {
+    "message": "a-z",
+    "description": "Label for the password generator lowercase character checkbox"
+  },
+  "numbersDescription": {
+    "message": "Zahrnout číslice",
+    "description": "Full description for the password generator numbers checkbox"
+  },
+  "numbersLabel": {
+    "message": "0-9",
+    "description": "Label for the password generator numbers checkbox"
+  },
+  "specialCharactersDescription": {
+    "message": "Zahrnout speciální znaky",
+    "description": "Full description for the password generator special characters checkbox"
+  },
+  "specialCharactersLabel": {
+    "message": "!@#$%^&*",
+    "description": "Label for the password generator special characters checkbox"
   },
   "numWords": {
     "message": "Počet slov"
@@ -442,7 +481,12 @@
     "description": "Minimum Special Characters"
   },
   "ambiguous": {
-    "message": "Nepoužívat zaměnitelné znaky"
+    "message": "Nepoužívat zaměnitelné znaky",
+    "description": "deprecated. Use avoidAmbiguous instead."
+  },
+  "avoidAmbiguous": {
+    "message": "Nepoužívat zaměnitelné znaky",
+    "description": "Label for the avoid ambiguous characters checkbox."
   },
   "generatorPolicyInEffect": {
     "message": "Na volby generátoru byly uplatněny požadavky podnikových zásad.",
@@ -2275,7 +2319,8 @@
     "message": "Odemčeno"
   },
   "generator": {
-    "message": "Generátor"
+    "message": "Generátor",
+    "description": "Short for 'credential generator'."
   },
   "whatWouldYouLikeToGenerate": {
     "message": "Co chcete vygenerovat?"

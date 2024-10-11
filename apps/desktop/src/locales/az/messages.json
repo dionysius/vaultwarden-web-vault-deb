@@ -407,16 +407,55 @@
     "message": "Minimal parol uzunluğu"
   },
   "uppercase": {
-    "message": "Böyük hərf (A-Z)"
+    "message": "Böyük hərf (A-Z)",
+    "description": "deprecated. Use uppercaseLabel instead."
   },
   "lowercase": {
-    "message": "Kiçik hərf (a-z)"
+    "message": "Kiçik hərf (a-z)",
+    "description": "deprecated. Use lowercaseLabel instead."
   },
   "numbers": {
-    "message": "Rəqəmlər (0-9)"
+    "message": "Rəqəmlər (0-9)",
+    "description": "deprecated. Use numbersLabel instead."
   },
   "specialCharacters": {
     "message": "Xüsusi simvollar (!@#$%^&*)"
+  },
+  "include": {
+    "message": "Daxil et",
+    "description": "Card header for password generator include block"
+  },
+  "uppercaseDescription": {
+    "message": "Böyük hərf xarakterlərini daxil et",
+    "description": "Tooltip for the password generator uppercase character checkbox"
+  },
+  "uppercaseLabel": {
+    "message": "A-Z",
+    "description": "Label for the password generator uppercase character checkbox"
+  },
+  "lowercaseDescription": {
+    "message": "Kiçik hərf xarakterlərini daxil et",
+    "description": "Full description for the password generator lowercase character checkbox"
+  },
+  "lowercaseLabel": {
+    "message": "a-z",
+    "description": "Label for the password generator lowercase character checkbox"
+  },
+  "numbersDescription": {
+    "message": "Rəqəmləri daxil et",
+    "description": "Full description for the password generator numbers checkbox"
+  },
+  "numbersLabel": {
+    "message": "0-9",
+    "description": "Label for the password generator numbers checkbox"
+  },
+  "specialCharactersDescription": {
+    "message": "Xüsusi xarakterləri daxil et",
+    "description": "Full description for the password generator special characters checkbox"
+  },
+  "specialCharactersLabel": {
+    "message": "!@#$%^&*",
+    "description": "Label for the password generator special characters checkbox"
   },
   "numWords": {
     "message": "Söz sayı"
@@ -442,7 +481,12 @@
     "description": "Minimum Special Characters"
   },
   "ambiguous": {
-    "message": "Anlaşılmaz simvollardan çəkinin"
+    "message": "Anlaşılmaz simvollardan çəkinin",
+    "description": "deprecated. Use avoidAmbiguous instead."
+  },
+  "avoidAmbiguous": {
+    "message": "Anlaşılmaz xarakterlərdən çəkin",
+    "description": "Label for the avoid ambiguous characters checkbox."
   },
   "generatorPolicyInEffect": {
     "message": "Müəssisə siyasət tələbləri, yaradıcı seçimlərinizə tətbiq edildi.",
@@ -2275,7 +2319,8 @@
     "message": "Kilidi açıldı"
   },
   "generator": {
-    "message": "Yaradıcı"
+    "message": "Yaradıcı",
+    "description": "Short for 'credential generator'."
   },
   "whatWouldYouLikeToGenerate": {
     "message": "Nə yaratmaq istəyirsiniz?"

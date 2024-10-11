@@ -407,16 +407,55 @@
     "message": "Minimalna duljina lozinke"
   },
   "uppercase": {
-    "message": "Velika slova (A - Z)"
+    "message": "Velika slova (A - Z)",
+    "description": "deprecated. Use uppercaseLabel instead."
   },
   "lowercase": {
-    "message": "Mala slova (a - z)"
+    "message": "Mala slova (a - z)",
+    "description": "deprecated. Use lowercaseLabel instead."
   },
   "numbers": {
-    "message": "Brojevi (0 - 9)"
+    "message": "Brojevi (0 - 9)",
+    "description": "deprecated. Use numbersLabel instead."
   },
   "specialCharacters": {
     "message": "Posebni znakovi (!@#$%^&*)"
+  },
+  "include": {
+    "message": "Uključi",
+    "description": "Card header for password generator include block"
+  },
+  "uppercaseDescription": {
+    "message": "Uključi velika slova",
+    "description": "Tooltip for the password generator uppercase character checkbox"
+  },
+  "uppercaseLabel": {
+    "message": "A-Z",
+    "description": "Label for the password generator uppercase character checkbox"
+  },
+  "lowercaseDescription": {
+    "message": "Uključi mala slova",
+    "description": "Full description for the password generator lowercase character checkbox"
+  },
+  "lowercaseLabel": {
+    "message": "a-z",
+    "description": "Label for the password generator lowercase character checkbox"
+  },
+  "numbersDescription": {
+    "message": "Uključi brojeve",
+    "description": "Full description for the password generator numbers checkbox"
+  },
+  "numbersLabel": {
+    "message": "0-9",
+    "description": "Label for the password generator numbers checkbox"
+  },
+  "specialCharactersDescription": {
+    "message": "Uključi posebne znakove",
+    "description": "Full description for the password generator special characters checkbox"
+  },
+  "specialCharactersLabel": {
+    "message": "!@#$%^&*",
+    "description": "Label for the password generator special characters checkbox"
   },
   "numWords": {
     "message": "Broj riječi"
@@ -442,10 +481,15 @@
     "description": "Minimum Special Characters"
   },
   "ambiguous": {
-    "message": "Izbjegavaj dvosmislene znakove"
+    "message": "Izbjegavaj dvosmislene znakove",
+    "description": "deprecated. Use avoidAmbiguous instead."
+  },
+  "avoidAmbiguous": {
+    "message": "Izbjegavaj dvosmislene znakove",
+    "description": "Label for the avoid ambiguous characters checkbox."
   },
   "generatorPolicyInEffect": {
-    "message": "Enterprise policy requirements have been applied to your generator options.",
+    "message": "Pravila tvrtke primjenjena su na generator.",
     "description": "Indicates that a policy limits the credential generator screen."
   },
   "searchCollection": {
@@ -919,16 +963,16 @@
     "message": "Tvoj trezor je zaključan. Potvrdi glavnu lozinku za nastavak."
   },
   "yourAccountIsLocked": {
-    "message": "Your account is locked"
+    "message": "Račun je zaključan"
   },
   "or": {
-    "message": "or"
+    "message": "ili"
   },
   "unlockWithBiometrics": {
-    "message": "Unlock with biometrics"
+    "message": "Otključaj biometrijom"
   },
   "unlockWithMasterPassword": {
-    "message": "Unlock with master password"
+    "message": "Otključaj glavnom lozinkom"
   },
   "unlock": {
     "message": "Otključaj"
@@ -1788,7 +1832,7 @@
     "message": "Uključi integraciju s web preglednikom"
   },
   "enableBrowserIntegrationDesc1": {
-    "message": "Used to allow biometric unlock in browsers that are not Safari."
+    "message": "Koristi se za biometrijsko otključavanje u preglednicima koji nisu Safari."
   },
   "enableDuckDuckGoBrowserIntegration": {
     "message": "Dozvoli integraciju s DuckDuckGo preglednikom"
@@ -2269,13 +2313,14 @@
     "message": "Zaključano"
   },
   "yourVaultIsLockedV2": {
-    "message": "Your vault is locked"
+    "message": "Trezor je zaključan"
   },
   "unlocked": {
     "message": "Otključano"
   },
   "generator": {
-    "message": "Generator"
+    "message": "Generator",
+    "description": "Short for 'credential generator'."
   },
   "whatWouldYouLikeToGenerate": {
     "message": "Što želiš generirati?"
@@ -2624,7 +2669,7 @@
     "message": "Važno:"
   },
   "accessing": {
-    "message": "Accessing"
+    "message": "Pristupanje"
   },
   "accessTokenUnableToBeDecrypted": {
     "message": "Napravljena je odjava ste jer se tvoj pristupni token nije mogao dešifrirati. Ponovno se prijavi."

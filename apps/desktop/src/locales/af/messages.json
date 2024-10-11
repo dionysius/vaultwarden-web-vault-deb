@@ -407,16 +407,55 @@
     "message": "Minimum password length"
   },
   "uppercase": {
-    "message": "Hoofletters (A-Z)"
+    "message": "Hoofletters (A-Z)",
+    "description": "deprecated. Use uppercaseLabel instead."
   },
   "lowercase": {
-    "message": "Kleinletters (a-z)"
+    "message": "Kleinletters (a-z)",
+    "description": "deprecated. Use lowercaseLabel instead."
   },
   "numbers": {
-    "message": "Syfers (0-9)"
+    "message": "Syfers (0-9)",
+    "description": "deprecated. Use numbersLabel instead."
   },
   "specialCharacters": {
     "message": "Spesiale karakters (!@#$%^&*)"
+  },
+  "include": {
+    "message": "Include",
+    "description": "Card header for password generator include block"
+  },
+  "uppercaseDescription": {
+    "message": "Include uppercase characters",
+    "description": "Tooltip for the password generator uppercase character checkbox"
+  },
+  "uppercaseLabel": {
+    "message": "A-Z",
+    "description": "Label for the password generator uppercase character checkbox"
+  },
+  "lowercaseDescription": {
+    "message": "Include lowercase characters",
+    "description": "Full description for the password generator lowercase character checkbox"
+  },
+  "lowercaseLabel": {
+    "message": "a-z",
+    "description": "Label for the password generator lowercase character checkbox"
+  },
+  "numbersDescription": {
+    "message": "Include numbers",
+    "description": "Full description for the password generator numbers checkbox"
+  },
+  "numbersLabel": {
+    "message": "0-9",
+    "description": "Label for the password generator numbers checkbox"
+  },
+  "specialCharactersDescription": {
+    "message": "Include special characters",
+    "description": "Full description for the password generator special characters checkbox"
+  },
+  "specialCharactersLabel": {
+    "message": "!@#$%^&*",
+    "description": "Label for the password generator special characters checkbox"
   },
   "numWords": {
     "message": "Aantal Woorde"
@@ -442,7 +481,12 @@
     "description": "Minimum Special Characters"
   },
   "ambiguous": {
-    "message": "Vermy dubbelsinnige karakters"
+    "message": "Vermy dubbelsinnige karakters",
+    "description": "deprecated. Use avoidAmbiguous instead."
+  },
+  "avoidAmbiguous": {
+    "message": "Avoid ambiguous characters",
+    "description": "Label for the avoid ambiguous characters checkbox."
   },
   "generatorPolicyInEffect": {
     "message": "Enterprise policy requirements have been applied to your generator options.",
@@ -2275,7 +2319,8 @@
     "message": "Ontgrendel"
   },
   "generator": {
-    "message": "Opwekker"
+    "message": "Opwekker",
+    "description": "Short for 'credential generator'."
   },
   "whatWouldYouLikeToGenerate": {
     "message": "Wat wil u opwek?"

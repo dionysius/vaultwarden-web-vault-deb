@@ -407,16 +407,55 @@
     "message": "最小密碼長度"
   },
   "uppercase": {
-    "message": "大寫 (A-Z)"
+    "message": "大寫 (A-Z)",
+    "description": "deprecated. Use uppercaseLabel instead."
   },
   "lowercase": {
-    "message": "小寫 (a-z)"
+    "message": "小寫 (a-z)",
+    "description": "deprecated. Use lowercaseLabel instead."
   },
   "numbers": {
-    "message": "數字 (0-9)"
+    "message": "數字 (0-9)",
+    "description": "deprecated. Use numbersLabel instead."
   },
   "specialCharacters": {
     "message": "特殊字元 (!@#$%^&*)"
+  },
+  "include": {
+    "message": "Include",
+    "description": "Card header for password generator include block"
+  },
+  "uppercaseDescription": {
+    "message": "Include uppercase characters",
+    "description": "Tooltip for the password generator uppercase character checkbox"
+  },
+  "uppercaseLabel": {
+    "message": "A-Z",
+    "description": "Label for the password generator uppercase character checkbox"
+  },
+  "lowercaseDescription": {
+    "message": "Include lowercase characters",
+    "description": "Full description for the password generator lowercase character checkbox"
+  },
+  "lowercaseLabel": {
+    "message": "a-z",
+    "description": "Label for the password generator lowercase character checkbox"
+  },
+  "numbersDescription": {
+    "message": "Include numbers",
+    "description": "Full description for the password generator numbers checkbox"
+  },
+  "numbersLabel": {
+    "message": "0-9",
+    "description": "Label for the password generator numbers checkbox"
+  },
+  "specialCharactersDescription": {
+    "message": "Include special characters",
+    "description": "Full description for the password generator special characters checkbox"
+  },
+  "specialCharactersLabel": {
+    "message": "!@#$%^&*",
+    "description": "Label for the password generator special characters checkbox"
   },
   "numWords": {
     "message": "單字數"
@@ -442,7 +481,12 @@
     "description": "Minimum Special Characters"
   },
   "ambiguous": {
-    "message": "避免易混淆的字元"
+    "message": "避免易混淆的字元",
+    "description": "deprecated. Use avoidAmbiguous instead."
+  },
+  "avoidAmbiguous": {
+    "message": "Avoid ambiguous characters",
+    "description": "Label for the avoid ambiguous characters checkbox."
   },
   "generatorPolicyInEffect": {
     "message": "Enterprise policy requirements have been applied to your generator options.",
@@ -2275,7 +2319,8 @@
     "message": "已解鎖"
   },
   "generator": {
-    "message": "產生器"
+    "message": "產生器",
+    "description": "Short for 'credential generator'."
   },
   "whatWouldYouLikeToGenerate": {
     "message": "您想要產生什麼？"

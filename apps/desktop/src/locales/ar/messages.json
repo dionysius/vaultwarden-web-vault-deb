@@ -407,16 +407,55 @@
     "message": "الحد الأدنى لطول كلمة المرور"
   },
   "uppercase": {
-    "message": "أحرف كبيرة (A-Z)"
+    "message": "أحرف كبيرة (A-Z)",
+    "description": "deprecated. Use uppercaseLabel instead."
   },
   "lowercase": {
-    "message": "أحرف صغيرة (a-z)"
+    "message": "أحرف صغيرة (a-z)",
+    "description": "deprecated. Use lowercaseLabel instead."
   },
   "numbers": {
-    "message": "الأرقام (0-9)"
+    "message": "الأرقام (0-9)",
+    "description": "deprecated. Use numbersLabel instead."
   },
   "specialCharacters": {
     "message": "أحرف خاصة (!@#$%^&*)"
+  },
+  "include": {
+    "message": "Include",
+    "description": "Card header for password generator include block"
+  },
+  "uppercaseDescription": {
+    "message": "Include uppercase characters",
+    "description": "Tooltip for the password generator uppercase character checkbox"
+  },
+  "uppercaseLabel": {
+    "message": "A-Z",
+    "description": "Label for the password generator uppercase character checkbox"
+  },
+  "lowercaseDescription": {
+    "message": "Include lowercase characters",
+    "description": "Full description for the password generator lowercase character checkbox"
+  },
+  "lowercaseLabel": {
+    "message": "a-z",
+    "description": "Label for the password generator lowercase character checkbox"
+  },
+  "numbersDescription": {
+    "message": "Include numbers",
+    "description": "Full description for the password generator numbers checkbox"
+  },
+  "numbersLabel": {
+    "message": "0-9",
+    "description": "Label for the password generator numbers checkbox"
+  },
+  "specialCharactersDescription": {
+    "message": "Include special characters",
+    "description": "Full description for the password generator special characters checkbox"
+  },
+  "specialCharactersLabel": {
+    "message": "!@#$%^&*",
+    "description": "Label for the password generator special characters checkbox"
   },
   "numWords": {
     "message": "عدد الكلمات"
@@ -442,7 +481,12 @@
     "description": "Minimum Special Characters"
   },
   "ambiguous": {
-    "message": "تجنب الأحرف الغامضة"
+    "message": "تجنب الأحرف الغامضة",
+    "description": "deprecated. Use avoidAmbiguous instead."
+  },
+  "avoidAmbiguous": {
+    "message": "Avoid ambiguous characters",
+    "description": "Label for the avoid ambiguous characters checkbox."
   },
   "generatorPolicyInEffect": {
     "message": "Enterprise policy requirements have been applied to your generator options.",
@@ -2275,7 +2319,8 @@
     "message": "غير مقفل"
   },
   "generator": {
-    "message": "المولّد"
+    "message": "المولّد",
+    "description": "Short for 'credential generator'."
   },
   "whatWouldYouLikeToGenerate": {
     "message": "ما الذي ترغب في توليده؟"

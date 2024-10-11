@@ -407,16 +407,55 @@
     "message": "Minimum parola uzunluğu"
   },
   "uppercase": {
-    "message": "Büyük harf (A-Z)"
+    "message": "Büyük harf (A-Z)",
+    "description": "deprecated. Use uppercaseLabel instead."
   },
   "lowercase": {
-    "message": "Küçük harf (a-z)"
+    "message": "Küçük harf (a-z)",
+    "description": "deprecated. Use lowercaseLabel instead."
   },
   "numbers": {
-    "message": "Rakamlar (0-9)"
+    "message": "Rakamlar (0-9)",
+    "description": "deprecated. Use numbersLabel instead."
   },
   "specialCharacters": {
     "message": "Özel karakterler (!@#$%^&*)"
+  },
+  "include": {
+    "message": "Dahil et",
+    "description": "Card header for password generator include block"
+  },
+  "uppercaseDescription": {
+    "message": "Büyük harfleri dahil et",
+    "description": "Tooltip for the password generator uppercase character checkbox"
+  },
+  "uppercaseLabel": {
+    "message": "A-Z",
+    "description": "Label for the password generator uppercase character checkbox"
+  },
+  "lowercaseDescription": {
+    "message": "Küçük harfleri dahil et",
+    "description": "Full description for the password generator lowercase character checkbox"
+  },
+  "lowercaseLabel": {
+    "message": "a-z",
+    "description": "Label for the password generator lowercase character checkbox"
+  },
+  "numbersDescription": {
+    "message": "Rakamları dahil et",
+    "description": "Full description for the password generator numbers checkbox"
+  },
+  "numbersLabel": {
+    "message": "0-9",
+    "description": "Label for the password generator numbers checkbox"
+  },
+  "specialCharactersDescription": {
+    "message": "Özel karakterleri dahil et",
+    "description": "Full description for the password generator special characters checkbox"
+  },
+  "specialCharactersLabel": {
+    "message": "!@#$%^&*",
+    "description": "Label for the password generator special characters checkbox"
   },
   "numWords": {
     "message": "Kelime sayısı"
@@ -442,7 +481,12 @@
     "description": "Minimum Special Characters"
   },
   "ambiguous": {
-    "message": "Okurken karışabilecek karakterleri kullanma"
+    "message": "Okurken karışabilecek karakterleri kullanma",
+    "description": "deprecated. Use avoidAmbiguous instead."
+  },
+  "avoidAmbiguous": {
+    "message": "Okurken karışabilecek karakterleri kullanma",
+    "description": "Label for the avoid ambiguous characters checkbox."
   },
   "generatorPolicyInEffect": {
     "message": "Üreteç seçeneklerinize kurumsal ilke gereksinimleri uygulandı.",
@@ -2275,7 +2319,8 @@
     "message": "Kilitli değil"
   },
   "generator": {
-    "message": "Oluşturucu"
+    "message": "Oluşturucu",
+    "description": "Short for 'credential generator'."
   },
   "whatWouldYouLikeToGenerate": {
     "message": "Ne oluşturmak istersiniz?"

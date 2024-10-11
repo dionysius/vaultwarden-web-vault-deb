@@ -407,16 +407,55 @@
     "message": "Минимальная длина пароля"
   },
   "uppercase": {
-    "message": "Прописные буквы (A-Z)"
+    "message": "Прописные буквы (A-Z)",
+    "description": "deprecated. Use uppercaseLabel instead."
   },
   "lowercase": {
-    "message": "Строчные буквы (a-z)"
+    "message": "Строчные буквы (a-z)",
+    "description": "deprecated. Use lowercaseLabel instead."
   },
   "numbers": {
-    "message": "Цифры (0-9)"
+    "message": "Цифры (0-9)",
+    "description": "deprecated. Use numbersLabel instead."
   },
   "specialCharacters": {
     "message": "Специальные символы (!@#$%^&*)"
+  },
+  "include": {
+    "message": "Включить",
+    "description": "Card header for password generator include block"
+  },
+  "uppercaseDescription": {
+    "message": "Включить заглавные символы",
+    "description": "Tooltip for the password generator uppercase character checkbox"
+  },
+  "uppercaseLabel": {
+    "message": "A-Z",
+    "description": "Label for the password generator uppercase character checkbox"
+  },
+  "lowercaseDescription": {
+    "message": "Включить строчные символы",
+    "description": "Full description for the password generator lowercase character checkbox"
+  },
+  "lowercaseLabel": {
+    "message": "a-z",
+    "description": "Label for the password generator lowercase character checkbox"
+  },
+  "numbersDescription": {
+    "message": "Включить цифры",
+    "description": "Full description for the password generator numbers checkbox"
+  },
+  "numbersLabel": {
+    "message": "0-9",
+    "description": "Label for the password generator numbers checkbox"
+  },
+  "specialCharactersDescription": {
+    "message": "Включить специальные символы",
+    "description": "Full description for the password generator special characters checkbox"
+  },
+  "specialCharactersLabel": {
+    "message": "!@#$%^&*",
+    "description": "Label for the password generator special characters checkbox"
   },
   "numWords": {
     "message": "Количество слов"
@@ -442,7 +481,12 @@
     "description": "Minimum Special Characters"
   },
   "ambiguous": {
-    "message": "Избегать неоднозначных символов"
+    "message": "Избегать неоднозначных символов",
+    "description": "deprecated. Use avoidAmbiguous instead."
+  },
+  "avoidAmbiguous": {
+    "message": "Избегать неоднозначных символов",
+    "description": "Label for the avoid ambiguous characters checkbox."
   },
   "generatorPolicyInEffect": {
     "message": "К настройкам генератора были применены требования корпоративной политики.",
@@ -2275,7 +2319,8 @@
     "message": "Разблокировано"
   },
   "generator": {
-    "message": "Генератор"
+    "message": "Генератор",
+    "description": "Short for 'credential generator'."
   },
   "whatWouldYouLikeToGenerate": {
     "message": "Что вы хотите сгенерировать?"

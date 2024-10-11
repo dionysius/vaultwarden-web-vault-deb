@@ -407,16 +407,55 @@
     "message": "Mazākais pieļaujamais paroles garums"
   },
   "uppercase": {
-    "message": "Lielie burti (A-Z)"
+    "message": "Lielie burti (A-Z)",
+    "description": "deprecated. Use uppercaseLabel instead."
   },
   "lowercase": {
-    "message": "Mazie burti (a-z)"
+    "message": "Mazie burti (a-z)",
+    "description": "deprecated. Use lowercaseLabel instead."
   },
   "numbers": {
-    "message": "Cipari (0-9)"
+    "message": "Cipari (0-9)",
+    "description": "deprecated. Use numbersLabel instead."
   },
   "specialCharacters": {
     "message": "Īpašās rakstzīmes (!@#$%^&*)"
+  },
+  "include": {
+    "message": "Iekļaut",
+    "description": "Card header for password generator include block"
+  },
+  "uppercaseDescription": {
+    "message": "Iekļaut lielos burtus",
+    "description": "Tooltip for the password generator uppercase character checkbox"
+  },
+  "uppercaseLabel": {
+    "message": "A-Z",
+    "description": "Label for the password generator uppercase character checkbox"
+  },
+  "lowercaseDescription": {
+    "message": "Iekļaut mazos burtus",
+    "description": "Full description for the password generator lowercase character checkbox"
+  },
+  "lowercaseLabel": {
+    "message": "a-z",
+    "description": "Label for the password generator lowercase character checkbox"
+  },
+  "numbersDescription": {
+    "message": "Iekļaut ciparus",
+    "description": "Full description for the password generator numbers checkbox"
+  },
+  "numbersLabel": {
+    "message": "0-9",
+    "description": "Label for the password generator numbers checkbox"
+  },
+  "specialCharactersDescription": {
+    "message": "Iekļaut īpašās rakstzīmes",
+    "description": "Full description for the password generator special characters checkbox"
+  },
+  "specialCharactersLabel": {
+    "message": "!@#$%^&*",
+    "description": "Label for the password generator special characters checkbox"
   },
   "numWords": {
     "message": "Vārdu skaits"
@@ -442,7 +481,12 @@
     "description": "Minimum Special Characters"
   },
   "ambiguous": {
-    "message": "Izvairīties no viegli sajaucamām rakstzīmēm"
+    "message": "Izvairīties no viegli sajaucamām rakstzīmēm",
+    "description": "deprecated. Use avoidAmbiguous instead."
+  },
+  "avoidAmbiguous": {
+    "message": "Izvairīties no viegli sajaucamām rakstzīmēm",
+    "description": "Label for the avoid ambiguous characters checkbox."
   },
   "generatorPolicyInEffect": {
     "message": "Veidotāja iespējām tika piemērotas uzņēmējdarbības nosacījumu prasības.",
@@ -2275,7 +2319,8 @@
     "message": "Atslēgta"
   },
   "generator": {
-    "message": "Veidotājs"
+    "message": "Veidotājs",
+    "description": "Short for 'credential generator'."
   },
   "whatWouldYouLikeToGenerate": {
     "message": "Ko jūs vēlētos izveidot?"

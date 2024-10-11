@@ -407,16 +407,55 @@
     "message": "Salasanan vähimmäispituus"
   },
   "uppercase": {
-    "message": "Isot kirjaimet (A-Z)"
+    "message": "Isot kirjaimet (A-Z)",
+    "description": "deprecated. Use uppercaseLabel instead."
   },
   "lowercase": {
-    "message": "Pienet kirjaimet (a-z)"
+    "message": "Pienet kirjaimet (a-z)",
+    "description": "deprecated. Use lowercaseLabel instead."
   },
   "numbers": {
-    "message": "Numerot (0-9)"
+    "message": "Numerot (0-9)",
+    "description": "deprecated. Use numbersLabel instead."
   },
   "specialCharacters": {
     "message": "Erikoismerkit (!@#$%^&*)"
+  },
+  "include": {
+    "message": "Sisällytys",
+    "description": "Card header for password generator include block"
+  },
+  "uppercaseDescription": {
+    "message": "Sisällytä isoja kirjaimia",
+    "description": "Tooltip for the password generator uppercase character checkbox"
+  },
+  "uppercaseLabel": {
+    "message": "A-Ö",
+    "description": "Label for the password generator uppercase character checkbox"
+  },
+  "lowercaseDescription": {
+    "message": "Sisällytä pieniä kirjaimia",
+    "description": "Full description for the password generator lowercase character checkbox"
+  },
+  "lowercaseLabel": {
+    "message": "a-ö",
+    "description": "Label for the password generator lowercase character checkbox"
+  },
+  "numbersDescription": {
+    "message": "Sisällytä numeroita",
+    "description": "Full description for the password generator numbers checkbox"
+  },
+  "numbersLabel": {
+    "message": "0-9",
+    "description": "Label for the password generator numbers checkbox"
+  },
+  "specialCharactersDescription": {
+    "message": "Sisällytä erikoismerkkejä",
+    "description": "Full description for the password generator special characters checkbox"
+  },
+  "specialCharactersLabel": {
+    "message": "!@#$%^&*",
+    "description": "Label for the password generator special characters checkbox"
   },
   "numWords": {
     "message": "Sanojen määrä"
@@ -442,7 +481,12 @@
     "description": "Minimum Special Characters"
   },
   "ambiguous": {
-    "message": "Vältä epäselviä merkkejä"
+    "message": "Vältä epäselviä merkkejä",
+    "description": "deprecated. Use avoidAmbiguous instead."
+  },
+  "avoidAmbiguous": {
+    "message": "Vältä epäselviä merkkejä",
+    "description": "Label for the avoid ambiguous characters checkbox."
   },
   "generatorPolicyInEffect": {
     "message": "Yrityskäytännön säännöt vaikuttavat generaattoriasetuksiisi.",
@@ -919,16 +963,16 @@
     "message": "Holvisi on lukittu. Jatka vahvistamalla henkilöllisyytesi."
   },
   "yourAccountIsLocked": {
-    "message": "Your account is locked"
+    "message": "Tilisi on lukittu"
   },
   "or": {
-    "message": "or"
+    "message": "tai"
   },
   "unlockWithBiometrics": {
-    "message": "Unlock with biometrics"
+    "message": "Avaa biometrialla"
   },
   "unlockWithMasterPassword": {
-    "message": "Unlock with master password"
+    "message": "Avaa pääsalasanalla"
   },
   "unlock": {
     "message": "Avaa"
@@ -2269,13 +2313,14 @@
     "message": "Lukittu"
   },
   "yourVaultIsLockedV2": {
-    "message": "Your vault is locked"
+    "message": "Holvisi on lukittu"
   },
   "unlocked": {
     "message": "Avattu"
   },
   "generator": {
-    "message": "Generaattori"
+    "message": "Generaattori",
+    "description": "Short for 'credential generator'."
   },
   "whatWouldYouLikeToGenerate": {
     "message": "Mitä haluat luoda?"
@@ -2624,7 +2669,7 @@
     "message": "Tärkeää:"
   },
   "accessing": {
-    "message": "Accessing"
+    "message": "Avataan"
   },
   "accessTokenUnableToBeDecrypted": {
     "message": "Sinut on kirjattu ulos, koska käyttötunnisteesi salausta ei voitu purkaa. Ratkaise ongelma kirjautumalla sisään uudelleen."
