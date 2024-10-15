@@ -2,6 +2,8 @@ import { Component } from "@angular/core";
 
 import { PolicyType } from "@bitwarden/common/admin-console/enums";
 import { PolicyRequest } from "@bitwarden/common/admin-console/models/request/policy.request";
+import { FeatureFlag } from "@bitwarden/common/enums/feature-flag.enum";
+import { ConfigService } from "@bitwarden/common/platform/abstractions/config/config.service";
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 
 import { BasePolicy, BasePolicyComponent } from "./base-policy.component";
@@ -18,11 +20,19 @@ export class SingleOrgPolicy extends BasePolicy {
   templateUrl: "single-org.component.html",
 })
 export class SingleOrgPolicyComponent extends BasePolicyComponent {
-  constructor(private i18nService: I18nService) {
+  constructor(
+    private i18nService: I18nService,
+    private configService: ConfigService,
+  ) {
     super();
   }
 
-  buildRequest(policiesEnabledMap: Map<PolicyType, boolean>): Promise<PolicyRequest> {
+  async buildRequest(policiesEnabledMap: Map<PolicyType, boolean>): Promise<PolicyRequest> {
+    if (await this.configService.getFeatureFlag(FeatureFlag.Pm13322AddPolicyDefinitions)) {
+      // We are now relying on server-side validation only
+      return super.buildRequest(policiesEnabledMap);
+    }
+
     if (!this.enabled.value) {
       if (policiesEnabledMap.get(PolicyType.RequireSso) ?? false) {
         throw new Error(
