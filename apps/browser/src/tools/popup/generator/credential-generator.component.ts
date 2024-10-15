@@ -1,4 +1,5 @@
 import { Component } from "@angular/core";
+import { RouterModule } from "@angular/router";
 
 import { JslibModule } from "@bitwarden/angular/jslib.module";
 import { ItemModule } from "@bitwarden/components";
@@ -22,6 +23,7 @@ import { PopupPageComponent } from "../../../platform/popup/layout/popup-page.co
     PopupHeaderComponent,
     PopupPageComponent,
     PopupFooterComponent,
+    RouterModule,
     ItemModule,
   ],
 })
