@@ -44,11 +44,6 @@ export class SendListFiltersService {
     map(
       (filters) => (sends: SendView[]) =>
         sends.filter((send) => {
-          // do not show disabled sends
-          if (send.disabled) {
-            return false;
-          }
-
           if (filters.sendType !== null && send.type !== filters.sendType) {
             return false;
           }
