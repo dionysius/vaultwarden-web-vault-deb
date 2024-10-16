@@ -99,7 +99,7 @@ export class LoginComponent extends BaseLoginComponent implements OnInit, OnDest
       registerRouteService,
       toastService,
     );
-    super.onSuccessfulLogin = () => {
+    this.onSuccessfulLogin = () => {
       return syncService.fullSync(true);
     };
   }

@@ -71,7 +71,7 @@ export class RegisterFormComponent extends BaseRegisterComponent implements OnIn
       dialogService,
       toastService,
     );
-    super.modifyRegisterRequest = async (request: RegisterRequest) => {
+    this.modifyRegisterRequest = async (request: RegisterRequest) => {
       // Org invites are deep linked. Non-existent accounts are redirected to the register page.
       // Org user id and token are included here only for validation and two factor purposes.
       const orgInvite = await acceptOrgInviteService.getOrganizationInvite();

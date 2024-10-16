@@ -105,7 +105,7 @@ export class LockComponent extends BaseLockComponent implements OnInit {
     this.successRoute = "/tabs/current";
     this.isInitialLockScreen = (window as any).previousPopupUrl == null;
 
-    super.onSuccessfulSubmit = async () => {
+    this.onSuccessfulSubmit = async () => {
       const previousUrl = this.routerService.getPreviousUrl();
       if (previousUrl) {
         // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.

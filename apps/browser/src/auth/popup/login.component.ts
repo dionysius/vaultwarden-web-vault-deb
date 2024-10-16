@@ -78,10 +78,10 @@ export class LoginComponent extends BaseLoginComponent implements OnInit {
       registerRouteService,
       toastService,
     );
-    super.onSuccessfulLogin = async () => {
+    this.onSuccessfulLogin = async () => {
       await syncService.fullSync(true);
     };
-    super.successRoute = "/tabs/vault";
+    this.successRoute = "/tabs/vault";
     this.showPasswordless = flagEnabled("showPasswordless");
   }
 

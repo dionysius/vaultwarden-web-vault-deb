@@ -89,13 +89,13 @@ export class TwoFactorComponent extends BaseTwoFactorComponent implements OnDest
       accountService,
       toastService,
     );
-    super.onSuccessfulLogin = async () => {
+    this.onSuccessfulLogin = async () => {
       // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
       // eslint-disable-next-line @typescript-eslint/no-floating-promises
       syncService.fullSync(true);
     };
 
-    super.onSuccessfulLoginTde = async () => {
+    this.onSuccessfulLoginTde = async () => {
       // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
       // eslint-disable-next-line @typescript-eslint/no-floating-promises
       syncService.fullSync(true);

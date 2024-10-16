@@ -74,7 +74,7 @@ export class LoginViaAuthRequestComponent extends BaseLoginWithDeviceComponent {
       loginStrategyService,
       toastService,
     );
-    super.onSuccessfulLogin = async () => {
+    this.onSuccessfulLogin = async () => {
       await syncService.fullSync(true);
     };
   }
