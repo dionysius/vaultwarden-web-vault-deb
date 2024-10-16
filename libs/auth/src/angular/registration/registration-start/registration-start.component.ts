@@ -18,6 +18,8 @@ import {
   LinkModule,
 } from "@bitwarden/components";
 
+import { AnonLayoutWrapperDataService } from "../../anon-layout/anon-layout-wrapper-data.service";
+import { RegistrationUserAddIcon } from "../../icons";
 import { RegistrationCheckEmailIcon } from "../../icons/registration-check-email.icon";
 import { RegistrationEnvSelectorComponent } from "../registration-env-selector/registration-env-selector.component";
 
@@ -54,7 +56,6 @@ export class RegistrationStartComponent implements OnInit, OnDestroy {
 
   state: RegistrationStartState = RegistrationStartState.USER_DATA_ENTRY;
   RegistrationStartState = RegistrationStartState;
-  readonly Icons = { RegistrationCheckEmailIcon };
 
   isSelfHost = false;
 
@@ -88,6 +89,7 @@ export class RegistrationStartComponent implements OnInit, OnDestroy {
     private platformUtilsService: PlatformUtilsService,
     private accountApiService: AccountApiService,
     private router: Router,
+    private anonLayoutWrapperDataService: AnonLayoutWrapperDataService,
   ) {
     this.isSelfHost = platformUtilsService.isSelfHost();
   }
@@ -148,6 +150,12 @@ export class RegistrationStartComponent implements OnInit, OnDestroy {
 
     // Result is null, so email verification is required
     this.state = RegistrationStartState.CHECK_EMAIL;
+    this.anonLayoutWrapperDataService.setAnonLayoutWrapperData({
+      pageTitle: {
+        key: "checkYourEmail",
+      },
+      pageIcon: RegistrationCheckEmailIcon,
+    });
     this.registrationStartStateChange.emit(this.state);
   };
 
@@ -171,6 +179,12 @@ export class RegistrationStartComponent implements OnInit, OnDestroy {
 
   goBack() {
     this.state = RegistrationStartState.USER_DATA_ENTRY;
+    this.anonLayoutWrapperDataService.setAnonLayoutWrapperData({
+      pageIcon: RegistrationUserAddIcon,
+      pageTitle: {
+        key: "createAccount",
+      },
+    });
     this.registrationStartStateChange.emit(this.state);
   }
 

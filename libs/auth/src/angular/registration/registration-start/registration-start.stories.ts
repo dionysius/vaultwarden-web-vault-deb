@@ -30,6 +30,8 @@ import {
 // FIXME: remove `/apps` import from `/libs`
 // eslint-disable-next-line import/no-restricted-paths
 import { PreloadedEnglishI18nModule } from "../../../../../../apps/web/src/app/core/tests";
+import { AnonLayoutWrapperDataService } from "../../anon-layout/anon-layout-wrapper-data.service";
+import { AnonLayoutWrapperData } from "../../anon-layout/anon-layout-wrapper.component";
 
 import { RegistrationStartComponent } from "./registration-start.component";
 
@@ -87,6 +89,14 @@ const decorators = (options: {
             isSelfHost: () => options.isSelfHost || false,
             getClientType: () => options.clientType || ClientType.Web,
           } as Partial<PlatformUtilsService>,
+        },
+        {
+          provide: AnonLayoutWrapperDataService,
+          useValue: {
+            setAnonLayoutWrapperData: (data: AnonLayoutWrapperData) => {
+              return;
+            },
+          } as Partial<AnonLayoutWrapperDataService>,
         },
         {
           provide: ToastService,
