@@ -184,7 +184,9 @@ const routes: Routes = [
       path: "hint",
       canActivate: [unauthGuardFn()],
       data: {
-        pageTitle: "passwordHint",
+        pageTitle: {
+          key: "passwordHint",
+        },
         titleId: "passwordHint",
       },
       children: [
@@ -203,8 +205,12 @@ const routes: Routes = [
           path: "hint",
           canActivate: [unauthGuardFn()],
           data: {
-            pageTitle: "requestPasswordHint",
-            pageSubtitle: "enterYourAccountEmailAddressAndYourPasswordHintWillBeSentToYou",
+            pageTitle: {
+              key: "requestPasswordHint",
+            },
+            pageSubtitle: {
+              key: "enterYourAccountEmailAddressAndYourPasswordHintWillBeSentToYou",
+            },
             pageIcon: UserLockIcon,
             state: "hint",
           },

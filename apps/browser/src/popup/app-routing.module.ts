@@ -422,8 +422,12 @@ const routes: Routes = [
           path: "hint",
           canActivate: [unauthGuardFn(unauthRouteOverrides)],
           data: {
-            pageTitle: "requestPasswordHint",
-            pageSubtitle: "enterYourAccountEmailAddressAndYourPasswordHintWillBeSentToYou",
+            pageTitle: {
+              key: "requestPasswordHint",
+            },
+            pageSubtitle: {
+              key: "enterYourAccountEmailAddressAndYourPasswordHintWillBeSentToYou",
+            },
             pageIcon: UserLockIcon,
             showBackButton: true,
             state: "hint",
