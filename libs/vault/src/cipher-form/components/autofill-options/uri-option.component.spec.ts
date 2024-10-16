@@ -58,6 +58,13 @@ describe("UriOptionComponent", () => {
     expect(component["uriMatchOptions"][0].label).toBe("default");
   });
 
+  it("should update the default uri match strategy label when it is domain", () => {
+    component.defaultMatchDetection = UriMatchStrategy.Domain;
+    fixture.detectChanges();
+
+    expect(component["uriMatchOptions"][0].label).toBe("defaultLabel baseDomain");
+  });
+
   it("should update the default uri match strategy label", () => {
     component.defaultMatchDetection = UriMatchStrategy.Exact;
     fixture.detectChanges();
