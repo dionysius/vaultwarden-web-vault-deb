@@ -288,6 +288,7 @@ function createCollectionView(i: number): CollectionAdminView {
   view.id = `collection-${i}`;
   view.name = `Collection ${i}`;
   view.organizationId = organization?.id;
+  view.manage = true;
 
   if (group !== undefined) {
     view.groups = [
