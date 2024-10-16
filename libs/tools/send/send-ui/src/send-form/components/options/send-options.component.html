@@ -43,7 +43,7 @@
       ></button>
       <bit-hint>{{ "sendPasswordDescV2" | i18n }}</bit-hint>
     </bit-form-field>
-    <bit-form-control *ngIf="!disableHideEmail || originalSendView.hideEmail">
+    <bit-form-control *ngIf="!disableHideEmail || originalSendView?.hideEmail">
       <input
         [disabled]="disableHideEmail && !sendOptionsForm.get('hideEmail').value"
         bitCheckbox
