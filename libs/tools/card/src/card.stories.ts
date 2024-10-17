@@ -7,7 +7,7 @@ import { I18nMockService, TypographyModule } from "@bitwarden/components";
 import { CardComponent } from "./card.component";
 
 export default {
-  title: "Toools/Card",
+  title: "Tools/Card",
   component: CardComponent,
   decorators: [
     moduleMetadata({
