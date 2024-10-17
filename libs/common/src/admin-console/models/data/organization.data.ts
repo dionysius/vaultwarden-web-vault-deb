@@ -57,6 +57,7 @@ export class OrganizationData {
   // Deprecated: https://bitwarden.atlassian.net/browse/PM-10863
   limitCollectionCreationDeletion: boolean;
   allowAdminAccessToAllCollectionItems: boolean;
+  userIsManagedByOrganization: boolean;
 
   constructor(
     response?: ProfileOrganizationResponse,
@@ -118,6 +119,7 @@ export class OrganizationData {
     // Deprecated: https://bitwarden.atlassian.net/browse/PM-10863
     this.limitCollectionCreationDeletion = response.limitCollectionCreationDeletion;
     this.allowAdminAccessToAllCollectionItems = response.allowAdminAccessToAllCollectionItems;
+    this.userIsManagedByOrganization = response.userIsManagedByOrganization;
 
     this.isMember = options.isMember;
     this.isProviderUser = options.isProviderUser;

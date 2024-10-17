@@ -54,6 +54,7 @@ export class ProfileOrganizationResponse extends BaseResponse {
   // Deprecated: https://bitwarden.atlassian.net/browse/PM-10863
   limitCollectionCreationDeletion: boolean;
   allowAdminAccessToAllCollectionItems: boolean;
+  userIsManagedByOrganization: boolean;
 
   constructor(response: any) {
     super(response);
@@ -121,5 +122,6 @@ export class ProfileOrganizationResponse extends BaseResponse {
     this.allowAdminAccessToAllCollectionItems = this.getResponseProperty(
       "AllowAdminAccessToAllCollectionItems",
     );
+    this.userIsManagedByOrganization = this.getResponseProperty("UserIsManagedByOrganization");
   }
 }
