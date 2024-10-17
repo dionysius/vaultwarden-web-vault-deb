@@ -27,16 +27,16 @@ import { SendFormContainer } from "../../send-form-container";
   templateUrl: "./send-options.component.html",
   standalone: true,
   imports: [
+    CardComponent,
+    CheckboxModule,
+    CommonModule,
+    FormFieldModule,
+    IconButtonModule,
+    JslibModule,
+    ReactiveFormsModule,
     SectionComponent,
     SectionHeaderComponent,
     TypographyModule,
-    JslibModule,
-    CardComponent,
-    FormFieldModule,
-    ReactiveFormsModule,
-    IconButtonModule,
-    CheckboxModule,
-    CommonModule,
   ],
 })
 export class SendOptionsComponent implements OnInit {
@@ -61,10 +61,12 @@ export class SendOptionsComponent implements OnInit {
     return this.config.mode === "edit" && this.sendOptionsForm.value.maxAccessCount !== null;
   }
 
-  get viewsLeft(): number {
-    return this.sendOptionsForm.value.maxAccessCount
-      ? this.sendOptionsForm.value.maxAccessCount - this.sendOptionsForm.value.accessCount
-      : 0;
+  get viewsLeft() {
+    return String(
+      this.sendOptionsForm.value.maxAccessCount
+        ? this.sendOptionsForm.value.maxAccessCount - this.sendOptionsForm.value.accessCount
+        : 0,
+    );
   }
 
   constructor(
