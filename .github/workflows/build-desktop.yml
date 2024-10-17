@@ -38,7 +38,7 @@ jobs:
     runs-on: ubuntu-22.04
     steps:
       - name: Checkout repo
-        uses: actions/checkout@d632683dd7b4114ad314bca15554477dd762a938 # v4.2.0
+        uses: actions/checkout@eef61447b9ff4aafe5dcd4e0bbf5d482be7e7871 # v4.2.1
 
       - name: Verify
         run: |
@@ -67,7 +67,7 @@ jobs:
         working-directory: apps/desktop
     steps:
       - name: Checkout repo
-        uses: actions/checkout@d632683dd7b4114ad314bca15554477dd762a938 # v4.2.0
+        uses: actions/checkout@eef61447b9ff4aafe5dcd4e0bbf5d482be7e7871 # v4.2.1
 
       - name: Get Package Version
         id: retrieve-version
@@ -140,7 +140,7 @@ jobs:
         working-directory: apps/desktop
     steps:
       - name: Checkout repo
-        uses: actions/checkout@d632683dd7b4114ad314bca15554477dd762a938 # v4.2.0
+        uses: actions/checkout@eef61447b9ff4aafe5dcd4e0bbf5d482be7e7871 # v4.2.1
 
       - name: Set up Node
         uses: actions/setup-node@0a44ba7841725637a19e28fa30b79a866c81b0a6 # v4.0.4
@@ -169,7 +169,7 @@ jobs:
         working-directory: ./
 
       - name: Cache Native Module
-        uses: actions/cache@0c45773b623bea8c8e75f6c82b208c3cf94ea4f9 # v4.0.2
+        uses: actions/cache@3624ceb22c1c5a301c8db4169662070a689d9ea8 # v4.1.1
         id: cache
         with:
           path: |
@@ -194,42 +194,42 @@ jobs:
         run: npm run dist:lin
 
       - name: Upload .deb artifact
-        uses: actions/upload-artifact@50769540e7f4bd5e21e526ee35c689e35e0d6874 # v4.4.0
+        uses: actions/upload-artifact@b4b15b8c7c6ac21ea08fcf65892d2ee8f75cf882 # v4.4.3
         with:
           name: Bitwarden-${{ env._PACKAGE_VERSION }}-amd64.deb
           path: apps/desktop/dist/Bitwarden-${{ env._PACKAGE_VERSION }}-amd64.deb
           if-no-files-found: error
 
       - name: Upload .rpm artifact
-        uses: actions/upload-artifact@50769540e7f4bd5e21e526ee35c689e35e0d6874 # v4.4.0
+        uses: actions/upload-artifact@b4b15b8c7c6ac21ea08fcf65892d2ee8f75cf882 # v4.4.3
         with:
           name: Bitwarden-${{ env._PACKAGE_VERSION }}-x86_64.rpm
           path: apps/desktop/dist/Bitwarden-${{ env._PACKAGE_VERSION }}-x86_64.rpm
           if-no-files-found: error
 
       - name: Upload .freebsd artifact
-        uses: actions/upload-artifact@50769540e7f4bd5e21e526ee35c689e35e0d6874 # v4.4.0
+        uses: actions/upload-artifact@b4b15b8c7c6ac21ea08fcf65892d2ee8f75cf882 # v4.4.3
         with:
           name: Bitwarden-${{ env._PACKAGE_VERSION }}-x64.freebsd
           path: apps/desktop/dist/Bitwarden-${{ env._PACKAGE_VERSION }}-x64.freebsd
           if-no-files-found: error
 
       - name: Upload .snap artifact
-        uses: actions/upload-artifact@50769540e7f4bd5e21e526ee35c689e35e0d6874 # v4.4.0
+        uses: actions/upload-artifact@b4b15b8c7c6ac21ea08fcf65892d2ee8f75cf882 # v4.4.3
         with:
           name: bitwarden_${{ env._PACKAGE_VERSION }}_amd64.snap
           path: apps/desktop/dist/bitwarden_${{ env._PACKAGE_VERSION }}_amd64.snap
           if-no-files-found: error
 
       - name: Upload .AppImage artifact
-        uses: actions/upload-artifact@50769540e7f4bd5e21e526ee35c689e35e0d6874 # v4.4.0
+        uses: actions/upload-artifact@b4b15b8c7c6ac21ea08fcf65892d2ee8f75cf882 # v4.4.3
         with:
           name: Bitwarden-${{ env._PACKAGE_VERSION }}-x86_64.AppImage
           path: apps/desktop/dist/Bitwarden-${{ env._PACKAGE_VERSION }}-x86_64.AppImage
           if-no-files-found: error
 
       - name: Upload auto-update artifact
-        uses: actions/upload-artifact@50769540e7f4bd5e21e526ee35c689e35e0d6874 # v4.4.0
+        uses: actions/upload-artifact@b4b15b8c7c6ac21ea08fcf65892d2ee8f75cf882 # v4.4.3
         with:
           name: ${{ needs.setup.outputs.release_channel }}-linux.yml
           path: apps/desktop/dist/${{ needs.setup.outputs.release_channel }}-linux.yml
@@ -250,7 +250,7 @@ jobs:
       NODE_OPTIONS: --max_old_space_size=4096
     steps:
       - name: Checkout repo
-        uses: actions/checkout@d632683dd7b4114ad314bca15554477dd762a938 # v4.2.0
+        uses: actions/checkout@eef61447b9ff4aafe5dcd4e0bbf5d482be7e7871 # v4.2.1
 
       - name: Set up Node
         uses: actions/setup-node@0a44ba7841725637a19e28fa30b79a866c81b0a6 # v4.0.4
@@ -299,7 +299,7 @@ jobs:
         working-directory: ./
 
       - name: Cache Native Module
-        uses: actions/cache@0c45773b623bea8c8e75f6c82b208c3cf94ea4f9 # v4.0.2
+        uses: actions/cache@3624ceb22c1c5a301c8db4169662070a689d9ea8 # v4.1.1
         id: cache
         with:
           path: |
@@ -354,91 +354,91 @@ jobs:
             -NewName bitwarden-${{ env._PACKAGE_VERSION }}-arm64.nsis.7z
 
       - name: Upload portable exe artifact
-        uses: actions/upload-artifact@50769540e7f4bd5e21e526ee35c689e35e0d6874 # v4.4.0
+        uses: actions/upload-artifact@b4b15b8c7c6ac21ea08fcf65892d2ee8f75cf882 # v4.4.3
         with:
           name: Bitwarden-Portable-${{ env._PACKAGE_VERSION }}.exe
           path: apps/desktop/dist/Bitwarden-Portable-${{ env._PACKAGE_VERSION }}.exe
           if-no-files-found: error
 
       - name: Upload installer exe artifact
-        uses: actions/upload-artifact@50769540e7f4bd5e21e526ee35c689e35e0d6874 # v4.4.0
+        uses: actions/upload-artifact@b4b15b8c7c6ac21ea08fcf65892d2ee8f75cf882 # v4.4.3
         with:
           name: Bitwarden-Installer-${{ env._PACKAGE_VERSION }}.exe
           path: apps/desktop/dist/nsis-web/Bitwarden-Installer-${{ env._PACKAGE_VERSION }}.exe
           if-no-files-found: error
 
       - name: Upload appx ia32 artifact
-        uses: actions/upload-artifact@50769540e7f4bd5e21e526ee35c689e35e0d6874 # v4.4.0
+        uses: actions/upload-artifact@b4b15b8c7c6ac21ea08fcf65892d2ee8f75cf882 # v4.4.3
         with:
           name: Bitwarden-${{ env._PACKAGE_VERSION }}-ia32.appx
           path: apps/desktop/dist/Bitwarden-${{ env._PACKAGE_VERSION }}-ia32.appx
           if-no-files-found: error
 
       - name: Upload store appx ia32 artifact
-        uses: actions/upload-artifact@50769540e7f4bd5e21e526ee35c689e35e0d6874 # v4.4.0
+        uses: actions/upload-artifact@b4b15b8c7c6ac21ea08fcf65892d2ee8f75cf882 # v4.4.3
         with:
           name: Bitwarden-${{ env._PACKAGE_VERSION }}-ia32-store.appx
           path: apps/desktop/dist/Bitwarden-${{ env._PACKAGE_VERSION }}-ia32-store.appx
           if-no-files-found: error
 
       - name: Upload NSIS ia32 artifact
-        uses: actions/upload-artifact@50769540e7f4bd5e21e526ee35c689e35e0d6874 # v4.4.0
+        uses: actions/upload-artifact@b4b15b8c7c6ac21ea08fcf65892d2ee8f75cf882 # v4.4.3
         with:
           name: bitwarden-${{ env._PACKAGE_VERSION }}-ia32.nsis.7z
           path: apps/desktop/dist/nsis-web/bitwarden-${{ env._PACKAGE_VERSION }}-ia32.nsis.7z
           if-no-files-found: error
 
       - name: Upload appx x64 artifact
-        uses: actions/upload-artifact@50769540e7f4bd5e21e526ee35c689e35e0d6874 # v4.4.0
+        uses: actions/upload-artifact@b4b15b8c7c6ac21ea08fcf65892d2ee8f75cf882 # v4.4.3
         with:
           name: Bitwarden-${{ env._PACKAGE_VERSION }}-x64.appx
           path: apps/desktop/dist/Bitwarden-${{ env._PACKAGE_VERSION }}-x64.appx
           if-no-files-found: error
 
       - name: Upload store appx x64 artifact
-        uses: actions/upload-artifact@50769540e7f4bd5e21e526ee35c689e35e0d6874 # v4.4.0
+        uses: actions/upload-artifact@b4b15b8c7c6ac21ea08fcf65892d2ee8f75cf882 # v4.4.3
         with:
           name: Bitwarden-${{ env._PACKAGE_VERSION }}-x64-store.appx
           path: apps/desktop/dist/Bitwarden-${{ env._PACKAGE_VERSION }}-x64-store.appx
           if-no-files-found: error
 
       - name: Upload NSIS x64 artifact
-        uses: actions/upload-artifact@50769540e7f4bd5e21e526ee35c689e35e0d6874 # v4.4.0
+        uses: actions/upload-artifact@b4b15b8c7c6ac21ea08fcf65892d2ee8f75cf882 # v4.4.3
         with:
           name: bitwarden-${{ env._PACKAGE_VERSION }}-x64.nsis.7z
           path: apps/desktop/dist/nsis-web/bitwarden-${{ env._PACKAGE_VERSION }}-x64.nsis.7z
           if-no-files-found: error
 
       - name: Upload appx ARM64 artifact
-        uses: actions/upload-artifact@50769540e7f4bd5e21e526ee35c689e35e0d6874 # v4.4.0
+        uses: actions/upload-artifact@b4b15b8c7c6ac21ea08fcf65892d2ee8f75cf882 # v4.4.3
         with:
           name: Bitwarden-${{ env._PACKAGE_VERSION }}-arm64.appx
           path: apps/desktop/dist/Bitwarden-${{ env._PACKAGE_VERSION }}-arm64.appx
           if-no-files-found: error
 
       - name: Upload store appx ARM64 artifact
-        uses: actions/upload-artifact@50769540e7f4bd5e21e526ee35c689e35e0d6874 # v4.4.0
+        uses: actions/upload-artifact@b4b15b8c7c6ac21ea08fcf65892d2ee8f75cf882 # v4.4.3
         with:
           name: Bitwarden-${{ env._PACKAGE_VERSION }}-arm64-store.appx
           path: apps/desktop/dist/Bitwarden-${{ env._PACKAGE_VERSION }}-arm64-store.appx
           if-no-files-found: error
 
       - name: Upload NSIS ARM64 artifact
-        uses: actions/upload-artifact@50769540e7f4bd5e21e526ee35c689e35e0d6874 # v4.4.0
+        uses: actions/upload-artifact@b4b15b8c7c6ac21ea08fcf65892d2ee8f75cf882 # v4.4.3
         with:
           name: bitwarden-${{ env._PACKAGE_VERSION }}-arm64.nsis.7z
           path: apps/desktop/dist/nsis-web/bitwarden-${{ env._PACKAGE_VERSION }}-arm64.nsis.7z
           if-no-files-found: error
 
       - name: Upload nupkg artifact
-        uses: actions/upload-artifact@50769540e7f4bd5e21e526ee35c689e35e0d6874 # v4.4.0
+        uses: actions/upload-artifact@b4b15b8c7c6ac21ea08fcf65892d2ee8f75cf882 # v4.4.3
         with:
           name: bitwarden.${{ env._PACKAGE_VERSION }}.nupkg
           path: apps/desktop/dist/chocolatey/bitwarden.${{ env._PACKAGE_VERSION }}.nupkg
           if-no-files-found: error
 
       - name: Upload auto-update artifact
-        uses: actions/upload-artifact@50769540e7f4bd5e21e526ee35c689e35e0d6874 # v4.4.0
+        uses: actions/upload-artifact@b4b15b8c7c6ac21ea08fcf65892d2ee8f75cf882 # v4.4.3
         with:
           name: ${{ needs.setup.outputs.release_channel }}.yml
           path: apps/desktop/dist/nsis-web/${{ needs.setup.outputs.release_channel }}.yml
@@ -458,7 +458,7 @@ jobs:
         working-directory: apps/desktop
     steps:
       - name: Checkout repo
-        uses: actions/checkout@d632683dd7b4114ad314bca15554477dd762a938 # v4.2.0
+        uses: actions/checkout@eef61447b9ff4aafe5dcd4e0bbf5d482be7e7871 # v4.2.1
 
       - name: Set up Node
         uses: actions/setup-node@0a44ba7841725637a19e28fa30b79a866c81b0a6 # v4.0.4
@@ -484,14 +484,14 @@ jobs:
 
       - name: Cache Build
         id: build-cache
-        uses: actions/cache@0c45773b623bea8c8e75f6c82b208c3cf94ea4f9 # v4.0.2
+        uses: actions/cache@3624ceb22c1c5a301c8db4169662070a689d9ea8 # v4.1.1
         with:
           path: apps/desktop/build
           key: ${{ runner.os }}-${{ github.run_id }}-build
 
       - name: Cache Safari
         id: safari-cache
-        uses: actions/cache@0c45773b623bea8c8e75f6c82b208c3cf94ea4f9 # v4.0.2
+        uses: actions/cache@3624ceb22c1c5a301c8db4169662070a689d9ea8 # v4.1.1
         with:
           path: apps/browser/dist/Safari
           key: ${{ runner.os }}-${{ github.run_id }}-safari-extension
@@ -584,7 +584,7 @@ jobs:
         working-directory: ./
 
       - name: Cache Native Module
-        uses: actions/cache@0c45773b623bea8c8e75f6c82b208c3cf94ea4f9 # v4.0.2
+        uses: actions/cache@3624ceb22c1c5a301c8db4169662070a689d9ea8 # v4.1.1
         id: cache
         with:
           path: |
@@ -624,7 +624,7 @@ jobs:
         working-directory: apps/desktop
     steps:
       - name: Checkout repo
-        uses: actions/checkout@d632683dd7b4114ad314bca15554477dd762a938 # v4.2.0
+        uses: actions/checkout@eef61447b9ff4aafe5dcd4e0bbf5d482be7e7871 # v4.2.1
 
       - name: Set up Node
         uses: actions/setup-node@0a44ba7841725637a19e28fa30b79a866c81b0a6 # v4.0.4
@@ -650,14 +650,14 @@ jobs:
 
       - name: Get Build Cache
         id: build-cache
-        uses: actions/cache@0c45773b623bea8c8e75f6c82b208c3cf94ea4f9 # v4.0.2
+        uses: actions/cache@3624ceb22c1c5a301c8db4169662070a689d9ea8 # v4.1.1
         with:
           path: apps/desktop/build
           key: ${{ runner.os }}-${{ github.run_id }}-build
 
       - name: Setup Safari Cache
         id: safari-cache
-        uses: actions/cache@0c45773b623bea8c8e75f6c82b208c3cf94ea4f9 # v4.0.2
+        uses: actions/cache@3624ceb22c1c5a301c8db4169662070a689d9ea8 # v4.1.1
         with:
           path: apps/browser/dist/Safari
           key: ${{ runner.os }}-${{ github.run_id }}-safari-extension
@@ -750,7 +750,7 @@ jobs:
         working-directory: ./
 
       - name: Cache Native Module
-        uses: actions/cache@0c45773b623bea8c8e75f6c82b208c3cf94ea4f9 # v4.0.2
+        uses: actions/cache@3624ceb22c1c5a301c8db4169662070a689d9ea8 # v4.1.1
         id: cache
         with:
           path: |
@@ -799,28 +799,28 @@ jobs:
         run: npm run pack:mac
 
       - name: Upload .zip artifact
-        uses: actions/upload-artifact@50769540e7f4bd5e21e526ee35c689e35e0d6874 # v4.4.0
+        uses: actions/upload-artifact@b4b15b8c7c6ac21ea08fcf65892d2ee8f75cf882 # v4.4.3
         with:
           name: Bitwarden-${{ env._PACKAGE_VERSION }}-universal-mac.zip
           path: apps/desktop/dist/Bitwarden-${{ env._PACKAGE_VERSION }}-universal-mac.zip
           if-no-files-found: error
 
       - name: Upload .dmg artifact
-        uses: actions/upload-artifact@50769540e7f4bd5e21e526ee35c689e35e0d6874 # v4.4.0
+        uses: actions/upload-artifact@b4b15b8c7c6ac21ea08fcf65892d2ee8f75cf882 # v4.4.3
         with:
           name: Bitwarden-${{ env._PACKAGE_VERSION }}-universal.dmg
           path: apps/desktop/dist/Bitwarden-${{ env._PACKAGE_VERSION }}-universal.dmg
           if-no-files-found: error
 
       - name: Upload .dmg blockmap artifact
-        uses: actions/upload-artifact@50769540e7f4bd5e21e526ee35c689e35e0d6874 # v4.4.0
+        uses: actions/upload-artifact@b4b15b8c7c6ac21ea08fcf65892d2ee8f75cf882 # v4.4.3
         with:
           name: Bitwarden-${{ env._PACKAGE_VERSION }}-universal.dmg.blockmap
           path: apps/desktop/dist/Bitwarden-${{ env._PACKAGE_VERSION }}-universal.dmg.blockmap
           if-no-files-found: error
 
       - name: Upload auto-update artifact
-        uses: actions/upload-artifact@50769540e7f4bd5e21e526ee35c689e35e0d6874 # v4.4.0
+        uses: actions/upload-artifact@b4b15b8c7c6ac21ea08fcf65892d2ee8f75cf882 # v4.4.3
         with:
           name: ${{ needs.setup.outputs.release_channel }}-mac.yml
           path: apps/desktop/dist/${{ needs.setup.outputs.release_channel }}-mac.yml
@@ -843,7 +843,7 @@ jobs:
         working-directory: apps/desktop
     steps:
       - name: Checkout repo
-        uses: actions/checkout@d632683dd7b4114ad314bca15554477dd762a938 # v4.2.0
+        uses: actions/checkout@eef61447b9ff4aafe5dcd4e0bbf5d482be7e7871 # v4.2.1
 
       - name: Set up Node
         uses: actions/setup-node@0a44ba7841725637a19e28fa30b79a866c81b0a6 # v4.0.4
@@ -869,14 +869,14 @@ jobs:
 
       - name: Get Build Cache
         id: build-cache
-        uses: actions/cache@0c45773b623bea8c8e75f6c82b208c3cf94ea4f9 # v4.0.2
+        uses: actions/cache@3624ceb22c1c5a301c8db4169662070a689d9ea8 # v4.1.1
         with:
           path: apps/desktop/build
           key: ${{ runner.os }}-${{ github.run_id }}-build
 
       - name: Setup Safari Cache
         id: safari-cache
-        uses: actions/cache@0c45773b623bea8c8e75f6c82b208c3cf94ea4f9 # v4.0.2
+        uses: actions/cache@3624ceb22c1c5a301c8db4169662070a689d9ea8 # v4.1.1
         with:
           path: apps/browser/dist/Safari
           key: ${{ runner.os }}-${{ github.run_id }}-safari-extension
@@ -976,7 +976,7 @@ jobs:
         working-directory: ./
 
       - name: Cache Native Module
-        uses: actions/cache@0c45773b623bea8c8e75f6c82b208c3cf94ea4f9 # v4.0.2
+        uses: actions/cache@3624ceb22c1c5a301c8db4169662070a689d9ea8 # v4.1.1
         id: cache
         with:
           path: |
@@ -1025,7 +1025,7 @@ jobs:
         run: npm run pack:mac:mas
 
       - name: Upload .pkg artifact
-        uses: actions/upload-artifact@50769540e7f4bd5e21e526ee35c689e35e0d6874 # v4.4.0
+        uses: actions/upload-artifact@b4b15b8c7c6ac21ea08fcf65892d2ee8f75cf882 # v4.4.3
         with:
           name: Bitwarden-${{ env._PACKAGE_VERSION }}-universal.pkg
           path: apps/desktop/dist/mas-universal/Bitwarden-${{ env._PACKAGE_VERSION }}-universal.pkg
@@ -1090,7 +1090,7 @@ jobs:
         working-directory: apps/desktop
     steps:
       - name: Checkout repo
-        uses: actions/checkout@d632683dd7b4114ad314bca15554477dd762a938 # v4.2.0
+        uses: actions/checkout@eef61447b9ff4aafe5dcd4e0bbf5d482be7e7871 # v4.2.1
 
       - name: Set up Node
         uses: actions/setup-node@0a44ba7841725637a19e28fa30b79a866c81b0a6 # v4.0.4
@@ -1111,14 +1111,14 @@ jobs:
 
       - name: Get Build Cache
         id: build-cache
-        uses: actions/cache@0c45773b623bea8c8e75f6c82b208c3cf94ea4f9 # v4.0.2
+        uses: actions/cache@3624ceb22c1c5a301c8db4169662070a689d9ea8 # v4.1.1
         with:
           path: apps/desktop/build
           key: ${{ runner.os }}-${{ github.run_id }}-build
 
       - name: Setup Safari Cache
         id: safari-cache
-        uses: actions/cache@0c45773b623bea8c8e75f6c82b208c3cf94ea4f9 # v4.0.2
+        uses: actions/cache@3624ceb22c1c5a301c8db4169662070a689d9ea8 # v4.1.1
         with:
           path: apps/browser/dist/Safari
           key: ${{ runner.os }}-${{ github.run_id }}-safari-extension
@@ -1211,7 +1211,7 @@ jobs:
         working-directory: ./
 
       - name: Cache Native Module
-        uses: actions/cache@0c45773b623bea8c8e75f6c82b208c3cf94ea4f9 # v4.0.2
+        uses: actions/cache@3624ceb22c1c5a301c8db4169662070a689d9ea8 # v4.1.1
         id: cache
         with:
           path: |
@@ -1263,7 +1263,7 @@ jobs:
           zip -r Bitwarden-${{ env._PACKAGE_VERSION }}-masdev-universal.zip Bitwarden.app
 
       - name: Upload masdev artifact
-        uses: actions/upload-artifact@50769540e7f4bd5e21e526ee35c689e35e0d6874 # v4.4.0
+        uses: actions/upload-artifact@b4b15b8c7c6ac21ea08fcf65892d2ee8f75cf882 # v4.4.3
         with:
           name: Bitwarden-${{ env._PACKAGE_VERSION }}-masdev-universal.zip
           path: apps/desktop/dist/mas-dev-universal/Bitwarden-${{ env._PACKAGE_VERSION }}-masdev-universal.zip
@@ -1281,7 +1281,7 @@ jobs:
     runs-on: ubuntu-22.04
     steps:
       - name: Checkout repo
-        uses: actions/checkout@d632683dd7b4114ad314bca15554477dd762a938 # v4.2.0
+        uses: actions/checkout@eef61447b9ff4aafe5dcd4e0bbf5d482be7e7871 # v4.2.1
 
       - name: Login to Azure
         uses: Azure/login@e15b166166a8746d1a47596803bd8c1b595455cf # v1.6.0
