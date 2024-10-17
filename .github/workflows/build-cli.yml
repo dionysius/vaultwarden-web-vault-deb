@@ -1,4 +1,3 @@
----
 name: Build CLI
 
 on:
@@ -289,7 +288,7 @@ jobs:
           name: bitwarden-cli.${{ env._PACKAGE_VERSION }}.nupkg
           path: apps/cli/dist/chocolatey/bitwarden-cli.${{ env._PACKAGE_VERSION }}.nupkg
           if-no-files-found: error
-      
+
       - name: Zip NPM Build Artifact
         run: Get-ChildItem -Path .\build | Compress-Archive -DestinationPath .\bitwarden-cli-${{ env._PACKAGE_VERSION }}-npm-build.zip
 
