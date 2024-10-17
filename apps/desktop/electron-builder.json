@@ -249,7 +249,7 @@
     "autoStart": true,
     "base": "core22",
     "confinement": "strict",
-    "plugs": ["default", "network", "network-bind", "password-manager-service"],
+    "plugs": ["default", "network-bind", "password-manager-service"],
     "stagePackages": ["default"]
   },
   "protocols": [
