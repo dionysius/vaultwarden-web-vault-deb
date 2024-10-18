@@ -602,6 +602,15 @@
   "joinOrganization": {
     "message": "Přidat se k organizaci"
   },
+  "joinOrganizationName": {
+    "message": "Připojit se k $ORGANIZATIONNAME$",
+    "placeholders": {
+      "organizationName": {
+        "content": "$1",
+        "example": "My Org Name"
+      }
+    }
+  },
   "finishJoiningThisOrganizationBySettingAMasterPassword": {
     "message": "Dokončete připojení k této organizaci nastavením hlavního hesla."
   },
@@ -1751,6 +1760,15 @@
   "orgRequiresYouToSetPassword": {
     "message": "Vaše organizace vyžaduje nastavení hlavního hesla.",
     "description": "Used as a card title description on the set password page to explain why the user is there"
+  },
+  "cardMetrics": {
+    "message": "z $TOTAL$",
+    "placeholders": {
+      "total": {
+        "content": "$1",
+        "example": "5"
+      }
+    }
   },
   "verificationRequired": {
     "message": "Je vyžadováno ověření",

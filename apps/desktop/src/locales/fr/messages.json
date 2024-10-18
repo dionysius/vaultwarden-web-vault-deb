@@ -602,6 +602,15 @@
   "joinOrganization": {
     "message": "Rejoindre l'organisation"
   },
+  "joinOrganizationName": {
+    "message": "Rejoindre $ORGANIZATIONNAME$",
+    "placeholders": {
+      "organizationName": {
+        "content": "$1",
+        "example": "My Org Name"
+      }
+    }
+  },
   "finishJoiningThisOrganizationBySettingAMasterPassword": {
     "message": "Terminez votre adhésion à cette organisation en définissant un mot de passe principal."
   },
@@ -1751,6 +1760,15 @@
   "orgRequiresYouToSetPassword": {
     "message": "Votre organisation exige que vous définissiez un mot de passe principal.",
     "description": "Used as a card title description on the set password page to explain why the user is there"
+  },
+  "cardMetrics": {
+    "message": "sur $TOTAL$",
+    "placeholders": {
+      "total": {
+        "content": "$1",
+        "example": "5"
+      }
+    }
   },
   "verificationRequired": {
     "message": "Vérification requise",

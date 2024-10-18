@@ -602,6 +602,15 @@
   "joinOrganization": {
     "message": "Csatlakozás szervezethez"
   },
+  "joinOrganizationName": {
+    "message": "Join $ORGANIZATIONNAME$",
+    "placeholders": {
+      "organizationName": {
+        "content": "$1",
+        "example": "My Org Name"
+      }
+    }
+  },
   "finishJoiningThisOrganizationBySettingAMasterPassword": {
     "message": "Fejezzük be a szervezethez csatlakozást egy mesterjelszó beállításával."
   },
@@ -1751,6 +1760,15 @@
   "orgRequiresYouToSetPassword": {
     "message": "A szervezet megköveteli egy mesterjelszó beállítását.",
     "description": "Used as a card title description on the set password page to explain why the user is there"
+  },
+  "cardMetrics": {
+    "message": "/ $TOTAL$",
+    "placeholders": {
+      "total": {
+        "content": "$1",
+        "example": "5"
+      }
+    }
   },
   "verificationRequired": {
     "message": "Ellenőrzés szükséges",

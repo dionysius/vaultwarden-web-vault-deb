@@ -602,6 +602,15 @@
   "joinOrganization": {
     "message": "الانضمام إلى المؤسسة"
   },
+  "joinOrganizationName": {
+    "message": "Join $ORGANIZATIONNAME$",
+    "placeholders": {
+      "organizationName": {
+        "content": "$1",
+        "example": "My Org Name"
+      }
+    }
+  },
   "finishJoiningThisOrganizationBySettingAMasterPassword": {
     "message": "إنهاء الانضمام إلى هذه المؤسسة عن طريق تعيين كلمة مرور رئيسية."
   },
@@ -1751,6 +1760,15 @@
   "orgRequiresYouToSetPassword": {
     "message": "تتطلب مؤسستك تعيين كلمة مرور رئيسية.",
     "description": "Used as a card title description on the set password page to explain why the user is there"
+  },
+  "cardMetrics": {
+    "message": "out of $TOTAL$",
+    "placeholders": {
+      "total": {
+        "content": "$1",
+        "example": "5"
+      }
+    }
   },
   "verificationRequired": {
     "message": "التحقق مطلوب",

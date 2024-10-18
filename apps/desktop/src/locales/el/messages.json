@@ -422,11 +422,11 @@
     "message": "Ειδικοί χαρακτήρες (!@#$%^&*)"
   },
   "include": {
-    "message": "Include",
+    "message": "Συμπερίληψη",
     "description": "Card header for password generator include block"
   },
   "uppercaseDescription": {
-    "message": "Include uppercase characters",
+    "message": "Συμπερίληψη κεφαλαίων χαρακτήρων",
     "description": "Tooltip for the password generator uppercase character checkbox"
   },
   "uppercaseLabel": {
@@ -434,7 +434,7 @@
     "description": "Label for the password generator uppercase character checkbox"
   },
   "lowercaseDescription": {
-    "message": "Include lowercase characters",
+    "message": "Συμπερίληψη πεζών χαρακτήρων",
     "description": "Full description for the password generator lowercase character checkbox"
   },
   "lowercaseLabel": {
@@ -442,7 +442,7 @@
     "description": "Label for the password generator lowercase character checkbox"
   },
   "numbersDescription": {
-    "message": "Include numbers",
+    "message": "Συμπερίληψη αριθμών",
     "description": "Full description for the password generator numbers checkbox"
   },
   "numbersLabel": {
@@ -450,7 +450,7 @@
     "description": "Label for the password generator numbers checkbox"
   },
   "specialCharactersDescription": {
-    "message": "Include special characters",
+    "message": "Συμπερίληψη ειδικών χαρακτήρων",
     "description": "Full description for the password generator special characters checkbox"
   },
   "specialCharactersLabel": {
@@ -485,7 +485,7 @@
     "description": "deprecated. Use avoidAmbiguous instead."
   },
   "avoidAmbiguous": {
-    "message": "Avoid ambiguous characters",
+    "message": "Αποφυγή αμφιλεγόμενων χαρακτήρων",
     "description": "Label for the avoid ambiguous characters checkbox."
   },
   "generatorPolicyInEffect": {
@@ -601,6 +601,15 @@
   },
   "joinOrganization": {
     "message": "Συμμετοχή σε οργανισμό"
+  },
+  "joinOrganizationName": {
+    "message": "Join $ORGANIZATIONNAME$",
+    "placeholders": {
+      "organizationName": {
+        "content": "$1",
+        "example": "My Org Name"
+      }
+    }
   },
   "finishJoiningThisOrganizationBySettingAMasterPassword": {
     "message": "Ολοκληρώστε τη συμμετοχή σας σε αυτόν τον οργανισμό ορίζοντας έναν κύριο κωδικό πρόσβασης."
@@ -1751,6 +1760,15 @@
   "orgRequiresYouToSetPassword": {
     "message": "Ο οργανισμός σας απαιτεί να ορίσετε έναν κύριο κωδικό πρόσβασης.",
     "description": "Used as a card title description on the set password page to explain why the user is there"
+  },
+  "cardMetrics": {
+    "message": "από $TOTAL$",
+    "placeholders": {
+      "total": {
+        "content": "$1",
+        "example": "5"
+      }
+    }
   },
   "verificationRequired": {
     "message": "Απαιτείται επαλήθευση",

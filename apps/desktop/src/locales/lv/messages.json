@@ -602,6 +602,15 @@
   "joinOrganization": {
     "message": "Pievienoties apvienībai"
   },
+  "joinOrganizationName": {
+    "message": "Pievienoties $ORGANIZATIONNAME$",
+    "placeholders": {
+      "organizationName": {
+        "content": "$1",
+        "example": "My Org Name"
+      }
+    }
+  },
   "finishJoiningThisOrganizationBySettingAMasterPassword": {
     "message": "Pabeigt pievienošanos šai apvienībai ar galvenās paroles iestatīšanu."
   },
@@ -1751,6 +1760,15 @@
   "orgRequiresYouToSetPassword": {
     "message": "Apvienība pieprasa iestatīt galveno paroli.",
     "description": "Used as a card title description on the set password page to explain why the user is there"
+  },
+  "cardMetrics": {
+    "message": "no $TOTAL$",
+    "placeholders": {
+      "total": {
+        "content": "$1",
+        "example": "5"
+      }
+    }
   },
   "verificationRequired": {
     "message": "Nepieciešams apliecinājums",
