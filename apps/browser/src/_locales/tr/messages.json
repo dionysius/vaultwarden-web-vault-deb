@@ -71,6 +71,15 @@
   "joinOrganization": {
     "message": "Kuruluşa katıl"
   },
+  "joinOrganizationName": {
+    "message": "$ORGANIZATIONNAME$ kuruluşuna katıl",
+    "placeholders": {
+      "organizationName": {
+        "content": "$1",
+        "example": "My Org Name"
+      }
+    }
+  },
   "finishJoiningThisOrganizationBySettingAMasterPassword": {
     "message": "Kuruluşa katılmayı tamamlamak için ana parolanızı belirleyin."
   },
@@ -1408,6 +1417,12 @@
   "showInlineMenuLabel": {
     "message": "Form alanlarında otomatik doldurma önerilerini göster"
   },
+  "showInlineMenuIdentitiesLabel": {
+    "message": "Kimlikleri öneri olarak göster"
+  },
+  "showInlineMenuCardsLabel": {
+    "message": "Kartları öneri olarak göster"
+  },
   "showInlineMenuOnIconSelectionLabel": {
     "message": "Simge seçildiğinde önerileri göster"
   },
@@ -2646,6 +2661,15 @@
   "orgRequiresYouToSetPassword": {
     "message": "Kuruluşunuz bir ana parola belirlemenizi gerektiriyor.",
     "description": "Used as a card title description on the set password page to explain why the user is there"
+  },
+  "cardMetrics": {
+    "message": "/ $TOTAL$",
+    "placeholders": {
+      "total": {
+        "content": "$1",
+        "example": "5"
+      }
+    }
   },
   "verificationRequired": {
     "message": "Doğrulama gerekli",

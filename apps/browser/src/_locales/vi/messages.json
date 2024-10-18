@@ -71,6 +71,15 @@
   "joinOrganization": {
     "message": "Tham gia tổ chức"
   },
+  "joinOrganizationName": {
+    "message": "Join $ORGANIZATIONNAME$",
+    "placeholders": {
+      "organizationName": {
+        "content": "$1",
+        "example": "My Org Name"
+      }
+    }
+  },
   "finishJoiningThisOrganizationBySettingAMasterPassword": {
     "message": "Hoàn tất gia nhập tổ chức này bằng cách đặt một mật khẩu chính."
   },
@@ -1408,6 +1417,12 @@
   "showInlineMenuLabel": {
     "message": "Hiển thị các gợi ý tự động điền trên các trường biểu mẫu"
   },
+  "showInlineMenuIdentitiesLabel": {
+    "message": "Display identities as suggestions"
+  },
+  "showInlineMenuCardsLabel": {
+    "message": "Display cards as suggestions"
+  },
   "showInlineMenuOnIconSelectionLabel": {
     "message": "Hiện gợi ý khi nhấp vào biểu tượng"
   },
@@ -2646,6 +2661,15 @@
   "orgRequiresYouToSetPassword": {
     "message": "Tổ chức của bạn yêu cầu bạn đặt mật khẩu chính.",
     "description": "Used as a card title description on the set password page to explain why the user is there"
+  },
+  "cardMetrics": {
+    "message": "out of $TOTAL$",
+    "placeholders": {
+      "total": {
+        "content": "$1",
+        "example": "5"
+      }
+    }
   },
   "verificationRequired": {
     "message": "Yêu cầu xác minh",

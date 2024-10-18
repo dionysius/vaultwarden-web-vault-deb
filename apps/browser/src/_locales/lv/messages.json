@@ -71,6 +71,15 @@
   "joinOrganization": {
     "message": "Pievienoties apvienībai"
   },
+  "joinOrganizationName": {
+    "message": "Pievienoties $ORGANIZATIONNAME$",
+    "placeholders": {
+      "organizationName": {
+        "content": "$1",
+        "example": "My Org Name"
+      }
+    }
+  },
   "finishJoiningThisOrganizationBySettingAMasterPassword": {
     "message": "Pabeigt pievienošanos šai apvienībai ar galvenās paroles iestatīšanu."
   },
@@ -1408,6 +1417,12 @@
   "showInlineMenuLabel": {
     "message": "Rādīt automātiskās aizpildes ieteikumuis veidlapu laukos"
   },
+  "showInlineMenuIdentitiesLabel": {
+    "message": "Attēlot identitātes kā ieteikumus"
+  },
+  "showInlineMenuCardsLabel": {
+    "message": "Attēlot kartes kā ieteikumus"
+  },
   "showInlineMenuOnIconSelectionLabel": {
     "message": "Attēlot ieteikumus, kad tiek atlasīta ikona"
   },
@@ -2646,6 +2661,15 @@
   "orgRequiresYouToSetPassword": {
     "message": "Apvienība pieprasa iestatīt galveno paroli.",
     "description": "Used as a card title description on the set password page to explain why the user is there"
+  },
+  "cardMetrics": {
+    "message": "no $TOTAL$",
+    "placeholders": {
+      "total": {
+        "content": "$1",
+        "example": "5"
+      }
+    }
   },
   "verificationRequired": {
     "message": "Nepieciešams apliecinājums",

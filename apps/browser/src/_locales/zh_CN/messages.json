@@ -71,6 +71,15 @@
   "joinOrganization": {
     "message": "加入组织"
   },
+  "joinOrganizationName": {
+    "message": "加入 $ORGANIZATIONNAME$",
+    "placeholders": {
+      "organizationName": {
+        "content": "$1",
+        "example": "My Org Name"
+      }
+    }
+  },
   "finishJoiningThisOrganizationBySettingAMasterPassword": {
     "message": "通过设置主密码完成加入此组织。"
   },
@@ -1408,6 +1417,12 @@
   "showInlineMenuLabel": {
     "message": "在表单字段中显示自动填充建议"
   },
+  "showInlineMenuIdentitiesLabel": {
+    "message": "将身份显示为建议"
+  },
+  "showInlineMenuCardsLabel": {
+    "message": "将支付卡显示为建议"
+  },
   "showInlineMenuOnIconSelectionLabel": {
     "message": "选择图标时显示建议"
   },
@@ -2499,11 +2514,11 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendExpiresInHoursSingle": {
-    "message": "The Send will be available to anyone with the link for the next 1 hour.",
+    "message": "在接下来的 1 小时内，任何人都可以通过链接访问此 Send。",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendExpiresInHours": {
-    "message": "The Send will be available to anyone with the link for the next $HOURS$ hours.",
+    "message": "在接下来的 $HOURS$ 小时内，任何人都可以通过链接访问此 Send。",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated.",
     "placeholders": {
       "hours": {
@@ -2513,11 +2528,11 @@
     }
   },
   "sendExpiresInDaysSingle": {
-    "message": "The Send will be available to anyone with the link for the next 1 day.",
+    "message": "在接下来的 1 天内，任何人都可以通过链接访问此 Send。",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendExpiresInDays": {
-    "message": "The Send will be available to anyone with the link for the next $DAYS$ days.",
+    "message": "在接下来的 $DAYS$ 天内，任何人都可以通过链接访问此 Send。",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated.",
     "placeholders": {
       "days": {
@@ -2646,6 +2661,15 @@
   "orgRequiresYouToSetPassword": {
     "message": "您的组织要求您设置主密码。",
     "description": "Used as a card title description on the set password page to explain why the user is there"
+  },
+  "cardMetrics": {
+    "message": "$TOTAL$ 不足",
+    "placeholders": {
+      "total": {
+        "content": "$1",
+        "example": "5"
+      }
+    }
   },
   "verificationRequired": {
     "message": "需要验证",

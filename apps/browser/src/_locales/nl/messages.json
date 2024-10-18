@@ -71,6 +71,15 @@
   "joinOrganization": {
     "message": "Lid van organisatie worden"
   },
+  "joinOrganizationName": {
+    "message": "Aansluiten bij $ORGANIZATIONNAME$",
+    "placeholders": {
+      "organizationName": {
+        "content": "$1",
+        "example": "My Org Name"
+      }
+    }
+  },
   "finishJoiningThisOrganizationBySettingAMasterPassword": {
     "message": "Voltooi je lidmaatschap aan deze organisatie door een hoofdwachtwoord in te stellen."
   },
@@ -1046,7 +1055,7 @@
     "message": "Bestandsindeling"
   },
   "fileEncryptedExportWarningDesc": {
-    "message": "We beveiligen deze bestandsexport met een wachtwoord beveiligd, je hebt het bestandswachtwoord nodig om het te decoderen."
+    "message": "We beveiligen deze bestandsexport met een wachtwoord, je hebt het bestandswachtwoord nodig om het bestand te decoderen."
   },
   "filePassword": {
     "message": "Bestandswachtwoord"
@@ -1407,6 +1416,12 @@
   },
   "showInlineMenuLabel": {
     "message": "Suggesties voor automatisch invullen op formuliervelden weergeven"
+  },
+  "showInlineMenuIdentitiesLabel": {
+    "message": "Identiteiten als suggesties weergeven"
+  },
+  "showInlineMenuCardsLabel": {
+    "message": "Kaarten als suggesties weergeven"
   },
   "showInlineMenuOnIconSelectionLabel": {
     "message": "Suggesties weergeven wanneer pictogram is geselecteerd"
@@ -2646,6 +2661,15 @@
   "orgRequiresYouToSetPassword": {
     "message": "Your organization requires you to set a master password.",
     "description": "Used as a card title description on the set password page to explain why the user is there"
+  },
+  "cardMetrics": {
+    "message": "van $TOTAL$",
+    "placeholders": {
+      "total": {
+        "content": "$1",
+        "example": "5"
+      }
+    }
   },
   "verificationRequired": {
     "message": "Verificatie vereist",
