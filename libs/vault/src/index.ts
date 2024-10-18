@@ -12,5 +12,6 @@ export {
 } from "./components/assign-collections.component";
 
 export { DownloadAttachmentComponent } from "./components/download-attachment/download-attachment.component";
+export { PasswordHistoryViewComponent } from "./components/password-history-view/password-history-view.component";
 
 export * as VaultIcons from "./icons";

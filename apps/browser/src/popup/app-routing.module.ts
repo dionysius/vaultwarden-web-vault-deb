@@ -100,6 +100,7 @@ import { ViewComponent } from "../vault/popup/components/vault/view.component";
 import { AddEditV2Component } from "../vault/popup/components/vault-v2/add-edit/add-edit-v2.component";
 import { AssignCollections } from "../vault/popup/components/vault-v2/assign-collections/assign-collections.component";
 import { AttachmentsV2Component } from "../vault/popup/components/vault-v2/attachments/attachments-v2.component";
+import { PasswordHistoryV2Component } from "../vault/popup/components/vault-v2/vault-password-history-v2/vault-password-history-v2.component";
 import { ViewV2Component } from "../vault/popup/components/vault-v2/view-v2/view-v2.component";
 import { AppearanceV2Component } from "../vault/popup/settings/appearance-v2.component";
 import { AppearanceComponent } from "../vault/popup/settings/appearance.component";
@@ -259,12 +260,11 @@ const routes: Routes = [
     canActivate: [authGuard],
     data: { state: "view-cipher" } satisfies RouteDataProperties,
   }),
-  {
+  ...extensionRefreshSwap(PasswordHistoryComponent, PasswordHistoryV2Component, {
     path: "cipher-password-history",
-    component: PasswordHistoryComponent,
     canActivate: [authGuard],
     data: { state: "cipher-password-history" } satisfies RouteDataProperties,
-  },
+  }),
   ...extensionRefreshSwap(AddEditComponent, AddEditV2Component, {
     path: "add-cipher",
     canActivate: [authGuard, debounceNavigationGuard()],
