@@ -1,9 +1,9 @@
 {
   "allApplications": {
-    "message": "All applications"
+    "message": "Kaikki sovellukset"
   },
   "priorityApplications": {
-    "message": "Priority applications"
+    "message": "Ensisijaiset sovellukset"
   },
   "accessIntelligence": {
     "message": "Access Intelligence"
@@ -12,7 +12,7 @@
     "message": "Notified members"
   },
   "allApplicationsWithCount": {
-    "message": "All applications ($COUNT$)",
+    "message": "Kaikki sovellukset ($COUNT$)",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -21,7 +21,7 @@
     }
   },
   "priorityApplicationsWithCount": {
-    "message": "Priority applications ($COUNT$)",
+    "message": "Ensisijaiset sovellukset ($COUNT$)",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -39,25 +39,25 @@
     }
   },
   "application": {
-    "message": "Application"
+    "message": "Sovellus"
   },
   "atRiskPasswords": {
-    "message": "At-risk passwords"
+    "message": "Riskialttiit salasanat"
   },
   "totalPasswords": {
-    "message": "Total passwords"
+    "message": "Salasanoja yhteensä"
   },
   "atRiskMembers": {
-    "message": "At-risk members"
+    "message": "Riskialttiit jäsenet"
   },
   "totalMembers": {
-    "message": "Total members"
+    "message": "Jäseniä yhteensä"
   },
   "atRiskApplications": {
-    "message": "At-risk applications"
+    "message": "Riskialttiit sovellukset"
   },
   "totalApplications": {
-    "message": "Total applications"
+    "message": "Sovelluksia yhteensä"
   },
   "whatTypeOfItem": {
     "message": "Minkä tyyppinen kohde tämä on?"
@@ -1195,6 +1195,9 @@
   },
   "noPermissionToViewAllCollectionItems": {
     "message": "Sinulla ei ole kokoelman kaikkien kohteiden tarkastelun sallivia käyttöoikeuksia."
+  },
+  "youDoNotHavePermissions": {
+    "message": "You do not have permissions to this collection"
   },
   "noCollectionsInList": {
     "message": "Näytettäviä kokoelmia ei ole."
@@ -2715,10 +2718,10 @@
     "message": "Laskut"
   },
   "noUnpaidInvoices": {
-    "message": "No unpaid invoices."
+    "message": "Ei maksamattomia laskuja."
   },
   "noPaidInvoices": {
-    "message": "No paid invoices."
+    "message": "Ei maksettuja laskuja."
   },
   "paid": {
     "message": "Maksettu",
@@ -3780,6 +3783,15 @@
   },
   "joinOrganization": {
     "message": "Liity organisaatioon"
+  },
+  "joinOrganizationName": {
+    "message": "Join $ORGANIZATIONNAME$",
+    "placeholders": {
+      "organizationName": {
+        "content": "$1",
+        "example": "My Org Name"
+      }
+    }
   },
   "joinOrganizationDesc": {
     "message": "Sinut on kutsuttu liittymään yllä mainittuun organisaatioon. Hyväksyäksesi kutsun, sinun tulee kirjautua tilillesi tai luoda uusi Bitwarden-tili."
@@ -7922,6 +7934,15 @@
     "message": "Organisaatiosi edellyttää, että asetat pääsalasanan.",
     "description": "Used as a card title description on the set password page to explain why the user is there"
   },
+  "cardMetrics": {
+    "message": "out of $TOTAL$",
+    "placeholders": {
+      "total": {
+        "content": "$1",
+        "example": "5"
+      }
+    }
+  },
   "notFound": {
     "message": "Resurssia $RESOURCE$ ei löytynyt",
     "placeholders": {
@@ -8182,6 +8203,12 @@
   },
   "limitCollectionCreationDeletionDesc": {
     "message": "Rajoita kokoelmien luonti ja poisto omistajille ja ylläpitäjille"
+  },
+  "limitCollectionCreationDesc": {
+    "message": "Limit collection creation to owners and admins"
+  },
+  "limitCollectionDeletionDesc": {
+    "message": "Limit collection deletion to owners and admins"
   },
   "allowAdminAccessToAllCollectionItemsDesc": {
     "message": "Omistajat ja ylläpitäjät voivat hallita kaikkia kokoelmia ja kohteita"
@@ -9367,6 +9394,21 @@
   },
   "editAccess": {
     "message": "Muokkaa käyttöoikeuksia"
+  },
+  "textHelpText": {
+    "message": "Use text fields for data like security questions"
+  },
+  "hiddenHelpText": {
+    "message": "Use hidden fields for sensitive data like a password"
+  },
+  "checkBoxHelpText": {
+    "message": "Use checkboxes if you'd like to autofill a form's checkbox, like a remember email"
+  },
+  "linkedHelpText": {
+    "message": "Use a linked field when you are experiencing autofill issues for a specific website."
+  },
+  "linkedLabelHelpText": {
+    "message": "Enter the the field's html id, name, aria-label, or placeholder."
   },
   "addAttachment": {
     "message": "Lisää liite"

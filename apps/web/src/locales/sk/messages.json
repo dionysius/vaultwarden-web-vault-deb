@@ -1,9 +1,9 @@
 {
   "allApplications": {
-    "message": "All applications"
+    "message": "Všetky aplikácie"
   },
   "priorityApplications": {
-    "message": "Priority applications"
+    "message": "Prioritné aplikácie"
   },
   "accessIntelligence": {
     "message": "Access Intelligence"
@@ -12,7 +12,7 @@
     "message": "Notified members"
   },
   "allApplicationsWithCount": {
-    "message": "All applications ($COUNT$)",
+    "message": "Všetky aplikácie ($COUNT$)",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -21,7 +21,7 @@
     }
   },
   "priorityApplicationsWithCount": {
-    "message": "Priority applications ($COUNT$)",
+    "message": "Prioritné aplikácie ($COUNT$)",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -39,25 +39,25 @@
     }
   },
   "application": {
-    "message": "Application"
+    "message": "Aplikácia"
   },
   "atRiskPasswords": {
-    "message": "At-risk passwords"
+    "message": "Ohrozených hesiel"
   },
   "totalPasswords": {
-    "message": "Total passwords"
+    "message": "Celkom hesiel"
   },
   "atRiskMembers": {
-    "message": "At-risk members"
+    "message": "Ohrozených členov"
   },
   "totalMembers": {
-    "message": "Total members"
+    "message": "Celkový počet členov"
   },
   "atRiskApplications": {
-    "message": "At-risk applications"
+    "message": "Ohrozených aplikácii"
   },
   "totalApplications": {
-    "message": "Total applications"
+    "message": "Všetkých aplikácii"
   },
   "whatTypeOfItem": {
     "message": "Aký typ položky to je?"
@@ -1195,6 +1195,9 @@
   },
   "noPermissionToViewAllCollectionItems": {
     "message": "Nemáte povolenie pre zobrazenie všetkých položiek v tejto zbierke."
+  },
+  "youDoNotHavePermissions": {
+    "message": "K tejto zbierke nemáte oprávnenia"
   },
   "noCollectionsInList": {
     "message": "Neexistujú žiadne zbierky na zobrazenie."
@@ -3780,6 +3783,15 @@
   },
   "joinOrganization": {
     "message": "Pripojte sa k organizácii"
+  },
+  "joinOrganizationName": {
+    "message": "Pripojiť sa k $ORGANIZATIONNAME$",
+    "placeholders": {
+      "organizationName": {
+        "content": "$1",
+        "example": "My Org Name"
+      }
+    }
   },
   "joinOrganizationDesc": {
     "message": "Obdržali ste pozvánku do vyššie menovanej Organizácie. Ak chcete pozvánku prijať, musíte sa prihlásiť alebo si vytvoriť nový Bitwarden účet."
@@ -7922,6 +7934,15 @@
     "message": "Vaša organizácia vyžaduje, aby ste nastavili hlavné heslo.",
     "description": "Used as a card title description on the set password page to explain why the user is there"
   },
+  "cardMetrics": {
+    "message": "z $TOTAL$",
+    "placeholders": {
+      "total": {
+        "content": "$1",
+        "example": "5"
+      }
+    }
+  },
   "notFound": {
     "message": "$RESOURCE$ nenájdené",
     "placeholders": {
@@ -8182,6 +8203,12 @@
   },
   "limitCollectionCreationDeletionDesc": {
     "message": "Obmedziť vytváranie a vymazávanie zbierky len pre vlastníkov a administrátorov"
+  },
+  "limitCollectionCreationDesc": {
+    "message": "Obmedziť vytváranie zbierky len pre vlastníkov a administrátorov"
+  },
+  "limitCollectionDeletionDesc": {
+    "message": "Obmedziť vymazávanie zbierky len pre vlastníkov a administrátorov"
   },
   "allowAdminAccessToAllCollectionItemsDesc": {
     "message": "Vlastníci a správcovia môžu spravovať všetky zbierky a položky"
@@ -9367,6 +9394,21 @@
   },
   "editAccess": {
     "message": "Upraviť prístup"
+  },
+  "textHelpText": {
+    "message": "Textové polia používajte pre také údaje, ako sú bezpečnostné otázky"
+  },
+  "hiddenHelpText": {
+    "message": "Skryté polia požívajte pre citlivé údaje ako je heslo"
+  },
+  "checkBoxHelpText": {
+    "message": "Ak chcete automaticky vyplniť začiarkávacie políčko formulára, napríklad zapamätať e-mail, použite začiarkávacie políčka"
+  },
+  "linkedHelpText": {
+    "message": "Ak máte problémy s automatickým vypĺňaním pre konkrétnu webovú stránku, použite prepojené pole."
+  },
+  "linkedLabelHelpText": {
+    "message": "Zadajte html atribút poľa id, name, aria-label, alebo placeholder."
   },
   "addAttachment": {
     "message": "Priložiť prílohu"

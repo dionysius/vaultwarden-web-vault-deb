@@ -1,18 +1,18 @@
 {
   "allApplications": {
-    "message": "All applications"
+    "message": "Всі програми"
   },
   "priorityApplications": {
-    "message": "Priority applications"
+    "message": "Пріоритетні програми"
   },
   "accessIntelligence": {
-    "message": "Access Intelligence"
+    "message": "Керування доступом"
   },
   "notifiedMembers": {
-    "message": "Notified members"
+    "message": "Сповіщення учасників"
   },
   "allApplicationsWithCount": {
-    "message": "All applications ($COUNT$)",
+    "message": "Всі програми ($COUNT$)",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -21,7 +21,7 @@
     }
   },
   "priorityApplicationsWithCount": {
-    "message": "Priority applications ($COUNT$)",
+    "message": "Пріоритетні програми ($COUNT$)",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -30,7 +30,7 @@
     }
   },
   "notifiedMembersWithCount": {
-    "message": "Notified members ($COUNT$)",
+    "message": "Сповіщення учасників ($COUNT$)",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -39,25 +39,25 @@
     }
   },
   "application": {
-    "message": "Application"
+    "message": "Програма"
   },
   "atRiskPasswords": {
-    "message": "At-risk passwords"
+    "message": "Ризиковані паролі"
   },
   "totalPasswords": {
-    "message": "Total passwords"
+    "message": "Всього паролів"
   },
   "atRiskMembers": {
-    "message": "At-risk members"
+    "message": "Ризиковані учасники"
   },
   "totalMembers": {
-    "message": "Total members"
+    "message": "Всього учасників"
   },
   "atRiskApplications": {
-    "message": "At-risk applications"
+    "message": "Ризиковані програми"
   },
   "totalApplications": {
-    "message": "Total applications"
+    "message": "Всього програм"
   },
   "whatTypeOfItem": {
     "message": "Який це тип запису?"
@@ -1195,6 +1195,9 @@
   },
   "noPermissionToViewAllCollectionItems": {
     "message": "У вас немає повноважень на перегляд усіх записів у цій збірці."
+  },
+  "youDoNotHavePermissions": {
+    "message": "You do not have permissions to this collection"
   },
   "noCollectionsInList": {
     "message": "Немає збірок."
@@ -2715,10 +2718,10 @@
     "message": "Рахунки"
   },
   "noUnpaidInvoices": {
-    "message": "No unpaid invoices."
+    "message": "Немає несплачених рахунків."
   },
   "noPaidInvoices": {
-    "message": "No paid invoices."
+    "message": "Немає сплачених рахунків."
   },
   "paid": {
     "message": "Сплачено",
@@ -3780,6 +3783,15 @@
   },
   "joinOrganization": {
     "message": "Приєднатися до організації"
+  },
+  "joinOrganizationName": {
+    "message": "Join $ORGANIZATIONNAME$",
+    "placeholders": {
+      "organizationName": {
+        "content": "$1",
+        "example": "My Org Name"
+      }
+    }
   },
   "joinOrganizationDesc": {
     "message": "Вас було запрошено приєднатися до зазначеної вгорі організації. Щоб підтвердити запрошення, вам необхідно увійти в обліковий запис Bitwarden, або створити його."
@@ -7922,6 +7934,15 @@
     "message": "Ваша організація вимагає, щоб ви встановили головний пароль.",
     "description": "Used as a card title description on the set password page to explain why the user is there"
   },
+  "cardMetrics": {
+    "message": "з $TOTAL$",
+    "placeholders": {
+      "total": {
+        "content": "$1",
+        "example": "5"
+      }
+    }
+  },
   "notFound": {
     "message": "$RESOURCE$ не знайдено",
     "placeholders": {
@@ -8182,6 +8203,12 @@
   },
   "limitCollectionCreationDeletionDesc": {
     "message": "Дозволити створення та видалення збірок лише власникам та адміністраторам"
+  },
+  "limitCollectionCreationDesc": {
+    "message": "Limit collection creation to owners and admins"
+  },
+  "limitCollectionDeletionDesc": {
+    "message": "Limit collection deletion to owners and admins"
   },
   "allowAdminAccessToAllCollectionItemsDesc": {
     "message": "Власники та адміністратори можуть керувати всіма збірками та записами"
@@ -9367,6 +9394,21 @@
   },
   "editAccess": {
     "message": "Редагувати доступ"
+  },
+  "textHelpText": {
+    "message": "Use text fields for data like security questions"
+  },
+  "hiddenHelpText": {
+    "message": "Use hidden fields for sensitive data like a password"
+  },
+  "checkBoxHelpText": {
+    "message": "Use checkboxes if you'd like to autofill a form's checkbox, like a remember email"
+  },
+  "linkedHelpText": {
+    "message": "Use a linked field when you are experiencing autofill issues for a specific website."
+  },
+  "linkedLabelHelpText": {
+    "message": "Enter the the field's html id, name, aria-label, or placeholder."
   },
   "addAttachment": {
     "message": "Додати вкладення"
