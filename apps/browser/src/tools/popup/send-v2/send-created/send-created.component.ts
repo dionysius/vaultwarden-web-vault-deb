@@ -65,11 +65,11 @@ export class SendCreatedComponent {
     if (this.hoursAvailable < 24) {
       return this.hoursAvailable === 1
         ? this.i18nService.t("sendExpiresInHoursSingle")
-        : this.i18nService.t("sendExpiresInHours", this.hoursAvailable);
+        : this.i18nService.t("sendExpiresInHours", String(this.hoursAvailable));
     }
     return this.daysAvailable === 1
       ? this.i18nService.t("sendExpiresInDaysSingle")
-      : this.i18nService.t("sendExpiresInDays", this.daysAvailable);
+      : this.i18nService.t("sendExpiresInDays", String(this.daysAvailable));
   }
 
   getHoursAvailable(send: SendView): number {
