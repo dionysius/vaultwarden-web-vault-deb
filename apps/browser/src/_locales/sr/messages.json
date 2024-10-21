@@ -72,7 +72,7 @@
     "message": "Придружи Организацију"
   },
   "joinOrganizationName": {
-    "message": "Join $ORGANIZATIONNAME$",
+    "message": "Придружити се $ORGANIZATIONNAME$",
     "placeholders": {
       "organizationName": {
         "content": "$1",
@@ -1418,10 +1418,10 @@
     "message": "Прикажи предлоге за ауто-попуњавање у пољима обрасца"
   },
   "showInlineMenuIdentitiesLabel": {
-    "message": "Display identities as suggestions"
+    "message": "Приказати идентитете као предлоге"
   },
   "showInlineMenuCardsLabel": {
-    "message": "Display cards as suggestions"
+    "message": "Приказати картице као предлоге"
   },
   "showInlineMenuOnIconSelectionLabel": {
     "message": "Приказати предлоге када је изабрана икона"
@@ -2663,7 +2663,7 @@
     "description": "Used as a card title description on the set password page to explain why the user is there"
   },
   "cardMetrics": {
-    "message": "out of $TOTAL$",
+    "message": "од $TOTAL$",
     "placeholders": {
       "total": {
         "content": "$1",

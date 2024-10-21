@@ -156,13 +156,13 @@
     "message": "Riempimento automatico"
   },
   "autoFillLogin": {
-    "message": "Autocompletamento login"
+    "message": "Riempi automaticamente login"
   },
   "autoFillCard": {
-    "message": "Autocompletamento carta"
+    "message": "Riempi automaticamente carta"
   },
   "autoFillIdentity": {
-    "message": "Autocompletamento identità"
+    "message": "Riempi automaticamente identità"
   },
   "generatePasswordCopied": {
     "message": "Genera password e copiala"
@@ -216,7 +216,7 @@
     "message": "Enter your account email address and your password hint will be sent to you"
   },
   "passwordHint": {
-    "message": "Suggerimento password"
+    "message": "Suggerimento per la password"
   },
   "enterEmailToGetHint": {
     "message": "Inserisci l'indirizzo email del tuo account per ricevere il suggerimento per la password principale."
@@ -791,10 +791,10 @@
     "message": "Rendi la 2FA facile"
   },
   "totpHelper": {
-    "message": "Bitwarden può memorizzare e autocompletare codici di verifica 2FA. Copia e incolla la chiave in questo campo."
+    "message": "Bitwarden può memorizzare e riempire automaticamente i codici di verifica 2FA. Copia e incolla la chiave in questo campo."
   },
   "totpHelperWithCapture": {
-    "message": "Bitwarden può memorizzare e autocompletare codici di verifica 2FA. Selezionare l'icona della fotocamera per creare uno screenshot del codice QR dell'autenticatore di questo sito web, oppure copia e incolla la chiave in questo campo."
+    "message": "Bitwarden può memorizzare e riempire automaticamente i codici di verifica 2FA. Selezionare l'icona della fotocamera per creare uno screenshot del codice QR dell'autenticatore di questo sito web, oppure copia e incolla la chiave in questo campo."
   },
   "learnMoreAboutAuthenticators": {
     "message": "Ulteriori informazioni sugli autenticatori"
@@ -953,7 +953,7 @@
     "message": "Mostra le carte nella sezione Scheda"
   },
   "showCardsCurrentTabDesc": {
-    "message": "Mostra le carte nella sezione Scheda per un riempimento automatico più facile."
+    "message": "Mostra le carte nella sezione Scheda per riempirle automaticamente."
   },
   "showIdentitiesInVaultView": {
     "message": "Mostra le identità come suggerimenti di riempimento automatico nella vista cassaforte"
@@ -1451,13 +1451,13 @@
     "message": "Riempi automaticamente al caricamento della pagina"
   },
   "enableAutoFillOnPageLoad": {
-    "message": "Abilita l'auto-completamento al caricamento della pagina"
+    "message": "Riempi automaticamente al caricamento della pagina"
   },
   "enableAutoFillOnPageLoadDesc": {
     "message": "Se sono rilevati campi di login, riempili automaticamente quando la pagina si carica."
   },
   "autofillOnPageLoadWarning": {
-    "message": "$OPENTAG$Attenzione:$CLOSETAG$ Siti Web compromessi o non attendibili possono sfruttare l'auto-riempimento al caricamento della pagina.",
+    "message": "$OPENTAG$Attenzione:$CLOSETAG$ Siti Web compromessi o non attendibili possono sfruttare il riempimento automatico al caricamento della pagina.",
     "placeholders": {
       "openTag": {
         "content": "$1",
@@ -2061,7 +2061,7 @@
     "message": "Elemento riempito automaticamente e URI salvato"
   },
   "autoFillSuccess": {
-    "message": "Elemento riempito automaticamente"
+    "message": "Elemento riempito automaticamente "
   },
   "insecurePageWarning": {
     "message": "Attenzione: questa è una pagina HTTP non protetta, e tutte le informazioni che invii potrebbero essere viste e modificate da altri. Questo login è stato originariamente salvato su una pagina sicura (HTTPS)."
@@ -2795,7 +2795,7 @@
     "message": "La tua sessione è scaduta. Torna indietro e prova ad accedere di nuovo."
   },
   "exportingPersonalVaultTitle": {
-    "message": "Esportazione cassaforte personale"
+    "message": "Esportando cassaforte individuale"
   },
   "exportingIndividualVaultDescription": {
     "message": "Solo gli elementi della cassaforte personale associati a $EMAIL$ saranno esportati. Gli elementi della cassaforte dell'organizzazione non saranno inclusi. Solo le informazioni sugli elementi della cassaforte saranno esportate e non includeranno gli allegati.",
@@ -3010,7 +3010,7 @@
     "message": "per ritornare alle impostazioni preconfigurate"
   },
   "serverVersion": {
-    "message": "Versione Server"
+    "message": "Versione server"
   },
   "selfHostedServer": {
     "message": "self-hosted"
@@ -3106,7 +3106,7 @@
     }
   },
   "autofillPageLoadPolicyActivated": {
-    "message": "Le politiche della tua organizzazione hanno abilitato l'autocompletamento al caricamento della pagina."
+    "message": "Le politiche della tua organizzazione hanno abilitato il riempimento automatico al caricamento della pagina."
   },
   "howToAutofill": {
     "message": "Come riempire automaticamente"
@@ -3130,22 +3130,22 @@
     "message": "Impostazioni di riempimento automatico"
   },
   "autofillKeyboardShortcutSectionTitle": {
-    "message": "Scorciatoia auto-riempimento"
+    "message": "Scorciatoia del riempimento automatico"
   },
   "autofillKeyboardShortcutUpdateLabel": {
     "message": "Cambia scorciatoia"
   },
   "autofillKeyboardManagerShortcutsLabel": {
-    "message": "Gestisci scorciatoia"
+    "message": "Gestisci scorciatoie"
   },
   "autofillShortcut": {
     "message": "Scorciatoia da tastiera per riempire automaticamente"
   },
   "autofillLoginShortcutNotSet": {
-    "message": "Non è stata impostata nessuna scorciatoia per il riempimento automatico. Cambiala nelle impostazioni del browser."
+    "message": "Non è stata impostata nessuna scorciatoia per il riempimento automatico. Aggiungila dalle impostazioni del browser."
   },
   "autofillLoginShortcutText": {
-    "message": "La scorciatoia per l'auto-riempimento è $COMMAND$.\nGestisci tutte le scorciatoie dalle impostazioni del browser.",
+    "message": "La scorciatoia per il riempimento automatico è $COMMAND$. Gestisci tutte le scorciatoie dalle impostazioni del browser.",
     "placeholders": {
       "command": {
         "content": "$1",
@@ -3946,7 +3946,7 @@
     "message": "Suggerimenti per il riempimento automatico"
   },
   "autofillSuggestionsTip": {
-    "message": "Salva un elemento login per questo sito da riempire automaticamente"
+    "message": "Salva un elemento di accesso per questo sito da riempire automaticamente"
   },
   "yourVaultIsEmpty": {
     "message": "La tua cassaforte è vuota"
@@ -4343,7 +4343,7 @@
     "message": "Usa le caselle di controllo se vuoi riempire automaticamente la casella di controllo di un modulo, come una email da ricordare"
   },
   "linkedHelpText": {
-    "message": "Utilizzare un campo collegato quando si verificano problemi di riempimento automatico per un sito web specifico."
+    "message": "Usa un campo collegato quando si verificano problemi di riempimento automatico per un sito web specifico."
   },
   "linkedLabelHelpText": {
     "message": "Inserisci l'id html del campo, il nome, l'aria-label o il segnaposto."
