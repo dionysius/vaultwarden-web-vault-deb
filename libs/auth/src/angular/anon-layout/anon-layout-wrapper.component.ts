@@ -14,17 +14,17 @@ export interface AnonLayoutWrapperData {
    * If a string is provided, it will be presented as is (ex: Organization name)
    * If a Translation object (supports placeholders) is provided, it will be translated
    */
-  pageTitle?: string | Translation;
+  pageTitle?: string | Translation | null;
   /**
    * The optional subtitle of the page.
    * If a string is provided, it will be presented as is (ex: user's email)
    * If a Translation object (supports placeholders) is provided, it will be translated
    */
-  pageSubtitle?: string | Translation;
+  pageSubtitle?: string | Translation | null;
   /**
    * The optional icon to display on the page.
    */
-  pageIcon?: Icon;
+  pageIcon?: Icon | null;
   /**
    * Optional flag to either show the optional environment selector (false) or just a readonly hostname (true).
    */
@@ -114,19 +114,23 @@ export class AnonLayoutWrapperComponent implements OnInit, OnDestroy {
       return;
     }
 
-    if (data.pageTitle) {
-      this.pageTitle = this.handleStringOrTranslation(data.pageTitle);
+    // Null emissions are used to reset the page data as all fields are optional.
+
+    if (data.pageTitle !== undefined) {
+      this.pageTitle =
+        data.pageTitle !== null ? this.handleStringOrTranslation(data.pageTitle) : null;
     }
 
-    if (data.pageSubtitle) {
-      this.pageSubtitle = this.handleStringOrTranslation(data.pageSubtitle);
+    if (data.pageSubtitle !== undefined) {
+      this.pageSubtitle =
+        data.pageSubtitle !== null ? this.handleStringOrTranslation(data.pageSubtitle) : null;
     }
 
-    if (data.pageIcon) {
-      this.pageIcon = data.pageIcon;
+    if (data.pageIcon !== undefined) {
+      this.pageIcon = data.pageIcon !== null ? data.pageIcon : null;
     }
 
-    if (data.showReadonlyHostname != null) {
+    if (data.showReadonlyHostname !== undefined) {
       this.showReadonlyHostname = data.showReadonlyHostname;
     }
 

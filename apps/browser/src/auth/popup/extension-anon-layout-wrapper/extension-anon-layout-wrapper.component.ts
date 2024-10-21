@@ -131,31 +131,35 @@ export class ExtensionAnonLayoutWrapperComponent implements OnInit, OnDestroy {
       return;
     }
 
-    if (data.pageTitle) {
-      this.pageTitle = this.handleStringOrTranslation(data.pageTitle);
+    // Null emissions are used to reset the page data as all fields are optional.
+
+    if (data.pageTitle !== undefined) {
+      this.pageTitle =
+        data.pageTitle !== null ? this.handleStringOrTranslation(data.pageTitle) : null;
     }
 
-    if (data.pageSubtitle) {
-      this.pageSubtitle = this.handleStringOrTranslation(data.pageSubtitle);
+    if (data.pageSubtitle !== undefined) {
+      this.pageSubtitle =
+        data.pageSubtitle !== null ? this.handleStringOrTranslation(data.pageSubtitle) : null;
     }
 
-    if (data.pageIcon) {
-      this.pageIcon = data.pageIcon;
+    if (data.pageIcon !== undefined) {
+      this.pageIcon = data.pageIcon !== null ? data.pageIcon : null;
     }
 
-    if (data.showReadonlyHostname != null) {
+    if (data.showReadonlyHostname !== undefined) {
       this.showReadonlyHostname = data.showReadonlyHostname;
     }
 
-    if (data.showAcctSwitcher != null) {
+    if (data.showAcctSwitcher !== undefined) {
       this.showAcctSwitcher = data.showAcctSwitcher;
     }
 
-    if (data.showBackButton != null) {
+    if (data.showBackButton !== undefined) {
       this.showBackButton = data.showBackButton;
     }
 
-    if (data.showLogo != null) {
+    if (data.showLogo !== undefined) {
       this.showLogo = data.showLogo;
     }
   }
