@@ -6,7 +6,7 @@
     "message": "Φίλτρα"
   },
   "allItems": {
-    "message": "Όλα τα αντικείμενα"
+    "message": "Όλα τα στοιχεία"
   },
   "favorites": {
     "message": "Αγαπημένα"
@@ -603,7 +603,7 @@
     "message": "Συμμετοχή σε οργανισμό"
   },
   "joinOrganizationName": {
-    "message": "Join $ORGANIZATIONNAME$",
+    "message": "Συμμετοχή στο $ORGANIZATIONNAME$",
     "placeholders": {
       "organizationName": {
         "content": "$1",

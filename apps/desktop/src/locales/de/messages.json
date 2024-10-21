@@ -603,7 +603,7 @@
     "message": "Organisation beitreten"
   },
   "joinOrganizationName": {
-    "message": "Join $ORGANIZATIONNAME$",
+    "message": "$ORGANIZATIONNAME$ beitreten",
     "placeholders": {
       "organizationName": {
         "content": "$1",

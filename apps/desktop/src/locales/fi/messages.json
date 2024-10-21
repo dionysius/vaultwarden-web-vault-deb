@@ -603,7 +603,7 @@
     "message": "Liity organisaatioon"
   },
   "joinOrganizationName": {
-    "message": "Join $ORGANIZATIONNAME$",
+    "message": "Liity organisaatioon $ORGANIZATIONNAME$",
     "placeholders": {
       "organizationName": {
         "content": "$1",
