@@ -663,6 +663,9 @@
     "message": "Parolayı kopyala",
     "description": "Copy password to clipboard"
   },
+  "passwordCopied": {
+    "message": "Parola kopyalandı"
+  },
   "copyUsername": {
     "message": "Kullanıcı adını kopyala",
     "description": "Copy username to clipboard"
@@ -1197,7 +1200,7 @@
     "message": "Bu koleksiyondaki tüm kayıtları görmek için izniniz yok."
   },
   "youDoNotHavePermissions": {
-    "message": "You do not have permissions to this collection"
+    "message": "Bu koleksiyona erişme izniniz yok"
   },
   "noCollectionsInList": {
     "message": "Listelenecek koleksiyon yok."

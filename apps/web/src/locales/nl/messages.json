@@ -663,6 +663,9 @@
     "message": "Wachtwoord kopiëren",
     "description": "Copy password to clipboard"
   },
+  "passwordCopied": {
+    "message": "Wachtwoord gekopieerd"
+  },
   "copyUsername": {
     "message": "Gebruikersnaam kopiëren",
     "description": "Copy username to clipboard"
@@ -1197,7 +1200,7 @@
     "message": "Je hebt geen rechten om alle items in deze collectie te zien."
   },
   "youDoNotHavePermissions": {
-    "message": "Je hebt geen rechten voor deze collectie"
+    "message": "Je hebt geen rechten op deze collectie"
   },
   "noCollectionsInList": {
     "message": "Er zijn geen verzamelingen om weer te geven."

@@ -663,6 +663,9 @@
     "message": "Копіювати пароль",
     "description": "Copy password to clipboard"
   },
+  "passwordCopied": {
+    "message": "Пароль скопійовано"
+  },
   "copyUsername": {
     "message": "Копіювати ім'я користувача",
     "description": "Copy username to clipboard"
@@ -1197,7 +1200,7 @@
     "message": "У вас немає повноважень на перегляд усіх записів у цій збірці."
   },
   "youDoNotHavePermissions": {
-    "message": "You do not have permissions to this collection"
+    "message": "У вас немає дозволів для цієї збірки"
   },
   "noCollectionsInList": {
     "message": "Немає збірок."
@@ -3785,7 +3788,7 @@
     "message": "Приєднатися до організації"
   },
   "joinOrganizationName": {
-    "message": "Join $ORGANIZATIONNAME$",
+    "message": "Приєднатися до $ORGANIZATIONNAME$",
     "placeholders": {
       "organizationName": {
         "content": "$1",
@@ -8205,10 +8208,10 @@
     "message": "Дозволити створення та видалення збірок лише власникам та адміністраторам"
   },
   "limitCollectionCreationDesc": {
-    "message": "Limit collection creation to owners and admins"
+    "message": "Дозволити створення збірок лише власникам та адміністраторам"
   },
   "limitCollectionDeletionDesc": {
-    "message": "Limit collection deletion to owners and admins"
+    "message": "Дозволити видалення збірок лише власникам та адміністраторам"
   },
   "allowAdminAccessToAllCollectionItemsDesc": {
     "message": "Власники та адміністратори можуть керувати всіма збірками та записами"
@@ -9396,19 +9399,19 @@
     "message": "Редагувати доступ"
   },
   "textHelpText": {
-    "message": "Use text fields for data like security questions"
+    "message": "Використовуйте текстові поля для даних, як-от секретні запитання"
   },
   "hiddenHelpText": {
-    "message": "Use hidden fields for sensitive data like a password"
+    "message": "Використовуйте приховані поля для конфіденційних даних, як-от пароль"
   },
   "checkBoxHelpText": {
-    "message": "Use checkboxes if you'd like to autofill a form's checkbox, like a remember email"
+    "message": "Використовуйте прапорці, якщо хочете автоматично заповнювати поля, як-от адресу е-пошти"
   },
   "linkedHelpText": {
-    "message": "Use a linked field when you are experiencing autofill issues for a specific website."
+    "message": "Використовуйте пов'язане поле у разі виникнення проблем з автозаповненням для певного вебсайту."
   },
   "linkedLabelHelpText": {
-    "message": "Enter the the field's html id, name, aria-label, or placeholder."
+    "message": "Введіть html-ідентифікатор поля, назву, мітку або заповнювач."
   },
   "addAttachment": {
     "message": "Додати вкладення"

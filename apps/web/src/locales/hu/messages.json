@@ -663,6 +663,9 @@
     "message": "Jelszó másolása",
     "description": "Copy password to clipboard"
   },
+  "passwordCopied": {
+    "message": "A jelszó másolásra került."
+  },
   "copyUsername": {
     "message": "Felhasználónév másolása",
     "description": "Copy username to clipboard"
@@ -1197,7 +1200,7 @@
     "message": "Nincs jogosultság a gyűjtemény összes elemének megtekintésére."
   },
   "youDoNotHavePermissions": {
-    "message": "You do not have permissions to this collection"
+    "message": "Nincs engedély ehhez a gyűjteményhez"
   },
   "noCollectionsInList": {
     "message": "Nincsenek megjeleníthető gyűjtemények."

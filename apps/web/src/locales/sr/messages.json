@@ -663,6 +663,9 @@
     "message": "Копирај лозинку",
     "description": "Copy password to clipboard"
   },
+  "passwordCopied": {
+    "message": "Password copied"
+  },
   "copyUsername": {
     "message": "Копирај име",
     "description": "Copy username to clipboard"
@@ -1197,7 +1200,7 @@
     "message": "Немате дозволу да видите све ставке у овој колекцији."
   },
   "youDoNotHavePermissions": {
-    "message": "You do not have permissions to this collection"
+    "message": "Немате дозволе за ову колекцију"
   },
   "noCollectionsInList": {
     "message": "Нема колекције у листи."
@@ -3785,7 +3788,7 @@
     "message": "Придружи Организацију"
   },
   "joinOrganizationName": {
-    "message": "Join $ORGANIZATIONNAME$",
+    "message": "Придружити се $ORGANIZATIONNAME$",
     "placeholders": {
       "organizationName": {
         "content": "$1",
@@ -7935,7 +7938,7 @@
     "description": "Used as a card title description on the set password page to explain why the user is there"
   },
   "cardMetrics": {
-    "message": "out of $TOTAL$",
+    "message": "од $TOTAL$",
     "placeholders": {
       "total": {
         "content": "$1",
@@ -8205,10 +8208,10 @@
     "message": "Ограничите креирање и брисање збирке на власнике и администраторе"
   },
   "limitCollectionCreationDesc": {
-    "message": "Limit collection creation to owners and admins"
+    "message": "Ограничите креирање збирке на власнике и администраторе"
   },
   "limitCollectionDeletionDesc": {
-    "message": "Limit collection deletion to owners and admins"
+    "message": "Ограничите брисање збирке на власнике и администраторе"
   },
   "allowAdminAccessToAllCollectionItemsDesc": {
     "message": "Власници и администратори могу да управљају свим колекцијама и ставкама"
@@ -9396,19 +9399,19 @@
     "message": "Edit access"
   },
   "textHelpText": {
-    "message": "Use text fields for data like security questions"
+    "message": "Користите текстуална поља за податке као што су безбедносна питања"
   },
   "hiddenHelpText": {
-    "message": "Use hidden fields for sensitive data like a password"
+    "message": "Користите скривена поља за осетљиве податке као што је лозинка"
   },
   "checkBoxHelpText": {
-    "message": "Use checkboxes if you'd like to autofill a form's checkbox, like a remember email"
+    "message": "Користите поља за потврду ако желите да аутоматски попуните поље за потврду обрасца, на пример имејл за памћење"
   },
   "linkedHelpText": {
-    "message": "Use a linked field when you are experiencing autofill issues for a specific website."
+    "message": "Користите повезано поље када имате проблема са аутоматским попуњавањем за одређену веб локацију."
   },
   "linkedLabelHelpText": {
-    "message": "Enter the the field's html id, name, aria-label, or placeholder."
+    "message": "Унесите html Ид поља, име, aria-label, или placeholder."
   },
   "addAttachment": {
     "message": "Додај прилог"

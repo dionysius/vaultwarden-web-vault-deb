@@ -663,6 +663,9 @@
     "message": "Копиране на паролата",
     "description": "Copy password to clipboard"
   },
+  "passwordCopied": {
+    "message": "Паролата е копирана"
+  },
   "copyUsername": {
     "message": "Копиране на потребителското име",
     "description": "Copy username to clipboard"
@@ -1197,7 +1200,7 @@
     "message": "Нямате права да преглеждате всички елементи в тази колекция."
   },
   "youDoNotHavePermissions": {
-    "message": "You do not have permissions to this collection"
+    "message": "Нямате права за тази колекция"
   },
   "noCollectionsInList": {
     "message": "Няма колекции за показване."

@@ -663,6 +663,9 @@
     "message": "Passwort kopieren",
     "description": "Copy password to clipboard"
   },
+  "passwordCopied": {
+    "message": "Passwort kopiert"
+  },
   "copyUsername": {
     "message": "Benutzername kopieren",
     "description": "Copy username to clipboard"
@@ -1197,7 +1200,7 @@
     "message": "Du hast nicht die Berechtigung, alle Einträge in dieser Sammlung anzuzeigen."
   },
   "youDoNotHavePermissions": {
-    "message": "You do not have permissions to this collection"
+    "message": "Du hast keine Berechtigung für diese Sammlung"
   },
   "noCollectionsInList": {
     "message": "Keine Sammlungen vorhanden."
@@ -3785,7 +3788,7 @@
     "message": "Organisation beitreten"
   },
   "joinOrganizationName": {
-    "message": "Join $ORGANIZATIONNAME$",
+    "message": "$ORGANIZATIONNAME$ beitreten",
     "placeholders": {
       "organizationName": {
         "content": "$1",
@@ -5209,13 +5212,13 @@
     "message": "Die Mitglieder anzeigen und auswählen, denen du Zugriff auf den Secrets Manager gewähren möchtest."
   },
   "openYourOrganizations": {
-    "message": "Open your organization's"
+    "message": "Öffne deine Organisations-"
   },
   "usingTheMenuSelect": {
     "message": "Using the menu, select"
   },
   "toGrantAccessToSelectedMembers": {
-    "message": "to grant access to selected members."
+    "message": "um Zugriff auf ausgewählte Mitglieder zu gewähren."
   },
   "sendVaultCardTryItNow": {
     "message": "probiere es jetzt aus",
@@ -8205,10 +8208,10 @@
     "message": "Sammlungserstellung und -löschung auf Eigentümer und Administratoren beschränken"
   },
   "limitCollectionCreationDesc": {
-    "message": "Limit collection creation to owners and admins"
+    "message": "Begrenze die Erstellung von Sammlungen auf Besitzer und Administratoren"
   },
   "limitCollectionDeletionDesc": {
-    "message": "Limit collection deletion to owners and admins"
+    "message": "Begrenze das Löschen von Sammlungen auf Besitzer und Administratoren"
   },
   "allowAdminAccessToAllCollectionItemsDesc": {
     "message": "Besitzer und Administratoren können alle Sammlungen und Einträge verwalten"
@@ -8827,7 +8830,7 @@
     "message": "35% Rabatt"
   },
   "monthPerMember": {
-    "message": "month per member"
+    "message": "Monat pro Mitglied"
   },
   "seats": {
     "message": "Benutzerplätze"
@@ -9396,19 +9399,19 @@
     "message": "Zugriff bearbeiten"
   },
   "textHelpText": {
-    "message": "Use text fields for data like security questions"
+    "message": "Verwende Textfelder für Daten wie Sicherheitsfragen"
   },
   "hiddenHelpText": {
-    "message": "Use hidden fields for sensitive data like a password"
+    "message": "Verwende versteckte Felder für vertrauliche Daten wie ein Passwort"
   },
   "checkBoxHelpText": {
-    "message": "Use checkboxes if you'd like to autofill a form's checkbox, like a remember email"
+    "message": "Verwende Kontrollkästchen, wenn du das Kontrollkästchen eines Formulars automatisch ausfüllen möchtest, wie eine Erinnerungs-E-Mail"
   },
   "linkedHelpText": {
-    "message": "Use a linked field when you are experiencing autofill issues for a specific website."
+    "message": "Verwende ein verknüpftes Feld, wenn du Probleme mit dem automatischen Ausfüllen einer bestimmten Website hast."
   },
   "linkedLabelHelpText": {
-    "message": "Enter the the field's html id, name, aria-label, or placeholder."
+    "message": "Gib die HTML ID des Felds, Name, Aria-Label oder einen Platzhalter ein."
   },
   "addAttachment": {
     "message": "Anhang hinzufügen"

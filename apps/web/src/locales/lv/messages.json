@@ -663,6 +663,9 @@
     "message": "Ievietot paroli starpliktuvē",
     "description": "Copy password to clipboard"
   },
+  "passwordCopied": {
+    "message": "Password copied"
+  },
   "copyUsername": {
     "message": "Ievietot lietotājvārdu starpliktuvē",
     "description": "Copy username to clipboard"
@@ -1197,7 +1200,7 @@
     "message": "Nav atļaujas apskatīt visus šī krājuma vienumus."
   },
   "youDoNotHavePermissions": {
-    "message": "You do not have permissions to this collection"
+    "message": "Nav atļauju šim krājumam"
   },
   "noCollectionsInList": {
     "message": "Nav krājumu, ko parādīt."
@@ -8205,10 +8208,10 @@
     "message": "Ļaut krājumu izveidošanu un izdzēšanu tikai īpašniekiem un pārvaldniekiem"
   },
   "limitCollectionCreationDesc": {
-    "message": "Limit collection creation to owners and admins"
+    "message": "Ļaut krājumu izveidošanu tikai īpašniekiem un pārvaldītājiem"
   },
   "limitCollectionDeletionDesc": {
-    "message": "Limit collection deletion to owners and admins"
+    "message": "Ļaut krājumu izdzēšanu tikai īpašniekiem un pārvaldītājiem"
   },
   "allowAdminAccessToAllCollectionItemsDesc": {
     "message": "Īpašnieki un pārvaldnieki var pārvaldīt visus krājumus un vienumus"
