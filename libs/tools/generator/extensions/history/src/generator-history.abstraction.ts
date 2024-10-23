@@ -1,9 +1,9 @@
 import { Observable } from "rxjs";
 
 import { UserId } from "@bitwarden/common/types/guid";
+import { CredentialAlgorithm } from "@bitwarden/generator-core";
 
 import { GeneratedCredential } from "./generated-credential";
-import { GeneratorCategory } from "./options";
 
 /** Tracks the history of password generations.
  *  Each user gets their own store.
@@ -27,7 +27,7 @@ export abstract class GeneratorHistoryService {
   track: (
     userId: UserId,
     credential: string,
-    category: GeneratorCategory,
+    category: CredentialAlgorithm,
     date?: Date,
   ) => Promise<GeneratedCredential | null>;
 

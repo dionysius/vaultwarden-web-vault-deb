@@ -2,6 +2,7 @@ import { coerceBooleanProperty } from "@angular/cdk/coercion";
 import { Component, EventEmitter, Input, NgZone, OnDestroy, OnInit, Output } from "@angular/core";
 import {
   BehaviorSubject,
+  catchError,
   distinctUntilChanged,
   filter,
   map,
@@ -14,7 +15,9 @@ import {
 
 import { AccountService } from "@bitwarden/common/auth/abstractions/account.service";
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
+import { LogService } from "@bitwarden/common/platform/abstractions/log.service";
 import { UserId } from "@bitwarden/common/types/guid";
+import { ToastService } from "@bitwarden/components";
 import { Option } from "@bitwarden/components/src/select/option";
 import {
   CredentialGeneratorService,
@@ -25,6 +28,7 @@ import {
   isPasswordAlgorithm,
   AlgorithmInfo,
 } from "@bitwarden/generator-core";
+import { GeneratorHistoryService } from "@bitwarden/generator-history";
 
 /** Options group for passwords */
 @Component({
@@ -34,6 +38,9 @@ import {
 export class PasswordGeneratorComponent implements OnInit, OnDestroy {
   constructor(
     private generatorService: CredentialGeneratorService,
+    private generatorHistoryService: GeneratorHistoryService,
+    private toastService: ToastService,
+    private logService: LogService,
     private i18nService: I18nService,
     private accountService: AccountService,
     private zone: NgZone,
@@ -109,10 +116,32 @@ export class PasswordGeneratorComponent implements OnInit, OnDestroy {
     // wire up the generator
     this.algorithm$
       .pipe(
+        filter((algorithm) => !!algorithm),
         switchMap((algorithm) => this.typeToGenerator$(algorithm.id)),
+        catchError((error: unknown, generator) => {
+          if (typeof error === "string") {
+            this.toastService.showToast({
+              message: error,
+              variant: "error",
+              title: "",
+            });
+          } else {
+            this.logService.error(error);
+          }
+
+          // continue with origin stream
+          return generator;
+        }),
+        withLatestFrom(this.userId$),
         takeUntil(this.destroyed),
       )
-      .subscribe((generated) => {
+      .subscribe(([generated, userId]) => {
+        this.generatorHistoryService
+          .track(userId, generated.credential, generated.category, generated.generationDate)
+          .catch((e: unknown) => {
+            this.logService.error(e);
+          });
+
         // update subjects within the angular zone so that the
         // template bindings refresh immediately
         this.zone.run(() => {
