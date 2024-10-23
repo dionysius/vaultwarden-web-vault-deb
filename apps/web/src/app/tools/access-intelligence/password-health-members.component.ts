@@ -2,17 +2,15 @@ import { CommonModule } from "@angular/common";
 import { Component, DestroyRef, inject, OnInit } from "@angular/core";
 import { takeUntilDestroyed } from "@angular/core/rxjs-interop";
 import { ActivatedRoute } from "@angular/router";
-import { from, map, switchMap, tap } from "rxjs";
+import { map } from "rxjs";
 
 import { JslibModule } from "@bitwarden/angular/jslib.module";
+// eslint-disable-next-line no-restricted-imports
+import { PasswordHealthService } from "@bitwarden/bit-common/tools/reports/access-intelligence";
 import { AuditService } from "@bitwarden/common/abstractions/audit.service";
-import { OrganizationService } from "@bitwarden/common/admin-console/abstractions/organization/organization.service.abstraction";
-import { Organization } from "@bitwarden/common/admin-console/models/domain/organization";
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
-import { Utils } from "@bitwarden/common/platform/misc/utils";
 import { PasswordStrengthServiceAbstraction } from "@bitwarden/common/tools/password-strength";
 import { CipherService } from "@bitwarden/common/vault/abstractions/cipher.service";
-import { CipherType } from "@bitwarden/common/vault/enums";
 import { CipherView } from "@bitwarden/common/vault/models/view/cipher.view";
 import {
   BadgeModule,
@@ -28,10 +26,6 @@ import { HeaderModule } from "../../layouts/header/header.module";
 import { OrganizationBadgeModule } from "../../vault/individual-vault/organization-badge/organization-badge.module";
 // eslint-disable-next-line no-restricted-imports
 import { PipesModule } from "../../vault/individual-vault/pipes/pipes.module";
-// eslint-disable-next-line no-restricted-imports
-import { cipherData } from "../reports/pages/reports-ciphers.mock";
-
-import { userData } from "./password-health.mock";
 
 @Component({
   standalone: true,
@@ -47,24 +41,18 @@ import { userData } from "./password-health.mock";
     HeaderModule,
     TableModule,
   ],
+  providers: [PasswordHealthService],
 })
 export class PasswordHealthMembersComponent implements OnInit {
   passwordStrengthMap = new Map<string, [string, BadgeVariant]>();
-
-  weakPasswordCiphers: CipherView[] = [];
 
   passwordUseMap = new Map<string, number>();
 
   exposedPasswordMap = new Map<string, number>();
 
-  dataSource = new TableDataSource<CipherView>();
-
   totalMembersMap = new Map<string, number>();
 
-  reportCiphers: CipherView[] = [];
-  reportCipherIds: string[] = [];
-
-  organization: Organization;
+  dataSource = new TableDataSource<CipherView>();
 
   loading = true;
 
@@ -73,7 +61,6 @@ export class PasswordHealthMembersComponent implements OnInit {
   constructor(
     protected cipherService: CipherService,
     protected passwordStrengthService: PasswordStrengthServiceAbstraction,
-    protected organizationService: OrganizationService,
     protected auditService: AuditService,
     protected i18nService: I18nService,
     protected activatedRoute: ActivatedRoute,
@@ -83,151 +70,29 @@ export class PasswordHealthMembersComponent implements OnInit {
     this.activatedRoute.paramMap
       .pipe(
         takeUntilDestroyed(this.destroyRef),
-        map((params) => params.get("organizationId")),
-        switchMap((organizationId) => {
-          return from(this.organizationService.get(organizationId));
+        map(async (params) => {
+          const organizationId = params.get("organizationId");
+          await this.setCiphers(organizationId);
         }),
-        tap((organization) => {
-          this.organization = organization;
-        }),
-        switchMap(() => from(this.setCiphers())),
       )
       .subscribe();
-
-    // mock data - will be replaced with actual data
-    userData.forEach((user) => {
-      user.cipherIds.forEach((cipherId: string) => {
-        if (this.totalMembersMap.has(cipherId)) {
-          this.totalMembersMap.set(cipherId, (this.totalMembersMap.get(cipherId) || 0) + 1);
-        } else {
-          this.totalMembersMap.set(cipherId, 1);
-        }
-      });
-    });
   }
 
-  async setCiphers() {
-    // const allCiphers = await this.cipherService.getAllFromApiForOrganization(this.organization.id);
-    const allCiphers = cipherData;
-    allCiphers.forEach(async (cipher) => {
-      this.findWeakPassword(cipher);
-      this.findReusedPassword(cipher);
-      await this.findExposedPassword(cipher);
-    });
-    this.dataSource.data = this.reportCiphers;
-    this.loading = false;
-  }
-
-  protected checkForExistingCipher(ciph: CipherView) {
-    if (!this.reportCipherIds.includes(ciph.id)) {
-      this.reportCipherIds.push(ciph.id);
-      this.reportCiphers.push(ciph);
-    }
-  }
-
-  protected async findExposedPassword(cipher: CipherView) {
-    const { type, login, isDeleted, edit, viewPassword, id } = cipher;
-    if (
-      type !== CipherType.Login ||
-      login.password == null ||
-      login.password === "" ||
-      isDeleted ||
-      (!this.organization && !edit) ||
-      !viewPassword
-    ) {
-      return;
-    }
-
-    const exposedCount = await this.auditService.passwordLeaked(login.password);
-    if (exposedCount > 0) {
-      this.exposedPasswordMap.set(id, exposedCount);
-      this.checkForExistingCipher(cipher);
-    }
-  }
-
-  protected findReusedPassword(cipher: CipherView) {
-    const { type, login, isDeleted, edit, viewPassword } = cipher;
-    if (
-      type !== CipherType.Login ||
-      login.password == null ||
-      login.password === "" ||
-      isDeleted ||
-      (!this.organization && !edit) ||
-      !viewPassword
-    ) {
-      return;
-    }
-
-    if (this.passwordUseMap.has(login.password)) {
-      this.passwordUseMap.set(login.password, this.passwordUseMap.get(login.password) || 0 + 1);
-    } else {
-      this.passwordUseMap.set(login.password, 1);
-    }
-
-    this.checkForExistingCipher(cipher);
-  }
-
-  protected findWeakPassword(cipher: CipherView): void {
-    const { type, login, isDeleted, edit, viewPassword } = cipher;
-    if (
-      type !== CipherType.Login ||
-      login.password == null ||
-      login.password === "" ||
-      isDeleted ||
-      (!this.organization && !edit) ||
-      !viewPassword
-    ) {
-      return;
-    }
-
-    const hasUserName = this.isUserNameNotEmpty(cipher);
-    let userInput: string[] = [];
-    if (hasUserName) {
-      const atPosition = login.username.indexOf("@");
-      if (atPosition > -1) {
-        userInput = userInput
-          .concat(
-            login.username
-              .substring(0, atPosition)
-              .trim()
-              .toLowerCase()
-              .split(/[^A-Za-z0-9]/),
-          )
-          .filter((i) => i.length >= 3);
-      } else {
-        userInput = login.username
-          .trim()
-          .toLowerCase()
-          .split(/[^A-Za-z0-9]/)
-          .filter((i) => i.length >= 3);
-      }
-    }
-    const { score } = this.passwordStrengthService.getPasswordStrength(
-      login.password,
-      null,
-      userInput.length > 0 ? userInput : null,
+  async setCiphers(organizationId: string) {
+    const passwordHealthService = new PasswordHealthService(
+      this.passwordStrengthService,
+      this.auditService,
+      this.cipherService,
+      organizationId,
     );
 
-    if (score != null && score <= 2) {
-      this.passwordStrengthMap.set(cipher.id, this.scoreKey(score));
-      this.checkForExistingCipher(cipher);
-    }
-  }
+    await passwordHealthService.generateReport();
 
-  private isUserNameNotEmpty(c: CipherView): boolean {
-    return !Utils.isNullOrWhitespace(c.login.username);
-  }
-
-  private scoreKey(score: number): [string, BadgeVariant] {
-    switch (score) {
-      case 4:
-        return ["strong", "success"];
-      case 3:
-        return ["good", "primary"];
-      case 2:
-        return ["weak", "warning"];
-      default:
-        return ["veryWeak", "danger"];
-    }
+    this.dataSource.data = passwordHealthService.reportCiphers;
+    this.exposedPasswordMap = passwordHealthService.exposedPasswordMap;
+    this.passwordStrengthMap = passwordHealthService.passwordStrengthMap;
+    this.passwordUseMap = passwordHealthService.passwordUseMap;
+    this.totalMembersMap = passwordHealthService.totalMembersMap;
+    this.loading = false;
   }
 }
