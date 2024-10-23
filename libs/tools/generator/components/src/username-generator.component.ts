@@ -378,7 +378,7 @@ export class UsernameGeneratorComponent implements OnInit, OnDestroy {
    */
   protected credentialTypeGenerateLabel$ = this.algorithm$.pipe(
     filter((algorithm) => !!algorithm),
-    map(({ copy }) => copy),
+    map(({ generate }) => generate),
   );
 
   /** Emits hint key for the currently selected credential type */
