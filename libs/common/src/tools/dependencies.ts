@@ -3,6 +3,8 @@ import { Observable } from "rxjs";
 import { Policy } from "@bitwarden/common/admin-console/models/domain/policy";
 import { UserId } from "@bitwarden/common/types/guid";
 
+import { UserEncryptor } from "./state/user-encryptor.abstraction";
+
 /** error emitted when the `SingleUserDependency` changes Ids */
 export type UserChangedError = {
   /** the userId pinned by the single user dependency */
@@ -45,7 +47,35 @@ export type UserDependency = {
   userId$: Observable<UserId>;
 };
 
-/** A pattern for types that depend upon a fixed userid and return
+/** Decorates a type to indicate the user, if any, that the type is usable only by
+ *  a specific user.
+ */
+export type UserBound<K extends keyof any, T> = { [P in K]: T } & {
+  /** The user to which T is bound. */
+  userId: UserId;
+};
+
+/** A pattern for types that depend upon a fixed-key encryptor and return
+ *  an observable.
+ *
+ * Consumers of this dependency should emit a `UserChangedError` if
+ * the bound UserId changes or if the encryptor changes. If
+ * `singleUserEncryptor$` completes, the consumer should complete
+ *  once all events received prior to the completion event are
+ *  finished processing. The consumer should, where possible,
+ *  prioritize these events in order to complete as soon as possible.
+ *  If `singleUserEncryptor$` emits an unrecoverable error, the consumer
+ *  should also emit the error.
+ */
+export type SingleUserEncryptorDependency = {
+  /** A stream that emits an encryptor when subscribed and the user key
+   *  is available, and completes when the user key is no longer available.
+   *  The stream should not emit null or undefined.
+   */
+  singleUserEncryptor$: Observable<UserBound<"encryptor", UserEncryptor>>;
+};
+
+/** A pattern for types that depend upon a fixed-value userid and return
  *  an observable.
  *
  *  Consumers of this dependency should emit a `UserChangedError` if
