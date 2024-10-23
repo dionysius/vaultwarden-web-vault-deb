@@ -7,14 +7,7 @@
       <bit-card>
         <bit-form-field disableMargin>
           <bit-label>{{ "numWords" | i18n }}</bit-label>
-          <input
-            bitInput
-            formControlName="numWords"
-            id="num-words"
-            type="number"
-            [min]="minNumWords"
-            [max]="maxNumWords"
-          />
+          <input bitInput formControlName="numWords" id="num-words" type="number" />
         </bit-form-field>
       </bit-card>
     </div>

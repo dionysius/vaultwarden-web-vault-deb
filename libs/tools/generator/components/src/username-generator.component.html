@@ -7,9 +7,11 @@
       type="button"
       bitIconButton="bwi-generate"
       buttonType="main"
-      (click)="generate$.next()"
+      (click)="generate('user request')"
       [appA11yTitle]="credentialTypeGenerateLabel$ | async"
-    ></button>
+    >
+      {{ credentialTypeGenerateLabel$ | async }}
+    </button>
     <button
       type="button"
       bitIconButton="bwi-clone"
@@ -17,7 +19,9 @@
       showToast
       [appA11yTitle]="credentialTypeCopyLabel$ | async"
       [appCopyClick]="value$ | async"
-    ></button>
+    >
+      {{ credentialTypeCopyLabel$ | async }}
+    </button>
   </div>
 </bit-card>
 <bit-section [disableMargin]="disableMargin">
@@ -44,7 +48,7 @@
       <tools-catchall-settings
         *ngIf="(algorithm$ | async)?.id === 'catchall'"
         [userId]="this.userId$ | async"
-        (onUpdated)="generate$.next()"
+        (onUpdated)="generate('catchall settings')"
       />
       <tools-forwarder-settings
         *ngIf="!!(forwarderId$ | async)"
@@ -54,12 +58,12 @@
       <tools-subaddress-settings
         *ngIf="(algorithm$ | async)?.id === 'subaddress'"
         [userId]="this.userId$ | async"
-        (onUpdated)="generate$.next()"
+        (onUpdated)="generate('subaddress settings')"
       />
       <tools-username-settings
         *ngIf="(algorithm$ | async)?.id === 'username'"
         [userId]="this.userId$ | async"
-        (onUpdated)="generate$.next()"
+        (onUpdated)="generate('username settings')"
       />
     </bit-card>
   </div>

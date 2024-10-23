@@ -313,7 +313,7 @@ export class UsernameGeneratorComponent implements OnInit, OnDestroy {
         if (!a || a.onlyOnRequest) {
           this.value$.next("-");
         } else {
-          this.generate$.next();
+          this.generate("autogenerate");
         }
       });
     });
@@ -391,7 +391,15 @@ export class UsernameGeneratorComponent implements OnInit, OnDestroy {
   protected readonly userId$ = new BehaviorSubject<UserId>(null);
 
   /** Emits when a new credential is requested */
-  protected readonly generate$ = new Subject<void>();
+  private readonly generate$ = new Subject<string>();
+
+  /** Request a new value from the generator
+   * @param requestor a label used to trace generation request
+   *  origin in the debugger.
+   */
+  protected generate(requestor: string) {
+    this.generate$.next(requestor);
+  }
 
   private toOptions(algorithms: AlgorithmInfo[]) {
     const options: Option<string>[] = algorithms.map((algorithm) => ({

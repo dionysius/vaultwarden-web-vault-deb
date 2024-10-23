@@ -91,9 +91,8 @@ export class PassphraseSettingsComponent implements OnInit, OnDestroy {
           .get(Controls.wordSeparator)
           .setValidators(toValidators(Controls.wordSeparator, Generators.passphrase, constraints));
 
-        // forward word boundaries to the template (can't do it through the rx form)
-        this.minNumWords = constraints.numWords.min;
-        this.maxNumWords = constraints.numWords.max;
+        this.settings.updateValueAndValidity({ emitEvent: false });
+
         this.policyInEffect = constraints.policyInEffect;
 
         this.toggleEnabled(Controls.capitalize, !constraints.capitalize?.readonly);
@@ -103,12 +102,6 @@ export class PassphraseSettingsComponent implements OnInit, OnDestroy {
     // now that outputs are set up, connect inputs
     this.settings.valueChanges.pipe(takeUntil(this.destroyed$)).subscribe(settings);
   }
-
-  /** attribute binding for numWords[min] */
-  protected minNumWords: number;
-
-  /** attribute binding for numWords[max] */
-  protected maxNumWords: number;
 
   /** display binding for enterprise policy notice */
   protected policyInEffect: boolean;

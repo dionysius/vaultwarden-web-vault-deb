@@ -143,6 +143,8 @@ export class ForwarderSettingsComponent implements OnInit, OnChanges, OnDestroy 
             control.clearValidators();
           }
         }
+
+        this.settings.updateValueAndValidity({ emitEvent: false });
       });
 
     // the first emission is the current value; subsequent emissions are updates
