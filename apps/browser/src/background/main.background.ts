@@ -75,6 +75,8 @@ import { BillingAccountProfileStateService } from "@bitwarden/common/billing/abs
 import { DefaultBillingAccountProfileStateService } from "@bitwarden/common/billing/services/account/billing-account-profile-state.service";
 import { ClientType } from "@bitwarden/common/enums";
 import { FeatureFlag } from "@bitwarden/common/enums/feature-flag.enum";
+import { ProcessReloadServiceAbstraction } from "@bitwarden/common/key-management/abstractions/process-reload.service";
+import { ProcessReloadService } from "@bitwarden/common/key-management/services/process-reload.service";
 import { AppIdService as AppIdServiceAbstraction } from "@bitwarden/common/platform/abstractions/app-id.service";
 import { ConfigApiServiceAbstraction } from "@bitwarden/common/platform/abstractions/config/config-api.service.abstraction";
 import { ConfigService } from "@bitwarden/common/platform/abstractions/config/config.service";
@@ -270,6 +272,7 @@ import CommandsBackground from "./commands.background";
 import IdleBackground from "./idle.background";
 import { NativeMessagingBackground } from "./nativeMessaging.background";
 import RuntimeBackground from "./runtime.background";
+
 export default class MainBackground {
   messagingService: MessageSender;
   storageService: BrowserLocalStorageService;
@@ -314,6 +317,7 @@ export default class MainBackground {
   badgeSettingsService: BadgeSettingsServiceAbstraction;
   domainSettingsService: DomainSettingsService;
   systemService: SystemServiceAbstraction;
+  processReloadService: ProcessReloadServiceAbstraction;
   eventCollectionService: EventCollectionServiceAbstraction;
   eventUploadService: EventUploadServiceAbstraction;
   policyService: InternalPolicyServiceAbstraction;
@@ -408,7 +412,7 @@ export default class MainBackground {
       await this.refreshMenu(true);
       if (this.systemService != null) {
         await this.systemService.clearPendingClipboard();
-        await this.systemService.startProcessReload(this.authService);
+        await this.processReloadService.startProcessReload(this.authService);
       }
     };
 
@@ -1088,15 +1092,18 @@ export default class MainBackground {
     };
 
     this.systemService = new SystemService(
+      this.platformUtilsService,
+      this.autofillSettingsService,
+      this.taskSchedulerService,
+    );
+
+    this.processReloadService = new ProcessReloadService(
       this.pinService,
       this.messagingService,
-      this.platformUtilsService,
       systemUtilsServiceReloadCallback,
-      this.autofillSettingsService,
       this.vaultTimeoutSettingsService,
       this.biometricStateService,
       this.accountService,
-      this.taskSchedulerService,
     );
 
     // Other fields
@@ -1122,7 +1129,7 @@ export default class MainBackground {
         this.platformUtilsService as BrowserPlatformUtilsService,
         this.notificationsService,
         this.autofillSettingsService,
-        this.systemService,
+        this.processReloadService,
         this.environmentService,
         this.messagingService,
         this.logService,
@@ -1551,7 +1558,7 @@ export default class MainBackground {
     await this.mainContextMenuHandler?.noAccess();
     await this.notificationsService.updateConnection(false);
     await this.systemService.clearPendingClipboard();
-    await this.systemService.startProcessReload(this.authService);
+    await this.processReloadService.startProcessReload(this.authService);
   }
 
   private async needsStorageReseed(userId: UserId): Promise<boolean> {

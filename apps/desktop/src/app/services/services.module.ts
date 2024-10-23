@@ -37,6 +37,8 @@ import {
 import { InternalMasterPasswordServiceAbstraction } from "@bitwarden/common/auth/abstractions/master-password.service.abstraction";
 import { AutofillSettingsServiceAbstraction } from "@bitwarden/common/autofill/services/autofill-settings.service";
 import { ClientType } from "@bitwarden/common/enums";
+import { ProcessReloadServiceAbstraction } from "@bitwarden/common/key-management/abstractions/process-reload.service";
+import { ProcessReloadService } from "@bitwarden/common/key-management/services/process-reload.service";
 import { CryptoFunctionService as CryptoFunctionServiceAbstraction } from "@bitwarden/common/platform/abstractions/crypto-function.service";
 import {
   CryptoService,
@@ -197,15 +199,21 @@ const safeProviders: SafeProvider[] = [
     provide: SystemServiceAbstraction,
     useClass: SystemService,
     deps: [
+      PlatformUtilsServiceAbstraction,
+      AutofillSettingsServiceAbstraction,
+      TaskSchedulerService,
+    ],
+  }),
+  safeProvider({
+    provide: ProcessReloadServiceAbstraction,
+    useClass: ProcessReloadService,
+    deps: [
       PinServiceAbstraction,
       MessagingServiceAbstraction,
-      PlatformUtilsServiceAbstraction,
       RELOAD_CALLBACK,
-      AutofillSettingsServiceAbstraction,
       VaultTimeoutSettingsService,
       BiometricStateService,
       AccountServiceAbstraction,
-      TaskSchedulerService,
     ],
   }),
   safeProvider({

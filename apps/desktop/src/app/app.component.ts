@@ -32,6 +32,7 @@ import { AuthenticationStatus } from "@bitwarden/common/auth/enums/authenticatio
 import { ForceSetPasswordReason } from "@bitwarden/common/auth/models/domain/force-set-password-reason";
 import { FeatureFlag } from "@bitwarden/common/enums/feature-flag.enum";
 import { VaultTimeoutAction } from "@bitwarden/common/enums/vault-timeout-action.enum";
+import { ProcessReloadServiceAbstraction } from "@bitwarden/common/key-management/abstractions/process-reload.service";
 import { BroadcasterService } from "@bitwarden/common/platform/abstractions/broadcaster.service";
 import { ConfigService } from "@bitwarden/common/platform/abstractions/config/config.service";
 import { CryptoService } from "@bitwarden/common/platform/abstractions/crypto.service";
@@ -142,6 +143,7 @@ export class AppComponent implements OnInit, OnDestroy {
     private notificationsService: NotificationsService,
     private platformUtilsService: PlatformUtilsService,
     private systemService: SystemService,
+    private processReloadService: ProcessReloadServiceAbstraction,
     private stateService: StateService,
     private eventUploadService: EventUploadService,
     private policyService: InternalPolicyService,
@@ -213,7 +215,7 @@ export class AppComponent implements OnInit, OnDestroy {
             // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
             // eslint-disable-next-line @typescript-eslint/no-floating-promises
             this.updateAppMenu();
-            this.systemService.cancelProcessReload();
+            this.processReloadService.cancelProcessReload();
             break;
           case "loggedOut":
             this.modalService.closeAll();
@@ -224,7 +226,7 @@ export class AppComponent implements OnInit, OnDestroy {
             // eslint-disable-next-line @typescript-eslint/no-floating-promises
             this.updateAppMenu();
             await this.systemService.clearPendingClipboard();
-            await this.systemService.startProcessReload(this.authService);
+            await this.processReloadService.startProcessReload(this.authService);
             break;
           case "authBlocked":
             // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
@@ -268,15 +270,15 @@ export class AppComponent implements OnInit, OnDestroy {
             this.notificationsService.updateConnection();
             await this.updateAppMenu();
             await this.systemService.clearPendingClipboard();
-            await this.systemService.startProcessReload(this.authService);
+            await this.processReloadService.startProcessReload(this.authService);
             break;
           case "startProcessReload":
             // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
             // eslint-disable-next-line @typescript-eslint/no-floating-promises
-            this.systemService.startProcessReload(this.authService);
+            this.processReloadService.startProcessReload(this.authService);
             break;
           case "cancelProcessReload":
-            this.systemService.cancelProcessReload();
+            this.processReloadService.cancelProcessReload();
             break;
           case "reloadProcess":
             ipc.platform.reloadProcess();

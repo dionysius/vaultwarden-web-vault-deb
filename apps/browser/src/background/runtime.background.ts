@@ -6,10 +6,10 @@ import { AccountService } from "@bitwarden/common/auth/abstractions/account.serv
 import { AutofillOverlayVisibility, ExtensionCommand } from "@bitwarden/common/autofill/constants";
 import { AutofillSettingsServiceAbstraction } from "@bitwarden/common/autofill/services/autofill-settings.service";
 import { FeatureFlag } from "@bitwarden/common/enums/feature-flag.enum";
+import { ProcessReloadServiceAbstraction } from "@bitwarden/common/key-management/abstractions/process-reload.service";
 import { ConfigService } from "@bitwarden/common/platform/abstractions/config/config.service";
 import { LogService } from "@bitwarden/common/platform/abstractions/log.service";
 import { MessagingService } from "@bitwarden/common/platform/abstractions/messaging.service";
-import { SystemService } from "@bitwarden/common/platform/abstractions/system.service";
 import { devFlagEnabled } from "@bitwarden/common/platform/misc/flags";
 import { Utils } from "@bitwarden/common/platform/misc/utils";
 import { CipherType } from "@bitwarden/common/vault/enums";
@@ -40,7 +40,7 @@ export default class RuntimeBackground {
     private platformUtilsService: BrowserPlatformUtilsService,
     private notificationsService: NotificationsService,
     private autofillSettingsService: AutofillSettingsServiceAbstraction,
-    private systemService: SystemService,
+    private processReloadSerivce: ProcessReloadServiceAbstraction,
     private environmentService: BrowserEnvironmentService,
     private messagingService: MessagingService,
     private logService: LogService,
@@ -216,7 +216,7 @@ export default class RuntimeBackground {
         }
 
         await this.notificationsService.updateConnection(msg.command === "loggedIn");
-        this.systemService.cancelProcessReload();
+        this.processReloadSerivce.cancelProcessReload();
 
         if (item) {
           await BrowserApi.focusWindow(item.commandToRetry.sender.tab.windowId);
