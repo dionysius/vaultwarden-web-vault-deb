@@ -259,6 +259,9 @@
   "generatePassword": {
     "message": "Generate password"
   },
+  "generatePassphrase": {
+    "message": "Generate passphrase"
+  },
   "type": {
     "message": "Type"
   },
@@ -393,6 +396,10 @@
   },
   "copyPassword": {
     "message": "Copy password"
+  },
+  "copyPassphrase": {
+    "message": "Copy passphrase",
+    "description": "Copy passphrase to clipboard"
   },
   "copyUri": {
     "message": "Copy URI"
