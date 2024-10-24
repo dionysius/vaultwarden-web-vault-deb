@@ -175,6 +175,7 @@ export class DeviceTrustService implements DeviceTrustServiceAbstraction {
     newUserKey: UserKey,
     masterPasswordHash: string,
   ): Promise<void> {
+    this.logService.info("[Device trust rotation] Rotating device trust...");
     if (!userId) {
       throw new Error("UserId is required. Cannot rotate device's trust.");
     }
@@ -183,11 +184,15 @@ export class DeviceTrustService implements DeviceTrustServiceAbstraction {
     if (currentDeviceKey == null) {
       // If the current device doesn't have a device key available to it, then we can't
       // rotate any trust at all, so early return.
+      this.logService.info("[Device trust rotation] No device key available to rotate trust!");
       return;
     }
 
     // At this point of rotating their keys, they should still have their old user key in state
     const oldUserKey = await firstValueFrom(this.keyService.userKey$(userId));
+    if (oldUserKey == newUserKey) {
+      this.logService.info("[Device trust rotation] Old user key is the same as the new user key.");
+    }
 
     const deviceIdentifier = await this.appIdService.getAppId();
     const secretVerificationRequest = new SecretVerificationRequest();
@@ -229,7 +234,12 @@ export class DeviceTrustService implements DeviceTrustServiceAbstraction {
     trustRequest.currentDevice = currentDeviceUpdateRequest;
     trustRequest.otherDevices = [];
 
+    this.logService.info(
+      "[Device trust rotation] Posting device trust update with current device:",
+      deviceIdentifier,
+    );
     await this.devicesApiService.updateTrust(trustRequest, deviceIdentifier);
+    this.logService.info("[Device trust rotation] Device trust update posted successfully.");
   }
 
   async getDeviceKey(userId: UserId): Promise<DeviceKey | null> {
