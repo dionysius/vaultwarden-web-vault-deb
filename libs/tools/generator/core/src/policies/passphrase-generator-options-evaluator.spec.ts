@@ -164,7 +164,7 @@ describe("Password generator options builder", () => {
       },
     );
 
-    it.each([3, 8, 18, 20])(
+    it.each([6, 8, 18, 20])(
       "should set `numWords` (= %i) to the input value when it is within the boundaries",
       (numWords) => {
         expect(numWords).toBeGreaterThanOrEqual(DefaultPassphraseBoundaries.numWords.min);

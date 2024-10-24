@@ -72,9 +72,9 @@ describe("PassphrasePolicyConstraints", () => {
     });
 
     it.each([
-      [1, 3],
+      [1, 6],
       [21, 20],
-    ])("fits numWords (=%p) within the default bounds (3 <= %p <= 20)", (value, expected) => {
+    ])("fits numWords (=%p) within the default bounds (6 <= %p <= 20)", (value, expected) => {
       const policy = new PassphrasePolicyConstraints(Policies.Passphrase.disabledValue);
 
       const { numWords } = policy.adjust({ ...SomeSettings, numWords: value });
@@ -83,7 +83,7 @@ describe("PassphrasePolicyConstraints", () => {
     });
 
     it.each([
-      [1, 4, 4],
+      [1, 6, 6],
       [21, 20, 20],
     ])(
       "fits numWords (=%p) within the policy bounds (%p <= %p <= 20)",

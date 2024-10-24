@@ -1,6 +1,6 @@
 function initializeBoundaries() {
   const numWords = Object.freeze({
-    min: 3,
+    min: 6,
     max: 20,
   });
 
