@@ -299,6 +299,11 @@ export class VaultItemsComponent {
       return false;
     }
 
+    // When the user doesn't belong to an organization, hide assign to collections
+    if (this.allOrganizations.length === 0) {
+      return false;
+    }
+
     if (this.selection.selected.length === 0) {
       return true;
     }

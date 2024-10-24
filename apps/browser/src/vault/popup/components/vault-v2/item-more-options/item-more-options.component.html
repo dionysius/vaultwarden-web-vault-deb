@@ -28,7 +28,7 @@
       <a bitMenuItem (click)="clone()">
         {{ "clone" | i18n }}
       </a>
-      <a bitMenuItem (click)="conditionallyNavigateToAssignCollections()">
+      <a bitMenuItem *ngIf="hasOrganizations" (click)="conditionallyNavigateToAssignCollections()">
         {{ "assignToCollections" | i18n }}
       </a>
     </ng-container>

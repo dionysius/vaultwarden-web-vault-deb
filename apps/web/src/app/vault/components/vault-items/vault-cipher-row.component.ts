@@ -92,7 +92,7 @@ export class VaultCipherRowComponent implements OnInit {
   }
 
   protected get showAssignToCollections() {
-    return this.canEditCipher && !this.cipher.isDeleted;
+    return this.organizations?.length && this.canEditCipher && !this.cipher.isDeleted;
   }
 
   protected get showClone() {
