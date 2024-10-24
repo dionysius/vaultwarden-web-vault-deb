@@ -1,13 +1,19 @@
 import { CommonModule } from "@angular/common";
-import { QueryList, Component, ElementRef, OnDestroy, OnInit, ViewChildren } from "@angular/core";
+import {
+  QueryList,
+  Component,
+  ElementRef,
+  OnDestroy,
+  AfterViewInit,
+  ViewChildren,
+} from "@angular/core";
 import { FormsModule } from "@angular/forms";
-import { Router, RouterModule } from "@angular/router";
-import { firstValueFrom, Subject, takeUntil } from "rxjs";
+import { RouterModule } from "@angular/router";
+import { Subject, takeUntil } from "rxjs";
 
 import { JslibModule } from "@bitwarden/angular/jslib.module";
 import { DomainSettingsService } from "@bitwarden/common/autofill/services/domain-settings.service";
 import { NeverDomains } from "@bitwarden/common/models/domain/domain-service";
-import { BroadcasterService } from "@bitwarden/common/platform/abstractions/broadcaster.service";
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
 import { Utils } from "@bitwarden/common/platform/misc/utils";
@@ -28,8 +34,6 @@ import { PopOutComponent } from "../../../platform/popup/components/pop-out.comp
 import { PopupFooterComponent } from "../../../platform/popup/layout/popup-footer.component";
 import { PopupHeaderComponent } from "../../../platform/popup/layout/popup-header.component";
 import { PopupPageComponent } from "../../../platform/popup/layout/popup-page.component";
-
-const BroadcasterSubscriptionId = "excludedDomainsState";
 
 @Component({
   selector: "app-excluded-domains",
@@ -55,11 +59,12 @@ const BroadcasterSubscriptionId = "excludedDomainsState";
     TypographyModule,
   ],
 })
-export class ExcludedDomainsComponent implements OnInit, OnDestroy {
+export class ExcludedDomainsComponent implements AfterViewInit, OnDestroy {
   @ViewChildren("uriInput") uriInputElements: QueryList<ElementRef<HTMLInputElement>>;
 
   accountSwitcherEnabled = false;
   dataIsPristine = true;
+  isLoading = false;
   excludedDomainsState: string[] = [];
   storedExcludedDomains: string[] = [];
   // How many fields should be non-editable before editable fields
@@ -70,16 +75,27 @@ export class ExcludedDomainsComponent implements OnInit, OnDestroy {
   constructor(
     private domainSettingsService: DomainSettingsService,
     private i18nService: I18nService,
-    private router: Router,
-    private broadcasterService: BroadcasterService,
     private platformUtilsService: PlatformUtilsService,
   ) {
     this.accountSwitcherEnabled = enableAccountSwitching();
   }
 
-  async ngOnInit() {
-    const neverDomains = await firstValueFrom(this.domainSettingsService.neverDomains$);
+  async ngAfterViewInit() {
+    this.domainSettingsService.neverDomains$
+      .pipe(takeUntil(this.destroy$))
+      .subscribe((neverDomains: NeverDomains) => this.handleStateUpdate(neverDomains));
 
+    this.uriInputElements.changes.pipe(takeUntil(this.destroy$)).subscribe(({ last }) => {
+      this.focusNewUriInput(last);
+    });
+  }
+
+  ngOnDestroy() {
+    this.destroy$.next();
+    this.destroy$.complete();
+  }
+
+  handleStateUpdate(neverDomains: NeverDomains) {
     if (neverDomains) {
       this.storedExcludedDomains = Object.keys(neverDomains);
     }
@@ -89,15 +105,8 @@ export class ExcludedDomainsComponent implements OnInit, OnDestroy {
     // Do not allow the first x (pre-existing) fields to be edited
     this.fieldsEditThreshold = this.storedExcludedDomains.length;
 
-    this.uriInputElements.changes.pipe(takeUntil(this.destroy$)).subscribe(({ last }) => {
-      this.focusNewUriInput(last);
-    });
-  }
-
-  ngOnDestroy() {
-    this.broadcasterService.unsubscribe(BroadcasterSubscriptionId);
-    this.destroy$.next();
-    this.destroy$.complete();
+    this.dataIsPristine = true;
+    this.isLoading = false;
   }
 
   focusNewUriInput(elementRef: ElementRef) {
@@ -116,7 +125,7 @@ export class ExcludedDomainsComponent implements OnInit, OnDestroy {
   async removeDomain(i: number) {
     this.excludedDomainsState.splice(i, 1);
 
-    // if a pre-existing field was dropped, lower the edit threshold
+    // If a pre-existing field was dropped, lower the edit threshold
     if (i < this.fieldsEditThreshold) {
       this.fieldsEditThreshold--;
     }
@@ -132,10 +141,10 @@ export class ExcludedDomainsComponent implements OnInit, OnDestroy {
 
   async saveChanges() {
     if (this.dataIsPristine) {
-      await this.router.navigate(["/notifications"]);
-
       return;
     }
+
+    this.isLoading = true;
 
     const newExcludedDomainsSaveState: NeverDomains = {};
     const uniqueExcludedDomains = new Set(this.excludedDomainsState);
@@ -151,6 +160,8 @@ export class ExcludedDomainsComponent implements OnInit, OnDestroy {
             this.i18nService.t("excludedDomainsInvalidDomain", uri),
           );
 
+          // Don't reset via `handleStateUpdate` to allow existing input value correction
+          this.isLoading = false;
           return;
         }
 
@@ -159,7 +170,23 @@ export class ExcludedDomainsComponent implements OnInit, OnDestroy {
     }
 
     try {
-      await this.domainSettingsService.setNeverDomains(newExcludedDomainsSaveState);
+      const existingState = new Set(this.storedExcludedDomains);
+      const newState = new Set(Object.keys(newExcludedDomainsSaveState));
+      const stateIsUnchanged =
+        existingState.size === newState.size &&
+        new Set([...existingState, ...newState]).size === existingState.size;
+
+      // The subscriber updates don't trigger if `setNeverDomains` sets an equivalent state
+      if (stateIsUnchanged) {
+        // Reset UI state directly
+        const constructedNeverDomainsState = this.storedExcludedDomains.reduce(
+          (neverDomains, uri) => ({ ...neverDomains, [uri]: null }),
+          {},
+        );
+        this.handleStateUpdate(constructedNeverDomainsState);
+      } else {
+        await this.domainSettingsService.setNeverDomains(newExcludedDomainsSaveState);
+      }
 
       this.platformUtilsService.showToast(
         "success",
@@ -169,11 +196,9 @@ export class ExcludedDomainsComponent implements OnInit, OnDestroy {
     } catch {
       this.platformUtilsService.showToast("error", null, this.i18nService.t("unexpectedError"));
 
-      // Do not navigate on error
-      return;
+      // Don't reset via `handleStateUpdate` to preserve input values
+      this.isLoading = false;
     }
-
-    await this.router.navigate(["/notifications"]);
   }
 
   trackByFunction(index: number, _: string) {
