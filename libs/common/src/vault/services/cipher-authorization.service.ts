@@ -1,4 +1,4 @@
-import { map, Observable, of, switchMap } from "rxjs";
+import { map, Observable, of, shareReplay, switchMap } from "rxjs";
 
 import { CollectionService } from "@bitwarden/admin-console/common";
 import { OrganizationService } from "@bitwarden/common/admin-console/abstractions/organization/organization.service.abstraction";
@@ -30,6 +30,16 @@ export abstract class CipherAuthorizationService {
     allowedCollections?: CollectionId[],
     isAdminConsoleAction?: boolean,
   ) => Observable<boolean>;
+
+  /**
+   * Determines if the user can clone the specified cipher.
+   *
+   * @param {CipherLike} cipher - The cipher object to evaluate for cloning permissions.
+   * @param {boolean} isAdminConsoleAction - Optional. A flag indicating if the action is being performed from the admin console.
+   *
+   * @returns {Observable<boolean>} - An observable that emits a boolean value indicating if the user can clone the cipher.
+   */
+  canCloneCipher$: (cipher: CipherLike, isAdminConsoleAction?: boolean) => Observable<boolean>;
 }
 
 /**
@@ -81,6 +91,32 @@ export class DefaultCipherAuthorizationService implements CipherAuthorizationSer
             }),
           );
       }),
+    );
+  }
+
+  /**
+   * {@link CipherAuthorizationService.canCloneCipher$}
+   */
+  canCloneCipher$(cipher: CipherLike, isAdminConsoleAction?: boolean): Observable<boolean> {
+    if (cipher.organizationId == null) {
+      return of(true);
+    }
+
+    return this.organizationService.get$(cipher.organizationId).pipe(
+      switchMap((organization) => {
+        // Admins and custom users can always clone when in the Admin Console
+        if (
+          isAdminConsoleAction &&
+          (organization.isAdmin || organization.permissions?.editAnyCollection)
+        ) {
+          return of(true);
+        }
+
+        return this.collectionService
+          .decryptedCollectionViews$(cipher.collectionIds as CollectionId[])
+          .pipe(map((allCollections) => allCollections.some((collection) => collection.manage)));
+      }),
+      shareReplay({ bufferSize: 1, refCount: false }),
     );
   }
 }

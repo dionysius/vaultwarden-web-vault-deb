@@ -1,7 +1,7 @@
 import { CommonModule } from "@angular/common";
 import { booleanAttribute, Component, Input, OnInit } from "@angular/core";
 import { Router, RouterModule } from "@angular/router";
-import { firstValueFrom, map } from "rxjs";
+import { firstValueFrom, map, Observable } from "rxjs";
 
 import { JslibModule } from "@bitwarden/angular/jslib.module";
 import { OrganizationService } from "@bitwarden/common/admin-console/abstractions/organization/organization.service.abstraction";
@@ -10,6 +10,7 @@ import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.servic
 import { CipherService } from "@bitwarden/common/vault/abstractions/cipher.service";
 import { CipherRepromptType, CipherType } from "@bitwarden/common/vault/enums";
 import { CipherView } from "@bitwarden/common/vault/models/view/cipher.view";
+import { CipherAuthorizationService } from "@bitwarden/common/vault/services/cipher-authorization.service";
 import {
   DialogService,
   IconButtonModule,
@@ -42,6 +43,7 @@ export class ItemMoreOptionsComponent implements OnInit {
   hideAutofillOptions: boolean;
 
   protected autofillAllowed$ = this.vaultPopupAutofillService.autofillAllowed$;
+  protected canClone$: Observable<boolean>;
 
   /** Boolean dependent on the current user having access to an organization */
   protected hasOrganizations = false;
@@ -56,10 +58,12 @@ export class ItemMoreOptionsComponent implements OnInit {
     private vaultPopupAutofillService: VaultPopupAutofillService,
     private accountService: AccountService,
     private organizationService: OrganizationService,
+    private cipherAuthorizationService: CipherAuthorizationService,
   ) {}
 
   async ngOnInit(): Promise<void> {
     this.hasOrganizations = await this.organizationService.hasOrganizations();
+    this.canClone$ = this.cipherAuthorizationService.canCloneCipher$(this.cipher);
   }
 
   get canEdit() {

@@ -194,6 +194,7 @@ export class VaultItemsComponent {
     });
   }
 
+  // TODO: PM-13944 Refactor to use cipherAuthorizationService.canClone$ instead
   protected canClone(vaultItem: VaultItem) {
     if (vaultItem.cipher.organizationId == null) {
       return true;

@@ -1,5 +1,5 @@
 import { mock } from "jest-mock-extended";
-import { of } from "rxjs";
+import { firstValueFrom, of } from "rxjs";
 
 import { CollectionService, CollectionView } from "@bitwarden/admin-console/common";
 import { OrganizationService } from "@bitwarden/common/admin-console/abstractions/organization/organization.service.abstraction";
@@ -39,10 +39,16 @@ describe("CipherAuthorizationService", () => {
     allowAdminAccessToAllCollectionItems = false,
     canEditAllCiphers = false,
     canEditUnassignedCiphers = false,
+    isAdmin = false,
+    editAnyCollection = false,
   } = {}) => ({
     allowAdminAccessToAllCollectionItems,
     canEditAllCiphers,
     canEditUnassignedCiphers,
+    isAdmin,
+    permissions: {
+      editAnyCollection,
+    },
   });
 
   beforeEach(() => {
@@ -194,6 +200,75 @@ describe("CipherAuthorizationService", () => {
           "col2",
         ] as CollectionId[]);
         done();
+      });
+    });
+  });
+
+  describe("canCloneCipher$", () => {
+    it("should return true if cipher has no organizationId", async () => {
+      const cipher = createMockCipher(null, []) as CipherView;
+
+      const result = await firstValueFrom(cipherAuthorizationService.canCloneCipher$(cipher));
+      expect(result).toBe(true);
+    });
+
+    describe("isAdminConsoleAction is true", () => {
+      it("should return true for admin users", async () => {
+        const cipher = createMockCipher("org1", []) as CipherView;
+        const organization = createMockOrganization({ isAdmin: true });
+        mockOrganizationService.get$.mockReturnValue(of(organization as Organization));
+
+        const result = await firstValueFrom(
+          cipherAuthorizationService.canCloneCipher$(cipher, true),
+        );
+        expect(result).toBe(true);
+      });
+
+      it("should return true for custom user with canEditAnyCollection", async () => {
+        const cipher = createMockCipher("org1", []) as CipherView;
+        const organization = createMockOrganization({ editAnyCollection: true });
+        mockOrganizationService.get$.mockReturnValue(of(organization as Organization));
+
+        const result = await firstValueFrom(
+          cipherAuthorizationService.canCloneCipher$(cipher, true),
+        );
+        expect(result).toBe(true);
+      });
+    });
+
+    describe("isAdminConsoleAction is false", () => {
+      it("should return true if at least one cipher collection has manage permission", async () => {
+        const cipher = createMockCipher("org1", ["col1", "col2"]) as CipherView;
+        const organization = createMockOrganization();
+        mockOrganizationService.get$.mockReturnValue(of(organization as Organization));
+
+        const allCollections = [
+          createMockCollection("col1", true),
+          createMockCollection("col2", false),
+        ];
+        mockCollectionService.decryptedCollectionViews$.mockReturnValue(
+          of(allCollections as CollectionView[]),
+        );
+
+        const result = await firstValueFrom(cipherAuthorizationService.canCloneCipher$(cipher));
+        expect(result).toBe(true);
+      });
+
+      it("should return false if no collection has manage permission", async () => {
+        const cipher = createMockCipher("org1", ["col1", "col2"]) as CipherView;
+        const organization = createMockOrganization();
+        mockOrganizationService.get$.mockReturnValue(of(organization as Organization));
+
+        const allCollections = [
+          createMockCollection("col1", false),
+          createMockCollection("col2", false),
+        ];
+        mockCollectionService.decryptedCollectionViews$.mockReturnValue(
+          of(allCollections as CollectionView[]),
+        );
+
+        const result = await firstValueFrom(cipherAuthorizationService.canCloneCipher$(cipher));
+        expect(result).toBe(false);
       });
     });
   });
