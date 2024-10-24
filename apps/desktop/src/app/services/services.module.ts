@@ -40,10 +40,6 @@ import { ClientType } from "@bitwarden/common/enums";
 import { ProcessReloadServiceAbstraction } from "@bitwarden/common/key-management/abstractions/process-reload.service";
 import { ProcessReloadService } from "@bitwarden/common/key-management/services/process-reload.service";
 import { CryptoFunctionService as CryptoFunctionServiceAbstraction } from "@bitwarden/common/platform/abstractions/crypto-function.service";
-import {
-  CryptoService,
-  CryptoService as CryptoServiceAbstraction,
-} from "@bitwarden/common/platform/abstractions/crypto.service";
 import { EncryptService } from "@bitwarden/common/platform/abstractions/encrypt.service";
 import { FileDownloadService } from "@bitwarden/common/platform/abstractions/file-download/file-download.service";
 import { I18nService as I18nServiceAbstraction } from "@bitwarden/common/platform/abstractions/i18n.service";
@@ -74,13 +70,18 @@ import { VaultTimeoutStringType } from "@bitwarden/common/types/vault-timeout.ty
 import { CipherService as CipherServiceAbstraction } from "@bitwarden/common/vault/abstractions/cipher.service";
 import { DialogService } from "@bitwarden/components";
 import { PasswordGenerationServiceAbstraction } from "@bitwarden/generator-legacy";
-import { BiometricStateService, BiometricsService } from "@bitwarden/key-management";
+import {
+  KeyService,
+  KeyService as KeyServiceAbstraction,
+  BiometricStateService,
+  BiometricsService,
+} from "@bitwarden/key-management";
 
 import { DesktopAutofillSettingsService } from "../../autofill/services/desktop-autofill-settings.service";
 import { ElectronBiometricsService } from "../../key-management/biometrics/electron-biometrics.service";
 import { flagEnabled } from "../../platform/flags";
 import { DesktopSettingsService } from "../../platform/services/desktop-settings.service";
-import { ElectronCryptoService } from "../../platform/services/electron-crypto.service";
+import { ElectronKeyService } from "../../platform/services/electron-key.service";
 import { ElectronLogRendererService } from "../../platform/services/electron-log.renderer.service";
 import {
   ELECTRON_SUPPORTS_SECURE_STORAGE,
@@ -260,8 +261,8 @@ const safeProviders: SafeProvider[] = [
     deps: [WINDOW],
   }),
   safeProvider({
-    provide: CryptoServiceAbstraction,
-    useClass: ElectronCryptoService,
+    provide: KeyServiceAbstraction,
+    useClass: ElectronKeyService,
     deps: [
       PinServiceAbstraction,
       InternalMasterPasswordServiceAbstraction,
@@ -304,7 +305,7 @@ const safeProviders: SafeProvider[] = [
     useClass: DesktopSetPasswordJitService,
     deps: [
       ApiService,
-      CryptoService,
+      KeyService,
       EncryptService,
       I18nServiceAbstraction,
       KdfConfigService,

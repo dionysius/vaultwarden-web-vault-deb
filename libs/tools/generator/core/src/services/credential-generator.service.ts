@@ -23,7 +23,6 @@ import { Simplify } from "type-fest";
 import { ApiService } from "@bitwarden/common/abstractions/api.service";
 import { PolicyService } from "@bitwarden/common/admin-console/abstractions/policy/policy.service.abstraction";
 import { PolicyType } from "@bitwarden/common/admin-console/enums";
-import { CryptoService } from "@bitwarden/common/platform/abstractions/crypto.service";
 import { EncryptService } from "@bitwarden/common/platform/abstractions/encrypt.service";
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 import { StateProvider } from "@bitwarden/common/platform/state";
@@ -41,6 +40,7 @@ import { UserEncryptor } from "@bitwarden/common/tools/state/user-encryptor.abst
 import { UserKeyEncryptor } from "@bitwarden/common/tools/state/user-key-encryptor";
 import { UserStateSubject } from "@bitwarden/common/tools/state/user-state-subject";
 import { UserId } from "@bitwarden/common/types/guid";
+import { KeyService } from "@bitwarden/key-management";
 
 import { Randomizer } from "../abstractions";
 import {
@@ -97,7 +97,7 @@ export class CredentialGeneratorService {
     private readonly apiService: ApiService,
     private readonly i18nService: I18nService,
     private readonly encryptService: EncryptService,
-    private readonly cryptoService: CryptoService,
+    private readonly keyService: KeyService,
   ) {}
 
   private getDependencyProvider(): GeneratorDependencyProvider {
@@ -272,7 +272,7 @@ export class CredentialGeneratorService {
 
   private encryptor$(userId: UserId) {
     const packer = new PaddedDataPacker(OPTIONS_FRAME_SIZE);
-    const encryptor$ = this.cryptoService.userKey$(userId).pipe(
+    const encryptor$ = this.keyService.userKey$(userId).pipe(
       // complete when the account locks
       takeWhile((key) => !!key),
       map((key) => {

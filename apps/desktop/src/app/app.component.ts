@@ -35,7 +35,6 @@ import { VaultTimeoutAction } from "@bitwarden/common/enums/vault-timeout-action
 import { ProcessReloadServiceAbstraction } from "@bitwarden/common/key-management/abstractions/process-reload.service";
 import { BroadcasterService } from "@bitwarden/common/platform/abstractions/broadcaster.service";
 import { ConfigService } from "@bitwarden/common/platform/abstractions/config/config.service";
-import { CryptoService } from "@bitwarden/common/platform/abstractions/crypto.service";
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 import { LogService } from "@bitwarden/common/platform/abstractions/log.service";
 import { MessagingService } from "@bitwarden/common/platform/abstractions/messaging.service";
@@ -53,7 +52,7 @@ import { InternalFolderService } from "@bitwarden/common/vault/abstractions/fold
 import { CipherType } from "@bitwarden/common/vault/enums";
 import { DialogService, ToastOptions, ToastService } from "@bitwarden/components";
 import { PasswordGenerationServiceAbstraction } from "@bitwarden/generator-legacy";
-import { BiometricStateService } from "@bitwarden/key-management";
+import { KeyService, BiometricStateService } from "@bitwarden/key-management";
 
 import { DeleteAccountComponent } from "../auth/delete-account.component";
 import { LoginApprovalComponent } from "../auth/login/login-approval.component";
@@ -135,7 +134,7 @@ export class AppComponent implements OnInit, OnDestroy {
     private ngZone: NgZone,
     private vaultTimeoutService: VaultTimeoutService,
     private vaultTimeoutSettingsService: VaultTimeoutSettingsService,
-    private cryptoService: CryptoService,
+    private keyService: KeyService,
     private logService: LogService,
     private messagingService: MessagingService,
     private collectionService: CollectionService,
@@ -303,8 +302,8 @@ export class AppComponent implements OnInit, OnDestroy {
             const activeUserId = await firstValueFrom(
               this.accountService.activeAccount$.pipe(map((a) => a?.id)),
             );
-            const publicKey = await firstValueFrom(this.cryptoService.userPublicKey$(activeUserId));
-            const fingerprint = await this.cryptoService.getFingerprint(activeUserId, publicKey);
+            const publicKey = await firstValueFrom(this.keyService.userPublicKey$(activeUserId));
+            const fingerprint = await this.keyService.getFingerprint(activeUserId, publicKey);
             const dialogRef = FingerprintDialogComponent.open(this.dialogService, { fingerprint });
             await firstValueFrom(dialogRef.closed);
             break;
@@ -692,7 +691,7 @@ export class AppComponent implements OnInit, OnDestroy {
 
       // Provide the userId of the user to upload events for
       await this.eventUploadService.uploadEvents(userBeingLoggedOut);
-      await this.cryptoService.clearKeys(userBeingLoggedOut);
+      await this.keyService.clearKeys(userBeingLoggedOut);
       await this.cipherService.clear(userBeingLoggedOut);
       await this.folderService.clear(userBeingLoggedOut);
       await this.collectionService.clear(userBeingLoggedOut);

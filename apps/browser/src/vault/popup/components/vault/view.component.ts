@@ -12,7 +12,6 @@ import { AccountService } from "@bitwarden/common/auth/abstractions/account.serv
 import { TokenService } from "@bitwarden/common/auth/abstractions/token.service";
 import { BillingAccountProfileStateService } from "@bitwarden/common/billing/abstractions/account/billing-account-profile-state.service";
 import { BroadcasterService } from "@bitwarden/common/platform/abstractions/broadcaster.service";
-import { CryptoService } from "@bitwarden/common/platform/abstractions/crypto.service";
 import { EncryptService } from "@bitwarden/common/platform/abstractions/encrypt.service";
 import { FileDownloadService } from "@bitwarden/common/platform/abstractions/file-download/file-download.service";
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
@@ -28,6 +27,7 @@ import { Cipher } from "@bitwarden/common/vault/models/domain/cipher";
 import { LoginUriView } from "@bitwarden/common/vault/models/view/login-uri.view";
 import { CipherAuthorizationService } from "@bitwarden/common/vault/services/cipher-authorization.service";
 import { DialogService } from "@bitwarden/components";
+import { KeyService } from "@bitwarden/key-management";
 import { PasswordRepromptService } from "@bitwarden/vault";
 
 import { BrowserFido2UserInterfaceSession } from "../../../../autofill/fido2/services/browser-fido2-user-interface.service";
@@ -81,7 +81,7 @@ export class ViewComponent extends BaseViewComponent implements OnInit, OnDestro
     totpService: TotpServiceAbstraction,
     tokenService: TokenService,
     i18nService: I18nService,
-    cryptoService: CryptoService,
+    keyService: KeyService,
     encryptService: EncryptService,
     platformUtilsService: PlatformUtilsService,
     auditService: AuditService,
@@ -111,7 +111,7 @@ export class ViewComponent extends BaseViewComponent implements OnInit, OnDestro
       totpService,
       tokenService,
       i18nService,
-      cryptoService,
+      keyService,
       encryptService,
       platformUtilsService,
       auditService,

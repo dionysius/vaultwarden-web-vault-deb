@@ -13,7 +13,6 @@ import { OrganizationUserStatusType } from "@bitwarden/common/admin-console/enum
 import { ProviderUserBulkPublicKeyResponse } from "@bitwarden/common/admin-console/models/response/provider/provider-user-bulk-public-key.response";
 import { ProviderUserBulkResponse } from "@bitwarden/common/admin-console/models/response/provider/provider-user-bulk.response";
 import { ListResponse } from "@bitwarden/common/models/response/list.response";
-import { CryptoService } from "@bitwarden/common/platform/abstractions/crypto.service";
 import { EncryptService } from "@bitwarden/common/platform/abstractions/encrypt.service";
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 import { SymmetricCryptoKey } from "@bitwarden/common/platform/models/domain/symmetric-crypto-key";
@@ -21,6 +20,7 @@ import { StateProvider } from "@bitwarden/common/platform/state";
 import { OrganizationId } from "@bitwarden/common/types/guid";
 import { OrgKey } from "@bitwarden/common/types/key";
 import { DialogService } from "@bitwarden/components";
+import { KeyService } from "@bitwarden/key-management";
 
 import { BaseBulkConfirmComponent } from "./base-bulk-confirm.component";
 import { BulkUserDetails } from "./bulk-status.component";
@@ -39,18 +39,18 @@ export class BulkConfirmDialogComponent extends BaseBulkConfirmComponent {
   users: BulkUserDetails[];
 
   constructor(
-    protected cryptoService: CryptoService,
+    protected keyService: KeyService,
     @Inject(DIALOG_DATA) protected dialogParams: BulkConfirmDialogParams,
     protected encryptService: EncryptService,
     private organizationUserApiService: OrganizationUserApiService,
     protected i18nService: I18nService,
     private stateProvider: StateProvider,
   ) {
-    super(cryptoService, encryptService, i18nService);
+    super(keyService, encryptService, i18nService);
 
     this.organizationId = dialogParams.organizationId;
     this.organizationKey$ = this.stateProvider.activeUserId$.pipe(
-      switchMap((userId) => this.cryptoService.orgKeys$(userId)),
+      switchMap((userId) => this.keyService.orgKeys$(userId)),
       map((organizationKeysById) => organizationKeysById[this.organizationId as OrganizationId]),
       takeUntilDestroyed(),
     );
