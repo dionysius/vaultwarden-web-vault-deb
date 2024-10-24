@@ -264,7 +264,7 @@
 </bit-container>
 <ng-template #hideSubscription>
   <bit-container *ngIf="!loading">
-    <ng-container *ngIf="enableConsolidatedBilling$ | async; else consolidatedBillingDisabled">
+    <ng-container *ngIf="providerIsOnConsolidatedBilling; else providerIsNotOnConsolidatedBilling">
       <h2 bitTypography="h2">{{ "manageSubscription" | i18n }}</h2>
       <p bitTypography="body1" *ngIf="userOrg.isProviderUser; else isOrganizationOwner">
         {{ "manageSubscriptionFromThe" | i18n }}
@@ -281,7 +281,7 @@
       </ng-template>
       <ng-container *ngTemplateOutlet="setupSelfHost"></ng-container>
     </ng-container>
-    <ng-template #consolidatedBillingDisabled>
+    <ng-template #providerIsNotOnConsolidatedBilling>
       <div class="tw-flex tw-flex-col tw-items-center tw-text-info">
         <bit-icon [icon]="subscriptionHiddenIcon"></bit-icon>
         <p class="tw-font-bold">{{ "billingManagedByProvider" | i18n: userOrg.providerName }}</p>

@@ -5,7 +5,8 @@ import { concatMap, firstValueFrom, lastValueFrom, Observable, Subject, takeUnti
 import { ApiService } from "@bitwarden/common/abstractions/api.service";
 import { OrganizationApiServiceAbstraction } from "@bitwarden/common/admin-console/abstractions/organization/organization-api.service.abstraction";
 import { OrganizationService } from "@bitwarden/common/admin-console/abstractions/organization/organization.service.abstraction";
-import { OrganizationApiKeyType } from "@bitwarden/common/admin-console/enums";
+import { ProviderService } from "@bitwarden/common/admin-console/abstractions/provider.service";
+import { OrganizationApiKeyType, ProviderStatusType } from "@bitwarden/common/admin-console/enums";
 import { Organization } from "@bitwarden/common/admin-console/models/domain/organization";
 import { BillingApiServiceAbstraction } from "@bitwarden/common/billing/abstractions";
 import { PlanType, ProductTierType } from "@bitwarden/common/billing/enums";
@@ -56,6 +57,7 @@ export class OrganizationSubscriptionCloudComponent implements OnInit, OnDestroy
   preSelectedProductTier: ProductTierType = ProductTierType.Free;
   showSubscription = true;
   showSelfHost = false;
+  providerIsOnConsolidatedBilling = false;
 
   protected readonly subscriptionHiddenIcon = SubscriptionHiddenIcon;
   protected readonly teamsStarter = ProductTierType.TeamsStarter;
@@ -89,6 +91,7 @@ export class OrganizationSubscriptionCloudComponent implements OnInit, OnDestroy
     private configService: ConfigService,
     private toastService: ToastService,
     private billingApiService: BillingApiServiceAbstraction,
+    private providerService: ProviderService,
   ) {}
 
   async ngOnInit() {
@@ -129,22 +132,20 @@ export class OrganizationSubscriptionCloudComponent implements OnInit, OnDestroy
     this.locale = await firstValueFrom(this.i18nService.locale$);
     this.userOrg = await this.organizationService.get(this.organizationId);
 
-    /*
-    +--------------------+--------------+----------------------+--------------+
-    |     User Type      | Has Provider | Consolidated Billing | Subscription |
-    +--------------------+--------------+----------------------+--------------+
-    | Organization Owner | False        | N/A                  | Shown        |
-    | Organization Owner | True         | N/A                  | Hidden       |
-    | Provider User      | True         | False                | Shown        |
-    | Provider User      | True         | True                 | Hidden       |
-    +--------------------+--------------+----------------------+--------------+
-     */
-
     const consolidatedBillingEnabled = await firstValueFrom(this.enableConsolidatedBilling$);
 
+    const provider = this.userOrg.hasProvider
+      ? await this.providerService.get(this.userOrg.providerId)
+      : null;
+
+    this.providerIsOnConsolidatedBilling =
+      consolidatedBillingEnabled && provider?.providerStatus === ProviderStatusType.Billable;
+
+    const isIndependentOrganizationOwner = !this.userOrg.hasProvider && this.userOrg.isOwner;
+    const isProviderUser = this.userOrg.hasProvider && this.userOrg.isProviderUser;
+
     this.showSubscription =
-      (!this.userOrg.hasProvider && this.userOrg.isOwner) ||
-      (this.userOrg.hasProvider && this.userOrg.isProviderUser && !consolidatedBillingEnabled);
+      isIndependentOrganizationOwner || (isProviderUser && !this.providerIsOnConsolidatedBilling);
 
     const metadata = await this.billingApiService.getOrganizationBillingMetadata(
       this.organizationId,
