@@ -69,13 +69,6 @@ export class WindowMain {
       this.logService.info("Render process reloaded");
     });
 
-    this.desktopSettingsService.allowScreenshots$.subscribe((allowed) => {
-      if (this.win == null) {
-        return;
-      }
-      this.win.setContentProtection(!allowed);
-    });
-
     return new Promise<void>((resolve, reject) => {
       try {
         if (!isMacAppStore() && !isSnapStore()) {
@@ -276,14 +269,6 @@ export class WindowMain {
         windowIsFocused: true,
       });
     });
-
-    firstValueFrom(this.desktopSettingsService.allowScreenshots$)
-      .then((allowScreenshots) => {
-        this.win.setContentProtection(!allowScreenshots);
-      })
-      .catch((e) => {
-        this.logService.error(e);
-      });
 
     if (this.createWindowCallback) {
       this.createWindowCallback(this.win);
