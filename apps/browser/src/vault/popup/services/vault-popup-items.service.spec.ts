@@ -277,6 +277,10 @@ describe("VaultPopupItemsService", () => {
   });
 
   describe("remainingCiphers$", () => {
+    beforeEach(() => {
+      searchService.isSearchable.mockImplementation(async (text) => text.length > 2);
+    });
+
     it("should exclude autofill and favorite ciphers", (done) => {
       service.remainingCiphers$.subscribe((ciphers) => {
         // 2 autofill ciphers, 2 favorite ciphers = 6 remaining ciphers to show
@@ -285,9 +289,17 @@ describe("VaultPopupItemsService", () => {
       });
     });
 
-    it("should sort by last used then by name", (done) => {
-      service.remainingCiphers$.subscribe((ciphers) => {
+    it("should sort by last used then by name by default", (done) => {
+      service.remainingCiphers$.subscribe(() => {
         expect(cipherServiceMock.getLocaleSortingFunction).toHaveBeenCalled();
+        done();
+      });
+    });
+
+    it("should NOT sort by last used then by name when search text is applied", (done) => {
+      service.applyFilter("Login");
+      service.remainingCiphers$.subscribe(() => {
+        expect(cipherServiceMock.getLocaleSortingFunction).not.toHaveBeenCalled();
         done();
       });
     });
