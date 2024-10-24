@@ -83,12 +83,14 @@ describe("DefaultLoginComponentService", () => {
 
   describe("launchSsoBrowserWindow", () => {
     const email = "test@bitwarden.com";
-    const state = "testState";
+    let state = "testState";
     const codeVerifier = "testCodeVerifier";
     const codeChallenge = "testCodeChallenge";
     const baseUrl = "https://webvault.bitwarden.com/#/sso";
 
     beforeEach(() => {
+      state = "testState";
+
       passwordGenerationService.generatePassword.mockResolvedValueOnce(state);
       passwordGenerationService.generatePassword.mockResolvedValueOnce(codeVerifier);
       jest.spyOn(Utils, "fromBufferToUrlB64").mockReturnValue(codeChallenge);
@@ -111,6 +113,10 @@ describe("DefaultLoginComponentService", () => {
         service["clientType"] = clientType;
 
         await service.launchSsoBrowserWindow(email, clientId as "browser" | "desktop");
+
+        if (clientType === ClientType.Browser) {
+          state += ":clientId=browser";
+        }
 
         const expectedUrl = `${baseUrl}?clientId=${clientId}&redirectUri=${encodeURIComponent(expectedRedirectUri)}&state=${state}&codeChallenge=${codeChallenge}&email=${encodeURIComponent(email)}`;
 

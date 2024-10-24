@@ -50,7 +50,12 @@ export class DefaultLoginComponentService implements LoginComponentService {
       special: false,
     };
 
-    const state = await this.passwordGenerationService.generatePassword(passwordOptions);
+    let state = await this.passwordGenerationService.generatePassword(passwordOptions);
+
+    if (clientId === "browser") {
+      // Need to persist the clientId in the state for the extension
+      state += ":clientId=browser";
+    }
 
     const codeVerifier = await this.passwordGenerationService.generatePassword(passwordOptions);
     const codeVerifierHash = await this.cryptoFunctionService.hash(codeVerifier, "sha256");
