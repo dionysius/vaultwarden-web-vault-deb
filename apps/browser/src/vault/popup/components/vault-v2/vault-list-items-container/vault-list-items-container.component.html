@@ -28,6 +28,7 @@
           bit-item-content
           type="button"
           (click)="onViewCipher(cipher)"
+          (dblclick)="launchCipher(cipher)"
           [appA11yTitle]="'viewItemTitle' | i18n: cipher.name"
           class="{{ ItemHeightClass }}"
         >
@@ -59,6 +60,16 @@
             >
               {{ "fill" | i18n }}
             </button>
+          </bit-item-action>
+          <bit-item-action *ngIf="!showAutofillButton && cipher.canLaunch">
+            <button
+              type="button"
+              bitIconButton="bwi-external-link"
+              size="small"
+              (click)="launchCipher(cipher)"
+              [attr.aria-label]="'launchWebsiteName' | i18n: cipher.name"
+              [title]="'launchWebsiteName' | i18n: cipher.name"
+            ></button>
           </bit-item-action>
           <app-item-copy-actions [cipher]="cipher"></app-item-copy-actions>
           <app-item-more-options

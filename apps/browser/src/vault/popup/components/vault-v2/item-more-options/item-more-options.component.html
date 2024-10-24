@@ -17,9 +17,6 @@
           {{ "fillAndSave" | i18n }}
         </button>
       </ng-container>
-      <button type="button" bitMenuItem *ngIf="this.canLaunch" (click)="launchCipher()">
-        {{ "launchWebsite" | i18n }}
-      </button>
     </ng-container>
     <button type="button" bitMenuItem (click)="toggleFavorite()">
       {{ favoriteText | i18n }}

@@ -19,8 +19,6 @@ import {
 } from "@bitwarden/components";
 import { PasswordRepromptService } from "@bitwarden/vault";
 
-import { BrowserApi } from "../../../../../platform/browser/browser-api";
-import BrowserPopupUtils from "../../../../../platform/popup/browser-popup-utils";
 import { VaultPopupAutofillService } from "../../../services/vault-popup-autofill.service";
 import { AddEditQueryParams } from "../add-edit/add-edit-v2.component";
 
@@ -89,30 +87,6 @@ export class ItemMoreOptionsComponent implements OnInit {
 
   async doAutofillAndSave() {
     await this.vaultPopupAutofillService.doAutofillAndSave(this.cipher, false);
-  }
-
-  /**
-   * Determines if the login cipher can be launched in a new browser tab.
-   */
-  get canLaunch() {
-    return this.cipher.type === CipherType.Login && this.cipher.login.canLaunch;
-  }
-
-  /**
-   * Launches the login cipher in a new browser tab.
-   */
-  async launchCipher() {
-    if (!this.canLaunch) {
-      return;
-    }
-
-    await this.cipherService.updateLastLaunchedDate(this.cipher.id);
-
-    await BrowserApi.createNewTab(this.cipher.login.launchUri);
-
-    if (BrowserPopupUtils.inPopup(window)) {
-      BrowserApi.closePopup(window);
-    }
   }
 
   /**

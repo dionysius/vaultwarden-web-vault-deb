@@ -2,9 +2,8 @@ import { View } from "../../../models/view/view";
 import { InitializerMetadata } from "../../../platform/interfaces/initializer-metadata.interface";
 import { InitializerKey } from "../../../platform/services/cryptography/initializer-key";
 import { DeepJsonify } from "../../../types/deep-jsonify";
-import { LinkedIdType } from "../../enums";
+import { CipherType, LinkedIdType } from "../../enums";
 import { CipherRepromptType } from "../../enums/cipher-reprompt-type";
-import { CipherType } from "../../enums/cipher-type";
 import { LocalData } from "../data/local.data";
 import { Cipher } from "../domain/cipher";
 
@@ -130,6 +129,13 @@ export class CipherView implements View, InitializerMetadata {
     return (
       this.organizationId != null && (this.collectionIds == null || this.collectionIds.length === 0)
     );
+  }
+
+  /**
+   * Determines if the cipher can be launched in a new browser tab.
+   */
+  get canLaunch(): boolean {
+    return this.type === CipherType.Login && this.login.canLaunch;
   }
 
   linkedFieldValue(id: LinkedIdType) {
