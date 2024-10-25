@@ -108,7 +108,7 @@ export class UsernameGeneratorComponent implements OnInit, OnDestroy {
         map((algorithms) => {
           const usernames = algorithms.filter((a) => !isForwarderIntegration(a.id));
           const usernameOptions = this.toOptions(usernames);
-          usernameOptions.push({ value: FORWARDER, label: this.i18nService.t("forwarder") });
+          usernameOptions.push({ value: FORWARDER, label: this.i18nService.t("forwardedEmail") });
 
           const forwarders = algorithms.filter((a) => isForwarderIntegration(a.id));
           const forwarderOptions = this.toOptions(forwarders);
@@ -413,7 +413,7 @@ export class UsernameGeneratorComponent implements OnInit, OnDestroy {
   private toOptions(algorithms: AlgorithmInfo[]) {
     const options: Option<string>[] = algorithms.map((algorithm) => ({
       value: JSON.stringify(algorithm.id),
-      label: this.i18nService.t(algorithm.name),
+      label: algorithm.name,
     }));
 
     return options;
