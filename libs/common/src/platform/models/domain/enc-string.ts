@@ -159,16 +159,27 @@ export class EncString implements Encrypted {
       return this.decryptedValue;
     }
 
+    let keyContext = "provided-key";
     try {
       if (key == null) {
         key = await this.getKeyForDecryption(orgId);
+        keyContext = orgId == null ? `domain-orgkey-${orgId}` : "domain-userkey|masterkey";
+        if (orgId != null) {
+          keyContext = `domain-orgkey-${orgId}`;
+        } else {
+          const cryptoService = Utils.getContainerService().getKeyService();
+          keyContext =
+            (await cryptoService.getUserKey()) == null
+              ? "domain-withlegacysupport-masterkey"
+              : "domain-withlegacysupport-userkey";
+        }
       }
       if (key == null) {
         throw new Error("No key to decrypt EncString with orgId " + orgId);
       }
 
       const encryptService = Utils.getContainerService().getEncryptService();
-      this.decryptedValue = await encryptService.decryptToUtf8(this, key);
+      this.decryptedValue = await encryptService.decryptToUtf8(this, key, keyContext);
     } catch (e) {
       this.decryptedValue = DECRYPT_ERROR;
     }
@@ -181,7 +192,7 @@ export class EncString implements Encrypted {
         throw new Error("No key to decrypt EncString");
       }
 
-      this.decryptedValue = await encryptService.decryptToUtf8(this, key);
+      this.decryptedValue = await encryptService.decryptToUtf8(this, key, "domain-withkey");
     } catch (e) {
       this.decryptedValue = DECRYPT_ERROR;
     }
