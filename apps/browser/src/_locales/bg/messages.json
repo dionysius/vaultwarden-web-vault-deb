@@ -19,6 +19,18 @@
   "createAccount": {
     "message": "Създаване на акаунт"
   },
+  "newToBitwarden": {
+    "message": "За пръв път ли ползвате Битуорден?"
+  },
+  "logInWithPasskey": {
+    "message": "Вписване със секретен ключ"
+  },
+  "useSingleSignOn": {
+    "message": "Използване на еднократна идентификация"
+  },
+  "welcomeBack": {
+    "message": "Добре дошли отново"
+  },
   "setAStrongPassword": {
     "message": "Използвайте сложна парола"
   },
@@ -107,6 +119,9 @@
   "copyPassword": {
     "message": "Копиране на паролата"
   },
+  "copyPassphrase": {
+    "message": "Копиране на паролата-фраза"
+  },
   "copyNote": {
     "message": "Копиране на бележката"
   },
@@ -151,6 +166,10 @@
   },
   "copyNotes": {
     "message": "Копиране на бележките"
+  },
+  "fill": {
+    "message": "Попълване",
+    "description": "This string is used on the vault page to indicate autofilling. Horizontal space is limited in the interface here so try and keep translations as concise as possible."
   },
   "autoFill": {
     "message": "Автоматично дописване"
@@ -407,6 +426,9 @@
   "generatePassword": {
     "message": "Нова парола"
   },
+  "generatePassphrase": {
+    "message": "Генериране на парола-фраза"
+  },
   "regeneratePassword": {
     "message": "Регенериране на паролата"
   },
@@ -567,6 +589,15 @@
   },
   "launchWebsite": {
     "message": "Посещаване на уеб сайта"
+  },
+  "launchWebsiteName": {
+    "message": "Отваряне на уеб сайта $ITEMNAME$",
+    "placeholders": {
+      "itemname": {
+        "content": "$1",
+        "example": "Secret item"
+      }
+    }
   },
   "website": {
     "message": "Сайт"
@@ -813,6 +844,9 @@
   },
   "logIn": {
     "message": "Вписване"
+  },
+  "logInToBitwarden": {
+    "message": "Впишете се в Битуорден"
   },
   "restartRegistration": {
     "message": "Рестартиране на регистрацията"
@@ -1388,6 +1422,10 @@
   },
   "baseUrl": {
     "message": "Адрес на сървъра"
+  },
+  "selfHostBaseUrl": {
+    "message": "Адрес на собствения сървър",
+    "description": "Label for field requesting a self-hosted integration service URL"
   },
   "apiUrl": {
     "message": "Адрес на ППИ-сървъра"
@@ -2464,8 +2502,8 @@
     "message": "Изискване на парола за достъп до това изпращане.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
-  "sendPasswordDescV2": {
-    "message": "Изискване на тази парола за преглеждане на Изпращането.",
+  "sendPasswordDescV3": {
+    "message": "Добавете незадължителна парола, с която получателите да имат достъп до това Изпращане.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendNotesDesc": {
@@ -2827,6 +2865,9 @@
   "generateUsername": {
     "message": "Генериране на потр. име"
   },
+  "generateEmail": {
+    "message": "Генериране на електронна поща"
+  },
   "usernameType": {
     "message": "Тип потребителско име"
   },
@@ -2866,6 +2907,14 @@
   },
   "forwardedEmailDesc": {
     "message": "Създайте псевдоним на е-поща с външна услуга за препращане."
+  },
+  "forwarderDomainName": {
+    "message": "Домейн на електронната поща",
+    "description": "Labels the domain name email forwarder service option"
+  },
+  "forwarderDomainNameHint": {
+    "message": "Изберете домейн, който се поддържа от избраната услуга",
+    "description": "Guidance provided for email forwarding services that support multiple email domains."
   },
   "forwarderError": {
     "message": "Грешка от $SERVICENAME$: $ERRORMESSAGE$",
@@ -4494,8 +4543,14 @@
   "itemLocation": {
     "message": "Местоположение на елемента"
   },
+  "fileSend": {
+    "message": "Файлово изпращане"
+  },
   "fileSends": {
     "message": "Файлови изпращания"
+  },
+  "textSend": {
+    "message": "Текстово изпращане"
   },
   "textSends": {
     "message": "Текстови изпращания"
@@ -4559,5 +4614,158 @@
   },
   "authenticating": {
     "message": "Удостоверяване"
+  },
+  "fillGeneratedPassword": {
+    "message": "Попълване на генерираната парола",
+    "description": "Heading for the password generator within the inline menu"
+  },
+  "passwordRegenerated": {
+    "message": "Паролата е прегенерирана",
+    "description": "Notification message for when a password has been regenerated"
+  },
+  "saveLoginToBitwarden": {
+    "message": "Запазване на данните за вписване в Битуорден?",
+    "description": "Confirmation message for saving a login to Bitwarden"
+  },
+  "spaceCharacterDescriptor": {
+    "message": "Интервал",
+    "description": "Represents the space key in screen reader content as a readable word"
+  },
+  "tildeCharacterDescriptor": {
+    "message": "Вълничка",
+    "description": "Represents the ~ key in screen reader content as a readable word"
+  },
+  "backtickCharacterDescriptor": {
+    "message": "Backtick",
+    "description": "Represents the ` key in screen reader content as a readable word"
+  },
+  "exclamationCharacterDescriptor": {
+    "message": "Удивителен знак",
+    "description": "Represents the ! key in screen reader content as a readable word"
+  },
+  "atSignCharacterDescriptor": {
+    "message": "Кльомба",
+    "description": "Represents the @ key in screen reader content as a readable word"
+  },
+  "hashSignCharacterDescriptor": {
+    "message": "Диез",
+    "description": "Represents the # key in screen reader content as a readable word"
+  },
+  "dollarSignCharacterDescriptor": {
+    "message": "Знак за долар",
+    "description": "Represents the $ key in screen reader content as a readable word"
+  },
+  "percentSignCharacterDescriptor": {
+    "message": "Процент",
+    "description": "Represents the % key in screen reader content as a readable word"
+  },
+  "caretCharacterDescriptor": {
+    "message": "Колибка",
+    "description": "Represents the ^ key in screen reader content as a readable word"
+  },
+  "ampersandCharacterDescriptor": {
+    "message": "Амперсанд",
+    "description": "Represents the & key in screen reader content as a readable word"
+  },
+  "asteriskCharacterDescriptor": {
+    "message": "Звездичка",
+    "description": "Represents the * key in screen reader content as a readable word"
+  },
+  "parenLeftCharacterDescriptor": {
+    "message": "Лява скоба",
+    "description": "Represents the ( key in screen reader content as a readable word"
+  },
+  "parenRightCharacterDescriptor": {
+    "message": "Дясна скоба",
+    "description": "Represents the ) key in screen reader content as a readable word"
+  },
+  "hyphenCharacterDescriptor": {
+    "message": "Долна черта",
+    "description": "Represents the _ key in screen reader content as a readable word"
+  },
+  "underscoreCharacterDescriptor": {
+    "message": "Тире",
+    "description": "Represents the - key in screen reader content as a readable word"
+  },
+  "plusCharacterDescriptor": {
+    "message": "Плюс",
+    "description": "Represents the + key in screen reader content as a readable word"
+  },
+  "equalsCharacterDescriptor": {
+    "message": "Равно",
+    "description": "Represents the = key in screen reader content as a readable word"
+  },
+  "braceLeftCharacterDescriptor": {
+    "message": "Лява фигурна скоба",
+    "description": "Represents the { key in screen reader content as a readable word"
+  },
+  "braceRightCharacterDescriptor": {
+    "message": "Дясна фигурна скоба",
+    "description": "Represents the } key in screen reader content as a readable word"
+  },
+  "bracketLeftCharacterDescriptor": {
+    "message": "Лява квадратна скоба",
+    "description": "Represents the [ key in screen reader content as a readable word"
+  },
+  "bracketRightCharacterDescriptor": {
+    "message": "Дясна квадратна скоба",
+    "description": "Represents the ] key in screen reader content as a readable word"
+  },
+  "pipeCharacterDescriptor": {
+    "message": "Вертикална черта",
+    "description": "Represents the | key in screen reader content as a readable word"
+  },
+  "backSlashCharacterDescriptor": {
+    "message": "Обратна наклонена черта",
+    "description": "Represents the back slash key in screen reader content as a readable word"
+  },
+  "colonCharacterDescriptor": {
+    "message": "Двоеточие",
+    "description": "Represents the : key in screen reader content as a readable word"
+  },
+  "semicolonCharacterDescriptor": {
+    "message": "Точка и запетая",
+    "description": "Represents the ; key in screen reader content as a readable word"
+  },
+  "doubleQuoteCharacterDescriptor": {
+    "message": "Двойна кавичка",
+    "description": "Represents the double quote key in screen reader content as a readable word"
+  },
+  "singleQuoteCharacterDescriptor": {
+    "message": "Единична кавичка",
+    "description": "Represents the ' key in screen reader content as a readable word"
+  },
+  "lessThanCharacterDescriptor": {
+    "message": "По-малко",
+    "description": "Represents the < key in screen reader content as a readable word"
+  },
+  "greaterThanCharacterDescriptor": {
+    "message": "По-голямо",
+    "description": "Represents the > key in screen reader content as a readable word"
+  },
+  "commaCharacterDescriptor": {
+    "message": "Запетая",
+    "description": "Represents the , key in screen reader content as a readable word"
+  },
+  "periodCharacterDescriptor": {
+    "message": "Точка",
+    "description": "Represents the . key in screen reader content as a readable word"
+  },
+  "questionCharacterDescriptor": {
+    "message": "Въпросителен знак",
+    "description": "Represents the ? key in screen reader content as a readable word"
+  },
+  "forwardSlashCharacterDescriptor": {
+    "message": "Наклонена черта",
+    "description": "Represents the / key in screen reader content as a readable word"
+  },
+  "lowercaseAriaLabel": {
+    "message": "Малки букви"
+  },
+  "uppercaseAriaLabel": {
+    "message": "Главни букви"
+  },
+  "generatedPassword": {
+    "message": "Генерирана парола"
   }
 }

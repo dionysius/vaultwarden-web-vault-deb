@@ -19,6 +19,18 @@
   "createAccount": {
     "message": "Vytvoriť účet"
   },
+  "newToBitwarden": {
+    "message": "Ste noví na Bitwardene?"
+  },
+  "logInWithPasskey": {
+    "message": "Prihlásiť sa s prístupovým kľúčom"
+  },
+  "useSingleSignOn": {
+    "message": "Použiť jednotné prihlásenie"
+  },
+  "welcomeBack": {
+    "message": "Vitajte späť"
+  },
   "setAStrongPassword": {
     "message": "Nastavte silné heslo"
   },
@@ -107,6 +119,9 @@
   "copyPassword": {
     "message": "Kopírovať heslo"
   },
+  "copyPassphrase": {
+    "message": "Kopírovať prístupovú frázu"
+  },
   "copyNote": {
     "message": "Kopírovať poznámku"
   },
@@ -151,6 +166,10 @@
   },
   "copyNotes": {
     "message": "Kopírovať poznámky"
+  },
+  "fill": {
+    "message": "Vyplniť",
+    "description": "This string is used on the vault page to indicate autofilling. Horizontal space is limited in the interface here so try and keep translations as concise as possible."
   },
   "autoFill": {
     "message": "Automatické vypĺňanie"
@@ -407,6 +426,9 @@
   "generatePassword": {
     "message": "Generovať heslo"
   },
+  "generatePassphrase": {
+    "message": "Generovať prístupovú frázu"
+  },
   "regeneratePassword": {
     "message": "Vygenerovať nové heslo"
   },
@@ -567,6 +589,15 @@
   },
   "launchWebsite": {
     "message": "Otvoriť stránku"
+  },
+  "launchWebsiteName": {
+    "message": "Otvoriť stránku $ITEMNAME$",
+    "placeholders": {
+      "itemname": {
+        "content": "$1",
+        "example": "Secret item"
+      }
+    }
   },
   "website": {
     "message": "Webstránka"
@@ -813,6 +844,9 @@
   },
   "logIn": {
     "message": "Prihlásiť sa"
+  },
+  "logInToBitwarden": {
+    "message": "Prihlásiť sa do Bitwardenu"
   },
   "restartRegistration": {
     "message": "Zopakovať registráciu"
@@ -1388,6 +1422,10 @@
   },
   "baseUrl": {
     "message": "URL servera"
+  },
+  "selfHostBaseUrl": {
+    "message": "Adresa URL vlastného hostingu",
+    "description": "Label for field requesting a self-hosted integration service URL"
   },
   "apiUrl": {
     "message": "URL API servera"
@@ -2464,8 +2502,8 @@
     "message": "Voliteľne môžete vyžadovať heslo pre používateľov na prístup k tomuto Sendu.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
-  "sendPasswordDescV2": {
-    "message": "Na zobrazenie tohto Sendu vyžadovať toto heslo.",
+  "sendPasswordDescV3": {
+    "message": "Pridajte voliteľné heslo pre príjemcov na prístup k tomuto Sendu.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendNotesDesc": {
@@ -2827,6 +2865,9 @@
   "generateUsername": {
     "message": "Vygenerovať používateľské meno"
   },
+  "generateEmail": {
+    "message": "Generovať e-mail"
+  },
   "usernameType": {
     "message": "Typ používateľského mena"
   },
@@ -2866,6 +2907,14 @@
   },
   "forwardedEmailDesc": {
     "message": "Vytvoriť e-mailový alias pomocou externej služby preposielania."
+  },
+  "forwarderDomainName": {
+    "message": "E-mailová doména",
+    "description": "Labels the domain name email forwarder service option"
+  },
+  "forwarderDomainNameHint": {
+    "message": "Vyberte doménu, ktorá je podporovaná vybranou službou",
+    "description": "Guidance provided for email forwarding services that support multiple email domains."
   },
   "forwarderError": {
     "message": "$SERVICENAME$ chyba: $ERRORMESSAGE$",
@@ -4494,8 +4543,14 @@
   "itemLocation": {
     "message": "Umiestnenie položky"
   },
+  "fileSend": {
+    "message": "Send so súborom"
+  },
   "fileSends": {
     "message": "Sendy so súborom"
+  },
+  "textSend": {
+    "message": "Textový Send"
   },
   "textSends": {
     "message": "Textové Sendy"
@@ -4559,5 +4614,158 @@
   },
   "authenticating": {
     "message": "Overuje sa"
+  },
+  "fillGeneratedPassword": {
+    "message": "Vložiť vygenerované heslo",
+    "description": "Heading for the password generator within the inline menu"
+  },
+  "passwordRegenerated": {
+    "message": "Vygenerované nové heslo",
+    "description": "Notification message for when a password has been regenerated"
+  },
+  "saveLoginToBitwarden": {
+    "message": "Uložiť prihlasovacie údaje do Bitwardenu?",
+    "description": "Confirmation message for saving a login to Bitwarden"
+  },
+  "spaceCharacterDescriptor": {
+    "message": "Medzera",
+    "description": "Represents the space key in screen reader content as a readable word"
+  },
+  "tildeCharacterDescriptor": {
+    "message": "Tilda",
+    "description": "Represents the ~ key in screen reader content as a readable word"
+  },
+  "backtickCharacterDescriptor": {
+    "message": "Opačný dĺžeň",
+    "description": "Represents the ` key in screen reader content as a readable word"
+  },
+  "exclamationCharacterDescriptor": {
+    "message": "Výkričník",
+    "description": "Represents the ! key in screen reader content as a readable word"
+  },
+  "atSignCharacterDescriptor": {
+    "message": "Zavináč",
+    "description": "Represents the @ key in screen reader content as a readable word"
+  },
+  "hashSignCharacterDescriptor": {
+    "message": "Mriežka",
+    "description": "Represents the # key in screen reader content as a readable word"
+  },
+  "dollarSignCharacterDescriptor": {
+    "message": "Dolár",
+    "description": "Represents the $ key in screen reader content as a readable word"
+  },
+  "percentSignCharacterDescriptor": {
+    "message": "Percento",
+    "description": "Represents the % key in screen reader content as a readable word"
+  },
+  "caretCharacterDescriptor": {
+    "message": "Striežka",
+    "description": "Represents the ^ key in screen reader content as a readable word"
+  },
+  "ampersandCharacterDescriptor": {
+    "message": "Ampersand",
+    "description": "Represents the & key in screen reader content as a readable word"
+  },
+  "asteriskCharacterDescriptor": {
+    "message": "Hviezdička",
+    "description": "Represents the * key in screen reader content as a readable word"
+  },
+  "parenLeftCharacterDescriptor": {
+    "message": "Ľavá zátvorka",
+    "description": "Represents the ( key in screen reader content as a readable word"
+  },
+  "parenRightCharacterDescriptor": {
+    "message": "Pravá zátvorka",
+    "description": "Represents the ) key in screen reader content as a readable word"
+  },
+  "hyphenCharacterDescriptor": {
+    "message": "Podčiarkovník",
+    "description": "Represents the _ key in screen reader content as a readable word"
+  },
+  "underscoreCharacterDescriptor": {
+    "message": "Spojovník",
+    "description": "Represents the - key in screen reader content as a readable word"
+  },
+  "plusCharacterDescriptor": {
+    "message": "Plus",
+    "description": "Represents the + key in screen reader content as a readable word"
+  },
+  "equalsCharacterDescriptor": {
+    "message": "Rovná sa",
+    "description": "Represents the = key in screen reader content as a readable word"
+  },
+  "braceLeftCharacterDescriptor": {
+    "message": "Ľavá zložená zátvorka",
+    "description": "Represents the { key in screen reader content as a readable word"
+  },
+  "braceRightCharacterDescriptor": {
+    "message": "Pravá zložená zátvorka",
+    "description": "Represents the } key in screen reader content as a readable word"
+  },
+  "bracketLeftCharacterDescriptor": {
+    "message": "Ľavá hranatá zátvorka",
+    "description": "Represents the [ key in screen reader content as a readable word"
+  },
+  "bracketRightCharacterDescriptor": {
+    "message": "Pravá hranatá zátvorka",
+    "description": "Represents the ] key in screen reader content as a readable word"
+  },
+  "pipeCharacterDescriptor": {
+    "message": "Rúra",
+    "description": "Represents the | key in screen reader content as a readable word"
+  },
+  "backSlashCharacterDescriptor": {
+    "message": "Spätná lomka",
+    "description": "Represents the back slash key in screen reader content as a readable word"
+  },
+  "colonCharacterDescriptor": {
+    "message": "Dvojbodka",
+    "description": "Represents the : key in screen reader content as a readable word"
+  },
+  "semicolonCharacterDescriptor": {
+    "message": "Bodkočiarka",
+    "description": "Represents the ; key in screen reader content as a readable word"
+  },
+  "doubleQuoteCharacterDescriptor": {
+    "message": "Dvojité úvodzovky",
+    "description": "Represents the double quote key in screen reader content as a readable word"
+  },
+  "singleQuoteCharacterDescriptor": {
+    "message": "Jednoduché úvodzovky",
+    "description": "Represents the ' key in screen reader content as a readable word"
+  },
+  "lessThanCharacterDescriptor": {
+    "message": "Ľavá lomená zátvorka",
+    "description": "Represents the < key in screen reader content as a readable word"
+  },
+  "greaterThanCharacterDescriptor": {
+    "message": "Pravá lomená zátvorka",
+    "description": "Represents the > key in screen reader content as a readable word"
+  },
+  "commaCharacterDescriptor": {
+    "message": "Čiarka",
+    "description": "Represents the , key in screen reader content as a readable word"
+  },
+  "periodCharacterDescriptor": {
+    "message": "Bodka",
+    "description": "Represents the . key in screen reader content as a readable word"
+  },
+  "questionCharacterDescriptor": {
+    "message": "Otáznik",
+    "description": "Represents the ? key in screen reader content as a readable word"
+  },
+  "forwardSlashCharacterDescriptor": {
+    "message": "Lomka",
+    "description": "Represents the / key in screen reader content as a readable word"
+  },
+  "lowercaseAriaLabel": {
+    "message": "Malé písmená"
+  },
+  "uppercaseAriaLabel": {
+    "message": "Veľké písmená"
+  },
+  "generatedPassword": {
+    "message": "Vygenerované heslo"
   }
 }
