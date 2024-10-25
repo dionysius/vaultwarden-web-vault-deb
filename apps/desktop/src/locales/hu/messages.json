@@ -60,6 +60,9 @@
       }
     }
   },
+  "welcomeBack": {
+    "message": "Üdvözlet újra"
+  },
   "moveToOrgDesc": {
     "message": "Válasszunk egy szervezetet, ahová áthelyezni szeretnénk ezt az elemet. A szervezetbe áthelyezés átruházza az elem tulajdonjogát az adott szervezetre. Az áthelyezés után többé nem leszünk az elem közvetlen tulajdonosa."
   },
@@ -259,6 +262,9 @@
   "generatePassword": {
     "message": "Jelszó generálása"
   },
+  "generatePassphrase": {
+    "message": "Jelmondat generálás"
+  },
   "type": {
     "message": "Típus"
   },
@@ -393,6 +399,10 @@
   },
   "copyPassword": {
     "message": "Jelszó másolása"
+  },
+  "copyPassphrase": {
+    "message": "Jelmondat másolása",
+    "description": "Copy passphrase to clipboard"
   },
   "copyUri": {
     "message": "URI másolása"
@@ -547,6 +557,9 @@
   "createAccount": {
     "message": "Fiók létrehozása"
   },
+  "newToBitwarden": {
+    "message": "Új vagyunk a Bitwardenben?"
+  },
   "setAStrongPassword": {
     "message": "Erős jelszó beállítása"
   },
@@ -555,6 +568,18 @@
   },
   "logIn": {
     "message": "Bejelentkezés"
+  },
+  "logInToBitwarden": {
+    "message": "Bejelentkezés a Bitwardenbe"
+  },
+  "logInWithPasskey": {
+    "message": "Bejelentkezés azonosító kulcssal"
+  },
+  "loginWithDevice": {
+    "message": "Bejelentkezés eszközzel"
+  },
+  "useSingleSignOn": {
+    "message": "Egyszeri bejelentkezés használata"
   },
   "submit": {
     "message": "Beküldés"
@@ -603,7 +628,7 @@
     "message": "Csatlakozás szervezethez"
   },
   "joinOrganizationName": {
-    "message": "Join $ORGANIZATIONNAME$",
+    "message": "Csatlakozás: $ORGANIZATIONNAME$",
     "placeholders": {
       "organizationName": {
         "content": "$1",
@@ -827,6 +852,10 @@
   },
   "baseUrl": {
     "message": "Szerver webcím"
+  },
+  "selfHostBaseUrl": {
+    "message": "Saját üzemeltetésű szerver webcím",
+    "description": "Label for field requesting a self-hosted integration service URL"
   },
   "apiUrl": {
     "message": "API szerver webcím"
@@ -1217,6 +1246,9 @@
   "copyNumber": {
     "message": "Szám másolása",
     "description": "Copy credit card number"
+  },
+  "copyEmail": {
+    "message": "Email cím másolása"
   },
   "copySecurityCode": {
     "message": "Biztonsági kód másolása",
@@ -2352,6 +2384,9 @@
   "generateUsername": {
     "message": "Felhasználónév generálása"
   },
+  "generateEmail": {
+    "message": "Email generálása"
+  },
   "usernameType": {
     "message": "Felhasználónév típusa"
   },
@@ -2394,6 +2429,14 @@
   },
   "forwardedEmailDesc": {
     "message": "Email álnév generálása külső továbbító szolgáltatással."
+  },
+  "forwarderDomainName": {
+    "message": "Email tartomány",
+    "description": "Labels the domain name email forwarder service option"
+  },
+  "forwarderDomainNameHint": {
+    "message": "Válasszunk a kiválasztott szolgáltatás által támogatott tartományt.",
+    "description": "Guidance provided for email forwarding services that support multiple email domains."
   },
   "forwarderError": {
     "message": "$SERVICENAME$ hiba: $ERRORMESSAGE$",
@@ -2875,19 +2918,19 @@
     "message": "Almenü"
   },
   "toggleSideNavigation": {
-    "message": "Toggle side navigation"
+    "message": "Oldal navigáció váltás"
   },
   "skipToContent": {
     "message": "Ugrás a tartalomra"
   },
   "typePasskey": {
-    "message": "Hozzáférési kulcs"
+    "message": "Azonosító kulcs"
   },
   "passkeyNotCopied": {
-    "message": "A hozzáférési kulcs nem kerül másolásra."
+    "message": "Az azonosító kulcs nem kerül másolásra."
   },
   "passkeyNotCopiedAlert": {
-    "message": "A hozzáférési kulcs nem kerül másolásra a klónozott elembe. Folytatjuk ennek az elemnek a klónozását?"
+    "message": "Az azonosító kulcs nem kerül másolásra a klónozott elembe. Folytatjuk ennek az elemnek a klónozását?"
   },
   "aliasDomain": {
     "message": "Áldomain"
@@ -3089,7 +3132,7 @@
     "message": "Gyűjtemény"
   },
   "lastPassYubikeyDesc": {
-    "message": "Insert the YubiKey associated with your LastPass account into your computer's USB port, then touch its button."
+    "message": "Illesszük be a LastPass fiókhoz társított YubiKey eszközt a számítógép USB portjába, majd érintsük meg annak gombját."
   },
   "commonImportFormats": {
     "message": "Általános formátumok",
@@ -3108,10 +3151,10 @@
     "message": "A hardveres gyorsítás engedélyezése és újraindítás"
   },
   "removePasskey": {
-    "message": "Remove passkey"
+    "message": "Azonosító kulcs eltávolítás"
   },
   "passkeyRemoved": {
-    "message": "Passkey removed"
+    "message": "Az azonosító  kucs eltávolításra került."
   },
   "errorAssigningTargetCollection": {
     "message": "Hiba történt a célgyűjtemény hozzárendelése során."
@@ -3161,12 +3204,6 @@
   },
   "textSends": {
     "message": "Szöveg küldés"
-  },
-  "allowScreenshots": {
-    "message": "Képernyőrögzítés engedélyezése"
-  },
-  "allowScreenshotsDesc": {
-    "message": "A Bitwarden asztali alkalmazás képernyőfelvételének engedélyezése."
   },
   "ssoError": {
     "message": "Nem található szabad port az sso bejelentkezéshez."
