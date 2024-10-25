@@ -1571,14 +1571,35 @@ export class AutofillOverlayContentService implements AutofillOverlayContentServ
       AUTOFILL_OVERLAY_HANDLE_REPOSITION,
     );
 
-    const eventTargetDoesNotContainFocusedField = (element: Element) =>
-      typeof element?.contains === "function" && !element.contains(this.mostRecentlyFocusedField);
+    const eventTargetContainsFocusedField = (eventTarget: Element | Document) => {
+      if (!eventTarget || !this.mostRecentlyFocusedField) {
+        return false;
+      }
+
+      const activeElement = (eventTarget as Document).activeElement;
+      if (activeElement) {
+        return (
+          activeElement === this.mostRecentlyFocusedField ||
+          activeElement.contains(this.mostRecentlyFocusedField)
+        );
+      }
+
+      if (typeof eventTarget.contains !== "function") {
+        return false;
+      }
+      return (
+        eventTarget === this.mostRecentlyFocusedField ||
+        eventTarget.contains(this.mostRecentlyFocusedField)
+      );
+    };
     const scrollHandler = this.useEventHandlersMemo(
-      throttle((event) => {
-        if (eventTargetDoesNotContainFocusedField(event.target as Element)) {
-          return;
+      throttle(async (event) => {
+        if (
+          eventTargetContainsFocusedField(event.target) ||
+          (await this.shouldRepositionSubFrameInlineMenuOnScroll())
+        ) {
+          repositionHandler(event);
         }
-        repositionHandler(event);
       }, 50),
       AUTOFILL_OVERLAY_HANDLE_SCROLL,
     );
@@ -1589,6 +1610,10 @@ export class AutofillOverlayContentService implements AutofillOverlayContentServ
     });
     globalThis.addEventListener(EVENTS.RESIZE, repositionHandler);
   }
+
+  private shouldRepositionSubFrameInlineMenuOnScroll = async () => {
+    return await this.sendExtensionMessage("shouldRepositionSubFrameInlineMenuOnScroll");
+  };
 
   /**
    * Removes the listeners that facilitate repositioning
