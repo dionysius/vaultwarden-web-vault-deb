@@ -940,13 +940,13 @@
     "message": "Más bejelentkezési mód használata"
   },
   "logInWithPasskey": {
-    "message": "Log in with passkey"
+    "message": "Bejelentkezés hozzáférési kulccsal"
   },
   "useSingleSignOn": {
-    "message": "Use single sign-on"
+    "message": "Egyszeri bejelentkezés használata"
   },
   "welcomeBack": {
-    "message": "Welcome back"
+    "message": "Üdvözlet újra"
   },
   "invalidPasskeyPleaseTryAgain": {
     "message": "Érvénytelen jelszó. Próbálja újra."
@@ -1000,7 +1000,7 @@
     "message": "Használat titkosításhoz"
   },
   "loginWithPasskeyEnabled": {
-    "message": "Jelentkezzünk be bekapcsolt jelszóval"
+    "message": "Az azonosító kulcssal bejelentkezés bekapcsolásra került."
   },
   "passkeySaved": {
     "message": "$NAME$ mentésre került.",
@@ -1030,7 +1030,7 @@
     "message": "Fiók létrehozása"
   },
   "newToBitwarden": {
-    "message": "New to Bitwarden?"
+    "message": "Új vagyunk a Bitwardenben?"
   },
   "setAStrongPassword": {
     "message": "Erős jelszó beállítása"
@@ -1048,7 +1048,7 @@
     "message": "Bejelentkezés"
   },
   "logInToBitwarden": {
-    "message": "Log in to Bitwarden"
+    "message": "Bejelentkezés a Bitwardenbe"
   },
   "verifyIdentity": {
     "message": "Személyazonosság ellenőrzése"
@@ -1336,7 +1336,7 @@
     "message": "FIDO U2F Biztonsági kulcs"
   },
   "webAuthnTitle": {
-    "message": "FIDO2 WebAuthn"
+    "message": "Biztonsági kulcs"
   },
   "webAuthnDesc": {
     "message": "Használjunk bármilyen WebAuthn engedélyezett biztonsági kulcsot a saját fiók eléréséhez."
