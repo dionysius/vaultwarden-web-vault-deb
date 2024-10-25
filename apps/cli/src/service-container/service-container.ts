@@ -810,10 +810,7 @@ export class ServiceContainer {
 
     this.providerApiService = new ProviderApiService(this.apiService);
 
-    this.organizationUserApiService = new DefaultOrganizationUserApiService(
-      this.apiService,
-      this.configService,
-    );
+    this.organizationUserApiService = new DefaultOrganizationUserApiService(this.apiService);
 
     this.cipherAuthorizationService = new DefaultCipherAuthorizationService(
       this.collectionService,
