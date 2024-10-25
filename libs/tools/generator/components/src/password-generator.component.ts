@@ -233,6 +233,14 @@ export class PasswordGeneratorComponent implements OnInit, OnDestroy {
     map(({ generate }) => generate),
   );
 
+  /**
+   * Emits the copy credential toast respective of the selected credential type
+   */
+  protected credentialTypeLabel$ = this.algorithm$.pipe(
+    filter((algorithm) => !!algorithm),
+    map(({ generatedValue }) => generatedValue),
+  );
+
   private toOptions(algorithms: AlgorithmInfo[]) {
     const options: Option<CredentialAlgorithm>[] = algorithms.map((algorithm) => ({
       value: algorithm.id,

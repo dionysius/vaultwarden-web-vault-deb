@@ -258,6 +258,7 @@ export class CredentialGeneratorService {
       category: generator.category,
       name: integration ? integration.name : this.i18nService.t(generator.nameKey),
       generate: this.i18nService.t(generator.generateKey),
+      generatedValue: this.i18nService.t(generator.generatedValueKey),
       copy: this.i18nService.t(generator.copyKey),
       onlyOnRequest: generator.onlyOnRequest,
       request: generator.request,

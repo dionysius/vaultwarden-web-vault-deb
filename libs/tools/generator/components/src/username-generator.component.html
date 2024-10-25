@@ -19,6 +19,7 @@
       showToast
       [appA11yTitle]="credentialTypeCopyLabel$ | async"
       [appCopyClick]="value$ | async"
+      [valueLabel]="credentialTypeLabel$ | async"
     >
       {{ credentialTypeCopyLabel$ | async }}
     </button>

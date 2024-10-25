@@ -468,6 +468,14 @@ export class CredentialGeneratorComponent implements OnInit, OnDestroy {
     map(({ generate }) => generate),
   );
 
+  /**
+   * Emits the copy credential toast respective of the selected credential type
+   */
+  protected credentialTypeLabel$ = this.algorithm$.pipe(
+    filter((algorithm) => !!algorithm),
+    map(({ generatedValue }) => generatedValue),
+  );
+
   /** Emits hint key for the currently selected credential type */
   protected credentialTypeHint$ = new ReplaySubject<string>(1);
 
