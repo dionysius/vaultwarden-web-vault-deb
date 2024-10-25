@@ -6,7 +6,7 @@ import { BehaviorSubject, distinctUntilChanged, firstValueFrom, map, switchMap }
 import { JslibModule } from "@bitwarden/angular/jslib.module";
 import { AccountService } from "@bitwarden/common/auth/abstractions/account.service";
 import { UserId } from "@bitwarden/common/types/guid";
-import { ButtonModule, ContainerComponent } from "@bitwarden/components";
+import { ButtonModule, ContainerComponent, DialogService } from "@bitwarden/components";
 import {
   CredentialGeneratorHistoryComponent as CredentialGeneratorHistoryToolsComponent,
   EmptyCredentialHistoryComponent,
@@ -42,6 +42,7 @@ export class CredentialGeneratorHistoryComponent {
   constructor(
     private accountService: AccountService,
     private history: GeneratorHistoryService,
+    private dialogService: DialogService,
   ) {
     this.accountService.activeAccount$
       .pipe(
@@ -61,6 +62,16 @@ export class CredentialGeneratorHistoryComponent {
   }
 
   clear = async () => {
-    await this.history.clear(await firstValueFrom(this.userId$));
+    const confirmed = await this.dialogService.openSimpleDialog({
+      title: { key: "clearGeneratorHistoryTitle" },
+      content: { key: "cleargGeneratorHistoryDescription" },
+      type: "warning",
+      acceptButtonText: { key: "clearHistory" },
+      cancelButtonText: { key: "cancel" },
+    });
+
+    if (confirmed) {
+      await this.history.clear(await firstValueFrom(this.userId$));
+    }
   };
 }
