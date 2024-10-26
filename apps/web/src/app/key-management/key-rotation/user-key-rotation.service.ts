@@ -18,8 +18,8 @@ import { SyncService } from "@bitwarden/common/vault/abstractions/sync/sync.serv
 import { KeyService } from "@bitwarden/key-management";
 
 import { OrganizationUserResetPasswordService } from "../../admin-console/organizations/members/services/organization-user-reset-password/organization-user-reset-password.service";
-import { WebauthnLoginAdminService } from "../core";
-import { EmergencyAccessService } from "../emergency-access";
+import { WebauthnLoginAdminService } from "../../auth/core";
+import { EmergencyAccessService } from "../../auth/emergency-access";
 
 import { UpdateKeyRequest } from "./request/update-key.request";
 import { UserKeyRotationApiService } from "./user-key-rotation-api.service";

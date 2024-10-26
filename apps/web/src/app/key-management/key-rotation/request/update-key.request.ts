@@ -4,7 +4,7 @@ import { SendWithIdRequest } from "@bitwarden/common/src/tools/send/models/reque
 import { CipherWithIdRequest } from "@bitwarden/common/src/vault/models/request/cipher-with-id.request";
 import { FolderWithIdRequest } from "@bitwarden/common/src/vault/models/request/folder-with-id.request";
 
-import { EmergencyAccessWithIdRequest } from "../../emergency-access/request/emergency-access-update.request";
+import { EmergencyAccessWithIdRequest } from "../../../auth/emergency-access/request/emergency-access-update.request";
 
 export class UpdateKeyRequest {
   masterPasswordHash: string;

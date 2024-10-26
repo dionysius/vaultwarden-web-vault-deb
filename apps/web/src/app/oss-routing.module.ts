@@ -177,7 +177,7 @@ const routes: Routes = [
       {
         path: "migrate-legacy-encryption",
         loadComponent: () =>
-          import("./auth/migrate-encryption/migrate-legacy-encryption.component").then(
+          import("./key-management/migrate-encryption/migrate-legacy-encryption.component").then(
             (mod) => mod.MigrateFromLegacyEncryptionComponent,
           ),
       },

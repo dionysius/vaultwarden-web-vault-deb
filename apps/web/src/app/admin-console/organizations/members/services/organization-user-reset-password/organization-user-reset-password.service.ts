@@ -5,7 +5,6 @@ import {
   OrganizationUserResetPasswordRequest,
   OrganizationUserResetPasswordWithIdRequest,
 } from "@bitwarden/admin-console/common";
-import { UserKeyRotationDataProvider } from "@bitwarden/auth/common";
 import { OrganizationApiServiceAbstraction } from "@bitwarden/common/admin-console/abstractions/organization/organization-api.service.abstraction";
 import { OrganizationService } from "@bitwarden/common/admin-console/abstractions/organization/organization.service.abstraction";
 import {
@@ -21,7 +20,7 @@ import { EncryptedString, EncString } from "@bitwarden/common/platform/models/do
 import { SymmetricCryptoKey } from "@bitwarden/common/platform/models/domain/symmetric-crypto-key";
 import { UserId } from "@bitwarden/common/types/guid";
 import { UserKey } from "@bitwarden/common/types/key";
-import { KeyService } from "@bitwarden/key-management";
+import { UserKeyRotationDataProvider, KeyService } from "@bitwarden/key-management";
 
 @Injectable({
   providedIn: "root",

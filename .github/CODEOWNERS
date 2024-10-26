@@ -106,7 +106,7 @@ apps/desktop/desktop_native @bitwarden/team-platform-dev
 
 ## Key management team files ##
 apps/desktop/src/key-management @bitwarden/team-key-management-dev
-apps/web/src/key-management @bitwarden/team-key-management-dev
+apps/web/src/app/key-management @bitwarden/team-key-management-dev
 apps/browser/src/key-management @bitwarden/team-key-management-dev
 apps/cli/src/key-management @bitwarden/team-key-management-dev
 libs/key-management @bitwarden/team-key-management-dev

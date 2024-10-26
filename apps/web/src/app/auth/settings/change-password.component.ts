@@ -25,7 +25,7 @@ import { DialogService, ToastService } from "@bitwarden/components";
 import { PasswordGenerationServiceAbstraction } from "@bitwarden/generator-legacy";
 import { KeyService } from "@bitwarden/key-management";
 
-import { UserKeyRotationService } from "../key-rotation/user-key-rotation.service";
+import { UserKeyRotationService } from "../../key-management/key-rotation/user-key-rotation.service";
 
 @Component({
   selector: "app-change-password",
