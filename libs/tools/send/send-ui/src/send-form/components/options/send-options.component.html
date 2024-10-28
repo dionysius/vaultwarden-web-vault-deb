@@ -14,34 +14,35 @@
     <bit-form-field>
       <bit-label>{{ (passwordRemoved ? "newPassword" : "password") | i18n }}</bit-label>
       <input bitInput type="password" formControlName="password" />
-      <ng-container *ngIf="!hasPassword">
-        <button
-          data-testid="toggle-visibility-for-password"
-          type="button"
-          bitIconButton
-          bitSuffix
-          bitPasswordInputToggle
-        ></button>
-        <button
-          type="button"
-          bitIconButton="bwi-generate"
-          bitSuffix
-          [appA11yTitle]="'generatePassword' | i18n"
-          [disabled]="!config.areSendsAllowed"
-          (click)="generatePassword()"
-          data-testid="generate-password"
-        ></button>
-        <button
-          type="button"
-          bitIconButton="bwi-clone"
-          bitSuffix
-          [appA11yTitle]="'copyPassword' | i18n"
-          [disabled]="!config.areSendsAllowed || !sendOptionsForm.get('password').value"
-          [valueLabel]="'password' | i18n"
-          [appCopyClick]="sendOptionsForm.get('password').value"
-          showToast
-        ></button>
-      </ng-container>
+      <button
+        data-testid="toggle-visibility-for-password"
+        type="button"
+        bitIconButton
+        bitSuffix
+        bitPasswordInputToggle
+        *ngIf="!hasPassword"
+      ></button>
+      <button
+        type="button"
+        bitIconButton="bwi-generate"
+        bitSuffix
+        [appA11yTitle]="'generatePassword' | i18n"
+        [disabled]="!config.areSendsAllowed"
+        (click)="generatePassword()"
+        data-testid="generate-password"
+        *ngIf="!hasPassword"
+      ></button>
+      <button
+        type="button"
+        bitIconButton="bwi-clone"
+        bitSuffix
+        [appA11yTitle]="'copyPassword' | i18n"
+        [disabled]="!config.areSendsAllowed || !sendOptionsForm.get('password').value"
+        [valueLabel]="'password' | i18n"
+        [appCopyClick]="sendOptionsForm.get('password').value"
+        showToast
+        *ngIf="!hasPassword"
+      ></button>
       <button
         *ngIf="hasPassword"
         class="tw-border-l-0 last:tw-rounded-r focus-visible:tw-border-l focus-visible:tw-ml-[-1px]"
