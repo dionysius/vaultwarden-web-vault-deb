@@ -15,7 +15,7 @@ import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.servic
 import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
 import { DialogService, FormFieldModule, SelectModule, ToastService } from "@bitwarden/components";
 
-import { RegistrationSelfHostedEnvConfigDialogComponent } from "./registration-self-hosted-env-config-dialog.component";
+import { SelfHostedEnvConfigDialogComponent } from "../../self-hosted-env-config-dialog/self-hosted-env-config-dialog.component";
 
 /**
  * Component for selecting the environment to register with in the email verification registration flow.
@@ -125,9 +125,7 @@ export class RegistrationEnvSelectorComponent implements OnInit, OnDestroy {
             }
 
             if (selectedRegion === Region.SelfHosted) {
-              return from(
-                RegistrationSelfHostedEnvConfigDialogComponent.open(this.dialogService),
-              ).pipe(
+              return from(SelfHostedEnvConfigDialogComponent.open(this.dialogService)).pipe(
                 tap((result: boolean | undefined) =>
                   this.handleSelfHostedEnvConfigDialogResult(result, prevSelectedRegion),
                 ),

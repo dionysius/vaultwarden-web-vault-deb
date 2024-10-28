@@ -1,14 +1,19 @@
 import { animate, state, style, transition, trigger } from "@angular/animations";
 import { ConnectedPosition } from "@angular/cdk/overlay";
 import { Component, EventEmitter, Output, Input, OnInit, OnDestroy } from "@angular/core";
-import { Router, ActivatedRoute } from "@angular/router";
+import { ActivatedRoute } from "@angular/router";
 import { Observable, map, Subject, takeUntil } from "rxjs";
 
+import { SelfHostedEnvConfigDialogComponent } from "@bitwarden/auth/angular";
+import { FeatureFlag } from "@bitwarden/common/enums/feature-flag.enum";
+import { ConfigService } from "@bitwarden/common/platform/abstractions/config/config.service";
 import {
   EnvironmentService,
   Region,
   RegionConfig,
 } from "@bitwarden/common/platform/abstractions/environment.service";
+import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
+import { DialogService, ToastService } from "@bitwarden/components";
 
 export const ExtensionDefaultOverlayPosition: ConnectedPosition[] = [
   {
@@ -56,7 +61,7 @@ export interface EnvironmentSelectorRouteData {
   ],
 })
 export class EnvironmentSelectorComponent implements OnInit, OnDestroy {
-  @Output() onOpenSelfHostedSettings = new EventEmitter();
+  @Output() onOpenSelfHostedSettings = new EventEmitter<void>();
   @Input() overlayPosition: ConnectedPosition[] = [
     {
       originX: "start",
@@ -79,8 +84,11 @@ export class EnvironmentSelectorComponent implements OnInit, OnDestroy {
 
   constructor(
     protected environmentService: EnvironmentService,
-    protected router: Router,
     private route: ActivatedRoute,
+    private dialogService: DialogService,
+    private configService: ConfigService,
+    private toastService: ToastService,
+    private i18nService: I18nService,
   ) {}
 
   ngOnInit() {
@@ -102,8 +110,25 @@ export class EnvironmentSelectorComponent implements OnInit, OnDestroy {
       return;
     }
 
+    /**
+     * Opens the self-hosted settings dialog.
+     *
+     * If the `UnauthenticatedExtensionUIRefresh` feature flag is enabled,
+     * the self-hosted settings dialog is opened directly. Otherwise, the
+     * `onOpenSelfHostedSettings` event is emitted.
+     */
     if (option === Region.SelfHosted) {
-      this.onOpenSelfHostedSettings.emit();
+      if (await this.configService.getFeatureFlag(FeatureFlag.UnauthenticatedExtensionUIRefresh)) {
+        if (await SelfHostedEnvConfigDialogComponent.open(this.dialogService)) {
+          this.toastService.showToast({
+            variant: "success",
+            title: null,
+            message: this.i18nService.t("environmentSaved"),
+          });
+        }
+      } else {
+        this.onOpenSelfHostedSettings.emit();
+      }
       return;
     }
 

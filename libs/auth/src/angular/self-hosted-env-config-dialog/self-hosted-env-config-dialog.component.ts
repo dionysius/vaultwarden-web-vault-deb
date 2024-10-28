@@ -10,7 +10,7 @@ import {
   ValidationErrors,
   ValidatorFn,
 } from "@angular/forms";
-import { Subject, firstValueFrom } from "rxjs";
+import { Subject, firstValueFrom, take, filter, takeUntil } from "rxjs";
 
 import { JslibModule } from "@bitwarden/angular/jslib.module";
 import {
@@ -54,8 +54,8 @@ function selfHostedEnvSettingsFormValidator(): ValidatorFn {
  */
 @Component({
   standalone: true,
-  selector: "auth-registration-self-hosted-env-config-dialog",
-  templateUrl: "registration-self-hosted-env-config-dialog.component.html",
+  selector: "self-hosted-env-config-dialog",
+  templateUrl: "self-hosted-env-config-dialog.component.html",
   imports: [
     CommonModule,
     JslibModule,
@@ -68,14 +68,14 @@ function selfHostedEnvSettingsFormValidator(): ValidatorFn {
     AsyncActionsModule,
   ],
 })
-export class RegistrationSelfHostedEnvConfigDialogComponent implements OnInit, OnDestroy {
+export class SelfHostedEnvConfigDialogComponent implements OnInit, OnDestroy {
   /**
    * Opens the dialog.
    * @param dialogService - Dialog service.
    * @returns Promise that resolves to true if the dialog was closed with a successful result, false otherwise.
    */
   static async open(dialogService: DialogService): Promise<boolean> {
-    const dialogRef = dialogService.open<boolean>(RegistrationSelfHostedEnvConfigDialogComponent, {
+    const dialogRef = dialogService.open<boolean>(SelfHostedEnvConfigDialogComponent, {
       disableClose: false,
     });
 
@@ -131,7 +131,33 @@ export class RegistrationSelfHostedEnvConfigDialogComponent implements OnInit, O
     private environmentService: EnvironmentService,
   ) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    /**
+     * Populate the form with the current self-hosted environment settings.
+     */
+    this.environmentService.environment$
+      .pipe(
+        take(1),
+        filter((env) => {
+          const region = env.getRegion();
+          return region === Region.SelfHosted;
+        }),
+        takeUntil(this.destroy$),
+      )
+      .subscribe({
+        next: (env) => {
+          const urls = env.getUrls();
+          this.formGroup.patchValue({
+            baseUrl: urls.base || "",
+            webVaultUrl: urls.webVault || "",
+            apiUrl: urls.api || "",
+            identityUrl: urls.identity || "",
+            iconsUrl: urls.icons || "",
+            notificationsUrl: urls.notifications || "",
+          });
+        },
+      });
+  }
 
   submit = async () => {
     this.showErrorSummary = false;
