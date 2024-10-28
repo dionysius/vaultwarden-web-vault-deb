@@ -1683,6 +1683,12 @@
   "deleteAccountWarning": {
     "message": "Sletning af din konto er permanent og irreversibel."
   },
+  "cannotDeleteAccount": {
+    "message": "Kan ikke slette konto"
+  },
+  "cannotDeleteAccountDesc": {
+    "message": "Denne handling kan ikke fuldføres, da kontoen ejes af en organisation. Kontakt organisationsadministratoren for yderligere detaljer."
+  },
   "accountDeleted": {
     "message": "Konto slettet"
   },

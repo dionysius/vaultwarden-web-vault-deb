@@ -1683,6 +1683,12 @@
   "deleteAccountWarning": {
     "message": "Smazání účtu je trvalé. Tuto akci nelze vrátit zpět."
   },
+  "cannotDeleteAccount": {
+    "message": "Nelze smazat účet"
+  },
+  "cannotDeleteAccountDesc": {
+    "message": "Tuto akci nelze dokončit, protože Váš účet vlastní organizace. Další informace získáte od správce organizace."
+  },
   "accountDeleted": {
     "message": "Účet byl smazán"
   },

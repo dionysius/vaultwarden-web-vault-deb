@@ -148,7 +148,7 @@
     "message": "Merkki"
   },
   "expiration": {
-    "message": "Erääntymisaika"
+    "message": "Voimassaolo päättyy"
   },
   "securityCode": {
     "message": "Turvakoodi (CVC/CVV)"
@@ -1682,6 +1682,12 @@
   },
   "deleteAccountWarning": {
     "message": "Tilin poisto on pysyvä toimenpide, eikä sen peruminen ole mahdollista."
+  },
+  "cannotDeleteAccount": {
+    "message": "Cannot delete account"
+  },
+  "cannotDeleteAccountDesc": {
+    "message": "This action cannot be completed because your account is owned by an organization. Contact your organization administrator for additional details."
   },
   "accountDeleted": {
     "message": "Tili poistettiin"

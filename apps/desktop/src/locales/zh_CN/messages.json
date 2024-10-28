@@ -1683,6 +1683,12 @@
   "deleteAccountWarning": {
     "message": "删除账户是永久性操作，无法撤销！"
   },
+  "cannotDeleteAccount": {
+    "message": "Cannot delete account"
+  },
+  "cannotDeleteAccountDesc": {
+    "message": "This action cannot be completed because your account is owned by an organization. Contact your organization administrator for additional details."
+  },
   "accountDeleted": {
     "message": "账户已删除"
   },

@@ -1683,6 +1683,12 @@
   "deleteAccountWarning": {
     "message": "La suppression de votre compte est définitive. Cette action ne peut pas être annulée."
   },
+  "cannotDeleteAccount": {
+    "message": "Impossible de supprimer le compte"
+  },
+  "cannotDeleteAccountDesc": {
+    "message": "Cette action ne peut pas être complétée car votre compte appartient à une organisation. Contactez l'administrateur de votre organisation pour plus de détails."
+  },
   "accountDeleted": {
     "message": "Compte supprimé"
   },

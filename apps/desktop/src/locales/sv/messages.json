@@ -61,7 +61,7 @@
     }
   },
   "welcomeBack": {
-    "message": "Welcome back"
+    "message": "Välkommen tillbaka"
   },
   "moveToOrgDesc": {
     "message": "Välj en organisation som du vill flytta detta objektet till. Flytt till en organisation överför ägandet av objektet till den organisationen. Du kommer inte längre att vara direkt ägare till detta objekt när det har flyttats."
@@ -263,7 +263,7 @@
     "message": "Generera lösenord"
   },
   "generatePassphrase": {
-    "message": "Generate passphrase"
+    "message": "Generera lösenfras"
   },
   "type": {
     "message": "Typ"
@@ -401,7 +401,7 @@
     "message": "Kopiera lösenord"
   },
   "copyPassphrase": {
-    "message": "Copy passphrase",
+    "message": "Kopiera lösenfras",
     "description": "Copy passphrase to clipboard"
   },
   "copyUri": {
@@ -558,7 +558,7 @@
     "message": "Skapa konto"
   },
   "newToBitwarden": {
-    "message": "New to Bitwarden?"
+    "message": "Ny på Bitwarden?"
   },
   "setAStrongPassword": {
     "message": "Ställ in ett starkt lösenord"
@@ -570,13 +570,13 @@
     "message": "Logga in"
   },
   "logInToBitwarden": {
-    "message": "Log in to Bitwarden"
+    "message": "Logga in på Bitwarden"
   },
   "logInWithPasskey": {
-    "message": "Log in with passkey"
+    "message": "Logga in med nyckel"
   },
   "loginWithDevice": {
-    "message": "Log in with device"
+    "message": "Logga in med enhet"
   },
   "useSingleSignOn": {
     "message": "Use single sign-on"
@@ -1683,6 +1683,12 @@
   "deleteAccountWarning": {
     "message": "Att radera ditt konto är permanent. Det går inte att ångra."
   },
+  "cannotDeleteAccount": {
+    "message": "Cannot delete account"
+  },
+  "cannotDeleteAccountDesc": {
+    "message": "This action cannot be completed because your account is owned by an organization. Contact your organization administrator for additional details."
+  },
   "accountDeleted": {
     "message": "Kontot raderades"
   },
@@ -1794,7 +1800,7 @@
     "description": "Used as a card title description on the set password page to explain why the user is there"
   },
   "cardMetrics": {
-    "message": "out of $TOTAL$",
+    "message": "av $TOTAL$",
     "placeholders": {
       "total": {
         "content": "$1",

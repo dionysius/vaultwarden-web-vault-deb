@@ -1683,6 +1683,12 @@
   "deleteAccountWarning": {
     "message": "Hesabınızı silmek kalıcıdır. Geri alınamaz."
   },
+  "cannotDeleteAccount": {
+    "message": "Hesap silinemiyor"
+  },
+  "cannotDeleteAccountDesc": {
+    "message": "Hesabınızın sahibi bir kuruluş olduğu için bu işlem tamamlanamadı. Bilgi almak için kuruluş yöneticinizle iletişime geçin."
+  },
   "accountDeleted": {
     "message": "Hesap silindi"
   },

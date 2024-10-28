@@ -61,7 +61,7 @@
     }
   },
   "welcomeBack": {
-    "message": "Welcome back"
+    "message": "Yenidən xoş gəlmisiniz"
   },
   "moveToOrgDesc": {
     "message": "Bu elementi daşımaq istədiyiniz təşkilatı seçin. Bir təşkilata daşımaq, elementin sahibliyini də həmin təşkilata daşıyacaq. Daşıdıqdan sonra bu elementə birbaşa sahibliyiniz olmayacaq."
@@ -558,7 +558,7 @@
     "message": "Hesab yarat"
   },
   "newToBitwarden": {
-    "message": "New to Bitwarden?"
+    "message": "Bitwarden-də yenisiniz?"
   },
   "setAStrongPassword": {
     "message": "Güclü bir parol təyin et"
@@ -570,16 +570,16 @@
     "message": "Giriş et"
   },
   "logInToBitwarden": {
-    "message": "Log in to Bitwarden"
+    "message": "Bitwarden-ə giriş edin"
   },
   "logInWithPasskey": {
-    "message": "Log in with passkey"
+    "message": "Keçid açarı ilə giriş et"
   },
   "loginWithDevice": {
-    "message": "Log in with device"
+    "message": "Cihazla giriş et"
   },
   "useSingleSignOn": {
-    "message": "Use single sign-on"
+    "message": "Tək daxil olma üsulunu istifadə et"
   },
   "submit": {
     "message": "Göndər"
@@ -1682,6 +1682,12 @@
   },
   "deleteAccountWarning": {
     "message": "Hesabınızı silmək birdəfəlik prosesdir. Bu əməliyyatın geri dönüşü yoxdur."
+  },
+  "cannotDeleteAccount": {
+    "message": "Hesab silinə bilmir"
+  },
+  "cannotDeleteAccountDesc": {
+    "message": "Hesabınız bir təşkilata aid olduğu üçün bu əməliyyat icra edilə bilməz. Əlavə məlumat üçün təşkilatınızın administratoru ilə əlaqə saxlayın."
   },
   "accountDeleted": {
     "message": "Hesab silindi"

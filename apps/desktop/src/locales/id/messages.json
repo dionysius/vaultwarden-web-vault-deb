@@ -1683,6 +1683,12 @@
   "deleteAccountWarning": {
     "message": "Menghapus akun Anda bersifat permanen. Tindakan ini tidak dapat dibatalkan."
   },
+  "cannotDeleteAccount": {
+    "message": "Cannot delete account"
+  },
+  "cannotDeleteAccountDesc": {
+    "message": "This action cannot be completed because your account is owned by an organization. Contact your organization administrator for additional details."
+  },
   "accountDeleted": {
     "message": "Akun Dihapus"
   },

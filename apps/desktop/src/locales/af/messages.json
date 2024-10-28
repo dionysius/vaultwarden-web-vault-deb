@@ -1683,6 +1683,12 @@
   "deleteAccountWarning": {
     "message": "Skrap van u rekening is permanent. Dit kan nie ontdaan word nie."
   },
+  "cannotDeleteAccount": {
+    "message": "Cannot delete account"
+  },
+  "cannotDeleteAccountDesc": {
+    "message": "This action cannot be completed because your account is owned by an organization. Contact your organization administrator for additional details."
+  },
   "accountDeleted": {
     "message": "Rekening geskrap"
   },

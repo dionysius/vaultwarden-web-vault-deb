@@ -1683,6 +1683,12 @@
   "deleteAccountWarning": {
     "message": "Ang pagtanggal ng iyong account ay permanente. Hindi na ito mababawi."
   },
+  "cannotDeleteAccount": {
+    "message": "Cannot delete account"
+  },
+  "cannotDeleteAccountDesc": {
+    "message": "This action cannot be completed because your account is owned by an organization. Contact your organization administrator for additional details."
+  },
   "accountDeleted": {
     "message": "Tinanggal ang account"
   },

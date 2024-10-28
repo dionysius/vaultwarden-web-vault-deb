@@ -61,7 +61,7 @@
     }
   },
   "welcomeBack": {
-    "message": "Welcome back"
+    "message": "Willkommen zurück"
   },
   "moveToOrgDesc": {
     "message": "Wähle eine Organisation aus, in die du diesen Eintrag verschieben möchtest. Das Verschieben in eine Organisation überträgt das Eigentum an diese Organisation. Du bist nicht mehr der direkte Eigentümer dieses Eintrags, sobald er verschoben wurde."
@@ -558,7 +558,7 @@
     "message": "Konto erstellen"
   },
   "newToBitwarden": {
-    "message": "New to Bitwarden?"
+    "message": "Neu bei Bitwarden?"
   },
   "setAStrongPassword": {
     "message": "Lege ein starkes Passwort fest"
@@ -570,16 +570,16 @@
     "message": "Anmelden"
   },
   "logInToBitwarden": {
-    "message": "Log in to Bitwarden"
+    "message": "Bei Bitwarden anmelden"
   },
   "logInWithPasskey": {
-    "message": "Log in with passkey"
+    "message": "Mit Passkey anmelden"
   },
   "loginWithDevice": {
-    "message": "Log in with device"
+    "message": "Mit Gerät anmelden"
   },
   "useSingleSignOn": {
-    "message": "Use single sign-on"
+    "message": "Single Sign-on verwenden"
   },
   "submit": {
     "message": "Absenden"
@@ -1682,6 +1682,12 @@
   },
   "deleteAccountWarning": {
     "message": "Die Kontolöschung ist dauerhaft. Sie kann nicht rückgängig gemacht werden."
+  },
+  "cannotDeleteAccount": {
+    "message": "Cannot delete account"
+  },
+  "cannotDeleteAccountDesc": {
+    "message": "This action cannot be completed because your account is owned by an organization. Contact your organization administrator for additional details."
   },
   "accountDeleted": {
     "message": "Konto gelöscht"

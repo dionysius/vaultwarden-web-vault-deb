@@ -1683,6 +1683,12 @@
   "deleteAccountWarning": {
     "message": "El borrado de su cuenta es una operación permanente. No se puede deshacer."
   },
+  "cannotDeleteAccount": {
+    "message": "Cannot delete account"
+  },
+  "cannotDeleteAccountDesc": {
+    "message": "This action cannot be completed because your account is owned by an organization. Contact your organization administrator for additional details."
+  },
   "accountDeleted": {
     "message": "Cuenta eliminada"
   },

@@ -1683,6 +1683,12 @@
   "deleteAccountWarning": {
     "message": "L'eliminazione del tuo account è permanente. Non può essere annullata."
   },
+  "cannotDeleteAccount": {
+    "message": "Cannot delete account"
+  },
+  "cannotDeleteAccountDesc": {
+    "message": "This action cannot be completed because your account is owned by an organization. Contact your organization administrator for additional details."
+  },
   "accountDeleted": {
     "message": "Account eliminato"
   },
@@ -1819,7 +1825,7 @@
     "message": "Una o più politiche dell'organizzazione richiedono che la tua password principale soddisfi questi requisiti:"
   },
   "policyInEffectMinComplexity": {
-    "message": "Punteggio minimo di complessità $SCORE$",
+    "message": "Punteggio di complessità minimo di $SCORE$",
     "placeholders": {
       "score": {
         "content": "$1",
@@ -2721,7 +2727,7 @@
     "message": "Password principale debole e violata"
   },
   "weakAndBreachedMasterPasswordDesc": {
-    "message": "Password debole e trovata una violazione dei dati. Usa una password forte e unica per proteggere il tuo account. Sei sicuro di voler usare questa password?"
+    "message": "Password debole e trovata in una violazione dei dati. Usa una password forte e unica per proteggere il tuo account. Sei sicuro di voler usare questa password?"
   },
   "checkForBreaches": {
     "message": "Controlla se la tua password è presente in una violazione dei dati"

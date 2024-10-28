@@ -1683,6 +1683,12 @@
   "deleteAccountWarning": {
     "message": "刪除您的帳戶是永久性的。並且無法復原。"
   },
+  "cannotDeleteAccount": {
+    "message": "Cannot delete account"
+  },
+  "cannotDeleteAccountDesc": {
+    "message": "This action cannot be completed because your account is owned by an organization. Contact your organization administrator for additional details."
+  },
   "accountDeleted": {
     "message": "帳戶已刪除"
   },

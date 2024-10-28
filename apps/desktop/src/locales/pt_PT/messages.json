@@ -1683,6 +1683,12 @@
   "deleteAccountWarning": {
     "message": "A eliminação da sua conta é permanente. Não pode ser anulada."
   },
+  "cannotDeleteAccount": {
+    "message": "Não é possível eliminar a conta"
+  },
+  "cannotDeleteAccountDesc": {
+    "message": "Esta ação não pode ser concluída porque a sua conta é propriedade de uma organização. Contacte o administrador da sua organização para obter mais informações."
+  },
   "accountDeleted": {
     "message": "Conta eliminada"
   },

@@ -1683,6 +1683,12 @@
   "deleteAccountWarning": {
     "message": "A fiók véglegesen törlésre kerül. A művelet nem vonható vissza."
   },
+  "cannotDeleteAccount": {
+    "message": "A fiók nem törölhető."
+  },
+  "cannotDeleteAccountDesc": {
+    "message": "Ez a művelet nem hajtható végre, mert a fiók egy szervezet tulajdonában van. További részletekért forduljunk a szervezet adminisztrátorához."
+  },
   "accountDeleted": {
     "message": "A fiók törlésre került."
   },
