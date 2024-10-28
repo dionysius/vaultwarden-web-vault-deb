@@ -46,8 +46,15 @@ export function makeStaticByteArray(length: number, start = 0) {
   return arr;
 }
 
-export function makeSymmetricCryptoKey<T extends SymmetricCryptoKey>(length: 32 | 64 = 64) {
-  return new SymmetricCryptoKey(makeStaticByteArray(length)) as T;
+/**
+ * Creates a symmetric crypto key for use in tests. This is deterministic, i.e. it will produce identical keys
+ * for identical argument values. Provide a unique value to the `seed` parameter to create different keys.
+ */
+export function makeSymmetricCryptoKey<T extends SymmetricCryptoKey>(
+  length: 32 | 64 = 64,
+  seed = 0,
+) {
+  return new SymmetricCryptoKey(makeStaticByteArray(length, seed)) as T;
 }
 
 /**

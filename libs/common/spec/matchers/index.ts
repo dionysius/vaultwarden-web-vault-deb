@@ -1,3 +1,5 @@
+import * as matchers from "jest-extended";
+
 import { toBeFulfilled, toBeResolved, toBeRejected } from "./promise-fulfilled";
 import { toAlmostEqual } from "./to-almost-equal";
 import { toEqualBuffer } from "./to-equal-buffer";
@@ -5,6 +7,9 @@ import { toEqualBuffer } from "./to-equal-buffer";
 export * from "./to-equal-buffer";
 export * from "./to-almost-equal";
 export * from "./promise-fulfilled";
+
+// add all jest-extended matchers
+expect.extend(matchers);
 
 export function addCustomMatchers() {
   expect.extend({
