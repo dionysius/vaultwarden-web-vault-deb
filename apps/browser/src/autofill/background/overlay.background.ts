@@ -1009,7 +1009,10 @@ export class OverlayBackground implements OverlayBackgroundInterface {
       this.logService.error(error),
     );
 
-    if ((await this.getInlineMenuVisibility()) === AutofillOverlayVisibility.OnButtonClick) {
+    if (
+      (await this.getInlineMenuVisibility()) === AutofillOverlayVisibility.OnButtonClick &&
+      !this.isInlineMenuListVisible
+    ) {
       return;
     }
 
@@ -2579,7 +2582,7 @@ export class OverlayBackground implements OverlayBackgroundInterface {
    * @param sender
    */
   private resetFocusedFieldSubFrameOffsets(sender: chrome.runtime.MessageSender) {
-    if (this.focusedFieldData.frameId > 0 && this.subFrameOffsetsForTab[sender.tab.id]) {
+    if (this.focusedFieldData?.frameId > 0 && this.subFrameOffsetsForTab[sender.tab.id]) {
       this.subFrameOffsetsForTab[sender.tab.id].set(this.focusedFieldData.frameId, null);
     }
   }
@@ -2592,6 +2595,7 @@ export class OverlayBackground implements OverlayBackgroundInterface {
    */
   private async triggerSubFrameFocusInRebuild(sender: chrome.runtime.MessageSender) {
     this.cancelInlineMenuFadeInAndPositionUpdate();
+    this.resetFocusedFieldSubFrameOffsets(sender);
     this.rebuildSubFrameOffsets$.next(sender);
     this.repositionInlineMenu$.next(sender);
   }
