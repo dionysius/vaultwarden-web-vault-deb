@@ -45,6 +45,24 @@ const LOGGED_OUT_INFO: AccountInfo = {
   name: undefined,
 };
 
+/**
+ * An rxjs map operator that extracts the UserId from an account, or throws if the account or UserId are null.
+ */
+export const getUserId = map<{ id: UserId | undefined }, UserId>((account) => {
+  if (account?.id == null) {
+    throw new Error("Null account or account ID");
+  }
+
+  return account.id;
+});
+
+/**
+ * An rxjs map operator that extracts the UserId from an account, or returns undefined if the account or UserId are null.
+ */
+export const getOptionalUserId = map<{ id: UserId | undefined }, UserId | undefined>(
+  (account) => account?.id ?? undefined,
+);
+
 export class AccountServiceImplementation implements InternalAccountService {
   private accountsState: GlobalState<Record<UserId, AccountInfo>>;
   private activeAccountIdState: GlobalState<UserId | undefined>;
