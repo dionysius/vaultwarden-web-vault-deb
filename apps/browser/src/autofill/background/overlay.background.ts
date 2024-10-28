@@ -1010,8 +1010,8 @@ export class OverlayBackground implements OverlayBackgroundInterface {
     );
 
     if (
-      (await this.getInlineMenuVisibility()) === AutofillOverlayVisibility.OnButtonClick &&
-      !this.isInlineMenuListVisible
+      !this.checkIsInlineMenuListVisible() &&
+      (await this.getInlineMenuVisibility()) === AutofillOverlayVisibility.OnButtonClick
     ) {
       return;
     }
