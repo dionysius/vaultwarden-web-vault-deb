@@ -23,7 +23,7 @@
 
     <bit-form-field *ngIf="sendLink">
       <bit-label>{{ "sendLink" | i18n }}</bit-label>
-      <input data-testid="send-link" bitInput type="text" [value]="sendLink" readonly />
+      <input data-testid="send-link" bitInput type="text" [value]="sendLink" disabled />
       <button
         type="button"
         bitSuffix
