@@ -1794,6 +1794,15 @@
   "passwordHistory": {
     "message": "Parola geçmişi"
   },
+  "generatorHistory": {
+    "message": "Üreteç geçmişi"
+  },
+  "clearGeneratorHistoryTitle": {
+    "message": "Üreteç geçmişini temizle"
+  },
+  "cleargGeneratorHistoryDescription": {
+    "message": "Devam ederseniz üreteç geçmişindeki tüm kayıtlar kalıcı olarak silinecektir. Devam etmek istediğinizden emin misiniz?"
+  },
   "back": {
     "message": "Geri"
   },
@@ -1910,11 +1919,11 @@
   "clearHistory": {
     "message": "Geçmişi temizle"
   },
-  "noPasswordsToShow": {
-    "message": "Gösterilecek parola yok"
+  "nothingToShow": {
+    "message": "Gösterilecek bir şey yok"
   },
-  "noRecentlyGeneratedPassword": {
-    "message": "Yakın zamanda parola üretmediniz"
+  "nothingGeneratedRecently": {
+    "message": "Yakın zamanda herhangi bir şey üretmediniz"
   },
   "remove": {
     "message": "Kaldır"

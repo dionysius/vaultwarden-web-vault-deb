@@ -20,16 +20,16 @@
     "message": "Hesab yarat"
   },
   "newToBitwarden": {
-    "message": "New to Bitwarden?"
+    "message": "Bitwarden-də yenisiniz?"
   },
   "logInWithPasskey": {
-    "message": "Log in with passkey"
+    "message": "Keçid açarı ilə giriş et"
   },
   "useSingleSignOn": {
-    "message": "Use single sign-on"
+    "message": "Tək daxil olma üsulunu istifadə et"
   },
   "welcomeBack": {
-    "message": "Welcome back"
+    "message": "Yenidən xoş gəlmisiniz"
   },
   "setAStrongPassword": {
     "message": "Güclü bir parol təyin et"
@@ -120,7 +120,7 @@
     "message": "Parolu kopyala"
   },
   "copyPassphrase": {
-    "message": "Copy passphrase"
+    "message": "Keçid ifadəsini kopyala"
   },
   "copyNote": {
     "message": "Notu kopyala"
@@ -168,7 +168,7 @@
     "message": "Notları kopyala"
   },
   "fill": {
-    "message": "Fill",
+    "message": "Doldur",
     "description": "This string is used on the vault page to indicate autofilling. Horizontal space is limited in the interface here so try and keep translations as concise as possible."
   },
   "autoFill": {
@@ -427,7 +427,7 @@
     "message": "Parol yarat"
   },
   "generatePassphrase": {
-    "message": "Generate passphrase"
+    "message": "Keçid ifadələri yarat"
   },
   "regeneratePassword": {
     "message": "Parolu yenidən yarat"
@@ -591,7 +591,7 @@
     "message": "Veb saytı başlat"
   },
   "launchWebsiteName": {
-    "message": "Launch website $ITEMNAME$",
+    "message": "$ITEMNAME$ veb saytını başlat",
     "placeholders": {
       "itemname": {
         "content": "$1",
@@ -846,7 +846,7 @@
     "message": "Giriş et"
   },
   "logInToBitwarden": {
-    "message": "Log in to Bitwarden"
+    "message": "Bitwarden-ə giriş edin"
   },
   "restartRegistration": {
     "message": "Qeydiyyatı yenidən başlat"
@@ -1794,6 +1794,15 @@
   "passwordHistory": {
     "message": "Parol tarixçəsi"
   },
+  "generatorHistory": {
+    "message": "Yaradıcı tarixçəsi"
+  },
+  "clearGeneratorHistoryTitle": {
+    "message": "Yaradıcı tarixçəsini təmizlə"
+  },
+  "cleargGeneratorHistoryDescription": {
+    "message": "Davam etsəniz, yaradıcı tarixçəsindəki bütün girişlər həmişəlik silinəcək. Davam etmək istədiyinizə əminsiniz?"
+  },
   "back": {
     "message": "Geri"
   },
@@ -1910,11 +1919,11 @@
   "clearHistory": {
     "message": "Tarixçəni təmizlə"
   },
-  "noPasswordsToShow": {
-    "message": "Göstəriləcək parol yoxdur."
+  "nothingToShow": {
+    "message": "Göstəriləcək heç nə yoxdur"
   },
-  "noRecentlyGeneratedPassword": {
-    "message": "Təzəlikcə parol yaratmamısınız."
+  "nothingGeneratedRecently": {
+    "message": "Təzəlikcə heç nə yaratmamısınız"
   },
   "remove": {
     "message": "Çıxart"
@@ -4616,19 +4625,19 @@
     "message": "Kimlik doğrulama"
   },
   "fillGeneratedPassword": {
-    "message": "Fill generated password",
+    "message": "Yaradılmış parolu doldur",
     "description": "Heading for the password generator within the inline menu"
   },
   "passwordRegenerated": {
-    "message": "Password regenerated",
+    "message": "Parol yenidən yaradıldı",
     "description": "Notification message for when a password has been regenerated"
   },
   "saveLoginToBitwarden": {
-    "message": "Save login to Bitwarden?",
+    "message": "Giriş Bitwarden-də saxlanılsın?",
     "description": "Confirmation message for saving a login to Bitwarden"
   },
   "spaceCharacterDescriptor": {
-    "message": "Space",
+    "message": "Boşluq",
     "description": "Represents the space key in screen reader content as a readable word"
   },
   "tildeCharacterDescriptor": {
@@ -4636,27 +4645,27 @@
     "description": "Represents the ~ key in screen reader content as a readable word"
   },
   "backtickCharacterDescriptor": {
-    "message": "Backtick",
+    "message": "Tərs dırnaq",
     "description": "Represents the ` key in screen reader content as a readable word"
   },
   "exclamationCharacterDescriptor": {
-    "message": "Exclamation mark",
+    "message": "Nida işarəsi",
     "description": "Represents the ! key in screen reader content as a readable word"
   },
   "atSignCharacterDescriptor": {
-    "message": "At sign",
+    "message": "At işarəsi",
     "description": "Represents the @ key in screen reader content as a readable word"
   },
   "hashSignCharacterDescriptor": {
-    "message": "Hash sign",
+    "message": "Diyez işarəsi",
     "description": "Represents the # key in screen reader content as a readable word"
   },
   "dollarSignCharacterDescriptor": {
-    "message": "Dollar sign",
+    "message": "Dollar işarəsi",
     "description": "Represents the $ key in screen reader content as a readable word"
   },
   "percentSignCharacterDescriptor": {
-    "message": "Percent sign",
+    "message": "Faiz işarəsi",
     "description": "Represents the % key in screen reader content as a readable word"
   },
   "caretCharacterDescriptor": {
@@ -4664,108 +4673,108 @@
     "description": "Represents the ^ key in screen reader content as a readable word"
   },
   "ampersandCharacterDescriptor": {
-    "message": "Ampersand",
+    "message": "Və işarəsi",
     "description": "Represents the & key in screen reader content as a readable word"
   },
   "asteriskCharacterDescriptor": {
-    "message": "Asterisk",
+    "message": "Ulduz",
     "description": "Represents the * key in screen reader content as a readable word"
   },
   "parenLeftCharacterDescriptor": {
-    "message": "Left parenthesis",
+    "message": "Sol mötərizə",
     "description": "Represents the ( key in screen reader content as a readable word"
   },
   "parenRightCharacterDescriptor": {
-    "message": "Right parenthesis",
+    "message": "Sağ mötərizə",
     "description": "Represents the ) key in screen reader content as a readable word"
   },
   "hyphenCharacterDescriptor": {
-    "message": "Underscore",
+    "message": "Altdan xətt",
     "description": "Represents the _ key in screen reader content as a readable word"
   },
   "underscoreCharacterDescriptor": {
-    "message": "Hyphen",
+    "message": "Tire",
     "description": "Represents the - key in screen reader content as a readable word"
   },
   "plusCharacterDescriptor": {
-    "message": "Plus",
+    "message": "Üstəgəl",
     "description": "Represents the + key in screen reader content as a readable word"
   },
   "equalsCharacterDescriptor": {
-    "message": "Equals",
+    "message": "Bərabərdir",
     "description": "Represents the = key in screen reader content as a readable word"
   },
   "braceLeftCharacterDescriptor": {
-    "message": "Left brace",
+    "message": "Sol bəzəkli mötərizə",
     "description": "Represents the { key in screen reader content as a readable word"
   },
   "braceRightCharacterDescriptor": {
-    "message": "Right brace",
+    "message": "Sağ bəzəkli mötərizə",
     "description": "Represents the } key in screen reader content as a readable word"
   },
   "bracketLeftCharacterDescriptor": {
-    "message": "Left bracket",
+    "message": "Sol kvadrat mötərizə",
     "description": "Represents the [ key in screen reader content as a readable word"
   },
   "bracketRightCharacterDescriptor": {
-    "message": "Right bracket",
+    "message": "Sağ kvadrat mötərizə",
     "description": "Represents the ] key in screen reader content as a readable word"
   },
   "pipeCharacterDescriptor": {
-    "message": "Pipe",
+    "message": "Şaquli xətt",
     "description": "Represents the | key in screen reader content as a readable word"
   },
   "backSlashCharacterDescriptor": {
-    "message": "Back slash",
+    "message": "Tərs sləş",
     "description": "Represents the back slash key in screen reader content as a readable word"
   },
   "colonCharacterDescriptor": {
-    "message": "Colon",
+    "message": "Cüt nöqtə",
     "description": "Represents the : key in screen reader content as a readable word"
   },
   "semicolonCharacterDescriptor": {
-    "message": "Semicolon",
+    "message": "Nöqtəli vergül",
     "description": "Represents the ; key in screen reader content as a readable word"
   },
   "doubleQuoteCharacterDescriptor": {
-    "message": "Double quote",
+    "message": "Cüt dırnaq",
     "description": "Represents the double quote key in screen reader content as a readable word"
   },
   "singleQuoteCharacterDescriptor": {
-    "message": "Single quote",
+    "message": "Tək dırnaq",
     "description": "Represents the ' key in screen reader content as a readable word"
   },
   "lessThanCharacterDescriptor": {
-    "message": "Less than",
+    "message": "Kiçikdir",
     "description": "Represents the < key in screen reader content as a readable word"
   },
   "greaterThanCharacterDescriptor": {
-    "message": "Greater than",
+    "message": "Böyükdür",
     "description": "Represents the > key in screen reader content as a readable word"
   },
   "commaCharacterDescriptor": {
-    "message": "Comma",
+    "message": "Vergül",
     "description": "Represents the , key in screen reader content as a readable word"
   },
   "periodCharacterDescriptor": {
-    "message": "Period",
+    "message": "Nöqtə",
     "description": "Represents the . key in screen reader content as a readable word"
   },
   "questionCharacterDescriptor": {
-    "message": "Question mark",
+    "message": "Sual işarəsi",
     "description": "Represents the ? key in screen reader content as a readable word"
   },
   "forwardSlashCharacterDescriptor": {
-    "message": "Forward slash",
+    "message": "Düz sləş",
     "description": "Represents the / key in screen reader content as a readable word"
   },
   "lowercaseAriaLabel": {
-    "message": "Lowercase"
+    "message": "Kiçik hərf"
   },
   "uppercaseAriaLabel": {
-    "message": "Uppercase"
+    "message": "Böyük hərf"
   },
   "generatedPassword": {
-    "message": "Generated password"
+    "message": "Parol yarat"
   }
 }

@@ -20,16 +20,16 @@
     "message": "Skapa konto"
   },
   "newToBitwarden": {
-    "message": "New to Bitwarden?"
+    "message": "Ny på Bitwarden?"
   },
   "logInWithPasskey": {
-    "message": "Log in with passkey"
+    "message": "Logga in med nyckel"
   },
   "useSingleSignOn": {
-    "message": "Use single sign-on"
+    "message": "Använd Single Sign-On"
   },
   "welcomeBack": {
-    "message": "Welcome back"
+    "message": "Välkommen tillbaka"
   },
   "setAStrongPassword": {
     "message": "Ställ in ett starkt lösenord"
@@ -120,7 +120,7 @@
     "message": "Kopiera lösenord"
   },
   "copyPassphrase": {
-    "message": "Copy passphrase"
+    "message": "Kopiera lösenfras"
   },
   "copyNote": {
     "message": "Kopiera anteckning"
@@ -427,7 +427,7 @@
     "message": "Generera lösenord"
   },
   "generatePassphrase": {
-    "message": "Generate passphrase"
+    "message": "Generera lösenfras"
   },
   "regeneratePassword": {
     "message": "Återskapa lösenord"
@@ -846,7 +846,7 @@
     "message": "Logga in"
   },
   "logInToBitwarden": {
-    "message": "Log in to Bitwarden"
+    "message": "Logga in på Bitwarden"
   },
   "restartRegistration": {
     "message": "Restart registration"
@@ -1456,10 +1456,10 @@
     "message": "Show autofill suggestions on form fields"
   },
   "showInlineMenuIdentitiesLabel": {
-    "message": "Display identities as suggestions"
+    "message": "Visa identiteter som förslag"
   },
   "showInlineMenuCardsLabel": {
-    "message": "Display cards as suggestions"
+    "message": "Visa kort som förslag"
   },
   "showInlineMenuOnIconSelectionLabel": {
     "message": "Display suggestions when icon is selected"
@@ -1794,6 +1794,15 @@
   "passwordHistory": {
     "message": "Lösenordshistorik"
   },
+  "generatorHistory": {
+    "message": "Generatorhistorik"
+  },
+  "clearGeneratorHistoryTitle": {
+    "message": "Rensa generatorhistorik"
+  },
+  "cleargGeneratorHistoryDescription": {
+    "message": "If you continue, all entries will be permanently deleted from generator's history. Are you sure you want to continue?"
+  },
   "back": {
     "message": "Tillbaka"
   },
@@ -1910,11 +1919,11 @@
   "clearHistory": {
     "message": "Rensa historik"
   },
-  "noPasswordsToShow": {
-    "message": "Inga lösenord att visa"
+  "nothingToShow": {
+    "message": "Nothing to show"
   },
-  "noRecentlyGeneratedPassword": {
-    "message": "You haven't generated a password recently"
+  "nothingGeneratedRecently": {
+    "message": "You haven't generated anything recently"
   },
   "remove": {
     "message": "Ta bort"
@@ -2093,7 +2102,7 @@
     "message": "Fyll i automatiskt och spara"
   },
   "fillAndSave": {
-    "message": "Fill and save"
+    "message": "Fyll och spara"
   },
   "autoFillSuccessAndSavedUri": {
     "message": "Fyllde i objektet automatiskt och sparade URI:n"
@@ -2701,7 +2710,7 @@
     "description": "Used as a card title description on the set password page to explain why the user is there"
   },
   "cardMetrics": {
-    "message": "out of $TOTAL$",
+    "message": "av $TOTAL$",
     "placeholders": {
       "total": {
         "content": "$1",
@@ -3754,7 +3763,7 @@
     "message": "No matching logins for this site"
   },
   "searchSavePasskeyNewLogin": {
-    "message": "Search or save passkey as new login"
+    "message": "Sök eller spara nyckel som ny inloggning"
   },
   "confirm": {
     "message": "Bekräfta"
@@ -4624,7 +4633,7 @@
     "description": "Notification message for when a password has been regenerated"
   },
   "saveLoginToBitwarden": {
-    "message": "Save login to Bitwarden?",
+    "message": "Spara inloggning på Bitwarden?",
     "description": "Confirmation message for saving a login to Bitwarden"
   },
   "spaceCharacterDescriptor": {

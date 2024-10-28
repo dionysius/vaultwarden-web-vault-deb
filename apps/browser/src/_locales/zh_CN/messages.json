@@ -1794,6 +1794,15 @@
   "passwordHistory": {
     "message": "密码历史记录"
   },
+  "generatorHistory": {
+    "message": "Generator history"
+  },
+  "clearGeneratorHistoryTitle": {
+    "message": "Clear generator history"
+  },
+  "cleargGeneratorHistoryDescription": {
+    "message": "If you continue, all entries will be permanently deleted from generator's history. Are you sure you want to continue?"
+  },
   "back": {
     "message": "后退"
   },
@@ -1910,11 +1919,11 @@
   "clearHistory": {
     "message": "清除历史记录"
   },
-  "noPasswordsToShow": {
-    "message": "没有可显示的密码"
+  "nothingToShow": {
+    "message": "Nothing to show"
   },
-  "noRecentlyGeneratedPassword": {
-    "message": "您最近还没有生成过密码"
+  "nothingGeneratedRecently": {
+    "message": "You haven't generated anything recently"
   },
   "remove": {
     "message": "移除"

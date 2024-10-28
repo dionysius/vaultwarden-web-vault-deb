@@ -1794,6 +1794,15 @@
   "passwordHistory": {
     "message": "Хронология на паролата"
   },
+  "generatorHistory": {
+    "message": "История на генерирането"
+  },
+  "clearGeneratorHistoryTitle": {
+    "message": "Изчистване на историята на генериране"
+  },
+  "cleargGeneratorHistoryDescription": {
+    "message": "Ако продължите, всички записи в историята на генериране ще бъдат изтрити завинаги. Наистина ли искате това?"
+  },
   "back": {
     "message": "Назад"
   },
@@ -1910,11 +1919,11 @@
   "clearHistory": {
     "message": "Изчистване на историята"
   },
-  "noPasswordsToShow": {
-    "message": "Няма пароли за показване"
+  "nothingToShow": {
+    "message": "Няма нищо за показване"
   },
-  "noRecentlyGeneratedPassword": {
-    "message": "Скоро не сте генерирали пароли"
+  "nothingGeneratedRecently": {
+    "message": "Скоро не сте генерирали нищо"
   },
   "remove": {
     "message": "Премахване"

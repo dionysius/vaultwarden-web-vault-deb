@@ -1794,6 +1794,15 @@
   "passwordHistory": {
     "message": "Paroļu vēsture"
   },
+  "generatorHistory": {
+    "message": "Veidotāja vēsture"
+  },
+  "clearGeneratorHistoryTitle": {
+    "message": "Iztīrīt veidotāja vēsturi"
+  },
+  "cleargGeneratorHistoryDescription": {
+    "message": "Turpinot visi veidotāja vēstures ieraksti tiks neatgrieziniski izdzēsti. Vai tiešām turpināt?"
+  },
   "back": {
     "message": "Atpakaļ"
   },
@@ -1910,11 +1919,11 @@
   "clearHistory": {
     "message": "Notīrīt vēsturi"
   },
-  "noPasswordsToShow": {
-    "message": "Nav paroļu, ko parādīt"
+  "nothingToShow": {
+    "message": "Nav nekā, ko parādīt"
   },
-  "noRecentlyGeneratedPassword": {
-    "message": "Pēdējā laikā nav izveidota neviena parole"
+  "nothingGeneratedRecently": {
+    "message": "Pēdējā laikā nav nekas izveidots"
   },
   "remove": {
     "message": "Noņemt"

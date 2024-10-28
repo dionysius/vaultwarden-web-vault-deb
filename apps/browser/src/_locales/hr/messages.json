@@ -1794,6 +1794,15 @@
   "passwordHistory": {
     "message": "Povijest"
   },
+  "generatorHistory": {
+    "message": "Generator history"
+  },
+  "clearGeneratorHistoryTitle": {
+    "message": "Clear generator history"
+  },
+  "cleargGeneratorHistoryDescription": {
+    "message": "If you continue, all entries will be permanently deleted from generator's history. Are you sure you want to continue?"
+  },
   "back": {
     "message": "Natrag"
   },
@@ -1910,11 +1919,11 @@
   "clearHistory": {
     "message": "Očisti povijest"
   },
-  "noPasswordsToShow": {
-    "message": "Nema lozinki za prikaz"
+  "nothingToShow": {
+    "message": "Nothing to show"
   },
-  "noRecentlyGeneratedPassword": {
-    "message": "Nema nedavno generiranih lozinki"
+  "nothingGeneratedRecently": {
+    "message": "You haven't generated anything recently"
   },
   "remove": {
     "message": "Ukloni"

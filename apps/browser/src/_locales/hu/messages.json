@@ -1794,6 +1794,15 @@
   "passwordHistory": {
     "message": "Jelszó előzmények"
   },
+  "generatorHistory": {
+    "message": "Generator history"
+  },
+  "clearGeneratorHistoryTitle": {
+    "message": "Beenerátor előzmények kiürítése"
+  },
+  "cleargGeneratorHistoryDescription": {
+    "message": "Ha folytatjuk, az összes bejegyzés véglegesen törlődik a generátor előzményeiből. Biztosan folytatjuk?"
+  },
   "back": {
     "message": "Vissza"
   },
@@ -1910,11 +1919,11 @@
   "clearHistory": {
     "message": "Előzmények törlése"
   },
-  "noPasswordsToShow": {
-    "message": "Nincsenek megjeleníthető jelszavak."
+  "nothingToShow": {
+    "message": "Nothing to show"
   },
-  "noRecentlyGeneratedPassword": {
-    "message": "Mostanában nem lett jelszó generálva."
+  "nothingGeneratedRecently": {
+    "message": "You haven't generated anything recently"
   },
   "remove": {
     "message": "Eltávolítás"

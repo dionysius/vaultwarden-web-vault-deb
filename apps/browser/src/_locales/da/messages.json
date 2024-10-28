@@ -1794,6 +1794,15 @@
   "passwordHistory": {
     "message": "Adgangskodehistorik"
   },
+  "generatorHistory": {
+    "message": "Generatorhistorik"
+  },
+  "clearGeneratorHistoryTitle": {
+    "message": "Ryd generatorhistorik"
+  },
+  "cleargGeneratorHistoryDescription": {
+    "message": "Fortsættes, slettes alle poster permanent fra generatorens historik. Sikker på, at handlingen skal udføres?"
+  },
   "back": {
     "message": "Tilbage"
   },
@@ -1910,11 +1919,11 @@
   "clearHistory": {
     "message": "Ryd historik"
   },
-  "noPasswordsToShow": {
-    "message": "Ingen adgangskoder at vise"
+  "nothingToShow": {
+    "message": "Intet at vise"
   },
-  "noRecentlyGeneratedPassword": {
-    "message": "Der er ikke genereret nogen adgangskode for nylig"
+  "nothingGeneratedRecently": {
+    "message": "Intet genereret for nylig"
   },
   "remove": {
     "message": "Fjern"

@@ -120,7 +120,7 @@
     "message": "Copier le mot de passe"
   },
   "copyPassphrase": {
-    "message": "Copy passphrase"
+    "message": "Copier la phrase de passe"
   },
   "copyNote": {
     "message": "Copier la note"
@@ -427,7 +427,7 @@
     "message": "Générer un mot de passe"
   },
   "generatePassphrase": {
-    "message": "Generate passphrase"
+    "message": "Générer une phrase de passe"
   },
   "regeneratePassword": {
     "message": "Régénérer un mot de passe"
@@ -567,7 +567,7 @@
     "message": "Notes"
   },
   "privateNote": {
-    "message": "Private note"
+    "message": "Note privée"
   },
   "note": {
     "message": "Note"
@@ -624,7 +624,7 @@
     "message": "Expiration de la session"
   },
   "vaultTimeoutHeader": {
-    "message": "Vault timeout"
+    "message": "Délai d'expiration du coffre"
   },
   "otherOptions": {
     "message": "Autres options"
@@ -676,7 +676,7 @@
     "message": "Délai d'expiration du coffre"
   },
   "vaultTimeout1": {
-    "message": "Timeout"
+    "message": "Délai d'expiration"
   },
   "lockNow": {
     "message": "Verrouiller maintenant"
@@ -882,7 +882,7 @@
     "message": "L'authentification à deux facteurs rend votre compte plus sûr en vous demandant de vérifier votre connexion avec un autre dispositif tel qu'une clé de sécurité, une application d'authentification, un SMS, un appel téléphonique ou un courriel. L'authentification à deux facteurs peut être configurée dans le coffre web de bitwarden.com. Voulez-vous visiter le site web maintenant ?"
   },
   "twoStepLoginConfirmationContent": {
-    "message": "Make your account more secure by setting up two-step login in the Bitwarden web app."
+    "message": "Rendez votre compte plus sécurisé en configurant la connexion en deux étapes dans l'application web Bitwarden."
   },
   "twoStepLoginConfirmationTitle": {
     "message": "Poursuivre vers l'application web ?"
@@ -1424,7 +1424,7 @@
     "message": "URL du serveur"
   },
   "selfHostBaseUrl": {
-    "message": "Self-host server URL",
+    "message": "URL du serveur auto-hébergé",
     "description": "Label for field requesting a self-hosted integration service URL"
   },
   "apiUrl": {
@@ -1794,6 +1794,15 @@
   "passwordHistory": {
     "message": "Historique des mots de passe"
   },
+  "generatorHistory": {
+    "message": "Historique du générateur"
+  },
+  "clearGeneratorHistoryTitle": {
+    "message": "Effacer l'historique du générateur"
+  },
+  "cleargGeneratorHistoryDescription": {
+    "message": "Si vous continuez, toutes les entrées seront définitivement supprimées de l'historique du générateur. Êtes-vous sûr de vouloir continuer ?"
+  },
   "back": {
     "message": "Retour"
   },
@@ -1910,11 +1919,11 @@
   "clearHistory": {
     "message": "Effacer l'historique"
   },
-  "noPasswordsToShow": {
-    "message": "Aucun mot de passe à afficher"
+  "nothingToShow": {
+    "message": "Rien à montrer"
   },
-  "noRecentlyGeneratedPassword": {
-    "message": "Vous n'avez pas généré de mot de passe récemment"
+  "nothingGeneratedRecently": {
+    "message": "Vous n'avez rien généré récemment"
   },
   "remove": {
     "message": "Supprimer"
@@ -1984,7 +1993,7 @@
     "message": "Définissez votre code PIN pour déverrouiller Bitwarden. Les paramètres relatifs à votre code PIN seront réinitialisés si vous vous déconnectez complètement de l'application."
   },
   "setYourPinCode1": {
-    "message": "Your PIN will be used to unlock Bitwarden instead of your master password. Your PIN will reset if you ever fully log out of Bitwarden."
+    "message": "Votre code PIN sera utilisé pour déverrouiller Bitwarden au lieu de votre mot de passe principal. Votre code PIN sera réinitialisé si vous vous déconnectez complètement de Bitwarden."
   },
   "pinRequired": {
     "message": "Le code PIN est requis."
@@ -2011,7 +2020,7 @@
     "message": "Verrouiller avec le mot de passe principal au redémarrage du navigateur"
   },
   "lockWithMasterPassOnRestart1": {
-    "message": "Require master password on browser restart"
+    "message": "Exiger le mot de passe principal au redémarrage du navigateur"
   },
   "selectOneCollection": {
     "message": "Vous devez sélectionner au moins une collection."
@@ -2052,7 +2061,7 @@
     "message": "Action après délai d'expiration du coffre"
   },
   "vaultTimeoutAction1": {
-    "message": "Timeout action"
+    "message": "Expiration de l'action"
   },
   "lock": {
     "message": "Verrouiller",
@@ -2340,14 +2349,14 @@
     "message": "Changements de domaines exclus enregistrés"
   },
   "limitSendViews": {
-    "message": "Limit views"
+    "message": "Limiter les vues"
   },
   "limitSendViewsHint": {
-    "message": "No one can view this Send after the limit is reached.",
+    "message": "Personne ne peut voir ce Send une fois la limite atteinte.",
     "description": "Displayed under the limit views field on Send"
   },
   "limitSendViewsCount": {
-    "message": "$ACCESSCOUNT$ views left",
+    "message": "$ACCESSCOUNT$ vues restantes",
     "description": "Displayed under the limit views field on Send",
     "placeholders": {
       "accessCount": {
@@ -2866,7 +2875,7 @@
     "message": "Générer un nom d'utilisateur"
   },
   "generateEmail": {
-    "message": "Generate email"
+    "message": "Générer un courriel"
   },
   "usernameType": {
     "message": "Type de nom d'utilisateur"
@@ -2909,7 +2918,7 @@
     "message": "Générer un alias de courriel avec un service de transfert externe."
   },
   "forwarderDomainName": {
-    "message": "Email domain",
+    "message": "Domaine du courriel",
     "description": "Labels the domain name email forwarder service option"
   },
   "forwarderDomainNameHint": {

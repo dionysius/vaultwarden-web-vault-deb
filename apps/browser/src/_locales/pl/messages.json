@@ -20,22 +20,22 @@
     "message": "Utwórz konto"
   },
   "newToBitwarden": {
-    "message": "New to Bitwarden?"
+    "message": "Nowy użytkownik Bitwarden?"
   },
   "logInWithPasskey": {
-    "message": "Log in with passkey"
+    "message": "Zaloguj się używając passkey"
   },
   "useSingleSignOn": {
-    "message": "Use single sign-on"
+    "message": "Użyj jednokrotnego logowania"
   },
   "welcomeBack": {
-    "message": "Welcome back"
+    "message": "Witaj ponownie"
   },
   "setAStrongPassword": {
     "message": "Ustaw silne hasło"
   },
   "finishCreatingYourAccountBySettingAPassword": {
-    "message": "Ukończ tworzenie konta poprzez ustawienie hasła"
+    "message": "Ukończ tworzenie konta poprzez utworzenie hasła"
   },
   "enterpriseSingleSignOn": {
     "message": "Logowanie jednokrotne"
@@ -84,7 +84,7 @@
     "message": "Dołącz do organizacji"
   },
   "joinOrganizationName": {
-    "message": "Join $ORGANIZATIONNAME$",
+    "message": "Dołącz do $ORGANIZATIONNAME$",
     "placeholders": {
       "organizationName": {
         "content": "$1",
@@ -120,7 +120,7 @@
     "message": "Kopiuj hasło"
   },
   "copyPassphrase": {
-    "message": "Copy passphrase"
+    "message": "Kopiuj frazę bezpieczeństwa"
   },
   "copyNote": {
     "message": "Kopiuj notatkę"
@@ -168,7 +168,7 @@
     "message": "Kopiuj notatki"
   },
   "fill": {
-    "message": "Fill",
+    "message": "Uzupełnij",
     "description": "This string is used on the vault page to indicate autofilling. Horizontal space is limited in the interface here so try and keep translations as concise as possible."
   },
   "autoFill": {
@@ -427,7 +427,7 @@
     "message": "Wygeneruj hasło"
   },
   "generatePassphrase": {
-    "message": "Generate passphrase"
+    "message": "Wygenruj frazę zabezpieczającą"
   },
   "regeneratePassword": {
     "message": "Wygeneruj ponownie hasło"
@@ -591,7 +591,7 @@
     "message": "Otwórz stronę"
   },
   "launchWebsiteName": {
-    "message": "Launch website $ITEMNAME$",
+    "message": "Otwórz stronę internetową $ITEMNAME$",
     "placeholders": {
       "itemname": {
         "content": "$1",
@@ -645,13 +645,13 @@
     "message": "Sejf jest zablokowany. Zweryfikuj swoją tożsamość, aby kontynuować."
   },
   "yourVaultIsLockedV2": {
-    "message": "Your vault is locked"
+    "message": "Twój sejf jest zablokowany"
   },
   "yourAccountIsLocked": {
-    "message": "Your account is locked"
+    "message": "Twoje konto jest zablokowane"
   },
   "or": {
-    "message": "or"
+    "message": "lub"
   },
   "unlock": {
     "message": "Odblokuj"
@@ -846,7 +846,7 @@
     "message": "Zaloguj się"
   },
   "logInToBitwarden": {
-    "message": "Log in to Bitwarden"
+    "message": "Zaloguj się do Bitwarden"
   },
   "restartRegistration": {
     "message": "Zrestartuj rejestrację"
@@ -1424,7 +1424,7 @@
     "message": "Adres URL serwera"
   },
   "selfHostBaseUrl": {
-    "message": "Self-host server URL",
+    "message": "URL samodzielnie hostowanego serwera",
     "description": "Label for field requesting a self-hosted integration service URL"
   },
   "apiUrl": {
@@ -1456,10 +1456,10 @@
     "message": "Pokaż sugestie autouzupełniania na polach formularza"
   },
   "showInlineMenuIdentitiesLabel": {
-    "message": "Display identities as suggestions"
+    "message": "Pokazuj tożsamości jako sugestie"
   },
   "showInlineMenuCardsLabel": {
-    "message": "Display cards as suggestions"
+    "message": "Pokazuj karty jako sugestie"
   },
   "showInlineMenuOnIconSelectionLabel": {
     "message": "Wyświetlaj sugestie kiedy ikona jest zaznaczona"
@@ -1794,6 +1794,15 @@
   "passwordHistory": {
     "message": "Historia hasła"
   },
+  "generatorHistory": {
+    "message": "Historia generatora"
+  },
+  "clearGeneratorHistoryTitle": {
+    "message": "Wyczyść historię generatora"
+  },
+  "cleargGeneratorHistoryDescription": {
+    "message": "Jeśli kontynuujesz, wszystkie elementy zostaną usunięte z historii generatora. Czy chcesz kontynuować mimo to?"
+  },
   "back": {
     "message": "Powrót"
   },
@@ -1910,11 +1919,11 @@
   "clearHistory": {
     "message": "Wyczyść historię"
   },
-  "noPasswordsToShow": {
-    "message": "Brak haseł do wyświetlenia"
+  "nothingToShow": {
+    "message": "Nic do pokazania"
   },
-  "noRecentlyGeneratedPassword": {
-    "message": "W ostatnim czasie nie wygenerowano hasła"
+  "nothingGeneratedRecently": {
+    "message": "Nic nie zostało wygenerowane przez ciebie w ostatnim czasie"
   },
   "remove": {
     "message": "Usuń"
@@ -1999,7 +2008,7 @@
     "message": "Odblokuj danymi biometrycznymi"
   },
   "unlockWithMasterPassword": {
-    "message": "Unlock with master password"
+    "message": "Odblokuj za pomocą głównego hasła"
   },
   "awaitDesktop": {
     "message": "Oczekiwanie na potwierdzenie z aplikacji desktopowej"
@@ -2503,7 +2512,7 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendPasswordDescV3": {
-    "message": "Add an optional password for recipients to access this Send.",
+    "message": "Zabezpiecz tę wiadomość hasłem, które będzie wymagane, aby uzyskać do niej dostęp.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendNotesDesc": {
@@ -2552,11 +2561,11 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendExpiresInHoursSingle": {
-    "message": "The Send will be available to anyone with the link for the next 1 hour.",
+    "message": "Wiadomość będzie dostępna dla każdego z dostępem do tego linku przez następną godzinę.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendExpiresInHours": {
-    "message": "The Send will be available to anyone with the link for the next $HOURS$ hours.",
+    "message": "Wiadomość będzie dostępna dla każdego z dostępem do tego linku przez następne $HOURS$ godzin.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated.",
     "placeholders": {
       "hours": {
@@ -2566,11 +2575,11 @@
     }
   },
   "sendExpiresInDaysSingle": {
-    "message": "The Send will be available to anyone with the link for the next 1 day.",
+    "message": "Wiadomość będzie dostępna dla każdego z dostępem do tego linku przez 1 dzień.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendExpiresInDays": {
-    "message": "The Send will be available to anyone with the link for the next $DAYS$ days.",
+    "message": "Wiadomość będzie dostępna dla każdego z dostępem do tego linku przez następne $DAYS$ dni.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated.",
     "placeholders": {
       "days": {
@@ -2701,7 +2710,7 @@
     "description": "Used as a card title description on the set password page to explain why the user is there"
   },
   "cardMetrics": {
-    "message": "out of $TOTAL$",
+    "message": "z $TOTAL$ elementów",
     "placeholders": {
       "total": {
         "content": "$1",
@@ -2866,7 +2875,7 @@
     "message": "Wygeneruj nazwę użytkownika"
   },
   "generateEmail": {
-    "message": "Generate email"
+    "message": "Wygenruj adres e-mail"
   },
   "usernameType": {
     "message": "Rodzaj nazwy użytkownika"
@@ -2909,7 +2918,7 @@
     "message": "Wygeneruj alias adresu e-mail z zewnętrznej usługi przekierowania."
   },
   "forwarderDomainName": {
-    "message": "Email domain",
+    "message": "Domena adresu e-mail",
     "description": "Labels the domain name email forwarder service option"
   },
   "forwarderDomainNameHint": {
@@ -3727,7 +3736,7 @@
     "message": "Passkey"
   },
   "accessing": {
-    "message": "Accessing"
+    "message": "Uzyskiwanie dostępu"
   },
   "passkeyNotCopied": {
     "message": "Passkey nie zostanie skopiowany"
@@ -3754,7 +3763,7 @@
     "message": "Brak pasujących loginów dla tej witryny"
   },
   "searchSavePasskeyNewLogin": {
-    "message": "Search or save passkey as new login"
+    "message": "Wyszukaj alb zapisz passkey jako nowy login"
   },
   "confirm": {
     "message": "Potwierdź"
@@ -4613,22 +4622,22 @@
     "message": "Nie masz uprawnień do edycji tego elementu"
   },
   "authenticating": {
-    "message": "Authenticating"
+    "message": "Uwierzytelnianie"
   },
   "fillGeneratedPassword": {
     "message": "Fill generated password",
     "description": "Heading for the password generator within the inline menu"
   },
   "passwordRegenerated": {
-    "message": "Password regenerated",
+    "message": "Hasło zostało ponownie wygenerowane",
     "description": "Notification message for when a password has been regenerated"
   },
   "saveLoginToBitwarden": {
-    "message": "Save login to Bitwarden?",
+    "message": "Zapisać dane logowania w Bitwarden?",
     "description": "Confirmation message for saving a login to Bitwarden"
   },
   "spaceCharacterDescriptor": {
-    "message": "Space",
+    "message": "Spacja",
     "description": "Represents the space key in screen reader content as a readable word"
   },
   "tildeCharacterDescriptor": {
@@ -4640,23 +4649,23 @@
     "description": "Represents the ` key in screen reader content as a readable word"
   },
   "exclamationCharacterDescriptor": {
-    "message": "Exclamation mark",
+    "message": "Wykrzyknik",
     "description": "Represents the ! key in screen reader content as a readable word"
   },
   "atSignCharacterDescriptor": {
-    "message": "At sign",
+    "message": "Małpa",
     "description": "Represents the @ key in screen reader content as a readable word"
   },
   "hashSignCharacterDescriptor": {
-    "message": "Hash sign",
+    "message": "Hashtag",
     "description": "Represents the # key in screen reader content as a readable word"
   },
   "dollarSignCharacterDescriptor": {
-    "message": "Dollar sign",
+    "message": "Znak dolara",
     "description": "Represents the $ key in screen reader content as a readable word"
   },
   "percentSignCharacterDescriptor": {
-    "message": "Percent sign",
+    "message": "Znak procenta",
     "description": "Represents the % key in screen reader content as a readable word"
   },
   "caretCharacterDescriptor": {
@@ -4668,7 +4677,7 @@
     "description": "Represents the & key in screen reader content as a readable word"
   },
   "asteriskCharacterDescriptor": {
-    "message": "Asterisk",
+    "message": "Gwiazdka",
     "description": "Represents the * key in screen reader content as a readable word"
   },
   "parenLeftCharacterDescriptor": {
@@ -4680,7 +4689,7 @@
     "description": "Represents the ) key in screen reader content as a readable word"
   },
   "hyphenCharacterDescriptor": {
-    "message": "Underscore",
+    "message": "Podkreślenie",
     "description": "Represents the _ key in screen reader content as a readable word"
   },
   "underscoreCharacterDescriptor": {
@@ -4692,23 +4701,23 @@
     "description": "Represents the + key in screen reader content as a readable word"
   },
   "equalsCharacterDescriptor": {
-    "message": "Equals",
+    "message": "Znak równości",
     "description": "Represents the = key in screen reader content as a readable word"
   },
   "braceLeftCharacterDescriptor": {
-    "message": "Left brace",
+    "message": "Lewy nawias klamrowy",
     "description": "Represents the { key in screen reader content as a readable word"
   },
   "braceRightCharacterDescriptor": {
-    "message": "Right brace",
+    "message": "Prawy nawias klamrowy",
     "description": "Represents the } key in screen reader content as a readable word"
   },
   "bracketLeftCharacterDescriptor": {
-    "message": "Left bracket",
+    "message": "Lewy nawias kwadratowy",
     "description": "Represents the [ key in screen reader content as a readable word"
   },
   "bracketRightCharacterDescriptor": {
-    "message": "Right bracket",
+    "message": "Prawy nawias kwadratowy",
     "description": "Represents the ] key in screen reader content as a readable word"
   },
   "pipeCharacterDescriptor": {

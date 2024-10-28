@@ -1794,6 +1794,15 @@
   "passwordHistory": {
     "message": "Histórico de Senha"
   },
+  "generatorHistory": {
+    "message": "Generator history"
+  },
+  "clearGeneratorHistoryTitle": {
+    "message": "Clear generator history"
+  },
+  "cleargGeneratorHistoryDescription": {
+    "message": "If you continue, all entries will be permanently deleted from generator's history. Are you sure you want to continue?"
+  },
   "back": {
     "message": "Voltar"
   },
@@ -1910,11 +1919,11 @@
   "clearHistory": {
     "message": "Limpar histórico"
   },
-  "noPasswordsToShow": {
-    "message": "Nenhuma senha para mostrar"
+  "nothingToShow": {
+    "message": "Nothing to show"
   },
-  "noRecentlyGeneratedPassword": {
-    "message": "Você não gerou uma senha recentemente"
+  "nothingGeneratedRecently": {
+    "message": "You haven't generated anything recently"
   },
   "remove": {
     "message": "Remover"

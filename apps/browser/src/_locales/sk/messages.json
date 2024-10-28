@@ -1794,6 +1794,15 @@
   "passwordHistory": {
     "message": "História hesla"
   },
+  "generatorHistory": {
+    "message": "História generátora"
+  },
+  "clearGeneratorHistoryTitle": {
+    "message": "Vymazať históriu generátora"
+  },
+  "cleargGeneratorHistoryDescription": {
+    "message": "Ak budete pokračovať, všetky položky z histórie generátora budu natrvalo vymazané. Naozaj chcete pokračovať?"
+  },
   "back": {
     "message": "Späť"
   },
@@ -1910,11 +1919,11 @@
   "clearHistory": {
     "message": "Vymazať históriu"
   },
-  "noPasswordsToShow": {
-    "message": "Žiadne heslá na zobrazenie"
+  "nothingToShow": {
+    "message": "Nič na zobrazenie"
   },
-  "noRecentlyGeneratedPassword": {
-    "message": "V poslednej dobe ste negenerovali žiadne heslá"
+  "nothingGeneratedRecently": {
+    "message": "V poslednej dobe ste nič negenerovali"
   },
   "remove": {
     "message": "Odstrániť"
