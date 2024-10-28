@@ -8,6 +8,7 @@
         <bit-form-field disableMargin>
           <bit-label>{{ "numWords" | i18n }}</bit-label>
           <input bitInput formControlName="numWords" id="num-words" type="number" />
+          <bit-hint>{{ numWordsBoundariesHint$ | async }}</bit-hint>
         </bit-form-field>
       </bit-card>
     </div>

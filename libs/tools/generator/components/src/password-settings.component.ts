@@ -1,9 +1,10 @@
 import { coerceBooleanProperty } from "@angular/cdk/coercion";
 import { OnInit, Input, Output, EventEmitter, Component, OnDestroy } from "@angular/core";
 import { FormBuilder } from "@angular/forms";
-import { BehaviorSubject, takeUntil, Subject, map, filter, tap, skip } from "rxjs";
+import { BehaviorSubject, takeUntil, Subject, map, filter, tap, skip, ReplaySubject } from "rxjs";
 
 import { AccountService } from "@bitwarden/common/auth/abstractions/account.service";
+import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 import { UserId } from "@bitwarden/common/types/guid";
 import {
   Generators,
@@ -33,11 +34,13 @@ export class PasswordSettingsComponent implements OnInit, OnDestroy {
   /** Instantiates the component
    *  @param accountService queries user availability
    *  @param generatorService settings and policy logic
+   *  @param i18nService localize hints
    *  @param formBuilder reactive form controls
    */
   constructor(
     private formBuilder: FormBuilder,
     private generatorService: CredentialGeneratorService,
+    private i18nService: I18nService,
     private accountService: AccountService,
   ) {}
 
@@ -147,6 +150,13 @@ export class PasswordSettingsComponent implements OnInit, OnDestroy {
         for (const [control, enabled] of toggles) {
           this.toggleEnabled(control, enabled);
         }
+
+        const boundariesHint = this.i18nService.t(
+          "generatorBoundariesHint",
+          constraints.length.min,
+          constraints.length.max,
+        );
+        this.lengthBoundariesHint.next(boundariesHint);
       });
 
     // cascade selections between checkboxes and spinboxes
@@ -207,6 +217,11 @@ export class PasswordSettingsComponent implements OnInit, OnDestroy {
 
   /** display binding for enterprise policy notice */
   protected policyInEffect: boolean;
+
+  private lengthBoundariesHint = new ReplaySubject<string>(1);
+
+  /** display binding for min/max constraints of `length` */
+  protected lengthBoundariesHint$ = this.lengthBoundariesHint.asObservable();
 
   private toggleEnabled(setting: keyof typeof Controls, enabled: boolean) {
     if (enabled) {

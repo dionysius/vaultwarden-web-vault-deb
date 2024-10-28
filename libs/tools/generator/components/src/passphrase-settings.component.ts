@@ -1,9 +1,10 @@
 import { coerceBooleanProperty } from "@angular/cdk/coercion";
 import { OnInit, Input, Output, EventEmitter, Component, OnDestroy } from "@angular/core";
 import { FormBuilder } from "@angular/forms";
-import { BehaviorSubject, skip, takeUntil, Subject } from "rxjs";
+import { BehaviorSubject, skip, takeUntil, Subject, ReplaySubject } from "rxjs";
 
 import { AccountService } from "@bitwarden/common/auth/abstractions/account.service";
+import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 import { UserId } from "@bitwarden/common/types/guid";
 import {
   Generators,
@@ -29,11 +30,13 @@ export class PassphraseSettingsComponent implements OnInit, OnDestroy {
   /** Instantiates the component
    *  @param accountService queries user availability
    *  @param generatorService settings and policy logic
+   *  @param i18nService localize hints
    *  @param formBuilder reactive form controls
    */
   constructor(
     private formBuilder: FormBuilder,
     private generatorService: CredentialGeneratorService,
+    private i18nService: I18nService,
     private accountService: AccountService,
   ) {}
 
@@ -97,6 +100,13 @@ export class PassphraseSettingsComponent implements OnInit, OnDestroy {
 
         this.toggleEnabled(Controls.capitalize, !constraints.capitalize?.readonly);
         this.toggleEnabled(Controls.includeNumber, !constraints.includeNumber?.readonly);
+
+        const boundariesHint = this.i18nService.t(
+          "generatorBoundariesHint",
+          constraints.numWords.min,
+          constraints.numWords.max,
+        );
+        this.numWordsBoundariesHint.next(boundariesHint);
       });
 
     // now that outputs are set up, connect inputs
@@ -105,6 +115,11 @@ export class PassphraseSettingsComponent implements OnInit, OnDestroy {
 
   /** display binding for enterprise policy notice */
   protected policyInEffect: boolean;
+
+  private numWordsBoundariesHint = new ReplaySubject<string>(1);
+
+  /** display binding for min/max constraints of `numWords` */
+  protected numWordsBoundariesHint$ = this.numWordsBoundariesHint.asObservable();
 
   private toggleEnabled(setting: keyof typeof Controls, enabled: boolean) {
     if (enabled) {
