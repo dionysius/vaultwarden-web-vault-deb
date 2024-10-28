@@ -96,7 +96,7 @@ export class DefaultSdkService implements SdkService {
           let client: BitwardenClient;
 
           const createAndInitializeClient = async () => {
-            if (privateKey == null || userKey == null || orgKeys == null) {
+            if (privateKey == null || userKey == null) {
               return undefined;
             }
 
@@ -150,7 +150,7 @@ export class DefaultSdkService implements SdkService {
     kdfParams: KdfConfig,
     privateKey: EncryptedString,
     userKey: UserKey,
-    orgKeys: Record<OrganizationId, EncryptedOrganizationKeyData>,
+    orgKeys?: Record<OrganizationId, EncryptedOrganizationKeyData>,
   ) {
     await client.crypto().initialize_user_crypto({
       email: account.email,
@@ -169,9 +169,12 @@ export class DefaultSdkService implements SdkService {
             },
       privateKey,
     });
+
+    // We initialize the org crypto even if the org_keys are
+    // null to make sure any existing org keys are cleared.
     await client.crypto().initialize_org_crypto({
       organizationKeys: new Map(
-        Object.entries(orgKeys)
+        Object.entries(orgKeys ?? {})
           .filter(([_, v]) => v.type === "organization")
           .map(([k, v]) => [k, v.key]),
       ),
