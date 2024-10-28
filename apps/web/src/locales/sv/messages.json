@@ -8,6 +8,21 @@
   "accessIntelligence": {
     "message": "Access Intelligence"
   },
+  "passwordRisk": {
+    "message": "Password Risk"
+  },
+  "discoverAtRiskPasswords": {
+    "message": "Discover at-risk passwords and notify users to change those passwords."
+  },
+  "dataLastUpdated": {
+    "message": "Data last updated: $DATE$",
+    "placeholders": {
+      "date": {
+        "content": "$1",
+        "example": "2021-01-01"
+      }
+    }
+  },
   "notifiedMembers": {
     "message": "Notified members"
   },
@@ -37,6 +52,18 @@
         "example": "3"
       }
     }
+  },
+  "noPriorityApplicationsTitle": {
+    "message": "You haven’t marked any applications as a priority"
+  },
+  "noPriorityApplicationsDescription": {
+    "message": "Select your most critical applications to discover at-risk passwords, and notify users to change those passwords."
+  },
+  "markPriorityApps": {
+    "message": "Mark priority apps"
+  },
+  "markAppAsCritical": {
+    "message": "Markera app som kritisk"
   },
   "application": {
     "message": "Application"
@@ -406,7 +433,7 @@
     "message": "Generera lösenord"
   },
   "generatePassphrase": {
-    "message": "Generate passphrase"
+    "message": "Generera lösenfras"
   },
   "checkPassword": {
     "message": "Kontrollera om lösenordet har avslöjats."
@@ -667,11 +694,11 @@
     "description": "Copy password to clipboard"
   },
   "copyPassphrase": {
-    "message": "Copy passphrase",
+    "message": "Kopiera lösenfras",
     "description": "Copy passphrase to clipboard"
   },
   "passwordCopied": {
-    "message": "Password copied"
+    "message": "Lösenord kopierades"
   },
   "copyUsername": {
     "message": "Kopiera användarnamn",
@@ -940,13 +967,13 @@
     "message": "Använd en annan inloggningsmetod"
   },
   "logInWithPasskey": {
-    "message": "Log in with passkey"
+    "message": "Logga in med nyckel"
   },
   "useSingleSignOn": {
     "message": "Use single sign-on"
   },
   "welcomeBack": {
-    "message": "Welcome back"
+    "message": "Välkommen tillbaka"
   },
   "invalidPasskeyPleaseTryAgain": {
     "message": "Ogiltig nyckel. Försök igen."
@@ -1030,7 +1057,7 @@
     "message": "Skapa konto"
   },
   "newToBitwarden": {
-    "message": "New to Bitwarden?"
+    "message": "Ny på Bitwarden?"
   },
   "setAStrongPassword": {
     "message": "Ställ in ett starkt lösenord"
@@ -1048,7 +1075,7 @@
     "message": "Logga in"
   },
   "logInToBitwarden": {
-    "message": "Log in to Bitwarden"
+    "message": "Logga in på Bitwarden"
   },
   "verifyIdentity": {
     "message": "Verify your Identity"
@@ -1348,7 +1375,7 @@
     "message": "E-post"
   },
   "emailDescV2": {
-    "message": "Enter a code sent to your email."
+    "message": "Ange en kod som skickas per e-post."
   },
   "continue": {
     "message": "Fortsätt"
@@ -2065,7 +2092,7 @@
     "message": "Bitwarden Authenticator allows you to store authenticator keys and generate TOTP codes for 2-step verification flows. Learn more on the bitwarden.com website."
   },
   "twoStepAuthenticatorScanCodeV2": {
-    "message": "Scan the QR code below with your authenticator app or enter the key."
+    "message": "Skanna QR-koden nedan med din autentiseringsapp eller ange nyckeln."
   },
   "twoStepAuthenticatorQRCanvasError": {
     "message": "Could not load QR code. Try again or use the key below."
@@ -7859,7 +7886,7 @@
     "message": "Weak password identified and found in a data breach. Use a strong and unique password to protect your account. Are you sure you want to use this password?"
   },
   "characterMinimum": {
-    "message": "$LENGTH$ character minimum",
+    "message": "Minst $LENGTH$ tecken",
     "placeholders": {
       "length": {
         "content": "$1",
@@ -7968,7 +7995,7 @@
     "description": "Used as a card title description on the set password page to explain why the user is there"
   },
   "cardMetrics": {
-    "message": "out of $TOTAL$",
+    "message": "av $TOTAL$",
     "placeholders": {
       "total": {
         "content": "$1",

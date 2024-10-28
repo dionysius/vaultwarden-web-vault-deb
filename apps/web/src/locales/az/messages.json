@@ -8,6 +8,21 @@
   "accessIntelligence": {
     "message": "Müraciət Kəşfiyyatı"
   },
+  "passwordRisk": {
+    "message": "Parol riski"
+  },
+  "discoverAtRiskPasswords": {
+    "message": "Riskli parolları kəşf edin və bu parolları dəyişdirməsi üçün istifadəçiləri məlumatlandırın."
+  },
+  "dataLastUpdated": {
+    "message": "Datanın son güncəlləmə tarixi: $DATE$",
+    "placeholders": {
+      "date": {
+        "content": "$1",
+        "example": "2021-01-01"
+      }
+    }
+  },
   "notifiedMembers": {
     "message": "Məlumatlandırılan üzvlər"
   },
@@ -37,6 +52,18 @@
         "example": "3"
       }
     }
+  },
+  "noPriorityApplicationsTitle": {
+    "message": "Heç bir tətbiqi prioritet olaraq işarələməmisiniz"
+  },
+  "noPriorityApplicationsDescription": {
+    "message": "Riskli parolları kəşf etmək üçün ən kritik tətbiqlərinizi seçin və bu parolları dəyişdirməsi üçün istifadəçiləri məlumatlandırın."
+  },
+  "markPriorityApps": {
+    "message": "Prioritet tətbiqləri işarələ"
+  },
+  "markAppAsCritical": {
+    "message": "Tətbiqi kritik olaraq işarələ"
   },
   "application": {
     "message": "Tətbiq"
@@ -406,7 +433,7 @@
     "message": "Parol yarat"
   },
   "generatePassphrase": {
-    "message": "Generate passphrase"
+    "message": "Keçid ifadələri yarat"
   },
   "checkPassword": {
     "message": "Parolun ifşalanıb ifşalanmadığını yoxlayın."
@@ -667,7 +694,7 @@
     "description": "Copy password to clipboard"
   },
   "copyPassphrase": {
-    "message": "Copy passphrase",
+    "message": "Keçid ifadəsini kopyala",
     "description": "Copy passphrase to clipboard"
   },
   "passwordCopied": {
@@ -940,13 +967,13 @@
     "message": "Fərqli bir giriş üsulu istifadə edin"
   },
   "logInWithPasskey": {
-    "message": "Log in with passkey"
+    "message": "Keçid açarı ilə giriş et"
   },
   "useSingleSignOn": {
-    "message": "Use single sign-on"
+    "message": "Tək daxil olma üsulunu istifadə et"
   },
   "welcomeBack": {
-    "message": "Welcome back"
+    "message": "Yenidən xoş gəlmisiniz"
   },
   "invalidPasskeyPleaseTryAgain": {
     "message": "Yararsız keçid açarı. Lütfən yenidən sınayın."
@@ -1030,7 +1057,7 @@
     "message": "Hesab yarat"
   },
   "newToBitwarden": {
-    "message": "New to Bitwarden?"
+    "message": "Bitwarden-də yenisiniz?"
   },
   "setAStrongPassword": {
     "message": "Güclü bir parol təyin et"
@@ -1048,7 +1075,7 @@
     "message": "Giriş et"
   },
   "logInToBitwarden": {
-    "message": "Log in to Bitwarden"
+    "message": "Bitwarden-ə giriş edin"
   },
   "verifyIdentity": {
     "message": "Kimliyinizi doğrulayın"

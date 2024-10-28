@@ -8,6 +8,21 @@
   "accessIntelligence": {
     "message": "Elérés intelligencia"
   },
+  "passwordRisk": {
+    "message": "Jelszó kockázat"
+  },
+  "discoverAtRiskPasswords": {
+    "message": "Fedezzük fel a veszélyeztetett jelszavakat és értesítsük a felhasználókat, hogy módosítsák ezeket a jelszavakat."
+  },
+  "dataLastUpdated": {
+    "message": "Az adatok utolsó frissítése: $DATE$",
+    "placeholders": {
+      "date": {
+        "content": "$1",
+        "example": "2021-01-01"
+      }
+    }
+  },
   "notifiedMembers": {
     "message": "Értesített tagok"
   },
@@ -37,6 +52,18 @@
         "example": "3"
       }
     }
+  },
+  "noPriorityApplicationsTitle": {
+    "message": "Egyetlen alkalmazás sem lett megjelölve kiemeltként."
+  },
+  "noPriorityApplicationsDescription": {
+    "message": "Válasszuk ki a legkritikusabb alkalmazásokat a veszélyeztetett jelszavak felfedezéséhez és értesítsük a felhasználókat a jelszavak megváltoztatásáról."
+  },
+  "markPriorityApps": {
+    "message": "Kiemelt alkalmazások megjelölése"
+  },
+  "markAppAsCritical": {
+    "message": "Alkalmazások megjelölése kritikusként"
   },
   "application": {
     "message": "Alkalmazás"

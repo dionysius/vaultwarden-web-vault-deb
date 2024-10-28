@@ -8,6 +8,21 @@
   "accessIntelligence": {
     "message": "Керування доступом"
   },
+  "passwordRisk": {
+    "message": "Ризиковані паролі"
+  },
+  "discoverAtRiskPasswords": {
+    "message": "Дізнавайтеся про ризиковані паролі та сповіщайте користувачів про необхідність їх заміни."
+  },
+  "dataLastUpdated": {
+    "message": "Дані востаннє оновлено: $DATE$",
+    "placeholders": {
+      "date": {
+        "content": "$1",
+        "example": "2021-01-01"
+      }
+    }
+  },
   "notifiedMembers": {
     "message": "Сповіщення учасників"
   },
@@ -37,6 +52,18 @@
         "example": "3"
       }
     }
+  },
+  "noPriorityApplicationsTitle": {
+    "message": "Ви не позначили жодної пріоритетної програми"
+  },
+  "noPriorityApplicationsDescription": {
+    "message": "Виберіть найбільш критичні програми, для яких виявлятимуться ризиковані паролі, та сповіщайте користувачів про необхідність їх заміни."
+  },
+  "markPriorityApps": {
+    "message": "Позначити пріоритетні програми"
+  },
+  "markAppAsCritical": {
+    "message": "Позначити програму критичною"
   },
   "application": {
     "message": "Програма"
@@ -940,13 +967,13 @@
     "message": "Використати інший спосіб входу"
   },
   "logInWithPasskey": {
-    "message": "Log in with passkey"
+    "message": "Увійти з ключем доступу"
   },
   "useSingleSignOn": {
-    "message": "Use single sign-on"
+    "message": "Використовувати єдиний вхід"
   },
   "welcomeBack": {
-    "message": "Welcome back"
+    "message": "З поверненням"
   },
   "invalidPasskeyPleaseTryAgain": {
     "message": "Недійсний ключ доступу. Повторіть спробу."
@@ -1030,7 +1057,7 @@
     "message": "Створити обліковий запис"
   },
   "newToBitwarden": {
-    "message": "New to Bitwarden?"
+    "message": "Вперше у Bitwarden?"
   },
   "setAStrongPassword": {
     "message": "Встановіть надійний пароль"
@@ -1048,7 +1075,7 @@
     "message": "Увійти"
   },
   "logInToBitwarden": {
-    "message": "Log in to Bitwarden"
+    "message": "Увійти в Bitwarden"
   },
   "verifyIdentity": {
     "message": "Підтвердьте свою особу"

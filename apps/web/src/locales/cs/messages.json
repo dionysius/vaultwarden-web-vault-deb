@@ -8,6 +8,21 @@
   "accessIntelligence": {
     "message": "Přístup k inteligenci"
   },
+  "passwordRisk": {
+    "message": "Rizikové heslo"
+  },
+  "discoverAtRiskPasswords": {
+    "message": "Objevte riziková hesla a upozorněte uživatele na změnu těchto hesel."
+  },
+  "dataLastUpdated": {
+    "message": "Data naposledy aktualizována: $DATE$",
+    "placeholders": {
+      "date": {
+        "content": "$1",
+        "example": "2021-01-01"
+      }
+    }
+  },
   "notifiedMembers": {
     "message": "Obeznámení členové"
   },
@@ -37,6 +52,18 @@
         "example": "3"
       }
     }
+  },
+  "noPriorityApplicationsTitle": {
+    "message": "Neoznačili jste žádné aplikace jako prioritu"
+  },
+  "noPriorityApplicationsDescription": {
+    "message": "Vyberte své nejkritičtější aplikace, abyste objevili riziková hesla a upozorněte uživatele na změnu těchto hesel."
+  },
+  "markPriorityApps": {
+    "message": "Označit prioritní aplikace"
+  },
+  "markAppAsCritical": {
+    "message": "Označit aplikaci jako kritickou"
   },
   "application": {
     "message": "Aplikace"

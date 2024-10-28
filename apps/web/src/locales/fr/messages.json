@@ -8,6 +8,21 @@
   "accessIntelligence": {
     "message": "Accéder à l'Intelligence"
   },
+  "passwordRisk": {
+    "message": "Risque du mot de passe"
+  },
+  "discoverAtRiskPasswords": {
+    "message": "Découvrez les mots de passe à risque et avertissez les utilisateurs de modifier ces mots de passe."
+  },
+  "dataLastUpdated": {
+    "message": "Dernière mise à jour des données : $DATE$",
+    "placeholders": {
+      "date": {
+        "content": "$1",
+        "example": "2021-01-01"
+      }
+    }
+  },
   "notifiedMembers": {
     "message": "Membres notifiés"
   },
@@ -37,6 +52,18 @@
         "example": "3"
       }
     }
+  },
+  "noPriorityApplicationsTitle": {
+    "message": "Vous n'avez marqué aucune application comme prioritaire"
+  },
+  "noPriorityApplicationsDescription": {
+    "message": "Sélectionnez vos applications les plus critiques pour découvrir les mots de passe à risque et avertissez les utilisateurs de modifier ces mots de passe."
+  },
+  "markPriorityApps": {
+    "message": "Marquer les applications prioritaires"
+  },
+  "markAppAsCritical": {
+    "message": "Marquer l'application comme critique"
   },
   "application": {
     "message": "Application"

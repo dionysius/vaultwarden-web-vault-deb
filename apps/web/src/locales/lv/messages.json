@@ -8,6 +8,21 @@
   "accessIntelligence": {
     "message": "Piekļuves inteliģence"
   },
+  "passwordRisk": {
+    "message": "Paroļu risks"
+  },
+  "discoverAtRiskPasswords": {
+    "message": "Atklāj riskam pakļautas paroles un apziņo lietotājus, lai tās nomaina!"
+  },
+  "dataLastUpdated": {
+    "message": "Dati pēdējoreiz atjaunināti: $DATE$",
+    "placeholders": {
+      "date": {
+        "content": "$1",
+        "example": "2021-01-01"
+      }
+    }
+  },
   "notifiedMembers": {
     "message": "Apziņotie dalībnieki"
   },
@@ -37,6 +52,18 @@
         "example": "3"
       }
     }
+  },
+  "noPriorityApplicationsTitle": {
+    "message": "Neviena lietotne nav atzīmēta kā būtiska"
+  },
+  "noPriorityApplicationsDescription": {
+    "message": "Atlasi kritiskākās lietotnes, la iatklātu riskam pakļautas paroles un apziņotu lietotājus, lai tās nomaina!"
+  },
+  "markPriorityApps": {
+    "message": "Atzīmēt būtiskās lietotnes"
+  },
+  "markAppAsCritical": {
+    "message": "Atzīmēt lietotni kā kritisku"
   },
   "application": {
     "message": "Lietotne"

@@ -8,6 +8,21 @@
   "accessIntelligence": {
     "message": "Access Intelligence"
   },
+  "passwordRisk": {
+    "message": "Parola Riski"
+  },
+  "discoverAtRiskPasswords": {
+    "message": "Riskli parolaları tespit edip kullanıcıları bu parolaları değiştirmeleri konusunda bilgilendirin."
+  },
+  "dataLastUpdated": {
+    "message": "Son veri güncellemesi: $DATE$",
+    "placeholders": {
+      "date": {
+        "content": "$1",
+        "example": "2021-01-01"
+      }
+    }
+  },
   "notifiedMembers": {
     "message": "Notified members"
   },
@@ -37,6 +52,18 @@
         "example": "3"
       }
     }
+  },
+  "noPriorityApplicationsTitle": {
+    "message": "Hiçbir uygulamayı öncelikli olarak işaretlemediniz"
+  },
+  "noPriorityApplicationsDescription": {
+    "message": "Select your most critical applications to discover at-risk passwords, and notify users to change those passwords."
+  },
+  "markPriorityApps": {
+    "message": "Mark priority apps"
+  },
+  "markAppAsCritical": {
+    "message": "Mark app as critical"
   },
   "application": {
     "message": "Uygulama"

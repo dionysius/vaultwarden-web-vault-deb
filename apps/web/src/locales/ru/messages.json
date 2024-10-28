@@ -8,6 +8,21 @@
   "accessIntelligence": {
     "message": "Access Intelligence"
   },
+  "passwordRisk": {
+    "message": "Риск пароля"
+  },
+  "discoverAtRiskPasswords": {
+    "message": "Обнаружение паролей, подверженных риску, и уведомление пользователей о необходимости сменить эти пароли."
+  },
+  "dataLastUpdated": {
+    "message": "Последнее обновление: $DATE$",
+    "placeholders": {
+      "date": {
+        "content": "$1",
+        "example": "2021-01-01"
+      }
+    }
+  },
   "notifiedMembers": {
     "message": "Уведомленные участники"
   },
@@ -37,6 +52,18 @@
         "example": "3"
       }
     }
+  },
+  "noPriorityApplicationsTitle": {
+    "message": "Вы не отметили ни одного приложения в качестве приоритетного"
+  },
+  "noPriorityApplicationsDescription": {
+    "message": "Выберите наиболее важные приложения, чтобы обнаружить пароли, подверженные риску, и уведомить пользователей о необходимости сменить эти пароли."
+  },
+  "markPriorityApps": {
+    "message": "Отметьте приоритетные приложения"
+  },
+  "markAppAsCritical": {
+    "message": "Пометить приложение как критическое"
   },
   "application": {
     "message": "Приложение"
@@ -940,13 +967,13 @@
     "message": "Использовать другой способ авторизации"
   },
   "logInWithPasskey": {
-    "message": "Log in with passkey"
+    "message": "Войти с passkey"
   },
   "useSingleSignOn": {
-    "message": "Use single sign-on"
+    "message": "Использовать единый вход"
   },
   "welcomeBack": {
-    "message": "Welcome back"
+    "message": "С возвращением"
   },
   "invalidPasskeyPleaseTryAgain": {
     "message": "Неверный passkey. Попробуйте снова."
@@ -1030,7 +1057,7 @@
     "message": "Создать аккаунт"
   },
   "newToBitwarden": {
-    "message": "New to Bitwarden?"
+    "message": "Впервые на Bitwarden?"
   },
   "setAStrongPassword": {
     "message": "Задайте надежный пароль"
@@ -1048,7 +1075,7 @@
     "message": "Войти"
   },
   "logInToBitwarden": {
-    "message": "Log in to Bitwarden"
+    "message": "Войти в Bitwarden"
   },
   "verifyIdentity": {
     "message": "Подтвердите вашу личность"

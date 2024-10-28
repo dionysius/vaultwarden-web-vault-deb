@@ -1,18 +1,33 @@
 {
   "allApplications": {
-    "message": "All applications"
+    "message": "Tutte le applicazioni"
   },
   "priorityApplications": {
-    "message": "Priority applications"
+    "message": "Applicazioni prioritarie"
   },
   "accessIntelligence": {
-    "message": "Access Intelligence"
+    "message": "Intelligence sugli accessi"
+  },
+  "passwordRisk": {
+    "message": "Rischio password"
+  },
+  "discoverAtRiskPasswords": {
+    "message": "Scopri le password a rischio e richiedi agli utenti di cambiarle."
+  },
+  "dataLastUpdated": {
+    "message": "Ultimo aggiornamento: $DATE$",
+    "placeholders": {
+      "date": {
+        "content": "$1",
+        "example": "2021-01-01"
+      }
+    }
   },
   "notifiedMembers": {
-    "message": "Notified members"
+    "message": "Membri notificati"
   },
   "allApplicationsWithCount": {
-    "message": "All applications ($COUNT$)",
+    "message": "Tutte le applicazioni ($COUNT$)",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -21,7 +36,7 @@
     }
   },
   "priorityApplicationsWithCount": {
-    "message": "Priority applications ($COUNT$)",
+    "message": "Applicazioni prioritarie ($COUNT$)",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -30,13 +45,25 @@
     }
   },
   "notifiedMembersWithCount": {
-    "message": "Notified members ($COUNT$)",
+    "message": "Membri notificati ($COUNT$)",
     "placeholders": {
       "count": {
         "content": "$1",
         "example": "3"
       }
     }
+  },
+  "noPriorityApplicationsTitle": {
+    "message": "Non hai impostato nessuna applicazione come prioritaria"
+  },
+  "noPriorityApplicationsDescription": {
+    "message": "Select your most critical applications to discover at-risk passwords, and notify users to change those passwords."
+  },
+  "markPriorityApps": {
+    "message": "Mark priority apps"
+  },
+  "markAppAsCritical": {
+    "message": "Mark app as critical"
   },
   "application": {
     "message": "Application"
@@ -1279,7 +1306,7 @@
     "message": "Ricordami"
   },
   "sendVerificationCodeEmailAgain": {
-    "message": "Invia email con codice di verifica di nuovo"
+    "message": "Invia di nuovo l'email con codice di verifica"
   },
   "useAnotherTwoStepMethod": {
     "message": "Usa un altro metodo di verifica in due passaggi"
@@ -1515,7 +1542,7 @@
     "message": "Generatore di password"
   },
   "minComplexityScore": {
-    "message": "Punteggio minimo di complessità"
+    "message": "Punteggio di complessità minimo di {0}"
   },
   "minNumbers": {
     "message": "Minimo numeri"
@@ -4429,7 +4456,7 @@
     "message": "Una o più politiche dell'organizzazione richiedono che la tua password principale soddisfi questi requisiti:"
   },
   "policyInEffectMinComplexity": {
-    "message": "Punteggio minimo di complessità di $SCORE$",
+    "message": "Punteggio di complessità minimo di $SCORE$",
     "placeholders": {
       "score": {
         "content": "$1",
@@ -6245,7 +6272,7 @@
     }
   },
   "formErrorSummarySingle": {
-    "message": "1 campo ha richiede tua attenzione."
+    "message": "1 campo richiede la tua attenzione."
   },
   "fieldRequiredError": {
     "message": "$FIELDNAME$ è obbligatorio.",
@@ -7856,7 +7883,7 @@
     "message": "Password principale debole e violata"
   },
   "weakAndBreachedMasterPasswordDesc": {
-    "message": "Password debole e trovata una violazione dei dati. Usa una password forte e unica per proteggere il tuo account. Sei sicuro di voler usare questa password?"
+    "message": "Password debole e trovata in una violazione dei dati. Usa una password forte e unica per proteggere il tuo account. Sei sicuro di voler usare questa password?"
   },
   "characterMinimum": {
     "message": "Minimo $LENGTH$ caratteri",
@@ -8837,7 +8864,7 @@
     "message": "Visualizza la repository C++"
   },
   "jsWebAssemblySDKRepo": {
-    "message": "Visualizza la repository JS WebAssembly"
+    "message": "Visualizza il repository JS WebAssembly"
   },
   "javaSDKRepo": {
     "message": "Visualizza la repository Java"

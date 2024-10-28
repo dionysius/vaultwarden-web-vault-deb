@@ -8,6 +8,21 @@
   "accessIntelligence": {
     "message": "Toegangsintelligentie"
   },
+  "passwordRisk": {
+    "message": "Wachtwoordrisico"
+  },
+  "discoverAtRiskPasswords": {
+    "message": "Ontdek risicovolle wachtwoorden en attendeer gebruikers deze wachtwoorden te wijzigen."
+  },
+  "dataLastUpdated": {
+    "message": "Datum laatste wijziging: $DATE$",
+    "placeholders": {
+      "date": {
+        "content": "$1",
+        "example": "2021-01-01"
+      }
+    }
+  },
   "notifiedMembers": {
     "message": "Geînformeerde leden"
   },
@@ -37,6 +52,18 @@
         "example": "3"
       }
     }
+  },
+  "noPriorityApplicationsTitle": {
+    "message": "Je hebt nog geen applicaties als belangrijk aangewezen"
+  },
+  "noPriorityApplicationsDescription": {
+    "message": "Wijs je meest kritische applicaties aan om risicovolle wachtwoorden te ontdekken en gebruikers te attenderen deze te wijzigen."
+  },
+  "markPriorityApps": {
+    "message": "Belangrijke apps aanwijzen"
+  },
+  "markAppAsCritical": {
+    "message": "App aanwijzen als belangrijk"
   },
   "application": {
     "message": "Applicatie"

@@ -8,6 +8,21 @@
   "accessIntelligence": {
     "message": "Access Intelligence"
   },
+  "passwordRisk": {
+    "message": "Password Risk"
+  },
+  "discoverAtRiskPasswords": {
+    "message": "Discover at-risk passwords and notify users to change those passwords."
+  },
+  "dataLastUpdated": {
+    "message": "Data last updated: $DATE$",
+    "placeholders": {
+      "date": {
+        "content": "$1",
+        "example": "2021-01-01"
+      }
+    }
+  },
   "notifiedMembers": {
     "message": "Benachrichtigte Mitglieder"
   },
@@ -37,6 +52,18 @@
         "example": "3"
       }
     }
+  },
+  "noPriorityApplicationsTitle": {
+    "message": "You haven’t marked any applications as a priority"
+  },
+  "noPriorityApplicationsDescription": {
+    "message": "Select your most critical applications to discover at-risk passwords, and notify users to change those passwords."
+  },
+  "markPriorityApps": {
+    "message": "Mark priority apps"
+  },
+  "markAppAsCritical": {
+    "message": "Mark app as critical"
   },
   "application": {
     "message": "Anwendung"
@@ -940,13 +967,13 @@
     "message": "Eine andere Anmeldemethode verwenden"
   },
   "logInWithPasskey": {
-    "message": "Log in with passkey"
+    "message": "Mit Passkey anmelden"
   },
   "useSingleSignOn": {
-    "message": "Use single sign-on"
+    "message": "Single Sign-on verwenden"
   },
   "welcomeBack": {
-    "message": "Welcome back"
+    "message": "Willkommen zurück"
   },
   "invalidPasskeyPleaseTryAgain": {
     "message": "Ungültiger Passkey. Bitte versuche es erneut."
@@ -1030,7 +1057,7 @@
     "message": "Konto erstellen"
   },
   "newToBitwarden": {
-    "message": "New to Bitwarden?"
+    "message": "Neu bei Bitwarden?"
   },
   "setAStrongPassword": {
     "message": "Lege ein starkes Passwort fest"
@@ -1048,7 +1075,7 @@
     "message": "Anmelden"
   },
   "logInToBitwarden": {
-    "message": "Log in to Bitwarden"
+    "message": "Bei Bitwarden anmelden"
   },
   "verifyIdentity": {
     "message": "Verifiziere deine Identität"

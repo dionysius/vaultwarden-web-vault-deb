@@ -8,6 +8,21 @@
   "accessIntelligence": {
     "message": "Adgangsintelligens"
   },
+  "passwordRisk": {
+    "message": "Adgangskoderisiko"
+  },
+  "discoverAtRiskPasswords": {
+    "message": "Opdag risikable adgangskoder og underret brugerne om at ændre disse."
+  },
+  "dataLastUpdated": {
+    "message": "Data senest opdateret: $DATE$",
+    "placeholders": {
+      "date": {
+        "content": "$1",
+        "example": "2021-01-01"
+      }
+    }
+  },
   "notifiedMembers": {
     "message": "Underrettede medlemmer"
   },
@@ -37,6 +52,18 @@
         "example": "3"
       }
     }
+  },
+  "noPriorityApplicationsTitle": {
+    "message": "Ingen programmer er markret som en prioritet"
+  },
+  "noPriorityApplicationsDescription": {
+    "message": "Vælg de mest kritiske programmer for at afsløre risikable adgangskoder og give brugerne besked om at disse."
+  },
+  "markPriorityApps": {
+    "message": "Markér prioriterede apps"
+  },
+  "markAppAsCritical": {
+    "message": "Markér app som kritisk"
   },
   "application": {
     "message": "Applikation"

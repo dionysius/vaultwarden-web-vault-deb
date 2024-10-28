@@ -8,6 +8,21 @@
   "accessIntelligence": {
     "message": "Access Intelligence"
   },
+  "passwordRisk": {
+    "message": "Рискова парола"
+  },
+  "discoverAtRiskPasswords": {
+    "message": "Откриване на пароли в риск и известяване на потребителите да ги сменят."
+  },
+  "dataLastUpdated": {
+    "message": "Последно обновяване на данните: $DATE$",
+    "placeholders": {
+      "date": {
+        "content": "$1",
+        "example": "2021-01-01"
+      }
+    }
+  },
   "notifiedMembers": {
     "message": "Известени членове"
   },
@@ -37,6 +52,18 @@
         "example": "3"
       }
     }
+  },
+  "noPriorityApplicationsTitle": {
+    "message": "Не сте отбелязали нито едно приложение като приоритетно"
+  },
+  "noPriorityApplicationsDescription": {
+    "message": "Изберете най-важните си приложения, за да откриете паролите, които може да са в риск, и да известите потребителите да ги сменят."
+  },
+  "markPriorityApps": {
+    "message": "Отбелязване на приоритетни приложения"
+  },
+  "markAppAsCritical": {
+    "message": "Отбелязване на приложението като важно"
   },
   "application": {
     "message": "Приложение"
