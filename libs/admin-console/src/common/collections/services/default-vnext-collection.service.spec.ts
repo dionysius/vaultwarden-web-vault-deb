@@ -47,7 +47,7 @@ describe("DefaultvNextCollectionService", () => {
 
     // Set up mock decryption
     encryptService.decryptToUtf8
-      .calledWith(expect.any(EncString), expect.any(SymmetricCryptoKey))
+      .calledWith(expect.any(EncString), expect.any(SymmetricCryptoKey), expect.any(String))
       .mockImplementation((encString, key) =>
         Promise.resolve(encString.data.replace("ENC_", "DEC_")),
       );
@@ -106,10 +106,12 @@ describe("DefaultvNextCollectionService", () => {
       expect(encryptService.decryptToUtf8).toHaveBeenCalledWith(
         expect.objectContaining(new EncString(collection1.name)),
         orgKey1,
+        expect.any(String),
       );
       expect(encryptService.decryptToUtf8).toHaveBeenCalledWith(
         expect.objectContaining(new EncString(collection2.name)),
         orgKey2,
+        expect.any(String),
       );
     });
 
