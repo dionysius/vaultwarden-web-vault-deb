@@ -9,6 +9,7 @@ import { AccountService } from "@bitwarden/common/auth/abstractions/account.serv
 import { UserId } from "@bitwarden/common/types/guid";
 import {
   CardComponent,
+  ColorPasswordModule,
   IconButtonModule,
   NoItemsModule,
   SectionComponent,
@@ -21,6 +22,7 @@ import { GeneratedCredential, GeneratorHistoryService } from "@bitwarden/generat
   selector: "bit-credential-generator-history",
   templateUrl: "credential-generator-history.component.html",
   imports: [
+    ColorPasswordModule,
     CommonModule,
     IconButtonModule,
     NoItemsModule,
