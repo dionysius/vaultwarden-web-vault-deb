@@ -57,7 +57,7 @@ export class AccountSecurityComponent implements OnInit, OnDestroy {
   availableVaultTimeoutActions: VaultTimeoutAction[] = [];
   vaultTimeoutOptions: VaultTimeoutOption[];
   vaultTimeoutPolicyCallout: Observable<{
-    timeout: { hours: number; minutes: number };
+    timeout: { hours: string; minutes: string };
     action: VaultTimeoutAction;
   }>;
   supportsBiometric: boolean;
@@ -105,8 +105,8 @@ export class AccountSecurityComponent implements OnInit, OnDestroy {
         let timeout;
         if (policy.data?.minutes) {
           timeout = {
-            hours: Math.floor(policy.data?.minutes / 60),
-            minutes: policy.data?.minutes % 60,
+            hours: Math.floor(policy.data?.minutes / 60).toString(),
+            minutes: (policy.data?.minutes % 60).toString(),
           };
         }
         return { timeout: timeout, action: policy.data?.action };
