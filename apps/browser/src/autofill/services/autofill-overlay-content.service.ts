@@ -28,6 +28,7 @@ import {
 } from "../enums/autofill-overlay.enum";
 import AutofillField from "../models/autofill-field";
 import AutofillPageDetails from "../models/autofill-page-details";
+import { AutofillInlineMenuContentService } from "../overlay/inline-menu/abstractions/autofill-inline-menu-content.service";
 import { ElementWithOpId, FillableFormFieldElement, FormFieldElement } from "../types";
 import {
   currentlyInSandboxedIframe,
@@ -155,6 +156,7 @@ export class AutofillOverlayContentService implements AutofillOverlayContentServ
     private domQueryService: DomQueryService,
     private domElementVisibilityService: DomElementVisibilityService,
     private inlineMenuFieldQualificationService: InlineMenuFieldQualificationService,
+    private inlineMenuContentService?: AutofillInlineMenuContentService,
   ) {}
 
   /**
@@ -1580,7 +1582,8 @@ export class AutofillOverlayContentService implements AutofillOverlayContentServ
       if (activeElement) {
         return (
           activeElement === this.mostRecentlyFocusedField ||
-          activeElement.contains(this.mostRecentlyFocusedField)
+          activeElement.contains(this.mostRecentlyFocusedField) ||
+          this.inlineMenuContentService?.isElementInlineMenu(activeElement as HTMLElement)
         );
       }
 

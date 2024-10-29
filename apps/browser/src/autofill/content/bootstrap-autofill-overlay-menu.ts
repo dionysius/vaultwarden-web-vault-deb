@@ -21,6 +21,7 @@ import AutofillInit from "./autofill-init";
       domQueryService,
       domElementVisibilityService,
       inlineMenuFieldQualificationService,
+      inlineMenuContentService,
     );
 
     windowContext.bitwardenAutofillInit = new AutofillInit(

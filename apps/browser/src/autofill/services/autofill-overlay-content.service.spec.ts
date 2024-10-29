@@ -1,4 +1,4 @@
-import { mock } from "jest-mock-extended";
+import { mock, MockProxy } from "jest-mock-extended";
 
 import { EVENTS } from "@bitwarden/common/autofill/constants";
 import { CipherType } from "@bitwarden/common/vault/enums";
@@ -13,6 +13,7 @@ import {
 import AutofillField from "../models/autofill-field";
 import AutofillForm from "../models/autofill-form";
 import AutofillPageDetails from "../models/autofill-page-details";
+import { AutofillInlineMenuContentService } from "../overlay/inline-menu/abstractions/autofill-inline-menu-content.service";
 import { createAutofillFieldMock } from "../spec/autofill-mocks";
 import {
   flushPromises,
@@ -35,6 +36,7 @@ describe("AutofillOverlayContentService", () => {
   let domElementVisibilityService: DomElementVisibilityService;
   let autofillInit: AutofillInit;
   let inlineMenuFieldQualificationService: InlineMenuFieldQualificationService;
+  let inlineMenuContentService: MockProxy<AutofillInlineMenuContentService>;
   let autofillOverlayContentService: AutofillOverlayContentService;
   let sendExtensionMessageSpy: jest.SpyInstance;
   const sendResponseSpy = jest.fn();
@@ -44,10 +46,12 @@ describe("AutofillOverlayContentService", () => {
     inlineMenuFieldQualificationService = new InlineMenuFieldQualificationService();
     domQueryService = new DomQueryService();
     domElementVisibilityService = new DomElementVisibilityService();
+    inlineMenuContentService = mock<AutofillInlineMenuContentService>();
     autofillOverlayContentService = new AutofillOverlayContentService(
       domQueryService,
       domElementVisibilityService,
       inlineMenuFieldQualificationService,
+      inlineMenuContentService,
     );
     autofillInit = new AutofillInit(
       domQueryService,
