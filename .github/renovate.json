@@ -36,6 +36,10 @@
       "matchUpdateTypes": "major"
     },
     {
+      "groupName": "macOS/iOS bindings",
+      "matchPackageNames": ["core-foundation", "security-framework", "security-framework-sys"]
+    },
+    {
       "matchPackageNames": [
         "@ngtools/webpack",
         "base64-loader",
