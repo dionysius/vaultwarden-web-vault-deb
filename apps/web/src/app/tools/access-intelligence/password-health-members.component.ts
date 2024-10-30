@@ -11,7 +11,13 @@ import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.servic
 import { PasswordStrengthServiceAbstraction } from "@bitwarden/common/tools/password-strength";
 import { CipherService } from "@bitwarden/common/vault/abstractions/cipher.service";
 import { CipherView } from "@bitwarden/common/vault/models/view/cipher.view";
-import { BadgeVariant, SearchModule, TableDataSource, TableModule } from "@bitwarden/components";
+import {
+  BadgeVariant,
+  SearchModule,
+  TableDataSource,
+  TableModule,
+  ToastService,
+} from "@bitwarden/components";
 import { CardComponent } from "@bitwarden/tools-card";
 
 import { HeaderModule } from "../../layouts/header/header.module";
@@ -53,6 +59,8 @@ export class PasswordHealthMembersComponent implements OnInit {
 
   loading = true;
 
+  selectedIds: Set<number> = new Set<number>();
+
   protected searchControl = new FormControl("", { nonNullable: true });
 
   private destroyRef = inject(DestroyRef);
@@ -63,6 +71,7 @@ export class PasswordHealthMembersComponent implements OnInit {
     protected auditService: AuditService,
     protected i18nService: I18nService,
     protected activatedRoute: ActivatedRoute,
+    protected toastService: ToastService,
   ) {
     this.searchControl.valueChanges
       .pipe(debounceTime(200), takeUntilDestroyed())
@@ -91,12 +100,40 @@ export class PasswordHealthMembersComponent implements OnInit {
 
     await passwordHealthService.generateReport();
 
-    this.dataSource.data = passwordHealthService.reportCiphers;
+    this.dataSource.data = []; //passwordHealthService.reportCiphers;
 
     this.exposedPasswordMap = passwordHealthService.exposedPasswordMap;
     this.passwordStrengthMap = passwordHealthService.passwordStrengthMap;
     this.passwordUseMap = passwordHealthService.passwordUseMap;
     this.totalMembersMap = passwordHealthService.totalMembersMap;
     this.loading = false;
+  }
+
+  markAppsAsCritical = async () => {
+    // TODO: Send to API once implemented
+    return new Promise((resolve) => {
+      setTimeout(() => {
+        this.selectedIds.clear();
+        this.toastService.showToast({
+          variant: "success",
+          title: null,
+          message: this.i18nService.t("appsMarkedAsCritical"),
+        });
+        resolve(true);
+      }, 1000);
+    });
+  };
+
+  trackByFunction(_: number, item: CipherView) {
+    return item.id;
+  }
+
+  onCheckboxChange(id: number, event: Event) {
+    const isChecked = (event.target as HTMLInputElement).checked;
+    if (isChecked) {
+      this.selectedIds.add(id);
+    } else {
+      this.selectedIds.delete(id);
+    }
   }
 }

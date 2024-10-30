@@ -11,5 +11,5 @@ import { ButtonModule, NoItemsModule, Icons } from "@bitwarden/components";
   imports: [ButtonModule, CommonModule, JslibModule, NoItemsModule],
 })
 export class NoPriorityAppsComponent {
-  noItemsIcon = Icons.NoResults;
+  noItemsIcon = Icons.Security;
 }
