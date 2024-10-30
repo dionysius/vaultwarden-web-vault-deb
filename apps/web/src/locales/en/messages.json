@@ -1713,6 +1713,9 @@
   "dangerZoneDesc": {
     "message": "Careful, these actions are not reversible!"
   },
+  "dangerZoneDescSingular": {
+    "message": "Careful, this action is not reversible!"
+  },
   "deauthorizeSessions": {
     "message": "Deauthorize sessions"
   },
@@ -1724,6 +1727,15 @@
   },
   "sessionsDeauthorized": {
     "message": "All sessions deauthorized"
+  },
+  "accountIsManagedMessage": {
+    "message": "This account is managed by $ORGANIZATIONNAME$",
+    "placeholders": {
+      "organizationName": {
+        "content": "$1",
+        "example": "Organization"
+      }
+    }
   },
   "purgeVault": {
     "message": "Purge vault"
