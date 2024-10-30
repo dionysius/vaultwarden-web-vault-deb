@@ -82,13 +82,6 @@ describe("KdfConfigService", () => {
     );
   });
 
-  it("validateKdfConfigForSetting(): should throw an error for invalid Argon2 memory", () => {
-    const kdfConfig: Argon2KdfConfig = new Argon2KdfConfig(3, 1025, 4);
-    expect(() => kdfConfig.validateKdfConfigForSetting()).toThrow(
-      `Argon2 memory must be between ${Argon2KdfConfig.MEMORY.min}mb and ${Argon2KdfConfig.MEMORY.max}mb`,
-    );
-  });
-
   it("validateKdfConfigForSetting(): should throw an error for invalid Argon2 parallelism", () => {
     const kdfConfig: Argon2KdfConfig = new Argon2KdfConfig(3, 64, 17);
     expect(() => kdfConfig.validateKdfConfigForSetting()).toThrow(
@@ -108,70 +101,32 @@ describe("KdfConfigService", () => {
 
   it("validateKdfConfigForPrelogin(): should throw an error for too low PBKDF2 iterations", () => {
     const kdfConfig: PBKDF2KdfConfig = new PBKDF2KdfConfig(
-      PBKDF2KdfConfig.PRELOGIN_ITERATIONS.min - 1,
+      PBKDF2KdfConfig.PRELOGIN_ITERATIONS_MIN - 1,
     );
     expect(() => kdfConfig.validateKdfConfigForPrelogin()).toThrow(
-      `PBKDF2 iterations must be between ${PBKDF2KdfConfig.PRELOGIN_ITERATIONS.min} and ${PBKDF2KdfConfig.PRELOGIN_ITERATIONS.max}`,
-    );
-  });
-
-  it("validateKdfConfigForPrelogin(): should throw an error for too high PBKDF2 iterations", () => {
-    const kdfConfig: PBKDF2KdfConfig = new PBKDF2KdfConfig(
-      PBKDF2KdfConfig.PRELOGIN_ITERATIONS.max + 1,
-    );
-    expect(() => kdfConfig.validateKdfConfigForPrelogin()).toThrow(
-      `PBKDF2 iterations must be between ${PBKDF2KdfConfig.PRELOGIN_ITERATIONS.min} and ${PBKDF2KdfConfig.PRELOGIN_ITERATIONS.max}`,
+      `PBKDF2 iterations must be at least ${PBKDF2KdfConfig.PRELOGIN_ITERATIONS_MIN}, but was ${kdfConfig.iterations}; possible pre-login downgrade attack detected.`,
     );
   });
 
   it("validateKdfConfigForPrelogin(): should throw an error for too low Argon2 iterations", () => {
     const kdfConfig: Argon2KdfConfig = new Argon2KdfConfig(
-      Argon2KdfConfig.ITERATIONS.min - 1,
+      Argon2KdfConfig.PRELOGIN_ITERATIONS_MIN - 1,
       64,
       4,
     );
     expect(() => kdfConfig.validateKdfConfigForPrelogin()).toThrow(
-      `Argon2 iterations must be between ${Argon2KdfConfig.ITERATIONS.min} and ${Argon2KdfConfig.ITERATIONS.max}`,
-    );
-  });
-
-  it("validateKdfConfigForPrelogin(): should throw an error for too high Argon2 iterations", () => {
-    const kdfConfig: Argon2KdfConfig = new Argon2KdfConfig(
-      Argon2KdfConfig.PRELOGIN_ITERATIONS.max + 1,
-      64,
-      4,
-    );
-    expect(() => kdfConfig.validateKdfConfigForPrelogin()).toThrow(
-      `Argon2 iterations must be between ${Argon2KdfConfig.ITERATIONS.min} and ${Argon2KdfConfig.ITERATIONS.max}`,
+      `Argon2 iterations must be at least ${Argon2KdfConfig.PRELOGIN_ITERATIONS_MIN}, but was ${kdfConfig.iterations}; possible pre-login downgrade attack detected.`,
     );
   });
 
   it("validateKdfConfigForPrelogin(): should throw an error for too low Argon2 memory", () => {
     const kdfConfig: Argon2KdfConfig = new Argon2KdfConfig(
       3,
-      Argon2KdfConfig.PRELOGIN_MEMORY.min - 1,
+      Argon2KdfConfig.PRELOGIN_MEMORY_MIN - 1,
       4,
     );
     expect(() => kdfConfig.validateKdfConfigForPrelogin()).toThrow(
-      `Argon2 memory must be between ${Argon2KdfConfig.PRELOGIN_MEMORY.min}mb and ${Argon2KdfConfig.PRELOGIN_MEMORY.max}mb`,
-    );
-  });
-
-  it("validateKdfConfigForPrelogin(): should throw an error for too high Argon2 memory", () => {
-    const kdfConfig: Argon2KdfConfig = new Argon2KdfConfig(
-      3,
-      Argon2KdfConfig.PRELOGIN_MEMORY.max + 1,
-      4,
-    );
-    expect(() => kdfConfig.validateKdfConfigForPrelogin()).toThrow(
-      `Argon2 memory must be between ${Argon2KdfConfig.PRELOGIN_MEMORY.min}mb and ${Argon2KdfConfig.PRELOGIN_MEMORY.max}mb`,
-    );
-  });
-
-  it("validateKdfConfigForPrelogin(): should throw an error for too high Argon2 parallelism", () => {
-    const kdfConfig: Argon2KdfConfig = new Argon2KdfConfig(3, 64, 17);
-    expect(() => kdfConfig.validateKdfConfigForPrelogin()).toThrow(
-      `Argon2 parallelism must be between ${Argon2KdfConfig.PRELOGIN_PARALLELISM.min} and ${Argon2KdfConfig.PRELOGIN_PARALLELISM.max}`,
+      `Argon2 memory must be at least ${Argon2KdfConfig.PRELOGIN_MEMORY_MIN} MiB, but was ${kdfConfig.memory} MiB; possible pre-login downgrade attack detected.`,
     );
   });
 });

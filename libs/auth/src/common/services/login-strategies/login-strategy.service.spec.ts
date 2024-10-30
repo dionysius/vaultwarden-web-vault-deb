@@ -295,7 +295,7 @@ describe("LoginStrategyService", () => {
       new IdentityTokenResponse({
         ForcePasswordReset: false,
         Kdf: KdfType.PBKDF2_SHA256,
-        KdfIterations: PBKDF2KdfConfig.PRELOGIN_ITERATIONS.min - 1,
+        KdfIterations: PBKDF2KdfConfig.PRELOGIN_ITERATIONS_MIN - 1,
         Key: "KEY",
         PrivateKey: "PRIVATE_KEY",
         ResetMasterPassword: false,
@@ -309,7 +309,7 @@ describe("LoginStrategyService", () => {
     apiService.postPrelogin.mockResolvedValue(
       new PreloginResponse({
         Kdf: KdfType.PBKDF2_SHA256,
-        KdfIterations: PBKDF2KdfConfig.PRELOGIN_ITERATIONS.min - 1,
+        KdfIterations: PBKDF2KdfConfig.PRELOGIN_ITERATIONS_MIN - 1,
       }),
     );
 
@@ -321,7 +321,7 @@ describe("LoginStrategyService", () => {
     });
 
     await expect(sut.logIn(credentials)).rejects.toThrow(
-      `PBKDF2 iterations must be between ${PBKDF2KdfConfig.PRELOGIN_ITERATIONS.min} and ${PBKDF2KdfConfig.PRELOGIN_ITERATIONS.max}`,
+      `PBKDF2 iterations must be at least ${PBKDF2KdfConfig.PRELOGIN_ITERATIONS_MIN}, but was ${PBKDF2KdfConfig.PRELOGIN_ITERATIONS_MIN - 1}; possible pre-login downgrade attack detected.`,
     );
   });
 });
