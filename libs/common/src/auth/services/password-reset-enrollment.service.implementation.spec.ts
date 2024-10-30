@@ -9,12 +9,12 @@ import { KeyService } from "../../../../key-management/src/abstractions/key.serv
 import { OrganizationApiServiceAbstraction } from "../../admin-console/abstractions/organization/organization-api.service.abstraction";
 import { OrganizationAutoEnrollStatusResponse } from "../../admin-console/models/response/organization-auto-enroll-status.response";
 import { I18nService } from "../../platform/abstractions/i18n.service";
-import { AccountInfo, AccountService } from "../abstractions/account.service";
+import { Account, AccountInfo, AccountService } from "../abstractions/account.service";
 
 import { PasswordResetEnrollmentServiceImplementation } from "./password-reset-enrollment.service.implementation";
 
 describe("PasswordResetEnrollmentServiceImplementation", () => {
-  const activeAccountSubject = new BehaviorSubject<{ id: UserId } & AccountInfo>(null);
+  const activeAccountSubject = new BehaviorSubject<Account | null>(null);
 
   let organizationApiService: MockProxy<OrganizationApiServiceAbstraction>;
   let accountService: MockProxy<AccountService>;

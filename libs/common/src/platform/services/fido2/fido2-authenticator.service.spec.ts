@@ -3,7 +3,7 @@ import { TextEncoder } from "util";
 import { mock, MockProxy } from "jest-mock-extended";
 import { BehaviorSubject, of } from "rxjs";
 
-import { AccountInfo, AccountService } from "../../../auth/abstractions/account.service";
+import { Account, AccountService } from "../../../auth/abstractions/account.service";
 import { UserId } from "../../../types/guid";
 import { CipherService } from "../../../vault/abstractions/cipher.service";
 import { SyncService } from "../../../vault/abstractions/sync/sync.service.abstraction";
@@ -33,7 +33,7 @@ import { guidToRawFormat } from "./guid-utils";
 const RpId = "bitwarden.com";
 
 describe("FidoAuthenticatorService", () => {
-  const activeAccountSubject = new BehaviorSubject<{ id: UserId } & AccountInfo>({
+  const activeAccountSubject = new BehaviorSubject<Account | null>({
     id: "testId" as UserId,
     email: "test@example.com",
     emailVerified: true,

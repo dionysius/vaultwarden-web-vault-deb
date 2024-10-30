@@ -1,7 +1,7 @@
 import { mock } from "jest-mock-extended";
 import { ReplaySubject, combineLatest, map } from "rxjs";
 
-import { AccountInfo, AccountService } from "../src/auth/abstractions/account.service";
+import { Account, AccountInfo, AccountService } from "../src/auth/abstractions/account.service";
 import { UserId } from "../src/types/guid";
 
 export function mockAccountServiceWith(
@@ -30,7 +30,7 @@ export class FakeAccountService implements AccountService {
   // eslint-disable-next-line rxjs/no-exposed-subjects -- test class
   accountsSubject = new ReplaySubject<Record<UserId, AccountInfo>>(1);
   // eslint-disable-next-line rxjs/no-exposed-subjects -- test class
-  activeAccountSubject = new ReplaySubject<{ id: UserId } & AccountInfo>(1);
+  activeAccountSubject = new ReplaySubject<Account | null>(1);
   // eslint-disable-next-line rxjs/no-exposed-subjects -- test class
   accountActivitySubject = new ReplaySubject<Record<UserId, Date>>(1);
   private _activeUserId: UserId;
