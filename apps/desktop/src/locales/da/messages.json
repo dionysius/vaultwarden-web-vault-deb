@@ -2393,6 +2393,20 @@
   "generateEmail": {
     "message": "Generér e-mail"
   },
+  "generatorBoundariesHint": {
+    "message": "Værdi skal være mellem $MIN$ og $MAX$",
+    "description": "Explains spin box minimum and maximum values to the user",
+    "placeholders": {
+      "min": {
+        "content": "$1",
+        "example": "8"
+      },
+      "max": {
+        "content": "$2",
+        "example": "128"
+      }
+    }
+  },
   "usernameType": {
     "message": "Brugernavnstype"
   },
@@ -2789,9 +2803,6 @@
   "eu": {
     "message": "EU",
     "description": "European Union"
-  },
-  "loggingInOn": {
-    "message": "Logger ind på"
   },
   "selfHostedServer": {
     "message": "selv-hostet"

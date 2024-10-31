@@ -2393,6 +2393,20 @@
   "generateEmail": {
     "message": "Vygenerovat e-mail"
   },
+  "generatorBoundariesHint": {
+    "message": "Hodnota musí být mezi $MIN$ a $MAX$",
+    "description": "Explains spin box minimum and maximum values to the user",
+    "placeholders": {
+      "min": {
+        "content": "$1",
+        "example": "8"
+      },
+      "max": {
+        "content": "$2",
+        "example": "128"
+      }
+    }
+  },
   "usernameType": {
     "message": "Typ uživatelského jména"
   },
@@ -2789,9 +2803,6 @@
   "eu": {
     "message": "EU",
     "description": "European Union"
-  },
-  "loggingInOn": {
-    "message": "Přihlašování na"
   },
   "selfHostedServer": {
     "message": "vlastní hosting"

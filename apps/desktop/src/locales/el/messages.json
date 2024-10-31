@@ -36,7 +36,7 @@
     "message": "Αναζήτηση κρύπτης"
   },
   "addItem": {
-    "message": "Προσθήκη αντικειμένου"
+    "message": "Προσθήκη στοιχείου"
   },
   "shared": {
     "message": "Κοινοποιήθηκε"
@@ -70,7 +70,7 @@
     "message": "Συνημμένα"
   },
   "viewItem": {
-    "message": "Προβολή αντικειμένου"
+    "message": "Προβολή στοιχείου"
   },
   "name": {
     "message": "Όνομα"
@@ -101,7 +101,7 @@
     "message": "Συνθηματικό"
   },
   "editItem": {
-    "message": "Επεξεργασία αντικειμένου"
+    "message": "Επεξεργασία στοιχείου"
   },
   "emailAddress": {
     "message": "Διεύθυνση ηλ. ταχυδρομείου"
@@ -924,7 +924,7 @@
     "message": "Νέα σύνδεση"
   },
   "addNewItem": {
-    "message": "Νέο αντικείμενο"
+    "message": "Νέο στοιχείο"
   },
   "addNewFolder": {
     "message": "Νέος φάκελος"
@@ -951,7 +951,7 @@
     "message": "Βοήθεια και σχόλια"
   },
   "getHelp": {
-    "message": "Ζητήστε βοήθεια"
+    "message": "Λήψη βοήθειας"
   },
   "fileBugReport": {
     "message": "Καταγράψτε μια αναφορά σφάλματος"
@@ -1318,7 +1318,7 @@
     "message": "Επιτυχής ανανέωση"
   },
   "passwordHistory": {
-    "message": "Ιστορικό κωδικού"
+    "message": "Ιστορικό κωδικού πρόσβασης"
   },
   "clear": {
     "message": "Εκκαθάριση",
@@ -1494,7 +1494,7 @@
     "description": "ex. Date this item was created"
   },
   "datePasswordUpdated": {
-    "message": "Ο κωδικός ενημερώθηκε",
+    "message": "Ο κωδικός πρόσβασης ενημερώθηκε",
     "description": "ex. Date this password was updated"
   },
   "exportFrom": {
@@ -1993,7 +1993,7 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "myVault": {
-    "message": "Το θησαυ/κιό μου"
+    "message": "Η κρύπτη μου"
   },
   "text": {
     "message": "Κείμενο"
@@ -2393,6 +2393,20 @@
   "generateEmail": {
     "message": "Δημιουργία διεύθυνσης ηλ. ταχυδρομείου"
   },
+  "generatorBoundariesHint": {
+    "message": "Η τιμή πρέπει να είναι μεταξύ $MIN$ και $MAX$",
+    "description": "Explains spin box minimum and maximum values to the user",
+    "placeholders": {
+      "min": {
+        "content": "$1",
+        "example": "8"
+      },
+      "max": {
+        "content": "$2",
+        "example": "128"
+      }
+    }
+  },
   "usernameType": {
     "message": "Τύπος ονόματος χρήστη"
   },
@@ -2569,7 +2583,7 @@
     "message": "Είστε βέβαιοι ότι θέλετε να χρησιμοποιήσετε την επιλογή \"Ποτέ\"; Ο ορισμός των επιλογών κλειδώματος σε \"Ποτέ\" αποθηκεύει το κλειδί κρυπτογράφησης του θησαυ/κίου σας στη συσκευή σας. Εάν χρησιμοποιήσετε αυτήν την επιλογή, θα πρέπει να διασφαλίσετε ότι θα διατηρείτε τη συσκευή σας κατάλληλα προστατευμένη."
   },
   "vault": {
-    "message": "Θησαυ/κιο"
+    "message": "Κρύπτη"
   },
   "loginWithMasterPassword": {
     "message": "Συνδεθείτε με τον κύριο κωδικό πρόσβασης"
@@ -2581,7 +2595,7 @@
     "message": "Απομνημόνευση διεύθυνσης ηλ. ταχυδρομείου"
   },
   "notYou": {
-    "message": "Όχι εσείς;"
+    "message": "Δεν είστε εσείς;"
   },
   "newAroundHere": {
     "message": "Είστε νέος/α εδώ;"
@@ -2712,7 +2726,7 @@
     "message": "Κανένα μήνυμα ηλ. ταχυδρομείου;"
   },
   "goBack": {
-    "message": "Μετάβαση πίσω"
+    "message": "Επιστροφή"
   },
   "toEditYourEmailAddress": {
     "message": "για να επεξεργαστείτε τη διεύθυνση ηλ. ταχυδρομείου σας."
@@ -2789,9 +2803,6 @@
   "eu": {
     "message": "ΕΕ",
     "description": "European Union"
-  },
-  "loggingInOn": {
-    "message": "Σύνδεση σε"
   },
   "selfHostedServer": {
     "message": "αυτο-φιλοξενούμενο"

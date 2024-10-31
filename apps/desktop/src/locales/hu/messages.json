@@ -2393,6 +2393,20 @@
   "generateEmail": {
     "message": "Email generálása"
   },
+  "generatorBoundariesHint": {
+    "message": "Az érték legyen $MIN$ és $MAX$ között.",
+    "description": "Explains spin box minimum and maximum values to the user",
+    "placeholders": {
+      "min": {
+        "content": "$1",
+        "example": "8"
+      },
+      "max": {
+        "content": "$2",
+        "example": "128"
+      }
+    }
+  },
   "usernameType": {
     "message": "Felhasználónév típusa"
   },
@@ -2789,9 +2803,6 @@
   "eu": {
     "message": "EU",
     "description": "European Union"
-  },
-  "loggingInOn": {
-    "message": "Bejelentkezés:"
   },
   "selfHostedServer": {
     "message": "saját üzemeltetésű"

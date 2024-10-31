@@ -2393,6 +2393,20 @@
   "generateEmail": {
     "message": "Генерувати е-пошту"
   },
+  "generatorBoundariesHint": {
+    "message": "Значення має бути між $MIN$ та $MAX$",
+    "description": "Explains spin box minimum and maximum values to the user",
+    "placeholders": {
+      "min": {
+        "content": "$1",
+        "example": "8"
+      },
+      "max": {
+        "content": "$2",
+        "example": "128"
+      }
+    }
+  },
   "usernameType": {
     "message": "Тип імені користувача"
   },
@@ -2789,9 +2803,6 @@
   "eu": {
     "message": "ЄС",
     "description": "European Union"
-  },
-  "loggingInOn": {
-    "message": "Увійти на"
   },
   "selfHostedServer": {
     "message": "власне розміщення"

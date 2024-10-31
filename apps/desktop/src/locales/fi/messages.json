@@ -61,7 +61,7 @@
     }
   },
   "welcomeBack": {
-    "message": "Welcome back"
+    "message": "Tervetuloa takaisin"
   },
   "moveToOrgDesc": {
     "message": "Valitse organisaatio, jolle haluat siirtää kohteen. Tämä siirtää kohteen organisaation omistukseen, etkä tämän jälkeen ole enää sen suora omistaja."
@@ -263,7 +263,7 @@
     "message": "Luo salasana"
   },
   "generatePassphrase": {
-    "message": "Generate passphrase"
+    "message": "Luo salalause"
   },
   "type": {
     "message": "Tyyppi"
@@ -401,7 +401,7 @@
     "message": "Kopioi salasana"
   },
   "copyPassphrase": {
-    "message": "Copy passphrase",
+    "message": "Kopioi salalause",
     "description": "Copy passphrase to clipboard"
   },
   "copyUri": {
@@ -558,7 +558,7 @@
     "message": "Luo tili"
   },
   "newToBitwarden": {
-    "message": "New to Bitwarden?"
+    "message": "Oletko uusi Bitwardenissa?"
   },
   "setAStrongPassword": {
     "message": "Aseta vahva salasana"
@@ -570,16 +570,16 @@
     "message": "Kirjaudu"
   },
   "logInToBitwarden": {
-    "message": "Log in to Bitwarden"
+    "message": "Kirjaudu Bitwardeniin"
   },
   "logInWithPasskey": {
-    "message": "Log in with passkey"
+    "message": "Kirjaudu pääsyavaimella"
   },
   "loginWithDevice": {
-    "message": "Log in with device"
+    "message": "Kirjaudu laitteella"
   },
   "useSingleSignOn": {
-    "message": "Use single sign-on"
+    "message": "Käytä kertakirjautumista"
   },
   "submit": {
     "message": "Jatka"
@@ -854,7 +854,7 @@
     "message": "Palvelimen URL"
   },
   "selfHostBaseUrl": {
-    "message": "Self-host server URL",
+    "message": "Itse ylläpidetyn palvelimen URL-osoite",
     "description": "Label for field requesting a self-hosted integration service URL"
   },
   "apiUrl": {
@@ -1248,7 +1248,7 @@
     "description": "Copy credit card number"
   },
   "copyEmail": {
-    "message": "Copy email"
+    "message": "Kopioi sähköpostiosoite"
   },
   "copySecurityCode": {
     "message": "Kopioi turvakoodi",
@@ -1684,10 +1684,10 @@
     "message": "Tilin poisto on pysyvä toimenpide, eikä sen peruminen ole mahdollista."
   },
   "cannotDeleteAccount": {
-    "message": "Cannot delete account"
+    "message": "Tiliä ei voi poistaa"
   },
   "cannotDeleteAccountDesc": {
-    "message": "This action cannot be completed because your account is owned by an organization. Contact your organization administrator for additional details."
+    "message": "Tätä toimintoa ei voida suorittaa, koska tilisi on organisaation omistama. Ota yhteyttä organisaation ylläpitäjään saadaksesi lisätietoja."
   },
   "accountDeleted": {
     "message": "Tili poistettiin"
@@ -2391,7 +2391,21 @@
     "message": "Luo käyttäjätunnus"
   },
   "generateEmail": {
-    "message": "Generate email"
+    "message": "Luo sähköpostiosoite"
+  },
+  "generatorBoundariesHint": {
+    "message": "Arvon tulee olla väliltä $MIN$ - $MAX$",
+    "description": "Explains spin box minimum and maximum values to the user",
+    "placeholders": {
+      "min": {
+        "content": "$1",
+        "example": "8"
+      },
+      "max": {
+        "content": "$2",
+        "example": "128"
+      }
+    }
   },
   "usernameType": {
     "message": "Käyttäjätunnuksen tyyppi"
@@ -2437,11 +2451,11 @@
     "message": "Luo sähköpostialias ulkoisella ohjauspalvelulla."
   },
   "forwarderDomainName": {
-    "message": "Email domain",
+    "message": "Sähköpostin verkkotunnus",
     "description": "Labels the domain name email forwarder service option"
   },
   "forwarderDomainNameHint": {
-    "message": "Choose a domain that is supported by the selected service",
+    "message": "Valitse verkkotunnus, jota valittu palvelu tukee",
     "description": "Guidance provided for email forwarding services that support multiple email domains."
   },
   "forwarderError": {
@@ -2789,9 +2803,6 @@
   "eu": {
     "message": "EU",
     "description": "European Union"
-  },
-  "loggingInOn": {
-    "message": "Kirjaudutaan sijaintiin"
   },
   "selfHostedServer": {
     "message": "itse ylläpidetty"

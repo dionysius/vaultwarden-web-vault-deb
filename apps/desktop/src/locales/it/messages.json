@@ -245,7 +245,7 @@
     "message": "Mx"
   },
   "dr": {
-    "message": "Dott"
+    "message": "Dr"
   },
   "expirationMonth": {
     "message": "Mese di scadenza"
@@ -499,7 +499,7 @@
     "description": "Label for the avoid ambiguous characters checkbox."
   },
   "generatorPolicyInEffect": {
-    "message": "I requisiti di politica aziendale sono stati applicati alle opzioni del generatore.",
+    "message": "I requisiti della politica aziendale sono stati applicati alle tue opzioni del generatore.",
     "description": "Indicates that a policy limits the credential generator screen."
   },
   "searchCollection": {
@@ -552,7 +552,7 @@
     "message": "Cartella eliminata"
   },
   "loginOrCreateNewAccount": {
-    "message": "Accedi o crea un nuovo account per aprire la tua cassaforte."
+    "message": "Entra o crea un nuovo account per accedere alla tua cassaforte."
   },
   "createAccount": {
     "message": "Crea account"
@@ -573,13 +573,13 @@
     "message": "Log in to Bitwarden"
   },
   "logInWithPasskey": {
-    "message": "Log in with passkey"
+    "message": "Accedi con passkey"
   },
   "loginWithDevice": {
-    "message": "Log in with device"
+    "message": "Accedi con dispositivo"
   },
   "useSingleSignOn": {
-    "message": "Use single sign-on"
+    "message": "Usa il Single Sign-On"
   },
   "submit": {
     "message": "Invia"
@@ -600,7 +600,7 @@
     "message": "Suggerimento per la password principale (facoltativo)"
   },
   "masterPassHintText": {
-    "message": "Se dimentichi la password, il suggerimento password può essere inviato alla tua email. $CURRENT$/$MAXIMUM$ massimo carattere.",
+    "message": "Se dimentichi la password, il suggerimento per la password ti può essere inviato via email. $CURRENT$/$MAXIMUM$ massimo carattere.",
     "placeholders": {
       "current": {
         "content": "$1",
@@ -643,16 +643,16 @@
     "message": "Impostazioni"
   },
   "accountEmail": {
-    "message": "E-mail dell’account"
+    "message": "Email dell’account"
   },
   "requestHint": {
-    "message": "Richiedi una dritta"
+    "message": "Richiedi suggerimento"
   },
   "requestPasswordHint": {
-    "message": "Richiedi una dritta per la password"
+    "message": "Richiedi suggerimento per la password"
   },
   "enterYourAccountEmailAddressAndYourPasswordHintWillBeSentToYou": {
-    "message": "Inserisci l'indirizzo e-mail dell'account e la dritta per la password ti sarà inviata"
+    "message": "Inserisci l'indirizzo email dell'account e ti invieremo il tuo suggerimento per la password"
   },
   "passwordHint": {
     "message": "Suggerimento per la password"
@@ -1684,10 +1684,10 @@
     "message": "L'eliminazione del tuo account è permanente. Non può essere annullata."
   },
   "cannotDeleteAccount": {
-    "message": "Cannot delete account"
+    "message": "Impossibile eliminare account"
   },
   "cannotDeleteAccountDesc": {
-    "message": "This action cannot be completed because your account is owned by an organization. Contact your organization administrator for additional details."
+    "message": "Questa azione non può essere completata perché il tuo account è di proprietà di un'organizzazione. Contatta l'amministratore della tua organizzazione per dettagli."
   },
   "accountDeleted": {
     "message": "Account eliminato"
@@ -2393,6 +2393,20 @@
   "generateEmail": {
     "message": "Genera e-mail"
   },
+  "generatorBoundariesHint": {
+    "message": "Il valore deve essere compreso tra $MIN$ e $MAX$",
+    "description": "Explains spin box minimum and maximum values to the user",
+    "placeholders": {
+      "min": {
+        "content": "$1",
+        "example": "8"
+      },
+      "max": {
+        "content": "$2",
+        "example": "128"
+      }
+    }
+  },
   "usernameType": {
     "message": "Tipo di nome utente"
   },
@@ -2789,9 +2803,6 @@
   "eu": {
     "message": "EU",
     "description": "European Union"
-  },
-  "loggingInOn": {
-    "message": "Accedendo su"
   },
   "selfHostedServer": {
     "message": "self-hosted"
