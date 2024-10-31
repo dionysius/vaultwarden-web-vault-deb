@@ -77,9 +77,13 @@
       {
         "from": "desktop_native/dist/desktop_proxy.${platform}-${arch}",
         "to": "MacOS/desktop_proxy"
+      },
+      {
+        "from": "desktop_native/dist/desktop_proxy.${platform}-${arch}",
+        "to": "MacOS/desktop_proxy.inherit"
       }
     ],
-    "signIgnore": ["MacOS/desktop_proxy"],
+    "signIgnore": ["MacOS/desktop_proxy", "MacOS/desktop_proxy.inherit"],
     "target": ["dmg", "zip"]
   },
   "win": {

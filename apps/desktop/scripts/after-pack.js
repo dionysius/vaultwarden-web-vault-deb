@@ -70,6 +70,18 @@ async function run(context) {
     child_process.execSync(
       `codesign -s '${id}' -i ${packageId} -f --timestamp --options runtime --entitlements ${entitlementsPath} ${proxyPath}`,
     );
+
+    const inheritProxyPath = path.join(appPath, "Contents", "MacOS", "desktop_proxy.inherit");
+    const inheritEntitlementsName = "entitlements.desktop_proxy.inherit.plist";
+    const inheritEntitlementsPath = path.join(
+      __dirname,
+      "..",
+      "resources",
+      inheritEntitlementsName,
+    );
+    child_process.execSync(
+      `codesign -s '${id}' -i ${packageId} -f --timestamp --options runtime --entitlements ${inheritEntitlementsPath} ${inheritProxyPath}`,
+    );
   }
 }
 
