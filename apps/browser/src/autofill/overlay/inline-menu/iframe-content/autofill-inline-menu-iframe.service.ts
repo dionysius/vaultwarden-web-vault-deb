@@ -1,5 +1,5 @@
 import { EVENTS } from "@bitwarden/common/autofill/constants";
-import { ThemeType } from "@bitwarden/common/platform/enums";
+import { ThemeTypes } from "@bitwarden/common/platform/enums";
 
 import { sendExtensionMessage, setElementStyles } from "../../../utils";
 import {
@@ -239,19 +239,19 @@ export class AutofillInlineMenuIframeService implements AutofillInlineMenuIframe
     const { theme } = message;
     let borderColor: string;
     let verifiedTheme = theme;
-    if (verifiedTheme === ThemeType.System) {
+    if (verifiedTheme === ThemeTypes.System) {
       verifiedTheme = globalThis.matchMedia("(prefers-color-scheme: dark)").matches
-        ? ThemeType.Dark
-        : ThemeType.Light;
+        ? ThemeTypes.Dark
+        : ThemeTypes.Light;
     }
 
-    if (verifiedTheme === ThemeType.Dark) {
+    if (verifiedTheme === ThemeTypes.Dark) {
       borderColor = "#4c525f";
     }
-    if (theme === ThemeType.Nord) {
+    if (theme === ThemeTypes.Nord) {
       borderColor = "#2E3440";
     }
-    if (theme === ThemeType.SolarizedDark) {
+    if (theme === ThemeTypes.SolarizedDark) {
       borderColor = "#073642";
     }
     if (borderColor) {
