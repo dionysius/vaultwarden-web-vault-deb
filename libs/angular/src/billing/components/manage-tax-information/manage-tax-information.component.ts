@@ -46,7 +46,7 @@ export class ManageTaxInformationComponent implements OnInit, OnDestroy {
     if (this.formGroup.invalid) {
       return;
     }
-    await this.onSubmit(this.taxInformation);
+    await this.onSubmit?.(this.taxInformation);
     this.taxInformationUpdated.emit();
   };
 

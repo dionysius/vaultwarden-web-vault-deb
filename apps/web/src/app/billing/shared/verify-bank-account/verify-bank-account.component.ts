@@ -35,7 +35,7 @@ export class VerifyBankAccountComponent {
       this.formGroup.value.amount1,
       this.formGroup.value.amount2,
     );
-    await this.onSubmit(request);
+    await this.onSubmit?.(request);
     this.submitted.emit();
   };
 }
