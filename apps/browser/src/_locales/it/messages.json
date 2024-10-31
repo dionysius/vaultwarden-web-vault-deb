@@ -11,7 +11,7 @@
     "description": "Extension description, MUST be less than 112 characters (Safari restriction)"
   },
   "loginOrCreateNewAccount": {
-    "message": "Accedi o crea un nuovo account per accedere alla tua cassaforte."
+    "message": "Entra o crea un nuovo account per accedere alla tua cassaforte."
   },
   "inviteAccepted": {
     "message": "Invito accettato"
@@ -20,16 +20,16 @@
     "message": "Crea account"
   },
   "newToBitwarden": {
-    "message": "New to Bitwarden?"
+    "message": "Nuovo a Bitwarden?"
   },
   "logInWithPasskey": {
-    "message": "Log in with passkey"
+    "message": "Accedi con passkey"
   },
   "useSingleSignOn": {
-    "message": "Use single sign-on"
+    "message": "Usa il Single Sign-On"
   },
   "welcomeBack": {
-    "message": "Welcome back"
+    "message": "Bentornato"
   },
   "setAStrongPassword": {
     "message": "Imposta una password robusta"
@@ -84,7 +84,7 @@
     "message": "Unisciti all'organizzazione"
   },
   "joinOrganizationName": {
-    "message": "Join $ORGANIZATIONNAME$",
+    "message": "Unisciti a $ORGANIZATIONNAME$",
     "placeholders": {
       "organizationName": {
         "content": "$1",
@@ -120,7 +120,7 @@
     "message": "Copia password"
   },
   "copyPassphrase": {
-    "message": "Copy passphrase"
+    "message": "Copia passphrase"
   },
   "copyNote": {
     "message": "Copia nota"
@@ -153,7 +153,7 @@
     "message": "Copia numero licenza"
   },
   "copyCustomField": {
-    "message": "Copy $FIELD$",
+    "message": "Copia $FIELD$",
     "placeholders": {
       "field": {
         "content": "$1",
@@ -162,13 +162,13 @@
     }
   },
   "copyWebsite": {
-    "message": "Copy website"
+    "message": "Copia sito web"
   },
   "copyNotes": {
-    "message": "Copy notes"
+    "message": "Copia note"
   },
   "fill": {
-    "message": "Fill",
+    "message": "Riempi",
     "description": "This string is used on the vault page to indicate autofilling. Horizontal space is limited in the interface here so try and keep translations as concise as possible."
   },
   "autoFill": {
@@ -226,13 +226,13 @@
     "message": "Account email"
   },
   "requestHint": {
-    "message": "Request hint"
+    "message": "Richiedi suggerimento"
   },
   "requestPasswordHint": {
-    "message": "Request password hint"
+    "message": "Richiedi il suggerimento per la password"
   },
   "enterYourAccountEmailAddressAndYourPasswordHintWillBeSentToYou": {
-    "message": "Enter your account email address and your password hint will be sent to you"
+    "message": "Inserisci l'indirizzo email dell'account e ti invieremo il tuo suggerimento per la password"
   },
   "passwordHint": {
     "message": "Suggerimento per la password"
@@ -1684,7 +1684,7 @@
     "message": "Sig.ra"
   },
   "dr": {
-    "message": "Dott"
+    "message": "Dr"
   },
   "mx": {
     "message": "Mx"
@@ -2877,6 +2877,20 @@
   "generateEmail": {
     "message": "Generate email"
   },
+  "generatorBoundariesHint": {
+    "message": "Value must be between $MIN$ and $MAX$",
+    "description": "Explains spin box minimum and maximum values to the user",
+    "placeholders": {
+      "min": {
+        "content": "$1",
+        "example": "8"
+      },
+      "max": {
+        "content": "$2",
+        "example": "128"
+      }
+    }
+  },
   "usernameType": {
     "message": "Tipo di nome utente"
   },
@@ -3219,9 +3233,6 @@
         "example": "CTRL+Shift+L"
       }
     }
-  },
-  "loggingInOn": {
-    "message": "Accedendo su"
   },
   "opensInANewWindow": {
     "message": "Si apre in una nuova finestra"
@@ -4775,6 +4786,6 @@
     "message": "Uppercase"
   },
   "generatedPassword": {
-    "message": "Generated password"
+    "message": "Password generata"
   }
 }

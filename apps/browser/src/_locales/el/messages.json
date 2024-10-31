@@ -1022,7 +1022,7 @@
     "message": "Ρώτησε για να ενημερώσεις τον κωδικό πρόσβασης μιας σύνδεσης όταν εντοπιστεί μια αλλαγή σε έναν ιστότοπο. Ισχύει για όλους τους συνδεδεμένους λογαριασμούς."
   },
   "enableUsePasskeys": {
-    "message": "Ρώτησε για αποθήκευση και χρήση κλειδιών πρόσβασης"
+    "message": "Ερώτηση για αποθήκευση και χρήση κλειδιών πρόσβασης"
   },
   "usePasskeysDesc": {
     "message": "Ρώτησε με για την αποθήκευση νέων συνθηματικών ή σύνδεση με κλειδιά πρόσβασης αποθηκευμένα στο θησαυ/κιό μου. Ισχύει για όλους τους συνδεδεμένους λογαριασμούς."
@@ -2877,6 +2877,20 @@
   "generateEmail": {
     "message": "Δημιουργία email"
   },
+  "generatorBoundariesHint": {
+    "message": "Η τιμή πρέπει να είναι μεταξύ $MIN$ και $MAX$",
+    "description": "Explains spin box minimum and maximum values to the user",
+    "placeholders": {
+      "min": {
+        "content": "$1",
+        "example": "8"
+      },
+      "max": {
+        "content": "$2",
+        "example": "128"
+      }
+    }
+  },
   "usernameType": {
     "message": "Τύπος ονόματος χρήστη"
   },
@@ -3219,9 +3233,6 @@
         "example": "CTRL+Shift+L"
       }
     }
-  },
-  "loggingInOn": {
-    "message": "Σύνδεση στο"
   },
   "opensInANewWindow": {
     "message": "Ανοίγει σε νέο παράθυρο"
@@ -4753,7 +4764,7 @@
     "description": "Represents the > key in screen reader content as a readable word"
   },
   "commaCharacterDescriptor": {
-    "message": "Comma",
+    "message": "Κόμμα",
     "description": "Represents the , key in screen reader content as a readable word"
   },
   "periodCharacterDescriptor": {

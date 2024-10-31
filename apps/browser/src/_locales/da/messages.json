@@ -2877,6 +2877,20 @@
   "generateEmail": {
     "message": "Generér e-mail"
   },
+  "generatorBoundariesHint": {
+    "message": "Værdi skal være mellem $MIN$ og $MAX$",
+    "description": "Explains spin box minimum and maximum values to the user",
+    "placeholders": {
+      "min": {
+        "content": "$1",
+        "example": "8"
+      },
+      "max": {
+        "content": "$2",
+        "example": "128"
+      }
+    }
+  },
   "usernameType": {
     "message": "Brugernavnstype"
   },
@@ -3219,9 +3233,6 @@
         "example": "CTRL+Shift+L"
       }
     }
-  },
-  "loggingInOn": {
-    "message": "Logger ind på"
   },
   "opensInANewWindow": {
     "message": "Åbnes i et nyt vindue"

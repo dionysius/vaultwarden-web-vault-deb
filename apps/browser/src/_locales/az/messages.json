@@ -2877,6 +2877,20 @@
   "generateEmail": {
     "message": "E-poçt yarat"
   },
+  "generatorBoundariesHint": {
+    "message": "Dəyər $MIN$-$MAX$ arasında olmalıdır",
+    "description": "Explains spin box minimum and maximum values to the user",
+    "placeholders": {
+      "min": {
+        "content": "$1",
+        "example": "8"
+      },
+      "max": {
+        "content": "$2",
+        "example": "128"
+      }
+    }
+  },
   "usernameType": {
     "message": "İstifadəçi adı növü"
   },
@@ -3219,9 +3233,6 @@
         "example": "CTRL+Shift+L"
       }
     }
-  },
-  "loggingInOn": {
-    "message": "Giriş edilir"
   },
   "opensInANewWindow": {
     "message": "Yeni bir pəncərədə açılır"

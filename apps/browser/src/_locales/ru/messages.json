@@ -2877,6 +2877,20 @@
   "generateEmail": {
     "message": "Сгенерировать email"
   },
+  "generatorBoundariesHint": {
+    "message": "Значение должно быть между $MIN$ и $MAX$",
+    "description": "Explains spin box minimum and maximum values to the user",
+    "placeholders": {
+      "min": {
+        "content": "$1",
+        "example": "8"
+      },
+      "max": {
+        "content": "$2",
+        "example": "128"
+      }
+    }
+  },
   "usernameType": {
     "message": "Тип имени пользователя"
   },
@@ -3219,9 +3233,6 @@
         "example": "CTRL+Shift+L"
       }
     }
-  },
-  "loggingInOn": {
-    "message": "Войти на"
   },
   "opensInANewWindow": {
     "message": "Откроется в новом окне"

@@ -2877,6 +2877,20 @@
   "generateEmail": {
     "message": "E-mailadres genereren"
   },
+  "generatorBoundariesHint": {
+    "message": "Waarde moet tussen $MIN$ en $MAX$ liggen",
+    "description": "Explains spin box minimum and maximum values to the user",
+    "placeholders": {
+      "min": {
+        "content": "$1",
+        "example": "8"
+      },
+      "max": {
+        "content": "$2",
+        "example": "128"
+      }
+    }
+  },
   "usernameType": {
     "message": "Type gebruikersnaam"
   },
@@ -3219,9 +3233,6 @@
         "example": "CTRL+Shift+L"
       }
     }
-  },
-  "loggingInOn": {
-    "message": "Inloggen op"
   },
   "opensInANewWindow": {
     "message": "Opent in een nieuw venster"

@@ -20,16 +20,16 @@
     "message": "Luo tili"
   },
   "newToBitwarden": {
-    "message": "New to Bitwarden?"
+    "message": "Oletko uusi Bitwarden-käyttäjä?"
   },
   "logInWithPasskey": {
-    "message": "Log in with passkey"
+    "message": "Kirjaudu pääsyavaimella"
   },
   "useSingleSignOn": {
-    "message": "Use single sign-on"
+    "message": "Käytä kertakirjautumista"
   },
   "welcomeBack": {
-    "message": "Welcome back"
+    "message": "Tervetuloa takaisin"
   },
   "setAStrongPassword": {
     "message": "Aseta vahva salasana"
@@ -120,7 +120,7 @@
     "message": "Kopioi salasana"
   },
   "copyPassphrase": {
-    "message": "Copy passphrase"
+    "message": "Kopioi salalause"
   },
   "copyNote": {
     "message": "Kopioi merkinnät"
@@ -168,7 +168,7 @@
     "message": "Kopioi merkinnät"
   },
   "fill": {
-    "message": "Fill",
+    "message": "Täytä",
     "description": "This string is used on the vault page to indicate autofilling. Horizontal space is limited in the interface here so try and keep translations as concise as possible."
   },
   "autoFill": {
@@ -427,7 +427,7 @@
     "message": "Luo salasana"
   },
   "generatePassphrase": {
-    "message": "Generate passphrase"
+    "message": "Luo salalause"
   },
   "regeneratePassword": {
     "message": "Luo uusi salasana"
@@ -591,7 +591,7 @@
     "message": "Avaa verkkosivusto"
   },
   "launchWebsiteName": {
-    "message": "Launch website $ITEMNAME$",
+    "message": "Avaa verkkosivusto $ITEMNAME$",
     "placeholders": {
       "itemname": {
         "content": "$1",
@@ -846,7 +846,7 @@
     "message": "Kirjaudu"
   },
   "logInToBitwarden": {
-    "message": "Log in to Bitwarden"
+    "message": "Kirjaudu Bitwardeniin"
   },
   "restartRegistration": {
     "message": "Aloita rekisteröityminen alusta"
@@ -1923,7 +1923,7 @@
     "message": "Nothing to show"
   },
   "nothingGeneratedRecently": {
-    "message": "You haven't generated anything recently"
+    "message": "Et ole luonut mitään hiljattain"
   },
   "remove": {
     "message": "Poista"
@@ -2875,7 +2875,21 @@
     "message": "Luo käyttäjätunnus"
   },
   "generateEmail": {
-    "message": "Generate email"
+    "message": "Luo sähköpostiosoite"
+  },
+  "generatorBoundariesHint": {
+    "message": "Arvon tulee olla väliltä $MIN$ - $MAX$",
+    "description": "Explains spin box minimum and maximum values to the user",
+    "placeholders": {
+      "min": {
+        "content": "$1",
+        "example": "8"
+      },
+      "max": {
+        "content": "$2",
+        "example": "128"
+      }
+    }
   },
   "usernameType": {
     "message": "Käyttäjätunnuksen tyyppi"
@@ -2918,11 +2932,11 @@
     "message": "Luo sähköpostialias ulkoisella ohjauspalvelulla."
   },
   "forwarderDomainName": {
-    "message": "Email domain",
+    "message": "Sähköpostin verkkotunnus",
     "description": "Labels the domain name email forwarder service option"
   },
   "forwarderDomainNameHint": {
-    "message": "Choose a domain that is supported by the selected service",
+    "message": "Valitse verkkotunnus, jota valittu palvelu tukee",
     "description": "Guidance provided for email forwarding services that support multiple email domains."
   },
   "forwarderError": {
@@ -3219,9 +3233,6 @@
         "example": "CTRL+Shift+L"
       }
     }
-  },
-  "loggingInOn": {
-    "message": "Kirjaudutaan sijaintiin"
   },
   "opensInANewWindow": {
     "message": "Avautuu uudessa ikkunassa"
@@ -4625,47 +4636,47 @@
     "message": "Todennetaan"
   },
   "fillGeneratedPassword": {
-    "message": "Fill generated password",
+    "message": "Täytä luotu salasana",
     "description": "Heading for the password generator within the inline menu"
   },
   "passwordRegenerated": {
-    "message": "Password regenerated",
+    "message": "Salasana luotiin uudelleen",
     "description": "Notification message for when a password has been regenerated"
   },
   "saveLoginToBitwarden": {
-    "message": "Save login to Bitwarden?",
+    "message": "Tallennetaanko kirjautumistieto Bitwardeniin?",
     "description": "Confirmation message for saving a login to Bitwarden"
   },
   "spaceCharacterDescriptor": {
-    "message": "Space",
+    "message": "Välilyönti",
     "description": "Represents the space key in screen reader content as a readable word"
   },
   "tildeCharacterDescriptor": {
-    "message": "Tilde",
+    "message": "Aaltoviiva",
     "description": "Represents the ~ key in screen reader content as a readable word"
   },
   "backtickCharacterDescriptor": {
-    "message": "Backtick",
+    "message": "Graaviaksentti",
     "description": "Represents the ` key in screen reader content as a readable word"
   },
   "exclamationCharacterDescriptor": {
-    "message": "Exclamation mark",
+    "message": "Huutomerkkli",
     "description": "Represents the ! key in screen reader content as a readable word"
   },
   "atSignCharacterDescriptor": {
-    "message": "At sign",
+    "message": "Ät-merkki",
     "description": "Represents the @ key in screen reader content as a readable word"
   },
   "hashSignCharacterDescriptor": {
-    "message": "Hash sign",
+    "message": "Ristikkomerkki",
     "description": "Represents the # key in screen reader content as a readable word"
   },
   "dollarSignCharacterDescriptor": {
-    "message": "Dollar sign",
+    "message": "Dollarin merkki",
     "description": "Represents the $ key in screen reader content as a readable word"
   },
   "percentSignCharacterDescriptor": {
-    "message": "Percent sign",
+    "message": "Prosenttimerkki",
     "description": "Represents the % key in screen reader content as a readable word"
   },
   "caretCharacterDescriptor": {
@@ -4673,27 +4684,27 @@
     "description": "Represents the ^ key in screen reader content as a readable word"
   },
   "ampersandCharacterDescriptor": {
-    "message": "Ampersand",
+    "message": "Ampersandi",
     "description": "Represents the & key in screen reader content as a readable word"
   },
   "asteriskCharacterDescriptor": {
-    "message": "Asterisk",
+    "message": "Asteriski",
     "description": "Represents the * key in screen reader content as a readable word"
   },
   "parenLeftCharacterDescriptor": {
-    "message": "Left parenthesis",
+    "message": "Vasen kaarisulje",
     "description": "Represents the ( key in screen reader content as a readable word"
   },
   "parenRightCharacterDescriptor": {
-    "message": "Right parenthesis",
+    "message": "Oikea kaarisulje",
     "description": "Represents the ) key in screen reader content as a readable word"
   },
   "hyphenCharacterDescriptor": {
-    "message": "Underscore",
+    "message": "Alaviiva",
     "description": "Represents the _ key in screen reader content as a readable word"
   },
   "underscoreCharacterDescriptor": {
-    "message": "Hyphen",
+    "message": "Yhdysmerkki",
     "description": "Represents the - key in screen reader content as a readable word"
   },
   "plusCharacterDescriptor": {
@@ -4701,80 +4712,80 @@
     "description": "Represents the + key in screen reader content as a readable word"
   },
   "equalsCharacterDescriptor": {
-    "message": "Equals",
+    "message": "Yhtäsuuri kuin",
     "description": "Represents the = key in screen reader content as a readable word"
   },
   "braceLeftCharacterDescriptor": {
-    "message": "Left brace",
+    "message": "Vasen aaltosulje",
     "description": "Represents the { key in screen reader content as a readable word"
   },
   "braceRightCharacterDescriptor": {
-    "message": "Right brace",
+    "message": "Oikea aaltosulje",
     "description": "Represents the } key in screen reader content as a readable word"
   },
   "bracketLeftCharacterDescriptor": {
-    "message": "Left bracket",
+    "message": "Vasen hakasulje",
     "description": "Represents the [ key in screen reader content as a readable word"
   },
   "bracketRightCharacterDescriptor": {
-    "message": "Right bracket",
+    "message": "Oikea hakasulje",
     "description": "Represents the ] key in screen reader content as a readable word"
   },
   "pipeCharacterDescriptor": {
-    "message": "Pipe",
+    "message": "Putkimerkki",
     "description": "Represents the | key in screen reader content as a readable word"
   },
   "backSlashCharacterDescriptor": {
-    "message": "Back slash",
+    "message": "Kenoviiva",
     "description": "Represents the back slash key in screen reader content as a readable word"
   },
   "colonCharacterDescriptor": {
-    "message": "Colon",
+    "message": "Kaksoispiste",
     "description": "Represents the : key in screen reader content as a readable word"
   },
   "semicolonCharacterDescriptor": {
-    "message": "Semicolon",
+    "message": "Puolipiste",
     "description": "Represents the ; key in screen reader content as a readable word"
   },
   "doubleQuoteCharacterDescriptor": {
-    "message": "Double quote",
+    "message": "Lainausmerkki",
     "description": "Represents the double quote key in screen reader content as a readable word"
   },
   "singleQuoteCharacterDescriptor": {
-    "message": "Single quote",
+    "message": "Heittomerkki",
     "description": "Represents the ' key in screen reader content as a readable word"
   },
   "lessThanCharacterDescriptor": {
-    "message": "Less than",
+    "message": "Pienempi kuin",
     "description": "Represents the < key in screen reader content as a readable word"
   },
   "greaterThanCharacterDescriptor": {
-    "message": "Greater than",
+    "message": "Suurempi kuin",
     "description": "Represents the > key in screen reader content as a readable word"
   },
   "commaCharacterDescriptor": {
-    "message": "Comma",
+    "message": "Pilkku",
     "description": "Represents the , key in screen reader content as a readable word"
   },
   "periodCharacterDescriptor": {
-    "message": "Period",
+    "message": "Piste",
     "description": "Represents the . key in screen reader content as a readable word"
   },
   "questionCharacterDescriptor": {
-    "message": "Question mark",
+    "message": "Kysymysmerkki",
     "description": "Represents the ? key in screen reader content as a readable word"
   },
   "forwardSlashCharacterDescriptor": {
-    "message": "Forward slash",
+    "message": "Kauttaviiva",
     "description": "Represents the / key in screen reader content as a readable word"
   },
   "lowercaseAriaLabel": {
-    "message": "Lowercase"
+    "message": "Pienet kirjaimet"
   },
   "uppercaseAriaLabel": {
-    "message": "Uppercase"
+    "message": "Isot kirjaimet"
   },
   "generatedPassword": {
-    "message": "Generated password"
+    "message": "Luotu salasana"
   }
 }

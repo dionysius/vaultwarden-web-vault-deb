@@ -2877,6 +2877,20 @@
   "generateEmail": {
     "message": "Генериране на електронна поща"
   },
+  "generatorBoundariesHint": {
+    "message": "Стойността трябва да бъде между $MIN$ и $MAX$",
+    "description": "Explains spin box minimum and maximum values to the user",
+    "placeholders": {
+      "min": {
+        "content": "$1",
+        "example": "8"
+      },
+      "max": {
+        "content": "$2",
+        "example": "128"
+      }
+    }
+  },
   "usernameType": {
     "message": "Тип потребителско име"
   },
@@ -3219,9 +3233,6 @@
         "example": "CTRL+Shift+L"
       }
     }
-  },
-  "loggingInOn": {
-    "message": "Вписване в"
   },
   "opensInANewWindow": {
     "message": "Отваря се в нов прозорец"
