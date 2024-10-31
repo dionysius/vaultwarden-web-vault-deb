@@ -25,7 +25,14 @@
       </bit-form-field>
       <bit-form-field *ngIf="field.type === fieldType.Hidden" [disableReadOnlyBorder]="last">
         <bit-label>{{ field.name }}</bit-label>
-        <input readonly bitInput type="password" [value]="field.value" aria-readonly="true" />
+        <input
+          readonly
+          bitInput
+          type="password"
+          [value]="field.value"
+          aria-readonly="true"
+          class="tw-font-mono"
+        />
         <button
           bitSuffix
           type="button"
