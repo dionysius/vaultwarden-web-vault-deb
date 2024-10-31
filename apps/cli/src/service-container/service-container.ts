@@ -872,7 +872,7 @@ export class ServiceContainer {
       }
 
       if (!supported) {
-        this.sdkService.failedToInitialize().catch((e) => this.logService.error(e));
+        this.sdkService.failedToInitialize("cli").catch((e) => this.logService.error(e));
       }
     }
   }

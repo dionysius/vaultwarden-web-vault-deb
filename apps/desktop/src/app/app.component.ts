@@ -180,7 +180,7 @@ export class AppComponent implements OnInit, OnDestroy {
         .subscribe((supported) => {
           if (!supported) {
             this.logService.debug("SDK is not supported");
-            this.sdkService.failedToInitialize().catch((e) => this.logService.error(e));
+            this.sdkService.failedToInitialize("desktop").catch((e) => this.logService.error(e));
           } else {
             this.logService.debug("SDK is supported");
           }

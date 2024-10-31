@@ -130,7 +130,7 @@ export class DefaultSdkService implements SdkService {
     return client$;
   }
 
-  async failedToInitialize(): Promise<void> {
+  async failedToInitialize(category: string, error?: Error): Promise<void> {
     // Only log on cloud instances
     if (
       this.platformUtilsService.isDev() ||
@@ -139,9 +139,20 @@ export class DefaultSdkService implements SdkService {
       return;
     }
 
-    return this.apiService.send("POST", "/wasm-debug", null, false, false, null, (headers) => {
-      headers.append("SDK-Version", "1.0.0");
-    });
+    return this.apiService.send(
+      "POST",
+      "/wasm-debug",
+      {
+        category: category,
+        error: error?.message,
+      },
+      false,
+      false,
+      null,
+      (headers) => {
+        headers.append("SDK-Version", "1.0.0");
+      },
+    );
   }
 
   private async initializeClient(

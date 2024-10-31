@@ -29,5 +29,5 @@ export abstract class SdkService {
    */
   abstract userClient$(userId: UserId): Observable<BitwardenClient>;
 
-  abstract failedToInitialize(): Promise<void>;
+  abstract failedToInitialize(category: string, error?: Error): Promise<void>;
 }
