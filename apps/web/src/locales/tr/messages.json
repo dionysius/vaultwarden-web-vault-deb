@@ -65,6 +65,9 @@
   "markAppAsCritical": {
     "message": "Mark app as critical"
   },
+  "appsMarkedAsCritical": {
+    "message": "Kritik olarak işaretlenmiş uygulamalar"
+  },
   "application": {
     "message": "Uygulama"
   },
@@ -1583,38 +1586,6 @@
   "specialCharacters": {
     "message": "Özel karakterler (!@#$%^&*)"
   },
-  "uppercaseDescription": {
-    "message": "Büyük harfleri dahil et",
-    "description": "Tooltip for the password generator uppercase character checkbox"
-  },
-  "uppercaseLabel": {
-    "message": "A-Z",
-    "description": "Label for the password generator uppercase character checkbox"
-  },
-  "lowercaseDescription": {
-    "message": "Küçük harfleri dahil et",
-    "description": "Full description for the password generator lowercase character checkbox"
-  },
-  "lowercaseLabel": {
-    "message": "a-z",
-    "description": "Label for the password generator lowercase character checkbox"
-  },
-  "numbersDescription": {
-    "message": "Rakamları dahil et",
-    "description": "Full description for the password generator numbers checkbox"
-  },
-  "numbersLabel": {
-    "message": "0-9",
-    "description": "Label for the password generator numbers checkbox"
-  },
-  "specialCharactersDescription": {
-    "message": "Özel karakterleri dahil et",
-    "description": "Full description for the password generator special characters checkbox"
-  },
-  "specialCharactersLabel": {
-    "message": "!@#$%^&*",
-    "description": "Label for the password generator special characters checkbox"
-  },
   "numWords": {
     "message": "Kelime sayısı"
   },
@@ -1745,6 +1716,9 @@
   "dangerZoneDesc": {
     "message": "Dikkatli olun, bu işlemleri geri alamazsınız!"
   },
+  "dangerZoneDescSingular": {
+    "message": "Dikkatli olun, bu işlemi geri alamazsınız!"
+  },
   "deauthorizeSessions": {
     "message": "Oturumları kapat"
   },
@@ -1756,6 +1730,15 @@
   },
   "sessionsDeauthorized": {
     "message": "Tüm oturumlar kapatıldı"
+  },
+  "accountIsManagedMessage": {
+    "message": "Bu hesap $ORGANIZATIONNAME$ tarafından yönetilmektedir",
+    "placeholders": {
+      "organizationName": {
+        "content": "$1",
+        "example": "Organization"
+      }
+    }
   },
   "purgeVault": {
     "message": "Kasayı boşalt"
@@ -3213,6 +3196,9 @@
         "example": "20"
       }
     }
+  },
+  "inviteSingleEmailDesc": {
+    "message": "1 davetiyeniz kaldı."
   },
   "userUsingTwoStep": {
     "message": "Bu kullanıcı hesabını korumak için iki aşamalı giriş kullanıyor."
@@ -4681,11 +4667,17 @@
   "singleOrgDesc": {
     "message": "Üyelerin diğer kuruluşlara katılmasını kısıtlayın."
   },
+  "singleOrgPolicyDesc": {
+    "message": "Restrict members from joining other organizations. This policy is required for organizations that have enabled domain verification."
+  },
   "singleOrgBlockCreateMessage": {
     "message": "Mevcut kuruluşunuzun birden fazla kuruluşa katılmanıza izin vermeyen bir ilkesi var. Lütfen kuruluş yöneticilerinizle iletişime geçin veya farklı bir Bitwarden hesabı açın."
   },
   "singleOrgPolicyWarning": {
     "message": "Sahip veya yönetici olmayan ve zaten başka bir kuruluşun üyesi olan kuruluş üyeleri kuruluşunuzdan kaldırılır."
+  },
+  "singleOrgPolicyMemberWarning": {
+    "message": "Non-compliant members will be placed in revoked status until they leave all other organizations. Administrators are exempt and can restore members once compliance is met."
   },
   "requireSso": {
     "message": "Çoklu oturum açma kimlik doğrulamasını zorunlu tut"
@@ -6402,6 +6394,20 @@
   },
   "generateEmail": {
     "message": "E-posta oluştur"
+  },
+  "generatorBoundariesHint": {
+    "message": "Değer $MIN$ ile $MAX$ arasında olmalıdır",
+    "description": "Explains spin box minimum and maximum values to the user",
+    "placeholders": {
+      "min": {
+        "content": "$1",
+        "example": "8"
+      },
+      "max": {
+        "content": "$2",
+        "example": "128"
+      }
+    }
   },
   "usernameType": {
     "message": "Kullanıcı adı türü"
@@ -9474,6 +9480,38 @@
   "linkedLabelHelpText": {
     "message": "Enter the the field's html id, name, aria-label, or placeholder."
   },
+  "uppercaseDescription": {
+    "message": "Büyük harfleri dahil et",
+    "description": "Tooltip for the password generator uppercase character checkbox"
+  },
+  "uppercaseLabel": {
+    "message": "A-Z",
+    "description": "Label for the password generator uppercase character checkbox"
+  },
+  "lowercaseDescription": {
+    "message": "Küçük harfleri dahil et",
+    "description": "Full description for the password generator lowercase character checkbox"
+  },
+  "lowercaseLabel": {
+    "message": "a-z",
+    "description": "Label for the password generator lowercase character checkbox"
+  },
+  "numbersDescription": {
+    "message": "Rakamları dahil et",
+    "description": "Full description for the password generator numbers checkbox"
+  },
+  "numbersLabel": {
+    "message": "0-9",
+    "description": "Label for the password generator numbers checkbox"
+  },
+  "specialCharactersDescription": {
+    "message": "Özel karakterleri dahil et",
+    "description": "Full description for the password generator special characters checkbox"
+  },
+  "specialCharactersLabel": {
+    "message": "!@#$%^&*",
+    "description": "Label for the password generator special characters checkbox"
+  },
   "addAttachment": {
     "message": "Dosya ekle"
   },
@@ -9492,5 +9530,11 @@
   },
   "selfHostingTitleProper": {
     "message": "Kendi Kendinize Barındırma"
+  },
+  "verified-domain-single-org-warning": {
+    "message": "Verifying a domain will turn on the single organization policy."
+  },
+  "single-org-revoked-user-warning": {
+    "message": "Non-compliant members will be revoked. Administrators can restore members once they leave all other organizations."
   }
 }

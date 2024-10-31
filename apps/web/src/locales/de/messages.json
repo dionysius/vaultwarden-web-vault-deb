@@ -65,6 +65,9 @@
   "markAppAsCritical": {
     "message": "Mark app as critical"
   },
+  "appsMarkedAsCritical": {
+    "message": "Apps marked as critical"
+  },
   "application": {
     "message": "Anwendung"
   },
@@ -1583,38 +1586,6 @@
   "specialCharacters": {
     "message": "Sonderzeichen (!@#$%^&*)"
   },
-  "uppercaseDescription": {
-    "message": "Großbuchstaben einschließen",
-    "description": "Tooltip for the password generator uppercase character checkbox"
-  },
-  "uppercaseLabel": {
-    "message": "A-Z",
-    "description": "Label for the password generator uppercase character checkbox"
-  },
-  "lowercaseDescription": {
-    "message": "Kleinbuchstaben einschließen",
-    "description": "Full description for the password generator lowercase character checkbox"
-  },
-  "lowercaseLabel": {
-    "message": "a-z",
-    "description": "Label for the password generator lowercase character checkbox"
-  },
-  "numbersDescription": {
-    "message": "Ziffern einschließen",
-    "description": "Full description for the password generator numbers checkbox"
-  },
-  "numbersLabel": {
-    "message": "0-9",
-    "description": "Label for the password generator numbers checkbox"
-  },
-  "specialCharactersDescription": {
-    "message": "Sonderzeichen einschließen",
-    "description": "Full description for the password generator special characters checkbox"
-  },
-  "specialCharactersLabel": {
-    "message": "!@#$%^&*",
-    "description": "Label for the password generator special characters checkbox"
-  },
   "numWords": {
     "message": "Anzahl der Wörter"
   },
@@ -1745,6 +1716,9 @@
   "dangerZoneDesc": {
     "message": "Vorsicht, diese Aktionen sind nicht umkehrbar!"
   },
+  "dangerZoneDescSingular": {
+    "message": "Careful, this action is not reversible!"
+  },
   "deauthorizeSessions": {
     "message": "Sitzungen abmelden"
   },
@@ -1756,6 +1730,15 @@
   },
   "sessionsDeauthorized": {
     "message": "Alle Sitzungen wurden abgemeldet"
+  },
+  "accountIsManagedMessage": {
+    "message": "This account is managed by $ORGANIZATIONNAME$",
+    "placeholders": {
+      "organizationName": {
+        "content": "$1",
+        "example": "Organization"
+      }
+    }
   },
   "purgeVault": {
     "message": "Tresor leeren"
@@ -3213,6 +3196,9 @@
         "example": "20"
       }
     }
+  },
+  "inviteSingleEmailDesc": {
+    "message": "You have 1 invite remaining."
   },
   "userUsingTwoStep": {
     "message": "Dieser Benutzer hat sein Konto mit einer Zwei-Faktor-Authentifizierung geschützt."
@@ -4681,11 +4667,17 @@
   "singleOrgDesc": {
     "message": "Benutzern verbieten, anderen Organisationen beizutreten."
   },
+  "singleOrgPolicyDesc": {
+    "message": "Restrict members from joining other organizations. This policy is required for organizations that have enabled domain verification."
+  },
   "singleOrgBlockCreateMessage": {
     "message": "Deine aktuelle Organisation hat eine Richtlinie, die es dir nicht erlaubt, mehr als einer Organisation beizutreten. Bitte kontaktiere die Administratoren deiner Organisation oder melden dich mit einem anderen Bitwarden-Konto an."
   },
   "singleOrgPolicyWarning": {
     "message": "Organisationsmitglieder, die nicht Eigentümer oder Administratoren sind und bereits Mitglied einer anderen Organisation sind, werden aus deiner Organisation entfernt."
+  },
+  "singleOrgPolicyMemberWarning": {
+    "message": "Non-compliant members will be placed in revoked status until they leave all other organizations. Administrators are exempt and can restore members once compliance is met."
   },
   "requireSso": {
     "message": "Single Sign-on-Authentifizierung erfordern"
@@ -6402,6 +6394,20 @@
   },
   "generateEmail": {
     "message": "E-Mail generieren"
+  },
+  "generatorBoundariesHint": {
+    "message": "Value must be between $MIN$ and $MAX$",
+    "description": "Explains spin box minimum and maximum values to the user",
+    "placeholders": {
+      "min": {
+        "content": "$1",
+        "example": "8"
+      },
+      "max": {
+        "content": "$2",
+        "example": "128"
+      }
+    }
   },
   "usernameType": {
     "message": "Benutzernamenstyp"
@@ -9474,6 +9480,38 @@
   "linkedLabelHelpText": {
     "message": "Gib die HTML-ID des Felds, Name, Aria-Label oder einen Platzhalter ein."
   },
+  "uppercaseDescription": {
+    "message": "Großbuchstaben einschließen",
+    "description": "Tooltip for the password generator uppercase character checkbox"
+  },
+  "uppercaseLabel": {
+    "message": "A-Z",
+    "description": "Label for the password generator uppercase character checkbox"
+  },
+  "lowercaseDescription": {
+    "message": "Kleinbuchstaben einschließen",
+    "description": "Full description for the password generator lowercase character checkbox"
+  },
+  "lowercaseLabel": {
+    "message": "a-z",
+    "description": "Label for the password generator lowercase character checkbox"
+  },
+  "numbersDescription": {
+    "message": "Ziffern einschließen",
+    "description": "Full description for the password generator numbers checkbox"
+  },
+  "numbersLabel": {
+    "message": "0-9",
+    "description": "Label for the password generator numbers checkbox"
+  },
+  "specialCharactersDescription": {
+    "message": "Sonderzeichen einschließen",
+    "description": "Full description for the password generator special characters checkbox"
+  },
+  "specialCharactersLabel": {
+    "message": "!@#$%^&*",
+    "description": "Label for the password generator special characters checkbox"
+  },
   "addAttachment": {
     "message": "Anhang hinzufügen"
   },
@@ -9492,5 +9530,11 @@
   },
   "selfHostingTitleProper": {
     "message": "Selbst gehostet"
+  },
+  "verified-domain-single-org-warning": {
+    "message": "Verifying a domain will turn on the single organization policy."
+  },
+  "single-org-revoked-user-warning": {
+    "message": "Non-compliant members will be revoked. Administrators can restore members once they leave all other organizations."
   }
 }

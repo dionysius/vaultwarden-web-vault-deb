@@ -65,6 +65,9 @@
   "markAppAsCritical": {
     "message": "Marquer l'application comme critique"
   },
+  "appsMarkedAsCritical": {
+    "message": "Applications marquées comme critiques"
+  },
   "application": {
     "message": "Application"
   },
@@ -1583,38 +1586,6 @@
   "specialCharacters": {
     "message": "Caractères spéciaux (!@#$%^&*)"
   },
-  "uppercaseDescription": {
-    "message": "Inclure les caractères majuscules",
-    "description": "Tooltip for the password generator uppercase character checkbox"
-  },
-  "uppercaseLabel": {
-    "message": "A-Z",
-    "description": "Label for the password generator uppercase character checkbox"
-  },
-  "lowercaseDescription": {
-    "message": "Inclure des caractères minuscules",
-    "description": "Full description for the password generator lowercase character checkbox"
-  },
-  "lowercaseLabel": {
-    "message": "a-z",
-    "description": "Label for the password generator lowercase character checkbox"
-  },
-  "numbersDescription": {
-    "message": "Inclure des chiffres",
-    "description": "Full description for the password generator numbers checkbox"
-  },
-  "numbersLabel": {
-    "message": "0-9",
-    "description": "Label for the password generator numbers checkbox"
-  },
-  "specialCharactersDescription": {
-    "message": "Inclure des caractères spéciaux",
-    "description": "Full description for the password generator special characters checkbox"
-  },
-  "specialCharactersLabel": {
-    "message": "!@#$%^&*",
-    "description": "Label for the password generator special characters checkbox"
-  },
   "numWords": {
     "message": "Nombre de mots"
   },
@@ -1745,6 +1716,9 @@
   "dangerZoneDesc": {
     "message": "Attention, ces actions sont irréversibles !"
   },
+  "dangerZoneDescSingular": {
+    "message": "Attention, cette action est irréversible!"
+  },
   "deauthorizeSessions": {
     "message": "Révoquer les sessions"
   },
@@ -1756,6 +1730,15 @@
   },
   "sessionsDeauthorized": {
     "message": "Toutes les sessions ont été révoquées"
+  },
+  "accountIsManagedMessage": {
+    "message": "Ce compte est géré par $ORGANIZATIONNAME$",
+    "placeholders": {
+      "organizationName": {
+        "content": "$1",
+        "example": "Organization"
+      }
+    }
   },
   "purgeVault": {
     "message": "Effacer le coffre"
@@ -3213,6 +3196,9 @@
         "example": "20"
       }
     }
+  },
+  "inviteSingleEmailDesc": {
+    "message": "Il vous reste 1 invitation."
   },
   "userUsingTwoStep": {
     "message": "Cet utilisateur utilise l'authentification à deux facteurs pour protéger son compte."
@@ -4681,11 +4667,17 @@
   "singleOrgDesc": {
     "message": "Empêcher les utilisateurs de pouvoir rejoindre d'autres organisations."
   },
+  "singleOrgPolicyDesc": {
+    "message": "Restreindre les membres de rejoindre d'autres organisations. Cette politique est nécessaire pour les organisations qui ont activé la vérification de domaine."
+  },
   "singleOrgBlockCreateMessage": {
     "message": "Votre organisation actuelle a une politique qui ne vous permet pas de rejoindre plus d'une organisation. Veuillez contacter les administrateurs de votre organisation ou vous inscrire à partir d'un compte Bitwarden différent."
   },
   "singleOrgPolicyWarning": {
     "message": "Les membres de l'organisation qui ne sont pas propriétaires ou administrateurs et qui sont déjà membres d'une autre organisation seront supprimés de votre organisation."
+  },
+  "singleOrgPolicyMemberWarning": {
+    "message": "Les membres non conformes seront placés en statut révoqué jusqu'à ce qu'ils quittent toutes les autres organisations. Les administrateurs sont exemptés et peuvent restaurer les membres une fois que la conformité est respectée."
   },
   "requireSso": {
     "message": "Authentification par Connexion Unique (Single Sign-On)"
@@ -6402,6 +6394,20 @@
   },
   "generateEmail": {
     "message": "Générer un courriel"
+  },
+  "generatorBoundariesHint": {
+    "message": "La valeur doit être comprise entre $MIN$ et $MAX$",
+    "description": "Explains spin box minimum and maximum values to the user",
+    "placeholders": {
+      "min": {
+        "content": "$1",
+        "example": "8"
+      },
+      "max": {
+        "content": "$2",
+        "example": "128"
+      }
+    }
   },
   "usernameType": {
     "message": "Type de Nom d'Utilisateur"
@@ -9474,6 +9480,38 @@
   "linkedLabelHelpText": {
     "message": "Entrez l'identifiant html, le nom, l'étiquette aria ou l'espace réservé du champ."
   },
+  "uppercaseDescription": {
+    "message": "Inclure les caractères majuscules",
+    "description": "Tooltip for the password generator uppercase character checkbox"
+  },
+  "uppercaseLabel": {
+    "message": "A-Z",
+    "description": "Label for the password generator uppercase character checkbox"
+  },
+  "lowercaseDescription": {
+    "message": "Inclure des caractères minuscules",
+    "description": "Full description for the password generator lowercase character checkbox"
+  },
+  "lowercaseLabel": {
+    "message": "a-z",
+    "description": "Label for the password generator lowercase character checkbox"
+  },
+  "numbersDescription": {
+    "message": "Inclure des chiffres",
+    "description": "Full description for the password generator numbers checkbox"
+  },
+  "numbersLabel": {
+    "message": "0-9",
+    "description": "Label for the password generator numbers checkbox"
+  },
+  "specialCharactersDescription": {
+    "message": "Inclure des caractères spéciaux",
+    "description": "Full description for the password generator special characters checkbox"
+  },
+  "specialCharactersLabel": {
+    "message": "!@#$%^&*",
+    "description": "Label for the password generator special characters checkbox"
+  },
   "addAttachment": {
     "message": "Ajouter une pièce jointe"
   },
@@ -9492,5 +9530,11 @@
   },
   "selfHostingTitleProper": {
     "message": "Auto-Hébergement"
+  },
+  "verified-domain-single-org-warning": {
+    "message": "La vérification d'un domaine activera la politique d'organisation unique."
+  },
+  "single-org-revoked-user-warning": {
+    "message": "Les membres non conformes seront révoqués. Les administrateurs peuvent restaurer les membres une fois qu'ils quittent toutes les autres organisations."
   }
 }

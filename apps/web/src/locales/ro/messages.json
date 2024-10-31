@@ -65,6 +65,9 @@
   "markAppAsCritical": {
     "message": "Mark app as critical"
   },
+  "appsMarkedAsCritical": {
+    "message": "Apps marked as critical"
+  },
   "application": {
     "message": "Application"
   },
@@ -1583,38 +1586,6 @@
   "specialCharacters": {
     "message": "Caractere speciale (!@#$%^&*)"
   },
-  "uppercaseDescription": {
-    "message": "Include uppercase characters",
-    "description": "Tooltip for the password generator uppercase character checkbox"
-  },
-  "uppercaseLabel": {
-    "message": "A-Z",
-    "description": "Label for the password generator uppercase character checkbox"
-  },
-  "lowercaseDescription": {
-    "message": "Include lowercase characters",
-    "description": "Full description for the password generator lowercase character checkbox"
-  },
-  "lowercaseLabel": {
-    "message": "a-z",
-    "description": "Label for the password generator lowercase character checkbox"
-  },
-  "numbersDescription": {
-    "message": "Include numbers",
-    "description": "Full description for the password generator numbers checkbox"
-  },
-  "numbersLabel": {
-    "message": "0-9",
-    "description": "Label for the password generator numbers checkbox"
-  },
-  "specialCharactersDescription": {
-    "message": "Include special characters",
-    "description": "Full description for the password generator special characters checkbox"
-  },
-  "specialCharactersLabel": {
-    "message": "!@#$%^&*",
-    "description": "Label for the password generator special characters checkbox"
-  },
   "numWords": {
     "message": "Număr de cuvinte"
   },
@@ -1745,6 +1716,9 @@
   "dangerZoneDesc": {
     "message": "Atenție, aceste acțiuni nu sunt reversibile!"
   },
+  "dangerZoneDescSingular": {
+    "message": "Careful, this action is not reversible!"
+  },
   "deauthorizeSessions": {
     "message": "Revocare sesiuni"
   },
@@ -1756,6 +1730,15 @@
   },
   "sessionsDeauthorized": {
     "message": "Toate sesiunile au fost dezautorizate"
+  },
+  "accountIsManagedMessage": {
+    "message": "This account is managed by $ORGANIZATIONNAME$",
+    "placeholders": {
+      "organizationName": {
+        "content": "$1",
+        "example": "Organization"
+      }
+    }
   },
   "purgeVault": {
     "message": "Curățare seif"
@@ -3213,6 +3196,9 @@
         "example": "20"
       }
     }
+  },
+  "inviteSingleEmailDesc": {
+    "message": "You have 1 invite remaining."
   },
   "userUsingTwoStep": {
     "message": "Acest utilizator folosește conectarea în două etape pentru a-și proteja contul."
@@ -4681,11 +4667,17 @@
   "singleOrgDesc": {
     "message": "Interzice membrilor să se alăture altor organizații."
   },
+  "singleOrgPolicyDesc": {
+    "message": "Restrict members from joining other organizations. This policy is required for organizations that have enabled domain verification."
+  },
   "singleOrgBlockCreateMessage": {
     "message": "Organizația dvs. actuală are o politică care nu vă permite să vă alăturați la mai mult de o organizație. Vă rugăm să contactați administratorii organizației sau să vă înscrieți dintr-un cont Bitwarden diferit."
   },
   "singleOrgPolicyWarning": {
     "message": "Membrii organizației care nu sunt proprietari sau administratori și care sunt deja membri ai unei alte organizații vor fi înlăturați din organizație."
+  },
+  "singleOrgPolicyMemberWarning": {
+    "message": "Non-compliant members will be placed in revoked status until they leave all other organizations. Administrators are exempt and can restore members once compliance is met."
   },
   "requireSso": {
     "message": "Solicitați autentificarea cu autentificare unică"
@@ -6402,6 +6394,20 @@
   },
   "generateEmail": {
     "message": "Generate email"
+  },
+  "generatorBoundariesHint": {
+    "message": "Value must be between $MIN$ and $MAX$",
+    "description": "Explains spin box minimum and maximum values to the user",
+    "placeholders": {
+      "min": {
+        "content": "$1",
+        "example": "8"
+      },
+      "max": {
+        "content": "$2",
+        "example": "128"
+      }
+    }
   },
   "usernameType": {
     "message": "Tip de nume de utilizator"
@@ -9474,6 +9480,38 @@
   "linkedLabelHelpText": {
     "message": "Enter the the field's html id, name, aria-label, or placeholder."
   },
+  "uppercaseDescription": {
+    "message": "Include uppercase characters",
+    "description": "Tooltip for the password generator uppercase character checkbox"
+  },
+  "uppercaseLabel": {
+    "message": "A-Z",
+    "description": "Label for the password generator uppercase character checkbox"
+  },
+  "lowercaseDescription": {
+    "message": "Include lowercase characters",
+    "description": "Full description for the password generator lowercase character checkbox"
+  },
+  "lowercaseLabel": {
+    "message": "a-z",
+    "description": "Label for the password generator lowercase character checkbox"
+  },
+  "numbersDescription": {
+    "message": "Include numbers",
+    "description": "Full description for the password generator numbers checkbox"
+  },
+  "numbersLabel": {
+    "message": "0-9",
+    "description": "Label for the password generator numbers checkbox"
+  },
+  "specialCharactersDescription": {
+    "message": "Include special characters",
+    "description": "Full description for the password generator special characters checkbox"
+  },
+  "specialCharactersLabel": {
+    "message": "!@#$%^&*",
+    "description": "Label for the password generator special characters checkbox"
+  },
   "addAttachment": {
     "message": "Add attachment"
   },
@@ -9492,5 +9530,11 @@
   },
   "selfHostingTitleProper": {
     "message": "Self-Hosting"
+  },
+  "verified-domain-single-org-warning": {
+    "message": "Verifying a domain will turn on the single organization policy."
+  },
+  "single-org-revoked-user-warning": {
+    "message": "Non-compliant members will be revoked. Administrators can restore members once they leave all other organizations."
   }
 }

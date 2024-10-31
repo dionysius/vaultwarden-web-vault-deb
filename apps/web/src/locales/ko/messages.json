@@ -65,6 +65,9 @@
   "markAppAsCritical": {
     "message": "Mark app as critical"
   },
+  "appsMarkedAsCritical": {
+    "message": "Apps marked as critical"
+  },
   "application": {
     "message": "Application"
   },
@@ -1583,38 +1586,6 @@
   "specialCharacters": {
     "message": "특수 문자 (!@#$%^&*)"
   },
-  "uppercaseDescription": {
-    "message": "Include uppercase characters",
-    "description": "Tooltip for the password generator uppercase character checkbox"
-  },
-  "uppercaseLabel": {
-    "message": "A-Z",
-    "description": "Label for the password generator uppercase character checkbox"
-  },
-  "lowercaseDescription": {
-    "message": "Include lowercase characters",
-    "description": "Full description for the password generator lowercase character checkbox"
-  },
-  "lowercaseLabel": {
-    "message": "a-z",
-    "description": "Label for the password generator lowercase character checkbox"
-  },
-  "numbersDescription": {
-    "message": "Include numbers",
-    "description": "Full description for the password generator numbers checkbox"
-  },
-  "numbersLabel": {
-    "message": "0-9",
-    "description": "Label for the password generator numbers checkbox"
-  },
-  "specialCharactersDescription": {
-    "message": "Include special characters",
-    "description": "Full description for the password generator special characters checkbox"
-  },
-  "specialCharactersLabel": {
-    "message": "!@#$%^&*",
-    "description": "Label for the password generator special characters checkbox"
-  },
   "numWords": {
     "message": "단어 수"
   },
@@ -1745,6 +1716,9 @@
   "dangerZoneDesc": {
     "message": "주의, 이 행동들은 되돌릴 수 없음!"
   },
+  "dangerZoneDescSingular": {
+    "message": "Careful, this action is not reversible!"
+  },
   "deauthorizeSessions": {
     "message": "세션 해제"
   },
@@ -1756,6 +1730,15 @@
   },
   "sessionsDeauthorized": {
     "message": "모든 세션 해제 됨"
+  },
+  "accountIsManagedMessage": {
+    "message": "This account is managed by $ORGANIZATIONNAME$",
+    "placeholders": {
+      "organizationName": {
+        "content": "$1",
+        "example": "Organization"
+      }
+    }
   },
   "purgeVault": {
     "message": "보관함 삭제"
@@ -3213,6 +3196,9 @@
         "example": "20"
       }
     }
+  },
+  "inviteSingleEmailDesc": {
+    "message": "You have 1 invite remaining."
   },
   "userUsingTwoStep": {
     "message": "이 사용자는 계정을 보호하기 위해 2단계 로그인을 사용하고 있습니다."
@@ -4681,11 +4667,17 @@
   "singleOrgDesc": {
     "message": "사용자들이 다른 조직에 가입하지 못하도록 제한합니다."
   },
+  "singleOrgPolicyDesc": {
+    "message": "Restrict members from joining other organizations. This policy is required for organizations that have enabled domain verification."
+  },
   "singleOrgBlockCreateMessage": {
     "message": "현재 조직에 하나 이상의 조직에 참가할 수 없도록 정책이 지정되어 있습니다. 조직 관리자에게 문의하거나 다른 Bitwarden 계정으로 로그앤해주세요."
   },
   "singleOrgPolicyWarning": {
     "message": "소유자 또는 관리자가 아닌 조직 구성원 및 이미 다른 조직의 구성원인 경우 이 조직에서 제거됩니다."
+  },
+  "singleOrgPolicyMemberWarning": {
+    "message": "Non-compliant members will be placed in revoked status until they leave all other organizations. Administrators are exempt and can restore members once compliance is met."
   },
   "requireSso": {
     "message": "통합 (SSO) 인증"
@@ -6402,6 +6394,20 @@
   },
   "generateEmail": {
     "message": "Generate email"
+  },
+  "generatorBoundariesHint": {
+    "message": "Value must be between $MIN$ and $MAX$",
+    "description": "Explains spin box minimum and maximum values to the user",
+    "placeholders": {
+      "min": {
+        "content": "$1",
+        "example": "8"
+      },
+      "max": {
+        "content": "$2",
+        "example": "128"
+      }
+    }
   },
   "usernameType": {
     "message": "Username type"
@@ -9474,6 +9480,38 @@
   "linkedLabelHelpText": {
     "message": "Enter the the field's html id, name, aria-label, or placeholder."
   },
+  "uppercaseDescription": {
+    "message": "Include uppercase characters",
+    "description": "Tooltip for the password generator uppercase character checkbox"
+  },
+  "uppercaseLabel": {
+    "message": "A-Z",
+    "description": "Label for the password generator uppercase character checkbox"
+  },
+  "lowercaseDescription": {
+    "message": "Include lowercase characters",
+    "description": "Full description for the password generator lowercase character checkbox"
+  },
+  "lowercaseLabel": {
+    "message": "a-z",
+    "description": "Label for the password generator lowercase character checkbox"
+  },
+  "numbersDescription": {
+    "message": "Include numbers",
+    "description": "Full description for the password generator numbers checkbox"
+  },
+  "numbersLabel": {
+    "message": "0-9",
+    "description": "Label for the password generator numbers checkbox"
+  },
+  "specialCharactersDescription": {
+    "message": "Include special characters",
+    "description": "Full description for the password generator special characters checkbox"
+  },
+  "specialCharactersLabel": {
+    "message": "!@#$%^&*",
+    "description": "Label for the password generator special characters checkbox"
+  },
   "addAttachment": {
     "message": "Add attachment"
   },
@@ -9492,5 +9530,11 @@
   },
   "selfHostingTitleProper": {
     "message": "Self-Hosting"
+  },
+  "verified-domain-single-org-warning": {
+    "message": "Verifying a domain will turn on the single organization policy."
+  },
+  "single-org-revoked-user-warning": {
+    "message": "Non-compliant members will be revoked. Administrators can restore members once they leave all other organizations."
   }
 }

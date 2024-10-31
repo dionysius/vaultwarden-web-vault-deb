@@ -65,6 +65,9 @@
   "markAppAsCritical": {
     "message": "Markér app som kritisk"
   },
+  "appsMarkedAsCritical": {
+    "message": "Apps markeret som kritiske"
+  },
   "application": {
     "message": "Applikation"
   },
@@ -1583,38 +1586,6 @@
   "specialCharacters": {
     "message": "Specialtegn (!@#$%^&*)"
   },
-  "uppercaseDescription": {
-    "message": "Inkludér majuskler",
-    "description": "Tooltip for the password generator uppercase character checkbox"
-  },
-  "uppercaseLabel": {
-    "message": "A-Z",
-    "description": "Label for the password generator uppercase character checkbox"
-  },
-  "lowercaseDescription": {
-    "message": "Inkludér minuskler",
-    "description": "Full description for the password generator lowercase character checkbox"
-  },
-  "lowercaseLabel": {
-    "message": "a-z",
-    "description": "Label for the password generator lowercase character checkbox"
-  },
-  "numbersDescription": {
-    "message": "Inkludér tal",
-    "description": "Full description for the password generator numbers checkbox"
-  },
-  "numbersLabel": {
-    "message": "0-9",
-    "description": "Label for the password generator numbers checkbox"
-  },
-  "specialCharactersDescription": {
-    "message": "Inkludér specialtegn",
-    "description": "Full description for the password generator special characters checkbox"
-  },
-  "specialCharactersLabel": {
-    "message": "!@#$%^&*",
-    "description": "Label for the password generator special characters checkbox"
-  },
   "numWords": {
     "message": "Antal ord"
   },
@@ -1745,6 +1716,9 @@
   "dangerZoneDesc": {
     "message": "Pas på, disse handlinger er irreversible!"
   },
+  "dangerZoneDescSingular": {
+    "message": "Forsigtig, denne handling er irreversibel!"
+  },
   "deauthorizeSessions": {
     "message": "Fjern sessionsgodkendelser"
   },
@@ -1756,6 +1730,15 @@
   },
   "sessionsDeauthorized": {
     "message": "Godkendelser for alle sessioner fjernet"
+  },
+  "accountIsManagedMessage": {
+    "message": "Denne konto håndteres af $ORGANIZATIONNAME$",
+    "placeholders": {
+      "organizationName": {
+        "content": "$1",
+        "example": "Organization"
+      }
+    }
   },
   "purgeVault": {
     "message": "Tøm boks"
@@ -3213,6 +3196,9 @@
         "example": "20"
       }
     }
+  },
+  "inviteSingleEmailDesc": {
+    "message": "Der er 1 invitation tilbage."
   },
   "userUsingTwoStep": {
     "message": "Denne bruger benytter totrins-login for at beskytte kontoen."
@@ -4681,11 +4667,17 @@
   "singleOrgDesc": {
     "message": "Begræns medlemmer i at tilmelde sig andre organisationer."
   },
+  "singleOrgPolicyDesc": {
+    "message": "Restrict members from joining other organizations. This policy is required for organizations that have enabled domain verification."
+  },
   "singleOrgBlockCreateMessage": {
     "message": "Den nuværende organisationspolitik tillader dig ikke at deltage i mere end én organisation. Kontakt organisationens admins eller benyt en anden Bitwarden-konto under tilmelding."
   },
   "singleOrgPolicyWarning": {
     "message": "Organisationsmedlemmer, undtagen ejere eller admins, som allerede er medlem af en anden organisation, fjernes fra organisationen."
+  },
+  "singleOrgPolicyMemberWarning": {
+    "message": "Non-compliant members will be placed in revoked status until they leave all other organizations. Administrators are exempt and can restore members once compliance is met."
   },
   "requireSso": {
     "message": "Kræv single sign-on godkendelse"
@@ -6402,6 +6394,20 @@
   },
   "generateEmail": {
     "message": "Generér e-mail"
+  },
+  "generatorBoundariesHint": {
+    "message": "Værdi skal være mellem $MIN$ og $MAX$",
+    "description": "Explains spin box minimum and maximum values to the user",
+    "placeholders": {
+      "min": {
+        "content": "$1",
+        "example": "8"
+      },
+      "max": {
+        "content": "$2",
+        "example": "128"
+      }
+    }
   },
   "usernameType": {
     "message": "Brugernavnstype"
@@ -9474,6 +9480,38 @@
   "linkedLabelHelpText": {
     "message": "Angiv feltets HTML-ID, navn, aria-label eller pladsholder."
   },
+  "uppercaseDescription": {
+    "message": "Inkludér majuskler",
+    "description": "Tooltip for the password generator uppercase character checkbox"
+  },
+  "uppercaseLabel": {
+    "message": "A-Z",
+    "description": "Label for the password generator uppercase character checkbox"
+  },
+  "lowercaseDescription": {
+    "message": "Inkludér minuskler",
+    "description": "Full description for the password generator lowercase character checkbox"
+  },
+  "lowercaseLabel": {
+    "message": "a-z",
+    "description": "Label for the password generator lowercase character checkbox"
+  },
+  "numbersDescription": {
+    "message": "Inkludér tal",
+    "description": "Full description for the password generator numbers checkbox"
+  },
+  "numbersLabel": {
+    "message": "0-9",
+    "description": "Label for the password generator numbers checkbox"
+  },
+  "specialCharactersDescription": {
+    "message": "Inkludér specialtegn",
+    "description": "Full description for the password generator special characters checkbox"
+  },
+  "specialCharactersLabel": {
+    "message": "!@#$%^&*",
+    "description": "Label for the password generator special characters checkbox"
+  },
   "addAttachment": {
     "message": "Tilføj vedhæftning"
   },
@@ -9492,5 +9530,11 @@
   },
   "selfHostingTitleProper": {
     "message": "Selv-hosting"
+  },
+  "verified-domain-single-org-warning": {
+    "message": "Verifying a domain will turn on the single organization policy."
+  },
+  "single-org-revoked-user-warning": {
+    "message": "Non-compliant members will be revoked. Administrators can restore members once they leave all other organizations."
   }
 }

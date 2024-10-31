@@ -65,6 +65,9 @@
   "markAppAsCritical": {
     "message": "Označiť aplikáciu ako kritickú"
   },
+  "appsMarkedAsCritical": {
+    "message": "Apps marked as critical"
+  },
   "application": {
     "message": "Aplikácia"
   },
@@ -1583,38 +1586,6 @@
   "specialCharacters": {
     "message": "Špeciálne znaky (!@#$%^&*)"
   },
-  "uppercaseDescription": {
-    "message": "Zahrnúť veľké písmená",
-    "description": "Tooltip for the password generator uppercase character checkbox"
-  },
-  "uppercaseLabel": {
-    "message": "A-Z",
-    "description": "Label for the password generator uppercase character checkbox"
-  },
-  "lowercaseDescription": {
-    "message": "Zahrnúť malé písmená",
-    "description": "Full description for the password generator lowercase character checkbox"
-  },
-  "lowercaseLabel": {
-    "message": "a-z",
-    "description": "Label for the password generator lowercase character checkbox"
-  },
-  "numbersDescription": {
-    "message": "Vrátane čísiel",
-    "description": "Full description for the password generator numbers checkbox"
-  },
-  "numbersLabel": {
-    "message": "0-9",
-    "description": "Label for the password generator numbers checkbox"
-  },
-  "specialCharactersDescription": {
-    "message": "Zahrnúť špeciálne znaky",
-    "description": "Full description for the password generator special characters checkbox"
-  },
-  "specialCharactersLabel": {
-    "message": "!@#$%^&*",
-    "description": "Label for the password generator special characters checkbox"
-  },
   "numWords": {
     "message": "Počet slov"
   },
@@ -1745,6 +1716,9 @@
   "dangerZoneDesc": {
     "message": "Opatrne, tieto zmeny nemožno vrátiť späť!"
   },
+  "dangerZoneDescSingular": {
+    "message": "Opatrne, túto zmenu nemožno vrátiť späť!"
+  },
   "deauthorizeSessions": {
     "message": "Odhlásiť sedenia"
   },
@@ -1756,6 +1730,15 @@
   },
   "sessionsDeauthorized": {
     "message": "Všetky sedenia odhlásené"
+  },
+  "accountIsManagedMessage": {
+    "message": "Tento účet spravuje $ORGANIZATIONNAME$",
+    "placeholders": {
+      "organizationName": {
+        "content": "$1",
+        "example": "Organization"
+      }
+    }
   },
   "purgeVault": {
     "message": "Vyprázdniť trezor"
@@ -3213,6 +3196,9 @@
         "example": "20"
       }
     }
+  },
+  "inviteSingleEmailDesc": {
+    "message": "Ostáva vám 1 pozvánka."
   },
   "userUsingTwoStep": {
     "message": "Tento používateľ používa dvojstupňové overovanie aby si zabezpečil konto."
@@ -4681,11 +4667,17 @@
   "singleOrgDesc": {
     "message": "Zakázať používateľom stať sa členmi inej organizácie."
   },
+  "singleOrgPolicyDesc": {
+    "message": "Zakázať používateľom stať sa členmi inej organizácie. Toto pravidlo sa vyžaduje od organizácií, ktoré povolili overovanie domény."
+  },
   "singleOrgBlockCreateMessage": {
     "message": "Vaša súčasná organizácia má pravidlo, ktoré vám nedovoľuje pripojiť sa k viac než jednej organizácii. Kontaktujte, prosím, administrátorov vašej organizácie alebo sa prihláste prostredníctvom iného Bitwarden účtu."
   },
   "singleOrgPolicyWarning": {
     "message": "Členovia organizácie, ktorí nie sú vlastníkmi alebo administrátormi a už sú členmi inej organizácie, budú odstránení z vašej organizácie."
+  },
+  "singleOrgPolicyMemberWarning": {
+    "message": "Členovia, ktorí nedodržiavajú pravidlo, budú zaradení do zrušeného stavu, kým neopustia všetky ostatné organizácie. Správcovia majú výnimku a môžu obnoviť členov po splnení požiadaviek pravidiel organizácie."
   },
   "requireSso": {
     "message": "Požadovať overovanie prostredníctvom jednotného prihlasovania (SSO)"
@@ -6402,6 +6394,20 @@
   },
   "generateEmail": {
     "message": "Generovať e-mail"
+  },
+  "generatorBoundariesHint": {
+    "message": "Hodnota musí byť medzi $MIN$ a $MAX$",
+    "description": "Explains spin box minimum and maximum values to the user",
+    "placeholders": {
+      "min": {
+        "content": "$1",
+        "example": "8"
+      },
+      "max": {
+        "content": "$2",
+        "example": "128"
+      }
+    }
   },
   "usernameType": {
     "message": "Typ používateľského mena"
@@ -9474,6 +9480,38 @@
   "linkedLabelHelpText": {
     "message": "Zadajte html atribút poľa id, name, aria-label, alebo placeholder."
   },
+  "uppercaseDescription": {
+    "message": "Zahrnúť veľké písmená",
+    "description": "Tooltip for the password generator uppercase character checkbox"
+  },
+  "uppercaseLabel": {
+    "message": "A-Z",
+    "description": "Label for the password generator uppercase character checkbox"
+  },
+  "lowercaseDescription": {
+    "message": "Zahrnúť malé písmená",
+    "description": "Full description for the password generator lowercase character checkbox"
+  },
+  "lowercaseLabel": {
+    "message": "a-z",
+    "description": "Label for the password generator lowercase character checkbox"
+  },
+  "numbersDescription": {
+    "message": "Vrátane čísiel",
+    "description": "Full description for the password generator numbers checkbox"
+  },
+  "numbersLabel": {
+    "message": "0-9",
+    "description": "Label for the password generator numbers checkbox"
+  },
+  "specialCharactersDescription": {
+    "message": "Zahrnúť špeciálne znaky",
+    "description": "Full description for the password generator special characters checkbox"
+  },
+  "specialCharactersLabel": {
+    "message": "!@#$%^&*",
+    "description": "Label for the password generator special characters checkbox"
+  },
   "addAttachment": {
     "message": "Priložiť prílohu"
   },
@@ -9492,5 +9530,11 @@
   },
   "selfHostingTitleProper": {
     "message": "Vlastný hosting"
+  },
+  "verified-domain-single-org-warning": {
+    "message": "Overenie domény zapne pravidlo jedinej organizácie."
+  },
+  "single-org-revoked-user-warning": {
+    "message": "Členovia, ktorí nedodržiavajú pravidlo, budú odvolaní. Správcovia môžu obnoviť členov po ich odchode zo všetkých ostatných organizácií."
   }
 }

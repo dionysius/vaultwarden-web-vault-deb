@@ -65,6 +65,9 @@
   "markAppAsCritical": {
     "message": "Atzīmēt lietotni kā kritisku"
   },
+  "appsMarkedAsCritical": {
+    "message": "Lietotnes, kas atzīmētas kā kritisku"
+  },
   "application": {
     "message": "Lietotne"
   },
@@ -1583,38 +1586,6 @@
   "specialCharacters": {
     "message": "Īpašās rakstzīmes (!@#$%^&*)"
   },
-  "uppercaseDescription": {
-    "message": "Iekļaut lielos burtus",
-    "description": "Tooltip for the password generator uppercase character checkbox"
-  },
-  "uppercaseLabel": {
-    "message": "A-Z",
-    "description": "Label for the password generator uppercase character checkbox"
-  },
-  "lowercaseDescription": {
-    "message": "Iekļaut mazos burtus",
-    "description": "Full description for the password generator lowercase character checkbox"
-  },
-  "lowercaseLabel": {
-    "message": "a-z",
-    "description": "Label for the password generator lowercase character checkbox"
-  },
-  "numbersDescription": {
-    "message": "Iekļaut ciparus",
-    "description": "Full description for the password generator numbers checkbox"
-  },
-  "numbersLabel": {
-    "message": "0-9",
-    "description": "Label for the password generator numbers checkbox"
-  },
-  "specialCharactersDescription": {
-    "message": "Iekļaut īpašās rakstzīmes",
-    "description": "Full description for the password generator special characters checkbox"
-  },
-  "specialCharactersLabel": {
-    "message": "!@#$%^&*",
-    "description": "Label for the password generator special characters checkbox"
-  },
   "numWords": {
     "message": "Vārdu skaits"
   },
@@ -1745,6 +1716,9 @@
   "dangerZoneDesc": {
     "message": "Piesardzību, šīs darbības nav atsaucamas!"
   },
+  "dangerZoneDescSingular": {
+    "message": "Piesardzību, šī darbība ir neatgriezeniska!"
+  },
   "deauthorizeSessions": {
     "message": "Padarīt sesijas spēkā neesošas"
   },
@@ -1756,6 +1730,15 @@
   },
   "sessionsDeauthorized": {
     "message": "Visu sesiju darbība ir atsaukta"
+  },
+  "accountIsManagedMessage": {
+    "message": "Šo kontu pārvalda $ORGANIZATIONNAME$",
+    "placeholders": {
+      "organizationName": {
+        "content": "$1",
+        "example": "Organization"
+      }
+    }
   },
   "purgeVault": {
     "message": "Iztīrīt glabātavu"
@@ -3213,6 +3196,9 @@
         "example": "20"
       }
     }
+  },
+  "inviteSingleEmailDesc": {
+    "message": "Tev ir atlicis 1 uzaicinājums."
   },
   "userUsingTwoStep": {
     "message": "Šis lietotājs izmanto divpakāpju pieteikšanos, lai aizsargātu savu kontu."
@@ -4681,11 +4667,17 @@
   "singleOrgDesc": {
     "message": "Ierobežo lietotāju iespēju pievienoties citām apvienībām."
   },
+  "singleOrgPolicyDesc": {
+    "message": "Ierobežot dalībniekus pievienoties citām apvienībām. Šī pamatnostādne ir nepieciešama apvienībām, kurās ir iespējota domēna apliecināšana."
+  },
   "singleOrgBlockCreateMessage": {
     "message": "Pašreizējā apvienībā ir nosacījums, kas neļauj pievienoties vairāk kā vienai apvienībai. Lūgums sazināties ar savas apvienības pārvaldītājiem vai pieteikties no cita Bitwarden konta."
   },
   "singleOrgPolicyWarning": {
     "message": "Apvienības dalībnieki, kas nav īpašnieki vai pārvaldītāji un jau ir dalībnieki citā apvienībā, tiks atbrīvoti."
+  },
+  "singleOrgPolicyMemberWarning": {
+    "message": "Pamatnostādnei neatbilstoši dalībniekiem tiks piešķirts stāvoklis \"Atsaukts\", līdz viņī pametīs visas pārējās apvienības. Pārvaldītāji ir izņēmums, un viņi var atjaunot dalībniekus, tiklīdz ir sasniegta atbilstība pamatnostādnei."
   },
   "requireSso": {
     "message": "Pieprasīt vienotās pieteikšanās autentificēšanos"
@@ -6402,6 +6394,20 @@
   },
   "generateEmail": {
     "message": "Izveidot e-pastu"
+  },
+  "generatorBoundariesHint": {
+    "message": "Vērtībai jābūt starp $MIN$ un $MAX$",
+    "description": "Explains spin box minimum and maximum values to the user",
+    "placeholders": {
+      "min": {
+        "content": "$1",
+        "example": "8"
+      },
+      "max": {
+        "content": "$2",
+        "example": "128"
+      }
+    }
   },
   "usernameType": {
     "message": "Lietotājvārda veids"
@@ -9474,6 +9480,38 @@
   "linkedLabelHelpText": {
     "message": "Jāievada lauka HTML id, name, aria-label vai placeholder vērtība."
   },
+  "uppercaseDescription": {
+    "message": "Iekļaut lielos burtus",
+    "description": "Tooltip for the password generator uppercase character checkbox"
+  },
+  "uppercaseLabel": {
+    "message": "A-Z",
+    "description": "Label for the password generator uppercase character checkbox"
+  },
+  "lowercaseDescription": {
+    "message": "Iekļaut mazos burtus",
+    "description": "Full description for the password generator lowercase character checkbox"
+  },
+  "lowercaseLabel": {
+    "message": "a-z",
+    "description": "Label for the password generator lowercase character checkbox"
+  },
+  "numbersDescription": {
+    "message": "Iekļaut ciparus",
+    "description": "Full description for the password generator numbers checkbox"
+  },
+  "numbersLabel": {
+    "message": "0-9",
+    "description": "Label for the password generator numbers checkbox"
+  },
+  "specialCharactersDescription": {
+    "message": "Iekļaut īpašās rakstzīmes",
+    "description": "Full description for the password generator special characters checkbox"
+  },
+  "specialCharactersLabel": {
+    "message": "!@#$%^&*",
+    "description": "Label for the password generator special characters checkbox"
+  },
   "addAttachment": {
     "message": "Pievienot pielikumu"
   },
@@ -9492,5 +9530,11 @@
   },
   "selfHostingTitleProper": {
     "message": "Pašmitināts"
+  },
+  "verified-domain-single-org-warning": {
+    "message": "Domēna apliecināšana ieslēgts vienas apvienības pamatnostādni."
+  },
+  "single-org-revoked-user-warning": {
+    "message": "Pamatnostādnei neatbilstošie dalībnieki tiks atsaukti. Pārvaldītāji var atjaunot dalībniekus, tiklīdz viņi pametīs visas pārējās apvienības."
   }
 }

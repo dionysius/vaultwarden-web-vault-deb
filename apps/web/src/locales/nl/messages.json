@@ -57,13 +57,16 @@
     "message": "Je hebt nog geen applicaties als belangrijk aangewezen"
   },
   "noPriorityApplicationsDescription": {
-    "message": "Wijs je meest kritische applicaties aan om risicovolle wachtwoorden te ontdekken en gebruikers te attenderen deze te wijzigen."
+    "message": "Wijs je meest belangrijke applicaties aan om risicovolle wachtwoorden te ontdekken en gebruikers te attenderen deze te wijzigen."
   },
   "markPriorityApps": {
     "message": "Belangrijke apps aanwijzen"
   },
   "markAppAsCritical": {
     "message": "App aanwijzen als belangrijk"
+  },
+  "appsMarkedAsCritical": {
+    "message": "App als belangrijk gemarkeerd"
   },
   "application": {
     "message": "Applicatie"
@@ -1583,38 +1586,6 @@
   "specialCharacters": {
     "message": "Speciale tekens (!@#$%^&*)"
   },
-  "uppercaseDescription": {
-    "message": "Hoofdletters toevoegen",
-    "description": "Tooltip for the password generator uppercase character checkbox"
-  },
-  "uppercaseLabel": {
-    "message": "A-Z",
-    "description": "Label for the password generator uppercase character checkbox"
-  },
-  "lowercaseDescription": {
-    "message": "Kleine letters toevoegen",
-    "description": "Full description for the password generator lowercase character checkbox"
-  },
-  "lowercaseLabel": {
-    "message": "a-z",
-    "description": "Label for the password generator lowercase character checkbox"
-  },
-  "numbersDescription": {
-    "message": "Nummers toevoegen",
-    "description": "Full description for the password generator numbers checkbox"
-  },
-  "numbersLabel": {
-    "message": "0-9",
-    "description": "Label for the password generator numbers checkbox"
-  },
-  "specialCharactersDescription": {
-    "message": "Speciale tekens toevoegen",
-    "description": "Full description for the password generator special characters checkbox"
-  },
-  "specialCharactersLabel": {
-    "message": "!@#$%^&*",
-    "description": "Label for the password generator special characters checkbox"
-  },
   "numWords": {
     "message": "Aantal woorden"
   },
@@ -1745,6 +1716,9 @@
   "dangerZoneDesc": {
     "message": "Waarschuwing - deze acties zijn niet terug te draaien!"
   },
+  "dangerZoneDescSingular": {
+    "message": "Waarschuwing - deze actie is niet terug te draaien!"
+  },
   "deauthorizeSessions": {
     "message": "Sessie-autorisaties intrekken"
   },
@@ -1756,6 +1730,15 @@
   },
   "sessionsDeauthorized": {
     "message": "Autorisatie van alle sessies ingetrokken"
+  },
+  "accountIsManagedMessage": {
+    "message": "Dit account wordt beheerd door $ORGANIZATIONNAME$",
+    "placeholders": {
+      "organizationName": {
+        "content": "$1",
+        "example": "Organization"
+      }
+    }
   },
   "purgeVault": {
     "message": "Kluis verwijderen"
@@ -3213,6 +3196,9 @@
         "example": "20"
       }
     }
+  },
+  "inviteSingleEmailDesc": {
+    "message": "Je hebt 1 uitnodiging over."
   },
   "userUsingTwoStep": {
     "message": "Het account van deze gebruiker is beschermd met tweestapsaanmelding."
@@ -4681,11 +4667,17 @@
   "singleOrgDesc": {
     "message": "Beperk de mogelijkheid voor gebruikers om deel te nemen aan andere organisaties."
   },
+  "singleOrgPolicyDesc": {
+    "message": "Beperk leden in het aansluiten bij andere organisaties. Dit beleid is vereist voor organisaties die domeinverificatie hebben ingeschakeld."
+  },
   "singleOrgBlockCreateMessage": {
     "message": "Jouw huidige organisatie heeft een beleid dat je niet toestaat om deel te nemen aan meer dan één organisatie. Neem contact op met de beheerders van jouw organisatie of meld je aan met een ander Bitwarden-account."
   },
   "singleOrgPolicyWarning": {
     "message": "Leden van de organisatie die geen eigenaar of beheerder zijn en die al lid zijn van een andere organisatie, worden verwijderd uit jouw organisatie."
+  },
+  "singleOrgPolicyMemberWarning": {
+    "message": "Niet-conforme leden krijgen de status ingetrokken totdat ze alle andere organisaties hebben verlaten. Beheerders zijn uitgezonderd en kunnen leden herstellen zodra ze aan de naleving voldoen."
   },
   "requireSso": {
     "message": "Single Sign-On Authenticatie"
@@ -6402,6 +6394,20 @@
   },
   "generateEmail": {
     "message": "E-mailadres genereren"
+  },
+  "generatorBoundariesHint": {
+    "message": "Waarde moet tussen $MIN$ en $MAX$ liggen",
+    "description": "Explains spin box minimum and maximum values to the user",
+    "placeholders": {
+      "min": {
+        "content": "$1",
+        "example": "8"
+      },
+      "max": {
+        "content": "$2",
+        "example": "128"
+      }
+    }
   },
   "usernameType": {
     "message": "Type gebruikersnaam"
@@ -9474,6 +9480,38 @@
   "linkedLabelHelpText": {
     "message": "Html-id, naam, aria-label of placeholder van het veld invullen."
   },
+  "uppercaseDescription": {
+    "message": "Hoofdletters toevoegen",
+    "description": "Tooltip for the password generator uppercase character checkbox"
+  },
+  "uppercaseLabel": {
+    "message": "A-Z",
+    "description": "Label for the password generator uppercase character checkbox"
+  },
+  "lowercaseDescription": {
+    "message": "Kleine letters toevoegen",
+    "description": "Full description for the password generator lowercase character checkbox"
+  },
+  "lowercaseLabel": {
+    "message": "a-z",
+    "description": "Label for the password generator lowercase character checkbox"
+  },
+  "numbersDescription": {
+    "message": "Nummers toevoegen",
+    "description": "Full description for the password generator numbers checkbox"
+  },
+  "numbersLabel": {
+    "message": "0-9",
+    "description": "Label for the password generator numbers checkbox"
+  },
+  "specialCharactersDescription": {
+    "message": "Speciale tekens toevoegen",
+    "description": "Full description for the password generator special characters checkbox"
+  },
+  "specialCharactersLabel": {
+    "message": "!@#$%^&*",
+    "description": "Label for the password generator special characters checkbox"
+  },
   "addAttachment": {
     "message": "Bijlage toevoegen"
   },
@@ -9492,5 +9530,11 @@
   },
   "selfHostingTitleProper": {
     "message": "Zelf hosten"
+  },
+  "verified-domain-single-org-warning": {
+    "message": "Het verifiëren van een domein zal het enkelvoudig organisatiebeleid inschakelen."
+  },
+  "single-org-revoked-user-warning": {
+    "message": "Niet-conforme leden worden ingetrokken. Beheerders kunnen leden herstellen zodra ze alle andere organisaties verlaten."
   }
 }

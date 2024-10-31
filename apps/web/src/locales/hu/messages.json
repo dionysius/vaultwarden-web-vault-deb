@@ -65,6 +65,9 @@
   "markAppAsCritical": {
     "message": "Alkalmazások megjelölése kritikusként"
   },
+  "appsMarkedAsCritical": {
+    "message": "Kritikusként megjelölt alkalmazások"
+  },
   "application": {
     "message": "Alkalmazás"
   },
@@ -1583,38 +1586,6 @@
   "specialCharacters": {
     "message": "Speciális karakterek (!@#$%^&*)"
   },
-  "uppercaseDescription": {
-    "message": "Nagybetűs karakterek bevonása",
-    "description": "Tooltip for the password generator uppercase character checkbox"
-  },
-  "uppercaseLabel": {
-    "message": "A-Z",
-    "description": "Label for the password generator uppercase character checkbox"
-  },
-  "lowercaseDescription": {
-    "message": "Kisbetűs karakterek bevonása",
-    "description": "Full description for the password generator lowercase character checkbox"
-  },
-  "lowercaseLabel": {
-    "message": "a-z",
-    "description": "Label for the password generator lowercase character checkbox"
-  },
-  "numbersDescription": {
-    "message": "Számok bevonása",
-    "description": "Full description for the password generator numbers checkbox"
-  },
-  "numbersLabel": {
-    "message": "0-9",
-    "description": "Label for the password generator numbers checkbox"
-  },
-  "specialCharactersDescription": {
-    "message": "Speciális karakterek bevonása",
-    "description": "Full description for the password generator special characters checkbox"
-  },
-  "specialCharactersLabel": {
-    "message": "!@#$%^&*",
-    "description": "Label for the password generator special characters checkbox"
-  },
   "numWords": {
     "message": "Szavak száma"
   },
@@ -1745,6 +1716,9 @@
   "dangerZoneDesc": {
     "message": "Óvatosan! Ezeket a műveleteket nem lehet visszaállítani."
   },
+  "dangerZoneDescSingular": {
+    "message": "Óvatosan! Ezeket a műveleteket nem lehet visszaállítani."
+  },
   "deauthorizeSessions": {
     "message": "Munkamenetek hitelesítésének eldobása"
   },
@@ -1756,6 +1730,15 @@
   },
   "sessionsDeauthorized": {
     "message": "Az összes munkamenet hitelesítése eldobásra került."
+  },
+  "accountIsManagedMessage": {
+    "message": "Ezt a fiókot $ORGANIZATIONNAME$ kezeli.",
+    "placeholders": {
+      "organizationName": {
+        "content": "$1",
+        "example": "Organization"
+      }
+    }
   },
   "purgeVault": {
     "message": "Széf kitakarítása"
@@ -3213,6 +3196,9 @@
         "example": "20"
       }
     }
+  },
+  "inviteSingleEmailDesc": {
+    "message": "1 meghívó maradt."
   },
   "userUsingTwoStep": {
     "message": "Ez a felhasználó kétlépcsős bejelentkezést használ fiókja védelmére."
@@ -4681,11 +4667,17 @@
   "singleOrgDesc": {
     "message": "Korlátozza a felhasználókat más szervezetekhez csatlakozásban."
   },
+  "singleOrgPolicyDesc": {
+    "message": "A tagok más szervezetekhez csatlakozásának korlátozása. Ez a házirend olyan szervezetek számára szükséges, amelyek engedélyezték a tartományellenőrzést."
+  },
   "singleOrgBlockCreateMessage": {
     "message": "Jelenlegi szervezetének van olyan irányelve, amely nem engedélyezi, hogy több szervezethez csatlakozzunk. Lépjünk kapcsolatba szervezetünk adminisztrátorával vagy regisztráljunk egy másik Bitwarden fiókból."
   },
   "singleOrgPolicyWarning": {
     "message": "A szervezet azon tagjait, akik nem tulajdonosok vagy rendszergazdák, és már egy másik szervezet tagjai, eltávolítjáara kerülnek a szervezetből."
+  },
+  "singleOrgPolicyMemberWarning": {
+    "message": "A nem megfelelő tagok visszavont státuszba kerülnek mindaddig, amíg ki nem lépnek az összes többi szervezetből. Az adminisztrátorok mentesülnek és visszaállíthatják a tagokat, ha megfelelnek a megfelelőségnek."
   },
   "requireSso": {
     "message": "Egyszeri bejelentkezés hitelesítése"
@@ -6402,6 +6394,20 @@
   },
   "generateEmail": {
     "message": "Email generálása"
+  },
+  "generatorBoundariesHint": {
+    "message": "Az érték legyen $MIN$ és $MAX$ között.",
+    "description": "Explains spin box minimum and maximum values to the user",
+    "placeholders": {
+      "min": {
+        "content": "$1",
+        "example": "8"
+      },
+      "max": {
+        "content": "$2",
+        "example": "128"
+      }
+    }
   },
   "usernameType": {
     "message": "Felhasználónév típusa"
@@ -9474,6 +9480,38 @@
   "linkedLabelHelpText": {
     "message": "Adjuk meg a mező html azonosítóját, nevét, aria címkéjét vagy helyőrét."
   },
+  "uppercaseDescription": {
+    "message": "Nagybetűs karakterek bevonása",
+    "description": "Tooltip for the password generator uppercase character checkbox"
+  },
+  "uppercaseLabel": {
+    "message": "A-Z",
+    "description": "Label for the password generator uppercase character checkbox"
+  },
+  "lowercaseDescription": {
+    "message": "Kisbetűs karakterek bevonása",
+    "description": "Full description for the password generator lowercase character checkbox"
+  },
+  "lowercaseLabel": {
+    "message": "a-z",
+    "description": "Label for the password generator lowercase character checkbox"
+  },
+  "numbersDescription": {
+    "message": "Számok bevonása",
+    "description": "Full description for the password generator numbers checkbox"
+  },
+  "numbersLabel": {
+    "message": "0-9",
+    "description": "Label for the password generator numbers checkbox"
+  },
+  "specialCharactersDescription": {
+    "message": "Speciális karakterek bevonása",
+    "description": "Full description for the password generator special characters checkbox"
+  },
+  "specialCharactersLabel": {
+    "message": "!@#$%^&*",
+    "description": "Label for the password generator special characters checkbox"
+  },
   "addAttachment": {
     "message": "Melléklet hozzáadása"
   },
@@ -9492,5 +9530,11 @@
   },
   "selfHostingTitleProper": {
     "message": "Sahát üzemeltetés"
+  },
+  "verified-domain-single-org-warning": {
+    "message": "A tartomány ellenőrzése bekapcsolja az önálló szervezet házirendjét."
+  },
+  "single-org-revoked-user-warning": {
+    "message": "A nem megfelelő tagok visszavonásra kerülnek. Az adminisztrátorok visszaállíthatják a tagokat, miután elhagyják az összes többi szervezetet."
   }
 }

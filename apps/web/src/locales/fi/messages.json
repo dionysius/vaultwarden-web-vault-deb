@@ -9,7 +9,7 @@
     "message": "Access Intelligence"
   },
   "passwordRisk": {
-    "message": "Password Risk"
+    "message": "Salasanariski"
   },
   "discoverAtRiskPasswords": {
     "message": "Discover at-risk passwords and notify users to change those passwords."
@@ -64,6 +64,9 @@
   },
   "markAppAsCritical": {
     "message": "Mark app as critical"
+  },
+  "appsMarkedAsCritical": {
+    "message": "Apps marked as critical"
   },
   "application": {
     "message": "Sovellus"
@@ -433,7 +436,7 @@
     "message": "Luo salasana"
   },
   "generatePassphrase": {
-    "message": "Generate passphrase"
+    "message": "Luo salalause"
   },
   "checkPassword": {
     "message": "Tarkasta, onko salasana paljastunut."
@@ -694,7 +697,7 @@
     "description": "Copy password to clipboard"
   },
   "copyPassphrase": {
-    "message": "Copy passphrase",
+    "message": "Kopioi salalause",
     "description": "Copy passphrase to clipboard"
   },
   "passwordCopied": {
@@ -967,13 +970,13 @@
     "message": "Käytä vaihtoehtoista kirjautumistapaa"
   },
   "logInWithPasskey": {
-    "message": "Log in with passkey"
+    "message": "Kirjaudu pääsyavaimella"
   },
   "useSingleSignOn": {
-    "message": "Use single sign-on"
+    "message": "Käytä kertakirjautumista"
   },
   "welcomeBack": {
-    "message": "Welcome back"
+    "message": "Tervetuloa takaisin"
   },
   "invalidPasskeyPleaseTryAgain": {
     "message": "Pääsyavain ei kelpaa. Yritä uudelleen."
@@ -1057,7 +1060,7 @@
     "message": "Luo uusi tili"
   },
   "newToBitwarden": {
-    "message": "New to Bitwarden?"
+    "message": "Oletko uusi Bitwarden-käyttäjä?"
   },
   "setAStrongPassword": {
     "message": "Aseta vahva salasana"
@@ -1075,7 +1078,7 @@
     "message": "Kirjaudu sisään"
   },
   "logInToBitwarden": {
-    "message": "Log in to Bitwarden"
+    "message": "Kirjaudu Bitwardeniin"
   },
   "verifyIdentity": {
     "message": "Vahvista henkilöllisyytesi"
@@ -1583,38 +1586,6 @@
   "specialCharacters": {
     "message": "Erikoismerkit (!@#$%^&*)"
   },
-  "uppercaseDescription": {
-    "message": "Sisällytä isoja kirjaimia",
-    "description": "Tooltip for the password generator uppercase character checkbox"
-  },
-  "uppercaseLabel": {
-    "message": "A-Ö",
-    "description": "Label for the password generator uppercase character checkbox"
-  },
-  "lowercaseDescription": {
-    "message": "Sisällytä pieniä kirjaimia",
-    "description": "Full description for the password generator lowercase character checkbox"
-  },
-  "lowercaseLabel": {
-    "message": "a-ö",
-    "description": "Label for the password generator lowercase character checkbox"
-  },
-  "numbersDescription": {
-    "message": "Sisällytä numeroita",
-    "description": "Full description for the password generator numbers checkbox"
-  },
-  "numbersLabel": {
-    "message": "0-9",
-    "description": "Label for the password generator numbers checkbox"
-  },
-  "specialCharactersDescription": {
-    "message": "Sisällytä erikoismerkkejä",
-    "description": "Full description for the password generator special characters checkbox"
-  },
-  "specialCharactersLabel": {
-    "message": "!@#$%^&*",
-    "description": "Label for the password generator special characters checkbox"
-  },
   "numWords": {
     "message": "Sanojen määrä"
   },
@@ -1745,6 +1716,9 @@
   "dangerZoneDesc": {
     "message": "Ole varovainen! Näitä toimintoja ei ole mahdollista kumota!"
   },
+  "dangerZoneDescSingular": {
+    "message": "Careful, this action is not reversible!"
+  },
   "deauthorizeSessions": {
     "message": "Mitätöi kaikki istunnot"
   },
@@ -1756,6 +1730,15 @@
   },
   "sessionsDeauthorized": {
     "message": "Kaikki istunnot mitätöitiin"
+  },
+  "accountIsManagedMessage": {
+    "message": "This account is managed by $ORGANIZATIONNAME$",
+    "placeholders": {
+      "organizationName": {
+        "content": "$1",
+        "example": "Organization"
+      }
+    }
   },
   "purgeVault": {
     "message": "Tyhjennä holvi"
@@ -3213,6 +3196,9 @@
         "example": "20"
       }
     }
+  },
+  "inviteSingleEmailDesc": {
+    "message": "You have 1 invite remaining."
   },
   "userUsingTwoStep": {
     "message": "Käyttäjä on suojannut tilinsä kaksivaiheisella kirjautumisella."
@@ -4681,11 +4667,17 @@
   "singleOrgDesc": {
     "message": "Estä jäseniä liittymästä muihin organisaatioihin."
   },
+  "singleOrgPolicyDesc": {
+    "message": "Restrict members from joining other organizations. This policy is required for organizations that have enabled domain verification."
+  },
   "singleOrgBlockCreateMessage": {
     "message": "Nykyisen organisaatiosi käytäntö ei salli liittymistä yhtä useampaan organisaatioon. Ole yhteydessä organisaatiosi ylläpitoon tai liity eri Bitwarden-tilin kautta."
   },
   "singleOrgPolicyWarning": {
     "message": "Organisaation jäsenet, jotka eivät ole omistajia tai ylläpitäjiä ja jotka ovat jo toisen organisaation jäseniä, poistetaan organisaatiostasi."
+  },
+  "singleOrgPolicyMemberWarning": {
+    "message": "Non-compliant members will be placed in revoked status until they leave all other organizations. Administrators are exempt and can restore members once compliance is met."
   },
   "requireSso": {
     "message": "Vaadi todennus kertakirjautumisella"
@@ -6401,7 +6393,21 @@
     "message": "Luo käyttäjätunnus"
   },
   "generateEmail": {
-    "message": "Generate email"
+    "message": "Luo sähköpostiosoite"
+  },
+  "generatorBoundariesHint": {
+    "message": "Arvon tulee olla väliltä $MIN$ - $MAX$",
+    "description": "Explains spin box minimum and maximum values to the user",
+    "placeholders": {
+      "min": {
+        "content": "$1",
+        "example": "8"
+      },
+      "max": {
+        "content": "$2",
+        "example": "128"
+      }
+    }
   },
   "usernameType": {
     "message": "Käyttäjätunnuksen tyyppi"
@@ -6509,7 +6515,7 @@
     "message": "Luo sähköpostialias ulkoisella ohjauspalvelulla."
   },
   "forwarderDomainName": {
-    "message": "Email domain",
+    "message": "Sähköpostin verkkotunnus",
     "description": "Labels the domain name email forwarder service option"
   },
   "forwarderDomainNameHint": {
@@ -9474,6 +9480,38 @@
   "linkedLabelHelpText": {
     "message": "Enter the the field's html id, name, aria-label, or placeholder."
   },
+  "uppercaseDescription": {
+    "message": "Sisällytä isoja kirjaimia",
+    "description": "Tooltip for the password generator uppercase character checkbox"
+  },
+  "uppercaseLabel": {
+    "message": "A-Ö",
+    "description": "Label for the password generator uppercase character checkbox"
+  },
+  "lowercaseDescription": {
+    "message": "Sisällytä pieniä kirjaimia",
+    "description": "Full description for the password generator lowercase character checkbox"
+  },
+  "lowercaseLabel": {
+    "message": "a-ö",
+    "description": "Label for the password generator lowercase character checkbox"
+  },
+  "numbersDescription": {
+    "message": "Sisällytä numeroita",
+    "description": "Full description for the password generator numbers checkbox"
+  },
+  "numbersLabel": {
+    "message": "0-9",
+    "description": "Label for the password generator numbers checkbox"
+  },
+  "specialCharactersDescription": {
+    "message": "Sisällytä erikoismerkkejä",
+    "description": "Full description for the password generator special characters checkbox"
+  },
+  "specialCharactersLabel": {
+    "message": "!@#$%^&*",
+    "description": "Label for the password generator special characters checkbox"
+  },
   "addAttachment": {
     "message": "Lisää liite"
   },
@@ -9492,5 +9530,11 @@
   },
   "selfHostingTitleProper": {
     "message": "Self-Hosting"
+  },
+  "verified-domain-single-org-warning": {
+    "message": "Verifying a domain will turn on the single organization policy."
+  },
+  "single-org-revoked-user-warning": {
+    "message": "Non-compliant members will be revoked. Administrators can restore members once they leave all other organizations."
   }
 }

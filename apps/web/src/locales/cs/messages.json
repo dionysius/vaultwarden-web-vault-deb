@@ -65,6 +65,9 @@
   "markAppAsCritical": {
     "message": "Označit aplikaci jako kritickou"
   },
+  "appsMarkedAsCritical": {
+    "message": "Aplikace označené jako kritické"
+  },
   "application": {
     "message": "Aplikace"
   },
@@ -1583,38 +1586,6 @@
   "specialCharacters": {
     "message": "Speciální znaky (!@#$%^&*)"
   },
-  "uppercaseDescription": {
-    "message": "Zahrnout velká písmena",
-    "description": "Tooltip for the password generator uppercase character checkbox"
-  },
-  "uppercaseLabel": {
-    "message": "A-Z",
-    "description": "Label for the password generator uppercase character checkbox"
-  },
-  "lowercaseDescription": {
-    "message": "Zahrnout malá písmena",
-    "description": "Full description for the password generator lowercase character checkbox"
-  },
-  "lowercaseLabel": {
-    "message": "a-z",
-    "description": "Label for the password generator lowercase character checkbox"
-  },
-  "numbersDescription": {
-    "message": "Zahrnout číslice",
-    "description": "Full description for the password generator numbers checkbox"
-  },
-  "numbersLabel": {
-    "message": "0-9",
-    "description": "Label for the password generator numbers checkbox"
-  },
-  "specialCharactersDescription": {
-    "message": "Zahrnout speciální znaky",
-    "description": "Full description for the password generator special characters checkbox"
-  },
-  "specialCharactersLabel": {
-    "message": "!@#$%^&*",
-    "description": "Label for the password generator special characters checkbox"
-  },
   "numWords": {
     "message": "Počet slov"
   },
@@ -1745,6 +1716,9 @@
   "dangerZoneDesc": {
     "message": "Opatrně. Tyto akce se nedají vrátit!"
   },
+  "dangerZoneDescSingular": {
+    "message": "Opatrně, tato akce je nevratná!"
+  },
   "deauthorizeSessions": {
     "message": "Zrušit autorizaci relací"
   },
@@ -1756,6 +1730,15 @@
   },
   "sessionsDeauthorized": {
     "message": "Všechny relace byly zrušeny"
+  },
+  "accountIsManagedMessage": {
+    "message": "Tento účet je spravován: $ORGANIZATIONNAME$",
+    "placeholders": {
+      "organizationName": {
+        "content": "$1",
+        "example": "Organization"
+      }
+    }
   },
   "purgeVault": {
     "message": "Vyčistit celý trezor"
@@ -3213,6 +3196,9 @@
         "example": "20"
       }
     }
+  },
+  "inviteSingleEmailDesc": {
+    "message": "Zbývá Vám 1 pozvánka."
   },
   "userUsingTwoStep": {
     "message": "Tento uživatel používá pro ochranu svého účtu dvoufázové přihlášení."
@@ -4681,11 +4667,17 @@
   "singleOrgDesc": {
     "message": "Omezí uživatelům možnost připojit se k jiným organizacím."
   },
+  "singleOrgPolicyDesc": {
+    "message": "Omezí členům vstup do jiných organizací. Tato zásada je vyžadována u organizací, které povolily ověřování domény."
+  },
   "singleOrgBlockCreateMessage": {
     "message": "Vaše aktuální organizace má pravidla, která Vám nedovolují připojit se k více než jedné organizaci. Obraťte se na administrátory organizace nebo se zaregistrujte z jiného účtu na Bitwardenu."
   },
   "singleOrgPolicyWarning": {
     "message": "Členové organizace, kteří nejsou vlastníky nebo administrátory a jsou již členy jiné organizace, budou odebrání z Vaší organizace."
+  },
+  "singleOrgPolicyMemberWarning": {
+    "message": "Nevyhovující členové budou zařazeni do statusu odvolaných členů, dokud neopustí všechny ostatní organizace. Správci jsou osvobozeni a mohou obnovit členy, jakmile je splněna podmínka shody."
   },
   "requireSso": {
     "message": "Vyžadovat ověření jednotného přihlášení"
@@ -6402,6 +6394,20 @@
   },
   "generateEmail": {
     "message": "Vygenerovat e-mail"
+  },
+  "generatorBoundariesHint": {
+    "message": "Hodnota musí být mezi $MIN$ a $MAX$",
+    "description": "Explains spin box minimum and maximum values to the user",
+    "placeholders": {
+      "min": {
+        "content": "$1",
+        "example": "8"
+      },
+      "max": {
+        "content": "$2",
+        "example": "128"
+      }
+    }
   },
   "usernameType": {
     "message": "Typ uživatelského jména"
@@ -9474,6 +9480,38 @@
   "linkedLabelHelpText": {
     "message": "Zadejte ID pole z HTML, název, popisek nebo zástupný znak pole."
   },
+  "uppercaseDescription": {
+    "message": "Zahrnout velká písmena",
+    "description": "Tooltip for the password generator uppercase character checkbox"
+  },
+  "uppercaseLabel": {
+    "message": "A-Z",
+    "description": "Label for the password generator uppercase character checkbox"
+  },
+  "lowercaseDescription": {
+    "message": "Zahrnout malá písmena",
+    "description": "Full description for the password generator lowercase character checkbox"
+  },
+  "lowercaseLabel": {
+    "message": "a-z",
+    "description": "Label for the password generator lowercase character checkbox"
+  },
+  "numbersDescription": {
+    "message": "Zahrnout číslice",
+    "description": "Full description for the password generator numbers checkbox"
+  },
+  "numbersLabel": {
+    "message": "0-9",
+    "description": "Label for the password generator numbers checkbox"
+  },
+  "specialCharactersDescription": {
+    "message": "Zahrnout speciální znaky",
+    "description": "Full description for the password generator special characters checkbox"
+  },
+  "specialCharactersLabel": {
+    "message": "!@#$%^&*",
+    "description": "Label for the password generator special characters checkbox"
+  },
   "addAttachment": {
     "message": "Přidat přílohu"
   },
@@ -9492,5 +9530,11 @@
   },
   "selfHostingTitleProper": {
     "message": "Vlastní hosting"
+  },
+  "verified-domain-single-org-warning": {
+    "message": "Ověřením domény se zapnou zásady jediné organizace."
+  },
+  "single-org-revoked-user-warning": {
+    "message": "Nevyhovujícím členům bude členství zrušeno. Správci mohou obnovit členy, jakmile opustí všechny ostatní organizace."
   }
 }

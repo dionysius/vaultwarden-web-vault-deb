@@ -65,6 +65,9 @@
   "markAppAsCritical": {
     "message": "Пометить приложение как критическое"
   },
+  "appsMarkedAsCritical": {
+    "message": "Приложения помечены как критические"
+  },
   "application": {
     "message": "Приложение"
   },
@@ -1583,38 +1586,6 @@
   "specialCharacters": {
     "message": "Специальные символы (!@#$%^&*)"
   },
-  "uppercaseDescription": {
-    "message": "Включить заглавные символы",
-    "description": "Tooltip for the password generator uppercase character checkbox"
-  },
-  "uppercaseLabel": {
-    "message": "A-Z",
-    "description": "Label for the password generator uppercase character checkbox"
-  },
-  "lowercaseDescription": {
-    "message": "Включить строчные символы",
-    "description": "Full description for the password generator lowercase character checkbox"
-  },
-  "lowercaseLabel": {
-    "message": "a-z",
-    "description": "Label for the password generator lowercase character checkbox"
-  },
-  "numbersDescription": {
-    "message": "Включить цифры",
-    "description": "Full description for the password generator numbers checkbox"
-  },
-  "numbersLabel": {
-    "message": "0-9",
-    "description": "Label for the password generator numbers checkbox"
-  },
-  "specialCharactersDescription": {
-    "message": "Включить специальные символы",
-    "description": "Full description for the password generator special characters checkbox"
-  },
-  "specialCharactersLabel": {
-    "message": "!@#$%^&*",
-    "description": "Label for the password generator special characters checkbox"
-  },
   "numWords": {
     "message": "Количество слов"
   },
@@ -1745,6 +1716,9 @@
   "dangerZoneDesc": {
     "message": "Осторожно, эти действия необратимы!"
   },
+  "dangerZoneDescSingular": {
+    "message": "Будьте внимательны - это действие не обратимо!"
+  },
   "deauthorizeSessions": {
     "message": "Деавторизовать сессии"
   },
@@ -1756,6 +1730,15 @@
   },
   "sessionsDeauthorized": {
     "message": "Все сессии деавторизованы"
+  },
+  "accountIsManagedMessage": {
+    "message": "Управление этим аккаунтом осуществляет $ORGANIZATIONNAME$",
+    "placeholders": {
+      "organizationName": {
+        "content": "$1",
+        "example": "Organization"
+      }
+    }
   },
   "purgeVault": {
     "message": "Очистить хранилище"
@@ -3213,6 +3196,9 @@
         "example": "20"
       }
     }
+  },
+  "inviteSingleEmailDesc": {
+    "message": "У вас осталось 1 приглашение."
   },
   "userUsingTwoStep": {
     "message": "Этот пользователь использует двухэтапную аутентификацию для защиты своего аккаунта."
@@ -4681,11 +4667,17 @@
   "singleOrgDesc": {
     "message": "Запретить пользователям присоединяться к другим организациям."
   },
+  "singleOrgPolicyDesc": {
+    "message": "Запретить членам организации присоединяться к другим организациям. Эта политика необходима для организаций, в которых включена проверка домена."
+  },
   "singleOrgBlockCreateMessage": {
     "message": "Политика вашей текущей организации не позволяет вам присоединиться к более чем одной организации. Пожалуйста, свяжитесь с администраторами вашей организации или авторизуйтесь под другим аккаунтом Bitwarden."
   },
   "singleOrgPolicyWarning": {
     "message": "Пользователи организации, которые не являются владельцами или администраторами и уже входят в другую организацию, будут удалены из вашей организации."
+  },
+  "singleOrgPolicyMemberWarning": {
+    "message": "Члены, не соблюдающие требования, будут аннулированы до тех пор, пока не покинут все остальные организации. Администраторы имеют этих ограничений и могут восстанавливать членов, если они соответствуют требованиям."
   },
   "requireSso": {
     "message": "Требовать авторизацию через единый вход (SSO)"
@@ -6402,6 +6394,20 @@
   },
   "generateEmail": {
     "message": "Сгенерировать email"
+  },
+  "generatorBoundariesHint": {
+    "message": "Значение должно быть между $MIN$ и $MAX$",
+    "description": "Explains spin box minimum and maximum values to the user",
+    "placeholders": {
+      "min": {
+        "content": "$1",
+        "example": "8"
+      },
+      "max": {
+        "content": "$2",
+        "example": "128"
+      }
+    }
   },
   "usernameType": {
     "message": "Тип имени пользователя"
@@ -9474,6 +9480,38 @@
   "linkedLabelHelpText": {
     "message": "Введите HTML-идентификатор поля, имя, aria-label, или плейсхолдер."
   },
+  "uppercaseDescription": {
+    "message": "Включить заглавные символы",
+    "description": "Tooltip for the password generator uppercase character checkbox"
+  },
+  "uppercaseLabel": {
+    "message": "A-Z",
+    "description": "Label for the password generator uppercase character checkbox"
+  },
+  "lowercaseDescription": {
+    "message": "Включить строчные символы",
+    "description": "Full description for the password generator lowercase character checkbox"
+  },
+  "lowercaseLabel": {
+    "message": "a-z",
+    "description": "Label for the password generator lowercase character checkbox"
+  },
+  "numbersDescription": {
+    "message": "Включить цифры",
+    "description": "Full description for the password generator numbers checkbox"
+  },
+  "numbersLabel": {
+    "message": "0-9",
+    "description": "Label for the password generator numbers checkbox"
+  },
+  "specialCharactersDescription": {
+    "message": "Включить специальные символы",
+    "description": "Full description for the password generator special characters checkbox"
+  },
+  "specialCharactersLabel": {
+    "message": "!@#$%^&*",
+    "description": "Label for the password generator special characters checkbox"
+  },
   "addAttachment": {
     "message": "Добавить вложение"
   },
@@ -9492,5 +9530,11 @@
   },
   "selfHostingTitleProper": {
     "message": "Собственное размещение"
+  },
+  "verified-domain-single-org-warning": {
+    "message": "Проверка домена включит политику единой организации."
+  },
+  "single-org-revoked-user-warning": {
+    "message": "Участники, не соблюдающие требования, будут аннулированы. Администраторы могут восстановить участников, как только они покинут все другие организации."
   }
 }
