@@ -9,7 +9,8 @@ import { AsyncActionsModule, ButtonModule, TabsModule } from "@bitwarden/compone
 
 import { HeaderModule } from "../../layouts/header/header.module";
 
-import { ApplicationTableComponent } from "./application-table.component";
+import { AllApplicationsComponent } from "./all-applications.component";
+import { CriticalApplicationsComponent } from "./critical-applications.component";
 import { NotifiedMembersTableComponent } from "./notified-members-table.component";
 import { PasswordHealthMembersURIComponent } from "./password-health-members-uri.component";
 import { PasswordHealthMembersComponent } from "./password-health-members.component";
@@ -25,10 +26,11 @@ export enum AccessIntelligenceTabType {
   standalone: true,
   templateUrl: "./access-intelligence.component.html",
   imports: [
-    ApplicationTableComponent,
+    AllApplicationsComponent,
     AsyncActionsModule,
     ButtonModule,
     CommonModule,
+    CriticalApplicationsComponent,
     JslibModule,
     HeaderModule,
     PasswordHealthComponent,
@@ -43,7 +45,7 @@ export class AccessIntelligenceComponent {
   dataLastUpdated = new Date();
 
   apps: any[] = [];
-  priorityApps: any[] = [];
+  criticalApps: any[] = [];
   notifiedMembers: any[] = [];
 
   async refreshData() {

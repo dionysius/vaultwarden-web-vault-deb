@@ -27,8 +27,6 @@ import { OrganizationBadgeModule } from "../../vault/individual-vault/organizati
 // eslint-disable-next-line no-restricted-imports
 import { PipesModule } from "../../vault/individual-vault/pipes/pipes.module";
 
-import { NoPriorityAppsComponent } from "./no-priority-apps.component";
-
 @Component({
   standalone: true,
   selector: "tools-password-health-members",
@@ -40,7 +38,6 @@ import { NoPriorityAppsComponent } from "./no-priority-apps.component";
     HeaderModule,
     SearchModule,
     FormsModule,
-    NoPriorityAppsComponent,
     SharedModule,
     TableModule,
   ],
@@ -100,7 +97,7 @@ export class PasswordHealthMembersComponent implements OnInit {
 
     await passwordHealthService.generateReport();
 
-    this.dataSource.data = []; //passwordHealthService.reportCiphers;
+    this.dataSource.data = passwordHealthService.reportCiphers;
 
     this.exposedPasswordMap = passwordHealthService.exposedPasswordMap;
     this.passwordStrengthMap = passwordHealthService.passwordStrengthMap;
