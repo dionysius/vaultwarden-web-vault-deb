@@ -3,11 +3,14 @@ import { importProvidersFrom } from "@angular/core";
 import { Meta, StoryObj, applicationConfig, moduleMetadata } from "@storybook/angular";
 
 import { JslibModule } from "@bitwarden/angular/jslib.module";
+import { ConfigService } from "@bitwarden/common/platform/abstractions/config/config.service";
 import { ButtonModule } from "@bitwarden/components";
 
 import { PreloadedEnglishI18nModule } from "../../../core/tests";
 
 import { DangerZoneComponent } from "./danger-zone.component";
+
+class MockConfigService implements Partial<ConfigService> {}
 
 export default {
   title: "Web/Danger Zone",
@@ -17,7 +20,14 @@ export default {
       imports: [ButtonModule, JslibModule, CommonModule],
     }),
     applicationConfig({
-      providers: [importProvidersFrom(PreloadedEnglishI18nModule)],
+      providers: [
+        importProvidersFrom(PreloadedEnglishI18nModule),
+        {
+          provide: ConfigService,
+          useClass: MockConfigService,
+          multi: true,
+        },
+      ],
     }),
   ],
 } as Meta;
