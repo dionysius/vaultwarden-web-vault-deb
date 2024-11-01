@@ -31,7 +31,7 @@ pub fn path(name: &str) -> std::path::PathBuf {
         format!(r"\\.\pipe\{hash_b64}.app.{name}").into()
     }
 
-    #[cfg(target_os = "macos")]
+    #[cfg(all(target_os = "macos", not(debug_assertions)))]
     {
         let mut home = dirs::home_dir().unwrap();
 
@@ -51,6 +51,13 @@ pub fn path(name: &str) -> std::path::PathBuf {
         // The tmp directory might not exist, so create it
         let _ = std::fs::create_dir_all(&tmp);
         tmp.join(format!("app.{name}"))
+    }
+
+    #[cfg(all(target_os = "macos", debug_assertions))]
+    {
+        // When running in debug mode, we use the tmp dir because the app is not sandboxed
+        let dir = std::env::temp_dir();
+        dir.join(format!("app.{name}"))
     }
 
     #[cfg(target_os = "linux")]

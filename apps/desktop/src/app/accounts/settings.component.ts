@@ -626,7 +626,8 @@ export class SettingsComponent implements OnInit, OnDestroy {
   async saveBrowserIntegration() {
     if (
       ipc.platform.deviceType === DeviceType.MacOsDesktop &&
-      !this.platformUtilsService.isMacAppStore()
+      !this.platformUtilsService.isMacAppStore() &&
+      !ipc.platform.isDev
     ) {
       await this.dialogService.openSimpleDialog({
         title: { key: "browserIntegrationUnsupportedTitle" },

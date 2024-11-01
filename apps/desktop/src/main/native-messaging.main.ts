@@ -132,18 +132,7 @@ export class NativeMessagingMain {
     };
     const chromeJson = {
       ...baseJson,
-      ...{
-        allowed_origins: [
-          // Chrome extension
-          "chrome-extension://nngceckbapebfimnlniiiahkandclblb/",
-          // Chrome beta extension
-          "chrome-extension://hccnnhgbibccigepcmlgppchkpfdophk/",
-          // Edge extension
-          "chrome-extension://jbkfoedolllekgbhcbcoahefnbanhhlh/",
-          // Opera extension
-          "chrome-extension://ccnckbpmaceehanjmeomladnmlffdjgn/",
-        ],
-      },
+      allowed_origins: await this.loadChromeIds(),
     };
 
     switch (process.platform) {
@@ -180,35 +169,26 @@ export class NativeMessagingMain {
         }
         break;
       }
-      case "linux":
-        if (existsSync(`${this.homedir()}/.mozilla/`)) {
-          await this.writeManifest(
-            `${this.homedir()}/.mozilla/native-messaging-hosts/com.8bit.bitwarden.json`,
-            firefoxJson,
-          );
-        }
-
-        if (existsSync(`${this.homedir()}/.config/google-chrome/`)) {
-          await this.writeManifest(
-            `${this.homedir()}/.config/google-chrome/NativeMessagingHosts/com.8bit.bitwarden.json`,
-            chromeJson,
-          );
-        }
-
-        if (existsSync(`${this.homedir()}/.config/microsoft-edge/`)) {
-          await this.writeManifest(
-            `${this.homedir()}/.config/microsoft-edge/NativeMessagingHosts/com.8bit.bitwarden.json`,
-            chromeJson,
-          );
-        }
-
-        if (existsSync(`${this.homedir()}/.config/chromium/`)) {
-          await this.writeManifest(
-            `${this.homedir()}/.config/chromium/NativeMessagingHosts/com.8bit.bitwarden.json`,
-            chromeJson,
-          );
+      case "linux": {
+        for (const [key, value] of Object.entries(this.getLinuxNMHS())) {
+          if (existsSync(value)) {
+            if (key === "Firefox") {
+              await this.writeManifest(
+                path.join(value, "native-messaging-hosts", "com.8bit.bitwarden.json"),
+                firefoxJson,
+              );
+            } else {
+              await this.writeManifest(
+                path.join(value, "NativeMessagingHosts", "com.8bit.bitwarden.json"),
+                chromeJson,
+              );
+            }
+          } else {
+            this.logService.warning(`${key} not found, skipping.`);
+          }
         }
         break;
+      }
       default:
         break;
     }
@@ -260,15 +240,18 @@ export class NativeMessagingMain {
         break;
       }
       case "linux": {
-        await this.removeIfExists(
-          `${this.homedir()}/.mozilla/native-messaging-hosts/com.8bit.bitwarden.json`,
-        );
-        await this.removeIfExists(
-          `${this.homedir()}/.config/google-chrome/NativeMessagingHosts/com.8bit.bitwarden.json`,
-        );
-        await this.removeIfExists(
-          `${this.homedir()}/.config/microsoft-edge/NativeMessagingHosts/com.8bit.bitwarden.json`,
-        );
+        for (const [key, value] of Object.entries(this.getLinuxNMHS())) {
+          if (key === "Firefox") {
+            await this.removeIfExists(
+              path.join(value, "native-messaging-hosts", "com.8bit.bitwarden.json"),
+            );
+          } else {
+            await this.removeIfExists(
+              path.join(value, "NativeMessagingHosts", "com.8bit.bitwarden.json"),
+            );
+          }
+        }
+
         break;
       }
       default:
@@ -317,6 +300,15 @@ export class NativeMessagingMain {
     /* eslint-enable no-useless-escape */
   }
 
+  private getLinuxNMHS() {
+    return {
+      Firefox: `${this.homedir()}/.mozilla/`,
+      Chrome: `${this.homedir()}/.config/google-chrome/`,
+      Chromium: `${this.homedir()}/.config/chromium/`,
+      "Microsoft Edge": `${this.homedir()}/.config/microsoft-edge/`,
+    };
+  }
+
   private async writeManifest(destination: string, manifest: object) {
     this.logService.debug(`Writing manifest: ${destination}`);
 
@@ -325,6 +317,83 @@ export class NativeMessagingMain {
     }
 
     await fs.writeFile(destination, JSON.stringify(manifest, null, 2));
+  }
+
+  private async loadChromeIds(): Promise<string[]> {
+    const ids: Set<string> = new Set([
+      // Chrome extension
+      "chrome-extension://nngceckbapebfimnlniiiahkandclblb/",
+      // Chrome beta extension
+      "chrome-extension://hccnnhgbibccigepcmlgppchkpfdophk/",
+      // Edge extension
+      "chrome-extension://jbkfoedolllekgbhcbcoahefnbanhhlh/",
+      // Opera extension
+      "chrome-extension://ccnckbpmaceehanjmeomladnmlffdjgn/",
+    ]);
+
+    if (!isDev()) {
+      return Array.from(ids);
+    }
+
+    // The dev builds of the extension have a different random ID per user, so to make development easier
+    // we try to find the extension IDs from the user's Chrome profiles when we're running in dev mode.
+    let chromePaths: string[];
+    switch (process.platform) {
+      case "darwin": {
+        chromePaths = Object.entries(this.getDarwinNMHS())
+          .filter(([key]) => key !== "Firefox")
+          .map(([, value]) => value);
+        break;
+      }
+      case "linux": {
+        chromePaths = Object.entries(this.getLinuxNMHS())
+          .filter(([key]) => key !== "Firefox")
+          .map(([, value]) => value);
+        break;
+      }
+      case "win32": {
+        // TODO: Add more supported browsers for Windows?
+        chromePaths = [
+          path.join(process.env.LOCALAPPDATA, "Microsoft", "Edge", "User Data"),
+          path.join(process.env.LOCALAPPDATA, "Google", "Chrome", "User Data"),
+        ];
+        break;
+      }
+    }
+
+    for (const chromePath of chromePaths) {
+      try {
+        // The chrome profile directories are named "Default", "Profile 1", "Profile 2", etc.
+        const profiles = (await fs.readdir(chromePath)).filter((f) => {
+          const lower = f.toLowerCase();
+          return lower == "default" || lower.startsWith("profile ");
+        });
+
+        for (const profile of profiles) {
+          try {
+            // Read the profile Preferences file and find the extension commands section
+            const prefs = JSON.parse(
+              await fs.readFile(path.join(chromePath, profile, "Preferences"), "utf8"),
+            );
+            const commands: Map<string, any> = prefs.extensions.commands;
+
+            // If one of the commands is autofill_login or generate_password, we know it's probably the Bitwarden extension
+            for (const { command_name, extension } of Object.values(commands)) {
+              if (command_name === "autofill_login" || command_name === "generate_password") {
+                ids.add(`chrome-extension://${extension}/`);
+                this.logService.info(`Found extension from ${chromePath}: ${extension}`);
+              }
+            }
+          } catch (e) {
+            this.logService.info(`Error reading preferences: ${e}`);
+          }
+        }
+      } catch (e) {
+        // Browser is not installed, we can just skip it
+      }
+    }
+
+    return Array.from(ids);
   }
 
   private binaryPath() {
