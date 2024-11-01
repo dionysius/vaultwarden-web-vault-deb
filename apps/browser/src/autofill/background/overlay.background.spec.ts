@@ -629,9 +629,7 @@ describe("OverlayBackground", () => {
 
           it("skips updating the inline menu list if the user has the inline menu set to open on button click", async () => {
             inlineMenuVisibilityMock$.next(AutofillOverlayVisibility.OnButtonClick);
-            jest
-              .spyOn(overlayBackground as any, "checkIsInlineMenuListVisible")
-              .mockReturnValue(false);
+            overlayBackground["inlineMenuListPort"] = null;
             tabsSendMessageSpy.mockImplementation((_tab, message, _options) => {
               if (message.command === "checkFocusedFieldHasValue") {
                 return Promise.resolve(true);
@@ -2267,7 +2265,7 @@ describe("OverlayBackground", () => {
         });
 
         it("closes the list if the user has the inline menu set to show on button click and the list is open", async () => {
-          overlayBackground["isInlineMenuListVisible"] = true;
+          overlayBackground["inlineMenuListPort"] = listPortSpy;
           inlineMenuVisibilityMock$.next(AutofillOverlayVisibility.OnButtonClick);
 
           sendMockExtensionMessage({ command: "openAutofillInlineMenu" }, sender);

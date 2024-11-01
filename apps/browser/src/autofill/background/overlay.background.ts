@@ -168,8 +168,6 @@ export class OverlayBackground implements OverlayBackgroundInterface {
     getCurrentTabFrameId: ({ sender }) => this.getSenderFrameId(sender),
     updateSubFrameData: ({ message, sender }) => this.updateSubFrameData(message, sender),
     triggerSubFrameFocusInRebuild: ({ sender }) => this.triggerSubFrameFocusInRebuild(sender),
-    shouldRepositionSubFrameInlineMenuOnScroll: ({ sender }) =>
-      this.shouldRepositionSubFrameInlineMenuOnScroll(sender),
     destroyAutofillInlineMenuListeners: ({ message, sender }) =>
       this.triggerDestroyInlineMenuListeners(sender.tab, message.subFrameData.frameId),
     collectPageDetailsResponse: ({ message, sender }) => this.storePageDetails(message, sender),
@@ -1010,7 +1008,7 @@ export class OverlayBackground implements OverlayBackgroundInterface {
     );
 
     if (
-      !this.checkIsInlineMenuListVisible() &&
+      !this.inlineMenuListPort &&
       (await this.getInlineMenuVisibility()) === AutofillOverlayVisibility.OnButtonClick
     ) {
       return;
@@ -1819,7 +1817,7 @@ export class OverlayBackground implements OverlayBackgroundInterface {
       return;
     }
 
-    if (this.isInlineMenuListVisible) {
+    if (this.inlineMenuListPort) {
       this.closeInlineMenu(sender, {
         forceCloseInlineMenu: true,
         overlayElement: AutofillOverlayElement.List,
@@ -2598,20 +2596,6 @@ export class OverlayBackground implements OverlayBackgroundInterface {
     this.resetFocusedFieldSubFrameOffsets(sender);
     this.rebuildSubFrameOffsets$.next(sender);
     this.repositionInlineMenu$.next(sender);
-  }
-
-  /**
-   * Triggers on scroll of a frame within the tab. Will reposition the inline menu
-   * if the focused field is within a sub-frame and the inline menu is visible.
-   *
-   * @param sender - The sender of the message
-   */
-  private shouldRepositionSubFrameInlineMenuOnScroll(sender: chrome.runtime.MessageSender) {
-    if (!this.isInlineMenuButtonVisible || sender.tab.id !== this.focusedFieldData?.tabId) {
-      return false;
-    }
-
-    return this.focusedFieldData.frameId > 0;
   }
 
   /**

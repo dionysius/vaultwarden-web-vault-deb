@@ -216,7 +216,6 @@ export type OverlayBackgroundExtensionMessageHandlers = {
   getCurrentTabFrameId: ({ sender }: BackgroundSenderParam) => number;
   updateSubFrameData: ({ message, sender }: BackgroundOnMessageHandlerParams) => void;
   triggerSubFrameFocusInRebuild: ({ sender }: BackgroundSenderParam) => void;
-  shouldRepositionSubFrameInlineMenuOnScroll: ({ sender }: BackgroundSenderParam) => void;
   destroyAutofillInlineMenuListeners: ({
     message,
     sender,
