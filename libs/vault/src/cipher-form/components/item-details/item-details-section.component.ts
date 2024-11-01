@@ -7,6 +7,7 @@ import { concatMap, map } from "rxjs";
 import { CollectionView } from "@bitwarden/admin-console/common";
 import { JslibModule } from "@bitwarden/angular/jslib.module";
 import { Organization } from "@bitwarden/common/admin-console/models/domain/organization";
+import { AccountService } from "@bitwarden/common/auth/abstractions/account.service";
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 import { CollectionId, OrganizationId } from "@bitwarden/common/types/guid";
 import { CipherView } from "@bitwarden/common/vault/models/view/cipher.view";
@@ -68,6 +69,9 @@ export class ItemDetailsSectionComponent implements OnInit {
 
   protected showCollectionsControl: boolean;
 
+  /** The email address associated with the active account */
+  protected userEmail$ = this.accountService.activeAccount$.pipe(map((account) => account.email));
+
   @Input({ required: true })
   config: CipherFormConfig;
 
@@ -96,11 +100,23 @@ export class ItemDetailsSectionComponent implements OnInit {
     return this.config.initialValues;
   }
 
+  /**
+   * Show the personal ownership option in the Owner dropdown when:
+   * - Personal ownership is allowed
+   * - The `organizationId` control is disabled. This avoids the scenario
+   * where a the dropdown is empty because the user personally owns the cipher
+   * but cannot edit the ownership.
+   */
+  get showPersonalOwnerOption() {
+    return this.allowPersonalOwnership || !this.itemDetailsForm.controls.organizationId.enabled;
+  }
+
   constructor(
     private cipherFormContainer: CipherFormContainer,
     private formBuilder: FormBuilder,
     private i18nService: I18nService,
     private destroyRef: DestroyRef,
+    private accountService: AccountService,
   ) {
     this.cipherFormContainer.registerChildForm("itemDetails", this.itemDetailsForm);
     this.itemDetailsForm.valueChanges

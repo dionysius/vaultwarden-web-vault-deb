@@ -1,13 +1,17 @@
 import { CommonModule } from "@angular/common";
 import { ComponentFixture, fakeAsync, TestBed, tick } from "@angular/core/testing";
 import { ReactiveFormsModule } from "@angular/forms";
+import { By } from "@angular/platform-browser";
 import { mock, MockProxy } from "jest-mock-extended";
+import { BehaviorSubject } from "rxjs";
 
 import { CollectionView } from "@bitwarden/admin-console/common";
 import { Organization } from "@bitwarden/common/admin-console/models/domain/organization";
+import { AccountService } from "@bitwarden/common/auth/abstractions/account.service";
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 import { CollectionId, OrganizationId } from "@bitwarden/common/types/guid";
 import { CipherView } from "@bitwarden/common/vault/models/view/cipher.view";
+import { SelectComponent } from "@bitwarden/components";
 
 import { CipherFormConfig } from "../../abstractions/cipher-form-config.service";
 import { CipherFormContainer } from "../../cipher-form-container";
@@ -20,6 +24,8 @@ describe("ItemDetailsSectionComponent", () => {
   let cipherFormProvider: MockProxy<CipherFormContainer>;
   let i18nService: MockProxy<I18nService>;
 
+  const activeAccount$ = new BehaviorSubject<{ email: string }>({ email: "test@example.com" });
+
   beforeEach(async () => {
     cipherFormProvider = mock<CipherFormContainer>();
     i18nService = mock<I18nService>();
@@ -29,6 +35,7 @@ describe("ItemDetailsSectionComponent", () => {
       providers: [
         { provide: CipherFormContainer, useValue: cipherFormProvider },
         { provide: I18nService, useValue: i18nService },
+        { provide: AccountService, useValue: { activeAccount$ } },
       ],
     }).compileComponents();
 
@@ -204,6 +211,35 @@ describe("ItemDetailsSectionComponent", () => {
       component.config.allowPersonalOwnership = false;
       component.config.organizations = [{ id: "org1" } as Organization];
       expect(component.defaultOwner).toBe("org1");
+    });
+  });
+
+  describe("showPersonalOwnerOption", () => {
+    it("should show personal ownership when the configuration allows", () => {
+      component.config.mode = "edit";
+      component.config.allowPersonalOwnership = true;
+      component.config.organizations = [{ id: "134-433-22" } as Organization];
+      fixture.detectChanges();
+
+      const select = fixture.debugElement.query(By.directive(SelectComponent));
+      const { value, label } = select.componentInstance.items[0];
+
+      expect(value).toBeNull();
+      expect(label).toBe("test@example.com");
+    });
+
+    it("should show personal ownership when the control is disabled", async () => {
+      component.config.mode = "edit";
+      component.config.allowPersonalOwnership = false;
+      component.config.organizations = [{ id: "134-433-22" } as Organization];
+      await component.ngOnInit();
+      fixture.detectChanges();
+
+      const select = fixture.debugElement.query(By.directive(SelectComponent));
+
+      const { value, label } = select.componentInstance.items[0];
+      expect(value).toBeNull();
+      expect(label).toBe("test@example.com");
     });
   });
 
