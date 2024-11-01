@@ -1,3 +1,4 @@
+import { CommonModule } from "@angular/common";
 import { importProvidersFrom } from "@angular/core";
 import { Meta, StoryObj, applicationConfig, moduleMetadata } from "@storybook/angular";
 
@@ -13,7 +14,7 @@ export default {
   component: DangerZoneComponent,
   decorators: [
     moduleMetadata({
-      imports: [ButtonModule, JslibModule],
+      imports: [ButtonModule, JslibModule, CommonModule],
     }),
     applicationConfig({
       providers: [importProvidersFrom(PreloadedEnglishI18nModule)],
