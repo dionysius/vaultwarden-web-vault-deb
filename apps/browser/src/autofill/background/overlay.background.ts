@@ -33,6 +33,7 @@ import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/pl
 import { Utils } from "@bitwarden/common/platform/misc/utils";
 import { ThemeStateService } from "@bitwarden/common/platform/theming/theme-state.service";
 import { CipherService } from "@bitwarden/common/vault/abstractions/cipher.service";
+import { TotpService } from "@bitwarden/common/vault/abstractions/totp.service";
 import { VaultSettingsService } from "@bitwarden/common/vault/abstractions/vault-settings/vault-settings.service";
 import { CipherType } from "@bitwarden/common/vault/enums";
 import { buildCipherIcon } from "@bitwarden/common/vault/icon/build-cipher-icon";
@@ -217,6 +218,7 @@ export class OverlayBackground implements OverlayBackgroundInterface {
     private fido2ActiveRequestManager: Fido2ActiveRequestManager,
     private inlineMenuFieldQualificationService: InlineMenuFieldQualificationService,
     private themeStateService: ThemeStateService,
+    private totpService: TotpService,
     private generatePasswordCallback: () => Promise<string>,
     private addPasswordCallback: (password: string) => Promise<void>,
   ) {
@@ -1058,7 +1060,6 @@ export class OverlayBackground implements OverlayBackgroundInterface {
     }
 
     const cipher = this.inlineMenuCiphers.get(inlineMenuCipherId);
-
     if (usePasskey && cipher.login?.hasFido2Credentials) {
       await this.authenticatePasskeyCredential(
         sender,
@@ -1066,6 +1067,11 @@ export class OverlayBackground implements OverlayBackgroundInterface {
       );
       this.updateLastUsedInlineMenuCipher(inlineMenuCipherId, cipher);
 
+      if (cipher.login?.totp) {
+        this.platformUtilsService.copyToClipboard(
+          await this.totpService.getCode(cipher.login.totp),
+        );
+      }
       return;
     }
 

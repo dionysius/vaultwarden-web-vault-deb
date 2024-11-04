@@ -1678,6 +1678,7 @@ export default class MainBackground {
         this.fido2ActiveRequestManager,
         inlineMenuFieldQualificationService,
         this.themeStateService,
+        this.totpService,
         () => this.generatePassword(),
         (password) => this.addPasswordToHistory(password),
       );
