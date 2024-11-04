@@ -61,7 +61,7 @@
     }
   },
   "welcomeBack": {
-    "message": "Welcome back"
+    "message": "欢迎回来"
   },
   "moveToOrgDesc": {
     "message": "选择一个您想将此项目移至的组织。移动到组织会将该项目的所有权转让给该组织。移动后，您将不再是此项目的直接所有者。"
@@ -263,7 +263,7 @@
     "message": "生成密码"
   },
   "generatePassphrase": {
-    "message": "Generate passphrase"
+    "message": "生成密码短语"
   },
   "type": {
     "message": "类型"
@@ -401,7 +401,7 @@
     "message": "复制密码"
   },
   "copyPassphrase": {
-    "message": "Copy passphrase",
+    "message": "复制密码短语",
     "description": "Copy passphrase to clipboard"
   },
   "copyUri": {
@@ -558,7 +558,7 @@
     "message": "创建账户"
   },
   "newToBitwarden": {
-    "message": "New to Bitwarden?"
+    "message": "Bitwarden 新手吗？"
   },
   "setAStrongPassword": {
     "message": "设置强密码"
@@ -570,16 +570,16 @@
     "message": "登录"
   },
   "logInToBitwarden": {
-    "message": "Log in to Bitwarden"
+    "message": "登录到 Bitwarden"
   },
   "logInWithPasskey": {
-    "message": "Log in with passkey"
+    "message": "使用通行密钥登录"
   },
   "loginWithDevice": {
-    "message": "Log in with device"
+    "message": "使用设备登录"
   },
   "useSingleSignOn": {
-    "message": "Use single sign-on"
+    "message": "使用单点登录"
   },
   "submit": {
     "message": "提交"
@@ -854,7 +854,7 @@
     "message": "服务器 URL"
   },
   "selfHostBaseUrl": {
-    "message": "Self-host server URL",
+    "message": "自托管服务器 URL",
     "description": "Label for field requesting a self-hosted integration service URL"
   },
   "apiUrl": {
@@ -1248,7 +1248,7 @@
     "description": "Copy credit card number"
   },
   "copyEmail": {
-    "message": "Copy email"
+    "message": "复制电子邮件地址"
   },
   "copySecurityCode": {
     "message": "复制安全码",
@@ -1684,10 +1684,10 @@
     "message": "删除账户是永久性操作，无法撤销！"
   },
   "cannotDeleteAccount": {
-    "message": "Cannot delete account"
+    "message": "无法删除账户"
   },
   "cannotDeleteAccountDesc": {
-    "message": "This action cannot be completed because your account is owned by an organization. Contact your organization administrator for additional details."
+    "message": "此操作无法完成，因为您的账户归组织所有。请联系您的组织管理员获取详细信息。"
   },
   "accountDeleted": {
     "message": "账户已删除"
@@ -2391,10 +2391,10 @@
     "message": "生成用户名"
   },
   "generateEmail": {
-    "message": "Generate email"
+    "message": "生成邮件地址"
   },
   "generatorBoundariesHint": {
-    "message": "Value must be between $MIN$ and $MAX$",
+    "message": "值必须在 $MIN$ 和 $MAX$ 之间",
     "description": "Explains spin box minimum and maximum values to the user",
     "placeholders": {
       "min": {
@@ -2451,11 +2451,11 @@
     "message": "使用外部转发服务生成一个电子邮件别名。"
   },
   "forwarderDomainName": {
-    "message": "Email domain",
+    "message": "邮件域名",
     "description": "Labels the domain name email forwarder service option"
   },
   "forwarderDomainNameHint": {
-    "message": "Choose a domain that is supported by the selected service",
+    "message": "选择一个所选服务支持的域名",
     "description": "Guidance provided for email forwarding services that support multiple email domains."
   },
   "forwarderError": {
