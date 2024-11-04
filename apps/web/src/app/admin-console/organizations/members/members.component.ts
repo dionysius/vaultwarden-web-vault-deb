@@ -486,7 +486,7 @@ export class MembersComponent extends BaseMembersComponent<OrganizationUserView>
       const enableUpgradePasswordManagerSub = await firstValueFrom(
         this.enableUpgradePasswordManagerSub$,
       );
-      if (enableUpgradePasswordManagerSub) {
+      if (enableUpgradePasswordManagerSub && this.organization.canEditSubscription) {
         const reference = openChangePlanDialog(this.dialogService, {
           data: {
             organizationId: this.organization.id,
