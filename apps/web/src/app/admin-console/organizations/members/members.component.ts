@@ -518,6 +518,7 @@ export class MembersComponent extends BaseMembersComponent<OrganizationUserView>
         isOnSecretsManagerStandalone: this.orgIsOnSecretsManagerStandalone,
         initialTab: initialTab,
         numConfirmedMembers: this.dataSource.confirmedUserCount,
+        managedByOrganization: user?.managedByOrganization,
       },
     });
 
@@ -723,6 +724,40 @@ export class MembersComponent extends BaseMembersComponent<OrganizationUserView>
     }
 
     return true;
+  }
+
+  async deleteUser(user: OrganizationUserView) {
+    const confirmed = await this.dialogService.openSimpleDialog({
+      title: {
+        key: "deleteOrganizationUser",
+        placeholders: [this.userNamePipe.transform(user)],
+      },
+      content: { key: "deleteOrganizationUserWarning" },
+      type: "warning",
+      acceptButtonText: { key: "delete" },
+      cancelButtonText: { key: "cancel" },
+    });
+
+    if (!confirmed) {
+      return false;
+    }
+
+    this.actionPromise = this.organizationUserApiService.deleteOrganizationUser(
+      this.organization.id,
+      user.id,
+    );
+    try {
+      await this.actionPromise;
+      this.toastService.showToast({
+        variant: "success",
+        title: null,
+        message: this.i18nService.t("organizationUserDeleted", this.userNamePipe.transform(user)),
+      });
+      this.dataSource.removeUser(user);
+    } catch (e) {
+      this.validationService.showError(e);
+    }
+    this.actionPromise = null;
   }
 
   private async noMasterPasswordConfirmationDialog(user: OrganizationUserView) {

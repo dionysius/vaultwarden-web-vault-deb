@@ -275,4 +275,11 @@ export abstract class OrganizationUserApiService {
     organizationId: string,
     ids: string[],
   ): Promise<ListResponse<OrganizationUserBulkResponse>>;
+
+  /**
+   * Remove an organization user's access to the organization and delete their account data
+   * @param organizationId - Identifier for the organization the user belongs to
+   * @param id - Organization user identifier
+   */
+  abstract deleteOrganizationUser(organizationId: string, id: string): Promise<void>;
 }

@@ -264,6 +264,16 @@
         <button
           *ngIf="editMode"
           type="button"
+          bitIconButton="bwi-close"
+          buttonType="danger"
+          bitFormButton
+          [appA11yTitle]="'remove' | i18n"
+          [bitAction]="remove"
+          [disabled]="loading"
+        ></button>
+        <button
+          *ngIf="editMode && params.managedByOrganization === true"
+          type="button"
           bitIconButton="bwi-trash"
           buttonType="danger"
           bitFormButton
