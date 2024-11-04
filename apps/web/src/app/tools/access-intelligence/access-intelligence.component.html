@@ -15,7 +15,7 @@
     {{ "refresh" | i18n }}
   </a>
 </div>
-<bit-tab-group [(selectedIndex)]="tabIndex">
+<bit-tab-group [(selectedIndex)]="tabIndex" (selectedIndexChange)="onTabChange($event)">
   <bit-tab label="{{ 'allApplicationsWithCount' | i18n: apps.length }}">
     <tools-all-applications></tools-all-applications>
   </bit-tab>

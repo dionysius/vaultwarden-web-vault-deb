@@ -1,8 +1,7 @@
 import { CommonModule } from "@angular/common";
 import { Component } from "@angular/core";
 import { takeUntilDestroyed } from "@angular/core/rxjs-interop";
-import { ActivatedRoute } from "@angular/router";
-import { first } from "rxjs";
+import { ActivatedRoute, Router } from "@angular/router";
 
 import { JslibModule } from "@bitwarden/angular/jslib.module";
 import { AsyncActionsModule, ButtonModule, TabsModule } from "@bitwarden/components";
@@ -18,7 +17,7 @@ import { PasswordHealthComponent } from "./password-health.component";
 
 export enum AccessIntelligenceTabType {
   AllApps = 0,
-  PriorityApps = 1,
+  CriticalApps = 1,
   NotifiedMembers = 2,
 }
 
@@ -58,8 +57,19 @@ export class AccessIntelligenceComponent {
     );
   }
 
-  constructor(route: ActivatedRoute) {
-    route.queryParams.pipe(takeUntilDestroyed(), first()).subscribe(({ tabIndex }) => {
+  onTabChange = async (newIndex: number) => {
+    await this.router.navigate([], {
+      relativeTo: this.route,
+      queryParams: { tabIndex: newIndex },
+      queryParamsHandling: "merge",
+    });
+  };
+
+  constructor(
+    protected route: ActivatedRoute,
+    private router: Router,
+  ) {
+    route.queryParams.pipe(takeUntilDestroyed()).subscribe(({ tabIndex }) => {
       this.tabIndex = !isNaN(tabIndex) ? tabIndex : AccessIntelligenceTabType.AllApps;
     });
   }

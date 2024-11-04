@@ -1,7 +1,7 @@
 import { Component, DestroyRef, inject, OnInit } from "@angular/core";
 import { takeUntilDestroyed } from "@angular/core/rxjs-interop";
 import { FormControl } from "@angular/forms";
-import { ActivatedRoute } from "@angular/router";
+import { ActivatedRoute, Router } from "@angular/router";
 import { debounceTime, map } from "rxjs";
 
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
@@ -12,6 +12,7 @@ import { HeaderModule } from "../../layouts/header/header.module";
 import { SharedModule } from "../../shared";
 import { PipesModule } from "../../vault/individual-vault/pipes/pipes.module";
 
+import { AccessIntelligenceTabType } from "./access-intelligence.component";
 import { applicationTableMockData } from "./application-table.mock";
 
 @Component({
@@ -26,8 +27,10 @@ export class CriticalApplicationsComponent implements OnInit {
   protected searchControl = new FormControl("", { nonNullable: true });
   private destroyRef = inject(DestroyRef);
   protected loading = false;
+  protected organizationId: string;
   noItemsIcon = Icons.Security;
   // MOCK DATA
+  protected mockData = applicationTableMockData;
   protected mockAtRiskMembersCount = 0;
   protected mockAtRiskAppsCount = 0;
   protected mockTotalMembersCount = 0;
@@ -38,18 +41,26 @@ export class CriticalApplicationsComponent implements OnInit {
       .pipe(
         takeUntilDestroyed(this.destroyRef),
         map(async (params) => {
-          // const organizationId = params.get("organizationId");
+          this.organizationId = params.get("organizationId");
           // TODO: use organizationId to fetch data
         }),
       )
       .subscribe();
   }
 
+  goToAllAppsTab = async () => {
+    await this.router.navigate([`organizations/${this.organizationId}/access-intelligence`], {
+      queryParams: { tabIndex: AccessIntelligenceTabType.AllApps },
+      queryParamsHandling: "merge",
+    });
+  };
+
   constructor(
     protected i18nService: I18nService,
     protected activatedRoute: ActivatedRoute,
+    protected router: Router,
   ) {
-    this.dataSource.data = applicationTableMockData;
+    this.dataSource.data = []; //applicationTableMockData;
     this.searchControl.valueChanges
       .pipe(debounceTime(200), takeUntilDestroyed())
       .subscribe((v) => (this.dataSource.filter = v));

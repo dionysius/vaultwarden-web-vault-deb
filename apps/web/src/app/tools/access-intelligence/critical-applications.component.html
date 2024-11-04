@@ -19,7 +19,9 @@
       </p>
     </ng-container>
     <ng-container slot="button">
-      <button bitButton buttonType="primary" type="button">{{ "markCriticalApps" | i18n }}</button>
+      <button (click)="goToAllAppsTab()" bitButton buttonType="primary" type="button">
+        {{ "markCriticalApps" | i18n }}
+      </button>
     </ng-container>
   </bit-no-items>
 </div>

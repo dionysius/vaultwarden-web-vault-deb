@@ -40,6 +40,7 @@ export class AllApplicationsComponent implements OnInit {
   protected loading = false;
   protected organization: Organization;
   noItemsIcon = Icons.Security;
+  protected markingAsCritical = false;
 
   // MOCK DATA
   protected mockData = applicationTableMockData;
@@ -76,8 +77,18 @@ export class AllApplicationsComponent implements OnInit {
       .subscribe((v) => (this.dataSource.filter = v));
   }
 
+  goToCreateNewLoginItem = async () => {
+    // TODO: implement
+    this.toastService.showToast({
+      variant: "warning",
+      title: null,
+      message: "Not yet implemented",
+    });
+  };
+
   markAppsAsCritical = async () => {
     // TODO: Send to API once implemented
+    this.markingAsCritical = true;
     return new Promise((resolve) => {
       setTimeout(() => {
         this.selectedIds.clear();
@@ -87,6 +98,7 @@ export class AllApplicationsComponent implements OnInit {
           message: this.i18nService.t("appsMarkedAsCritical"),
         });
         resolve(true);
+        this.markingAsCritical = false;
       }, 1000);
     });
   };
