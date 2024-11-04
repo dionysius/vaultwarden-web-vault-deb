@@ -2,8 +2,8 @@
   "allApplications": {
     "message": "Tutte le applicazioni"
   },
-  "priorityApplications": {
-    "message": "Applicazioni prioritarie"
+  "criticalApplications": {
+    "message": "Critical applications"
   },
   "accessIntelligence": {
     "message": "Intelligence sugli accessi"
@@ -35,8 +35,11 @@
       }
     }
   },
-  "priorityApplicationsWithCount": {
-    "message": "Applicazioni prioritarie ($COUNT$)",
+  "createNewLoginItem": {
+    "message": "Create new login item"
+  },
+  "criticalApplicationsWithCount": {
+    "message": "Critical applications ($COUNT$)",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -53,14 +56,26 @@
       }
     }
   },
-  "noPriorityApplicationsTitle": {
-    "message": "Non hai impostato nessuna applicazione come prioritaria"
+  "noAppsInOrgTitle": {
+    "message": "No applications found in $ORG NAME$",
+    "placeholders": {
+      "org name": {
+        "content": "$1",
+        "example": "Company Name"
+      }
+    }
   },
-  "noPriorityApplicationsDescription": {
+  "noAppsInOrgDescription": {
+    "message": "As users save logins, applications appear here, showing any at-risk passwords. Mark critical apps and notify users to update passwords."
+  },
+  "noCriticalAppsTitle": {
+    "message": "You haven't marked any applications as a Critical"
+  },
+  "noCriticalAppsDescription": {
     "message": "Select your most critical applications to discover at-risk passwords, and notify users to change those passwords."
   },
-  "markPriorityApps": {
-    "message": "Mark priority apps"
+  "markCriticalApps": {
+    "message": "Mark critical apps"
   },
   "markAppAsCritical": {
     "message": "Mark app as critical"
@@ -74,8 +89,14 @@
   "atRiskPasswords": {
     "message": "At-risk passwords"
   },
+  "requestPasswordChange": {
+    "message": "Request password change"
+  },
   "totalPasswords": {
     "message": "Total passwords"
+  },
+  "searchApps": {
+    "message": "Search applications"
   },
   "atRiskMembers": {
     "message": "At-risk members"

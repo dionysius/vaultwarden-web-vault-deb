@@ -2,8 +2,8 @@
   "allApplications": {
     "message": "Всички приложения"
   },
-  "priorityApplications": {
-    "message": "Приложения с приоритет"
+  "criticalApplications": {
+    "message": "Важни приложения"
   },
   "accessIntelligence": {
     "message": "Access Intelligence"
@@ -35,8 +35,11 @@
       }
     }
   },
-  "priorityApplicationsWithCount": {
-    "message": "Приложения с приоритет ($COUNT$)",
+  "createNewLoginItem": {
+    "message": "Създаване на нов елемент за вписване"
+  },
+  "criticalApplicationsWithCount": {
+    "message": "Важни приложения ($COUNT$)",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -53,14 +56,26 @@
       }
     }
   },
-  "noPriorityApplicationsTitle": {
-    "message": "Не сте отбелязали нито едно приложение като приоритетно"
+  "noAppsInOrgTitle": {
+    "message": "Няма намерени приложения в $ORG NAME$",
+    "placeholders": {
+      "org name": {
+        "content": "$1",
+        "example": "Company Name"
+      }
+    }
   },
-  "noPriorityApplicationsDescription": {
+  "noAppsInOrgDescription": {
+    "message": "Когато потребителите запазват данните си за вписване, тук ще се появяват приложения, а също и ще се показват паролите в риск. Можете да отбелязвате важните приложения и да напомняте на потребителите да сменят паролите си."
+  },
+  "noCriticalAppsTitle": {
+    "message": "Не сте отбелязали нито едно приложение като важно"
+  },
+  "noCriticalAppsDescription": {
     "message": "Изберете най-важните си приложения, за да откриете паролите, които може да са в риск, и да известите потребителите да ги сменят."
   },
-  "markPriorityApps": {
-    "message": "Отбелязване на приоритетни приложения"
+  "markCriticalApps": {
+    "message": "Отбележете важните приложения"
   },
   "markAppAsCritical": {
     "message": "Отбелязване на приложението като важно"
@@ -74,8 +89,14 @@
   "atRiskPasswords": {
     "message": "Пароли в риск"
   },
+  "requestPasswordChange": {
+    "message": "Заявка за промяна на паролата"
+  },
   "totalPasswords": {
     "message": "Общо пароли"
+  },
+  "searchApps": {
+    "message": "Търсене на приложения"
   },
   "atRiskMembers": {
     "message": "Членове в риск"

@@ -2,8 +2,8 @@
   "allApplications": {
     "message": "Všetky aplikácie"
   },
-  "priorityApplications": {
-    "message": "Prioritné aplikácie"
+  "criticalApplications": {
+    "message": "Kritické aplikácie"
   },
   "accessIntelligence": {
     "message": "Access Intelligence"
@@ -35,8 +35,11 @@
       }
     }
   },
-  "priorityApplicationsWithCount": {
-    "message": "Prioritné aplikácie ($COUNT$)",
+  "createNewLoginItem": {
+    "message": "Pridať novu položku s prihlásením"
+  },
+  "criticalApplicationsWithCount": {
+    "message": "Kritické aplikácie ($COUNT$)",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -53,14 +56,26 @@
       }
     }
   },
-  "noPriorityApplicationsTitle": {
-    "message": "Neoznačili ste žiadne aplikácie ako prioritné"
+  "noAppsInOrgTitle": {
+    "message": "Neboli nájdené žiadne aplikácie v $ORG NAME$",
+    "placeholders": {
+      "org name": {
+        "content": "$1",
+        "example": "Company Name"
+      }
+    }
   },
-  "noPriorityApplicationsDescription": {
+  "noAppsInOrgDescription": {
+    "message": "Keď používatelia uložia prihlasovacie údaje, tu sa zobrazia aplikácie a ohrozené heslá. Označte kritické aplikácie a upozornite používateľov, aby si aktualizovali heslá."
+  },
+  "noCriticalAppsTitle": {
+    "message": "Neoznačili ste žiadne aplikácie ako kritické"
+  },
+  "noCriticalAppsDescription": {
     "message": "Pre odhalenie ohrozených hesiel a upozornenie používateľov aby si ich zmenili vyberte vaše najkritickejšie aplikácie."
   },
-  "markPriorityApps": {
-    "message": "Označiť prioritné aplikácie"
+  "markCriticalApps": {
+    "message": "Označiť kritické aplikácie"
   },
   "markAppAsCritical": {
     "message": "Označiť aplikáciu ako kritickú"
@@ -74,8 +89,14 @@
   "atRiskPasswords": {
     "message": "Ohrozených hesiel"
   },
+  "requestPasswordChange": {
+    "message": "Požiadať o zmenu hesla"
+  },
   "totalPasswords": {
     "message": "Celkom hesiel"
+  },
+  "searchApps": {
+    "message": "Vyhľadať aplikácie"
   },
   "atRiskMembers": {
     "message": "Ohrozených členov"

@@ -2,8 +2,8 @@
   "allApplications": {
     "message": "Kaikki sovellukset"
   },
-  "priorityApplications": {
-    "message": "Ensisijaiset sovellukset"
+  "criticalApplications": {
+    "message": "Kriittiset sovellukset"
   },
   "accessIntelligence": {
     "message": "Access Intelligence"
@@ -12,10 +12,10 @@
     "message": "Salasanariski"
   },
   "discoverAtRiskPasswords": {
-    "message": "Discover at-risk passwords and notify users to change those passwords."
+    "message": "Havaitse vaarantuneet salasanat ja ilmoita käyttäjille niiden vaihdosta."
   },
   "dataLastUpdated": {
-    "message": "Data last updated: $DATE$",
+    "message": "Tiedot päivitetty viimeksi: $DATE$",
     "placeholders": {
       "date": {
         "content": "$1",
@@ -24,7 +24,7 @@
     }
   },
   "notifiedMembers": {
-    "message": "Notified members"
+    "message": "Ilmoitetut jäsenet"
   },
   "allApplicationsWithCount": {
     "message": "Kaikki sovellukset ($COUNT$)",
@@ -35,8 +35,11 @@
       }
     }
   },
-  "priorityApplicationsWithCount": {
-    "message": "Ensisijaiset sovellukset ($COUNT$)",
+  "createNewLoginItem": {
+    "message": "Luo uusi kirjautumiskohde"
+  },
+  "criticalApplicationsWithCount": {
+    "message": "Kriittiset sovellukset ($COUNT$)",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -45,7 +48,7 @@
     }
   },
   "notifiedMembersWithCount": {
-    "message": "Notified members ($COUNT$)",
+    "message": "Ilmoitetut jäsenet ($COUNT$)",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -53,20 +56,32 @@
       }
     }
   },
-  "noPriorityApplicationsTitle": {
-    "message": "You haven’t marked any applications as a priority"
+  "noAppsInOrgTitle": {
+    "message": "Sovelluksia ei löytynyt organisaatiosta $ORG NAME$",
+    "placeholders": {
+      "org name": {
+        "content": "$1",
+        "example": "Company Name"
+      }
+    }
   },
-  "noPriorityApplicationsDescription": {
-    "message": "Select your most critical applications to discover at-risk passwords, and notify users to change those passwords."
+  "noAppsInOrgDescription": {
+    "message": "Kun käyttäjät tallentavat kirjautumistietoja, näytetään sovellukset ja vaarantuneet salasanat täällä. Merkitse kriittiset sovellukset ja ilmoita käyttäjille salasanojen vaihdosta."
   },
-  "markPriorityApps": {
-    "message": "Mark priority apps"
+  "noCriticalAppsTitle": {
+    "message": "Sovelluksia ei ole merkitty kriittisiksi"
+  },
+  "noCriticalAppsDescription": {
+    "message": "Valitse kriittisimmät sovelluksesi havaitaksesi vaarantuneet salasanat ja ilmoita käyttäjille niiden vaihdosta."
+  },
+  "markCriticalApps": {
+    "message": "Merkitse kriittiset sovellukset"
   },
   "markAppAsCritical": {
-    "message": "Mark app as critical"
+    "message": "Merkitse sovellus kriittiseksi"
   },
   "appsMarkedAsCritical": {
-    "message": "Apps marked as critical"
+    "message": "Kriittisiksi merkityt sovellukset"
   },
   "application": {
     "message": "Sovellus"
@@ -74,8 +89,14 @@
   "atRiskPasswords": {
     "message": "Riskialttiit salasanat"
   },
+  "requestPasswordChange": {
+    "message": "Pyydä salasanan vaihtoa"
+  },
   "totalPasswords": {
     "message": "Salasanoja yhteensä"
+  },
+  "searchApps": {
+    "message": "Etsi sovelluksia"
   },
   "atRiskMembers": {
     "message": "Riskialttiit jäsenet"
@@ -1249,7 +1270,7 @@
     "message": "Sinulla ei ole kokoelman kaikkien kohteiden tarkastelun sallivia käyttöoikeuksia."
   },
   "youDoNotHavePermissions": {
-    "message": "You do not have permissions to this collection"
+    "message": "Sinulla ei ole kokoelman käyttöoikeutta"
   },
   "noCollectionsInList": {
     "message": "Näytettäviä kokoelmia ei ole."
@@ -1717,7 +1738,7 @@
     "message": "Ole varovainen! Näitä toimintoja ei ole mahdollista kumota!"
   },
   "dangerZoneDescSingular": {
-    "message": "Careful, this action is not reversible!"
+    "message": "Ole varoivainen. Tätä ei ole mahdollista perua!"
   },
   "deauthorizeSessions": {
     "message": "Mitätöi kaikki istunnot"
@@ -1732,7 +1753,7 @@
     "message": "Kaikki istunnot mitätöitiin"
   },
   "accountIsManagedMessage": {
-    "message": "This account is managed by $ORGANIZATIONNAME$",
+    "message": "Tiliä hallinnoi $ORGANIZATIONNAME$",
     "placeholders": {
       "organizationName": {
         "content": "$1",
@@ -2701,7 +2722,7 @@
     "message": "Lataa lisenssi"
   },
   "viewBillingToken": {
-    "message": "View Billing Token"
+    "message": "Näytä laskutustunniste"
   },
   "updateLicense": {
     "message": "Päivitä lisenssi"
@@ -3198,7 +3219,7 @@
     }
   },
   "inviteSingleEmailDesc": {
-    "message": "You have 1 invite remaining."
+    "message": "Sinulla on yksi kutsu jäljellä."
   },
   "userUsingTwoStep": {
     "message": "Käyttäjä on suojannut tilinsä kaksivaiheisella kirjautumisella."
@@ -3820,7 +3841,7 @@
     "message": "Liity organisaatioon"
   },
   "joinOrganizationName": {
-    "message": "Join $ORGANIZATIONNAME$",
+    "message": "Liity organisaatioon $ORGANIZATIONNAME$",
     "placeholders": {
       "organizationName": {
         "content": "$1",
@@ -4668,7 +4689,7 @@
     "message": "Estä jäseniä liittymästä muihin organisaatioihin."
   },
   "singleOrgPolicyDesc": {
-    "message": "Restrict members from joining other organizations. This policy is required for organizations that have enabled domain verification."
+    "message": "Estä jäseniä liittymästä muihin organisaatioihin. Tätä käytäntöä tarvitaan organisaatioille, jotka käyttävät verkkotunnustodennusta."
   },
   "singleOrgBlockCreateMessage": {
     "message": "Nykyisen organisaatiosi käytäntö ei salli liittymistä yhtä useampaan organisaatioon. Ole yhteydessä organisaatiosi ylläpitoon tai liity eri Bitwarden-tilin kautta."
@@ -4677,7 +4698,7 @@
     "message": "Organisaation jäsenet, jotka eivät ole omistajia tai ylläpitäjiä ja jotka ovat jo toisen organisaation jäseniä, poistetaan organisaatiostasi."
   },
   "singleOrgPolicyMemberWarning": {
-    "message": "Non-compliant members will be placed in revoked status until they leave all other organizations. Administrators are exempt and can restore members once compliance is met."
+    "message": "Käytännöstä poikkeavat jäsenet asetetaan mitätöityyn tilaan, kunnes he poistuvat kaikista muista organisaatioista. Poikkeuksena ylläpitäjät, jotka voivat palauttaa jäsenten tilan vaatimusten täytyttyä."
   },
   "requireSso": {
     "message": "Vaadi todennus kertakirjautumisella"
@@ -6159,7 +6180,7 @@
     "message": "Näytä laskutuksen synkronointitunniste"
   },
   "generateBillingToken": {
-    "message": "Generate billing token"
+    "message": "Luo laskutustunniste"
   },
   "copyPasteBillingSync": {
     "message": "Kopioi ja liitä tämä tunniste itse ylläpitämäsi organisaation laskutuksen synkronoinnin asetuksiin."
@@ -6168,7 +6189,7 @@
     "message": "Laskutuksen synkronointitunniste mahdollistaa organisaation tilausasetusten tarkastelun ja muokkauksen."
   },
   "manageBillingTokenSync": {
-    "message": "Manage Billing Token"
+    "message": "Hallitse laskutustunnistetta"
   },
   "setUpBillingSync": {
     "message": "Määritä laskutuksen synkronointi"
@@ -6234,7 +6255,7 @@
     "message": "Laskutuksen synkronointitunniste"
   },
   "automaticBillingSyncDesc": {
-    "message": "Automatic sync unlocks Families sponsorships and allows you to sync your license without uploading a file. After making updates in the Bitwarden cloud server, select Sync License to apply changes."
+    "message": "Automaattinen synkronointi avaa Families-sponsoroinnin ja mahdollistaa lisenssisi automaattisen synkronoinnin ilman tiedostolatausta. Tehtyäsi muutokset Bitwardenin pilvipalvelimelle, ota ne käyttöön valitsemalla \"Synkronoi lisenssi\"."
   },
   "active": {
     "message": "Aktiivinen"
@@ -6519,7 +6540,7 @@
     "description": "Labels the domain name email forwarder service option"
   },
   "forwarderDomainNameHint": {
-    "message": "Choose a domain that is supported by the selected service",
+    "message": "Valitse verkkotunnus, jota valittu palvelu tukee",
     "description": "Guidance provided for email forwarding services that support multiple email domains."
   },
   "forwarderError": {
@@ -7672,7 +7693,7 @@
     "message": "Manuaalinen tallennus"
   },
   "manualBillingTokenUploadDesc": {
-    "message": "If you do not want to opt into billing sync, manually upload your license here. This will not automatically unlock Families sponsorships."
+    "message": "Jos et halua käyttää laskutuksen synkronointia, lisää lisenssisi manuaalisesti tästä. Tämä ei avaa Families-sponsorointia automaattisesti."
   },
   "syncLicense": {
     "message": "Synkronoi lisenssi"
@@ -8001,7 +8022,7 @@
     "description": "Used as a card title description on the set password page to explain why the user is there"
   },
   "cardMetrics": {
-    "message": "out of $TOTAL$",
+    "message": "/$TOTAL$",
     "placeholders": {
       "total": {
         "content": "$1",
@@ -8271,10 +8292,10 @@
     "message": "Rajoita kokoelmien luonti ja poisto omistajille ja ylläpitäjille"
   },
   "limitCollectionCreationDesc": {
-    "message": "Limit collection creation to owners and admins"
+    "message": "Rajoita kokoelmien luonti omistajille ja ylläpitäjille"
   },
   "limitCollectionDeletionDesc": {
-    "message": "Limit collection deletion to owners and admins"
+    "message": "Rajoita kokoelmien poisto omistajille ja ylläpitäjille"
   },
   "allowAdminAccessToAllCollectionItemsDesc": {
     "message": "Omistajat ja ylläpitäjät voivat hallita kaikkia kokoelmia ja kohteita"
@@ -8322,7 +8343,7 @@
     "message": "Palvelimen URL"
   },
   "selfHostBaseUrl": {
-    "message": "Self-host server URL",
+    "message": "Itse ylläpidetyn palvelimen URL-osoite",
     "description": "Label for field requesting a self-hosted integration service URL"
   },
   "aliasDomain": {
@@ -9466,19 +9487,19 @@
     "message": "Muokkaa käyttöoikeuksia"
   },
   "textHelpText": {
-    "message": "Use text fields for data like security questions"
+    "message": "Käytä tekstikenttiä esimerkiksi turvakysymysten kaltaisille tiedoille."
   },
   "hiddenHelpText": {
-    "message": "Use hidden fields for sensitive data like a password"
+    "message": "Käytä piilotettuja kenttiä esimerkiksi salasanojen kaltaisille arkaluontoisille tiedoille."
   },
   "checkBoxHelpText": {
-    "message": "Use checkboxes if you'd like to autofill a form's checkbox, like a remember email"
+    "message": "Käytä valintaruutuja esimerkiksi sähköpostiosoitteen muistamisen kaltaisten valintaruutujen automaattiseen merkintään."
   },
   "linkedHelpText": {
-    "message": "Use a linked field when you are experiencing autofill issues for a specific website."
+    "message": "Käytä linkitettyjä kenttiä kohdatessasi sivustokohtaisia automaattitäytön ongelmia."
   },
   "linkedLabelHelpText": {
-    "message": "Enter the the field's html id, name, aria-label, or placeholder."
+    "message": "Syötä kentän HTML-koodista löytyvä id-, name-, aria-label- tai placeholder-arvo."
   },
   "uppercaseDescription": {
     "message": "Sisällytä isoja kirjaimia",
@@ -9522,14 +9543,14 @@
     "message": "Haluatko varmasti poistaa liitteen pysyvästi?"
   },
   "manageSubscriptionFromThe": {
-    "message": "Manage subscription from the",
+    "message": "Hallitse tilausta sivulta",
     "description": "This represents the beginning of a sentence. The full sentence will be 'Manage subscription from the Provider Portal', but 'Provider Portal' will be a link and thus cannot be included in the translation file."
   },
   "toHostBitwardenOnYourOwnServer": {
     "message": "To host Bitwarden on your own server, you will need to upload your license file. To support Free Families plans and advanced billing capabilities for your self-hosted organization, you will need to set up automatic sync in your self-hosted organization."
   },
   "selfHostingTitleProper": {
-    "message": "Self-Hosting"
+    "message": "Itse ylläpidetty"
   },
   "verified-domain-single-org-warning": {
     "message": "Verifying a domain will turn on the single organization policy."

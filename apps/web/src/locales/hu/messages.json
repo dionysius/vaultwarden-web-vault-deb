@@ -2,8 +2,8 @@
   "allApplications": {
     "message": "Összes alkalmazás"
   },
-  "priorityApplications": {
-    "message": "Prioritás alkalmazások"
+  "criticalApplications": {
+    "message": "Kritikus alkalmazások"
   },
   "accessIntelligence": {
     "message": "Elérés intelligencia"
@@ -35,8 +35,11 @@
       }
     }
   },
-  "priorityApplicationsWithCount": {
-    "message": "Prioriitás alkalmazások ($COUNT$)",
+  "createNewLoginItem": {
+    "message": "Új bejelentkezési elem létrehozása"
+  },
+  "criticalApplicationsWithCount": {
+    "message": "Kritikus alkalmazások ($COUNT$)",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -53,14 +56,26 @@
       }
     }
   },
-  "noPriorityApplicationsTitle": {
-    "message": "Egyetlen alkalmazás sem lett megjelölve kiemeltként."
+  "noAppsInOrgTitle": {
+    "message": "Nem találhatók alkalmazások: $ORG NAME$",
+    "placeholders": {
+      "org name": {
+        "content": "$1",
+        "example": "Company Name"
+      }
+    }
   },
-  "noPriorityApplicationsDescription": {
+  "noAppsInOrgDescription": {
+    "message": "Amint a felhasználók elmentik a bejelentkezéseket, itt megjelennek az alkalmazások és megjelenítik a veszélyeztetett jelszavakat. Jelöljük meg a kritikus alkalmazásokat és értesítsük a felhasználókat a jelszavak frissítéséről."
+  },
+  "noCriticalAppsTitle": {
+    "message": "Egyetlen alkalmazás sem lett megjelölve kritikusként."
+  },
+  "noCriticalAppsDescription": {
     "message": "Válasszuk ki a legkritikusabb alkalmazásokat a veszélyeztetett jelszavak felfedezéséhez és értesítsük a felhasználókat a jelszavak megváltoztatásáról."
   },
-  "markPriorityApps": {
-    "message": "Kiemelt alkalmazások megjelölése"
+  "markCriticalApps": {
+    "message": "Kritikus alkalmazások megjelölése"
   },
   "markAppAsCritical": {
     "message": "Alkalmazások megjelölése kritikusként"
@@ -74,8 +89,14 @@
   "atRiskPasswords": {
     "message": "Veszélyes jelszavak"
   },
+  "requestPasswordChange": {
+    "message": "Jelszó változtatás kérése"
+  },
   "totalPasswords": {
     "message": "Összes jelszavak száma"
+  },
+  "searchApps": {
+    "message": "Alkalmazások keresése"
   },
   "atRiskMembers": {
     "message": "Veszélyes tagok"

@@ -2,8 +2,8 @@
   "allApplications": {
     "message": "Toutes les applications"
   },
-  "priorityApplications": {
-    "message": "Applications prioritaires"
+  "criticalApplications": {
+    "message": "Applications critiques"
   },
   "accessIntelligence": {
     "message": "Accéder à l'Intelligence"
@@ -35,8 +35,11 @@
       }
     }
   },
-  "priorityApplicationsWithCount": {
-    "message": "Applications prioritaires ($COUNT$)",
+  "createNewLoginItem": {
+    "message": "Créer un nouvel élément de connexion"
+  },
+  "criticalApplicationsWithCount": {
+    "message": "Applications critiques ($COUNT$)",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -53,14 +56,26 @@
       }
     }
   },
-  "noPriorityApplicationsTitle": {
-    "message": "Vous n'avez marqué aucune application comme prioritaire"
+  "noAppsInOrgTitle": {
+    "message": "Aucune application trouvée dans $ORG NOM$",
+    "placeholders": {
+      "org name": {
+        "content": "$1",
+        "example": "Company Name"
+      }
+    }
   },
-  "noPriorityApplicationsDescription": {
+  "noAppsInOrgDescription": {
+    "message": "Au fur et à mesure que les utilisateurs enregistrent des identifiants, les applications apparaissent ici, montrant les mots de passe à risque. Marquez les applications critiques et avertissez les utilisateurs de mettre à jour les mots de passe."
+  },
+  "noCriticalAppsTitle": {
+    "message": "Vous n'avez marqué aucune application comme Critique"
+  },
+  "noCriticalAppsDescription": {
     "message": "Sélectionnez vos applications les plus critiques pour découvrir les mots de passe à risque et avertissez les utilisateurs de modifier ces mots de passe."
   },
-  "markPriorityApps": {
-    "message": "Marquer les applications prioritaires"
+  "markCriticalApps": {
+    "message": "Marquer les applications critiques"
   },
   "markAppAsCritical": {
     "message": "Marquer l'application comme critique"
@@ -74,8 +89,14 @@
   "atRiskPasswords": {
     "message": "Mots de passes à risque"
   },
+  "requestPasswordChange": {
+    "message": "Demander un changement de mot de passe"
+  },
   "totalPasswords": {
     "message": "Total des mots de passe"
+  },
+  "searchApps": {
+    "message": "Rechercher des applications"
   },
   "atRiskMembers": {
     "message": "Membres à risque"

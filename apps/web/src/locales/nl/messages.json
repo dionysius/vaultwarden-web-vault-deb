@@ -2,8 +2,8 @@
   "allApplications": {
     "message": "Alle applicaties"
   },
-  "priorityApplications": {
-    "message": "Applicaties met prioriteit"
+  "criticalApplications": {
+    "message": "Belangrijke applicaties"
   },
   "accessIntelligence": {
     "message": "Toegangsintelligentie"
@@ -35,8 +35,11 @@
       }
     }
   },
-  "priorityApplicationsWithCount": {
-    "message": "Applicaties met prioriteit ($COUNT$)",
+  "createNewLoginItem": {
+    "message": "Nieuw login item aanmaken"
+  },
+  "criticalApplicationsWithCount": {
+    "message": "Belangrijke applicaties ($COUNT$)",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -53,14 +56,26 @@
       }
     }
   },
-  "noPriorityApplicationsTitle": {
+  "noAppsInOrgTitle": {
+    "message": "Nieuwe applicaties gevonden in $ORG NAME$",
+    "placeholders": {
+      "org name": {
+        "content": "$1",
+        "example": "Company Name"
+      }
+    }
+  },
+  "noAppsInOrgDescription": {
+    "message": "Als gebruikers inloggegevens opslaan, verschijnen hier applicaties met wachtwoorden die risico lopen. Markeer belangrijke applicaties en attendeer gebruikers op het bijwerken van wachtwoorden."
+  },
+  "noCriticalAppsTitle": {
     "message": "Je hebt nog geen applicaties als belangrijk aangewezen"
   },
-  "noPriorityApplicationsDescription": {
+  "noCriticalAppsDescription": {
     "message": "Wijs je meest belangrijke applicaties aan om risicovolle wachtwoorden te ontdekken en gebruikers te attenderen deze te wijzigen."
   },
-  "markPriorityApps": {
-    "message": "Belangrijke apps aanwijzen"
+  "markCriticalApps": {
+    "message": "Markeer belangrijke apps"
   },
   "markAppAsCritical": {
     "message": "App aanwijzen als belangrijk"
@@ -74,8 +89,14 @@
   "atRiskPasswords": {
     "message": "Wachtwoorden in gevaar"
   },
+  "requestPasswordChange": {
+    "message": "Hoofdwachtwijziging vragen"
+  },
   "totalPasswords": {
     "message": "Totaal wachtwoorden"
+  },
+  "searchApps": {
+    "message": "Applicaties zoeken"
   },
   "atRiskMembers": {
     "message": "Leden in gevaar"

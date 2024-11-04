@@ -2,8 +2,8 @@
   "allApplications": {
     "message": "Alle applikationer"
   },
-  "priorityApplications": {
-    "message": "Prioriterede applikationer"
+  "criticalApplications": {
+    "message": "Kritiske applikationer"
   },
   "accessIntelligence": {
     "message": "Adgangsintelligens"
@@ -35,8 +35,11 @@
       }
     }
   },
-  "priorityApplicationsWithCount": {
-    "message": "Prioriterede applikationer ($COUNT$)",
+  "createNewLoginItem": {
+    "message": "Opret nyt login-emne"
+  },
+  "criticalApplicationsWithCount": {
+    "message": "Kritiske applikationer ($COUNT$)",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -53,14 +56,26 @@
       }
     }
   },
-  "noPriorityApplicationsTitle": {
-    "message": "Ingen programmer er markret som en prioritet"
+  "noAppsInOrgTitle": {
+    "message": "Ingen applikationer fundet i $ORG NAVN$",
+    "placeholders": {
+      "org name": {
+        "content": "$1",
+        "example": "Company Name"
+      }
+    }
   },
-  "noPriorityApplicationsDescription": {
-    "message": "Vælg de mest kritiske programmer for at afsløre risikable adgangskoder og give brugerne besked om at disse."
+  "noAppsInOrgDescription": {
+    "message": "Når brugerne gemmer logins, fremgår applikationer med udsatte adgangskoder her. Markér kritiske appikationer og giv brugerne besked om at opdatere adgangskoder."
   },
-  "markPriorityApps": {
-    "message": "Markér prioriterede apps"
+  "noCriticalAppsTitle": {
+    "message": "Ingen applikationer markret som Kritisk"
+  },
+  "noCriticalAppsDescription": {
+    "message": "Vælg de mest kritiske applikationer for at afsløre udsatte adgangskoder og give brugerne besked om at ændre disse."
+  },
+  "markCriticalApps": {
+    "message": "Markér kritiske applikationer"
   },
   "markAppAsCritical": {
     "message": "Markér app som kritisk"
@@ -74,8 +89,14 @@
   "atRiskPasswords": {
     "message": "Udsatte adgangskoder"
   },
+  "requestPasswordChange": {
+    "message": "Anmod om adgangskodeskift"
+  },
   "totalPasswords": {
     "message": "Adgangskoder i alt"
+  },
+  "searchApps": {
+    "message": "Søg i applikationer"
   },
   "atRiskMembers": {
     "message": "Udsatte medlemmer"

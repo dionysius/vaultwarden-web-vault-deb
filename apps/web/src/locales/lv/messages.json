@@ -2,8 +2,8 @@
   "allApplications": {
     "message": "Visas lietotnes"
   },
-  "priorityApplications": {
-    "message": "Svarīgas lietotnes"
+  "criticalApplications": {
+    "message": "Kritiskas lietotnes"
   },
   "accessIntelligence": {
     "message": "Piekļuves inteliģence"
@@ -35,8 +35,11 @@
       }
     }
   },
-  "priorityApplicationsWithCount": {
-    "message": "Svarīgas lietotnes ($COUNT$)",
+  "createNewLoginItem": {
+    "message": "Izveidot jaunu pieteikšanās vienumu"
+  },
+  "criticalApplicationsWithCount": {
+    "message": "Kritiskas lietotnes ($COUNT$)",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -53,14 +56,26 @@
       }
     }
   },
-  "noPriorityApplicationsTitle": {
-    "message": "Neviena lietotne nav atzīmēta kā būtiska"
+  "noAppsInOrgTitle": {
+    "message": "$ORG NAME$ netika atrasta neviena lietotne",
+    "placeholders": {
+      "org name": {
+        "content": "$1",
+        "example": "Company Name"
+      }
+    }
   },
-  "noPriorityApplicationsDescription": {
+  "noAppsInOrgDescription": {
+    "message": "Tiklīdz lietotāji saglabā pieteikšanās vienumus, šeit parādās lietotnes, norādot uz jebkurām riskam pakļautām parolēm. Atzīmēt kritiskās lietotnēs un apziņot lietotājus, lai atjaunina paroles."
+  },
+  "noCriticalAppsTitle": {
+    "message": "Neviena lietotne nav atzīmēta kā kritiska"
+  },
+  "noCriticalAppsDescription": {
     "message": "Atlasi kritiskākās lietotnes, la iatklātu riskam pakļautas paroles un apziņotu lietotājus, lai tās nomaina!"
   },
-  "markPriorityApps": {
-    "message": "Atzīmēt būtiskās lietotnes"
+  "markCriticalApps": {
+    "message": "Atzīmēt kritiskas lietotnes"
   },
   "markAppAsCritical": {
     "message": "Atzīmēt lietotni kā kritisku"
@@ -74,8 +89,14 @@
   "atRiskPasswords": {
     "message": "Riskam pakļautās paroles"
   },
+  "requestPasswordChange": {
+    "message": "Pieprasīt paroles nomaiņu"
+  },
   "totalPasswords": {
     "message": "Kopējais paroļu skaits"
+  },
+  "searchApps": {
+    "message": "Meklēt lietotnes"
   },
   "atRiskMembers": {
     "message": "Riskam pakļautie dalībnieki"

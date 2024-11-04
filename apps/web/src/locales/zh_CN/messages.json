@@ -1,21 +1,21 @@
 {
   "allApplications": {
-    "message": "All applications"
+    "message": "所有应用程序"
   },
-  "priorityApplications": {
-    "message": "Priority applications"
+  "criticalApplications": {
+    "message": "关键应用程序"
   },
   "accessIntelligence": {
     "message": "Access Intelligence"
   },
   "passwordRisk": {
-    "message": "Password Risk"
+    "message": "密码风险"
   },
   "discoverAtRiskPasswords": {
-    "message": "Discover at-risk passwords and notify users to change those passwords."
+    "message": "发现有风险的密码并通知用户更改这些密码。"
   },
   "dataLastUpdated": {
-    "message": "Data last updated: $DATE$",
+    "message": "数据最后更新于：$DATE$",
     "placeholders": {
       "date": {
         "content": "$1",
@@ -24,10 +24,10 @@
     }
   },
   "notifiedMembers": {
-    "message": "Notified members"
+    "message": "已通知的成员"
   },
   "allApplicationsWithCount": {
-    "message": "All applications ($COUNT$)",
+    "message": "所有应用程序（$COUNT$）",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -35,8 +35,11 @@
       }
     }
   },
-  "priorityApplicationsWithCount": {
-    "message": "Priority applications ($COUNT$)",
+  "createNewLoginItem": {
+    "message": "创建新的登录项目"
+  },
+  "criticalApplicationsWithCount": {
+    "message": "关键应用程序（$COUNT$）",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -45,7 +48,7 @@
     }
   },
   "notifiedMembersWithCount": {
-    "message": "Notified members ($COUNT$)",
+    "message": "已通知的成员（$COUNT$）",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -53,41 +56,59 @@
       }
     }
   },
-  "noPriorityApplicationsTitle": {
-    "message": "You haven’t marked any applications as a priority"
+  "noAppsInOrgTitle": {
+    "message": "在 $ORG NAME$ 中未发现任何应用程序",
+    "placeholders": {
+      "org name": {
+        "content": "$1",
+        "example": "Company Name"
+      }
+    }
   },
-  "noPriorityApplicationsDescription": {
-    "message": "Select your most critical applications to discover at-risk passwords, and notify users to change those passwords."
+  "noAppsInOrgDescription": {
+    "message": "当用户保存登录信息时，应用程序会出现在这里，显示所有有风险的密码。标记关键应用程序并通知用户更新密码。"
   },
-  "markPriorityApps": {
-    "message": "Mark priority apps"
+  "noCriticalAppsTitle": {
+    "message": "您未将任何应用程序标记为关键"
+  },
+  "noCriticalAppsDescription": {
+    "message": "选择最关键的应用程序来发现有风险的密码，并通知用户更改这些密码。"
+  },
+  "markCriticalApps": {
+    "message": "标记关键应用程序"
   },
   "markAppAsCritical": {
-    "message": "Mark app as critical"
+    "message": "标记应用程序为关键"
   },
   "appsMarkedAsCritical": {
-    "message": "Apps marked as critical"
+    "message": "应用程序已标记为关键"
   },
   "application": {
-    "message": "Application"
+    "message": "应用程序"
   },
   "atRiskPasswords": {
-    "message": "At-risk passwords"
+    "message": "有风险的密码"
+  },
+  "requestPasswordChange": {
+    "message": "请求更改密码"
   },
   "totalPasswords": {
-    "message": "Total passwords"
+    "message": "总的密码"
+  },
+  "searchApps": {
+    "message": "搜索应用程序"
   },
   "atRiskMembers": {
-    "message": "At-risk members"
+    "message": "有风险的成员"
   },
   "totalMembers": {
-    "message": "Total members"
+    "message": "总的成员"
   },
   "atRiskApplications": {
-    "message": "At-risk applications"
+    "message": "有风险的应用程序"
   },
   "totalApplications": {
-    "message": "Total applications"
+    "message": "总的应用程序"
   },
   "whatTypeOfItem": {
     "message": "这是什么类型的项目？"
@@ -436,7 +457,7 @@
     "message": "生成密码"
   },
   "generatePassphrase": {
-    "message": "Generate passphrase"
+    "message": "生成密码短语"
   },
   "checkPassword": {
     "message": "检查密码是否已暴露。"
@@ -697,7 +718,7 @@
     "description": "Copy password to clipboard"
   },
   "copyPassphrase": {
-    "message": "Copy passphrase",
+    "message": "复制密码短语",
     "description": "Copy passphrase to clipboard"
   },
   "passwordCopied": {
@@ -970,10 +991,10 @@
     "message": "使用不同的登录方式"
   },
   "logInWithPasskey": {
-    "message": "Log in with passkey"
+    "message": "使用通行密钥登录"
   },
   "useSingleSignOn": {
-    "message": "Use single sign-on"
+    "message": "使用单点登录"
   },
   "welcomeBack": {
     "message": "欢迎回来"
@@ -1714,10 +1735,10 @@
     "message": "危险操作区"
   },
   "dangerZoneDesc": {
-    "message": "当心，这些操作是不可逆的！"
+    "message": "当心，这些操作无法撤销！"
   },
   "dangerZoneDescSingular": {
-    "message": "Careful, this action is not reversible!"
+    "message": "当心，此操作无法撤销！"
   },
   "deauthorizeSessions": {
     "message": "取消会话授权"
@@ -1732,7 +1753,7 @@
     "message": "已取消所有会话授权"
   },
   "accountIsManagedMessage": {
-    "message": "This account is managed by $ORGANIZATIONNAME$",
+    "message": "此账户由 $ORGANIZATIONNAME$ 管理",
     "placeholders": {
       "organizationName": {
         "content": "$1",
@@ -2373,7 +2394,7 @@
     "message": "您的密码库中没有带弱密码的项目。"
   },
   "weakness": {
-    "message": "Weakness"
+    "message": "弱"
   },
   "reusedPasswordsReport": {
     "message": "重复使用的密码"
@@ -3135,7 +3156,7 @@
     "message": "确实要移除此用户吗？"
   },
   "removeOrgUserConfirmation": {
-    "message": "移除成员后，他们将不再具有对组织数据的访问权限，并且此操作是不可逆的。要将此成员添加回组织，必须再次邀请他们并加入。"
+    "message": "移除成员后，他们将不再具有对组织数据的访问权限，并且此操作无法撤销。要将此成员添加回组织，必须再次邀请他们并加入。"
   },
   "revokeUserConfirmation": {
     "message": "撤销成员后，他们将不再具有对组织数据的访问权限。要快速恢复此成员的访问权限，请转到「已撤销」标签页。"
@@ -3198,7 +3219,7 @@
     }
   },
   "inviteSingleEmailDesc": {
-    "message": "You have 1 invite remaining."
+    "message": "您还剩下 1 个邀请。"
   },
   "userUsingTwoStep": {
     "message": "此用户正在使用两步登录来保护他们的账户。"
@@ -3243,7 +3264,7 @@
     "message": "添加访问权限"
   },
   "addAccessFilter": {
-    "message": "添加访问过滤器"
+    "message": "添加访问权限筛选"
   },
   "refresh": {
     "message": "刷新"
@@ -4668,7 +4689,7 @@
     "message": "限制成员加入其他组织。"
   },
   "singleOrgPolicyDesc": {
-    "message": "Restrict members from joining other organizations. This policy is required for organizations that have enabled domain verification."
+    "message": "限制成员加入其他组织。对于已启用域名验证的组织来说，该策略是必需的。"
   },
   "singleOrgBlockCreateMessage": {
     "message": "您当前的组织策略禁止您加入多个组织。请联系您的组织管理员，或从其他 Bitwarden 账户注册。"
@@ -4677,7 +4698,7 @@
     "message": "不是所有者或管理员并且已是其他组织的成员的组织成员将从您的组织中移除。"
   },
   "singleOrgPolicyMemberWarning": {
-    "message": "Non-compliant members will be placed in revoked status until they leave all other organizations. Administrators are exempt and can restore members once compliance is met."
+    "message": "不符合要求的成员将被置于撤销状态，直到他们离开所有其他组织。管理员可以豁免，达到要求后，管理员可以恢复他们的成员资格。"
   },
   "requireSso": {
     "message": "要求单点登录身份验证"
@@ -5460,7 +5481,7 @@
     "message": "确定要移除以下用户吗？该过程可能需要几秒钟才能完成，并且不能中断或取消。"
   },
   "removeOrgUsersConfirmation": {
-    "message": "移除成员后，他们将不再具有对组织数据的访问权限，并且此操作是不可逆的。要将成员添加回组织，必须再次邀请他们并加入。该过程可能需要几秒钟才能完成，并且不能被中断或取消。"
+    "message": "移除成员后，他们将不再具有对组织数据的访问权限，并且此操作无法撤销。要将成员添加回组织，必须再次邀请他们并加入。该过程可能需要几秒钟才能完成，并且不能被中断或取消。"
   },
   "revokeUsersWarning": {
     "message": "撤销成员后，他们将不再具有对组织数据的访问权限。要快速恢复成员的访问权限，请转到「已撤销」标签页。该过程可能需要几秒钟才能完成，并且不能被中断或取消。"
@@ -6393,10 +6414,10 @@
     "message": "生成用户名"
   },
   "generateEmail": {
-    "message": "Generate email"
+    "message": "生成邮件地址"
   },
   "generatorBoundariesHint": {
-    "message": "Value must be between $MIN$ and $MAX$",
+    "message": "值必须在 $MIN$ 和 $MAX$ 之间",
     "description": "Explains spin box minimum and maximum values to the user",
     "placeholders": {
       "min": {
@@ -6515,11 +6536,11 @@
     "message": "使用外部转发服务生成一个电子邮件别名。"
   },
   "forwarderDomainName": {
-    "message": "Email domain",
+    "message": "邮件域名",
     "description": "Labels the domain name email forwarder service option"
   },
   "forwarderDomainNameHint": {
-    "message": "Choose a domain that is supported by the selected service",
+    "message": "选择一个所选服务支持的域名",
     "description": "Guidance provided for email forwarding services that support multiple email domains."
   },
   "forwarderError": {
@@ -9522,19 +9543,19 @@
     "message": "您确定要永久删除此附件吗？"
   },
   "manageSubscriptionFromThe": {
-    "message": "Manage subscription from the",
+    "message": "管理订阅，通过",
     "description": "This represents the beginning of a sentence. The full sentence will be 'Manage subscription from the Provider Portal', but 'Provider Portal' will be a link and thus cannot be included in the translation file."
   },
   "toHostBitwardenOnYourOwnServer": {
-    "message": "To host Bitwarden on your own server, you will need to upload your license file. To support Free Families plans and advanced billing capabilities for your self-hosted organization, you will need to set up automatic sync in your self-hosted organization."
+    "message": "要在您自己的服务器上托管 Bitwarden，您需要上传许可证文件。要支持自托管组织的免费家庭计划和高级计费功能，您需要在自托管组织中设置自动同步。"
   },
   "selfHostingTitleProper": {
     "message": "自托管"
   },
   "verified-domain-single-org-warning": {
-    "message": "Verifying a domain will turn on the single organization policy."
+    "message": "验证域名将启用单一组织策略。"
   },
   "single-org-revoked-user-warning": {
-    "message": "Non-compliant members will be revoked. Administrators can restore members once they leave all other organizations."
+    "message": "不符合要求的成员将被撤销。管理员可以在他们离开所有其他组织后恢复其成员资格。"
   }
 }

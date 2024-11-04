@@ -2,8 +2,8 @@
   "allApplications": {
     "message": "Todas as aplicações"
   },
-  "priorityApplications": {
-    "message": "Aplicações prioritárias"
+  "criticalApplications": {
+    "message": "Aplicações críticas"
   },
   "accessIntelligence": {
     "message": "Acesso à informação"
@@ -35,8 +35,11 @@
       }
     }
   },
-  "priorityApplicationsWithCount": {
-    "message": "Aplicações prioritárias ($COUNT$)",
+  "createNewLoginItem": {
+    "message": "Criar novo item de credencial"
+  },
+  "criticalApplicationsWithCount": {
+    "message": "Aplicações críticas ($COUNT$)",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -53,14 +56,26 @@
       }
     }
   },
-  "noPriorityApplicationsTitle": {
-    "message": "Não marcou nenhuma aplicação como prioritária"
+  "noAppsInOrgTitle": {
+    "message": "Não foram encontradas aplicações em $ORG NAME$",
+    "placeholders": {
+      "org name": {
+        "content": "$1",
+        "example": "Company Name"
+      }
+    }
   },
-  "noPriorityApplicationsDescription": {
+  "noAppsInOrgDescription": {
+    "message": "À medida que os utilizadores guardam as credenciais, as aplicações aparecem aqui, mostrando quaisquer palavras-passe em risco. Marque as aplicações críticas e notifique os utilizadores para atualizarem as palavras-passe."
+  },
+  "noCriticalAppsTitle": {
+    "message": "Não marcou nenhuma aplicação como crítica"
+  },
+  "noCriticalAppsDescription": {
     "message": "Selecione as suas aplicações mais críticas para descobrir palavras-passe em risco e notifique os utilizadores para alterarem essas palavras-passe."
   },
-  "markPriorityApps": {
-    "message": "Marcar aplicações prioritárias"
+  "markCriticalApps": {
+    "message": "Marcar aplicações críticas"
   },
   "markAppAsCritical": {
     "message": "Marcar a aplicação como crítica"
@@ -74,8 +89,14 @@
   "atRiskPasswords": {
     "message": "Palavras-passe em risco"
   },
+  "requestPasswordChange": {
+    "message": "Pedir alteração da palavra-passe"
+  },
   "totalPasswords": {
     "message": "Total de palavras-passe"
+  },
+  "searchApps": {
+    "message": "Procurar aplicações"
   },
   "atRiskMembers": {
     "message": "Membros em risco"

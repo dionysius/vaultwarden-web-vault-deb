@@ -2,8 +2,8 @@
   "allApplications": {
     "message": "Bütün tətbiqlər"
   },
-  "priorityApplications": {
-    "message": "Prioritet tətbiqlər"
+  "criticalApplications": {
+    "message": "Kritik tətbiqlər"
   },
   "accessIntelligence": {
     "message": "Müraciət Kəşfiyyatı"
@@ -35,8 +35,11 @@
       }
     }
   },
-  "priorityApplicationsWithCount": {
-    "message": "Prioritet tətbiqlər ($COUNT$)",
+  "createNewLoginItem": {
+    "message": "Yeni giriş elementi yarat"
+  },
+  "criticalApplicationsWithCount": {
+    "message": "Kritik tətbiqlər ($COUNT$)",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -53,14 +56,26 @@
       }
     }
   },
-  "noPriorityApplicationsTitle": {
-    "message": "Heç bir tətbiqi prioritet olaraq işarələməmisiniz"
+  "noAppsInOrgTitle": {
+    "message": "$ORGNAME$ təşkilatında heç bir tətbiq tapılmadı",
+    "placeholders": {
+      "org name": {
+        "content": "$1",
+        "example": "Company Name"
+      }
+    }
   },
-  "noPriorityApplicationsDescription": {
+  "noAppsInOrgDescription": {
+    "message": "İstifadəçilər giriş məlumatlarını saxladıqda, tətbiqlər burada görünür və riskli parolları göstərir. Kritik tətbiqləri işarələyin və parollarını güncəlləməsi üçün istifadəçiləri məlumatlandırın."
+  },
+  "noCriticalAppsTitle": {
+    "message": "Heç bir tətbiqi Kritik olaraq işarələməmisiniz"
+  },
+  "noCriticalAppsDescription": {
     "message": "Riskli parolları kəşf etmək üçün ən kritik tətbiqlərinizi seçin və bu parolları dəyişdirməsi üçün istifadəçiləri məlumatlandırın."
   },
-  "markPriorityApps": {
-    "message": "Prioritet tətbiqləri işarələ"
+  "markCriticalApps": {
+    "message": "Kritik tətbiqləri işarələ"
   },
   "markAppAsCritical": {
     "message": "Tətbiqi kritik olaraq işarələ"
@@ -74,8 +89,14 @@
   "atRiskPasswords": {
     "message": "Riskli parollar"
   },
+  "requestPasswordChange": {
+    "message": "Parol dəyişdirilməsini tələb et"
+  },
   "totalPasswords": {
     "message": "Cəmi parol"
+  },
+  "searchApps": {
+    "message": "Tətbiq axtar"
   },
   "atRiskMembers": {
     "message": "Riskli üzvlər"

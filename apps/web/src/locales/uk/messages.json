@@ -2,8 +2,8 @@
   "allApplications": {
     "message": "Всі програми"
   },
-  "priorityApplications": {
-    "message": "Пріоритетні програми"
+  "criticalApplications": {
+    "message": "Критичні програми"
   },
   "accessIntelligence": {
     "message": "Керування доступом"
@@ -35,8 +35,11 @@
       }
     }
   },
-  "priorityApplicationsWithCount": {
-    "message": "Пріоритетні програми ($COUNT$)",
+  "createNewLoginItem": {
+    "message": "Створити новий запис"
+  },
+  "criticalApplicationsWithCount": {
+    "message": "Критичні програми ($COUNT$)",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -53,20 +56,32 @@
       }
     }
   },
-  "noPriorityApplicationsTitle": {
-    "message": "Ви не позначили жодної пріоритетної програми"
+  "noAppsInOrgTitle": {
+    "message": "Не знайдено програм в $ORG NAME$",
+    "placeholders": {
+      "org name": {
+        "content": "$1",
+        "example": "Company Name"
+      }
+    }
   },
-  "noPriorityApplicationsDescription": {
+  "noAppsInOrgDescription": {
+    "message": "Коли користувачі зберігатимуть записи, тут з'являтимуться програми з ризикованими паролями. Позначте критичні програми та сповіщайте користувачів про необхідність зміни паролів."
+  },
+  "noCriticalAppsTitle": {
+    "message": "Ви не позначили жодної критичної програми"
+  },
+  "noCriticalAppsDescription": {
     "message": "Виберіть найбільш критичні програми, для яких виявлятимуться ризиковані паролі, та сповіщайте користувачів про необхідність їх заміни."
   },
-  "markPriorityApps": {
-    "message": "Позначити пріоритетні програми"
+  "markCriticalApps": {
+    "message": "Позначити критичні програми"
   },
   "markAppAsCritical": {
     "message": "Позначити програму критичною"
   },
   "appsMarkedAsCritical": {
-    "message": "Apps marked as critical"
+    "message": "Позначені критичні програми"
   },
   "application": {
     "message": "Програма"
@@ -74,8 +89,14 @@
   "atRiskPasswords": {
     "message": "Ризиковані паролі"
   },
+  "requestPasswordChange": {
+    "message": "Подати запит на зміну пароля"
+  },
   "totalPasswords": {
     "message": "Всього паролів"
+  },
+  "searchApps": {
+    "message": "Пошук програм"
   },
   "atRiskMembers": {
     "message": "Ризиковані учасники"
@@ -1717,7 +1738,7 @@
     "message": "Обережно, ці дії неможливо скасувати!"
   },
   "dangerZoneDescSingular": {
-    "message": "Careful, this action is not reversible!"
+    "message": "Обережно, цю дію неможливо скасувати!"
   },
   "deauthorizeSessions": {
     "message": "Завершити сеанси"
@@ -1732,7 +1753,7 @@
     "message": "Усі сеанси завершено"
   },
   "accountIsManagedMessage": {
-    "message": "This account is managed by $ORGANIZATIONNAME$",
+    "message": "Цим обліковим записом керує $ORGANIZATIONNAME$",
     "placeholders": {
       "organizationName": {
         "content": "$1",
@@ -3198,7 +3219,7 @@
     }
   },
   "inviteSingleEmailDesc": {
-    "message": "You have 1 invite remaining."
+    "message": "У вас залишилось 1 запрошення."
   },
   "userUsingTwoStep": {
     "message": "Цей користувач використовує двоетапну перевірку для захисту свого облікового запису."
@@ -4668,7 +4689,7 @@
     "message": "Заборонити користувачам приєднуватися до інших організацій."
   },
   "singleOrgPolicyDesc": {
-    "message": "Restrict members from joining other organizations. This policy is required for organizations that have enabled domain verification."
+    "message": "Обмежте можливість учасників приєднуватися до інших організацій. Ця політика є обов'язковою для організацій, які активували перевірку доменів."
   },
   "singleOrgBlockCreateMessage": {
     "message": "Ваша організація має політику, що не дозволяє вам приєднуватися до більш, ніж однієї організації. Будь ласка, зв'яжіться з адміністратором вашої організації, або увійдіть з іншим обліковим записом Bitwarden."
@@ -4677,7 +4698,7 @@
     "message": "Учасники організації, які не є власниками чи адміністраторами, але вже є учасниками іншої організації, будуть вилучені з вашої організації."
   },
   "singleOrgPolicyMemberWarning": {
-    "message": "Non-compliant members will be placed in revoked status until they leave all other organizations. Administrators are exempt and can restore members once compliance is met."
+    "message": "Учасникам, які не відповідають вимогам, буде призначено стан \"відкликано\" доки вони не покинуть інші організації. Адміністратори є винятком і можуть відновити учасників у разі відповідності вимогам."
   },
   "requireSso": {
     "message": "Вимагати автентифікацію з використанням єдиного входу (SSO)"
@@ -6396,7 +6417,7 @@
     "message": "Генерувати е-пошту"
   },
   "generatorBoundariesHint": {
-    "message": "Value must be between $MIN$ and $MAX$",
+    "message": "Значення має бути між $MIN$ та $MAX$",
     "description": "Explains spin box minimum and maximum values to the user",
     "placeholders": {
       "min": {
@@ -9532,9 +9553,9 @@
     "message": "Власне розміщення"
   },
   "verified-domain-single-org-warning": {
-    "message": "Verifying a domain will turn on the single organization policy."
+    "message": "Підтвердження домену ввімкне політику єдиної організації."
   },
   "single-org-revoked-user-warning": {
-    "message": "Non-compliant members will be revoked. Administrators can restore members once they leave all other organizations."
+    "message": "Невідповідних учасників буде відкликано. Адміністратори зможуть відновити учасників, коли ті покинуть всі інші організації."
   }
 }

@@ -2,8 +2,8 @@
   "allApplications": {
     "message": "Все приложения"
   },
-  "priorityApplications": {
-    "message": "Приоритетные приложения"
+  "criticalApplications": {
+    "message": "Критичные приложения"
   },
   "accessIntelligence": {
     "message": "Access Intelligence"
@@ -35,8 +35,11 @@
       }
     }
   },
-  "priorityApplicationsWithCount": {
-    "message": "Приоритетные приложения ($COUNT$)",
+  "createNewLoginItem": {
+    "message": "Создать новый логин"
+  },
+  "criticalApplicationsWithCount": {
+    "message": "Критичные приложения ($COUNT$)",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -53,14 +56,26 @@
       }
     }
   },
-  "noPriorityApplicationsTitle": {
-    "message": "Вы не отметили ни одного приложения в качестве приоритетного"
+  "noAppsInOrgTitle": {
+    "message": "Не найдено приложений в $ORG NAME$",
+    "placeholders": {
+      "org name": {
+        "content": "$1",
+        "example": "Company Name"
+      }
+    }
   },
-  "noPriorityApplicationsDescription": {
+  "noAppsInOrgDescription": {
+    "message": "По мере сохранения пользователями логинов, здесь отображаются приложения, с подверженными риску паролями. Отметьте критичные приложения и уведомите пользователей об необходимости обновления пароля."
+  },
+  "noCriticalAppsTitle": {
+    "message": "Вы не отметили ни одного приложения в качестве критичного"
+  },
+  "noCriticalAppsDescription": {
     "message": "Выберите наиболее важные приложения, чтобы обнаружить пароли, подверженные риску, и уведомить пользователей о необходимости сменить эти пароли."
   },
-  "markPriorityApps": {
-    "message": "Отметьте приоритетные приложения"
+  "markCriticalApps": {
+    "message": "Отметить критичные приложения"
   },
   "markAppAsCritical": {
     "message": "Пометить приложение как критическое"
@@ -74,8 +89,14 @@
   "atRiskPasswords": {
     "message": "Пароли, подверженные риску"
   },
+  "requestPasswordChange": {
+    "message": "Запросить смену пароля"
+  },
   "totalPasswords": {
     "message": "Всего паролей"
+  },
+  "searchApps": {
+    "message": "Поиск приложений"
   },
   "atRiskMembers": {
     "message": "Участники группы риска"
