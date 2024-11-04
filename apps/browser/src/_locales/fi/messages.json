@@ -2878,7 +2878,7 @@
     "message": "Luo sähköpostiosoite"
   },
   "generatorBoundariesHint": {
-    "message": "Arvon tulee olla väliltä $MIN$ - $MAX$",
+    "message": "Arvon tulee olla väliltä $MIN$—$MAX$",
     "description": "Explains spin box minimum and maximum values to the user",
     "placeholders": {
       "min": {

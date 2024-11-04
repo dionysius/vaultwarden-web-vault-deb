@@ -2878,7 +2878,7 @@
     "message": "Генерувати е-пошту"
   },
   "generatorBoundariesHint": {
-    "message": "Value must be between $MIN$ and $MAX$",
+    "message": "Значення має бути між $MIN$ та $MAX$",
     "description": "Explains spin box minimum and maximum values to the user",
     "placeholders": {
       "min": {

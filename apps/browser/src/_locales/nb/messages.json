@@ -3,7 +3,7 @@
     "message": "Bitwarden"
   },
   "extName": {
-    "message": "Bitwarden Password Manager",
+    "message": "Bitwarden passordbehandler",
     "description": "Extension name, MUST be less than 40 characters (Safari restriction)"
   },
   "extDesc": {
@@ -29,7 +29,7 @@
     "message": "Use single sign-on"
   },
   "welcomeBack": {
-    "message": "Welcome back"
+    "message": "Velkommen tilbake"
   },
   "setAStrongPassword": {
     "message": "Set a strong password"
@@ -168,7 +168,7 @@
     "message": "Copy notes"
   },
   "fill": {
-    "message": "Fill",
+    "message": "Fyll",
     "description": "This string is used on the vault page to indicate autofilling. Horizontal space is limited in the interface here so try and keep translations as concise as possible."
   },
   "autoFill": {
@@ -357,10 +357,10 @@
     "message": "Rediger mappen"
   },
   "newFolder": {
-    "message": "New folder"
+    "message": "Ny mappe"
   },
   "folderName": {
-    "message": "Folder name"
+    "message": "Mappenavn"
   },
   "folderHintText": {
     "message": "Nest a folder by adding the parent folder's name followed by a “/”. Example: Social/Forums"
@@ -458,7 +458,7 @@
     "description": "deprecated. Use specialCharactersLabel instead."
   },
   "include": {
-    "message": "Include",
+    "message": "Inkluder",
     "description": "Card header for password generator include block"
   },
   "uppercaseDescription": {
@@ -466,7 +466,7 @@
     "description": "Tooltip for the password generator uppercase character checkbox"
   },
   "uppercaseLabel": {
-    "message": "A-Z",
+    "message": "A-Å",
     "description": "Label for the password generator uppercase character checkbox"
   },
   "lowercaseDescription": {
@@ -478,7 +478,7 @@
     "description": "Label for the password generator lowercase character checkbox"
   },
   "numbersDescription": {
-    "message": "Include numbers",
+    "message": "Inkluder tall",
     "description": "Full description for the password generator numbers checkbox"
   },
   "numbersLabel": {
@@ -627,7 +627,7 @@
     "message": "Vault timeout"
   },
   "otherOptions": {
-    "message": "Other options"
+    "message": "Andre valg"
   },
   "rateExtension": {
     "message": "Gi denne utvidelsen en vurdering"
@@ -676,7 +676,7 @@
     "message": "Tidsavbrudd i hvelvet"
   },
   "vaultTimeout1": {
-    "message": "Timeout"
+    "message": "Tidsavbrudd"
   },
   "lockNow": {
     "message": "Lås nå"
@@ -730,10 +730,10 @@
     "message": "Sikkerhet"
   },
   "confirmMasterPassword": {
-    "message": "Confirm master password"
+    "message": "Bekreft hovedpassord"
   },
   "masterPassword": {
-    "message": "Master password"
+    "message": "Hovedpassord"
   },
   "masterPassImportant": {
     "message": "Your master password cannot be recovered if you forget it!"
@@ -843,7 +843,7 @@
     "message": "Din innloggingsøkt har utløpt."
   },
   "logIn": {
-    "message": "Log in"
+    "message": "Logg inn"
   },
   "logInToBitwarden": {
     "message": "Log in to Bitwarden"
@@ -928,7 +928,7 @@
     "message": "Ny URI"
   },
   "addDomain": {
-    "message": "Add domain",
+    "message": "Legg til domene",
     "description": "'Domain' here refers to an internet domain name (e.g. 'bitwarden.com') and the message in whole described the act of putting a domain value into the context."
   },
   "addedItem": {
@@ -1092,7 +1092,7 @@
     "message": "This file export will be password protected and require the file password to decrypt."
   },
   "filePassword": {
-    "message": "File password"
+    "message": "Filpassord"
   },
   "exportPasswordDescription": {
     "message": "This password will be used to export and import this file"
@@ -1917,10 +1917,10 @@
     "message": "Det er ingen passord å liste opp."
   },
   "clearHistory": {
-    "message": "Clear history"
+    "message": "Tøm historikk"
   },
   "nothingToShow": {
-    "message": "Nothing to show"
+    "message": "Ingenting å vise"
   },
   "nothingGeneratedRecently": {
     "message": "You haven't generated anything recently"
@@ -1984,10 +1984,10 @@
     "message": "Lås opp med PIN-kode"
   },
   "setYourPinTitle": {
-    "message": "Set PIN"
+    "message": "Velg PIN"
   },
   "setYourPinButton": {
-    "message": "Set PIN"
+    "message": "Velg PIN"
   },
   "setYourPinCode": {
     "message": "Angi PIN-koden din for å låse opp Bitwarden. PIN-innstillingene tilbakestilles hvis du logger deg helt ut av programmet."
@@ -2041,7 +2041,7 @@
     "message": "Username generator"
   },
   "useThisPassword": {
-    "message": "Use this password"
+    "message": "Bruk dette passordet"
   },
   "useThisUsername": {
     "message": "Use this username"
@@ -2186,7 +2186,7 @@
     "message": "Get advice, announcements, and research opportunities from Bitwarden in your inbox."
   },
   "unsubscribe": {
-    "message": "Unsubscribe"
+    "message": "Avslutt abonnement"
   },
   "atAnyTime": {
     "message": "at any time."
@@ -2195,7 +2195,7 @@
     "message": "By continuing, you agree to the"
   },
   "and": {
-    "message": "and"
+    "message": "og"
   },
   "acceptPolicies": {
     "message": "Ved å merke av denne boksen sier du deg enig i følgende:"
@@ -2315,7 +2315,7 @@
     "message": "An organization policy has blocked importing items into your individual vault."
   },
   "domainsTitle": {
-    "message": "Domains",
+    "message": "Domener",
     "description": "A category title describing the concept of web domains"
   },
   "excludedDomains": {
@@ -2411,7 +2411,7 @@
     "message": "Passord beskyttet"
   },
   "copyLink": {
-    "message": "Copy link"
+    "message": "Kopier lenke"
   },
   "copySendLink": {
     "message": "Kopier Send-lenke",
@@ -2668,7 +2668,7 @@
     "message": "E-postbekreftelse kreves"
   },
   "emailVerifiedV2": {
-    "message": "Email verified"
+    "message": "E-post bekreftet"
   },
   "emailVerificationRequiredDesc": {
     "message": "Du må bekrefte e-posten din for å bruke denne funksjonen. Du kan bekrefte e-postadressen din i netthvelvet."
@@ -3247,10 +3247,10 @@
     "message": "Uncheck if using a public device"
   },
   "approveFromYourOtherDevice": {
-    "message": "Approve from your other device"
+    "message": "Godkjenn fra en av dine andre enheter"
   },
   "requestAdminApproval": {
-    "message": "Request admin approval"
+    "message": "Be om administratorgodkjennelse"
   },
   "approveWithMasterPassword": {
     "message": "Godkjenn med hovedpassord"
@@ -3274,7 +3274,7 @@
     "message": "No email?"
   },
   "goBack": {
-    "message": "Go back"
+    "message": "Gå tilbake"
   },
   "toEditYourEmailAddress": {
     "message": "to edit your email address."
@@ -3290,7 +3290,7 @@
     "message": "Generelt"
   },
   "display": {
-    "message": "Display"
+    "message": "Vis"
   },
   "accountSuccessfullyCreated": {
     "message": "Account successfully created!"
@@ -3416,7 +3416,7 @@
     "message": "— Skriv for å filtrere —"
   },
   "multiSelectLoading": {
-    "message": "Retrieving options..."
+    "message": "Innhenter alternativer..."
   },
   "multiSelectNotFound": {
     "message": "Ingen gjenstander funnet"
@@ -3542,7 +3542,7 @@
     "description": "Screen reader text (aria-label) for new item button in overlay"
   },
   "newLogin": {
-    "message": "New login",
+    "message": "Ny innlogging",
     "description": "Button text to display within inline menu when there are no matching items on a login field"
   },
   "addNewLoginItemAria": {
@@ -3558,7 +3558,7 @@
     "description": "Screen reader text (aria-label) for new card button within inline menu"
   },
   "newIdentity": {
-    "message": "New identity",
+    "message": "Ny identitet",
     "description": "Button text to display within inline menu when there are no matching items on an identity field"
   },
   "addNewIdentityItemAria": {
@@ -3592,7 +3592,7 @@
     "message": "Beskrivelse"
   },
   "importSuccess": {
-    "message": "Data successfully imported"
+    "message": "Dataene ble vellykket importert"
   },
   "importSuccessNumberOfItems": {
     "message": "$AMOUNT$ gjenstander totalt ble importert.",
@@ -3682,7 +3682,7 @@
     "message": "Invalid file password, please use the password you entered when you created the export file."
   },
   "destination": {
-    "message": "Destination"
+    "message": "Destinasjon"
   },
   "learnAboutImportOptions": {
     "message": "Lær mer om importalternativene dine"
@@ -3719,7 +3719,7 @@
     "message": "Ingen fil er valgt"
   },
   "orCopyPasteFileContents": {
-    "message": "or copy/paste the import file contents"
+    "message": "eller kopier/lim inn importfilens innhold"
   },
   "instructionsFor": {
     "message": "$NAME$-instruksjoner",
@@ -3810,7 +3810,7 @@
     "message": "Multifaktorautentisering ble avbrutt"
   },
   "noLastPassDataFound": {
-    "message": "No LastPass data found"
+    "message": "Ingen LastPass-data ble funnet"
   },
   "incorrectUsernameOrPassword": {
     "message": "Feil brukernavn eller passord"
@@ -3837,7 +3837,7 @@
     "message": "Importerer kontoen din…"
   },
   "lastPassMFARequired": {
-    "message": "LastPass multifactor authentication required"
+    "message": "LastPass-multifaktorautentisering kreves"
   },
   "lastPassMFADesc": {
     "message": "Enter your one-time passcode from your authentication app"
@@ -4003,7 +4003,7 @@
     "description": "Notification message for when saving credentials has failed."
   },
   "success": {
-    "message": "Success"
+    "message": "Suksess"
   },
   "removePasskey": {
     "message": "Remove passkey"
@@ -4105,13 +4105,13 @@
     "message": "Admin Console"
   },
   "accountSecurity": {
-    "message": "Account security"
+    "message": "Kontosikkerhet"
   },
   "notifications": {
-    "message": "Notifications"
+    "message": "Varsler"
   },
   "appearance": {
-    "message": "Appearance"
+    "message": "Utseende"
   },
   "errorAssigningTargetCollection": {
     "message": "Error assigning target collection."
@@ -4140,7 +4140,7 @@
     }
   },
   "new": {
-    "message": "New"
+    "message": "Ny"
   },
   "removeItem": {
     "message": "Remove $NAME$",
@@ -4174,17 +4174,17 @@
     "message": "Organization is deactivated"
   },
   "owner": {
-    "message": "Owner"
+    "message": "Eier"
   },
   "selfOwnershipLabel": {
-    "message": "You",
+    "message": "Du",
     "description": "Used as a label to indicate that the user is the owner of an item."
   },
   "contactYourOrgAdmin": {
     "message": "Items in deactivated organizations cannot be accessed. Contact your organization owner for assistance."
   },
   "additionalInformation": {
-    "message": "Additional information"
+    "message": "Tilleggsinformasjon"
   },
   "itemHistory": {
     "message": "Item history"
@@ -4196,13 +4196,13 @@
     "message": "Owner: You"
   },
   "linked": {
-    "message": "Linked"
+    "message": "Tilknyttet"
   },
   "copySuccessful": {
     "message": "Copy Successful"
   },
   "upload": {
-    "message": "Upload"
+    "message": "Last opp"
   },
   "addAttachment": {
     "message": "Add attachment"
@@ -4238,7 +4238,7 @@
     "message": "Free organizations cannot use attachments"
   },
   "filters": {
-    "message": "Filters"
+    "message": "Filtre"
   },
   "personalDetails": {
     "message": "Personal details"
@@ -4247,7 +4247,7 @@
     "message": "Identification"
   },
   "contactInfo": {
-    "message": "Contact info"
+    "message": "Kontaktinfo"
   },
   "downloadAttachment": {
     "message": "Download - $ITEMNAME$",
@@ -4263,7 +4263,7 @@
     "description": "Used within the inline menu to provide an aria description when users are attempting to fill a card cipher."
   },
   "loginCredentials": {
-    "message": "Login credentials"
+    "message": "Legitimasjoner for innlogging"
   },
   "authenticatorKey": {
     "message": "Authenticator key"
@@ -4288,10 +4288,10 @@
     "message": "Website added"
   },
   "addWebsite": {
-    "message": "Add website"
+    "message": "Legg til nettsted"
   },
   "deleteWebsite": {
-    "message": "Delete website"
+    "message": "Slett nettsted"
   },
   "defaultLabel": {
     "message": "Default ($VALUE$)",
@@ -4343,16 +4343,16 @@
     }
   },
   "enableAnimations": {
-    "message": "Enable animations"
+    "message": "Aktiver animasjoner"
   },
   "showAnimations": {
     "message": "Show animations"
   },
   "addAccount": {
-    "message": "Add account"
+    "message": "Legg til konto"
   },
   "loading": {
-    "message": "Loading"
+    "message": "Laster"
   },
   "data": {
     "message": "Data"
@@ -4370,7 +4370,7 @@
     "description": "ARIA label for the inline menu button that logs in with a passkey."
   },
   "assign": {
-    "message": "Assign"
+    "message": "Knytt"
   },
   "bulkCollectionAssignmentDialogDescriptionSingular": {
     "message": "Only organization members with access to these collections will be able to see the item."
@@ -4394,7 +4394,7 @@
     "message": "Add field"
   },
   "add": {
-    "message": "Add"
+    "message": "Legg til"
   },
   "fieldType": {
     "message": "Field type"
@@ -4418,7 +4418,7 @@
     "message": "Enter the the field's html id, name, aria-label, or placeholder."
   },
   "editField": {
-    "message": "Edit field"
+    "message": "Rediger felt"
   },
   "editFieldLabel": {
     "message": "Edit $LABEL$",
@@ -4588,13 +4588,13 @@
     "message": "Show number of login autofill suggestions on extension icon"
   },
   "systemDefault": {
-    "message": "System default"
+    "message": "Systemforvalg"
   },
   "enterprisePolicyRequirementsApplied": {
     "message": "Enterprise policy requirements have been applied to this setting"
   },
   "retry": {
-    "message": "Retry"
+    "message": "Prøv igjen"
   },
   "vaultCustomTimeoutMinimum": {
     "message": "Minimum custom timeout is 1 minute."
@@ -4624,16 +4624,16 @@
     "message": "Items that have been in trash more than 30 days will automatically be deleted"
   },
   "restore": {
-    "message": "Restore"
+    "message": "Gjenopprett"
   },
   "deleteForever": {
-    "message": "Delete forever"
+    "message": "Slett for alltid"
   },
   "noEditPermissions": {
     "message": "You don't have permission to edit this item"
   },
   "authenticating": {
-    "message": "Authenticating"
+    "message": "Autentiserer"
   },
   "fillGeneratedPassword": {
     "message": "Fill generated password",
@@ -4648,7 +4648,7 @@
     "description": "Confirmation message for saving a login to Bitwarden"
   },
   "spaceCharacterDescriptor": {
-    "message": "Space",
+    "message": "Mellomrom",
     "description": "Represents the space key in screen reader content as a readable word"
   },
   "tildeCharacterDescriptor": {
@@ -4656,15 +4656,15 @@
     "description": "Represents the ~ key in screen reader content as a readable word"
   },
   "backtickCharacterDescriptor": {
-    "message": "Backtick",
+    "message": "Baklengs apostrof",
     "description": "Represents the ` key in screen reader content as a readable word"
   },
   "exclamationCharacterDescriptor": {
-    "message": "Exclamation mark",
+    "message": "Utropstegn",
     "description": "Represents the ! key in screen reader content as a readable word"
   },
   "atSignCharacterDescriptor": {
-    "message": "At sign",
+    "message": "Alfakrøll",
     "description": "Represents the @ key in screen reader content as a readable word"
   },
   "hashSignCharacterDescriptor": {
@@ -4672,7 +4672,7 @@
     "description": "Represents the # key in screen reader content as a readable word"
   },
   "dollarSignCharacterDescriptor": {
-    "message": "Dollar sign",
+    "message": "Dollartegn",
     "description": "Represents the $ key in screen reader content as a readable word"
   },
   "percentSignCharacterDescriptor": {
@@ -4684,7 +4684,7 @@
     "description": "Represents the ^ key in screen reader content as a readable word"
   },
   "ampersandCharacterDescriptor": {
-    "message": "Ampersand",
+    "message": "Prosenttegn",
     "description": "Represents the & key in screen reader content as a readable word"
   },
   "asteriskCharacterDescriptor": {
@@ -4700,7 +4700,7 @@
     "description": "Represents the ) key in screen reader content as a readable word"
   },
   "hyphenCharacterDescriptor": {
-    "message": "Underscore",
+    "message": "Understrek",
     "description": "Represents the _ key in screen reader content as a readable word"
   },
   "underscoreCharacterDescriptor": {
@@ -4740,11 +4740,11 @@
     "description": "Represents the back slash key in screen reader content as a readable word"
   },
   "colonCharacterDescriptor": {
-    "message": "Colon",
+    "message": "Kolon",
     "description": "Represents the : key in screen reader content as a readable word"
   },
   "semicolonCharacterDescriptor": {
-    "message": "Semicolon",
+    "message": "Semikolon",
     "description": "Represents the ; key in screen reader content as a readable word"
   },
   "doubleQuoteCharacterDescriptor": {
@@ -4756,7 +4756,7 @@
     "description": "Represents the ' key in screen reader content as a readable word"
   },
   "lessThanCharacterDescriptor": {
-    "message": "Less than",
+    "message": "Mindre enn",
     "description": "Represents the < key in screen reader content as a readable word"
   },
   "greaterThanCharacterDescriptor": {
@@ -4764,7 +4764,7 @@
     "description": "Represents the > key in screen reader content as a readable word"
   },
   "commaCharacterDescriptor": {
-    "message": "Comma",
+    "message": "Komma",
     "description": "Represents the , key in screen reader content as a readable word"
   },
   "periodCharacterDescriptor": {
@@ -4772,7 +4772,7 @@
     "description": "Represents the . key in screen reader content as a readable word"
   },
   "questionCharacterDescriptor": {
-    "message": "Question mark",
+    "message": "Spørsmålstegn",
     "description": "Represents the ? key in screen reader content as a readable word"
   },
   "forwardSlashCharacterDescriptor": {
@@ -4780,10 +4780,10 @@
     "description": "Represents the / key in screen reader content as a readable word"
   },
   "lowercaseAriaLabel": {
-    "message": "Lowercase"
+    "message": "Små bokstaver"
   },
   "uppercaseAriaLabel": {
-    "message": "Uppercase"
+    "message": "Store bokstaver"
   },
   "generatedPassword": {
     "message": "Generated password"

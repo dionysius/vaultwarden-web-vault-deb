@@ -20,16 +20,16 @@
     "message": "Креирај налог"
   },
   "newToBitwarden": {
-    "message": "New to Bitwarden?"
+    "message": "Нови сте у Bitwarden-у?"
   },
   "logInWithPasskey": {
-    "message": "Log in with passkey"
+    "message": "Пријавите се са приступним кључем"
   },
   "useSingleSignOn": {
-    "message": "Use single sign-on"
+    "message": "Употребити једнократну пријаву"
   },
   "welcomeBack": {
-    "message": "Welcome back"
+    "message": "Добродошли назад"
   },
   "setAStrongPassword": {
     "message": "Поставите јаку лозинку"
@@ -120,7 +120,7 @@
     "message": "Копирај лозинку"
   },
   "copyPassphrase": {
-    "message": "Copy passphrase"
+    "message": "Копирај приступну фразу"
   },
   "copyNote": {
     "message": "Копирај белешку"
@@ -168,7 +168,7 @@
     "message": "Копирати белешке"
   },
   "fill": {
-    "message": "Fill",
+    "message": "Попуни",
     "description": "This string is used on the vault page to indicate autofilling. Horizontal space is limited in the interface here so try and keep translations as concise as possible."
   },
   "autoFill": {
@@ -427,7 +427,7 @@
     "message": "Генерисање лозинке"
   },
   "generatePassphrase": {
-    "message": "Generate passphrase"
+    "message": "Генеришите приступну фразу"
   },
   "regeneratePassword": {
     "message": "Поново генериши лозинку"
@@ -591,7 +591,7 @@
     "message": "Покрените веб локацију"
   },
   "launchWebsiteName": {
-    "message": "Launch website $ITEMNAME$",
+    "message": "Покренути сајт $ITEMNAME$",
     "placeholders": {
       "itemname": {
         "content": "$1",
@@ -846,7 +846,7 @@
     "message": "Пријави се"
   },
   "logInToBitwarden": {
-    "message": "Log in to Bitwarden"
+    "message": "Пријавите се на Bitwarden"
   },
   "restartRegistration": {
     "message": "Поново покрените регистрацију"
@@ -1424,7 +1424,7 @@
     "message": "УРЛ Сервера"
   },
   "selfHostBaseUrl": {
-    "message": "Self-host server URL",
+    "message": "УРЛ сервера који се самостално хостује",
     "description": "Label for field requesting a self-hosted integration service URL"
   },
   "apiUrl": {
@@ -1795,13 +1795,13 @@
     "message": "Историја Лозинке"
   },
   "generatorHistory": {
-    "message": "Generator history"
+    "message": "Генератор историје"
   },
   "clearGeneratorHistoryTitle": {
-    "message": "Clear generator history"
+    "message": "Испразнити генератор историје"
   },
   "cleargGeneratorHistoryDescription": {
-    "message": "If you continue, all entries will be permanently deleted from generator's history. Are you sure you want to continue?"
+    "message": "Ако наставите, сви уноси ће бити трајно избрисани из генератора историје. Да ли сте сигурни да желите да наставите?"
   },
   "back": {
     "message": "Назад"
@@ -1920,10 +1920,10 @@
     "message": "Обриши историју"
   },
   "nothingToShow": {
-    "message": "Nothing to show"
+    "message": "Нема шта да се прикаже"
   },
   "nothingGeneratedRecently": {
-    "message": "You haven't generated anything recently"
+    "message": "Недавно нисте ништа генерисали"
   },
   "remove": {
     "message": "Уклони"
@@ -2183,7 +2183,7 @@
     "message": "Ваша нова главна лозинка не испуњава захтеве смерница."
   },
   "receiveMarketingEmailsV2": {
-    "message": "Get advice, announcements, and research opportunities from Bitwarden in your inbox."
+    "message": "Добијајте савете, најаве и могућности истраживања од Bitwarden-а у пријемном сандучету."
   },
   "unsubscribe": {
     "message": "Одјави се"
@@ -2512,7 +2512,7 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendPasswordDescV3": {
-    "message": "Add an optional password for recipients to access this Send.",
+    "message": "Додајте опционалну лозинку за примаоце да приступе овом Send.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendNotesDesc": {
@@ -2875,10 +2875,10 @@
     "message": "Генериши име"
   },
   "generateEmail": {
-    "message": "Generate email"
+    "message": "Генеришите имејл"
   },
   "generatorBoundariesHint": {
-    "message": "Value must be between $MIN$ and $MAX$",
+    "message": "Вредност мора бити између $MIN$ и $MAX$",
     "description": "Explains spin box minimum and maximum values to the user",
     "placeholders": {
       "min": {
@@ -2932,11 +2932,11 @@
     "message": "Генеришите псеудоним е-поште помоћу екстерне услуге прослеђивања."
   },
   "forwarderDomainName": {
-    "message": "Email domain",
+    "message": "Домен имејла",
     "description": "Labels the domain name email forwarder service option"
   },
   "forwarderDomainNameHint": {
-    "message": "Choose a domain that is supported by the selected service",
+    "message": "Изаберите домен који подржава изабрана услуга",
     "description": "Guidance provided for email forwarding services that support multiple email domains."
   },
   "forwarderError": {
@@ -3664,7 +3664,7 @@
     "message": "Искачући додатак да бисте довршили пријаву."
   },
   "popoutExtension": {
-    "message": "Popout extension"
+    "message": "Искачући додатак"
   },
   "launchDuo": {
     "message": "Покренути DUO"
@@ -3744,25 +3744,25 @@
     "message": "Подаци из сефа су извезени"
   },
   "typePasskey": {
-    "message": "Приступачни кључ"
+    "message": "Приступни кључ"
   },
   "accessing": {
     "message": "Приступ"
   },
   "passkeyNotCopied": {
-    "message": "Приступачни кључ неће бити копиран"
+    "message": "Приступни кључ неће бити копиран"
   },
   "passkeyNotCopiedAlert": {
-    "message": "Приступачни кључ неће бити копиран на клонирану ставку. Да ли желите да наставите са клонирањем ставке?"
+    "message": "Приступни кључ неће бити копиран на клонирану ставку. Да ли желите да наставите са клонирањем ставке?"
   },
   "passkeyFeatureIsNotImplementedForAccountsWithoutMasterPassword": {
     "message": "Верификацију захтева сајт који покреће. Ова функција још увек није имплементирана за налоге без главне лозинке."
   },
   "logInWithPasskeyQuestion": {
-    "message": "Пријавите се са приступачним кључем?"
+    "message": "Пријавите се са приступним кључем?"
   },
   "passkeyAlreadyExists": {
-    "message": "За ову апликацију већ постоји приступачни кључ."
+    "message": "За ову апликацију већ постоји приступни кључ."
   },
   "noPasskeysFoundForThisApplication": {
     "message": "Нису пронађени приступни кључеви за ову апликацију."
@@ -3792,7 +3792,7 @@
     "message": "Изаберите приступни кључ за пријаву"
   },
   "passkeyItem": {
-    "message": "Ставка приступачног кључа"
+    "message": "Ставка приступног кључа"
   },
   "overwritePasskey": {
     "message": "Заменити приступни кључ?"
@@ -3910,7 +3910,7 @@
     "message": "сервер"
   },
   "hostedAt": {
-    "message": "hosted at"
+    "message": "хостиран на"
   },
   "useDeviceOrHardwareKey": {
     "message": "Користите свој уређај или хардверски кључ"
@@ -4006,10 +4006,10 @@
     "message": "Успех"
   },
   "removePasskey": {
-    "message": "Уклонити приступачни кључ"
+    "message": "Уклонити приступни кључ"
   },
   "passkeyRemoved": {
-    "message": "Приступачни кључ је уклоњен"
+    "message": "Приступни кључ је уклоњен"
   },
   "autofillSuggestions": {
     "message": "Предлози за ауто-попуњавање"
@@ -4358,7 +4358,7 @@
     "message": "Подаци"
   },
   "passkeys": {
-    "message": "Приступачни кључеви",
+    "message": "Приступни кључеви",
     "description": "A section header for a list of passkeys."
   },
   "passwords": {
@@ -4366,7 +4366,7 @@
     "description": "A section header for a list of passwords."
   },
   "logInWithPasskeyAriaLabel": {
-    "message": "Пријавите се са приступачним кључем",
+    "message": "Пријавите се са приступним кључем",
     "description": "ARIA label for the inline menu button that logs in with a passkey."
   },
   "assign": {
@@ -4564,13 +4564,13 @@
     "message": "Смештај ставке"
   },
   "fileSend": {
-    "message": "File Send"
+    "message": "Датотека „Send“"
   },
   "fileSends": {
     "message": "Датотека „Send“"
   },
   "textSend": {
-    "message": "Text Send"
+    "message": "Текст „Send“"
   },
   "textSends": {
     "message": "Текст „Send“"
@@ -4603,7 +4603,7 @@
     "message": "Додатни садржај је доступан"
   },
   "fileSavedToDevice": {
-    "message": "File saved to device. Manage from your device downloads."
+    "message": "Датотека је сачувана на уређају. Управљајте преузимањима са свог уређаја."
   },
   "showCharacterCount": {
     "message": "Прикажи бројање слова"
@@ -4636,23 +4636,23 @@
     "message": "Аутентификација"
   },
   "fillGeneratedPassword": {
-    "message": "Fill generated password",
+    "message": "Попуните генерисану лозинку",
     "description": "Heading for the password generator within the inline menu"
   },
   "passwordRegenerated": {
-    "message": "Password regenerated",
+    "message": "Лозинка поново генерисана",
     "description": "Notification message for when a password has been regenerated"
   },
   "saveLoginToBitwarden": {
-    "message": "Save login to Bitwarden?",
+    "message": "Сачувати пријаву на Bitwarden?",
     "description": "Confirmation message for saving a login to Bitwarden"
   },
   "spaceCharacterDescriptor": {
-    "message": "Space",
+    "message": "Простор",
     "description": "Represents the space key in screen reader content as a readable word"
   },
   "tildeCharacterDescriptor": {
-    "message": "Tilde",
+    "message": "Тилда",
     "description": "Represents the ~ key in screen reader content as a readable word"
   },
   "backtickCharacterDescriptor": {
@@ -4660,55 +4660,55 @@
     "description": "Represents the ` key in screen reader content as a readable word"
   },
   "exclamationCharacterDescriptor": {
-    "message": "Exclamation mark",
+    "message": "Узвичник",
     "description": "Represents the ! key in screen reader content as a readable word"
   },
   "atSignCharacterDescriptor": {
-    "message": "At sign",
+    "message": "Знак „ет“",
     "description": "Represents the @ key in screen reader content as a readable word"
   },
   "hashSignCharacterDescriptor": {
-    "message": "Hash sign",
+    "message": "Знак „хеш“",
     "description": "Represents the # key in screen reader content as a readable word"
   },
   "dollarSignCharacterDescriptor": {
-    "message": "Dollar sign",
+    "message": "Знак долар",
     "description": "Represents the $ key in screen reader content as a readable word"
   },
   "percentSignCharacterDescriptor": {
-    "message": "Percent sign",
+    "message": "Знак постотак",
     "description": "Represents the % key in screen reader content as a readable word"
   },
   "caretCharacterDescriptor": {
-    "message": "Caret",
+    "message": "Знак за уметање",
     "description": "Represents the ^ key in screen reader content as a readable word"
   },
   "ampersandCharacterDescriptor": {
-    "message": "Ampersand",
+    "message": "Знак Ampersand",
     "description": "Represents the & key in screen reader content as a readable word"
   },
   "asteriskCharacterDescriptor": {
-    "message": "Asterisk",
+    "message": "Знак звездица",
     "description": "Represents the * key in screen reader content as a readable word"
   },
   "parenLeftCharacterDescriptor": {
-    "message": "Left parenthesis",
+    "message": "Отворена заграда",
     "description": "Represents the ( key in screen reader content as a readable word"
   },
   "parenRightCharacterDescriptor": {
-    "message": "Right parenthesis",
+    "message": "Затворена заграда",
     "description": "Represents the ) key in screen reader content as a readable word"
   },
   "hyphenCharacterDescriptor": {
-    "message": "Underscore",
+    "message": "Доња црта",
     "description": "Represents the _ key in screen reader content as a readable word"
   },
   "underscoreCharacterDescriptor": {
-    "message": "Hyphen",
+    "message": "Цртица",
     "description": "Represents the - key in screen reader content as a readable word"
   },
   "plusCharacterDescriptor": {
-    "message": "Plus",
+    "message": "Плус",
     "description": "Represents the + key in screen reader content as a readable word"
   },
   "equalsCharacterDescriptor": {

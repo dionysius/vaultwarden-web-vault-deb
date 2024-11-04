@@ -20,16 +20,16 @@
     "message": "创建账户"
   },
   "newToBitwarden": {
-    "message": "New to Bitwarden?"
+    "message": "Bitwarden 新手吗？"
   },
   "logInWithPasskey": {
-    "message": "Log in with passkey"
+    "message": "使用通行密钥登录"
   },
   "useSingleSignOn": {
-    "message": "Use single sign-on"
+    "message": "使用单点登录"
   },
   "welcomeBack": {
-    "message": "Welcome back"
+    "message": "欢迎回来"
   },
   "setAStrongPassword": {
     "message": "设置强密码"
@@ -120,7 +120,7 @@
     "message": "复制密码"
   },
   "copyPassphrase": {
-    "message": "Copy passphrase"
+    "message": "复制密码短语"
   },
   "copyNote": {
     "message": "复制备注"
@@ -168,7 +168,7 @@
     "message": "复制备注"
   },
   "fill": {
-    "message": "Fill",
+    "message": "填充",
     "description": "This string is used on the vault page to indicate autofilling. Horizontal space is limited in the interface here so try and keep translations as concise as possible."
   },
   "autoFill": {
@@ -427,7 +427,7 @@
     "message": "生成密码"
   },
   "generatePassphrase": {
-    "message": "Generate passphrase"
+    "message": "生成密码短语"
   },
   "regeneratePassword": {
     "message": "重新生成密码"
@@ -591,7 +591,7 @@
     "message": "启动网站"
   },
   "launchWebsiteName": {
-    "message": "Launch website $ITEMNAME$",
+    "message": "前往 $ITEMNAME$ 的网站",
     "placeholders": {
       "itemname": {
         "content": "$1",
@@ -846,7 +846,7 @@
     "message": "登录"
   },
   "logInToBitwarden": {
-    "message": "Log in to Bitwarden"
+    "message": "登录到 Bitwarden"
   },
   "restartRegistration": {
     "message": "重新开始注册"
@@ -1424,7 +1424,7 @@
     "message": "服务器 URL"
   },
   "selfHostBaseUrl": {
-    "message": "Self-host server URL",
+    "message": "自托管服务器 URL",
     "description": "Label for field requesting a self-hosted integration service URL"
   },
   "apiUrl": {
@@ -1795,13 +1795,13 @@
     "message": "密码历史记录"
   },
   "generatorHistory": {
-    "message": "Generator history"
+    "message": "生成器历史记录"
   },
   "clearGeneratorHistoryTitle": {
-    "message": "Clear generator history"
+    "message": "清除生成器历史记录"
   },
   "cleargGeneratorHistoryDescription": {
-    "message": "If you continue, all entries will be permanently deleted from generator's history. Are you sure you want to continue?"
+    "message": "若继续，所有条目将从生成器历史记录中永久删除。确定要继续吗？"
   },
   "back": {
     "message": "后退"
@@ -1920,10 +1920,10 @@
     "message": "清除历史记录"
   },
   "nothingToShow": {
-    "message": "Nothing to show"
+    "message": "没有可显示的内容"
   },
   "nothingGeneratedRecently": {
-    "message": "You haven't generated anything recently"
+    "message": "您最近没有生成任何内容"
   },
   "remove": {
     "message": "移除"
@@ -2512,7 +2512,7 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendPasswordDescV3": {
-    "message": "Add an optional password for recipients to access this Send.",
+    "message": "添加一个用于收件人访问此 Send 的可选密码。",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendNotesDesc": {
@@ -2875,10 +2875,10 @@
     "message": "生成用户名"
   },
   "generateEmail": {
-    "message": "Generate email"
+    "message": "生成邮件地址"
   },
   "generatorBoundariesHint": {
-    "message": "Value must be between $MIN$ and $MAX$",
+    "message": "值必须在 $MIN$ 和 $MAX$ 之间",
     "description": "Explains spin box minimum and maximum values to the user",
     "placeholders": {
       "min": {
@@ -2932,11 +2932,11 @@
     "message": "使用外部转发服务生成一个电子邮件别名。"
   },
   "forwarderDomainName": {
-    "message": "Email domain",
+    "message": "邮件域名",
     "description": "Labels the domain name email forwarder service option"
   },
   "forwarderDomainNameHint": {
-    "message": "Choose a domain that is supported by the selected service",
+    "message": "选择一个所选服务支持的域名",
     "description": "Guidance provided for email forwarding services that support multiple email domains."
   },
   "forwarderError": {
@@ -4636,156 +4636,156 @@
     "message": "正在验证"
   },
   "fillGeneratedPassword": {
-    "message": "Fill generated password",
+    "message": "填充已生成的密码",
     "description": "Heading for the password generator within the inline menu"
   },
   "passwordRegenerated": {
-    "message": "Password regenerated",
+    "message": "密码已重新生成",
     "description": "Notification message for when a password has been regenerated"
   },
   "saveLoginToBitwarden": {
-    "message": "Save login to Bitwarden?",
+    "message": "将登录保存到 Bitwarden 吗？",
     "description": "Confirmation message for saving a login to Bitwarden"
   },
   "spaceCharacterDescriptor": {
-    "message": "Space",
+    "message": "空格",
     "description": "Represents the space key in screen reader content as a readable word"
   },
   "tildeCharacterDescriptor": {
-    "message": "Tilde",
+    "message": "波浪号",
     "description": "Represents the ~ key in screen reader content as a readable word"
   },
   "backtickCharacterDescriptor": {
-    "message": "Backtick",
+    "message": "反引号",
     "description": "Represents the ` key in screen reader content as a readable word"
   },
   "exclamationCharacterDescriptor": {
-    "message": "Exclamation mark",
+    "message": "感叹号",
     "description": "Represents the ! key in screen reader content as a readable word"
   },
   "atSignCharacterDescriptor": {
-    "message": "At sign",
+    "message": "艾特号",
     "description": "Represents the @ key in screen reader content as a readable word"
   },
   "hashSignCharacterDescriptor": {
-    "message": "Hash sign",
+    "message": "井号",
     "description": "Represents the # key in screen reader content as a readable word"
   },
   "dollarSignCharacterDescriptor": {
-    "message": "Dollar sign",
+    "message": "美元符号",
     "description": "Represents the $ key in screen reader content as a readable word"
   },
   "percentSignCharacterDescriptor": {
-    "message": "Percent sign",
+    "message": "百分号",
     "description": "Represents the % key in screen reader content as a readable word"
   },
   "caretCharacterDescriptor": {
-    "message": "Caret",
+    "message": "脱字符",
     "description": "Represents the ^ key in screen reader content as a readable word"
   },
   "ampersandCharacterDescriptor": {
-    "message": "Ampersand",
+    "message": "与和符",
     "description": "Represents the & key in screen reader content as a readable word"
   },
   "asteriskCharacterDescriptor": {
-    "message": "Asterisk",
+    "message": "星号",
     "description": "Represents the * key in screen reader content as a readable word"
   },
   "parenLeftCharacterDescriptor": {
-    "message": "Left parenthesis",
+    "message": "左括号",
     "description": "Represents the ( key in screen reader content as a readable word"
   },
   "parenRightCharacterDescriptor": {
-    "message": "Right parenthesis",
+    "message": "右括号",
     "description": "Represents the ) key in screen reader content as a readable word"
   },
   "hyphenCharacterDescriptor": {
-    "message": "Underscore",
+    "message": "下划线",
     "description": "Represents the _ key in screen reader content as a readable word"
   },
   "underscoreCharacterDescriptor": {
-    "message": "Hyphen",
+    "message": "连字符",
     "description": "Represents the - key in screen reader content as a readable word"
   },
   "plusCharacterDescriptor": {
-    "message": "Plus",
+    "message": "加号",
     "description": "Represents the + key in screen reader content as a readable word"
   },
   "equalsCharacterDescriptor": {
-    "message": "Equals",
+    "message": "等号",
     "description": "Represents the = key in screen reader content as a readable word"
   },
   "braceLeftCharacterDescriptor": {
-    "message": "Left brace",
+    "message": "左大括号",
     "description": "Represents the { key in screen reader content as a readable word"
   },
   "braceRightCharacterDescriptor": {
-    "message": "Right brace",
+    "message": "右大括号",
     "description": "Represents the } key in screen reader content as a readable word"
   },
   "bracketLeftCharacterDescriptor": {
-    "message": "Left bracket",
+    "message": "左中括号",
     "description": "Represents the [ key in screen reader content as a readable word"
   },
   "bracketRightCharacterDescriptor": {
-    "message": "Right bracket",
+    "message": "右中括号",
     "description": "Represents the ] key in screen reader content as a readable word"
   },
   "pipeCharacterDescriptor": {
-    "message": "Pipe",
+    "message": "竖线",
     "description": "Represents the | key in screen reader content as a readable word"
   },
   "backSlashCharacterDescriptor": {
-    "message": "Back slash",
+    "message": "反斜杠",
     "description": "Represents the back slash key in screen reader content as a readable word"
   },
   "colonCharacterDescriptor": {
-    "message": "Colon",
+    "message": "冒号",
     "description": "Represents the : key in screen reader content as a readable word"
   },
   "semicolonCharacterDescriptor": {
-    "message": "Semicolon",
+    "message": "分号",
     "description": "Represents the ; key in screen reader content as a readable word"
   },
   "doubleQuoteCharacterDescriptor": {
-    "message": "Double quote",
+    "message": "双引号",
     "description": "Represents the double quote key in screen reader content as a readable word"
   },
   "singleQuoteCharacterDescriptor": {
-    "message": "Single quote",
+    "message": "单引号",
     "description": "Represents the ' key in screen reader content as a readable word"
   },
   "lessThanCharacterDescriptor": {
-    "message": "Less than",
+    "message": "小于号",
     "description": "Represents the < key in screen reader content as a readable word"
   },
   "greaterThanCharacterDescriptor": {
-    "message": "Greater than",
+    "message": "大于号",
     "description": "Represents the > key in screen reader content as a readable word"
   },
   "commaCharacterDescriptor": {
-    "message": "Comma",
+    "message": "逗号",
     "description": "Represents the , key in screen reader content as a readable word"
   },
   "periodCharacterDescriptor": {
-    "message": "Period",
+    "message": "句号",
     "description": "Represents the . key in screen reader content as a readable word"
   },
   "questionCharacterDescriptor": {
-    "message": "Question mark",
+    "message": "问号",
     "description": "Represents the ? key in screen reader content as a readable word"
   },
   "forwardSlashCharacterDescriptor": {
-    "message": "Forward slash",
+    "message": "正斜杠",
     "description": "Represents the / key in screen reader content as a readable word"
   },
   "lowercaseAriaLabel": {
-    "message": "Lowercase"
+    "message": "小写"
   },
   "uppercaseAriaLabel": {
-    "message": "Uppercase"
+    "message": "大写"
   },
   "generatedPassword": {
-    "message": "Generated password"
+    "message": "生成密码"
   }
 }
