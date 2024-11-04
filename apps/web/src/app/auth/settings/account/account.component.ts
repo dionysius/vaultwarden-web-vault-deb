@@ -23,6 +23,7 @@ export class AccountComponent implements OnInit {
 
   showChangeEmail$: Observable<boolean>;
   showPurgeVault$: Observable<boolean>;
+  showDeleteAccount$: Observable<boolean>;
 
   constructor(
     private modalService: ModalService,
@@ -55,6 +56,16 @@ export class AccountComponent implements OnInit {
     );
 
     this.showPurgeVault$ = combineLatest([
+      isAccountDeprovisioningEnabled$,
+      userIsManagedByOrganization$,
+    ]).pipe(
+      map(
+        ([isAccountDeprovisioningEnabled, userIsManagedByOrganization]) =>
+          !isAccountDeprovisioningEnabled || !userIsManagedByOrganization,
+      ),
+    );
+
+    this.showDeleteAccount$ = combineLatest([
       isAccountDeprovisioningEnabled$,
       userIsManagedByOrganization$,
     ]).pipe(
