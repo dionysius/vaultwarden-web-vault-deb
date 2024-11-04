@@ -1,5 +1,8 @@
 #[macro_use]
 extern crate napi_derive;
+
+mod registry;
+
 #[napi]
 pub mod passwords {
     /// Fetch the stored password from the keychain.
@@ -188,6 +191,21 @@ pub mod powermonitors {
         Ok(desktop_core::powermonitor::is_lock_monitor_available().await)
     }
 
+}
+
+#[napi]
+pub mod windows_registry {
+    #[napi]
+    pub async fn create_key(key: String, subkey: String, value: String) -> napi::Result<()> {
+        crate::registry::create_key(&key, &subkey, &value)
+            .map_err(|e| napi::Error::from_reason(e.to_string()))
+    }
+
+    #[napi]
+    pub async fn delete_key(key: String, subkey: String) -> napi::Result<()> {
+        crate::registry::delete_key(&key, &subkey)
+            .map_err(|e| napi::Error::from_reason(e.to_string()))
+    }
 }
 
 #[napi]
