@@ -1847,8 +1847,8 @@ export class ApiService implements ApiServiceAbstraction {
     const [requestHeaders, requestBody] = await this.buildHeadersAndBody(
       authed,
       hasResponse,
-      alterHeaders,
       body,
+      alterHeaders,
     );
 
     const requestInit: RequestInit = {
