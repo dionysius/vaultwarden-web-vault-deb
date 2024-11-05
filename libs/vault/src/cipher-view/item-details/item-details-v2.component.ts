@@ -36,4 +36,9 @@ export class ItemDetailsV2Component {
   @Input() organization?: Organization;
   @Input() collections?: CollectionView[];
   @Input() folder?: FolderView;
+  @Input() hideOwner?: boolean = false;
+
+  get showOwnership() {
+    return this.cipher.organizationId && this.organization && !this.hideOwner;
+  }
 }

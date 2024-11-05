@@ -4,10 +4,8 @@
   </bit-section-header>
   <bit-card>
     <bit-form-field
-      [disableMargin]="!cipher.collectionIds?.length && !cipher.organizationId && !cipher.folderId"
-      [disableReadOnlyBorder]="
-        !cipher.collectionIds?.length && !cipher.organizationId && !cipher.folderId
-      "
+      [disableMargin]="!cipher.collectionIds?.length && !showOwnership && !cipher.folderId"
+      [disableReadOnlyBorder]="!cipher.collectionIds?.length && !showOwnership && !cipher.folderId"
     >
       <bit-label>
         {{ "itemName" | i18n }}
@@ -24,11 +22,11 @@
 
     <ul
       [attr.aria-label]="'itemLocation' | i18n"
-      *ngIf="cipher.collectionIds?.length || cipher.organizationId || cipher.folderId"
+      *ngIf="cipher.collectionIds?.length || showOwnership || cipher.folderId"
       class="tw-mb-0 tw-pl-0"
     >
       <li
-        *ngIf="cipher.organizationId && organization"
+        *ngIf="showOwnership && organization"
         class="tw-flex tw-items-center tw-list-none"
         [ngClass]="{ 'tw-mb-3': cipher.collectionIds }"
         bitTypography="body2"
