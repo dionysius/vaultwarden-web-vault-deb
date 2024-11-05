@@ -27,7 +27,7 @@
     "storybook": "ng run components:storybook",
     "build-storybook": "ng run components:build-storybook",
     "build-storybook:ci": "ng run components:build-storybook --webpack-stats-json",
-    "postinstall": "patch-package && rimraf ./node_modules/@types/glob && rimraf ./node_modules/@types/minimatch"
+    "postinstall": "patch-package"
   },
   "workspaces": [
     "apps/*",
