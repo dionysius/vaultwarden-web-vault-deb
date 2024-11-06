@@ -49,7 +49,7 @@ export function toValidators<Policy, Settings>(
   }
 
   const max = getConstraint("max", config, runtime);
-  if (max === undefined) {
+  if (max !== undefined) {
     validators.push(Validators.max(max));
   }
 

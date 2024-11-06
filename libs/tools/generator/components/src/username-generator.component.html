@@ -9,6 +9,7 @@
       buttonType="main"
       (click)="generate('user request')"
       [appA11yTitle]="credentialTypeGenerateLabel$ | async"
+      [disabled]="!(algorithm$ | async)"
     >
       {{ credentialTypeGenerateLabel$ | async }}
     </button>
@@ -20,6 +21,7 @@
       [appA11yTitle]="credentialTypeCopyLabel$ | async"
       [appCopyClick]="value$ | async"
       [valueLabel]="credentialTypeLabel$ | async"
+      [disabled]="!(algorithm$ | async)"
     >
       {{ credentialTypeCopyLabel$ | async }}
     </button>
@@ -57,21 +59,25 @@
         </bit-form-field>
       </form>
       <tools-catchall-settings
+        #catchallSettings
         *ngIf="(algorithm$ | async)?.id === 'catchall'"
         [userId]="this.userId$ | async"
         (onUpdated)="generate('catchall settings')"
       />
       <tools-forwarder-settings
+        #forwarderSettings
         *ngIf="!!(forwarderId$ | async)"
         [forwarder]="forwarderId$ | async"
         [userId]="this.userId$ | async"
       />
       <tools-subaddress-settings
+        #subaddressSettings
         *ngIf="(algorithm$ | async)?.id === 'subaddress'"
         [userId]="this.userId$ | async"
         (onUpdated)="generate('subaddress settings')"
       />
       <tools-username-settings
+        #usernameSettings
         *ngIf="(algorithm$ | async)?.id === 'username'"
         [userId]="this.userId$ | async"
         (onUpdated)="generate('username settings')"

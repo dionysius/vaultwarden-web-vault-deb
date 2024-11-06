@@ -254,17 +254,18 @@ export class UserStateSubject<
       withConstraints,
       map(([loadedState, constraints]) => {
         // bypass nulls
-        if (!loadedState) {
+        if (!loadedState && !this.objectKey?.initial) {
           return {
             constraints: {} as Constraints<State>,
             state: null,
           } satisfies Constrained<State>;
         }
 
+        const unconstrained = loadedState ?? structuredClone(this.objectKey.initial);
         const calibration = isDynamic(constraints)
-          ? constraints.calibrate(loadedState)
+          ? constraints.calibrate(unconstrained)
           : constraints;
-        const adjusted = calibration.adjust(loadedState);
+        const adjusted = calibration.adjust(unconstrained);
 
         return {
           constraints: calibration.constraints,

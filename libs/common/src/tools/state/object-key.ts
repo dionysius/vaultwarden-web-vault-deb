@@ -22,6 +22,7 @@ export type ObjectKey<State, Secret = State, Disclosed = Record<string, never>> 
   classifier: Classifier<State, Disclosed, Secret>;
   format: "plain" | "classified";
   options: UserKeyDefinitionOptions<State>;
+  initial?: State;
 };
 
 export function isObjectKey(key: any): key is ObjectKey<unknown> {

@@ -23,6 +23,7 @@ import { Simplify } from "type-fest";
 import { ApiService } from "@bitwarden/common/abstractions/api.service";
 import { PolicyService } from "@bitwarden/common/admin-console/abstractions/policy/policy.service.abstraction";
 import { PolicyType } from "@bitwarden/common/admin-console/enums";
+import { AccountService } from "@bitwarden/common/auth/abstractions/account.service";
 import { EncryptService } from "@bitwarden/common/platform/abstractions/encrypt.service";
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 import { StateProvider } from "@bitwarden/common/platform/state";
@@ -98,6 +99,7 @@ export class CredentialGeneratorService {
     private readonly i18nService: I18nService,
     private readonly encryptService: EncryptService,
     private readonly keyService: KeyService,
+    private readonly accountService: AccountService,
   ) {}
 
   private getDependencyProvider(): GeneratorDependencyProvider {
@@ -380,17 +382,30 @@ export class CredentialGeneratorService {
     configuration: Configuration<Settings, Policy>,
     dependencies: Policy$Dependencies,
   ): Observable<GeneratorConstraints<Settings>> {
-    const completion$ = dependencies.userId$.pipe(ignoreElements(), endWith(true));
+    const email$ = dependencies.userId$.pipe(
+      distinctUntilChanged(),
+      withLatestFrom(this.accountService.accounts$),
+      filter((accounts) => !!accounts),
+      map(([userId, accounts]) => {
+        if (userId in accounts) {
+          return { userId, email: accounts[userId].email };
+        }
 
-    const constraints$ = dependencies.userId$.pipe(
-      switchMap((userId) => {
-        // complete policy emissions otherwise `mergeMap` holds `policies$` open indefinitely
+        return { userId, email: null };
+      }),
+    );
+
+    const constraints$ = email$.pipe(
+      switchMap(({ userId, email }) => {
+        // complete policy emissions otherwise `switchMap` holds `policies$` open indefinitely
         const policies$ = this.policyService
           .getAll$(configuration.policy.type, userId)
-          .pipe(takeUntil(completion$));
+          .pipe(
+            mapPolicyToConstraints(configuration.policy, email),
+            takeUntil(anyComplete(email$)),
+          );
         return policies$;
       }),
-      mapPolicyToConstraints(configuration.policy),
     );
 
     return constraints$;

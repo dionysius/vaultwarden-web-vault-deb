@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, OnDestroy, OnInit, Output } from "@angular/core";
 import { FormBuilder } from "@angular/forms";
-import { BehaviorSubject, skip, Subject, takeUntil } from "rxjs";
+import { BehaviorSubject, map, skip, Subject, takeUntil, withLatestFrom } from "rxjs";
 
 import { AccountService } from "@bitwarden/common/auth/abstractions/account.service";
 import { UserId } from "@bitwarden/common/types/guid";
@@ -61,7 +61,18 @@ export class UsernameSettingsComponent implements OnInit, OnDestroy {
     // the first emission is the current value; subsequent emissions are updates
     settings.pipe(skip(1), takeUntil(this.destroyed$)).subscribe(this.onUpdated);
 
-    this.settings.valueChanges.pipe(takeUntil(this.destroyed$)).subscribe(settings);
+    this.saveSettings
+      .pipe(
+        withLatestFrom(this.settings.valueChanges),
+        map(([, settings]) => settings),
+        takeUntil(this.destroyed$),
+      )
+      .subscribe(settings);
+  }
+
+  private saveSettings = new Subject<string>();
+  save(site: string = "component api call") {
+    this.saveSettings.next(site);
   }
 
   private singleUserId$() {
@@ -79,6 +90,7 @@ export class UsernameSettingsComponent implements OnInit, OnDestroy {
 
   private readonly destroyed$ = new Subject<void>();
   ngOnDestroy(): void {
+    this.destroyed$.next();
     this.destroyed$.complete();
   }
 }
