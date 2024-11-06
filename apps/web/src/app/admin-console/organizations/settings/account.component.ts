@@ -123,20 +123,22 @@ export class AccountComponent implements OnInit, OnDestroy {
         this.canEditSubscription = organization.canEditSubscription;
         this.canUseApi = organization.useApi;
 
-        // Update disabled states - reactive forms prefers not using disabled attribute
         // Disabling these fields for self hosted orgs is deprecated
         // This block can be completely removed as part of
         // https://bitwarden.atlassian.net/browse/PM-10863
         if (!this.limitCollectionCreationDeletionSplitFeatureFlagIsEnabled) {
           if (!this.selfHosted) {
-            this.formGroup.get("orgName").enable();
             this.collectionManagementFormGroup.get("limitCollectionCreationDeletion").enable();
             this.collectionManagementFormGroup.get("allowAdminAccessToAllCollectionItems").enable();
           }
         }
 
-        if (!this.selfHosted && this.canEditSubscription) {
-          this.formGroup.get("billingEmail").enable();
+        // Update disabled states - reactive forms prefers not using disabled attribute
+        if (!this.selfHosted) {
+          this.formGroup.get("orgName").enable();
+          if (this.canEditSubscription) {
+            this.formGroup.get("billingEmail").enable();
+          }
         }
 
         // Org Response
