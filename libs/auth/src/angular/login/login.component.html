@@ -11,7 +11,7 @@
 -->
 
 <form [bitSubmit]="submit" [formGroup]="formGroup">
-  <ng-container *ngIf="loginUiState === LoginUiState.EMAIL_ENTRY">
+  <div [ngClass]="{ 'tw-invisible tw-h-0': loginUiState !== LoginUiState.EMAIL_ENTRY }">
     <!-- Email Address input -->
     <bit-form-field>
       <bit-label>{{ "emailAddress" | i18n }}</bit-label>
@@ -82,9 +82,9 @@
         </button>
       </ng-container>
     </div>
-  </ng-container>
+  </div>
 
-  <ng-container *ngIf="loginUiState === LoginUiState.MASTER_PASSWORD_ENTRY">
+  <div [ngClass]="{ 'tw-invisible tw-h-0': loginUiState !== LoginUiState.MASTER_PASSWORD_ENTRY }">
     <!-- Master Password input -->
     <bit-form-field class="!tw-mb-1">
       <bit-label>{{ "masterPass" | i18n }}</bit-label>
@@ -140,5 +140,5 @@
         </button>
       </ng-container>
     </div>
-  </ng-container>
+  </div>
 </form>
