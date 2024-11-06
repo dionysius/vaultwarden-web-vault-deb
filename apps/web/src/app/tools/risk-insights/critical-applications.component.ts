@@ -12,8 +12,8 @@ import { HeaderModule } from "../../layouts/header/header.module";
 import { SharedModule } from "../../shared";
 import { PipesModule } from "../../vault/individual-vault/pipes/pipes.module";
 
-import { AccessIntelligenceTabType } from "./access-intelligence.component";
 import { applicationTableMockData } from "./application-table.mock";
+import { RiskInsightsTabType } from "./risk-insights.component";
 
 @Component({
   standalone: true,
@@ -49,8 +49,8 @@ export class CriticalApplicationsComponent implements OnInit {
   }
 
   goToAllAppsTab = async () => {
-    await this.router.navigate([`organizations/${this.organizationId}/access-intelligence`], {
-      queryParams: { tabIndex: AccessIntelligenceTabType.AllApps },
+    await this.router.navigate([`organizations/${this.organizationId}/risk-insights`], {
+      queryParams: { tabIndex: RiskInsightsTabType.AllApps },
       queryParamsHandling: "merge",
     });
   };

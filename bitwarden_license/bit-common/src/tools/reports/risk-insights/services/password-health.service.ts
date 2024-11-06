@@ -1,9 +1,9 @@
 import { Inject, Injectable } from "@angular/core";
 
 // eslint-disable-next-line no-restricted-imports
-import { mockCiphers } from "@bitwarden/bit-common/tools/reports/access-intelligence/services/ciphers.mock";
+import { mockCiphers } from "@bitwarden/bit-common/tools/reports/risk-insights/services/ciphers.mock";
 // eslint-disable-next-line no-restricted-imports
-import { mockMemberCipherDetailsResponse } from "@bitwarden/bit-common/tools/reports/access-intelligence/services/member-cipher-details-response.mock";
+import { mockMemberCipherDetailsResponse } from "@bitwarden/bit-common/tools/reports/risk-insights/services/member-cipher-details-response.mock";
 import { AuditService } from "@bitwarden/common/abstractions/audit.service";
 import { Utils } from "@bitwarden/common/platform/misc/utils";
 import { PasswordStrengthServiceAbstraction } from "@bitwarden/common/tools/password-strength";
