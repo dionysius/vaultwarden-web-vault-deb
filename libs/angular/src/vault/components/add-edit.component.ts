@@ -699,7 +699,7 @@ export class AddEditComponent implements OnInit, OnDestroy {
   }
 
   protected deleteCipher() {
-    const asAdmin = this.organization?.canEditAllCiphers;
+    const asAdmin = this.organization?.canEditAllCiphers || !this.cipher.collectionIds;
     return this.cipher.isDeleted
       ? this.cipherService.deleteWithServer(this.cipher.id, asAdmin)
       : this.cipherService.softDeleteWithServer(this.cipher.id, asAdmin);
