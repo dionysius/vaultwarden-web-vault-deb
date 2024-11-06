@@ -28,6 +28,7 @@ import { Environment, EnvironmentService, Region } from "../../abstractions/envi
 import { LogService } from "../../abstractions/log.service";
 import { devFlagEnabled, devFlagValue } from "../../misc/flags";
 import { ServerConfigData } from "../../models/data/server-config.data";
+import { ServerSettings } from "../../models/domain/server-settings";
 import { CONFIG_DISK, KeyDefinition, StateProvider, UserKeyDefinition } from "../../state";
 
 export const RETRIEVAL_INTERVAL = devFlagEnabled("configRetrievalIntervalMs")
@@ -56,6 +57,8 @@ export class DefaultConfigService implements ConfigService {
   private failedFetchFallbackSubject = new Subject<ServerConfig>();
 
   serverConfig$: Observable<ServerConfig>;
+
+  serverSettings$: Observable<ServerSettings>;
 
   cloudRegion$: Observable<Region>;
 
@@ -110,6 +113,10 @@ export class DefaultConfigService implements ConfigService {
 
     this.cloudRegion$ = this.serverConfig$.pipe(
       map((config) => config?.environment?.cloudRegion ?? Region.US),
+    );
+
+    this.serverSettings$ = this.serverConfig$.pipe(
+      map((config) => config?.settings ?? new ServerSettings()),
     );
   }
 
