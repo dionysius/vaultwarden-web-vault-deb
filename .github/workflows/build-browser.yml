@@ -1,7 +1,8 @@
 name: Build Browser
 
 on:
-  pull_request:
+  pull_request_target:
+    types: [opened, synchronize]
     branches-ignore:
       - 'l10n_master'
       - 'cf-pages'
@@ -33,6 +34,10 @@ defaults:
     shell: bash
 
 jobs:
+  check-run:
+    name: Check PR run
+    uses: bitwarden/gh-actions/.github/workflows/check-run.yml@main
+
   setup:
     name: Setup
     runs-on: ubuntu-22.04
@@ -41,8 +46,10 @@ jobs:
       adj_build_number: ${{ steps.gen_vars.outputs.adj_build_number }}
       node_version: ${{ steps.retrieve-node-version.outputs.node_version }}
     steps:
-      - name: Checkout repo
+      - name: Check out repo
         uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          ref: ${{  github.event.pull_request.head.sha }}
 
       - name: Get Package Version
         id: gen_vars
@@ -71,8 +78,10 @@ jobs:
       run:
         working-directory: apps/browser
     steps:
-      - name: Checkout repo
+      - name: Check out repo
         uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          ref: ${{  github.event.pull_request.head.sha }}
 
       - name: Testing locales - extName length
         run: |
@@ -109,8 +118,10 @@ jobs:
       _BUILD_NUMBER: ${{ needs.setup.outputs.adj_build_number }}
       _NODE_VERSION: ${{ needs.setup.outputs.node_version }}
     steps:
-      - name: Checkout repo
+      - name: Check out repo
         uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          ref: ${{  github.event.pull_request.head.sha }}
 
       - name: Set up Node
         uses: actions/setup-node@39370e3970a6d050c480ffad4ff0ed4d3fdee5af # v4.1.0
@@ -225,12 +236,15 @@ jobs:
     needs:
       - setup
       - locales-test
+      - check-run
     env:
       _BUILD_NUMBER: ${{ needs.setup.outputs.adj_build_number }}
       _NODE_VERSION: ${{ needs.setup.outputs.node_version }}
     steps:
-      - name: Checkout repo
+      - name: Check out repo
         uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          ref: ${{  github.event.pull_request.head.sha }}
 
       - name: Set up Node
         uses: actions/setup-node@39370e3970a6d050c480ffad4ff0ed4d3fdee5af # v4.1.0
@@ -342,8 +356,10 @@ jobs:
       - build
       - build-safari
     steps:
-      - name: Checkout repo
+      - name: Check out repo
         uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          ref: ${{  github.event.pull_request.head.sha }}
 
       - name: Login to Azure
         uses: Azure/login@e15b166166a8746d1a47596803bd8c1b595455cf # v1.6.0

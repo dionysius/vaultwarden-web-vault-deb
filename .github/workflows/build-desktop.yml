@@ -1,7 +1,8 @@
 name: Build Desktop
 
 on:
-  pull_request:
+  pull_request_target:
+    types: [opened, synchronize]
     branches-ignore:
       - 'l10n_master'
       - 'cf-pages'
@@ -32,12 +33,18 @@ defaults:
     shell: bash
 
 jobs:
+  check-run:
+    name: Check PR run
+    uses: bitwarden/gh-actions/.github/workflows/check-run.yml@main
+
   electron-verify:
     name: Verify Electron Version
     runs-on: ubuntu-22.04
     steps:
-      - name: Checkout repo
+      - name: Check out repo
         uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          ref: ${{  github.event.pull_request.head.sha }}
 
       - name: Verify
         run: |
@@ -65,8 +72,10 @@ jobs:
       run:
         working-directory: apps/desktop
     steps:
-      - name: Checkout repo
+      - name: Check out repo
         uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          ref: ${{  github.event.pull_request.head.sha }}
 
       - name: Get Package Version
         id: retrieve-version
@@ -138,8 +147,10 @@ jobs:
       run:
         working-directory: apps/desktop
     steps:
-      - name: Checkout repo
+      - name: Check out repo
         uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          ref: ${{  github.event.pull_request.head.sha }}
 
       - name: Set up Node
         uses: actions/setup-node@39370e3970a6d050c480ffad4ff0ed4d3fdee5af # v4.1.0
@@ -238,7 +249,9 @@ jobs:
   windows:
     name: Windows Build
     runs-on: windows-2022
-    needs: setup
+    needs:
+      - setup
+      - check-run
     defaults:
       run:
         shell: pwsh
@@ -248,8 +261,10 @@ jobs:
       _NODE_VERSION: ${{ needs.setup.outputs.node_version }}
       NODE_OPTIONS: --max_old_space_size=4096
     steps:
-      - name: Checkout repo
+      - name: Check out repo
         uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          ref: ${{  github.event.pull_request.head.sha }}
 
       - name: Set up Node
         uses: actions/setup-node@39370e3970a6d050c480ffad4ff0ed4d3fdee5af # v4.1.0
@@ -447,7 +462,9 @@ jobs:
   macos-build:
     name: MacOS Build
     runs-on: macos-13
-    needs: setup
+    needs:
+      - setup
+      - check-run
     env:
       _PACKAGE_VERSION: ${{ needs.setup.outputs.package_version }}
       _NODE_VERSION: ${{ needs.setup.outputs.node_version }}
@@ -456,8 +473,10 @@ jobs:
       run:
         working-directory: apps/desktop
     steps:
-      - name: Checkout repo
+      - name: Check out repo
         uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          ref: ${{  github.event.pull_request.head.sha }}
 
       - name: Set up Node
         uses: actions/setup-node@39370e3970a6d050c480ffad4ff0ed4d3fdee5af # v4.1.0
@@ -622,8 +641,10 @@ jobs:
       run:
         working-directory: apps/desktop
     steps:
-      - name: Checkout repo
+      - name: Check out repo
         uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          ref: ${{  github.event.pull_request.head.sha }}
 
       - name: Set up Node
         uses: actions/setup-node@39370e3970a6d050c480ffad4ff0ed4d3fdee5af # v4.1.0
@@ -841,8 +862,10 @@ jobs:
       run:
         working-directory: apps/desktop
     steps:
-      - name: Checkout repo
+      - name: Check out repo
         uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          ref: ${{  github.event.pull_request.head.sha }}
 
       - name: Set up Node
         uses: actions/setup-node@39370e3970a6d050c480ffad4ff0ed4d3fdee5af # v4.1.0
@@ -1088,8 +1111,10 @@ jobs:
       run:
         working-directory: apps/desktop
     steps:
-      - name: Checkout repo
+      - name: Check out repo
         uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          ref: ${{  github.event.pull_request.head.sha }}
 
       - name: Set up Node
         uses: actions/setup-node@39370e3970a6d050c480ffad4ff0ed4d3fdee5af # v4.1.0
@@ -1279,8 +1304,10 @@ jobs:
       - macos-package-mas
     runs-on: ubuntu-22.04
     steps:
-      - name: Checkout repo
+      - name: Check out repo
         uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          ref: ${{  github.event.pull_request.head.sha }}
 
       - name: Login to Azure
         uses: Azure/login@e15b166166a8746d1a47596803bd8c1b595455cf # v1.6.0

@@ -1,7 +1,8 @@
 name: Build CLI
 
 on:
-  pull_request:
+  pull_request_target:
+    types: [opened, synchronize]
     branches-ignore:
       - 'l10n_master'
       - 'cf-pages'
@@ -34,6 +35,10 @@ defaults:
     working-directory: apps/cli
 
 jobs:
+  check-run:
+    name: Check PR run
+    uses: bitwarden/gh-actions/.github/workflows/check-run.yml@main
+
   setup:
     name: Setup
     runs-on: ubuntu-22.04
@@ -41,8 +46,10 @@ jobs:
       package_version: ${{ steps.retrieve-package-version.outputs.package_version }}
       node_version: ${{ steps.retrieve-node-version.outputs.node_version }}
     steps:
-      - name: Checkout repo
+      - name: Check out repo
         uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          ref: ${{  github.event.pull_request.head.sha }}
 
       - name: Get Package Version
         id: retrieve-package-version
@@ -57,7 +64,6 @@ jobs:
           NODE_NVMRC=$(cat .nvmrc)
           NODE_VERSION=${NODE_NVMRC/v/''}
           echo "node_version=$NODE_VERSION" >> $GITHUB_OUTPUT
-
 
   cli:
     name: "${{ matrix.os.base }} - ${{ matrix.license_type.readable }}"
@@ -82,8 +88,10 @@ jobs:
       _WIN_PKG_FETCH_VERSION: 20.11.1
       _WIN_PKG_VERSION: 3.5
     steps:
-      - name: Checkout repo
+      - name: Check out repo
         uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          ref: ${{  github.event.pull_request.head.sha }}
 
       - name: Setup Unix Vars
         run: |
@@ -160,8 +168,10 @@ jobs:
       _WIN_PKG_FETCH_VERSION: 20.11.1
       _WIN_PKG_VERSION: 3.5
     steps:
-      - name: Checkout repo
+      - name: Check out repo
         uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          ref: ${{  github.event.pull_request.head.sha }}
 
       - name: Setup Windows builder
         run: |
@@ -310,8 +320,10 @@ jobs:
     env:
       _PACKAGE_VERSION: ${{ needs.setup.outputs.package_version }}
     steps:
-      - name: Checkout repo
+      - name: Check out repo
         uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          ref: ${{  github.event.pull_request.head.sha }}
 
       - name: Print environment
         run: |
@@ -386,6 +398,7 @@ jobs:
       - cli
       - cli-windows
       - snap
+      - check-run
     steps:
       - name: Check if any job failed
         working-directory: ${{ github.workspace }}
