@@ -402,7 +402,10 @@ jobs:
     steps:
       - name: Check if any job failed
         working-directory: ${{ github.workspace }}
-        if: (github.ref == 'refs/heads/main' || github.ref == 'refs/heads/rc' || github.ref == 'refs/heads/hotfix-rc') && contains(needs.*.result, 'failure')
+        if: |
+          github.event_name != 'pull_request_target'
+          && (github.ref == 'refs/heads/main' || github.ref == 'refs/heads/rc' || github.ref == 'refs/heads/hotfix-rc')
+          && contains(needs.*.result, 'failure')
         run: exit 1
 
       - name: Login to Azure - Prod Subscription
