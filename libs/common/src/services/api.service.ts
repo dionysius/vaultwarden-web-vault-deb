@@ -1886,7 +1886,7 @@ export class ApiService implements ApiServiceAbstraction {
     });
 
     if (flagEnabled("prereleaseBuild")) {
-      headers.set("Is-Prerelease", "true");
+      headers.set("Is-Prerelease", "1");
     }
     if (this.customUserAgent != null) {
       headers.set("User-Agent", this.customUserAgent);
