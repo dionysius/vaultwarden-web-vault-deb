@@ -219,7 +219,11 @@ export class AutofillComponent implements OnInit {
         : AutofillOverlayVisibility.Off;
 
     await this.autofillSettingsService.setInlineMenuVisibility(newInlineMenuVisibilityValue);
-    await this.requestPrivacyPermission();
+
+    // No need to initiate browser permission request if a feature is being turned off
+    if (newInlineMenuVisibilityValue !== AutofillOverlayVisibility.Off) {
+      await this.requestPrivacyPermission();
+    }
   }
 
   async updateAutofillOnPageLoad() {
