@@ -12,11 +12,6 @@ import {
 
 import { completeOnAccountSwitch } from "./util";
 
-/** Splits an email into a username, subaddress, and domain named group.
- * Subaddress is optional.
- */
-export const DOMAIN_PARSER = new RegExp("[^@]+@(?<domain>.+)");
-
 /** Options group for catchall emails */
 @Component({
   selector: "tools-catchall-settings",

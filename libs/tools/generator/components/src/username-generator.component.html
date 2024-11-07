@@ -59,25 +59,21 @@
         </bit-form-field>
       </form>
       <tools-catchall-settings
-        #catchallSettings
         *ngIf="(algorithm$ | async)?.id === 'catchall'"
         [userId]="this.userId$ | async"
         (onUpdated)="generate('catchall settings')"
       />
       <tools-forwarder-settings
-        #forwarderSettings
         *ngIf="!!(forwarderId$ | async)"
         [forwarder]="forwarderId$ | async"
         [userId]="this.userId$ | async"
       />
       <tools-subaddress-settings
-        #subaddressSettings
         *ngIf="(algorithm$ | async)?.id === 'subaddress'"
         [userId]="this.userId$ | async"
         (onUpdated)="generate('subaddress settings')"
       />
       <tools-username-settings
-        #usernameSettings
         *ngIf="(algorithm$ | async)?.id === 'username'"
         [userId]="this.userId$ | async"
         (onUpdated)="generate('username settings')"
