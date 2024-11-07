@@ -298,7 +298,7 @@ jobs:
 
   trigger-web-vault-deploy:
     name: Trigger web vault deploy
-    if: github.event_name != pull_request_target && github.ref == 'refs/heads/main'
+    if: github.event_name != 'pull_request_target' && github.ref == 'refs/heads/main'
     runs-on: ubuntu-22.04
     needs:
       - build-artifacts
