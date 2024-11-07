@@ -7,7 +7,7 @@ import {
 import { DefaultPasswordBoundaries } from "../data";
 import { PasswordGeneratorPolicy, PasswordGeneratorSettings } from "../types";
 
-import { atLeast, atLeastSum, maybe, readonlyTrueWhen, AtLeastOne } from "./constraints";
+import { atLeast, atLeastSum, maybe, readonlyTrueWhen, AtLeastOne, Zero } from "./constraints";
 import { PasswordPolicyConstraints } from "./password-policy-constraints";
 
 /** Creates state constraints by blending policy and password settings. */
@@ -68,8 +68,8 @@ export class DynamicPasswordPolicyConstraints
       ...this.constraints,
       minLowercase: maybe<number>(lowercase, this.constraints.minLowercase ?? AtLeastOne),
       minUppercase: maybe<number>(uppercase, this.constraints.minUppercase ?? AtLeastOne),
-      minNumber: maybe<number>(number, this.constraints.minNumber),
-      minSpecial: maybe<number>(special, this.constraints.minSpecial),
+      minNumber: maybe<number>(number, this.constraints.minNumber) ?? Zero,
+      minSpecial: maybe<number>(special, this.constraints.minSpecial) ?? Zero,
     };
 
     // lower bound of length must always at least fit its sub-lengths

@@ -1,6 +1,6 @@
 import { DefaultPasswordBoundaries, DefaultPasswordGenerationOptions, Policies } from "../data";
 
-import { AtLeastOne } from "./constraints";
+import { AtLeastOne, Zero } from "./constraints";
 import { DynamicPasswordPolicyConstraints } from "./dynamic-password-policy-constraints";
 
 describe("DynamicPasswordPolicyConstraints", () => {
@@ -207,7 +207,7 @@ describe("DynamicPasswordPolicyConstraints", () => {
       expect(calibrated.constraints.minNumber).toEqual(dynamic.constraints.minNumber);
     });
 
-    it("disables the minNumber constraint when the state's number flag is false", () => {
+    it("outputs the zero constraint when the state's number flag is false", () => {
       const dynamic = new DynamicPasswordPolicyConstraints(Policies.Password.disabledValue);
       const state = {
         ...DefaultPasswordGenerationOptions,
@@ -216,7 +216,7 @@ describe("DynamicPasswordPolicyConstraints", () => {
 
       const calibrated = dynamic.calibrate(state);
 
-      expect(calibrated.constraints.minNumber).toBeUndefined();
+      expect(calibrated.constraints.minNumber).toEqual(Zero);
     });
 
     it("outputs the minSpecial constraint when the state's special flag is true", () => {
@@ -231,7 +231,7 @@ describe("DynamicPasswordPolicyConstraints", () => {
       expect(calibrated.constraints.minSpecial).toEqual(dynamic.constraints.minSpecial);
     });
 
-    it("disables the minSpecial constraint when the state's special flag is false", () => {
+    it("outputs the zero constraint when the state's special flag is false", () => {
       const dynamic = new DynamicPasswordPolicyConstraints(Policies.Password.disabledValue);
       const state = {
         ...DefaultPasswordGenerationOptions,
@@ -240,23 +240,7 @@ describe("DynamicPasswordPolicyConstraints", () => {
 
       const calibrated = dynamic.calibrate(state);
 
-      expect(calibrated.constraints.minSpecial).toBeUndefined();
-    });
-
-    it("copies the minimum length constraint", () => {
-      const dynamic = new DynamicPasswordPolicyConstraints(Policies.Password.disabledValue);
-
-      const calibrated = dynamic.calibrate(DefaultPasswordGenerationOptions);
-
-      expect(calibrated.constraints.minSpecial).toBeUndefined();
-    });
-
-    it("overrides the minimum length constraint when it is less than the sum of the state's minimums", () => {
-      const dynamic = new DynamicPasswordPolicyConstraints(Policies.Password.disabledValue);
-
-      const calibrated = dynamic.calibrate(DefaultPasswordGenerationOptions);
-
-      expect(calibrated.constraints.minSpecial).toBeUndefined();
+      expect(calibrated.constraints.minSpecial).toEqual(Zero);
     });
   });
 });
