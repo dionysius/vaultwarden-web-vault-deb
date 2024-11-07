@@ -240,7 +240,11 @@ export class ItemDetailsSectionComponent implements OnInit {
     } else if (this.config.mode === "edit") {
       this.readOnlyCollections = this.collections
         .filter(
-          (c) => c.readOnly && this.originalCipherView.collectionIds.includes(c.id as CollectionId),
+          // When the configuration is set up for admins, they can alter read only collections
+          (c) =>
+            c.readOnly &&
+            !this.config.admin &&
+            this.originalCipherView.collectionIds.includes(c.id as CollectionId),
         )
         .map((c) => c.name);
     }
@@ -262,12 +266,24 @@ export class ItemDetailsSectionComponent implements OnInit {
       collectionsControl.disable();
       this.showCollectionsControl = false;
       return;
+    } else {
+      collectionsControl.enable();
+      this.showCollectionsControl = true;
     }
+
+    const organization = this.organizations.find((o) => o.id === orgId);
 
     this.collectionOptions = this.collections
       .filter((c) => {
-        // If partial edit mode, show all org collections because the control is disabled.
-        return c.organizationId === orgId && (this.partialEdit || !c.readOnly);
+        // Filter criteria:
+        // - The collection belongs to the organization
+        // - When in partial edit mode, show all org collections because the control is disabled.
+        // - The user can edit items within the collection
+        // - When viewing as an admin, all collections should be shown, even readonly. When non-admin, filter out readonly collections
+        return (
+          c.organizationId === orgId &&
+          (this.partialEdit || c.canEditItems(organization) || this.config.admin)
+        );
       })
       .map((c) => ({
         id: c.id,

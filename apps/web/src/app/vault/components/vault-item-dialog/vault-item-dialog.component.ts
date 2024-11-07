@@ -6,6 +6,7 @@ import { firstValueFrom, Observable, Subject } from "rxjs";
 import { map } from "rxjs/operators";
 
 import { CollectionView } from "@bitwarden/admin-console/common";
+import { ApiService } from "@bitwarden/common/abstractions/api.service";
 import { Organization } from "@bitwarden/common/admin-console/models/domain/organization";
 import { AccountService } from "@bitwarden/common/auth/abstractions/account.service";
 import { BillingAccountProfileStateService } from "@bitwarden/common/billing/abstractions";
@@ -17,6 +18,8 @@ import { CipherService } from "@bitwarden/common/vault/abstractions/cipher.servi
 import { PremiumUpgradePromptService } from "@bitwarden/common/vault/abstractions/premium-upgrade-prompt.service";
 import { ViewPasswordHistoryService } from "@bitwarden/common/vault/abstractions/view-password-history.service";
 import { CipherType } from "@bitwarden/common/vault/enums";
+import { CipherData } from "@bitwarden/common/vault/models/data/cipher.data";
+import { Cipher } from "@bitwarden/common/vault/models/domain/cipher";
 import { CipherView } from "@bitwarden/common/vault/models/view/cipher.view";
 import { CipherAuthorizationService } from "@bitwarden/common/vault/services/cipher-authorization.service";
 import {
@@ -231,6 +234,7 @@ export class VaultItemDialogComponent implements OnInit, OnDestroy {
     private billingAccountProfileStateService: BillingAccountProfileStateService,
     private premiumUpgradeService: PremiumUpgradePromptService,
     private cipherAuthorizationService: CipherAuthorizationService,
+    private apiService: ApiService,
   ) {
     this.updateTitle();
   }
@@ -278,7 +282,20 @@ export class VaultItemDialogComponent implements OnInit, OnDestroy {
     if (this._originalFormMode === "add" || this._originalFormMode === "clone") {
       this.formConfig.mode = "edit";
     }
-    this.formConfig.originalCipher = await this.cipherService.get(cipherView.id);
+
+    let cipher: Cipher;
+
+    // When the form config is used within the Admin Console, retrieve the cipher from the admin endpoint
+    if (this.formConfig.isAdminConsole) {
+      const cipherResponse = await this.apiService.getCipherAdmin(cipherView.id);
+      const cipherData = new CipherData(cipherResponse);
+      cipher = new Cipher(cipherData);
+    } else {
+      cipher = await this.cipherService.get(cipherView.id);
+    }
+
+    // Store the updated cipher so any following edits use the most up to date cipher
+    this.formConfig.originalCipher = cipher;
     this._cipherModified = true;
     await this.changeMode("view");
   }

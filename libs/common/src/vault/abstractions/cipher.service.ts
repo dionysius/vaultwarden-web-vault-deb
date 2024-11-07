@@ -119,7 +119,7 @@ export abstract class CipherService implements UserKeyRotationDataProvider<Ciphe
    * Used for Unassigned ciphers or when the user only has admin access to the cipher (not assigned normally).
    * @param cipher
    */
-  saveCollectionsWithServerAdmin: (cipher: Cipher) => Promise<void>;
+  saveCollectionsWithServerAdmin: (cipher: Cipher) => Promise<Cipher>;
   /**
    * Bulk update collections for many ciphers with the server
    * @param orgId

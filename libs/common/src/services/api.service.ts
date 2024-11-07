@@ -584,7 +584,7 @@ export class ApiService implements ApiServiceAbstraction {
   }
 
   putCipherCollectionsAdmin(id: string, request: CipherCollectionsRequest): Promise<any> {
-    return this.send("PUT", "/ciphers/" + id + "/collections-admin", request, true, false);
+    return this.send("PUT", "/ciphers/" + id + "/collections-admin", request, true, true);
   }
 
   postPurgeCiphers(
