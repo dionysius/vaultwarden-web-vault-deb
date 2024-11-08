@@ -5,14 +5,14 @@
   "criticalApplications": {
     "message": "Kritikus alkalmazások"
   },
-  "accessIntelligence": {
-    "message": "Elérés intelligencia"
+  "riskInsights": {
+    "message": "Risk Insights"
   },
   "passwordRisk": {
     "message": "Jelszó kockázat"
   },
   "discoverAtRiskPasswords": {
-    "message": "Fedezzük fel a veszélyeztetett jelszavakat és értesítsük a felhasználókat, hogy módosítsák ezeket a jelszavakat."
+    "message": "Discover at-risk passwords and notify users to change those passwords."
   },
   "dataLastUpdated": {
     "message": "Az adatok utolsó frissítése: $DATE$",
@@ -3217,9 +3217,6 @@
         "example": "20"
       }
     }
-  },
-  "inviteSingleEmailDesc": {
-    "message": "1 meghívó maradt."
   },
   "userUsingTwoStep": {
     "message": "Ez a felhasználó kétlépcsős bejelentkezést használ fiókja védelmére."
@@ -9557,5 +9554,31 @@
   },
   "single-org-revoked-user-warning": {
     "message": "A nem megfelelő tagok visszavonásra kerülnek. Az adminisztrátorok visszaállíthatják a tagokat, miután elhagyják az összes többi szervezetet."
+  },
+  "deleteOrganizationUser": {
+    "message": "$NAME$ törlése",
+    "placeholders": {
+      "name": {
+        "content": "$1",
+        "example": "John Doe"
+      },
+      "description": "Title for the delete organization user dialog"
+    }
+  },
+  "deleteOrganizationUserWarning": {
+    "message": "Amikor egy tag törlésre kerül, a Bitwarden fiókjuk és az egyéni széf adataik véglegesen törlésre kerülnek. A gyűjtési adatok a szervezetben maradnak. A visszaállításukhoz egy fiókot kell létrehozni és újra be kell lépni.",
+    "description": "Warning for the delete organization user dialog"
+  },
+  "organizationUserDeleted": {
+    "message": "$NAME$ törlésre került.",
+    "placeholders": {
+      "name": {
+        "content": "$1",
+        "example": "John Doe"
+      }
+    }
+  },
+  "organizationUserDeletedDesc": {
+    "message": "A felhasználó eltávolításra került a szervezetből és az összes kapcsolódó felhasználói adat törlésre került."
   }
 }

@@ -5,14 +5,14 @@
   "criticalApplications": {
     "message": "Kritické aplikácie"
   },
-  "accessIntelligence": {
-    "message": "Access Intelligence"
+  "riskInsights": {
+    "message": "Risk Insights"
   },
   "passwordRisk": {
     "message": "Ohrozenie hesla"
   },
   "discoverAtRiskPasswords": {
-    "message": "Odhaľte ohrozené hesla a upozornite používateľov, aby si ich zmenili."
+    "message": "Discover at-risk passwords and notify users to change those passwords."
   },
   "dataLastUpdated": {
     "message": "Posledná aktualizácia dát: $DATE$",
@@ -3217,9 +3217,6 @@
         "example": "20"
       }
     }
-  },
-  "inviteSingleEmailDesc": {
-    "message": "Ostáva vám 1 pozvánka."
   },
   "userUsingTwoStep": {
     "message": "Tento používateľ používa dvojstupňové overovanie aby si zabezpečil konto."
@@ -9557,5 +9554,31 @@
   },
   "single-org-revoked-user-warning": {
     "message": "Členovia, ktorí nedodržiavajú pravidlo, budú odvolaní. Správcovia môžu obnoviť členov po ich odchode zo všetkých ostatných organizácií."
+  },
+  "deleteOrganizationUser": {
+    "message": "Odstrániť $NAME$",
+    "placeholders": {
+      "name": {
+        "content": "$1",
+        "example": "John Doe"
+      },
+      "description": "Title for the delete organization user dialog"
+    }
+  },
+  "deleteOrganizationUserWarning": {
+    "message": "Keď je člen odstránený, jeho účet Bitwarden a individuálne údaje z trezora sa natrvalo odstránia. Údaje zo zbierky zostanú v organizácii. Ak ho chcete znovu pridať, musí si vytvoriť účet a byť znovu zaradený do systému.",
+    "description": "Warning for the delete organization user dialog"
+  },
+  "organizationUserDeleted": {
+    "message": "Odstránený $NAME$",
+    "placeholders": {
+      "name": {
+        "content": "$1",
+        "example": "John Doe"
+      }
+    }
+  },
+  "organizationUserDeletedDesc": {
+    "message": "Používateľ bol odstránený z organizácie a všetky súvisiace dáta boli vymazané."
   }
 }

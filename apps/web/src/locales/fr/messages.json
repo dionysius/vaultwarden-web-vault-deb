@@ -5,14 +5,14 @@
   "criticalApplications": {
     "message": "Applications critiques"
   },
-  "accessIntelligence": {
-    "message": "Accéder à l'Intelligence"
+  "riskInsights": {
+    "message": "Risk Insights"
   },
   "passwordRisk": {
     "message": "Risque du mot de passe"
   },
   "discoverAtRiskPasswords": {
-    "message": "Découvrez les mots de passe à risque et avertissez les utilisateurs de modifier ces mots de passe."
+    "message": "Discover at-risk passwords and notify users to change those passwords."
   },
   "dataLastUpdated": {
     "message": "Dernière mise à jour des données : $DATE$",
@@ -3217,9 +3217,6 @@
         "example": "20"
       }
     }
-  },
-  "inviteSingleEmailDesc": {
-    "message": "Il vous reste 1 invitation."
   },
   "userUsingTwoStep": {
     "message": "Cet utilisateur utilise l'authentification à deux facteurs pour protéger son compte."
@@ -9557,5 +9554,31 @@
   },
   "single-org-revoked-user-warning": {
     "message": "Les membres non conformes seront révoqués. Les administrateurs peuvent restaurer les membres une fois qu'ils quittent toutes les autres organisations."
+  },
+  "deleteOrganizationUser": {
+    "message": "Supprimer $NAME$",
+    "placeholders": {
+      "name": {
+        "content": "$1",
+        "example": "John Doe"
+      },
+      "description": "Title for the delete organization user dialog"
+    }
+  },
+  "deleteOrganizationUserWarning": {
+    "message": "Lorsqu'un membre est supprimé, son compte Bitwarden et les données individuelles du coffre seront définitivement supprimées. Les données de Collection resteront dans l'organisation. Pour les rétablir, ils doivent créer un compte et être intégrés à nouveau.",
+    "description": "Warning for the delete organization user dialog"
+  },
+  "organizationUserDeleted": {
+    "message": "Supprimer $NAME$",
+    "placeholders": {
+      "name": {
+        "content": "$1",
+        "example": "John Doe"
+      }
+    }
+  },
+  "organizationUserDeletedDesc": {
+    "message": "L'utilisateur a été supprimé de l'organisation et toutes les données utilisateur associées ont été supprimées."
   }
 }

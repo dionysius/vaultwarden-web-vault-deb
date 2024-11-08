@@ -5,8 +5,8 @@
   "criticalApplications": {
     "message": "Belangrijke applicaties"
   },
-  "accessIntelligence": {
-    "message": "Toegangsintelligentie"
+  "riskInsights": {
+    "message": "Risk Insights"
   },
   "passwordRisk": {
     "message": "Wachtwoordrisico"
@@ -3217,9 +3217,6 @@
         "example": "20"
       }
     }
-  },
-  "inviteSingleEmailDesc": {
-    "message": "Je hebt 1 uitnodiging over."
   },
   "userUsingTwoStep": {
     "message": "Het account van deze gebruiker is beschermd met tweestapsaanmelding."
@@ -9557,5 +9554,31 @@
   },
   "single-org-revoked-user-warning": {
     "message": "Niet-conforme leden worden ingetrokken. Beheerders kunnen leden herstellen zodra ze alle andere organisaties verlaten."
+  },
+  "deleteOrganizationUser": {
+    "message": "$NAME$ verwijderen",
+    "placeholders": {
+      "name": {
+        "content": "$1",
+        "example": "John Doe"
+      },
+      "description": "Title for the delete organization user dialog"
+    }
+  },
+  "deleteOrganizationUserWarning": {
+    "message": "Als je een lid verwijdert, verwijder je permanent hun Bitwarden-account en individuele kluisgegevens. Collectiegegevens blijven in de organisatie. Om het account te heractiveren, moet het lid een account aanmaken en opnieuw on-boarding doorlopen.",
+    "description": "Warning for the delete organization user dialog"
+  },
+  "organizationUserDeleted": {
+    "message": "$NAME$ verwijderd",
+    "placeholders": {
+      "name": {
+        "content": "$1",
+        "example": "John Doe"
+      }
+    }
+  },
+  "organizationUserDeletedDesc": {
+    "message": "De gebruiker is verwijderd uit de organisatie en alle bijbehorende gebruikersgegevens zijn verwijderd."
   }
 }

@@ -5,8 +5,8 @@
   "criticalApplications": {
     "message": "Kritické aplikace"
   },
-  "accessIntelligence": {
-    "message": "Přístup k inteligenci"
+  "riskInsights": {
+    "message": "Risk Insights"
   },
   "passwordRisk": {
     "message": "Rizikové heslo"
@@ -3217,9 +3217,6 @@
         "example": "20"
       }
     }
-  },
-  "inviteSingleEmailDesc": {
-    "message": "Zbývá Vám 1 pozvánka."
   },
   "userUsingTwoStep": {
     "message": "Tento uživatel používá pro ochranu svého účtu dvoufázové přihlášení."
@@ -9557,5 +9554,31 @@
   },
   "single-org-revoked-user-warning": {
     "message": "Nevyhovujícím členům bude členství zrušeno. Správci mohou obnovit členy, jakmile opustí všechny ostatní organizace."
+  },
+  "deleteOrganizationUser": {
+    "message": "Smazat $NAME$",
+    "placeholders": {
+      "name": {
+        "content": "$1",
+        "example": "John Doe"
+      },
+      "description": "Title for the delete organization user dialog"
+    }
+  },
+  "deleteOrganizationUserWarning": {
+    "message": "Pokud je člen smazán, jeho účet Bitwarden a individuální údaje z trezoru budou trvale smazány. Data kolekce zůstanou v organizaci. Pro jejich obnovení si musí vytvořit účet a být znovu zařazen do systému.",
+    "description": "Warning for the delete organization user dialog"
+  },
+  "organizationUserDeleted": {
+    "message": "$NAME$ - smazán",
+    "placeholders": {
+      "name": {
+        "content": "$1",
+        "example": "John Doe"
+      }
+    }
+  },
+  "organizationUserDeletedDesc": {
+    "message": "Uživatel byl odebrán z organizace a všechna přidružená uživatelská data byla smazána."
   }
 }

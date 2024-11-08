@@ -1,18 +1,18 @@
 {
   "allApplications": {
-    "message": "All applications"
+    "message": "Alla applikationer"
   },
   "criticalApplications": {
     "message": "Kritiska applikationer"
   },
-  "accessIntelligence": {
-    "message": "Access Intelligence"
+  "riskInsights": {
+    "message": "Risk Insights"
   },
   "passwordRisk": {
-    "message": "Password Risk"
+    "message": "Lösenordsrisk"
   },
   "discoverAtRiskPasswords": {
-    "message": "Discover at-risk passwords and notify users to change those passwords."
+    "message": "Upptäck sårbara lösenord och meddela användarna att de ska byta lösenord."
   },
   "dataLastUpdated": {
     "message": "Data last updated: $DATE$",
@@ -27,7 +27,7 @@
     "message": "Notified members"
   },
   "allApplicationsWithCount": {
-    "message": "All applications ($COUNT$)",
+    "message": "Alla applikationer ($COUNT$)",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -81,10 +81,10 @@
     "message": "Markera app som kritisk"
   },
   "appsMarkedAsCritical": {
-    "message": "Apps marked as critical"
+    "message": "Appar markerade som kritiska"
   },
   "application": {
-    "message": "Application"
+    "message": "Applikation"
   },
   "atRiskPasswords": {
     "message": "At-risk passwords"
@@ -163,7 +163,7 @@
     "message": "Personal details"
   },
   "identification": {
-    "message": "Identification"
+    "message": "Identifikation"
   },
   "contactInfo": {
     "message": "Contact info"
@@ -181,7 +181,7 @@
     }
   },
   "itemHistory": {
-    "message": "Item history"
+    "message": "Objekthistorik"
   },
   "authenticatorKey": {
     "message": "Autentiseringsnyckel"
@@ -759,7 +759,7 @@
     "message": "Kopiera adress"
   },
   "copyPhone": {
-    "message": "Copy phone"
+    "message": "Kopiera telefon"
   },
   "copyEmail": {
     "message": "Copy email"
@@ -994,7 +994,7 @@
     "message": "Logga in med nyckel"
   },
   "useSingleSignOn": {
-    "message": "Use single sign-on"
+    "message": "Använd Single Sign-On"
   },
   "welcomeBack": {
     "message": "Välkommen tillbaka"
@@ -1370,7 +1370,7 @@
     "message": "Yubico OTP-säkerhetsnyckel"
   },
   "yubiKeyDesc": {
-    "message": "Använd en YubiKey för att komma åt ditt konto. Fungerar med YubiKey 4-serien, 5-serien och NEO-enheter."
+    "message": "Använd en YubiKey 4-, 5- eller NEO-enhet."
   },
   "duoDescV2": {
     "message": "Ange en kod som genererats av Duo Security.",
@@ -1390,7 +1390,7 @@
     "message": "Nyckel"
   },
   "webAuthnDesc": {
-    "message": "Använd en WebAuthn-aktiverad säkerhetsnyckel för att komma åt ditt konto."
+    "message": "Använd enhetens biometri eller en FIDO2-kompatibel säkerhetsnyckel."
   },
   "webAuthnMigrated": {
     "message": "(Migrerad från FIDO)"
@@ -3217,9 +3217,6 @@
         "example": "20"
       }
     }
-  },
-  "inviteSingleEmailDesc": {
-    "message": "Du har 1 inbjudan kvar."
   },
   "userUsingTwoStep": {
     "message": "Denna användare använder tvåstegsverifiering för att skydda sitt konto."
@@ -5733,7 +5730,7 @@
     }
   },
   "vaultTimeoutPolicyInEffect1": {
-    "message": "$HOURS$ hour(s) and $MINUTES$ minute(s) maximum.",
+    "message": "$HOURS$ timme(ar) och $MINUTES$ minut(er) max.",
     "placeholders": {
       "hours": {
         "content": "$1",
@@ -6536,7 +6533,7 @@
     "message": "Generera ett e-postalias med en extern vidarebefordranstjänst."
   },
   "forwarderDomainName": {
-    "message": "Email domain",
+    "message": "E-postdomän",
     "description": "Labels the domain name email forwarder service option"
   },
   "forwarderDomainNameHint": {
@@ -6708,10 +6705,10 @@
     "description": "the text, 'SCIM' and 'API', are acronyms and should not be translated."
   },
   "rotateKey": {
-    "message": "Rotate key"
+    "message": "Rotera nyckel"
   },
   "scimApiKey": {
-    "message": "SCIM API key",
+    "message": "SCIM API-nyckel",
     "description": "the text, 'SCIM' and 'API', are acronyms and should not be translated."
   },
   "copyScimUrl": {
@@ -6824,7 +6821,7 @@
     "message": "Duo two-step login is required for your account."
   },
   "launchDuo": {
-    "message": "Launch Duo"
+    "message": "Starta Duo"
   },
   "turnOn": {
     "message": "Turn on"
@@ -9303,19 +9300,19 @@
     "message": "Impact of rotating your encryption key"
   },
   "learnMoreAboutEncryptionAlgorithms": {
-    "message": "Learn more about encryption algorithms"
+    "message": "Läs mer om krypteringsalgoritmer"
   },
   "learnMoreAboutKDFIterations": {
     "message": "Learn more about KDF iterations"
   },
   "learnMoreAboutLocalization": {
-    "message": "Learn more about localization"
+    "message": "Läs mer om lokalisering"
   },
   "learnMoreAboutWebsiteIcons": {
     "message": "Learn more about using website icons"
   },
   "learnMoreAboutUserAccess": {
-    "message": "Learn more about user access"
+    "message": "Läs mer om användaråtkomst"
   },
   "learnMoreAboutMemberRoles": {
     "message": "Learn more about member roles and permissions"
@@ -9438,7 +9435,7 @@
     "message": "Directory integration"
   },
   "passwordLessSso": {
-    "message": "Passwordless SSO"
+    "message": "PasswordLess SSO"
   },
   "accountRecovery": {
     "message": "Kontoåterställning"
@@ -9487,10 +9484,10 @@
     "message": "Redigera åtkomst"
   },
   "textHelpText": {
-    "message": "Use text fields for data like security questions"
+    "message": "Använd textfält för data, som t. ex. säkerhetsfrågor"
   },
   "hiddenHelpText": {
-    "message": "Use hidden fields for sensitive data like a password"
+    "message": "Använd dolda fält för känslig data, som t. ex. ett lösenord"
   },
   "checkBoxHelpText": {
     "message": "Use checkboxes if you'd like to autofill a form's checkbox, like a remember email"
@@ -9557,5 +9554,31 @@
   },
   "single-org-revoked-user-warning": {
     "message": "Non-compliant members will be revoked. Administrators can restore members once they leave all other organizations."
+  },
+  "deleteOrganizationUser": {
+    "message": "Radera $NAME$",
+    "placeholders": {
+      "name": {
+        "content": "$1",
+        "example": "John Doe"
+      },
+      "description": "Title for the delete organization user dialog"
+    }
+  },
+  "deleteOrganizationUserWarning": {
+    "message": "When a member is deleted, their Bitwarden account and individual vault data will be permanently deleted. Collection data will remain in the organization. To reinstate them they must create an account and be onboarded again.",
+    "description": "Warning for the delete organization user dialog"
+  },
+  "organizationUserDeleted": {
+    "message": "Deleted $NAME$",
+    "placeholders": {
+      "name": {
+        "content": "$1",
+        "example": "John Doe"
+      }
+    }
+  },
+  "organizationUserDeletedDesc": {
+    "message": "The user was removed from the organization and all associated user data has been deleted."
   }
 }

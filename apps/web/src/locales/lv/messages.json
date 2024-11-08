@@ -5,14 +5,14 @@
   "criticalApplications": {
     "message": "Kritiskas lietotnes"
   },
-  "accessIntelligence": {
-    "message": "Piekļuves inteliģence"
+  "riskInsights": {
+    "message": "Risk Insights"
   },
   "passwordRisk": {
     "message": "Paroļu risks"
   },
   "discoverAtRiskPasswords": {
-    "message": "Atklāj riskam pakļautas paroles un apziņo lietotājus, lai tās nomaina!"
+    "message": "Discover at-risk passwords and notify users to change those passwords."
   },
   "dataLastUpdated": {
     "message": "Dati pēdējoreiz atjaunināti: $DATE$",
@@ -3217,9 +3217,6 @@
         "example": "20"
       }
     }
-  },
-  "inviteSingleEmailDesc": {
-    "message": "Tev ir atlicis 1 uzaicinājums."
   },
   "userUsingTwoStep": {
     "message": "Šis lietotājs izmanto divpakāpju pieteikšanos, lai aizsargātu savu kontu."
@@ -9557,5 +9554,31 @@
   },
   "single-org-revoked-user-warning": {
     "message": "Pamatnostādnei neatbilstošie dalībnieki tiks atsaukti. Pārvaldītāji var atjaunot dalībniekus, tiklīdz viņi pametīs visas pārējās apvienības."
+  },
+  "deleteOrganizationUser": {
+    "message": "Izdzēst $NAME$",
+    "placeholders": {
+      "name": {
+        "content": "$1",
+        "example": "John Doe"
+      },
+      "description": "Title for the delete organization user dialog"
+    }
+  },
+  "deleteOrganizationUserWarning": {
+    "message": "Kad dalībnieks tiek izdzēsts, viņa Bitwarden konts un personīgās glabātavas dati tiks neatgriezeniski izdzēsti. Krājumu dati paliks apvienībām. Lai atjaunotu dalībniekus, viņiem atkārtoti jāizveido konts un jāpievieno komandai.",
+    "description": "Warning for the delete organization user dialog"
+  },
+  "organizationUserDeleted": {
+    "message": "Izdzēsts/a $NAME$",
+    "placeholders": {
+      "name": {
+        "content": "$1",
+        "example": "John Doe"
+      }
+    }
+  },
+  "organizationUserDeletedDesc": {
+    "message": "Lietotājs tika noņemts no apvienības, un visa saistītā lietotāja informācija tika izdzēsta."
   }
 }

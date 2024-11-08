@@ -5,14 +5,14 @@
   "criticalApplications": {
     "message": "关键应用程序"
   },
-  "accessIntelligence": {
-    "message": "Access Intelligence"
+  "riskInsights": {
+    "message": "Risk Insights"
   },
   "passwordRisk": {
     "message": "密码风险"
   },
   "discoverAtRiskPasswords": {
-    "message": "发现有风险的密码并通知用户更改这些密码。"
+    "message": "Discover at-risk passwords and notify users to change those passwords."
   },
   "dataLastUpdated": {
     "message": "数据最后更新于：$DATE$",
@@ -3217,9 +3217,6 @@
         "example": "20"
       }
     }
-  },
-  "inviteSingleEmailDesc": {
-    "message": "您还剩下 1 个邀请。"
   },
   "userUsingTwoStep": {
     "message": "此用户正在使用两步登录来保护他们的账户。"
@@ -9557,5 +9554,31 @@
   },
   "single-org-revoked-user-warning": {
     "message": "不符合要求的成员将被撤销。管理员可以在他们离开所有其他组织后恢复其成员资格。"
+  },
+  "deleteOrganizationUser": {
+    "message": "删除 $NAME$",
+    "placeholders": {
+      "name": {
+        "content": "$1",
+        "example": "John Doe"
+      },
+      "description": "Title for the delete organization user dialog"
+    }
+  },
+  "deleteOrganizationUserWarning": {
+    "message": "当成员被删除时，他们的 Bitwarden 账户和个人密码库数据将被永久删除。集合数据将保留在组织中。要恢复它们，他们必须创建一个账户并重新加入。",
+    "description": "Warning for the delete organization user dialog"
+  },
+  "organizationUserDeleted": {
+    "message": "已删除 $NAME$",
+    "placeholders": {
+      "name": {
+        "content": "$1",
+        "example": "John Doe"
+      }
+    }
+  },
+  "organizationUserDeletedDesc": {
+    "message": "该用户已从组织中删除，所有关联的用户数据已被删除。"
   }
 }

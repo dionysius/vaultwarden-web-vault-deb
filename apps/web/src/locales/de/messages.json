@@ -3,19 +3,19 @@
     "message": "Alle Anwendungen"
   },
   "criticalApplications": {
-    "message": "Critical applications"
+    "message": "Kritische Anwendungen"
   },
-  "accessIntelligence": {
-    "message": "Access Intelligence"
+  "riskInsights": {
+    "message": "Risk Insights"
   },
   "passwordRisk": {
-    "message": "Password Risk"
+    "message": "Passwort-Risiko"
   },
   "discoverAtRiskPasswords": {
     "message": "Discover at-risk passwords and notify users to change those passwords."
   },
   "dataLastUpdated": {
-    "message": "Data last updated: $DATE$",
+    "message": "Daten zuletzt aktualisiert: $DATE$",
     "placeholders": {
       "date": {
         "content": "$1",
@@ -36,10 +36,10 @@
     }
   },
   "createNewLoginItem": {
-    "message": "Create new login item"
+    "message": "Neuen Zugangsdaten-Eintrag erstellen"
   },
   "criticalApplicationsWithCount": {
-    "message": "Critical applications ($COUNT$)",
+    "message": "Kritische Anwendungen ($COUNT$)",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -57,7 +57,7 @@
     }
   },
   "noAppsInOrgTitle": {
-    "message": "No applications found in $ORG NAME$",
+    "message": "Keine Anwendungen in $ORG NAME$ gefunden",
     "placeholders": {
       "org name": {
         "content": "$1",
@@ -66,22 +66,22 @@
     }
   },
   "noAppsInOrgDescription": {
-    "message": "As users save logins, applications appear here, showing any at-risk passwords. Mark critical apps and notify users to update passwords."
+    "message": "Während Benutzer Zugangsdaten speichern, werden hier Anwendungen angezeigt, die alle gefährdeten Passwörter anzeigen. Markiere kritische Anwendungen und benachrichtige Benutzer, um Passwörter zu ändern."
   },
   "noCriticalAppsTitle": {
-    "message": "You haven't marked any applications as a Critical"
+    "message": "Du hast keine Anwendungen als kritisch markiert"
   },
   "noCriticalAppsDescription": {
-    "message": "Select your most critical applications to discover at-risk passwords, and notify users to change those passwords."
+    "message": "Wähle deine wichtigsten Anwendungen aus, um gefährdete Passwörter zu ermitteln, und benachrichtige die Benutzer, damit sie diese Passwörter ändern."
   },
   "markCriticalApps": {
-    "message": "Mark critical apps"
+    "message": "Kritische Anwendungen markieren"
   },
   "markAppAsCritical": {
-    "message": "Mark app as critical"
+    "message": "Anwendung als kritisch markieren"
   },
   "appsMarkedAsCritical": {
-    "message": "Apps marked as critical"
+    "message": "Als kritisch markierte Anwendungen"
   },
   "application": {
     "message": "Anwendung"
@@ -90,13 +90,13 @@
     "message": "Risikoreiche Passwörter"
   },
   "requestPasswordChange": {
-    "message": "Request password change"
+    "message": "Passwortänderung anfordern"
   },
   "totalPasswords": {
     "message": "Passwörter insgesamt"
   },
   "searchApps": {
-    "message": "Search applications"
+    "message": "Anwendungen suchen"
   },
   "atRiskMembers": {
     "message": "Risikoreiche Mitglieder"
@@ -1738,7 +1738,7 @@
     "message": "Vorsicht, diese Aktionen sind nicht umkehrbar!"
   },
   "dangerZoneDescSingular": {
-    "message": "Careful, this action is not reversible!"
+    "message": "Vorsicht, diese Aktion ist nicht mehr rückgängig zu machen!"
   },
   "deauthorizeSessions": {
     "message": "Sitzungen abmelden"
@@ -1753,7 +1753,7 @@
     "message": "Alle Sitzungen wurden abgemeldet"
   },
   "accountIsManagedMessage": {
-    "message": "This account is managed by $ORGANIZATIONNAME$",
+    "message": "Dieses Konto wird von $ORGANIZATIONNAME$ verwaltet",
     "placeholders": {
       "organizationName": {
         "content": "$1",
@@ -3217,9 +3217,6 @@
         "example": "20"
       }
     }
-  },
-  "inviteSingleEmailDesc": {
-    "message": "You have 1 invite remaining."
   },
   "userUsingTwoStep": {
     "message": "Dieser Benutzer hat sein Konto mit einer Zwei-Faktor-Authentifizierung geschützt."
@@ -4689,7 +4686,7 @@
     "message": "Benutzern verbieten, anderen Organisationen beizutreten."
   },
   "singleOrgPolicyDesc": {
-    "message": "Restrict members from joining other organizations. This policy is required for organizations that have enabled domain verification."
+    "message": "Verbiete Mitgliedern den Beitritt zu anderen Organisationen. Diese Richtlinie ist für Organisationen erforderlich, die die Domain-Verifizierung aktiviert haben."
   },
   "singleOrgBlockCreateMessage": {
     "message": "Deine aktuelle Organisation hat eine Richtlinie, die es dir nicht erlaubt, mehr als einer Organisation beizutreten. Bitte kontaktiere die Administratoren deiner Organisation oder melden dich mit einem anderen Bitwarden-Konto an."
@@ -4698,7 +4695,7 @@
     "message": "Organisationsmitglieder, die nicht Eigentümer oder Administratoren sind und bereits Mitglied einer anderen Organisation sind, werden aus deiner Organisation entfernt."
   },
   "singleOrgPolicyMemberWarning": {
-    "message": "Non-compliant members will be placed in revoked status until they leave all other organizations. Administrators are exempt and can restore members once compliance is met."
+    "message": "Nicht-konforme Mitglieder werden in den Widerrufen-Status versetzt, bis sie alle anderen Organisationen verlassen. Administratoren sind ausgenommen und können Mitglieder wieder aufnehmen, sobald die Anforderungen erfüllt sind."
   },
   "requireSso": {
     "message": "Single Sign-on-Authentifizierung erfordern"
@@ -5274,7 +5271,7 @@
     "message": "Öffne deine Organisations-"
   },
   "usingTheMenuSelect": {
-    "message": "Using the menu, select"
+    "message": "Wählen Sie das Menü aus"
   },
   "toGrantAccessToSelectedMembers": {
     "message": "um Zugriff auf ausgewählte Mitglieder zu gewähren."
@@ -6417,7 +6414,7 @@
     "message": "E-Mail generieren"
   },
   "generatorBoundariesHint": {
-    "message": "Value must be between $MIN$ and $MAX$",
+    "message": "Wert muss zwischen $MIN$ und $MAX$ liegen",
     "description": "Explains spin box minimum and maximum values to the user",
     "placeholders": {
       "min": {
@@ -9072,7 +9069,7 @@
     "message": "Geheimnis anzeigen"
   },
   "noClients": {
-    "message": "There are no clients to list"
+    "message": "Keine Ereignisse vorhanden."
   },
   "providerBillingEmailHint": {
     "message": "Diese E-Mail-Adresse wird alle Rechnungen erhalten, die diesen Anbieter betreffen",
@@ -9187,7 +9184,7 @@
     "description": "The status of an invoice."
   },
   "clientDetails": {
-    "message": "Client details"
+    "message": "Kundendetails"
   },
   "downloadCSV": {
     "message": "CSV-Datei herunterladen"
@@ -9333,7 +9330,7 @@
     "message": "Text-Sends"
   },
   "includesXMembers": {
-    "message": "for $COUNT$ member",
+    "message": "für $COUNT$ Mitglied",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -9543,7 +9540,7 @@
     "message": "Bist du sicher, dass du diesen Anhang dauerhaft löschen möchtest?"
   },
   "manageSubscriptionFromThe": {
-    "message": "Manage subscription from the",
+    "message": "Abonnement verwalten von der",
     "description": "This represents the beginning of a sentence. The full sentence will be 'Manage subscription from the Provider Portal', but 'Provider Portal' will be a link and thus cannot be included in the translation file."
   },
   "toHostBitwardenOnYourOwnServer": {
@@ -9553,9 +9550,35 @@
     "message": "Selbst gehostet"
   },
   "verified-domain-single-org-warning": {
-    "message": "Verifying a domain will turn on the single organization policy."
+    "message": "Die Domain-Verifizierung aktiviert die Richtlinie für einzelne Organisationen."
   },
   "single-org-revoked-user-warning": {
-    "message": "Non-compliant members will be revoked. Administrators can restore members once they leave all other organizations."
+    "message": "Nicht konforme Mitglieder werden gesperrt. Administratoren können Mitglieder wieder aufnehmen, sobald sie alle anderen Organisationen verlassen."
+  },
+  "deleteOrganizationUser": {
+    "message": "$NAME$ gelöscht",
+    "placeholders": {
+      "name": {
+        "content": "$1",
+        "example": "John Doe"
+      },
+      "description": "Title for the delete organization user dialog"
+    }
+  },
+  "deleteOrganizationUserWarning": {
+    "message": "Wenn ein Mitglied gelöscht wird, werden sein Bitwarden-Konto und persönlichen Tresor-Daten dauerhaft gelöscht. Sammlungs-Daten bleiben in der Organisation. Um sie wiederherzustellen, müssen diese ein Konto erstellen und den Onboarding-Prozess erneut durchlaufen.",
+    "description": "Warning for the delete organization user dialog"
+  },
+  "organizationUserDeleted": {
+    "message": "$NAME$ gelöscht",
+    "placeholders": {
+      "name": {
+        "content": "$1",
+        "example": "John Doe"
+      }
+    }
+  },
+  "organizationUserDeletedDesc": {
+    "message": "Der Benutzer wurde aus der Organisation entfernt und alle zugehörigen Benutzerdaten wurden gelöscht."
   }
 }

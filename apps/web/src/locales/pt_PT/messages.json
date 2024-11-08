@@ -5,8 +5,8 @@
   "criticalApplications": {
     "message": "Aplicações críticas"
   },
-  "accessIntelligence": {
-    "message": "Acesso à informação"
+  "riskInsights": {
+    "message": "Risk Insights"
   },
   "passwordRisk": {
     "message": "Risco da palavra-passe"
@@ -3217,9 +3217,6 @@
         "example": "20"
       }
     }
-  },
-  "inviteSingleEmailDesc": {
-    "message": "Ainda tem 1 convite."
   },
   "userUsingTwoStep": {
     "message": "Este utilizador está a utilizar a verificação de dois passos para proteger a sua conta."
@@ -9557,5 +9554,31 @@
   },
   "single-org-revoked-user-warning": {
     "message": "Os membros não conformes serão revogados. Os administradores podem restaurar os membros quando estes saírem de todas as outras organizações."
+  },
+  "deleteOrganizationUser": {
+    "message": "Eliminar $NAME$",
+    "placeholders": {
+      "name": {
+        "content": "$1",
+        "example": "John Doe"
+      },
+      "description": "Title for the delete organization user dialog"
+    }
+  },
+  "deleteOrganizationUserWarning": {
+    "message": "Quando um membro é eliminado, a sua conta Bitwarden e os dados individuais do cofre serão permanentemente eliminados. Os dados da coleção permanecerão na organização. Para os reintegrar, têm de criar uma conta e ser novamente integrados.",
+    "description": "Warning for the delete organization user dialog"
+  },
+  "organizationUserDeleted": {
+    "message": "$NAME$ eliminado",
+    "placeholders": {
+      "name": {
+        "content": "$1",
+        "example": "John Doe"
+      }
+    }
+  },
+  "organizationUserDeletedDesc": {
+    "message": "O utilizador foi removido da organização e todos os dados de utilizador associados foram eliminados."
   }
 }

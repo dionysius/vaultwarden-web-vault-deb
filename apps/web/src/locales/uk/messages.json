@@ -5,14 +5,14 @@
   "criticalApplications": {
     "message": "Критичні програми"
   },
-  "accessIntelligence": {
-    "message": "Керування доступом"
+  "riskInsights": {
+    "message": "Risk Insights"
   },
   "passwordRisk": {
     "message": "Ризиковані паролі"
   },
   "discoverAtRiskPasswords": {
-    "message": "Дізнавайтеся про ризиковані паролі та сповіщайте користувачів про необхідність їх заміни."
+    "message": "Discover at-risk passwords and notify users to change those passwords."
   },
   "dataLastUpdated": {
     "message": "Дані востаннє оновлено: $DATE$",
@@ -3217,9 +3217,6 @@
         "example": "20"
       }
     }
-  },
-  "inviteSingleEmailDesc": {
-    "message": "У вас залишилось 1 запрошення."
   },
   "userUsingTwoStep": {
     "message": "Цей користувач використовує двоетапну перевірку для захисту свого облікового запису."
@@ -9557,5 +9554,31 @@
   },
   "single-org-revoked-user-warning": {
     "message": "Невідповідних учасників буде відкликано. Адміністратори зможуть відновити учасників, коли ті покинуть всі інші організації."
+  },
+  "deleteOrganizationUser": {
+    "message": "Видалити $NAME$",
+    "placeholders": {
+      "name": {
+        "content": "$1",
+        "example": "John Doe"
+      },
+      "description": "Title for the delete organization user dialog"
+    }
+  },
+  "deleteOrganizationUserWarning": {
+    "message": "Якщо учасник видаляється, його обліковий запис Bitwarden разом з даними особистого сховища також остаточно видаляється. Дані збірок залишаються в організації. Щоб їх відновити, учасник повинен створити обліковий запис і приєднатися до організації знову.",
+    "description": "Warning for the delete organization user dialog"
+  },
+  "organizationUserDeleted": {
+    "message": "Видалено $NAME$",
+    "placeholders": {
+      "name": {
+        "content": "$1",
+        "example": "John Doe"
+      }
+    }
+  },
+  "organizationUserDeletedDesc": {
+    "message": "Користувача вилучено з організації. Всі пов'язані дані користувача видалено."
   }
 }

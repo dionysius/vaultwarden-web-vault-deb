@@ -5,14 +5,14 @@
   "criticalApplications": {
     "message": "Kritiske applikationer"
   },
-  "accessIntelligence": {
-    "message": "Adgangsintelligens"
+  "riskInsights": {
+    "message": "Risk Insights"
   },
   "passwordRisk": {
     "message": "Adgangskoderisiko"
   },
   "discoverAtRiskPasswords": {
-    "message": "Opdag risikable adgangskoder og underret brugerne om at ændre disse."
+    "message": "Opdag udsatte adgangskoder og underret brugerne om at ændre disse."
   },
   "dataLastUpdated": {
     "message": "Data senest opdateret: $DATE$",
@@ -3218,9 +3218,6 @@
       }
     }
   },
-  "inviteSingleEmailDesc": {
-    "message": "Der er 1 invitation tilbage."
-  },
   "userUsingTwoStep": {
     "message": "Denne bruger benytter totrins-login for at beskytte kontoen."
   },
@@ -4689,7 +4686,7 @@
     "message": "Begræns medlemmer i at tilmelde sig andre organisationer."
   },
   "singleOrgPolicyDesc": {
-    "message": "Restrict members from joining other organizations. This policy is required for organizations that have enabled domain verification."
+    "message": "Begræns medlemmers deltagelse i andre organisationer. Denne politik kræves for organisationer med aktiveret domænebekræftelse."
   },
   "singleOrgBlockCreateMessage": {
     "message": "Den nuværende organisationspolitik tillader dig ikke at deltage i mere end én organisation. Kontakt organisationens admins eller benyt en anden Bitwarden-konto under tilmelding."
@@ -4698,7 +4695,7 @@
     "message": "Organisationsmedlemmer, undtagen ejere eller admins, som allerede er medlem af en anden organisation, fjernes fra organisationen."
   },
   "singleOrgPolicyMemberWarning": {
-    "message": "Non-compliant members will be placed in revoked status until they leave all other organizations. Administrators are exempt and can restore members once compliance is met."
+    "message": "Ikke-overholdende medlemmer placeres i privilegie-ophævet status, indtil de forlader alle øvrige organisationer. Administratorer er fritaget og kan gendanne medlemmer, når overholdelse er opfyldt."
   },
   "requireSso": {
     "message": "Kræv single sign-on godkendelse"
@@ -9553,9 +9550,35 @@
     "message": "Selv-hosting"
   },
   "verified-domain-single-org-warning": {
-    "message": "Verifying a domain will turn on the single organization policy."
+    "message": "Bekræftelse af et domæne vil slå den enkelte organisationspolitik til."
   },
   "single-org-revoked-user-warning": {
-    "message": "Non-compliant members will be revoked. Administrators can restore members once they leave all other organizations."
+    "message": "Ikke-overholdende medlemmers privilegier ophæves. Administratorer kan gendanne medlemmer, når overholdelse er opfyldt."
+  },
+  "deleteOrganizationUser": {
+    "message": "Slet $NAME$",
+    "placeholders": {
+      "name": {
+        "content": "$1",
+        "example": "John Doe"
+      },
+      "description": "Title for the delete organization user dialog"
+    }
+  },
+  "deleteOrganizationUserWarning": {
+    "message": "Når medlemmer slettes, vil deres Bitwarden-konto og individuelle boksdata blive slettet permanent. Indsamlingsdata vil forblive i organisationen. For at genindsætte dem, skal de oprette en konto og onboarderes igen.",
+    "description": "Warning for the delete organization user dialog"
+  },
+  "organizationUserDeleted": {
+    "message": "Slet $NAME$",
+    "placeholders": {
+      "name": {
+        "content": "$1",
+        "example": "John Doe"
+      }
+    }
+  },
+  "organizationUserDeletedDesc": {
+    "message": "Brugeren er fjernet fra organisationen og alle tilknyttede brugerdata er slettet."
   }
 }

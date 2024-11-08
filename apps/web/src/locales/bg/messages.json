@@ -5,14 +5,14 @@
   "criticalApplications": {
     "message": "Важни приложения"
   },
-  "accessIntelligence": {
-    "message": "Access Intelligence"
+  "riskInsights": {
+    "message": "Risk Insights"
   },
   "passwordRisk": {
     "message": "Рискова парола"
   },
   "discoverAtRiskPasswords": {
-    "message": "Откриване на пароли в риск и известяване на потребителите да ги сменят."
+    "message": "Discover at-risk passwords and notify users to change those passwords."
   },
   "dataLastUpdated": {
     "message": "Последно обновяване на данните: $DATE$",
@@ -3217,9 +3217,6 @@
         "example": "20"
       }
     }
-  },
-  "inviteSingleEmailDesc": {
-    "message": "Имате 1 оставаща покана."
   },
   "userUsingTwoStep": {
     "message": "Този потребител използва двустепенна защита за достъп."
@@ -9557,5 +9554,31 @@
   },
   "single-org-revoked-user-warning": {
     "message": "На членовете, които не отговарят на това условие, ще бъдат отнети правомощията. Администраторите могат да възстановяват правомощията на членовете, след като те напуснат всички останали организации."
+  },
+  "deleteOrganizationUser": {
+    "message": "Изтриване на $NAME$",
+    "placeholders": {
+      "name": {
+        "content": "$1",
+        "example": "John Doe"
+      },
+      "description": "Title for the delete organization user dialog"
+    }
+  },
+  "deleteOrganizationUserWarning": {
+    "message": "Когато даден член бъде изтрит, неговата регистрация в Битуорден, както и данните от трезора му, ще бъдат изтрити завинаги. Данните за колекции ще останат в организацията. Ако искате да го върнете, той трябва да си създаде нова регистрация и да бъде включен отново.",
+    "description": "Warning for the delete organization user dialog"
+  },
+  "organizationUserDeleted": {
+    "message": "Изтрито: $NAME$",
+    "placeholders": {
+      "name": {
+        "content": "$1",
+        "example": "John Doe"
+      }
+    }
+  },
+  "organizationUserDeletedDesc": {
+    "message": "Потребителят беше премахнат от организацията и всичките му данни бяха изтрити."
   }
 }

@@ -5,14 +5,14 @@
   "criticalApplications": {
     "message": "Kritik tətbiqlər"
   },
-  "accessIntelligence": {
-    "message": "Müraciət Kəşfiyyatı"
+  "riskInsights": {
+    "message": "Risk Insights"
   },
   "passwordRisk": {
     "message": "Parol riski"
   },
   "discoverAtRiskPasswords": {
-    "message": "Riskli parolları kəşf edin və bu parolları dəyişdirməsi üçün istifadəçiləri məlumatlandırın."
+    "message": "Discover at-risk passwords and notify users to change those passwords."
   },
   "dataLastUpdated": {
     "message": "Datanın son güncəlləmə tarixi: $DATE$",
@@ -3217,9 +3217,6 @@
         "example": "20"
       }
     }
-  },
-  "inviteSingleEmailDesc": {
-    "message": "1 dəvət haqqınız var."
   },
   "userUsingTwoStep": {
     "message": "Bu istifadəçinin hesabını qorumaq üçün iki addımlı giriş istifadə edilir."
@@ -9557,5 +9554,31 @@
   },
   "single-org-revoked-user-warning": {
     "message": "Uyumlu olmayan üzvlər rədd ediləcək. Digər bütün təşkilatları tərk etdikdən sonra üzvlər, administratorlar tərəfindən bərpa edilə bilər."
+  },
+  "deleteOrganizationUser": {
+    "message": "$NAME$ - sil",
+    "placeholders": {
+      "name": {
+        "content": "$1",
+        "example": "John Doe"
+      },
+      "description": "Title for the delete organization user dialog"
+    }
+  },
+  "deleteOrganizationUserWarning": {
+    "message": "Bir hesab silindikdə, Bitwarden hesabı və onun fərdi seyf dataları həmişəlik silinir. Təşkilatdakı kolleksiya dataları qalır. Bunları yenidən fəallaşdırmaq üçün bir hesab yaradılmalı və yenidən təşkilata qoşulması lazımdır.",
+    "description": "Warning for the delete organization user dialog"
+  },
+  "organizationUserDeleted": {
+    "message": "$NAME$ silindi",
+    "placeholders": {
+      "name": {
+        "content": "$1",
+        "example": "John Doe"
+      }
+    }
+  },
+  "organizationUserDeletedDesc": {
+    "message": "İstifadəçi təşkilatdan çıxarıldı və əlaqələndirilmiş bütün istifadəçi dataları silindi."
   }
 }
