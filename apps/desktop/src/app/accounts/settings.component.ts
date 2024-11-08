@@ -12,7 +12,9 @@ import { UserVerificationService as UserVerificationServiceAbstraction } from "@
 import { AutofillSettingsServiceAbstraction } from "@bitwarden/common/autofill/services/autofill-settings.service";
 import { DomainSettingsService } from "@bitwarden/common/autofill/services/domain-settings.service";
 import { DeviceType } from "@bitwarden/common/enums";
+import { FeatureFlag } from "@bitwarden/common/enums/feature-flag.enum";
 import { VaultTimeoutAction } from "@bitwarden/common/enums/vault-timeout-action.enum";
+import { ConfigService } from "@bitwarden/common/platform/abstractions/config/config.service";
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 import { LogService } from "@bitwarden/common/platform/abstractions/log.service";
 import { MessagingService } from "@bitwarden/common/platform/abstractions/messaging.service";
@@ -53,6 +55,7 @@ export class SettingsComponent implements OnInit, OnDestroy {
   showAlwaysShowDock = false;
   requireEnableTray = false;
   showDuckDuckGoIntegrationOption = false;
+  showSshAgentOption = false;
   isWindows: boolean;
   isLinux: boolean;
 
@@ -107,6 +110,7 @@ export class SettingsComponent implements OnInit, OnDestroy {
       disabled: true,
     }),
     enableHardwareAcceleration: true,
+    enableSshAgent: false,
     enableDuckDuckGoBrowserIntegration: false,
     theme: [null as ThemeType | null],
     locale: [null as string | null],
@@ -137,6 +141,7 @@ export class SettingsComponent implements OnInit, OnDestroy {
     private pinService: PinServiceAbstraction,
     private logService: LogService,
     private nativeMessagingManifestService: NativeMessagingManifestService,
+    private configService: ConfigService,
   ) {
     const isMac = this.platformUtilsService.getDevice() === DeviceType.MacOsDesktop;
 
@@ -200,6 +205,8 @@ export class SettingsComponent implements OnInit, OnDestroy {
     if (activeAccount == null || activeAccount.id == null) {
       return;
     }
+
+    this.showSshAgentOption = await this.configService.getFeatureFlag(FeatureFlag.SSHAgent);
     this.userHasMasterPassword = await this.userVerificationService.hasMasterPassword();
 
     this.isWindows = this.platformUtilsService.getDevice() === DeviceType.WindowsDesktop;
@@ -272,6 +279,7 @@ export class SettingsComponent implements OnInit, OnDestroy {
       enableHardwareAcceleration: await firstValueFrom(
         this.desktopSettingsService.hardwareAcceleration$,
       ),
+      enableSshAgent: await firstValueFrom(this.desktopSettingsService.sshAgentEnabled$),
       theme: await firstValueFrom(this.themeStateService.selectedTheme$),
       locale: await firstValueFrom(this.i18nService.userSetLocale$),
     };
@@ -721,6 +729,11 @@ export class SettingsComponent implements OnInit, OnDestroy {
     await this.desktopSettingsService.setHardwareAcceleration(
       this.form.value.enableHardwareAcceleration,
     );
+  }
+
+  async saveSshAgent() {
+    this.logService.debug("Saving Ssh Agent settings", this.form.value.enableSshAgent);
+    await this.desktopSettingsService.setSshAgentEnabled(this.form.value.enableSshAgent);
   }
 
   private async generateVaultTimeoutOptions(): Promise<VaultTimeoutOption[]> {

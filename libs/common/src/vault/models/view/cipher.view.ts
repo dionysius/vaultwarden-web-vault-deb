@@ -14,6 +14,7 @@ import { IdentityView } from "./identity.view";
 import { LoginView } from "./login.view";
 import { PasswordHistoryView } from "./password-history.view";
 import { SecureNoteView } from "./secure-note.view";
+import { SshKeyView } from "./ssh-key.view";
 
 export class CipherView implements View, InitializerMetadata {
   readonly initializerKey = InitializerKey.CipherView;
@@ -33,6 +34,7 @@ export class CipherView implements View, InitializerMetadata {
   identity = new IdentityView();
   card = new CardView();
   secureNote = new SecureNoteView();
+  sshKey = new SshKeyView();
   attachments: AttachmentView[] = null;
   fields: FieldView[] = null;
   passwordHistory: PasswordHistoryView[] = null;
@@ -74,6 +76,8 @@ export class CipherView implements View, InitializerMetadata {
         return this.card;
       case CipherType.Identity:
         return this.identity;
+      case CipherType.SshKey:
+        return this.sshKey;
       default:
         break;
     }
@@ -189,6 +193,9 @@ export class CipherView implements View, InitializerMetadata {
         break;
       case CipherType.SecureNote:
         view.secureNote = SecureNoteView.fromJSON(obj.secureNote);
+        break;
+      case CipherType.SshKey:
+        view.sshKey = SshKeyView.fromJSON(obj.sshKey);
         break;
       default:
         break;

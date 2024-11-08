@@ -14,7 +14,8 @@ import { OrganizationUserStatusType, PolicyType } from "@bitwarden/common/admin-
 import { Organization } from "@bitwarden/common/admin-console/models/domain/organization";
 import { AccountService } from "@bitwarden/common/auth/abstractions/account.service";
 import { normalizeExpiryYearFormat } from "@bitwarden/common/autofill/utils";
-import { EventType } from "@bitwarden/common/enums";
+import { ClientType, EventType } from "@bitwarden/common/enums";
+import { FeatureFlag } from "@bitwarden/common/enums/feature-flag.enum";
 import { UriMatchStrategy } from "@bitwarden/common/models/domain/domain-service";
 import { ConfigService } from "@bitwarden/common/platform/abstractions/config/config.service";
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
@@ -36,6 +37,7 @@ import { IdentityView } from "@bitwarden/common/vault/models/view/identity.view"
 import { LoginUriView } from "@bitwarden/common/vault/models/view/login-uri.view";
 import { LoginView } from "@bitwarden/common/vault/models/view/login.view";
 import { SecureNoteView } from "@bitwarden/common/vault/models/view/secure-note.view";
+import { SshKeyView } from "@bitwarden/common/vault/models/view/ssh-key.view";
 import { CipherAuthorizationService } from "@bitwarden/common/vault/services/cipher-authorization.service";
 import { DialogService } from "@bitwarden/components";
 import { PasswordRepromptService } from "@bitwarden/vault";
@@ -71,6 +73,7 @@ export class AddEditComponent implements OnInit, OnDestroy {
   restorePromise: Promise<any>;
   checkPasswordPromise: Promise<number>;
   showPassword = false;
+  showPrivateKey = false;
   showTotpSeed = false;
   showCardNumber = false;
   showCardCode = false;
@@ -134,6 +137,7 @@ export class AddEditComponent implements OnInit, OnDestroy {
       { name: i18nService.t("typeIdentity"), value: CipherType.Identity },
       { name: i18nService.t("typeSecureNote"), value: CipherType.SecureNote },
     ];
+
     this.cardBrandOptions = [
       { name: "-- " + i18nService.t("select") + " --", value: null },
       { name: "Visa", value: "Visa" },
@@ -200,6 +204,11 @@ export class AddEditComponent implements OnInit, OnDestroy {
 
     this.writeableCollections = await this.loadCollections();
     this.canUseReprompt = await this.passwordRepromptService.enabled();
+
+    const sshKeysEnabled = await this.configService.getFeatureFlag(FeatureFlag.SSHKeyVaultItem);
+    if (this.platformUtilsService.getClientType() == ClientType.Desktop && sshKeysEnabled) {
+      this.typeOptions.push({ name: this.i18nService.t("typeSshKey"), value: CipherType.SshKey });
+    }
   }
 
   ngOnDestroy() {
@@ -279,6 +288,7 @@ export class AddEditComponent implements OnInit, OnDestroy {
         this.cipher.identity = new IdentityView();
         this.cipher.secureNote = new SecureNoteView();
         this.cipher.secureNote.type = SecureNoteType.Generic;
+        this.cipher.sshKey = new SshKeyView();
         this.cipher.reprompt = CipherRepromptType.None;
       }
     }
@@ -599,6 +609,10 @@ export class AddEditComponent implements OnInit, OnDestroy {
         this.cipher,
       ]);
     }
+  }
+
+  togglePrivateKey() {
+    this.showPrivateKey = !this.showPrivateKey;
   }
 
   toggleUriOptions(uri: LoginUriView) {
