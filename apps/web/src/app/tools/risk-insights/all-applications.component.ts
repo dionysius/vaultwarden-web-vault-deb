@@ -7,6 +7,8 @@ import { debounceTime, firstValueFrom, map } from "rxjs";
 import { AuditService } from "@bitwarden/common/abstractions/audit.service";
 import { OrganizationService } from "@bitwarden/common/admin-console/abstractions/organization/organization.service.abstraction";
 import { Organization } from "@bitwarden/common/admin-console/models/domain/organization";
+import { FeatureFlag } from "@bitwarden/common/enums/feature-flag.enum";
+import { ConfigService } from "@bitwarden/common/platform/abstractions/config/config.service";
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 import { PasswordStrengthServiceAbstraction } from "@bitwarden/common/tools/password-strength";
 import { CipherService } from "@bitwarden/common/vault/abstractions/cipher.service";
@@ -41,6 +43,7 @@ export class AllApplicationsComponent implements OnInit {
   protected organization: Organization;
   noItemsIcon = Icons.Security;
   protected markingAsCritical = false;
+  isCritialAppsFeatureEnabled = false;
 
   // MOCK DATA
   protected mockData = applicationTableMockData;
@@ -49,7 +52,7 @@ export class AllApplicationsComponent implements OnInit {
   protected mockTotalMembersCount = 0;
   protected mockTotalAppsCount = 0;
 
-  ngOnInit() {
+  async ngOnInit() {
     this.activatedRoute.paramMap
       .pipe(
         takeUntilDestroyed(this.destroyRef),
@@ -60,6 +63,10 @@ export class AllApplicationsComponent implements OnInit {
         }),
       )
       .subscribe();
+
+    this.isCritialAppsFeatureEnabled = await this.configService.getFeatureFlag(
+      FeatureFlag.CriticalApps,
+    );
   }
 
   constructor(
@@ -70,6 +77,7 @@ export class AllApplicationsComponent implements OnInit {
     protected activatedRoute: ActivatedRoute,
     protected toastService: ToastService,
     protected organizationService: OrganizationService,
+    protected configService: ConfigService,
   ) {
     this.dataSource.data = applicationTableMockData;
     this.searchControl.valueChanges

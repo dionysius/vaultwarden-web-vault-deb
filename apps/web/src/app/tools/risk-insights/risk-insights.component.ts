@@ -1,9 +1,11 @@
 import { CommonModule } from "@angular/common";
-import { Component } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
 import { takeUntilDestroyed } from "@angular/core/rxjs-interop";
 import { ActivatedRoute, Router } from "@angular/router";
 
 import { JslibModule } from "@bitwarden/angular/jslib.module";
+import { FeatureFlag } from "@bitwarden/common/enums/feature-flag.enum";
+import { ConfigService } from "@bitwarden/common/platform/abstractions/config/config.service";
 import { AsyncActionsModule, ButtonModule, TabsModule } from "@bitwarden/components";
 
 import { HeaderModule } from "../../layouts/header/header.module";
@@ -39,9 +41,10 @@ export enum RiskInsightsTabType {
     TabsModule,
   ],
 })
-export class RiskInsightsComponent {
+export class RiskInsightsComponent implements OnInit {
   tabIndex: RiskInsightsTabType;
   dataLastUpdated = new Date();
+  isCritialAppsFeatureEnabled = false;
 
   apps: any[] = [];
   criticalApps: any[] = [];
@@ -65,9 +68,16 @@ export class RiskInsightsComponent {
     });
   };
 
+  async ngOnInit() {
+    this.isCritialAppsFeatureEnabled = await this.configService.getFeatureFlag(
+      FeatureFlag.CriticalApps,
+    );
+  }
+
   constructor(
     protected route: ActivatedRoute,
     private router: Router,
+    private configService: ConfigService,
   ) {
     route.queryParams.pipe(takeUntilDestroyed()).subscribe(({ tabIndex }) => {
       this.tabIndex = !isNaN(tabIndex) ? tabIndex : RiskInsightsTabType.AllApps;
