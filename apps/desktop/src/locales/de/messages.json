@@ -1684,10 +1684,10 @@
     "message": "Die Kontolöschung ist dauerhaft. Sie kann nicht rückgängig gemacht werden."
   },
   "cannotDeleteAccount": {
-    "message": "Cannot delete account"
+    "message": "Konto kann nicht gelöscht werden"
   },
   "cannotDeleteAccountDesc": {
-    "message": "This action cannot be completed because your account is owned by an organization. Contact your organization administrator for additional details."
+    "message": "Diese Aktion kann nicht abgeschlossen werden, da dein Konto im Besitz einer Organisation ist. Kontaktiere deinen Organisationsadministrator für weitere Details."
   },
   "accountDeleted": {
     "message": "Konto gelöscht"
@@ -2394,7 +2394,7 @@
     "message": "E-Mail generieren"
   },
   "generatorBoundariesHint": {
-    "message": "Value must be between $MIN$ and $MAX$",
+    "message": "Wert muss zwischen $MIN$ und $MAX$ liegen",
     "description": "Explains spin box minimum and maximum values to the user",
     "placeholders": {
       "min": {

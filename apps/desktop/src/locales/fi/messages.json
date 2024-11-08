@@ -1800,7 +1800,7 @@
     "description": "Used as a card title description on the set password page to explain why the user is there"
   },
   "cardMetrics": {
-    "message": "out of $TOTAL$",
+    "message": "/$TOTAL$",
     "placeholders": {
       "total": {
         "content": "$1",
