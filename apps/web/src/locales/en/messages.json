@@ -9607,5 +9607,23 @@
   },
   "organizationUserDeletedDesc": {
     "message": "The user was removed from the organization and all associated user data has been deleted."
+  },
+  "deletedUserId": {
+    "message": "Deleted user $ID$ - an owner / admin deleted the user account",
+    "placeholders": {
+      "id": {
+        "content": "$1",
+        "example": "First 8 Character of a GUID"
+      }
+    }
+  },
+  "userLeftOrganization": {
+    "message": "User $ID$ left organization",
+    "placeholders": {
+      "id": {
+        "content": "$1",
+        "example": "First 8 Character of a GUID"
+      }
+    }
   }
 }
