@@ -102,8 +102,8 @@ export class PassphraseSettingsComponent implements OnInit, OnDestroy {
 
         const boundariesHint = this.i18nService.t(
           "generatorBoundariesHint",
-          constraints.numWords.min,
-          constraints.numWords.max,
+          constraints.numWords.min?.toString(),
+          constraints.numWords.max?.toString(),
         );
         this.numWordsBoundariesHint.next(boundariesHint);
       });
