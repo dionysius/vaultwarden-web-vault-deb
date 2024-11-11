@@ -1163,7 +1163,11 @@ describe("CredentialGeneratorService", () => {
       await awaitAsync();
       const result = await firstValueFrom(stateProvider.getUserState$(SettingsKey, SomeUser));
 
-      expect(result).toEqual({ foo: "next value" });
+      expect(result).toEqual({
+        foo: "next value",
+        // FIXME: don't leak this detail into the test
+        "$^$ALWAYS_UPDATE_KLUDGE_PROPERTY$^$": 0,
+      });
     });
 
     it("waits for the user to become available", async () => {

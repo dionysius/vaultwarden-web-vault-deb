@@ -43,6 +43,23 @@ import { UserStateSubjectDependencies } from "./user-state-subject-dependencies"
 
 type Constrained<State> = { constraints: Readonly<Constraints<State>>; state: State };
 
+// FIXME: The subject should always repeat the value when it's own `next` method is called.
+//
+// Chrome StateService only calls `next` when the underlying values changes. When enforcing,
+// say, a minimum constraint, any value beneath the minimum becomes the minimum. This prevents
+// invalid data received in sequence from calling `next` because the state provider doesn't
+// emit.
+//
+// The hack is pretty simple. Insert arbitrary data into the saved data to ensure
+// that it *always* changes.
+//
+// Any real fix will be fairly complex because it needs to recognize *fast* when it
+// is waiting. Alternatively, the kludge could become a format properly fed by random noise.
+//
+// NOTE: this only matters for plaintext objects; encrypted fields change with every
+//   update b/c their IVs change.
+const ALWAYS_UPDATE_KLUDGE = "$^$ALWAYS_UPDATE_KLUDGE_PROPERTY$^$";
+
 /**
  * Adapt a state provider to an rxjs subject.
  *
@@ -420,8 +437,25 @@ export class UserStateSubject<
   private inputSubscription: Unsubscribable;
   private outputSubscription: Unsubscribable;
 
+  private counter = 0;
+
   private onNext(value: unknown) {
-    this.state.update(() => value).catch((e: any) => this.onError(e));
+    this.state
+      .update(() => {
+        if (typeof value === "object") {
+          // related: ALWAYS_UPDATE_KLUDGE FIXME
+          const counter = this.counter++;
+          if (counter > Number.MAX_SAFE_INTEGER) {
+            this.counter = 0;
+          }
+
+          const kludge = value as any;
+          kludge[ALWAYS_UPDATE_KLUDGE] = counter;
+        }
+
+        return value;
+      })
+      .catch((e: any) => this.onError(e));
   }
 
   private onError(value: any) {

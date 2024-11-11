@@ -373,7 +373,11 @@ describe("UserStateSubject", () => {
       singleUserId$.next(SomeUser);
       await awaitAsync();
 
-      expect(state.nextMock).toHaveBeenCalledWith({ foo: "next" });
+      expect(state.nextMock).toHaveBeenCalledWith({
+        foo: "next",
+        // FIXME: don't leak this detail into the test
+        "$^$ALWAYS_UPDATE_KLUDGE_PROPERTY$^$": 0,
+      });
     });
 
     it("waits to evaluate `UserState.update` until singleUserEncryptor$ emits", async () => {
@@ -394,7 +398,13 @@ describe("UserStateSubject", () => {
       await awaitAsync();
 
       const encrypted = { foo: "encrypt(next)" };
-      expect(state.nextMock).toHaveBeenCalledWith({ id: null, secret: encrypted, disclosed: null });
+      expect(state.nextMock).toHaveBeenCalledWith({
+        id: null,
+        secret: encrypted,
+        disclosed: null,
+        // FIXME: don't leak this detail into the test
+        "$^$ALWAYS_UPDATE_KLUDGE_PROPERTY$^$": 0,
+      });
     });
 
     it("applies dynamic constraints", async () => {
