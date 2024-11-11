@@ -102,6 +102,10 @@ export class MembersComponent extends BaseMembersComponent<OrganizationUserView>
     FeatureFlag.EnableUpgradePasswordManagerSub,
   );
 
+  protected accountDeprovisioningEnabled$: Observable<boolean> = this.configService.getFeatureFlag$(
+    FeatureFlag.AccountDeprovisioning,
+  );
+
   // Fixed sizes used for cdkVirtualScroll
   protected rowHeight = 62;
   protected rowHeightClass = `tw-h-[62px]`;

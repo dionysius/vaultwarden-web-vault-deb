@@ -29,6 +29,8 @@ import { PermissionsApi } from "@bitwarden/common/admin-console/models/api/permi
 import { Organization } from "@bitwarden/common/admin-console/models/domain/organization";
 import { AccountService } from "@bitwarden/common/auth/abstractions/account.service";
 import { ProductTierType } from "@bitwarden/common/billing/enums";
+import { FeatureFlag } from "@bitwarden/common/enums/feature-flag.enum";
+import { ConfigService } from "@bitwarden/common/platform/abstractions/config/config.service";
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 import { DialogService, ToastService } from "@bitwarden/components";
 
@@ -125,6 +127,10 @@ export class MemberDialogComponent implements OnDestroy {
     manageResetPassword: false,
   });
 
+  protected accountDeprovisioningEnabled$: Observable<boolean> = this.configService.getFeatureFlag$(
+    FeatureFlag.AccountDeprovisioning,
+  );
+
   private destroy$ = new Subject<void>();
 
   get customUserTypeSelected(): boolean {
@@ -145,6 +151,7 @@ export class MemberDialogComponent implements OnDestroy {
     private accountService: AccountService,
     organizationService: OrganizationService,
     private toastService: ToastService,
+    private configService: ConfigService,
   ) {
     this.organization$ = organizationService
       .get$(this.params.organizationId)
