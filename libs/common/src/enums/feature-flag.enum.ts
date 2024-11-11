@@ -39,6 +39,7 @@ export enum FeatureFlag {
   LimitCollectionCreationDeletionSplit = "pm-10863-limit-collection-creation-deletion-split",
   CriticalApps = "pm-14466-risk-insights-critical-application",
   TrialPaymentOptional = "PM-8163-trial-payment",
+  SecurityTasks = "security-tasks",
 }
 
 export type AllowedFeatureFlagTypes = boolean | number | string;
@@ -88,6 +89,7 @@ export const DefaultFeatureFlagValue = {
   [FeatureFlag.LimitCollectionCreationDeletionSplit]: FALSE,
   [FeatureFlag.CriticalApps]: FALSE,
   [FeatureFlag.TrialPaymentOptional]: FALSE,
+  [FeatureFlag.SecurityTasks]: FALSE,
 } satisfies Record<FeatureFlag, AllowedFeatureFlagTypes>;
 
 export type DefaultFeatureFlagValueType = typeof DefaultFeatureFlagValue;
