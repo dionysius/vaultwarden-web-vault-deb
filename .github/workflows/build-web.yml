@@ -44,6 +44,8 @@ jobs:
   setup:
     name: Setup
     runs-on: ubuntu-22.04
+    needs:
+      - check-run
     outputs:
       version: ${{ steps.version.outputs.value }}
       node_version: ${{ steps.retrieve-node-version.outputs.node_version }}
@@ -67,7 +69,8 @@ jobs:
   build-artifacts:
     name: Build artifacts
     runs-on: ubuntu-22.04
-    needs: setup
+    needs:
+      - setup
     env:
       _VERSION: ${{ needs.setup.outputs.version }}
       _NODE_VERSION: ${{ needs.setup.outputs.node_version }}
@@ -151,7 +154,6 @@ jobs:
     needs:
       - setup
       - build-artifacts
-      - check-run
     strategy:
       fail-fast: false
       matrix:
@@ -264,7 +266,6 @@ jobs:
     if: github.ref == 'refs/heads/main'
     needs:
       - build-artifacts
-      - check-run
     runs-on: ubuntu-22.04
     steps:
       - name: Check out repo
@@ -302,7 +303,6 @@ jobs:
     runs-on: ubuntu-22.04
     needs:
       - build-artifacts
-      - check-run
     steps:
       - name: Login to Azure - CI Subscription
         uses: Azure/login@e15b166166a8746d1a47596803bd8c1b595455cf # v1.6.0
