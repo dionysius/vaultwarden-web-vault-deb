@@ -351,7 +351,7 @@ jobs:
 
   crowdin-push:
     name: Crowdin Push
-    if: github.ref == 'refs/heads/main'
+    if: github.event_name != 'pull_request_target' && github.ref == 'refs/heads/main'
     runs-on: ubuntu-22.04
     needs:
       - build
@@ -400,7 +400,7 @@ jobs:
       - name: Check if any job failed
         if: |
           github.event_name != 'pull_request_target'
-          && (github.ref == 'refs/heads/main' || github.ref == 'refs/heads/rc' || github.ref == 'refs/heads/hotfix-rc')
+          && (github.ref == 'refs/heads/main' || github.ref == 'refs/heads/rc' || github.ref == 'refs/heads/hotfix-rc-browser')
           && contains(needs.*.result, 'failure')
         run: exit 1
 
