@@ -12,7 +12,7 @@
         }}</span>
       </div>
       <ng-container>
-        <div class="tw-grid tw-grid-flow-col tw-grid-cols-2 tw-gap-4 tw-mb-4">
+        <div class="tw-grid tw-grid-flow-col tw-auto-cols-[minmax(0,_2fr)] tw-gap-4 tw-mb-4">
           <div
             *ngFor="let planCard of planCards"
             [ngClass]="getPlanCardContainerClasses(planCard.selected)"

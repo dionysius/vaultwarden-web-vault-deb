@@ -1,3 +1,5 @@
+import { ProviderType } from "@bitwarden/common/admin-console/enums";
+import { PlanType, ProductTierType } from "@bitwarden/common/billing/enums";
 import { SubscriptionSuspensionResponse } from "@bitwarden/common/billing/models/response/subscription-suspension.response";
 import { TaxInfoResponse } from "@bitwarden/common/billing/models/response/tax-info.response";
 
@@ -13,6 +15,7 @@ export class ProviderSubscriptionResponse extends BaseResponse {
   taxInformation?: TaxInfoResponse;
   cancelAt?: string;
   suspension?: SubscriptionSuspensionResponse;
+  providerType: ProviderType;
 
   constructor(response: any) {
     super(response);
@@ -34,6 +37,7 @@ export class ProviderSubscriptionResponse extends BaseResponse {
     if (suspension != null) {
       this.suspension = new SubscriptionSuspensionResponse(suspension);
     }
+    this.providerType = this.getResponseProperty("providerType");
   }
 }
 
@@ -44,6 +48,8 @@ export class ProviderPlanResponse extends BaseResponse {
   purchasedSeats: number;
   cost: number;
   cadence: string;
+  type: PlanType;
+  productTier: ProductTierType;
 
   constructor(response: any) {
     super(response);
@@ -53,5 +59,7 @@ export class ProviderPlanResponse extends BaseResponse {
     this.purchasedSeats = this.getResponseProperty("PurchasedSeats");
     this.cost = this.getResponseProperty("Cost");
     this.cadence = this.getResponseProperty("Cadence");
+    this.type = this.getResponseProperty("Type");
+    this.productTier = this.getResponseProperty("ProductTier");
   }
 }
