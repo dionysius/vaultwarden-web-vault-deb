@@ -171,10 +171,10 @@ export class PasswordSettingsComponent implements OnInit, OnDestroy {
     this.minNumber.valueChanges
       .pipe(
         map((value) => [value, value > 0] as const),
-        tap(([value]) => (lastMinNumber = this.numbers.value ? value : lastMinNumber)),
+        tap(([value, checkNumbers]) => (lastMinNumber = checkNumbers ? value : lastMinNumber)),
         takeUntil(this.destroyed$),
       )
-      .subscribe(([, checked]) => this.numbers.setValue(checked, { emitEvent: false }));
+      .subscribe(([, checkNumbers]) => this.numbers.setValue(checkNumbers, { emitEvent: false }));
 
     let lastMinSpecial = 1;
     this.special.valueChanges
@@ -188,10 +188,10 @@ export class PasswordSettingsComponent implements OnInit, OnDestroy {
     this.minSpecial.valueChanges
       .pipe(
         map((value) => [value, value > 0] as const),
-        tap(([value]) => (lastMinSpecial = this.special.value ? value : lastMinSpecial)),
+        tap(([value, checkSpecial]) => (lastMinSpecial = checkSpecial ? value : lastMinSpecial)),
         takeUntil(this.destroyed$),
       )
-      .subscribe(([, checked]) => this.special.setValue(checked, { emitEvent: false }));
+      .subscribe(([, checkSpecial]) => this.special.setValue(checkSpecial, { emitEvent: false }));
 
     // `onUpdated` depends on `settings` because the UserStateSubject is asynchronous;
     // subscribing directly to `this.settings.valueChanges` introduces a race condition.
