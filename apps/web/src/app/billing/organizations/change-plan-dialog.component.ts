@@ -282,6 +282,12 @@ export class ChangePlanDialogComponent implements OnInit, OnDestroy {
       : this.discountPercentageFromSub + this.discountPercentage;
   }
 
+  isPaymentSourceEmpty() {
+    return this.deprecateStripeSourcesAPI
+      ? this.paymentSource === null || this.paymentSource === undefined
+      : this.billing?.paymentSource === null || this.billing?.paymentSource === undefined;
+  }
+
   isSecretsManagerTrial(): boolean {
     return (
       this.sub?.subscription?.items?.some((item) =>
@@ -723,7 +729,7 @@ export class ChangePlanDialogComponent implements OnInit, OnDestroy {
     // Secrets Manager
     this.buildSecretsManagerRequest(request);
 
-    if (this.upgradeRequiresPaymentMethod || this.showPayment) {
+    if (this.upgradeRequiresPaymentMethod || this.showPayment || this.isPaymentSourceEmpty()) {
       if (this.deprecateStripeSourcesAPI) {
         const tokenizedPaymentSource = await this.paymentV2Component.tokenize();
         const updatePaymentMethodRequest = new UpdatePaymentMethodRequest();

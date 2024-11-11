@@ -3,9 +3,11 @@ import { firstValueFrom, Subject } from "rxjs";
 
 import { PolicyService } from "@bitwarden/common/admin-console/abstractions/policy/policy.service.abstraction";
 import { Organization } from "@bitwarden/common/admin-console/models/domain/organization";
+import { BillingApiServiceAbstraction } from "@bitwarden/common/billing/abstractions/billing-api.service.abstraction";
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
 import { TreeNode } from "@bitwarden/common/vault/models/domain/tree-node";
+import { DialogService } from "@bitwarden/components";
 
 import { VaultFilterComponent as BaseVaultFilterComponent } from "../../individual-vault/vault-filter/components/vault-filter.component"; //../../vault/vault-filter/components/vault-filter.component";
 import { VaultFilterService } from "../../individual-vault/vault-filter/services/abstractions/vault-filter.service";
@@ -38,8 +40,17 @@ export class VaultFilterComponent
     protected policyService: PolicyService,
     protected i18nService: I18nService,
     protected platformUtilsService: PlatformUtilsService,
+    protected billingApiService: BillingApiServiceAbstraction,
+    protected dialogService: DialogService,
   ) {
-    super(vaultFilterService, policyService, i18nService, platformUtilsService);
+    super(
+      vaultFilterService,
+      policyService,
+      i18nService,
+      platformUtilsService,
+      billingApiService,
+      dialogService,
+    );
   }
 
   async ngOnInit() {

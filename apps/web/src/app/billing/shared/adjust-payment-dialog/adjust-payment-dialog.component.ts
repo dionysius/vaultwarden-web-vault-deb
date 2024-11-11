@@ -74,6 +74,7 @@ export class AdjustPaymentDialogComponent {
       }
     });
     await response;
+    await new Promise((resolve) => setTimeout(resolve, 10000));
     this.toastService.showToast({
       variant: "success",
       title: null,

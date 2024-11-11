@@ -345,16 +345,22 @@
           <a></a>
         </p>
         <app-payment
-          *ngIf="(upgradeRequiresPaymentMethod || showPayment) && !deprecateStripeSourcesAPI"
+          *ngIf="
+            (upgradeRequiresPaymentMethod || showPayment || isPaymentSourceEmpty()) &&
+            !deprecateStripeSourcesAPI
+          "
           [hideCredit]="true"
         ></app-payment>
         <app-payment-v2
-          *ngIf="(upgradeRequiresPaymentMethod || showPayment) && deprecateStripeSourcesAPI"
+          *ngIf="
+            (upgradeRequiresPaymentMethod || showPayment || isPaymentSourceEmpty()) &&
+            deprecateStripeSourcesAPI
+          "
           [showAccountCredit]="false"
         >
         </app-payment-v2>
         <app-tax-info
-          *ngIf="showPayment || upgradeRequiresPaymentMethod"
+          *ngIf="showPayment || upgradeRequiresPaymentMethod || isPaymentSourceEmpty()"
           (onCountryChanged)="changedCountry()"
         ></app-tax-info>
         <div id="price" class="tw-mt-4">
