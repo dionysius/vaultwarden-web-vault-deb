@@ -35,8 +35,8 @@ import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.servic
 import { DialogService, ToastService } from "@bitwarden/components";
 
 import {
-  GroupService,
-  GroupView,
+  GroupApiService,
+  GroupDetailsView,
   OrganizationUserAdminView,
   UserAdminService,
 } from "../../../core";
@@ -144,7 +144,7 @@ export class MemberDialogComponent implements OnDestroy {
     private formBuilder: FormBuilder,
     // TODO: We should really look into consolidating naming conventions for these services
     private collectionAdminService: CollectionAdminService,
-    private groupService: GroupService,
+    private groupService: GroupApiService,
     private userService: UserAdminService,
     private organizationUserApiService: OrganizationUserApiService,
     private dialogService: DialogService,
@@ -171,8 +171,8 @@ export class MemberDialogComponent implements OnDestroy {
     const groups$ = this.organization$.pipe(
       switchMap((organization) =>
         organization.useGroups
-          ? this.groupService.getAll(this.params.organizationId)
-          : of([] as GroupView[]),
+          ? this.groupService.getAllDetails(this.params.organizationId)
+          : of([] as GroupDetailsView[]),
       ),
     );
 
@@ -278,7 +278,7 @@ export class MemberDialogComponent implements OnDestroy {
 
   private loadOrganizationUser(
     userDetails: OrganizationUserAdminView,
-    groups: GroupView[],
+    groups: GroupDetailsView[],
     collections: CollectionAdminView[],
     organization: Organization,
   ) {
@@ -635,7 +635,7 @@ function mapCollectionToAccessItemView(
   collection: CollectionAdminView,
   organization: Organization,
   accessSelection?: CollectionAccessSelectionView,
-  group?: GroupView,
+  group?: GroupDetailsView,
 ): AccessItemView {
   return {
     type: AccessItemType.Collection,
@@ -648,7 +648,7 @@ function mapCollectionToAccessItemView(
   };
 }
 
-function mapGroupToAccessItemView(group: GroupView): AccessItemView {
+function mapGroupToAccessItemView(group: GroupDetailsView): AccessItemView {
   return {
     type: AccessItemType.Group,
     id: group.id,

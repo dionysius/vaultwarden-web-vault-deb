@@ -56,7 +56,7 @@ import {
 } from "../../../billing/organizations/change-plan-dialog.component";
 import { BaseMembersComponent } from "../../common/base-members.component";
 import { PeopleTableDataSource } from "../../common/people-table-data-source";
-import { GroupService } from "../core";
+import { GroupApiService } from "../core";
 import { OrganizationUserView } from "../core/views/organization-user.view";
 import { openEntityEventsDialog } from "../manage/entity-events.component";
 
@@ -129,7 +129,7 @@ export class MembersComponent extends BaseMembersComponent<OrganizationUserView>
     private organizationApiService: OrganizationApiServiceAbstraction,
     private organizationUserApiService: OrganizationUserApiService,
     private router: Router,
-    private groupService: GroupService,
+    private groupService: GroupApiService,
     private collectionService: CollectionService,
     private billingApiService: BillingApiServiceAbstraction,
     private modalService: ModalService,

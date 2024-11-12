@@ -81,7 +81,7 @@ import {
   PasswordRepromptService,
 } from "@bitwarden/vault";
 
-import { GroupService, GroupView } from "../../admin-console/organizations/core";
+import { GroupApiService, GroupView } from "../../admin-console/organizations/core";
 import { openEntityEventsDialog } from "../../admin-console/organizations/manage/entity-events.component";
 import { TrialFlowService } from "../../billing/services/trial-flow.service";
 import { FreeTrial } from "../../core/types/free-trial";
@@ -234,7 +234,7 @@ export class VaultComponent implements OnInit, OnDestroy {
     private collectionAdminService: CollectionAdminService,
     private searchService: SearchService,
     private searchPipe: SearchPipe,
-    private groupService: GroupService,
+    private groupService: GroupApiService,
     private logService: LogService,
     private eventCollectionService: EventCollectionService,
     private totpService: TotpService,

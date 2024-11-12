@@ -28,7 +28,7 @@ import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.servic
 import { LogService } from "@bitwarden/common/platform/abstractions/log.service";
 import { DialogService, TableDataSource, ToastService } from "@bitwarden/components";
 
-import { InternalGroupService as GroupService, GroupView } from "../core";
+import { GroupDetailsView, InternalGroupApiService as GroupService } from "../core";
 
 import {
   GroupAddEditDialogResultType,
@@ -40,7 +40,7 @@ type GroupDetailsRow = {
   /**
    * Details used for displaying group information
    */
-  details: GroupView;
+  details: GroupDetailsView;
 
   /**
    * True if the group is selected in the table
@@ -108,7 +108,7 @@ export class GroupsComponent {
             ),
             // groups
             this.refreshGroups$.pipe(
-              switchMap(() => this.groupService.getAll(this.organizationId)),
+              switchMap(() => this.groupService.getAllDetails(this.organizationId)),
             ),
           ]),
         ),
