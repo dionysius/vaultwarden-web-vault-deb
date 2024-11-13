@@ -4,7 +4,11 @@ import { mock } from "jest-mock-extended";
 import { of } from "rxjs";
 
 // eslint-disable-next-line no-restricted-imports
-import { PasswordHealthService } from "@bitwarden/bit-common/tools/reports/risk-insights";
+import {
+  MemberCipherDetailsApiService,
+  PasswordHealthService,
+} from "@bitwarden/bit-common/tools/reports/risk-insights";
+import { ApiService } from "@bitwarden/common/abstractions/api.service";
 import { AuditService } from "@bitwarden/common/abstractions/audit.service";
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 import { PasswordStrengthServiceAbstraction } from "@bitwarden/common/tools/password-strength";
@@ -30,6 +34,8 @@ describe("PasswordHealthComponent", () => {
         { provide: CipherService, useValue: mock<CipherService>() },
         { provide: I18nService, useValue: mock<I18nService>() },
         { provide: AuditService, useValue: mock<AuditService>() },
+        { provide: ApiService, useValue: mock<ApiService>() },
+        { provide: MemberCipherDetailsApiService, useValue: mock<MemberCipherDetailsApiService>() },
         {
           provide: PasswordStrengthServiceAbstraction,
           useValue: mock<PasswordStrengthServiceAbstraction>(),

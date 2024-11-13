@@ -6,7 +6,10 @@ import { map } from "rxjs";
 
 import { JslibModule } from "@bitwarden/angular/jslib.module";
 // eslint-disable-next-line no-restricted-imports
-import { PasswordHealthService } from "@bitwarden/bit-common/tools/reports/risk-insights";
+import {
+  MemberCipherDetailsApiService,
+  PasswordHealthService,
+} from "@bitwarden/bit-common/tools/reports/risk-insights";
 import { AuditService } from "@bitwarden/common/abstractions/audit.service";
 import { OrganizationService } from "@bitwarden/common/admin-console/abstractions/organization/organization.service.abstraction";
 import { Organization } from "@bitwarden/common/admin-console/models/domain/organization";
@@ -25,8 +28,6 @@ import {
 // eslint-disable-next-line no-restricted-imports
 import { HeaderModule } from "../../layouts/header/header.module";
 // eslint-disable-next-line no-restricted-imports
-import { OrganizationBadgeModule } from "../../vault/individual-vault/organization-badge/organization-badge.module";
-// eslint-disable-next-line no-restricted-imports
 import { PipesModule } from "../../vault/individual-vault/pipes/pipes.module";
 
 @Component({
@@ -35,7 +36,6 @@ import { PipesModule } from "../../vault/individual-vault/pipes/pipes.module";
   templateUrl: "password-health-members-uri.component.html",
   imports: [
     BadgeModule,
-    OrganizationBadgeModule,
     CommonModule,
     ContainerComponent,
     PipesModule,
@@ -43,7 +43,7 @@ import { PipesModule } from "../../vault/individual-vault/pipes/pipes.module";
     HeaderModule,
     TableModule,
   ],
-  providers: [PasswordHealthService],
+  providers: [PasswordHealthService, MemberCipherDetailsApiService],
 })
 export class PasswordHealthMembersURIComponent implements OnInit {
   passwordStrengthMap = new Map<string, [string, BadgeVariant]>();
@@ -74,6 +74,7 @@ export class PasswordHealthMembersURIComponent implements OnInit {
     protected auditService: AuditService,
     protected i18nService: I18nService,
     protected activatedRoute: ActivatedRoute,
+    protected memberCipherDetailsApiService: MemberCipherDetailsApiService,
   ) {}
 
   ngOnInit() {
@@ -93,6 +94,7 @@ export class PasswordHealthMembersURIComponent implements OnInit {
       this.passwordStrengthService,
       this.auditService,
       this.cipherService,
+      this.memberCipherDetailsApiService,
       organizationId,
     );
 

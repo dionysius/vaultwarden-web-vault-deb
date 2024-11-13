@@ -3,15 +3,17 @@ import { TestBed } from "@angular/core/testing";
 import { AuditService } from "@bitwarden/common/abstractions/audit.service";
 import { PasswordStrengthServiceAbstraction } from "@bitwarden/common/tools/password-strength";
 import { CipherService } from "@bitwarden/common/vault/abstractions/cipher.service";
-import { CipherData } from "@bitwarden/common/vault/models/data/cipher.data";
 import { CipherView } from "@bitwarden/common/vault/models/view/cipher.view";
 
 import { mockCiphers } from "./ciphers.mock";
+import { MemberCipherDetailsApiService } from "./member-cipher-details-api.service";
+import { mockMemberCipherDetails } from "./member-cipher-details-api.service.spec";
 import { PasswordHealthService } from "./password-health.service";
 
 describe("PasswordHealthService", () => {
   let service: PasswordHealthService;
   let cipherService: CipherService;
+  let memberCipherDetailsApiService: MemberCipherDetailsApiService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
@@ -35,7 +37,13 @@ describe("PasswordHealthService", () => {
         {
           provide: CipherService,
           useValue: {
-            getAllFromApiForOrganization: jest.fn().mockResolvedValue(CipherData),
+            getAllFromApiForOrganization: jest.fn().mockResolvedValue(mockCiphers),
+          },
+        },
+        {
+          provide: MemberCipherDetailsApiService,
+          useValue: {
+            getMemberCipherDetails: jest.fn().mockResolvedValue(mockMemberCipherDetails),
           },
         },
         { provide: "organizationId", useValue: "org1" },
@@ -44,6 +52,7 @@ describe("PasswordHealthService", () => {
 
     service = TestBed.inject(PasswordHealthService);
     cipherService = TestBed.inject(CipherService);
+    memberCipherDetailsApiService = TestBed.inject(MemberCipherDetailsApiService);
   });
 
   it("should be created", () => {
@@ -66,6 +75,10 @@ describe("PasswordHealthService", () => {
 
     it("should fetch all ciphers for the organization", () => {
       expect(cipherService.getAllFromApiForOrganization).toHaveBeenCalledWith("org1");
+    });
+
+    it("should fetch member cipher details", () => {
+      expect(memberCipherDetailsApiService.getMemberCipherDetails).toHaveBeenCalledWith("org1");
     });
 
     it("should populate reportCiphers with ciphers that have issues", () => {
@@ -99,12 +112,12 @@ describe("PasswordHealthService", () => {
 
     it("should calculate total members per cipher", () => {
       expect(service.totalMembersMap.size).toBeGreaterThan(0);
-      expect(service.totalMembersMap.get("cbea34a8-bde4-46ad-9d19-b05001228ab1")).toBe(3);
-      expect(service.totalMembersMap.get("cbea34a8-bde4-46ad-9d19-b05001228ab2")).toBe(5);
-      expect(service.totalMembersMap.get("cbea34a8-bde4-46ad-9d19-b05001228cd3")).toBe(6);
+      expect(service.totalMembersMap.get("cbea34a8-bde4-46ad-9d19-b05001228ab1")).toBe(2);
+      expect(service.totalMembersMap.get("cbea34a8-bde4-46ad-9d19-b05001228ab2")).toBe(4);
+      expect(service.totalMembersMap.get("cbea34a8-bde4-46ad-9d19-b05001228cd3")).toBe(5);
       expect(service.totalMembersMap.get("cbea34a8-bde4-46ad-9d19-b05001227nm5")).toBe(4);
       expect(service.totalMembersMap.get("cbea34a8-bde4-46ad-9d19-b05001227nm7")).toBe(1);
-      expect(service.totalMembersMap.get("cbea34a8-bde4-46ad-9d19-b05001228xy4")).toBe(7);
+      expect(service.totalMembersMap.get("cbea34a8-bde4-46ad-9d19-b05001228xy4")).toBe(6);
     });
   });
 

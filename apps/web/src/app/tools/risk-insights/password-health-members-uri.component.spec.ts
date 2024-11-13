@@ -4,7 +4,11 @@ import { mock, MockProxy } from "jest-mock-extended";
 import { of } from "rxjs";
 
 // eslint-disable-next-line no-restricted-imports
-import { PasswordHealthService } from "@bitwarden/bit-common/tools/reports/risk-insights";
+import {
+  MemberCipherDetailsApiService,
+  PasswordHealthService,
+} from "@bitwarden/bit-common/tools/reports/risk-insights";
+import { ApiService } from "@bitwarden/common/abstractions/api.service";
 import { AuditService } from "@bitwarden/common/abstractions/audit.service";
 import { OrganizationService } from "@bitwarden/common/admin-console/abstractions/organization/organization.service.abstraction";
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
@@ -45,6 +49,14 @@ describe("PasswordHealthMembersUriComponent", () => {
             paramMap: of(activeRouteParams),
             url: of([]),
           },
+        },
+        {
+          provide: MemberCipherDetailsApiService,
+          useValue: mock<MemberCipherDetailsApiService>(),
+        },
+        {
+          provide: ApiService,
+          useValue: mock<ApiService>(),
         },
       ],
     }).compileComponents();

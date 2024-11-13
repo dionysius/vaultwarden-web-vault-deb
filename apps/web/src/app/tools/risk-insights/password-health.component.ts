@@ -6,7 +6,10 @@ import { map } from "rxjs";
 
 import { JslibModule } from "@bitwarden/angular/jslib.module";
 // eslint-disable-next-line no-restricted-imports
-import { PasswordHealthService } from "@bitwarden/bit-common/tools/reports/risk-insights";
+import {
+  MemberCipherDetailsApiService,
+  PasswordHealthService,
+} from "@bitwarden/bit-common/tools/reports/risk-insights";
 import { AuditService } from "@bitwarden/common/abstractions/audit.service";
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 import { PasswordStrengthServiceAbstraction } from "@bitwarden/common/tools/password-strength";
@@ -41,7 +44,7 @@ import { PipesModule } from "../../vault/individual-vault/pipes/pipes.module";
     HeaderModule,
     TableModule,
   ],
-  providers: [PasswordHealthService],
+  providers: [PasswordHealthService, MemberCipherDetailsApiService],
 })
 export class PasswordHealthComponent implements OnInit {
   passwordStrengthMap = new Map<string, [string, BadgeVariant]>();
@@ -62,6 +65,7 @@ export class PasswordHealthComponent implements OnInit {
     protected auditService: AuditService,
     protected i18nService: I18nService,
     protected activatedRoute: ActivatedRoute,
+    protected memberCipherDetailsApiService: MemberCipherDetailsApiService,
   ) {}
 
   ngOnInit() {
@@ -81,6 +85,7 @@ export class PasswordHealthComponent implements OnInit {
       this.passwordStrengthService,
       this.auditService,
       this.cipherService,
+      this.memberCipherDetailsApiService,
       organizationId,
     );
 

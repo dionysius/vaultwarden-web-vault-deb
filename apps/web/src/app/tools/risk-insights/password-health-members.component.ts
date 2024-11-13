@@ -5,7 +5,10 @@ import { ActivatedRoute } from "@angular/router";
 import { debounceTime, map } from "rxjs";
 
 // eslint-disable-next-line no-restricted-imports
-import { PasswordHealthService } from "@bitwarden/bit-common/tools/reports/risk-insights";
+import {
+  MemberCipherDetailsApiService,
+  PasswordHealthService,
+} from "@bitwarden/bit-common/tools/reports/risk-insights";
 import { AuditService } from "@bitwarden/common/abstractions/audit.service";
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 import { PasswordStrengthServiceAbstraction } from "@bitwarden/common/tools/password-strength";
@@ -18,12 +21,10 @@ import {
   TableModule,
   ToastService,
 } from "@bitwarden/components";
-import { CardComponent } from "@bitwarden/tools-card";
 
 import { HeaderModule } from "../../layouts/header/header.module";
 // eslint-disable-next-line no-restricted-imports
 import { SharedModule } from "../../shared";
-import { OrganizationBadgeModule } from "../../vault/individual-vault/organization-badge/organization-badge.module";
 // eslint-disable-next-line no-restricted-imports
 import { PipesModule } from "../../vault/individual-vault/pipes/pipes.module";
 
@@ -31,17 +32,8 @@ import { PipesModule } from "../../vault/individual-vault/pipes/pipes.module";
   standalone: true,
   selector: "tools-password-health-members",
   templateUrl: "password-health-members.component.html",
-  imports: [
-    CardComponent,
-    OrganizationBadgeModule,
-    PipesModule,
-    HeaderModule,
-    SearchModule,
-    FormsModule,
-    SharedModule,
-    TableModule,
-  ],
-  providers: [PasswordHealthService],
+  imports: [PipesModule, HeaderModule, SearchModule, FormsModule, SharedModule, TableModule],
+  providers: [PasswordHealthService, MemberCipherDetailsApiService],
 })
 export class PasswordHealthMembersComponent implements OnInit {
   passwordStrengthMap = new Map<string, [string, BadgeVariant]>();
@@ -69,6 +61,7 @@ export class PasswordHealthMembersComponent implements OnInit {
     protected i18nService: I18nService,
     protected activatedRoute: ActivatedRoute,
     protected toastService: ToastService,
+    protected memberCipherDetailsApiService: MemberCipherDetailsApiService,
   ) {
     this.searchControl.valueChanges
       .pipe(debounceTime(200), takeUntilDestroyed())
@@ -92,6 +85,7 @@ export class PasswordHealthMembersComponent implements OnInit {
       this.passwordStrengthService,
       this.auditService,
       this.cipherService,
+      this.memberCipherDetailsApiService,
       organizationId,
     );
 
