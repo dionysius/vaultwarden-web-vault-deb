@@ -15,6 +15,7 @@ import { VaultSettingsService } from "@bitwarden/common/vault/abstractions/vault
 import { CipherType } from "@bitwarden/common/vault/enums";
 import { CipherView } from "@bitwarden/common/vault/models/view/cipher.view";
 
+import { InlineMenuFieldQualificationService } from "../../../../../browser/src/autofill/services/inline-menu-field-qualification.service";
 import { BrowserApi } from "../../../platform/browser/browser-api";
 
 import { VaultPopupAutofillService } from "./vault-popup-autofill.service";
@@ -39,6 +40,7 @@ describe("VaultPopupItemsService", () => {
   const collectionService = mock<CollectionService>();
   const vaultAutofillServiceMock = mock<VaultPopupAutofillService>();
   const syncServiceMock = mock<SyncService>();
+  const inlineMenuFieldQualificationServiceMock = mock<InlineMenuFieldQualificationService>();
 
   beforeEach(() => {
     allCiphers = cipherFactory(10);
@@ -78,6 +80,11 @@ describe("VaultPopupItemsService", () => {
       url: "https://example.com",
     } as chrome.tabs.Tab);
 
+    vaultAutofillServiceMock.nonLoginCipherTypesOnPage$ = new BehaviorSubject({
+      [CipherType.Card]: true,
+      [CipherType.Identity]: true,
+    });
+
     mockOrg = {
       id: "org1",
       name: "Organization 1",
@@ -105,6 +112,10 @@ describe("VaultPopupItemsService", () => {
         { provide: CollectionService, useValue: collectionService },
         { provide: VaultPopupAutofillService, useValue: vaultAutofillServiceMock },
         { provide: SyncService, useValue: syncServiceMock },
+        {
+          provide: InlineMenuFieldQualificationService,
+          useValue: inlineMenuFieldQualificationServiceMock,
+        },
       ],
     });
 

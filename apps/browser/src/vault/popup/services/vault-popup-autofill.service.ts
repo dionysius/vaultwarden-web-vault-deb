@@ -10,10 +10,12 @@ import {
   startWith,
   Subject,
   switchMap,
+  timeout,
 } from "rxjs";
 
 import { AccountService } from "@bitwarden/common/auth/abstractions/account.service";
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
+import { LogService } from "@bitwarden/common/platform/abstractions/log.service";
 import { MessagingService } from "@bitwarden/common/platform/abstractions/messaging.service";
 import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
 import { CipherService } from "@bitwarden/common/vault/abstractions/cipher.service";
@@ -23,6 +25,7 @@ import { LoginUriView } from "@bitwarden/common/vault/models/view/login-uri.view
 import { ToastService } from "@bitwarden/components";
 import { PasswordRepromptService } from "@bitwarden/vault";
 
+import { InlineMenuFieldQualificationService } from "../../../../../browser/src/autofill/services/inline-menu-field-qualification.service";
 import {
   AutofillService,
   PageDetail,
@@ -72,9 +75,51 @@ export class VaultPopupAutofillService {
       if (!tab) {
         return of([]);
       }
-      return this.autofillService.collectPageDetailsFromTab$(tab);
+      return this.autofillService
+        .collectPageDetailsFromTab$(tab)
+        .pipe(timeout({ first: 1500, with: () => of([]) }));
     }),
     shareReplay({ refCount: false, bufferSize: 1 }),
+  );
+
+  nonLoginCipherTypesOnPage$: Observable<{
+    [CipherType.Card]: boolean;
+    [CipherType.Identity]: boolean;
+  }> = this._currentPageDetails$.pipe(
+    map((pageDetails) => {
+      let pageHasCardFields = false;
+      let pageHasIdentityFields = false;
+
+      try {
+        if (!pageDetails) {
+          throw Error("No page details were provided");
+        }
+
+        for (const details of pageDetails) {
+          for (const field of details.details.fields) {
+            if (!pageHasCardFields) {
+              pageHasCardFields = this.inlineMenuFieldQualificationService.isFieldForCreditCardForm(
+                field,
+                details.details,
+              );
+            }
+
+            if (!pageHasIdentityFields) {
+              pageHasIdentityFields =
+                this.inlineMenuFieldQualificationService.isFieldForIdentityForm(
+                  field,
+                  details.details,
+                );
+            }
+          }
+        }
+      } catch (error) {
+        // no-op on failure; do not show extra cipher types
+        this.logService.warning(error.message);
+      }
+
+      return { [CipherType.Card]: pageHasCardFields, [CipherType.Identity]: pageHasIdentityFields };
+    }),
   );
 
   constructor(
@@ -87,6 +132,8 @@ export class VaultPopupAutofillService {
     private messagingService: MessagingService,
     private route: ActivatedRoute,
     private accountService: AccountService,
+    private logService: LogService,
+    private inlineMenuFieldQualificationService: InlineMenuFieldQualificationService,
   ) {
     this._currentPageDetails$.subscribe();
   }
