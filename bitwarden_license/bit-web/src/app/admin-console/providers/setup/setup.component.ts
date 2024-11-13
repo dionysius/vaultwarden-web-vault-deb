@@ -1,14 +1,13 @@
 import { Component, OnDestroy, OnInit, ViewChild } from "@angular/core";
 import { FormBuilder, Validators } from "@angular/forms";
 import { ActivatedRoute, Router } from "@angular/router";
-import { firstValueFrom, Subject, switchMap } from "rxjs";
+import { Subject, switchMap } from "rxjs";
 import { first, takeUntil } from "rxjs/operators";
 
 import { ManageTaxInformationComponent } from "@bitwarden/angular/billing/components";
 import { ProviderApiServiceAbstraction } from "@bitwarden/common/admin-console/abstractions/provider/provider-api.service.abstraction";
 import { ProviderSetupRequest } from "@bitwarden/common/admin-console/models/request/provider/provider-setup.request";
 import { ExpandedTaxInfoUpdateRequest } from "@bitwarden/common/billing/models/request/expanded-tax-info-update.request";
-import { FeatureFlag } from "@bitwarden/common/enums/feature-flag.enum";
 import { ConfigService } from "@bitwarden/common/platform/abstractions/config/config.service";
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 import { ValidationService } from "@bitwarden/common/platform/abstractions/validation.service";
@@ -33,10 +32,6 @@ export class SetupComponent implements OnInit, OnDestroy {
     name: ["", Validators.required],
     billingEmail: ["", [Validators.required, Validators.email]],
   });
-
-  protected enableConsolidatedBilling$ = this.configService.getFeatureFlag$(
-    FeatureFlag.EnableConsolidatedBilling,
-  );
 
   private destroy$ = new Subject<void>();
 
@@ -112,13 +107,9 @@ export class SetupComponent implements OnInit, OnDestroy {
 
   submit = async () => {
     try {
-      const consolidatedBillingEnabled = await firstValueFrom(this.enableConsolidatedBilling$);
-
       this.formGroup.markAllAsTouched();
 
-      const formIsValid = consolidatedBillingEnabled
-        ? this.formGroup.valid && this.manageTaxInformationComponent.touch()
-        : this.formGroup.valid;
+      const formIsValid = this.formGroup.valid && this.manageTaxInformationComponent.touch();
 
       if (!formIsValid) {
         return;
@@ -133,19 +124,18 @@ export class SetupComponent implements OnInit, OnDestroy {
       request.token = this.token;
       request.key = key;
 
-      if (consolidatedBillingEnabled) {
-        request.taxInfo = new ExpandedTaxInfoUpdateRequest();
-        const taxInformation = this.manageTaxInformationComponent.getTaxInformation();
+      request.taxInfo = new ExpandedTaxInfoUpdateRequest();
+      const taxInformation = this.manageTaxInformationComponent.getTaxInformation();
 
-        request.taxInfo.country = taxInformation.country;
-        request.taxInfo.postalCode = taxInformation.postalCode;
-        if (taxInformation.includeTaxId) {
-          request.taxInfo.taxId = taxInformation.taxId;
-          request.taxInfo.line1 = taxInformation.line1;
-          request.taxInfo.line2 = taxInformation.line2;
-          request.taxInfo.city = taxInformation.city;
-          request.taxInfo.state = taxInformation.state;
-        }
+      request.taxInfo.country = taxInformation.country;
+      request.taxInfo.postalCode = taxInformation.postalCode;
+
+      if (taxInformation.includeTaxId) {
+        request.taxInfo.taxId = taxInformation.taxId;
+        request.taxInfo.line1 = taxInformation.line1;
+        request.taxInfo.line2 = taxInformation.line2;
+        request.taxInfo.city = taxInformation.city;
+        request.taxInfo.state = taxInformation.state;
       }
 
       const provider = await this.providerApiService.postProviderSetup(this.providerId, request);

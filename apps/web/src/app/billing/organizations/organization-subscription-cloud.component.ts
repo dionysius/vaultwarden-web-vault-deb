@@ -60,10 +60,6 @@ export class OrganizationSubscriptionCloudComponent implements OnInit, OnDestroy
   protected readonly subscriptionHiddenIcon = SubscriptionHiddenIcon;
   protected readonly teamsStarter = ProductTierType.TeamsStarter;
 
-  protected enableConsolidatedBilling$ = this.configService.getFeatureFlag$(
-    FeatureFlag.EnableConsolidatedBilling,
-  );
-
   protected enableUpgradePasswordManagerSub$ = this.configService.getFeatureFlag$(
     FeatureFlag.EnableUpgradePasswordManagerSub,
   );
@@ -124,8 +120,6 @@ export class OrganizationSubscriptionCloudComponent implements OnInit, OnDestroy
     this.locale = await firstValueFrom(this.i18nService.locale$);
     this.userOrg = await this.organizationService.get(this.organizationId);
 
-    const consolidatedBillingEnabled = await firstValueFrom(this.enableConsolidatedBilling$);
-
     const isIndependentOrganizationOwner = !this.userOrg.hasProvider && this.userOrg.isOwner;
     const isResoldOrganizationOwner = this.userOrg.hasReseller && this.userOrg.isOwner;
     const isMSPUser = this.userOrg.hasProvider && this.userOrg.isProviderUser;
@@ -135,7 +129,7 @@ export class OrganizationSubscriptionCloudComponent implements OnInit, OnDestroy
     );
 
     this.organizationIsManagedByConsolidatedBillingMSP =
-      consolidatedBillingEnabled && this.userOrg.hasProvider && metadata.isManaged;
+      this.userOrg.hasProvider && metadata.isManaged;
 
     this.showSubscription =
       isIndependentOrganizationOwner ||
