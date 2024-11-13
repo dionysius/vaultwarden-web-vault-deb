@@ -16,6 +16,7 @@ import {
   from,
   lastValueFrom,
   Observable,
+  of,
   Subject,
 } from "rxjs";
 import {
@@ -184,12 +185,17 @@ export class VaultComponent implements OnInit, OnDestroy {
   private refresh$ = new BehaviorSubject<void>(null);
   private destroy$ = new Subject<void>();
   private extensionRefreshEnabled: boolean;
+  private hasSubscription$ = new BehaviorSubject<boolean>(false);
 
   private vaultItemDialogRef?: DialogRef<VaultItemDialogResult> | undefined;
   private readonly unpaidSubscriptionDialog$ = this.organizationService.organizations$.pipe(
     filter((organizations) => organizations.length === 1),
-    switchMap(([organization]) =>
+    map(([organization]) => organization),
+    switchMap((organization) =>
       from(this.billingApiService.getOrganizationBillingMetadata(organization.id)).pipe(
+        tap((organizationMetaData) => {
+          this.hasSubscription$.next(organizationMetaData.hasSubscription);
+        }),
         switchMap((organizationMetaData) =>
           from(
             this.trialFlowService.handleUnpaidSubscriptionDialog(
@@ -417,11 +423,17 @@ export class VaultComponent implements OnInit, OnDestroy {
 
     this.unpaidSubscriptionDialog$.pipe(takeUntil(this.destroy$)).subscribe();
 
-    const organizationsPaymentStatus$ = this.organizationService.organizations$.pipe(
-      switchMap((allOrganizations) => {
+    const organizationsPaymentStatus$ = combineLatest([
+      this.organizationService.organizations$,
+      this.hasSubscription$,
+    ]).pipe(
+      switchMap(([allOrganizations, hasSubscription]) => {
+        if (!allOrganizations || allOrganizations.length === 0 || !hasSubscription) {
+          return of([]);
+        }
         return combineLatest(
           allOrganizations
-            .filter((org) => org.isOwner)
+            .filter((org) => org.isOwner && hasSubscription)
             .map((org) =>
               combineLatest([
                 this.organizationApiService.getSubscription(org.id),
