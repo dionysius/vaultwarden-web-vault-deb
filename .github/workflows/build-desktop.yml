@@ -166,7 +166,7 @@ jobs:
       - name: Set up environment
         run: |
           sudo apt-get update
-          sudo apt-get -y install pkg-config libxss-dev libsecret-1-dev rpm musl-dev musl-tools
+          sudo apt-get -y install pkg-config libxss-dev libsecret-1-dev rpm musl-dev musl-tools flatpak flatpak-builder
 
       - name: Set up Snap
         run: sudo snap install snapcraft --classic
@@ -247,6 +247,19 @@ jobs:
         with:
           name: ${{ needs.setup.outputs.release_channel }}-linux.yml
           path: apps/desktop/dist/${{ needs.setup.outputs.release_channel }}-linux.yml
+          if-no-files-found: error
+      
+      - name: Build flatpak
+        working-directory: apps/desktop
+        run: |
+          sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+          sudo npm run pack:lin:flatpak
+
+      - name: Upload flatpak artifact
+        uses: actions/upload-artifact@b4b15b8c7c6ac21ea08fcf65892d2ee8f75cf882 # v4.4.3
+        with:
+          name: com.bitwarden.desktop.flatpak
+          path: apps/desktop/dist/com.bitwarden.desktop.flatpak
           if-no-files-found: error
 
 
