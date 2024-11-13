@@ -5,6 +5,7 @@ import { Subject } from "rxjs";
 
 import { EventCollectionService } from "@bitwarden/common/abstractions/event/event-collection.service";
 import { AccountService } from "@bitwarden/common/auth/abstractions/account.service";
+import { AUTOFILL_ID } from "@bitwarden/common/autofill/constants";
 import { EventType } from "@bitwarden/common/enums";
 import { ConfigService } from "@bitwarden/common/platform/abstractions/config/config.service";
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
@@ -33,6 +34,7 @@ describe("ViewV2Component", () => {
   const params$ = new Subject();
   const mockNavigate = jest.fn();
   const collect = jest.fn().mockResolvedValue(null);
+  const doAutofill = jest.fn();
 
   const mockCipher = {
     id: "122-333-444",
@@ -41,7 +43,7 @@ describe("ViewV2Component", () => {
   };
 
   const mockVaultPopupAutofillService = {
-    doAutofill: jest.fn(),
+    doAutofill,
   };
   const mockUserId = Utils.newGuid() as UserId;
   const accountService: FakeAccountService = mockAccountServiceWith(mockUserId);
@@ -54,6 +56,7 @@ describe("ViewV2Component", () => {
   beforeEach(async () => {
     mockNavigate.mockClear();
     collect.mockClear();
+    doAutofill.mockClear();
 
     await TestBed.configureTestingModule({
       imports: [ViewV2Component],
@@ -147,6 +150,14 @@ describe("ViewV2Component", () => {
         false,
         undefined,
       );
+    }));
+
+    it('invokes `doAutofill` when action="AUTOFILL_ID"', fakeAsync(() => {
+      params$.next({ action: AUTOFILL_ID });
+
+      flush(); // Resolve all promises
+
+      expect(doAutofill).toHaveBeenCalledOnce();
     }));
   });
 });
