@@ -8,7 +8,8 @@ export class CredentialsRecord {
   note: string;
   url: string;
   category: string;
-  otpSecret: string;
+  otpSecret?: string;
+  otpUrl?: string; // Likely introduced by Dashlane as a replacement for `otpSecret`
 }
 
 export class PaymentsRecord {
