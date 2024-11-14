@@ -117,7 +117,7 @@ export class PasswordSettingsComponent implements OnInit, OnDestroy {
         map((settings) => {
           // interface is "avoid" while storage is "include"
           const s: any = { ...settings };
-          s.avoidAmbiguous = s.ambiguous;
+          s.avoidAmbiguous = !s.ambiguous;
           delete s.ambiguous;
           return s;
         }),
@@ -205,7 +205,7 @@ export class PasswordSettingsComponent implements OnInit, OnDestroy {
         map(([, settings]) => {
           // interface is "avoid" while storage is "include"
           const s: any = { ...settings };
-          s.ambiguous = s.avoidAmbiguous;
+          s.ambiguous = !s.avoidAmbiguous;
           delete s.avoidAmbiguous;
           return s;
         }),
