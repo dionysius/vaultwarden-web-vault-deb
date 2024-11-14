@@ -84,6 +84,7 @@ import {
   UpmCsvImporter,
   YotiCsvImporter,
   ZohoVaultCsvImporter,
+  PasswordXPCsvImporter,
 } from "../importers";
 import { Importer } from "../importers/importer";
 import {
@@ -336,6 +337,8 @@ export class ImportService implements ImportServiceAbstraction {
         return new PasskyJsonImporter();
       case "protonpass":
         return new ProtonPassJsonImporter(this.i18nService);
+      case "passwordxpcsv":
+        return new PasswordXPCsvImporter();
       case "netwrixpasswordsecure":
         return new NetwrixPasswordSecureCsvImporter();
       default:
