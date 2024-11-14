@@ -109,6 +109,8 @@ export declare namespace ipc {
      * @param callback This function will be called whenever a message is received from a client.
      */
     static listen(name: string, callback: (error: null | Error, message: IpcMessage) => void): Promise<IpcServer>
+    /** Return the path to the IPC server. */
+    getPath(): string
     /** Stop the IPC server. */
     stop(): void
     /**

@@ -487,6 +487,12 @@ pub mod ipc {
             Ok(IpcServer { server })
         }
 
+        /// Return the path to the IPC server.
+        #[napi]
+        pub fn get_path(&self) -> String {
+            self.server.path.to_string_lossy().to_string()
+        }
+
         /// Stop the IPC server.
         #[napi]
         pub fn stop(&self) -> napi::Result<()> {

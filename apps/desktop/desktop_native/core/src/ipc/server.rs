@@ -1,4 +1,8 @@
-use std::{error::Error, path::Path, vec};
+use std::{
+    error::Error,
+    path::{Path, PathBuf},
+    vec,
+};
 
 use futures::TryFutureExt;
 
@@ -29,6 +33,7 @@ pub enum MessageType {
 }
 
 pub struct Server {
+    pub path: PathBuf,
     cancel_token: CancellationToken,
     server_to_clients_send: broadcast::Sender<String>,
 }
@@ -66,6 +71,7 @@ impl Server {
         // Create the server and start listening for incoming connections
         // in a separate task to avoid blocking the current task
         let server = Server {
+            path: path.to_owned(),
             cancel_token: cancel_token.clone(),
             server_to_clients_send,
         };

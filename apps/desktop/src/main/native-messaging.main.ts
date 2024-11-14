@@ -93,10 +93,22 @@ export class NativeMessagingMain {
           break;
         }
         case ipc.IpcMessageType.Message:
-          this.windowMain.win.webContents.send("nativeMessaging", JSON.parse(msg.message));
+          try {
+            const msgJson = JSON.parse(msg.message);
+            this.logService.debug("Native messaging message:", msgJson);
+            this.windowMain.win?.webContents.send("nativeMessaging", msgJson);
+          } catch (e) {
+            this.logService.warning("Error processing message:", e, msg.message);
+          }
+          break;
+
+        default:
+          this.logService.warning("Unknown message type:", msg.kind, msg.message);
           break;
       }
     });
+
+    this.logService.info("Native messaging server started at:", this.ipcServer.getPath());
 
     ipcMain.on("nativeMessagingReply", (event, msg) => {
       if (msg != null) {
@@ -110,6 +122,7 @@ export class NativeMessagingMain {
   }
 
   send(message: object) {
+    this.logService.debug("Native messaging reply:", message);
     this.ipcServer?.send(JSON.stringify(message));
   }
 
