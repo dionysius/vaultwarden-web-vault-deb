@@ -283,9 +283,7 @@ export class Organization {
       return true;
     }
 
-    return this.hasProvider && this.providerType === ProviderType.Msp
-      ? this.isProviderUser
-      : this.isOwner;
+    return this.hasBillableProvider ? this.isProviderUser : this.isOwner;
   }
 
   get canEditSubscription() {
@@ -302,6 +300,14 @@ export class Organization {
 
   get hasProvider() {
     return this.providerId != null || this.providerName != null;
+  }
+
+  get hasBillableProvider() {
+    return (
+      this.hasProvider &&
+      (this.providerType === ProviderType.Msp ||
+        this.providerType === ProviderType.MultiOrganizationEnterprise)
+    );
   }
 
   get hasReseller() {
