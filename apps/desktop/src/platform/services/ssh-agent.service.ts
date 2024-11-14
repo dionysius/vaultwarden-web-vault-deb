@@ -37,7 +37,7 @@ import { DesktopSettingsService } from "./desktop-settings.service";
 })
 export class SshAgentService implements OnDestroy {
   SSH_REFRESH_INTERVAL = 1000;
-  SSH_VAULT_UNLOCK_REQUEST_TIMEOUT = 1000 * 60;
+  SSH_VAULT_UNLOCK_REQUEST_TIMEOUT = 60_000;
   SSH_REQUEST_UNLOCK_POLLING_INTERVAL = 100;
 
   private destroy$ = new Subject<void>();
@@ -79,7 +79,9 @@ export class SshAgentService implements OnDestroy {
               });
               return this.authService.activeAccountStatus$.pipe(
                 filter((status) => status === AuthenticationStatus.Unlocked),
-                timeout(this.SSH_VAULT_UNLOCK_REQUEST_TIMEOUT),
+                timeout({
+                  first: this.SSH_VAULT_UNLOCK_REQUEST_TIMEOUT,
+                }),
                 catchError((error: unknown) => {
                   if (error instanceof TimeoutError) {
                     this.toastService.showToast({
