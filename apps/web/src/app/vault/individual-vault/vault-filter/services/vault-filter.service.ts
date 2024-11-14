@@ -306,6 +306,12 @@ export class VaultFilterService implements VaultFilterServiceAbstraction {
         type: CipherType.SecureNote,
         icon: "bwi-sticky-note",
       },
+      {
+        id: "sshKey",
+        name: this.i18nService.t("typeSshKey"),
+        type: CipherType.SshKey,
+        icon: "bwi-key",
+      },
     ];
 
     return this.buildTypeTree(

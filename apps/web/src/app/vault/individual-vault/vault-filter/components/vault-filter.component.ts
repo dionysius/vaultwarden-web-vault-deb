@@ -68,6 +68,9 @@ export class VaultFilterComponent implements OnInit, OnDestroy {
     if (this.activeFilter.cipherType === CipherType.SecureNote) {
       return "searchSecureNote";
     }
+    if (this.activeFilter.cipherType === CipherType.SshKey) {
+      return "searchSshKey";
+    }
     if (this.activeFilter.selectedFolderNode?.node) {
       return "searchFolder";
     }
