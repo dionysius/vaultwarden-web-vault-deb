@@ -61,6 +61,7 @@ import { OrganizationUserView } from "../core/views/organization-user.view";
 import { openEntityEventsDialog } from "../manage/entity-events.component";
 
 import { BulkConfirmDialogComponent } from "./components/bulk/bulk-confirm-dialog.component";
+import { BulkDeleteDialogComponent } from "./components/bulk/bulk-delete-dialog.component";
 import { BulkEnableSecretsManagerDialogComponent } from "./components/bulk/bulk-enable-sm-dialog.component";
 import { BulkRemoveDialogComponent } from "./components/bulk/bulk-remove-dialog.component";
 import { BulkRestoreRevokeComponent } from "./components/bulk/bulk-restore-revoke.component";
@@ -534,6 +535,21 @@ export class MembersComponent extends BaseMembersComponent<OrganizationUserView>
     }
 
     const dialogRef = BulkRemoveDialogComponent.open(this.dialogService, {
+      data: {
+        organizationId: this.organization.id,
+        users: this.dataSource.getCheckedUsers(),
+      },
+    });
+    await lastValueFrom(dialogRef.closed);
+    await this.load();
+  }
+
+  async bulkDelete() {
+    if (this.actionPromise != null) {
+      return;
+    }
+
+    const dialogRef = BulkDeleteDialogComponent.open(this.dialogService, {
       data: {
         organizationId: this.organization.id,
         users: this.dataSource.getCheckedUsers(),
