@@ -63,10 +63,10 @@ const routes: Routes = [
           ),
       },
       {
-        path: "risk-insights",
+        path: "access-intelligence",
         loadChildren: () =>
-          import("../../tools/risk-insights/risk-insights.module").then(
-            (m) => m.RiskInsightsModule,
+          import("../../tools/access-intelligence/access-intelligence.module").then(
+            (m) => m.AccessIntelligenceModule,
           ),
       },
       {

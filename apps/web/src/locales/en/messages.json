@@ -5,14 +5,17 @@
   "criticalApplications": {
     "message": "Critical applications"
   },
+  "accessIntelligence": {
+    "message": "Access Intelligence"
+  },
   "riskInsights": {
     "message": "Risk Insights"
   },
   "passwordRisk": {
     "message": "Password Risk"
   },
-  "discoverAtRiskPasswords": {
-    "message": "Discover at-risk passwords and notify users to change those passwords."
+  "reviewAtRiskPasswords": {
+    "message": "Review at-risk passwords (weak, exposed, or reused) across applications. Select your most critical applications to prioritize security actions for your users to address at-risk passwords."
   },
   "dataLastUpdated": {
     "message": "Data last updated: $DATE$",

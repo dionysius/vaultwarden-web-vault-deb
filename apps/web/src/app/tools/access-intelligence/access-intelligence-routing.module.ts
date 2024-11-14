@@ -8,9 +8,9 @@ import { RiskInsightsComponent } from "./risk-insights.component";
 
 const routes: Routes = [
   {
-    path: "",
-    component: RiskInsightsComponent,
+    path: "risk-insights",
     canActivate: [canAccessFeature(FeatureFlag.AccessIntelligence)],
+    component: RiskInsightsComponent,
     data: {
       titleId: "RiskInsights",
     },
@@ -21,4 +21,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],
 })
-export class RiskInsightsRoutingModule {}
+export class AccessIntelligenceRoutingModule {}
