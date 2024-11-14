@@ -98,10 +98,6 @@ export class MembersComponent extends BaseMembersComponent<OrganizationUserView>
 
   protected canUseSecretsManager$: Observable<boolean>;
 
-  protected enableUpgradePasswordManagerSub$ = this.configService.getFeatureFlag$(
-    FeatureFlag.EnableUpgradePasswordManagerSub,
-  );
-
   protected accountDeprovisioningEnabled$: Observable<boolean> = this.configService.getFeatureFlag$(
     FeatureFlag.AccountDeprovisioning,
   );
@@ -487,29 +483,20 @@ export class MembersComponent extends BaseMembersComponent<OrganizationUserView>
         this.organization.productTierType === ProductTierType.TeamsStarter ||
         this.organization.productTierType === ProductTierType.Families)
     ) {
-      const enableUpgradePasswordManagerSub = await firstValueFrom(
-        this.enableUpgradePasswordManagerSub$,
-      );
-      if (enableUpgradePasswordManagerSub && this.organization.canEditSubscription) {
-        const reference = openChangePlanDialog(this.dialogService, {
-          data: {
-            organizationId: this.organization.id,
-            subscription: null,
-            productTierType: this.organization.productTierType,
-          },
-        });
+      const reference = openChangePlanDialog(this.dialogService, {
+        data: {
+          organizationId: this.organization.id,
+          subscription: null,
+          productTierType: this.organization.productTierType,
+        },
+      });
 
-        const result = await lastValueFrom(reference.closed);
+      const result = await lastValueFrom(reference.closed);
 
-        if (result === ChangePlanDialogResultType.Submitted) {
-          await this.load();
-        }
-        return;
-      } else {
-        // Show org upgrade modal
-        await this.showSeatLimitReachedDialog();
-        return;
+      if (result === ChangePlanDialogResultType.Submitted) {
+        await this.load();
       }
+      return;
     }
 
     const dialog = openUserAddEditDialog(this.dialogService, {

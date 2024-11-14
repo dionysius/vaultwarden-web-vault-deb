@@ -60,10 +60,6 @@ export class OrganizationSubscriptionCloudComponent implements OnInit, OnDestroy
   protected readonly subscriptionHiddenIcon = SubscriptionHiddenIcon;
   protected readonly teamsStarter = ProductTierType.TeamsStarter;
 
-  protected enableUpgradePasswordManagerSub$ = this.configService.getFeatureFlag$(
-    FeatureFlag.EnableUpgradePasswordManagerSub,
-  );
-
   protected deprecateStripeSourcesAPI$ = this.configService.getFeatureFlag$(
     FeatureFlag.AC2476_DeprecateStripeSourcesAPI,
   );
@@ -360,27 +356,20 @@ export class OrganizationSubscriptionCloudComponent implements OnInit, OnDestroy
   };
 
   async changePlan() {
-    const EnableUpgradePasswordManagerSub = await firstValueFrom(
-      this.enableUpgradePasswordManagerSub$,
-    );
-    if (EnableUpgradePasswordManagerSub) {
-      const reference = openChangePlanDialog(this.dialogService, {
-        data: {
-          organizationId: this.organizationId,
-          subscription: this.sub,
-          productTierType: this.userOrg.productTierType,
-        },
-      });
+    const reference = openChangePlanDialog(this.dialogService, {
+      data: {
+        organizationId: this.organizationId,
+        subscription: this.sub,
+        productTierType: this.userOrg.productTierType,
+      },
+    });
 
-      const result = await lastValueFrom(reference.closed);
+    const result = await lastValueFrom(reference.closed);
 
-      if (result === ChangePlanDialogResultType.Closed) {
-        return;
-      }
-      await this.load();
-    } else {
-      this.showChangePlan = !this.showChangePlan;
+    if (result === ChangePlanDialogResultType.Closed) {
+      return;
     }
+    await this.load();
   }
 
   isSecretsManagerTrial(): boolean {
