@@ -25,10 +25,6 @@ export class DefaultLoginComponentService implements LoginComponentService {
     return null;
   }
 
-  isLoginViaAuthRequestSupported(): boolean {
-    return false;
-  }
-
   isLoginWithPasskeySupported(): boolean {
     return this.clientType === ClientType.Web;
   }

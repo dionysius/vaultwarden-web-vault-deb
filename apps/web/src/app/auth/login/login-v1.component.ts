@@ -32,7 +32,6 @@ import { UserId } from "@bitwarden/common/types/guid";
 import { ToastService } from "@bitwarden/components";
 import { PasswordGenerationServiceAbstraction } from "@bitwarden/generator-legacy";
 
-import { flagEnabled } from "../../../utils/flags";
 import { RouterService } from "../../core";
 import { AcceptOrganizationInviteService } from "../organization-invite/accept-organization.service";
 import { OrganizationInvite } from "../organization-invite/organization-invite";
@@ -46,7 +45,6 @@ export class LoginComponentV1 extends BaseLoginComponent implements OnInit {
   showResetPasswordAutoEnrollWarning = false;
   enforcedPasswordPolicyOptions: MasterPasswordPolicyOptions;
   policies: Policy[];
-  showPasswordless = false;
 
   constructor(
     private acceptOrganizationInviteService: AcceptOrganizationInviteService,
@@ -98,7 +96,6 @@ export class LoginComponentV1 extends BaseLoginComponent implements OnInit {
       toastService,
     );
     this.onSuccessfulLoginNavigate = this.goAfterLogIn;
-    this.showPasswordless = flagEnabled("showPasswordless");
   }
 
   submitForm = async (showToast = true) => {

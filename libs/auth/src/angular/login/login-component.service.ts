@@ -24,11 +24,6 @@ export abstract class LoginComponentService {
   getOrgPolicies: () => Promise<PasswordPolicies | null>;
 
   /**
-   * Indicates whether login with device (auth request) is supported on the given client
-   */
-  isLoginViaAuthRequestSupported: () => boolean;
-
-  /**
    * Indicates whether login with passkey is supported on the given client
    */
   isLoginWithPasskeySupported: () => boolean;

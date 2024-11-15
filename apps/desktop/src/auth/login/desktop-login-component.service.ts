@@ -71,8 +71,4 @@ export class DesktopLoginComponentService
       });
     }
   }
-
-  isLoginViaAuthRequestSupported(): boolean {
-    return true;
-  }
 }

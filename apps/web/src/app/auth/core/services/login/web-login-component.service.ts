@@ -16,7 +16,6 @@ import { LogService } from "@bitwarden/common/platform/abstractions/log.service"
 import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
 import { PasswordGenerationServiceAbstraction } from "@bitwarden/generator-legacy";
 
-import { flagEnabled } from "../../../../../utils/flags";
 import { RouterService } from "../../../../core/router.service";
 import { AcceptOrganizationInviteService } from "../../../organization-invite/accept-organization.service";
 
@@ -45,10 +44,6 @@ export class WebLoginComponentService
       ssoLoginService,
     );
     this.clientType = this.platformUtilsService.getClientType();
-  }
-
-  isLoginViaAuthRequestSupported(): boolean {
-    return flagEnabled("showPasswordless");
   }
 
   async getOrgPolicies(): Promise<PasswordPolicies | null> {

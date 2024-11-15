@@ -112,7 +112,7 @@
       </button>
 
       <!-- Button to Login with Device -->
-      <ng-container *ngIf="loginViaAuthRequestSupported && isKnownDevice">
+      <ng-container *ngIf="isKnownDevice">
         <div class="tw-text-center">{{ "or" | i18n }}</div>
 
         <button

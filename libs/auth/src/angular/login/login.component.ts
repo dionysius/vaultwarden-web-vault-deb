@@ -104,12 +104,6 @@ export class LoginComponent implements OnInit, OnDestroy {
     return this.formGroup.controls.email;
   }
 
-  /**
-   * LoginViaAuthRequestSupported is a boolean that determines if we show the Login with device button.
-   * An AuthRequest is the mechanism that allows users to login to the client via a device that is already logged in.
-   */
-  loginViaAuthRequestSupported = false;
-
   // Web properties
   enforcedPasswordPolicyOptions: MasterPasswordPolicyOptions;
   policies: Policy[];
@@ -144,7 +138,6 @@ export class LoginComponent implements OnInit, OnDestroy {
     private configService: ConfigService,
   ) {
     this.clientType = this.platformUtilsService.getClientType();
-    this.loginViaAuthRequestSupported = this.loginComponentService.isLoginViaAuthRequestSupported();
   }
 
   async ngOnInit(): Promise<void> {
@@ -402,10 +395,8 @@ export class LoginComponent implements OnInit, OnDestroy {
       // Reset master password only when going from validated to not validated so that autofill can work properly
       this.formGroup.controls.masterPassword.reset();
 
-      if (this.loginViaAuthRequestSupported) {
-        // Reset known device state when going back to email entry if it is supported
-        this.isKnownDevice = false;
-      }
+      // Reset known device state when going back to email entry if it is supported
+      this.isKnownDevice = false;
     } else if (this.loginUiState === LoginUiState.MASTER_PASSWORD_ENTRY) {
       this.loginComponentService.showBackButton(true);
       this.anonLayoutWrapperDataService.setAnonLayoutWrapperData({
@@ -426,9 +417,8 @@ export class LoginComponent implements OnInit, OnDestroy {
         });
       }
 
-      if (this.loginViaAuthRequestSupported) {
-        await this.getKnownDevice(this.emailFormControl.value);
-      }
+      // Check to see if the device is known so we can show the Login with Device option
+      await this.getKnownDevice(this.emailFormControl.value);
     }
   }
 
@@ -580,9 +570,8 @@ export class LoginComponent implements OnInit, OnDestroy {
       await this.loadEmailSettings();
     }
 
-    if (this.loginViaAuthRequestSupported) {
-      await this.getKnownDevice(this.emailFormControl.value);
-    }
+    // Check to see if the device is known so that we can show the Login with Device option
+    await this.getKnownDevice(this.emailFormControl.value);
 
     // Backup check to handle unknown case where activatedRoute is not available
     // This shouldn't happen under normal circumstances
