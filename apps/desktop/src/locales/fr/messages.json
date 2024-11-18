@@ -2445,7 +2445,7 @@
     "message": "Generate email"
   },
   "generatorBoundariesHint": {
-    "message": "Value must be between $MIN$ and $MAX$",
+    "message": "La valeur doit être comprise entre $MIN$ et $MAX$",
     "description": "Explains spin box minimum and maximum values to the user",
     "placeholders": {
       "min": {
