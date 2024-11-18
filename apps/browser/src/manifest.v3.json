@@ -41,9 +41,6 @@
   "background": {
     "service_worker": "background.js"
   },
-  "__firefox__background": {
-    "scripts": ["background.js"]
-  },
   "action": {
     "default_icon": {
       "19": "images/icon19.png",
@@ -54,40 +51,21 @@
   },
   "permissions": [
     "activeTab",
-    "alarms",
+    "tabs",
+    "contextMenus",
+    "storage",
+    "unlimitedStorage",
     "clipboardRead",
     "clipboardWrite",
-    "contextMenus",
     "idle",
-    "offscreen",
-    "scripting",
-    "storage",
-    "tabs",
-    "unlimitedStorage",
-    "webNavigation",
-    "webRequest",
-    "webRequestAuthProvider"
-  ],
-  "__safari__permissions": [
-    "activeTab",
     "alarms",
-    "clipboardRead",
-    "clipboardWrite",
-    "contextMenus",
-    "idle",
-    "nativeMessaging",
-    "offscreen",
     "scripting",
-    "storage",
-    "tabs",
-    "unlimitedStorage",
-    "webNavigation",
+    "offscreen",
     "webRequest",
-    "webRequestAuthProvider"
+    "webRequestAuthProvider",
+    "webNavigation"
   ],
   "optional_permissions": ["nativeMessaging", "privacy"],
-  "__firefox__optional_permissions": ["nativeMessaging"],
-  "__safari__optional_permissions": null,
   "host_permissions": ["https://*/*", "http://*/*"],
   "content_security_policy": {
     "extension_pages": "script-src 'self' 'wasm-unsafe-eval'; object-src 'self'",
@@ -101,7 +79,6 @@
       "overlay/list.html"
     ]
   },
-  "__firefox__sandbox": null,
   "commands": {
     "_execute_action": {
       "suggested_key": {
@@ -110,7 +87,7 @@
       },
       "description": "__MSG_commandOpenPopup__"
     },
-    "__firefox___execute_sidebar_action": {
+    "_execute_sidebar_action": {
       "suggested_key": {
         "default": "Alt+Shift+Y",
         "linux": "Alt+Shift+U"
@@ -156,13 +133,13 @@
       "matches": ["<all_urls>"]
     }
   ],
-  "__firefox__browser_specific_settings": {
+  "applications": {
     "gecko": {
       "id": "{446900e4-71c2-419f-a6a7-df9c091e268b}",
       "strict_min_version": "91.0"
     }
   },
-  "__firefox__sidebar_action": {
+  "sidebar_action": {
     "default_title": "Bitwarden",
     "default_panel": "popup/index.html?uilocation=sidebar",
     "default_icon": "images/icon19.png",
@@ -170,6 +147,5 @@
   },
   "storage": {
     "managed_schema": "managed_schema.json"
-  },
-  "__firefox__storage": null
+  }
 }
