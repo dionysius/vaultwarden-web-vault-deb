@@ -120,7 +120,7 @@
     "message": "Copia contrasenya"
   },
   "copyPassphrase": {
-    "message": "Copia clau de pas"
+    "message": "Copy passphrase"
   },
   "copyNote": {
     "message": "Copia nota"
@@ -151,6 +151,15 @@
   },
   "copyLicenseNumber": {
     "message": "Copia el número de llicència"
+  },
+  "copyPrivateKey": {
+    "message": "Copy private key"
+  },
+  "copyPublicKey": {
+    "message": "Copy public key"
+  },
+  "copyFingerprint": {
+    "message": "Copy fingerprint"
   },
   "copyCustomField": {
     "message": "Copia $FIELD$",
@@ -427,7 +436,7 @@
     "message": "Genera contrasenya"
   },
   "generatePassphrase": {
-    "message": "Genera clau de pas"
+    "message": "Generate passphrase"
   },
   "regeneratePassword": {
     "message": "Regenera contrasenya"
@@ -1763,6 +1772,9 @@
   },
   "typeIdentity": {
     "message": "Identitat"
+  },
+  "typeSshKey": {
+    "message": "SSH key"
   },
   "newItemHeader": {
     "message": "New $TYPE$",
@@ -4592,6 +4604,30 @@
   },
   "enterprisePolicyRequirementsApplied": {
     "message": "Enterprise policy requirements have been applied to this setting"
+  },
+  "sshPrivateKey": {
+    "message": "Private key"
+  },
+  "sshPublicKey": {
+    "message": "Public key"
+  },
+  "sshFingerprint": {
+    "message": "Fingerprint"
+  },
+  "sshKeyAlgorithm": {
+    "message": "Key type"
+  },
+  "sshKeyAlgorithmED25519": {
+    "message": "ED25519"
+  },
+  "sshKeyAlgorithmRSA2048": {
+    "message": "RSA 2048-Bit"
+  },
+  "sshKeyAlgorithmRSA3072": {
+    "message": "RSA 3072-Bit"
+  },
+  "sshKeyAlgorithmRSA4096": {
+    "message": "RSA 4096-Bit"
   },
   "retry": {
     "message": "Retry"

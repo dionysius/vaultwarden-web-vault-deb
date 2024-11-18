@@ -26,7 +26,7 @@
     "message": "Увійти з ключем доступу"
   },
   "useSingleSignOn": {
-    "message": "Використовувати єдиний вхід"
+    "message": "Використати єдиний вхід"
   },
   "welcomeBack": {
     "message": "З поверненням"
@@ -151,6 +151,15 @@
   },
   "copyLicenseNumber": {
     "message": "Копіювати номер ліцензії"
+  },
+  "copyPrivateKey": {
+    "message": "Копіювати закритий ключ"
+  },
+  "copyPublicKey": {
+    "message": "Копіювати відкритий ключ"
+  },
+  "copyFingerprint": {
+    "message": "Копіювати відбиток"
   },
   "copyCustomField": {
     "message": "Копіювати $FIELD$",
@@ -1763,6 +1772,9 @@
   },
   "typeIdentity": {
     "message": "Посвідчення"
+  },
+  "typeSshKey": {
+    "message": "Ключ SSH"
   },
   "newItemHeader": {
     "message": "Новий $TYPE$",
@@ -4593,6 +4605,30 @@
   "enterprisePolicyRequirementsApplied": {
     "message": "До цього налаштування застосовано вимоги політики компанії"
   },
+  "sshPrivateKey": {
+    "message": "Закритий ключ"
+  },
+  "sshPublicKey": {
+    "message": "Відкритий ключ"
+  },
+  "sshFingerprint": {
+    "message": "Цифровий відбиток"
+  },
+  "sshKeyAlgorithm": {
+    "message": "Тип ключа"
+  },
+  "sshKeyAlgorithmED25519": {
+    "message": "ED25519"
+  },
+  "sshKeyAlgorithmRSA2048": {
+    "message": "RSA 2048-Bit"
+  },
+  "sshKeyAlgorithmRSA3072": {
+    "message": "RSA 3072-Bit"
+  },
+  "sshKeyAlgorithmRSA4096": {
+    "message": "RSA 4096-Bit"
+  },
   "retry": {
     "message": "Повторити спробу"
   },
@@ -4656,7 +4692,7 @@
     "description": "Represents the ~ key in screen reader content as a readable word"
   },
   "backtickCharacterDescriptor": {
-    "message": "Зворотна лапка",
+    "message": "Зворотний апостроф",
     "description": "Represents the ` key in screen reader content as a readable word"
   },
   "exclamationCharacterDescriptor": {

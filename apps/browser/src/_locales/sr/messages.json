@@ -152,6 +152,15 @@
   "copyLicenseNumber": {
     "message": "Копирај број лиценце"
   },
+  "copyPrivateKey": {
+    "message": "Копирај приватни кључ"
+  },
+  "copyPublicKey": {
+    "message": "Копирај јавни кључ"
+  },
+  "copyFingerprint": {
+    "message": "Копирати отисак"
+  },
   "copyCustomField": {
     "message": "Копирати $FIELD$",
     "placeholders": {
@@ -1763,6 +1772,9 @@
   },
   "typeIdentity": {
     "message": "Идентитет"
+  },
+  "typeSshKey": {
+    "message": "SSH кључ"
   },
   "newItemHeader": {
     "message": "New $TYPE$",
@@ -3401,7 +3413,7 @@
     "message": "1 поље захтева вашу пажњу."
   },
   "multipleFieldsNeedAttention": {
-    "message": "$COUNT$ fields need your attention.",
+    "message": "$COUNT$ поља захтевају вашу пажњу.",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -4593,6 +4605,30 @@
   "enterprisePolicyRequirementsApplied": {
     "message": "Захтеви политике предузећа су примењени на ово подешавање"
   },
+  "sshPrivateKey": {
+    "message": "Приватни кључ"
+  },
+  "sshPublicKey": {
+    "message": "Јавни кључ"
+  },
+  "sshFingerprint": {
+    "message": "Отисак прста"
+  },
+  "sshKeyAlgorithm": {
+    "message": "Врста кључа"
+  },
+  "sshKeyAlgorithmED25519": {
+    "message": "ED25519"
+  },
+  "sshKeyAlgorithmRSA2048": {
+    "message": "RSA 2048-бита"
+  },
+  "sshKeyAlgorithmRSA3072": {
+    "message": "RSA 3072-бита"
+  },
+  "sshKeyAlgorithmRSA4096": {
+    "message": "RSA 4096-бита"
+  },
   "retry": {
     "message": "Пробај поново"
   },
@@ -4680,35 +4716,35 @@
     "description": "Represents the % key in screen reader content as a readable word"
   },
   "caretCharacterDescriptor": {
-    "message": "Знак за уметање",
+    "message": "Caret",
     "description": "Represents the ^ key in screen reader content as a readable word"
   },
   "ampersandCharacterDescriptor": {
-    "message": "Знак Ampersand",
+    "message": "Ampersand",
     "description": "Represents the & key in screen reader content as a readable word"
   },
   "asteriskCharacterDescriptor": {
-    "message": "Знак звездица",
+    "message": "Asterisk",
     "description": "Represents the * key in screen reader content as a readable word"
   },
   "parenLeftCharacterDescriptor": {
-    "message": "Отворена заграда",
+    "message": "Left parenthesis",
     "description": "Represents the ( key in screen reader content as a readable word"
   },
   "parenRightCharacterDescriptor": {
-    "message": "Затворена заграда",
+    "message": "Right parenthesis",
     "description": "Represents the ) key in screen reader content as a readable word"
   },
   "hyphenCharacterDescriptor": {
-    "message": "Доња црта",
+    "message": "Underscore",
     "description": "Represents the _ key in screen reader content as a readable word"
   },
   "underscoreCharacterDescriptor": {
-    "message": "Цртица",
+    "message": "Hyphen",
     "description": "Represents the - key in screen reader content as a readable word"
   },
   "plusCharacterDescriptor": {
-    "message": "Плус",
+    "message": "Plus",
     "description": "Represents the + key in screen reader content as a readable word"
   },
   "equalsCharacterDescriptor": {

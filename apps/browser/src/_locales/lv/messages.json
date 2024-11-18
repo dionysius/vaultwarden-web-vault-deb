@@ -152,6 +152,15 @@
   "copyLicenseNumber": {
     "message": "Ievietot licences numuru starpliktuvē"
   },
+  "copyPrivateKey": {
+    "message": "Ievietot starpliktuvē privāto atslēgu"
+  },
+  "copyPublicKey": {
+    "message": "Ievietot starpliktuvē publisko atslēgu"
+  },
+  "copyFingerprint": {
+    "message": "Ievietot starpliktuvē pirkstu nospiedumu"
+  },
   "copyCustomField": {
     "message": "Ievietot $FIELD$ starpliktuvē",
     "placeholders": {
@@ -591,7 +600,7 @@
     "message": "Atvērt tīmekļvietni"
   },
   "launchWebsiteName": {
-    "message": "Palaist tīmekļvietni $ITEMNAME$",
+    "message": "Atvērt tīmekļvietni $ITEMNAME$",
     "placeholders": {
       "itemname": {
         "content": "$1",
@@ -1764,6 +1773,9 @@
   "typeIdentity": {
     "message": "Identitāte"
   },
+  "typeSshKey": {
+    "message": "SSH atslēga"
+  },
   "newItemHeader": {
     "message": "Jauns/a $TYPE$",
     "placeholders": {
@@ -2512,7 +2524,7 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendPasswordDescV3": {
-    "message": "Pēc izvēles pievieno paroli, lai saņēmēji varētu piekļūt šim Send!",
+    "message": "Pēc izvēles var pievienot paroli, lai saņēmēji varētu piekļūt šim Send.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendNotesDesc": {
@@ -2875,7 +2887,7 @@
     "message": "Izveidot lietotājvārdu"
   },
   "generateEmail": {
-    "message": "Izveidot e-pastu"
+    "message": "Izveidot e-pasta adresi"
   },
   "generatorBoundariesHint": {
     "message": "Vērtībai jābūt starp $MIN$ un $MAX$",
@@ -2929,7 +2941,7 @@
     "message": "Pārvirzīto e-pastu aizstājvārds"
   },
   "forwardedEmailDesc": {
-    "message": "Izveidot e-pastu aizstājvārdu ar ārēju pārvirzīšanas pakalpojumu."
+    "message": "Izveidot e-pasta aizstājadresi ar ārēju pārvirzīšanas pakalpojumu."
   },
   "forwarderDomainName": {
     "message": "E-pasta domēns",
@@ -4564,7 +4576,7 @@
     "message": "Vienuma atrašanās vieta"
   },
   "fileSend": {
-    "message": "Datnes Send"
+    "message": "Datņu Send"
   },
   "fileSends": {
     "message": "Datņu Send"
@@ -4592,6 +4604,30 @@
   },
   "enterprisePolicyRequirementsApplied": {
     "message": "Šim iestatījumam tika piemērotas uzņēmējdarbības nosacījumu prasības"
+  },
+  "sshPrivateKey": {
+    "message": "Privātā atslēga"
+  },
+  "sshPublicKey": {
+    "message": "Publiskā atslēga"
+  },
+  "sshFingerprint": {
+    "message": "Pirkstu nospiedums"
+  },
+  "sshKeyAlgorithm": {
+    "message": "Atslēgas veids"
+  },
+  "sshKeyAlgorithmED25519": {
+    "message": "ED25519"
+  },
+  "sshKeyAlgorithmRSA2048": {
+    "message": "RSA 2048-Bit"
+  },
+  "sshKeyAlgorithmRSA3072": {
+    "message": "RSA 3072-Bit"
+  },
+  "sshKeyAlgorithmRSA4096": {
+    "message": "RSA 4096-Bit"
   },
   "retry": {
     "message": "Mēģināt vēlreiz"
@@ -4692,11 +4728,11 @@
     "description": "Represents the * key in screen reader content as a readable word"
   },
   "parenLeftCharacterDescriptor": {
-    "message": "Kreisās iekavas",
+    "message": "Kreisā iekava",
     "description": "Represents the ( key in screen reader content as a readable word"
   },
   "parenRightCharacterDescriptor": {
-    "message": "Labās iekavas",
+    "message": "Labā iekava",
     "description": "Represents the ) key in screen reader content as a readable word"
   },
   "hyphenCharacterDescriptor": {

@@ -14,7 +14,7 @@
     "message": "Prisijunkite arba sukurkite naują paskyrą, kad galėtumėte pasiekti saugyklą."
   },
   "inviteAccepted": {
-    "message": "Invitation accepted"
+    "message": "Kvietimas priimtas"
   },
   "createAccount": {
     "message": "Sukurti paskyrą"
@@ -151,6 +151,15 @@
   },
   "copyLicenseNumber": {
     "message": "Copy license number"
+  },
+  "copyPrivateKey": {
+    "message": "Copy private key"
+  },
+  "copyPublicKey": {
+    "message": "Copy public key"
+  },
+  "copyFingerprint": {
+    "message": "Copy fingerprint"
   },
   "copyCustomField": {
     "message": "Copy $FIELD$",
@@ -730,16 +739,16 @@
     "message": "Apsauga"
   },
   "confirmMasterPassword": {
-    "message": "Confirm master password"
+    "message": "Patvirtinkite pagrindinį slaptažodį"
   },
   "masterPassword": {
-    "message": "Master password"
+    "message": "Pagrindinis slaptažodis"
   },
   "masterPassImportant": {
-    "message": "Your master password cannot be recovered if you forget it!"
+    "message": "Pagrindinio slaptažodžio negalima atkurti, jei jį pamiršite."
   },
   "masterPassHintLabel": {
-    "message": "Master password hint"
+    "message": "Pagrindinio slaptažodžio užuomina"
   },
   "errorOccurred": {
     "message": "Įvyko klaida"
@@ -791,7 +800,7 @@
     "message": "Būtinas patvirtinimo kodas."
   },
   "webauthnCancelOrTimeout": {
-    "message": "The authentication was cancelled or took too long. Please try again."
+    "message": "Tapatybės nustatymas buvo atšauktas arba užtruko per ilgai. Bandykite dar kartą."
   },
   "invalidVerificationCode": {
     "message": "Neteisingas patvirtinimo kodas"
@@ -843,7 +852,7 @@
     "message": "Sesijos laikas baigėsi."
   },
   "logIn": {
-    "message": "Log in"
+    "message": "Prisijungti"
   },
   "logInToBitwarden": {
     "message": "Log in to Bitwarden"
@@ -852,7 +861,7 @@
     "message": "Restart registration"
   },
   "expiredLink": {
-    "message": "Expired link"
+    "message": "Nebegaliojanti nuoroda"
   },
   "pleaseRestartRegistrationOrTryLoggingIn": {
     "message": "Please restart registration or try logging in."
@@ -928,7 +937,7 @@
     "message": "Naujas URI"
   },
   "addDomain": {
-    "message": "Add domain",
+    "message": "Pridėti domeną",
     "description": "'Domain' here refers to an internet domain name (e.g. 'bitwarden.com') and the message in whole described the act of putting a domain value into the context."
   },
   "addedItem": {
@@ -1580,7 +1589,7 @@
     "message": "Taip/Ne"
   },
   "cfTypeCheckbox": {
-    "message": "Checkbox"
+    "message": "Žymimasis langelis"
   },
   "cfTypeLinked": {
     "message": "Susieta",
@@ -1764,6 +1773,9 @@
   "typeIdentity": {
     "message": "Tapatybė"
   },
+  "typeSshKey": {
+    "message": "SSH key"
+  },
   "newItemHeader": {
     "message": "Naujas $TYPE$",
     "placeholders": {
@@ -1783,7 +1795,7 @@
     }
   },
   "viewItemHeader": {
-    "message": "View $TYPE$",
+    "message": "Peržiūrėti $TYPE$",
     "placeholders": {
       "type": {
         "content": "$1",
@@ -2315,7 +2327,7 @@
     "message": "Organizacijos politika blokavo elementų importavimą į Jūsų individualią saugyklą."
   },
   "domainsTitle": {
-    "message": "Domains",
+    "message": "Domenai",
     "description": "A category title describing the concept of web domains"
   },
   "excludedDomains": {
@@ -2668,7 +2680,7 @@
     "message": "Reikalingas elektroninio pašto patvirtinimas"
   },
   "emailVerifiedV2": {
-    "message": "Email verified"
+    "message": "Patvirtintas el. paštas"
   },
   "emailVerificationRequiredDesc": {
     "message": "Turite patvirtinti savo el. paštą, kad galėtumėte naudotis šia funkcija. Savo el. pašto adresą galite patvirtinti žiniatinklio saugykloje."
@@ -3317,11 +3329,11 @@
     "message": "Patikimas įrenginys"
   },
   "sendsNoItemsTitle": {
-    "message": "No active Sends",
+    "message": "Nėra aktyvų „Sends“",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendsNoItemsMessage": {
-    "message": "Use Send to securely share encrypted information with anyone.",
+    "message": "Naudokite „Send“, kad saugiai bendrintumėte užšifruotą informaciją su bet kuriuo asmeniu.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "inputRequired": {
@@ -3518,7 +3530,7 @@
     "description": "Button text to display in overlay when the account is locked."
   },
   "unlockAccountAria": {
-    "message": "Unlock your account, opens in a new window",
+    "message": "Atrakinti savo paskyrą, atidaromas naujame lange",
     "description": "Screen reader text (aria-label) for unlock account button in overlay"
   },
   "fillCredentialsFor": {
@@ -3546,7 +3558,7 @@
     "description": "Button text to display within inline menu when there are no matching items on a login field"
   },
   "addNewLoginItemAria": {
-    "message": "Add new vault login item, opens in a new window",
+    "message": "Pridėti naują saugyklos prisijungimo elementą, atidaromas naujame lange",
     "description": "Screen reader text (aria-label) for new login button within inline menu"
   },
   "newCard": {
@@ -3554,15 +3566,15 @@
     "description": "Button text to display within inline menu when there are no matching items on a credit card field"
   },
   "addNewCardItemAria": {
-    "message": "Add new vault card item, opens in a new window",
+    "message": "Pridėti naują saugyklos kortelės elementą, atidaromas naujame lange",
     "description": "Screen reader text (aria-label) for new card button within inline menu"
   },
   "newIdentity": {
-    "message": "New identity",
+    "message": "Nauja tapatybė",
     "description": "Button text to display within inline menu when there are no matching items on an identity field"
   },
   "addNewIdentityItemAria": {
-    "message": "Add new vault identity item, opens in a new window",
+    "message": "Pridėti naują saugyklos tapatybės elementą, atidaromas naujame lange",
     "description": "Screen reader text (aria-label) for new identity button within inline menu"
   },
   "bitwardenOverlayMenuAvailable": {
@@ -3652,7 +3664,7 @@
     }
   },
   "duoHealthCheckResultsInNullAuthUrlError": {
-    "message": "Error connecting with the Duo service. Use a different two-step login method or contact Duo for assistance."
+    "message": "Klaida prijungiant su „Duo“ paslauga. Naudokite kitą dvigubo prisijungimo būdą arba susisiekite su „Duo“ dėl pagalbos."
   },
   "launchDuoAndFollowStepsToFinishLoggingIn": {
     "message": "Paleisk DUO ir sek veiksmus, kad baigtum prisijungti."
@@ -4090,7 +4102,7 @@
     "message": "No values to copy"
   },
   "assignToCollections": {
-    "message": "Assign to collections"
+    "message": "Priskirti į kolekcijas"
   },
   "copyEmail": {
     "message": "Copy email"
@@ -4184,22 +4196,22 @@
     "message": "Items in deactivated organizations cannot be accessed. Contact your organization owner for assistance."
   },
   "additionalInformation": {
-    "message": "Additional information"
+    "message": "Papildoma informacija"
   },
   "itemHistory": {
-    "message": "Item history"
+    "message": "Elemento istorija"
   },
   "lastEdited": {
-    "message": "Last edited"
+    "message": "Paskutinį kartą redaguota"
   },
   "ownerYou": {
-    "message": "Owner: You"
+    "message": "Savininkas: Jūs"
   },
   "linked": {
-    "message": "Linked"
+    "message": "Susieta"
   },
   "copySuccessful": {
-    "message": "Copy Successful"
+    "message": "Kopijavimas sėkmingas"
   },
   "upload": {
     "message": "Įkelti"
@@ -4241,16 +4253,16 @@
     "message": "Filtrai"
   },
   "personalDetails": {
-    "message": "Personal details"
+    "message": "Asmeniniai duomenys"
   },
   "identification": {
-    "message": "Identification"
+    "message": "Identifikavimas"
   },
   "contactInfo": {
-    "message": "Contact info"
+    "message": "Kontaktinė informacija"
   },
   "downloadAttachment": {
-    "message": "Download - $ITEMNAME$",
+    "message": "Atsisiųsti – $ITEMNAME$",
     "placeholders": {
       "itemname": {
         "content": "$1",
@@ -4259,14 +4271,14 @@
     }
   },
   "cardNumberEndsWith": {
-    "message": "card number ends with",
+    "message": "kortelės numeris baigiasi su",
     "description": "Used within the inline menu to provide an aria description when users are attempting to fill a card cipher."
   },
   "loginCredentials": {
-    "message": "Login credentials"
+    "message": "Prisijungimo kredencialai"
   },
   "authenticatorKey": {
-    "message": "Authenticator key"
+    "message": "Autentifikatoriaus raktas"
   },
   "autofillOptions": {
     "message": "Autofill options"
@@ -4352,10 +4364,10 @@
     "message": "Pridėti paskyrą"
   },
   "loading": {
-    "message": "Loading"
+    "message": "Įkeliama"
   },
   "data": {
-    "message": "Data"
+    "message": "Duomenys"
   },
   "passkeys": {
     "message": "Passkeys",
@@ -4370,7 +4382,7 @@
     "description": "ARIA label for the inline menu button that logs in with a passkey."
   },
   "assign": {
-    "message": "Assign"
+    "message": "Priskirti"
   },
   "bulkCollectionAssignmentDialogDescriptionSingular": {
     "message": "Only organization members with access to these collections will be able to see the item."
@@ -4391,25 +4403,25 @@
     }
   },
   "addField": {
-    "message": "Add field"
+    "message": "Pridėti lauką"
   },
   "add": {
-    "message": "Add"
+    "message": "Pridėti"
   },
   "fieldType": {
-    "message": "Field type"
+    "message": "Lauko tipas"
   },
   "fieldLabel": {
-    "message": "Field label"
+    "message": "Lauko etiketė"
   },
   "textHelpText": {
-    "message": "Use text fields for data like security questions"
+    "message": "Naudokite tekstinius laukus duomenims, pavyzdžiui, saugumo klausimams"
   },
   "hiddenHelpText": {
-    "message": "Use hidden fields for sensitive data like a password"
+    "message": "Naudokite paslėptus laukus slaptiems duomenims, pavyzdžiui, slaptažodžiams"
   },
   "checkBoxHelpText": {
-    "message": "Use checkboxes if you'd like to autofill a form's checkbox, like a remember email"
+    "message": "Naudokite žymimuosius langelius, jei norite automatiškai užpildyti formos žymimąjį langelį, pavyzdžiui, prisiminti el. paštą"
   },
   "linkedHelpText": {
     "message": "Use a linked field when you are experiencing autofill issues for a specific website."
@@ -4418,10 +4430,10 @@
     "message": "Enter the the field's html id, name, aria-label, or placeholder."
   },
   "editField": {
-    "message": "Edit field"
+    "message": "Redaguoti lauką"
   },
   "editFieldLabel": {
-    "message": "Edit $LABEL$",
+    "message": "Redaguoti $LABEL$",
     "placeholders": {
       "label": {
         "content": "$1",
@@ -4430,7 +4442,7 @@
     }
   },
   "deleteCustomField": {
-    "message": "Delete $LABEL$",
+    "message": "Ištrinti $LABEL$",
     "placeholders": {
       "label": {
         "content": "$1",
@@ -4439,7 +4451,7 @@
     }
   },
   "fieldAdded": {
-    "message": "$LABEL$ added",
+    "message": "Pridėtas $LABEL$",
     "placeholders": {
       "label": {
         "content": "$1",
@@ -4561,7 +4573,7 @@
     }
   },
   "itemLocation": {
-    "message": "Item Location"
+    "message": "Elemento vieta"
   },
   "fileSend": {
     "message": "File Send"
@@ -4592,6 +4604,30 @@
   },
   "enterprisePolicyRequirementsApplied": {
     "message": "Enterprise policy requirements have been applied to this setting"
+  },
+  "sshPrivateKey": {
+    "message": "Private key"
+  },
+  "sshPublicKey": {
+    "message": "Public key"
+  },
+  "sshFingerprint": {
+    "message": "Fingerprint"
+  },
+  "sshKeyAlgorithm": {
+    "message": "Key type"
+  },
+  "sshKeyAlgorithmED25519": {
+    "message": "ED25519"
+  },
+  "sshKeyAlgorithmRSA2048": {
+    "message": "RSA 2048-Bit"
+  },
+  "sshKeyAlgorithmRSA3072": {
+    "message": "RSA 3072-Bit"
+  },
+  "sshKeyAlgorithmRSA4096": {
+    "message": "RSA 4096-Bit"
   },
   "retry": {
     "message": "Retry"

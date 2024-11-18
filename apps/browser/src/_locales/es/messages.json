@@ -20,16 +20,16 @@
     "message": "Crear cuenta"
   },
   "newToBitwarden": {
-    "message": "¿Nuevo en Bitwarden?"
+    "message": "New to Bitwarden?"
   },
   "logInWithPasskey": {
-    "message": "Iniciar sesión con clave de acceso"
+    "message": "Log in with passkey"
   },
   "useSingleSignOn": {
-    "message": "Usar inicio de sesión único"
+    "message": "Use single sign-on"
   },
   "welcomeBack": {
-    "message": "Bienvenido de nuevo"
+    "message": "Welcome back"
   },
   "setAStrongPassword": {
     "message": "Establece una contraseña fuerte"
@@ -120,7 +120,7 @@
     "message": "Copiar contraseña"
   },
   "copyPassphrase": {
-    "message": "Copiar frase de contraseña"
+    "message": "Copy passphrase"
   },
   "copyNote": {
     "message": "Copiar nota"
@@ -152,6 +152,15 @@
   "copyLicenseNumber": {
     "message": "Copiar número de licencia"
   },
+  "copyPrivateKey": {
+    "message": "Copy private key"
+  },
+  "copyPublicKey": {
+    "message": "Copy public key"
+  },
+  "copyFingerprint": {
+    "message": "Copy fingerprint"
+  },
   "copyCustomField": {
     "message": "Copiar $FIELD$",
     "placeholders": {
@@ -168,7 +177,7 @@
     "message": "Copiar notas"
   },
   "fill": {
-    "message": "Rellenar",
+    "message": "Fill",
     "description": "This string is used on the vault page to indicate autofilling. Horizontal space is limited in the interface here so try and keep translations as concise as possible."
   },
   "autoFill": {
@@ -427,7 +436,7 @@
     "message": "Generar contraseña"
   },
   "generatePassphrase": {
-    "message": "Generar frase de contraseña"
+    "message": "Generate passphrase"
   },
   "regeneratePassword": {
     "message": "Regenerar contraseña"
@@ -1763,6 +1772,9 @@
   },
   "typeIdentity": {
     "message": "Identidad"
+  },
+  "typeSshKey": {
+    "message": "SSH key"
   },
   "newItemHeader": {
     "message": "Nuevo $TYPE$",
@@ -4593,6 +4605,30 @@
   "enterprisePolicyRequirementsApplied": {
     "message": "Enterprise policy requirements have been applied to this setting"
   },
+  "sshPrivateKey": {
+    "message": "Private key"
+  },
+  "sshPublicKey": {
+    "message": "Public key"
+  },
+  "sshFingerprint": {
+    "message": "Fingerprint"
+  },
+  "sshKeyAlgorithm": {
+    "message": "Key type"
+  },
+  "sshKeyAlgorithmED25519": {
+    "message": "ED25519"
+  },
+  "sshKeyAlgorithmRSA2048": {
+    "message": "RSA 2048-Bit"
+  },
+  "sshKeyAlgorithmRSA3072": {
+    "message": "RSA 3072-Bit"
+  },
+  "sshKeyAlgorithmRSA4096": {
+    "message": "RSA 4096-Bit"
+  },
   "retry": {
     "message": "Retry"
   },
@@ -4708,11 +4744,11 @@
     "description": "Represents the - key in screen reader content as a readable word"
   },
   "plusCharacterDescriptor": {
-    "message": "Más",
+    "message": "Plus",
     "description": "Represents the + key in screen reader content as a readable word"
   },
   "equalsCharacterDescriptor": {
-    "message": "Igual",
+    "message": "Equals",
     "description": "Represents the = key in screen reader content as a readable word"
   },
   "braceLeftCharacterDescriptor": {
@@ -4736,15 +4772,15 @@
     "description": "Represents the | key in screen reader content as a readable word"
   },
   "backSlashCharacterDescriptor": {
-    "message": "Contrabarra",
+    "message": "Back slash",
     "description": "Represents the back slash key in screen reader content as a readable word"
   },
   "colonCharacterDescriptor": {
-    "message": "Dos puntos",
+    "message": "Colon",
     "description": "Represents the : key in screen reader content as a readable word"
   },
   "semicolonCharacterDescriptor": {
-    "message": "Punto y coma",
+    "message": "Semicolon",
     "description": "Represents the ; key in screen reader content as a readable word"
   },
   "doubleQuoteCharacterDescriptor": {

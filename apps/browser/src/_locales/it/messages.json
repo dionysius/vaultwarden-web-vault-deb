@@ -20,16 +20,16 @@
     "message": "Crea account"
   },
   "newToBitwarden": {
-    "message": "Nuovo a Bitwarden?"
+    "message": "New to Bitwarden?"
   },
   "logInWithPasskey": {
-    "message": "Accedi con passkey"
+    "message": "Log in with passkey"
   },
   "useSingleSignOn": {
-    "message": "Usa il Single Sign-On"
+    "message": "Use single sign-on"
   },
   "welcomeBack": {
-    "message": "Bentornato"
+    "message": "Welcome back"
   },
   "setAStrongPassword": {
     "message": "Imposta una password robusta"
@@ -120,7 +120,7 @@
     "message": "Copia password"
   },
   "copyPassphrase": {
-    "message": "Copia passphrase"
+    "message": "Copy passphrase"
   },
   "copyNote": {
     "message": "Copia nota"
@@ -152,6 +152,15 @@
   "copyLicenseNumber": {
     "message": "Copia numero licenza"
   },
+  "copyPrivateKey": {
+    "message": "Copy private key"
+  },
+  "copyPublicKey": {
+    "message": "Copy public key"
+  },
+  "copyFingerprint": {
+    "message": "Copy fingerprint"
+  },
   "copyCustomField": {
     "message": "Copia $FIELD$",
     "placeholders": {
@@ -168,7 +177,7 @@
     "message": "Copia note"
   },
   "fill": {
-    "message": "Riempi",
+    "message": "Fill",
     "description": "This string is used on the vault page to indicate autofilling. Horizontal space is limited in the interface here so try and keep translations as concise as possible."
   },
   "autoFill": {
@@ -1763,6 +1772,9 @@
   },
   "typeIdentity": {
     "message": "Identità"
+  },
+  "typeSshKey": {
+    "message": "SSH key"
   },
   "newItemHeader": {
     "message": "Nuovo $TYPE$",
@@ -4593,6 +4605,30 @@
   "enterprisePolicyRequirementsApplied": {
     "message": "I requisiti della policy aziendale sono stati applicati a questa impostazione"
   },
+  "sshPrivateKey": {
+    "message": "Private key"
+  },
+  "sshPublicKey": {
+    "message": "Public key"
+  },
+  "sshFingerprint": {
+    "message": "Fingerprint"
+  },
+  "sshKeyAlgorithm": {
+    "message": "Key type"
+  },
+  "sshKeyAlgorithmED25519": {
+    "message": "ED25519"
+  },
+  "sshKeyAlgorithmRSA2048": {
+    "message": "RSA 2048-Bit"
+  },
+  "sshKeyAlgorithmRSA3072": {
+    "message": "RSA 3072-Bit"
+  },
+  "sshKeyAlgorithmRSA4096": {
+    "message": "RSA 4096-Bit"
+  },
   "retry": {
     "message": "Retry"
   },
@@ -4786,6 +4822,6 @@
     "message": "Uppercase"
   },
   "generatedPassword": {
-    "message": "Password generata"
+    "message": "Generated password"
   }
 }

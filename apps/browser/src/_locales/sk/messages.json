@@ -152,6 +152,15 @@
   "copyLicenseNumber": {
     "message": "Kopírovať číslo licencie"
   },
+  "copyPrivateKey": {
+    "message": "Kopírovať súkromný kľúč"
+  },
+  "copyPublicKey": {
+    "message": "Kopírovať verejný kľúč"
+  },
+  "copyFingerprint": {
+    "message": "Kopírovať odtlačok"
+  },
   "copyCustomField": {
     "message": "Kopírovať $FIELD$",
     "placeholders": {
@@ -846,7 +855,7 @@
     "message": "Prihlásiť sa"
   },
   "logInToBitwarden": {
-    "message": "Prihlásiť sa do Bitwardenu"
+    "message": "Prihlásenie do Bitwardenu"
   },
   "restartRegistration": {
     "message": "Zopakovať registráciu"
@@ -1764,6 +1773,9 @@
   "typeIdentity": {
     "message": "Identita"
   },
+  "typeSshKey": {
+    "message": "Kľúč SSH"
+  },
   "newItemHeader": {
     "message": "Nové $TYPE$",
     "placeholders": {
@@ -1920,7 +1932,7 @@
     "message": "Vymazať históriu"
   },
   "nothingToShow": {
-    "message": "Nič na zobrazenie"
+    "message": "Nie je čo zobraziť"
   },
   "nothingGeneratedRecently": {
     "message": "V poslednej dobe ste nič negenerovali"
@@ -3747,7 +3759,7 @@
     "message": "Prístupový kľúč"
   },
   "accessing": {
-    "message": "Accessing"
+    "message": "Pristupovanie"
   },
   "passkeyNotCopied": {
     "message": "Prístupový kód sa neskopíruje"
@@ -4593,6 +4605,30 @@
   "enterprisePolicyRequirementsApplied": {
     "message": "Na toto nastavenie boli uplatnené požiadavky pravidiel spoločnosti"
   },
+  "sshPrivateKey": {
+    "message": "Súkromný kľúč"
+  },
+  "sshPublicKey": {
+    "message": "Verejný kľúč"
+  },
+  "sshFingerprint": {
+    "message": "Odtlačok"
+  },
+  "sshKeyAlgorithm": {
+    "message": "Typ kľúča"
+  },
+  "sshKeyAlgorithmED25519": {
+    "message": "ED25519"
+  },
+  "sshKeyAlgorithmRSA2048": {
+    "message": "RSA 2048-Bit"
+  },
+  "sshKeyAlgorithmRSA3072": {
+    "message": "RSA 3072-Bit"
+  },
+  "sshKeyAlgorithmRSA4096": {
+    "message": "RSA 4096-Bit"
+  },
   "retry": {
     "message": "Znova"
   },
@@ -4652,11 +4688,11 @@
     "description": "Represents the space key in screen reader content as a readable word"
   },
   "tildeCharacterDescriptor": {
-    "message": "Tilda",
+    "message": "Vlnovka",
     "description": "Represents the ~ key in screen reader content as a readable word"
   },
   "backtickCharacterDescriptor": {
-    "message": "Opačný dĺžeň",
+    "message": "Obrátená čiarka",
     "description": "Represents the ` key in screen reader content as a readable word"
   },
   "exclamationCharacterDescriptor": {
@@ -4680,7 +4716,7 @@
     "description": "Represents the % key in screen reader content as a readable word"
   },
   "caretCharacterDescriptor": {
-    "message": "Striežka",
+    "message": "Strieška",
     "description": "Represents the ^ key in screen reader content as a readable word"
   },
   "ampersandCharacterDescriptor": {
@@ -4732,7 +4768,7 @@
     "description": "Represents the ] key in screen reader content as a readable word"
   },
   "pipeCharacterDescriptor": {
-    "message": "Rúra",
+    "message": "Zvislá čiara",
     "description": "Represents the | key in screen reader content as a readable word"
   },
   "backSlashCharacterDescriptor": {

@@ -152,6 +152,15 @@
   "copyLicenseNumber": {
     "message": "Copier la plaque d'immatriculation"
   },
+  "copyPrivateKey": {
+    "message": "Copier la clé privée"
+  },
+  "copyPublicKey": {
+    "message": "Copier la clé publique"
+  },
+  "copyFingerprint": {
+    "message": "Copier l'empreinte digitale"
+  },
   "copyCustomField": {
     "message": "Copier $FIELD$",
     "placeholders": {
@@ -591,7 +600,7 @@
     "message": "Ouvrir le site web"
   },
   "launchWebsiteName": {
-    "message": "Lancer le site Web $ITEMNAME$",
+    "message": "Lancer le site web $ITEMNAME$",
     "placeholders": {
       "itemname": {
         "content": "$1",
@@ -1763,6 +1772,9 @@
   },
   "typeIdentity": {
     "message": "Identité"
+  },
+  "typeSshKey": {
+    "message": "Clé SSH"
   },
   "newItemHeader": {
     "message": "Nouveau/nouvelle $TYPE$",
@@ -2936,7 +2948,7 @@
     "description": "Labels the domain name email forwarder service option"
   },
   "forwarderDomainNameHint": {
-    "message": "Choose a domain that is supported by the selected service",
+    "message": "Choisissez un domaine qui est supporté par le service sélectionné",
     "description": "Guidance provided for email forwarding services that support multiple email domains."
   },
   "forwarderError": {
@@ -4564,13 +4576,13 @@
     "message": "Emplacement de l'élément"
   },
   "fileSend": {
-    "message": "File Send"
+    "message": "Send en fichier"
   },
   "fileSends": {
     "message": "File Sends"
   },
   "textSend": {
-    "message": "Text Send"
+    "message": "Send en texte"
   },
   "textSends": {
     "message": "Text Sends"
@@ -4592,6 +4604,30 @@
   },
   "enterprisePolicyRequirementsApplied": {
     "message": "Les exigences de la politique d'entreprise ont été appliquées à ce paramètre"
+  },
+  "sshPrivateKey": {
+    "message": "Clé privée"
+  },
+  "sshPublicKey": {
+    "message": "Clé publique"
+  },
+  "sshFingerprint": {
+    "message": "Empreinte digitale"
+  },
+  "sshKeyAlgorithm": {
+    "message": "Type de clé"
+  },
+  "sshKeyAlgorithmED25519": {
+    "message": "ED25519"
+  },
+  "sshKeyAlgorithmRSA2048": {
+    "message": "RSA 2048-bits"
+  },
+  "sshKeyAlgorithmRSA3072": {
+    "message": "RSA 3072-bits"
+  },
+  "sshKeyAlgorithmRSA4096": {
+    "message": "RSA 4096-bits"
   },
   "retry": {
     "message": "Réessayer"
@@ -4656,7 +4692,7 @@
     "description": "Represents the ~ key in screen reader content as a readable word"
   },
   "backtickCharacterDescriptor": {
-    "message": "Backtick",
+    "message": "Accent grave",
     "description": "Represents the ` key in screen reader content as a readable word"
   },
   "exclamationCharacterDescriptor": {
@@ -4664,27 +4700,27 @@
     "description": "Represents the ! key in screen reader content as a readable word"
   },
   "atSignCharacterDescriptor": {
-    "message": "At sign",
+    "message": "Signe arobase",
     "description": "Represents the @ key in screen reader content as a readable word"
   },
   "hashSignCharacterDescriptor": {
-    "message": "Hash sign",
+    "message": "Signe dièse",
     "description": "Represents the # key in screen reader content as a readable word"
   },
   "dollarSignCharacterDescriptor": {
-    "message": "Signe du dollar",
+    "message": "Signe dollar",
     "description": "Represents the $ key in screen reader content as a readable word"
   },
   "percentSignCharacterDescriptor": {
-    "message": "Percent sign",
+    "message": "Signe pourcentage",
     "description": "Represents the % key in screen reader content as a readable word"
   },
   "caretCharacterDescriptor": {
-    "message": "Caret",
+    "message": "Accent circonflexe",
     "description": "Represents the ^ key in screen reader content as a readable word"
   },
   "ampersandCharacterDescriptor": {
-    "message": "Ampersand",
+    "message": "Esperluette",
     "description": "Represents the & key in screen reader content as a readable word"
   },
   "asteriskCharacterDescriptor": {
@@ -4692,11 +4728,11 @@
     "description": "Represents the * key in screen reader content as a readable word"
   },
   "parenLeftCharacterDescriptor": {
-    "message": "Left parenthesis",
+    "message": "Parenthèse ouvrante",
     "description": "Represents the ( key in screen reader content as a readable word"
   },
   "parenRightCharacterDescriptor": {
-    "message": "Right parenthesis",
+    "message": "Parenthèse fermante",
     "description": "Represents the ) key in screen reader content as a readable word"
   },
   "hyphenCharacterDescriptor": {
@@ -4716,23 +4752,23 @@
     "description": "Represents the = key in screen reader content as a readable word"
   },
   "braceLeftCharacterDescriptor": {
-    "message": "Accolade gauche",
+    "message": "Accolade ouvrante",
     "description": "Represents the { key in screen reader content as a readable word"
   },
   "braceRightCharacterDescriptor": {
-    "message": "Accolade droite",
+    "message": "Accolade fermante",
     "description": "Represents the } key in screen reader content as a readable word"
   },
   "bracketLeftCharacterDescriptor": {
-    "message": "Crochet gauche",
+    "message": "Crochet ouvrante",
     "description": "Represents the [ key in screen reader content as a readable word"
   },
   "bracketRightCharacterDescriptor": {
-    "message": "Crochet droit",
+    "message": "Crochet fermante",
     "description": "Represents the ] key in screen reader content as a readable word"
   },
   "pipeCharacterDescriptor": {
-    "message": "Pipe",
+    "message": "Barre",
     "description": "Represents the | key in screen reader content as a readable word"
   },
   "backSlashCharacterDescriptor": {
@@ -4740,7 +4776,7 @@
     "description": "Represents the back slash key in screen reader content as a readable word"
   },
   "colonCharacterDescriptor": {
-    "message": "Colon",
+    "message": "Deux-points",
     "description": "Represents the : key in screen reader content as a readable word"
   },
   "semicolonCharacterDescriptor": {

@@ -152,6 +152,15 @@
   "copyLicenseNumber": {
     "message": "复制许可证号码"
   },
+  "copyPrivateKey": {
+    "message": "复制私钥"
+  },
+  "copyPublicKey": {
+    "message": "复制公钥"
+  },
+  "copyFingerprint": {
+    "message": "复制指纹"
+  },
   "copyCustomField": {
     "message": "复制 $FIELD$",
     "placeholders": {
@@ -1764,6 +1773,9 @@
   "typeIdentity": {
     "message": "身份"
   },
+  "typeSshKey": {
+    "message": "SSH 密钥"
+  },
   "newItemHeader": {
     "message": "新增 $TYPE$",
     "placeholders": {
@@ -2875,7 +2887,7 @@
     "message": "生成用户名"
   },
   "generateEmail": {
-    "message": "生成邮件地址"
+    "message": "生成电子邮件地址"
   },
   "generatorBoundariesHint": {
     "message": "值必须在 $MIN$ 和 $MAX$ 之间",
@@ -2932,7 +2944,7 @@
     "message": "使用外部转发服务生成一个电子邮件别名。"
   },
   "forwarderDomainName": {
-    "message": "邮件域名",
+    "message": "电子邮件域名",
     "description": "Labels the domain name email forwarder service option"
   },
   "forwarderDomainNameHint": {
@@ -3425,7 +3437,7 @@
     "message": "清除全部"
   },
   "plusNMore": {
-    "message": "+ $QUANTITY$ more",
+    "message": "还有 $QUANTITY$ 个",
     "placeholders": {
       "quantity": {
         "content": "$1",
@@ -4593,6 +4605,30 @@
   "enterprisePolicyRequirementsApplied": {
     "message": "企业策略要求已应用于此设置"
   },
+  "sshPrivateKey": {
+    "message": "私钥"
+  },
+  "sshPublicKey": {
+    "message": "公钥"
+  },
+  "sshFingerprint": {
+    "message": "指纹"
+  },
+  "sshKeyAlgorithm": {
+    "message": "密钥类型"
+  },
+  "sshKeyAlgorithmED25519": {
+    "message": "ED25519"
+  },
+  "sshKeyAlgorithmRSA2048": {
+    "message": "RSA 2048-Bit"
+  },
+  "sshKeyAlgorithmRSA3072": {
+    "message": "RSA 3072-Bit"
+  },
+  "sshKeyAlgorithmRSA4096": {
+    "message": "RSA 4096-Bit"
+  },
   "retry": {
     "message": "重试"
   },
@@ -4680,7 +4716,7 @@
     "description": "Represents the % key in screen reader content as a readable word"
   },
   "caretCharacterDescriptor": {
-    "message": "脱字符",
+    "message": "插入符",
     "description": "Represents the ^ key in screen reader content as a readable word"
   },
   "ampersandCharacterDescriptor": {
@@ -4786,6 +4822,6 @@
     "message": "大写"
   },
   "generatedPassword": {
-    "message": "生成密码"
+    "message": "生成了密码"
   }
 }
