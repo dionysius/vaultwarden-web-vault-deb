@@ -82,9 +82,24 @@ export class PassphraseSettingsComponent implements OnInit, OnDestroy {
     const settings = await this.generatorService.settings(Generators.passphrase, { singleUserId$ });
 
     // skips reactive event emissions to break a subscription cycle
-    settings.pipe(takeUntil(this.destroyed$)).subscribe((s) => {
-      this.settings.patchValue(s, { emitEvent: false });
-    });
+    settings.withConstraints$
+      .pipe(takeUntil(this.destroyed$))
+      .subscribe(({ state, constraints }) => {
+        this.settings.patchValue(state, { emitEvent: false });
+
+        let boundariesHint = this.i18nService.t(
+          "spinboxBoundariesHint",
+          constraints.numWords.min?.toString(),
+          constraints.numWords.max?.toString(),
+        );
+        if (state.numWords <= (constraints.numWords.recommendation ?? 0)) {
+          boundariesHint += this.i18nService.t(
+            "passphraseNumWordsRecommendationHint",
+            constraints.numWords.recommendation?.toString(),
+          );
+        }
+        this.numWordsBoundariesHint.next(boundariesHint);
+      });
 
     // the first emission is the current value; subsequent emissions are updates
     settings.pipe(skip(1), takeUntil(this.destroyed$)).subscribe(this.onUpdated);
@@ -99,13 +114,6 @@ export class PassphraseSettingsComponent implements OnInit, OnDestroy {
 
         this.toggleEnabled(Controls.capitalize, !constraints.capitalize?.readonly);
         this.toggleEnabled(Controls.includeNumber, !constraints.includeNumber?.readonly);
-
-        const boundariesHint = this.i18nService.t(
-          "generatorBoundariesHint",
-          constraints.numWords.min?.toString(),
-          constraints.numWords.max?.toString(),
-        );
-        this.numWordsBoundariesHint.next(boundariesHint);
       });
 
     // now that outputs are set up, connect inputs

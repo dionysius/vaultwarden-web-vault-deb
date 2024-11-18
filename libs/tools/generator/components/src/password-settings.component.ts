@@ -112,20 +112,33 @@ export class PasswordSettingsComponent implements OnInit, OnDestroy {
     const settings = await this.generatorService.settings(Generators.password, { singleUserId$ });
 
     // bind settings to the UI
-    settings
+    settings.withConstraints$
       .pipe(
-        map((settings) => {
+        map(({ state, constraints }) => {
           // interface is "avoid" while storage is "include"
-          const s: any = { ...settings };
+          const s: any = { ...state };
           s.avoidAmbiguous = !s.ambiguous;
           delete s.ambiguous;
-          return s;
+          return [s, constraints] as const;
         }),
         takeUntil(this.destroyed$),
       )
-      .subscribe((s) => {
+      .subscribe(([state, constraints]) => {
+        let boundariesHint = this.i18nService.t(
+          "spinboxBoundariesHint",
+          constraints.length.min?.toString(),
+          constraints.length.max?.toString(),
+        );
+        if (state.length <= (constraints.length.recommendation ?? 0)) {
+          boundariesHint += this.i18nService.t(
+            "passwordLengthRecommendationHint",
+            constraints.length.recommendation?.toString(),
+          );
+        }
+        this.lengthBoundariesHint.next(boundariesHint);
+
         // skips reactive event emissions to break a subscription cycle
-        this.settings.patchValue(s, { emitEvent: false });
+        this.settings.patchValue(state, { emitEvent: false });
       });
 
     // explain policy & disable policy-overridden fields
@@ -148,13 +161,6 @@ export class PasswordSettingsComponent implements OnInit, OnDestroy {
         for (const [control, enabled] of toggles) {
           this.toggleEnabled(control, enabled);
         }
-
-        const boundariesHint = this.i18nService.t(
-          "generatorBoundariesHint",
-          constraints.length.min?.toString(),
-          constraints.length.max?.toString(),
-        );
-        this.lengthBoundariesHint.next(boundariesHint);
       });
 
     // cascade selections between checkboxes and spinboxes

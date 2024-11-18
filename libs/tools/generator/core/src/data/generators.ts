@@ -71,6 +71,7 @@ const PASSPHRASE: CredentialGeneratorConfiguration<
       numWords: {
         min: DefaultPassphraseBoundaries.numWords.min,
         max: DefaultPassphraseBoundaries.numWords.max,
+        recommendation: DefaultPassphraseGenerationOptions.numWords,
       },
       wordSeparator: { maxLength: 1 },
     },
@@ -101,7 +102,8 @@ const PASSPHRASE: CredentialGeneratorConfiguration<
     }),
     combine: passphraseLeastPrivilege,
     createEvaluator: (policy) => new PassphraseGeneratorOptionsEvaluator(policy),
-    toConstraints: (policy) => new PassphrasePolicyConstraints(policy),
+    toConstraints: (policy) =>
+      new PassphrasePolicyConstraints(policy, PASSPHRASE.settings.constraints),
   },
 });
 
@@ -130,6 +132,7 @@ const PASSWORD: CredentialGeneratorConfiguration<
       length: {
         min: DefaultPasswordBoundaries.length.min,
         max: DefaultPasswordBoundaries.length.max,
+        recommendation: DefaultPasswordGenerationOptions.length,
       },
       minNumber: {
         min: DefaultPasswordBoundaries.minDigits.min,
@@ -177,7 +180,8 @@ const PASSWORD: CredentialGeneratorConfiguration<
     }),
     combine: passwordLeastPrivilege,
     createEvaluator: (policy) => new PasswordGeneratorOptionsEvaluator(policy),
-    toConstraints: (policy) => new DynamicPasswordPolicyConstraints(policy),
+    toConstraints: (policy) =>
+      new DynamicPasswordPolicyConstraints(policy, PASSWORD.settings.constraints),
   },
 });
 
