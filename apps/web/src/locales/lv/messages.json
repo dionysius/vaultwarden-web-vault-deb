@@ -3,16 +3,19 @@
     "message": "Visas lietotnes"
   },
   "criticalApplications": {
-    "message": "Kritiskas lietotnes"
+    "message": "Kritiskās lietotnes"
+  },
+  "accessIntelligence": {
+    "message": "Piekļuves inteliģence"
   },
   "riskInsights": {
-    "message": "Risk Insights"
+    "message": "Risku ieskats"
   },
   "passwordRisk": {
     "message": "Paroļu risks"
   },
-  "discoverAtRiskPasswords": {
-    "message": "Discover at-risk passwords and notify users to change those passwords."
+  "reviewAtRiskPasswords": {
+    "message": "Riskam pakļautu (vāju, atklātu vai vairākkārt izmantotu) paroļu pārskatīšana dažādās lietotnēs. Jāatlasa viskritiskākās paroles, lai noteiktu svarīgas drošības darbības, ko lietotājiem pielietot riskam pakļautām parolēm."
   },
   "dataLastUpdated": {
     "message": "Dati pēdējoreiz atjaunināti: $DATE$",
@@ -39,7 +42,7 @@
     "message": "Izveidot jaunu pieteikšanās vienumu"
   },
   "criticalApplicationsWithCount": {
-    "message": "Kritiskas lietotnes ($COUNT$)",
+    "message": "Kritiskās lietotnes ($COUNT$)",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -75,13 +78,13 @@
     "message": "Atlasi kritiskākās lietotnes, la iatklātu riskam pakļautas paroles un apziņotu lietotājus, lai tās nomaina!"
   },
   "markCriticalApps": {
-    "message": "Atzīmēt kritiskas lietotnes"
+    "message": "Atzīmēt kritiskās lietotnes"
   },
   "markAppAsCritical": {
     "message": "Atzīmēt lietotni kā kritisku"
   },
   "appsMarkedAsCritical": {
-    "message": "Lietotnes, kas atzīmētas kā kritisku"
+    "message": "Lietotnes, kas atzīmētas kā kritiskas"
   },
   "application": {
     "message": "Lietotne"
@@ -558,6 +561,9 @@
   },
   "typeSecureNote": {
     "message": "Droša piezīme"
+  },
+  "typeSshKey": {
+    "message": "SSH atslēga"
   },
   "typeLoginPlural": {
     "message": "Pieteikšanās vienumi"
@@ -1738,7 +1744,7 @@
     "message": "Piesardzību, šīs darbības nav atsaucamas!"
   },
   "dangerZoneDescSingular": {
-    "message": "Piesardzību, šī darbība ir neatgriezeniska!"
+    "message": "Uzmanīgi, šī darbība ir neatgriezeniska!"
   },
   "deauthorizeSessions": {
     "message": "Padarīt sesijas spēkā neesošas"
@@ -3834,6 +3840,55 @@
   "updateBrowserDesc": {
     "message": "Tiek izmantots neatbalstīts tīmekļa pārlūks. Tīmekļa glabātava var nedarboties pareizi."
   },
+  "freeTrialEndPrompt": {
+    "message": "Bezmaksas izmēģinājums beigsies pēc $COUNT$ dienām. Lai saglabātu savu abonementu,",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "You must set up 2FA on your user account before you can join this organization."
+      }
+    }
+  },
+  "freeTrialEndPromptAboveTwoDays": {
+    "message": "$ORGANIZATION$, bezmaksas izmēģinājums beigsies pēc $COUNT$ dienām. Lai saglabātu savu abonementu,",
+    "placeholders": {
+      "count": {
+        "content": "$2",
+        "example": "organization name"
+      },
+      "organization": {
+        "content": "$1",
+        "example": "remaining days"
+      }
+    }
+  },
+  "freeTrialEndPromptForOneDay": {
+    "message": "$ORGANIZATION$, rīt beigsies bezmaksas izmēģinājums. Lai saglabātu savu abonementu,",
+    "placeholders": {
+      "organization": {
+        "content": "$1",
+        "example": "organization name"
+      }
+    }
+  },
+  "freeTrialEndPromptForOneDayNoOrgName": {
+    "message": "Rīt beigsies bezmaksas izmēģinājums. Lai saglabātu savu abonementu,"
+  },
+  "freeTrialEndPromptForLessThanADay": {
+    "message": "$ORGANIZATION$, šodien beigsies bezmaksas izmēģinājums. Lai saglabātu savu abonementu,",
+    "placeholders": {
+      "organization": {
+        "content": "$1",
+        "example": "organization name"
+      }
+    }
+  },
+  "freeTrialEndingSoonWithoutOrgName": {
+    "message": "Šodien beigsies bezmaksas izmēģinājums. Lai saglabātu savu abonementu,"
+  },
+  "routeToPaymentMethodTrigger": {
+    "message": "jāpievieno maksājuma veids."
+  },
   "joinOrganization": {
     "message": "Pievienoties apvienībai"
   },
@@ -4695,7 +4750,7 @@
     "message": "Apvienības dalībnieki, kas nav īpašnieki vai pārvaldītāji un jau ir dalībnieki citā apvienībā, tiks atbrīvoti."
   },
   "singleOrgPolicyMemberWarning": {
-    "message": "Pamatnostādnei neatbilstoši dalībniekiem tiks piešķirts stāvoklis \"Atsaukts\", līdz viņī pametīs visas pārējās apvienības. Pārvaldītāji ir izņēmums, un viņi var atjaunot dalībniekus, tiklīdz ir sasniegta atbilstība pamatnostādnei."
+    "message": "Pamatnostādnei neatbilstoši dalībniekiem tiks piešķirts stāvoklis \"Atsaukts\", līdz viņī pametīs visas pārējās apvienības. Pārvaldītāji ir izņēmums, un viņi var atjaunot dalībniekus, tiklīdz ir īstenota atbilstība pamatnostādnei."
   },
   "requireSso": {
     "message": "Pieprasīt vienotās pieteikšanās autentificēšanos"
@@ -6411,7 +6466,7 @@
     "message": "Izveidot lietotājvārdu"
   },
   "generateEmail": {
-    "message": "Izveidot e-pastu"
+    "message": "Izveidot e-pasta adresi"
   },
   "generatorBoundariesHint": {
     "message": "Vērtībai jābūt starp $MIN$ un $MAX$",
@@ -8441,7 +8496,7 @@
   },
   "addAPaymentMethod": {
     "message": "jāpievieno maksājuma veids",
-    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'To maintain your subscription for $ORG$, add a payment method.'"
+    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'To maintain your subscription for $ORG$, add a payment method'"
   },
   "organizationInformation": {
     "message": "Apvienības informācija"
@@ -9014,6 +9069,12 @@
   "providerPlan": {
     "message": "Pārvaldīts pakalpojuma nodrošinātājs"
   },
+  "managedServiceProvider": {
+    "message": "Pārvaldīts pakalpojuma nodrošinātājs"
+  },
+  "multiOrganizationEnterprise": {
+    "message": "Daudzapvienību uzņēmums"
+  },
   "orgSeats": {
     "message": "Apvienības vietas"
   },
@@ -9416,6 +9477,30 @@
   "additionalStorageGbMessage": {
     "message": "GB papildu krātuves"
   },
+  "sshKeyAlgorithm": {
+    "message": "Atslēgas algoritms"
+  },
+  "sshKeyFingerprint": {
+    "message": "Pirkstu nospiedums"
+  },
+  "sshKeyPrivateKey": {
+    "message": "Privātā atslēga"
+  },
+  "sshKeyPublicKey": {
+    "message": "Publiskā atslēga"
+  },
+  "sshKeyAlgorithmED25519": {
+    "message": "ED25519"
+  },
+  "sshKeyAlgorithmRSA2048": {
+    "message": "RSA 2048-Bit"
+  },
+  "sshKeyAlgorithmRSA3072": {
+    "message": "RSA 3072-Bit"
+  },
+  "sshKeyAlgorithmRSA4096": {
+    "message": "RSA 4096-Bit"
+  },
   "premiumAccounts": {
     "message": "6 \"Premium\" konti"
   },
@@ -9547,10 +9632,10 @@
     "message": "Lai mitinātu Bitwarden savā serverī, ir nepieciešams augšupielādēt licences datni. Lai nodrošinātu bezmaksas ģimeņu plānus un papildu norēķinu iespējas pašmitinātajai apvienībai, tajā ir nepieciešams uzstādīt automātisku sinhronizēšanu."
   },
   "selfHostingTitleProper": {
-    "message": "Pašmitināts"
+    "message": "Pašmitināšana"
   },
   "verified-domain-single-org-warning": {
-    "message": "Domēna apliecināšana ieslēgts vienas apvienības pamatnostādni."
+    "message": "Domēna apliecināšana ieslēgs vienas apvienības pamatnostādni."
   },
   "single-org-revoked-user-warning": {
     "message": "Pamatnostādnei neatbilstošie dalībnieki tiks atsaukti. Pārvaldītāji var atjaunot dalībniekus, tiklīdz viņi pametīs visas pārējās apvienības."
@@ -9566,7 +9651,7 @@
     }
   },
   "deleteOrganizationUserWarning": {
-    "message": "Kad dalībnieks tiek izdzēsts, viņa Bitwarden konts un personīgās glabātavas dati tiks neatgriezeniski izdzēsti. Krājumu dati paliks apvienībām. Lai atjaunotu dalībniekus, viņiem atkārtoti jāizveido konts un jāpievieno komandai.",
+    "message": "Kad dalībnieks tiek izdzēsts, viņa Bitwarden konts un personīgās glabātavas dati tiks neatgriezeniski izdzēsti. Krājumu dati paliks apvienībās. Lai atjaunotu dalībniekus, viņiem atkārtoti jāizveido konts un jāpievieno komandai.",
     "description": "Warning for the delete organization user dialog"
   },
   "organizationUserDeleted": {
@@ -9580,5 +9665,47 @@
   },
   "organizationUserDeletedDesc": {
     "message": "Lietotājs tika noņemts no apvienības, un visa saistītā lietotāja informācija tika izdzēsta."
+  },
+  "deletedUserId": {
+    "message": "Izdzēsts lietotājs $ID$ - īpašnieks/pārvaldītājs izdzēsa lietotāja kontu",
+    "placeholders": {
+      "id": {
+        "content": "$1",
+        "example": "First 8 Character of a GUID"
+      }
+    }
+  },
+  "userLeftOrganization": {
+    "message": "Lietotājs $ID$ pameta apvienību",
+    "placeholders": {
+      "id": {
+        "content": "$1",
+        "example": "First 8 Character of a GUID"
+      }
+    }
+  },
+  "suspendedOrganizationTitle": {
+    "message": "$ORGANIZATION$ ir apturēta",
+    "placeholders": {
+      "organization": {
+        "content": "$1",
+        "example": "Acme c"
+      }
+    }
+  },
+  "suspendedUserOrgMessage": {
+    "message": "Jāsazinās ar savas apvienības īpašnieku, lai iegūtu palīdzību."
+  },
+  "suspendedOwnerOrgMessage": {
+    "message": "Lai atkārtoti iegūtu piekļuvi savai apvienībai, jāpievieno apmaksas veids."
+  },
+  "deleteMembers": {
+    "message": "Izdzēst dalībiniekus"
+  },
+  "noSelectedMembersApplicable": {
+    "message": "Šī darbība nav attiecināma uz nevienu no atlasītajiem dalībniekiem."
+  },
+  "deletedSuccessfully": {
+    "message": "Veiksmīgi izdzēsts"
   }
 }

@@ -5,14 +5,17 @@
   "criticalApplications": {
     "message": "Belangrijke applicaties"
   },
+  "accessIntelligence": {
+    "message": "Toegangsintelligentie"
+  },
   "riskInsights": {
-    "message": "Risk Insights"
+    "message": "Risicoinzichten"
   },
   "passwordRisk": {
     "message": "Wachtwoordrisico"
   },
-  "discoverAtRiskPasswords": {
-    "message": "Ontdek risicovolle wachtwoorden en attendeer gebruikers deze wachtwoorden te wijzigen."
+  "reviewAtRiskPasswords": {
+    "message": "Herzie risicovolle wachtwoorden (zwak, blootgelegd of herbruikt) tussen applicaties. Selecteer je meest belangrijke applicaties om prioriteit te geven aan beveiligingsacties voor je gebruikers om risicovolle wachtwoorden aan te pakken."
   },
   "dataLastUpdated": {
     "message": "Datum laatste wijziging: $DATE$",
@@ -558,6 +561,9 @@
   },
   "typeSecureNote": {
     "message": "Veilige notitie"
+  },
+  "typeSshKey": {
+    "message": "SSH-sleutel"
   },
   "typeLoginPlural": {
     "message": "Logins"
@@ -3833,6 +3839,55 @@
   },
   "updateBrowserDesc": {
     "message": "Je maakt gebruik van webbrowser die we niet ondersteunen. De webkluis werkt mogelijk niet goed."
+  },
+  "freeTrialEndPrompt": {
+    "message": "Je gratis proefperiode eindigt over $COUNT$ dagen. Om je abonnement te behouden,",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "You must set up 2FA on your user account before you can join this organization."
+      }
+    }
+  },
+  "freeTrialEndPromptAboveTwoDays": {
+    "message": "$ORGANIZATION$, je gratis proefperiode eindigt over $COUNT$ dagen. Om je abonnement te behouden,",
+    "placeholders": {
+      "count": {
+        "content": "$2",
+        "example": "organization name"
+      },
+      "organization": {
+        "content": "$1",
+        "example": "remaining days"
+      }
+    }
+  },
+  "freeTrialEndPromptForOneDay": {
+    "message": "$ORGANIZATION$, je gratis proefperiode eindigt morgen. Om je abonnement te behouden,",
+    "placeholders": {
+      "organization": {
+        "content": "$1",
+        "example": "organization name"
+      }
+    }
+  },
+  "freeTrialEndPromptForOneDayNoOrgName": {
+    "message": "Je gratis proefperiode eindigt morgen. Om je abonnement te behouden,"
+  },
+  "freeTrialEndPromptForLessThanADay": {
+    "message": "$ORGANIZATION$, je gratis proefperiode eindigt vandaag. Om je abonnement te behouden,",
+    "placeholders": {
+      "organization": {
+        "content": "$1",
+        "example": "organization name"
+      }
+    }
+  },
+  "freeTrialEndingSoonWithoutOrgName": {
+    "message": "Je gratis proefperiode eindigt vandaag. Om je abonnement te behouden,"
+  },
+  "routeToPaymentMethodTrigger": {
+    "message": "moet je een betaalmethode toevoegen."
   },
   "joinOrganization": {
     "message": "Lid worden van organisatie"
@@ -8441,7 +8496,7 @@
   },
   "addAPaymentMethod": {
     "message": "moet je een betaalmethode toevoegen",
-    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'To maintain your subscription for $ORG$, add a payment method.'"
+    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'To maintain your subscription for $ORG$, add a payment method'"
   },
   "organizationInformation": {
     "message": "Organisatieinformatie"
@@ -9014,6 +9069,12 @@
   "providerPlan": {
     "message": "Managed Service Provider"
   },
+  "managedServiceProvider": {
+    "message": "Managed service provider"
+  },
+  "multiOrganizationEnterprise": {
+    "message": "Multi-organisatie onderneming"
+  },
   "orgSeats": {
     "message": "Organization Seats"
   },
@@ -9416,6 +9477,30 @@
   "additionalStorageGbMessage": {
     "message": "GB extra opslagruimte"
   },
+  "sshKeyAlgorithm": {
+    "message": "Sleutelalgoritme"
+  },
+  "sshKeyFingerprint": {
+    "message": "Vingerafdruk"
+  },
+  "sshKeyPrivateKey": {
+    "message": "Privésleutel"
+  },
+  "sshKeyPublicKey": {
+    "message": "Publieke sleutel"
+  },
+  "sshKeyAlgorithmED25519": {
+    "message": "ED25519"
+  },
+  "sshKeyAlgorithmRSA2048": {
+    "message": "RSA 2048-bit"
+  },
+  "sshKeyAlgorithmRSA3072": {
+    "message": "RSA 3072-bit"
+  },
+  "sshKeyAlgorithmRSA4096": {
+    "message": "RSA 4096-bit"
+  },
   "premiumAccounts": {
     "message": "6 premium accounts"
   },
@@ -9580,5 +9665,47 @@
   },
   "organizationUserDeletedDesc": {
     "message": "De gebruiker is verwijderd uit de organisatie en alle bijbehorende gebruikersgegevens zijn verwijderd."
+  },
+  "deletedUserId": {
+    "message": "Gebruiker $ID$ verwijderd - een eigenaar / beheerder heeft het gebruikersaccount verwijderd",
+    "placeholders": {
+      "id": {
+        "content": "$1",
+        "example": "First 8 Character of a GUID"
+      }
+    }
+  },
+  "userLeftOrganization": {
+    "message": "Gebruiker $ID$ heeft organisatie verlaten",
+    "placeholders": {
+      "id": {
+        "content": "$1",
+        "example": "First 8 Character of a GUID"
+      }
+    }
+  },
+  "suspendedOrganizationTitle": {
+    "message": "De $ORGANIZATION$ is geschorst",
+    "placeholders": {
+      "organization": {
+        "content": "$1",
+        "example": "Acme c"
+      }
+    }
+  },
+  "suspendedUserOrgMessage": {
+    "message": "Neem contact op met de eigenaar van je organisatie voor hulp."
+  },
+  "suspendedOwnerOrgMessage": {
+    "message": "Voeg een betaalmethode toe om toegang tot je organisatie te krijgen."
+  },
+  "deleteMembers": {
+    "message": "Leden verwijderen"
+  },
+  "noSelectedMembersApplicable": {
+    "message": "Deze actie is niet van toepassing op de geselecteerde leden."
+  },
+  "deletedSuccessfully": {
+    "message": "Succesvol verwijderd"
   }
 }

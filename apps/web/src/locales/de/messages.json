@@ -5,14 +5,17 @@
   "criticalApplications": {
     "message": "Kritische Anwendungen"
   },
+  "accessIntelligence": {
+    "message": "Access Intelligence"
+  },
   "riskInsights": {
-    "message": "Risk Insights"
+    "message": "Risiko-Überblick"
   },
   "passwordRisk": {
     "message": "Passwort-Risiko"
   },
-  "discoverAtRiskPasswords": {
-    "message": "Discover at-risk passwords and notify users to change those passwords."
+  "reviewAtRiskPasswords": {
+    "message": "Überprüfe gefährdete Passwörter (schwach, kompromittiert oder wiederverwendet) in allen Anwendungen. Wähle deine kritischsten Anwendungen aus, um die Sicherheitsmaßnahmen für deine Benutzer zu priorisieren, um gefährdete Passwörter zu beseitigen."
   },
   "dataLastUpdated": {
     "message": "Daten zuletzt aktualisiert: $DATE$",
@@ -558,6 +561,9 @@
   },
   "typeSecureNote": {
     "message": "Sichere Notiz"
+  },
+  "typeSshKey": {
+    "message": "SSH-Schlüssel"
   },
   "typeLoginPlural": {
     "message": "Zugangsdaten"
@@ -3833,6 +3839,55 @@
   },
   "updateBrowserDesc": {
     "message": "Du verwendest einen nicht unterstützten Webbrowser. Der Web-Tresor funktioniert möglicherweise nicht richtig."
+  },
+  "freeTrialEndPrompt": {
+    "message": "Deine kostenlose Testversion endet in $COUNT$ Tagen. Um dein Abonnement zu behalten,",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "You must set up 2FA on your user account before you can join this organization."
+      }
+    }
+  },
+  "freeTrialEndPromptAboveTwoDays": {
+    "message": "$ORGANIZATION$, deine kostenlose Testversion endet in $COUNT$ Tagen. Um dein Abonnement zu behalten,",
+    "placeholders": {
+      "count": {
+        "content": "$2",
+        "example": "organization name"
+      },
+      "organization": {
+        "content": "$1",
+        "example": "remaining days"
+      }
+    }
+  },
+  "freeTrialEndPromptForOneDay": {
+    "message": "$ORGANIZATION$, deine kostenlose Testversion endet morgen. Um dein Abonnement zu behalten,",
+    "placeholders": {
+      "organization": {
+        "content": "$1",
+        "example": "organization name"
+      }
+    }
+  },
+  "freeTrialEndPromptForOneDayNoOrgName": {
+    "message": "Deine kostenlose Testversion endet morgen. Um dein Abonnement zu behalten,"
+  },
+  "freeTrialEndPromptForLessThanADay": {
+    "message": "$ORGANIZATION$, deine kostenlose Testversion endet heute. Um dein Abonnement zu behalten,",
+    "placeholders": {
+      "organization": {
+        "content": "$1",
+        "example": "organization name"
+      }
+    }
+  },
+  "freeTrialEndingSoonWithoutOrgName": {
+    "message": "Deine kostenlose Testversion endet heute. Um dein Abonnement zu behalten,"
+  },
+  "routeToPaymentMethodTrigger": {
+    "message": "füge eine Zahlungsmethode hinzu."
   },
   "joinOrganization": {
     "message": "Organisation beitreten"
@@ -8441,7 +8496,7 @@
   },
   "addAPaymentMethod": {
     "message": "füge eine Zahlungsmethode hinzu",
-    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'To maintain your subscription for $ORG$, add a payment method.'"
+    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'To maintain your subscription for $ORG$, add a payment method'"
   },
   "organizationInformation": {
     "message": "Organisationsinformationen"
@@ -9014,6 +9069,12 @@
   "providerPlan": {
     "message": "Verwalteter Dienstanbieter"
   },
+  "managedServiceProvider": {
+    "message": "Verwalteter Dienstanbieter"
+  },
+  "multiOrganizationEnterprise": {
+    "message": "Unternehmen mit mehreren Organisationen"
+  },
   "orgSeats": {
     "message": "Benutzerplätze der Organisation"
   },
@@ -9416,6 +9477,30 @@
   "additionalStorageGbMessage": {
     "message": "GB zusätzlicher Speicher"
   },
+  "sshKeyAlgorithm": {
+    "message": "Schlüsselalgorithmus"
+  },
+  "sshKeyFingerprint": {
+    "message": "Fingerabdruck"
+  },
+  "sshKeyPrivateKey": {
+    "message": "Privater Schlüssel"
+  },
+  "sshKeyPublicKey": {
+    "message": "Öffentlicher Schlüssel"
+  },
+  "sshKeyAlgorithmED25519": {
+    "message": "ED25519"
+  },
+  "sshKeyAlgorithmRSA2048": {
+    "message": "RSA 2048-Bit"
+  },
+  "sshKeyAlgorithmRSA3072": {
+    "message": "RSA 3072-Bit"
+  },
+  "sshKeyAlgorithmRSA4096": {
+    "message": "RSA 4096-Bit"
+  },
   "premiumAccounts": {
     "message": "6 Premium-Konten"
   },
@@ -9540,7 +9625,7 @@
     "message": "Bist du sicher, dass du diesen Anhang dauerhaft löschen möchtest?"
   },
   "manageSubscriptionFromThe": {
-    "message": "Abonnement verwalten von der",
+    "message": "Manage subscription from the",
     "description": "This represents the beginning of a sentence. The full sentence will be 'Manage subscription from the Provider Portal', but 'Provider Portal' will be a link and thus cannot be included in the translation file."
   },
   "toHostBitwardenOnYourOwnServer": {
@@ -9556,7 +9641,7 @@
     "message": "Nicht konforme Mitglieder werden gesperrt. Administratoren können Mitglieder wieder aufnehmen, sobald sie alle anderen Organisationen verlassen."
   },
   "deleteOrganizationUser": {
-    "message": "$NAME$ gelöscht",
+    "message": "$NAME$ löschen",
     "placeholders": {
       "name": {
         "content": "$1",
@@ -9580,5 +9665,47 @@
   },
   "organizationUserDeletedDesc": {
     "message": "Der Benutzer wurde aus der Organisation entfernt und alle zugehörigen Benutzerdaten wurden gelöscht."
+  },
+  "deletedUserId": {
+    "message": "Gelöschter Benutzer $ID$ - ein Eigentümer / Administrator hat das Benutzerkonto gelöscht",
+    "placeholders": {
+      "id": {
+        "content": "$1",
+        "example": "First 8 Character of a GUID"
+      }
+    }
+  },
+  "userLeftOrganization": {
+    "message": "Benutzer $ID$ hat die Organisation verlassen",
+    "placeholders": {
+      "id": {
+        "content": "$1",
+        "example": "First 8 Character of a GUID"
+      }
+    }
+  },
+  "suspendedOrganizationTitle": {
+    "message": "$ORGANIZATION$ ist gesperrt",
+    "placeholders": {
+      "organization": {
+        "content": "$1",
+        "example": "Acme c"
+      }
+    }
+  },
+  "suspendedUserOrgMessage": {
+    "message": "Kontaktiere deinen Organisationseigentümer für Hilfe."
+  },
+  "suspendedOwnerOrgMessage": {
+    "message": "Um wieder Zugriff zu deiner Organisation zu erhalten, füge eine Zahlungsmethode hinzu."
+  },
+  "deleteMembers": {
+    "message": "Mitglieder löschen"
+  },
+  "noSelectedMembersApplicable": {
+    "message": "Diese Aktion ist auf keine der ausgewählten Mitglieder anwendbar."
+  },
+  "deletedSuccessfully": {
+    "message": "Erfolgreich gelöscht"
   }
 }

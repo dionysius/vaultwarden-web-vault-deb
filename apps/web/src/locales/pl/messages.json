@@ -1,9 +1,12 @@
 {
   "allApplications": {
-    "message": "All applications"
+    "message": "Wszystkie aplikacje"
   },
   "criticalApplications": {
     "message": "Critical applications"
+  },
+  "accessIntelligence": {
+    "message": "Access Intelligence"
   },
   "riskInsights": {
     "message": "Risk Insights"
@@ -11,8 +14,8 @@
   "passwordRisk": {
     "message": "Password Risk"
   },
-  "discoverAtRiskPasswords": {
-    "message": "Discover at-risk passwords and notify users to change those passwords."
+  "reviewAtRiskPasswords": {
+    "message": "Review at-risk passwords (weak, exposed, or reused) across applications. Select your most critical applications to prioritize security actions for your users to address at-risk passwords."
   },
   "dataLastUpdated": {
     "message": "Data last updated: $DATE$",
@@ -24,7 +27,7 @@
     }
   },
   "notifiedMembers": {
-    "message": "Notified members"
+    "message": "Powiadomieni członkowie"
   },
   "allApplicationsWithCount": {
     "message": "All applications ($COUNT$)",
@@ -84,7 +87,7 @@
     "message": "Apps marked as critical"
   },
   "application": {
-    "message": "Application"
+    "message": "Aplikacja"
   },
   "atRiskPasswords": {
     "message": "At-risk passwords"
@@ -558,6 +561,9 @@
   },
   "typeSecureNote": {
     "message": "Bezpieczna notatka"
+  },
+  "typeSshKey": {
+    "message": "SSH key"
   },
   "typeLoginPlural": {
     "message": "Dane logowania"
@@ -3333,7 +3339,7 @@
     "message": "Niepoprawny PIN"
   },
   "pin": {
-    "message": "PIN",
+    "message": "Kod PIN",
     "description": "PIN code. Ex. The short code (often numeric) that you use to unlock a device."
   },
   "exportedVault": {
@@ -3834,11 +3840,60 @@
   "updateBrowserDesc": {
     "message": "Używasz nieobsługiwanej przeglądarki. Sejf internetowy może działać niewłaściwie."
   },
+  "freeTrialEndPrompt": {
+    "message": "Your free trial ends in $COUNT$ days. To maintain your subscription,",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "You must set up 2FA on your user account before you can join this organization."
+      }
+    }
+  },
+  "freeTrialEndPromptAboveTwoDays": {
+    "message": "$ORGANIZATION$, your free trial ends in $COUNT$ days. To maintain your subscription,",
+    "placeholders": {
+      "count": {
+        "content": "$2",
+        "example": "organization name"
+      },
+      "organization": {
+        "content": "$1",
+        "example": "remaining days"
+      }
+    }
+  },
+  "freeTrialEndPromptForOneDay": {
+    "message": "$ORGANIZATION$, your free trial ends tomorrow. To maintain your subscription,",
+    "placeholders": {
+      "organization": {
+        "content": "$1",
+        "example": "organization name"
+      }
+    }
+  },
+  "freeTrialEndPromptForOneDayNoOrgName": {
+    "message": "Your free trial ends tomorrow. To maintain your subscription,"
+  },
+  "freeTrialEndPromptForLessThanADay": {
+    "message": "$ORGANIZATION$, your free trial ends today. To maintain your subscription,",
+    "placeholders": {
+      "organization": {
+        "content": "$1",
+        "example": "organization name"
+      }
+    }
+  },
+  "freeTrialEndingSoonWithoutOrgName": {
+    "message": "Your free trial ends today. To maintain your subscription,"
+  },
+  "routeToPaymentMethodTrigger": {
+    "message": "add a payment method."
+  },
   "joinOrganization": {
     "message": "Dołącz do organizacji"
   },
   "joinOrganizationName": {
-    "message": "Join $ORGANIZATIONNAME$",
+    "message": "Dołącz do $ORGANIZATIONNAME$",
     "placeholders": {
       "organizationName": {
         "content": "$1",
@@ -6800,10 +6855,10 @@
     }
   },
   "singleFieldNeedsAttention": {
-    "message": "1 field needs your attention."
+    "message": "1 pole wymaga Twojej uwagi."
   },
   "multipleFieldsNeedAttention": {
-    "message": "$COUNT$ fields need your attention.",
+    "message": "$COUNT$ pól wymaga twojej uwagi.",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -7672,13 +7727,13 @@
     "message": "lub"
   },
   "unlockWithBiometrics": {
-    "message": "Unlock with biometrics"
+    "message": "Odblokuj za pomocą danych biometrycznych"
   },
   "unlockWithPin": {
-    "message": "Unlock with PIN"
+    "message": "Odblokuj kodem PIN"
   },
   "unlockWithMasterPassword": {
-    "message": "Unlock with master password"
+    "message": "Odblokuj przy użyciu hasła głównego"
   },
   "licenseAndBillingManagement": {
     "message": "Zarządzanie licencjami i rozliczeniami"
@@ -8019,7 +8074,7 @@
     "description": "Used as a card title description on the set password page to explain why the user is there"
   },
   "cardMetrics": {
-    "message": "out of $TOTAL$",
+    "message": "z $TOTAL$",
     "placeholders": {
       "total": {
         "content": "$1",
@@ -8441,7 +8496,7 @@
   },
   "addAPaymentMethod": {
     "message": "dodaj metodę płatności",
-    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'To maintain your subscription for $ORG$, add a payment method.'"
+    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'To maintain your subscription for $ORG$, add a payment method'"
   },
   "organizationInformation": {
     "message": "Informacje o organizacji"
@@ -9014,6 +9069,12 @@
   "providerPlan": {
     "message": "Dostawca usług zarządzanych"
   },
+  "managedServiceProvider": {
+    "message": "Managed service provider"
+  },
+  "multiOrganizationEnterprise": {
+    "message": "Multi-organization enterprise"
+  },
   "orgSeats": {
     "message": "Miejsca w organizacji"
   },
@@ -9416,6 +9477,30 @@
   "additionalStorageGbMessage": {
     "message": "GB dodatkowej przestrzeni"
   },
+  "sshKeyAlgorithm": {
+    "message": "Key algorithm"
+  },
+  "sshKeyFingerprint": {
+    "message": "Fingerprint"
+  },
+  "sshKeyPrivateKey": {
+    "message": "Private key"
+  },
+  "sshKeyPublicKey": {
+    "message": "Public key"
+  },
+  "sshKeyAlgorithmED25519": {
+    "message": "ED25519"
+  },
+  "sshKeyAlgorithmRSA2048": {
+    "message": "RSA 2048-Bit"
+  },
+  "sshKeyAlgorithmRSA3072": {
+    "message": "RSA 3072-Bit"
+  },
+  "sshKeyAlgorithmRSA4096": {
+    "message": "RSA 4096-Bit"
+  },
   "premiumAccounts": {
     "message": "6 kont premium"
   },
@@ -9507,7 +9592,7 @@
     "description": "Label for the password generator uppercase character checkbox"
   },
   "lowercaseDescription": {
-    "message": "Include lowercase characters",
+    "message": "Dołącz małe litery",
     "description": "Full description for the password generator lowercase character checkbox"
   },
   "lowercaseLabel": {
@@ -9515,7 +9600,7 @@
     "description": "Label for the password generator lowercase character checkbox"
   },
   "numbersDescription": {
-    "message": "Include numbers",
+    "message": "Dołącz numery",
     "description": "Full description for the password generator numbers checkbox"
   },
   "numbersLabel": {
@@ -9523,7 +9608,7 @@
     "description": "Label for the password generator numbers checkbox"
   },
   "specialCharactersDescription": {
-    "message": "Include special characters",
+    "message": "Dołącz znaki specjalne",
     "description": "Full description for the password generator special characters checkbox"
   },
   "specialCharactersLabel": {
@@ -9531,13 +9616,13 @@
     "description": "Label for the password generator special characters checkbox"
   },
   "addAttachment": {
-    "message": "Add attachment"
+    "message": "Dodaj załącznik"
   },
   "maxFileSizeSansPunctuation": {
-    "message": "Maximum file size is 500 MB"
+    "message": "Maksymalny rozmiar pliku to 500 MB"
   },
   "permanentlyDeleteAttachmentConfirmation": {
-    "message": "Are you sure you want to permanently delete this attachment?"
+    "message": "Czy na pewno chcesz trwale usunąć ten załącznik?"
   },
   "manageSubscriptionFromThe": {
     "message": "Manage subscription from the",
@@ -9580,5 +9665,47 @@
   },
   "organizationUserDeletedDesc": {
     "message": "The user was removed from the organization and all associated user data has been deleted."
+  },
+  "deletedUserId": {
+    "message": "Deleted user $ID$ - an owner / admin deleted the user account",
+    "placeholders": {
+      "id": {
+        "content": "$1",
+        "example": "First 8 Character of a GUID"
+      }
+    }
+  },
+  "userLeftOrganization": {
+    "message": "User $ID$ left organization",
+    "placeholders": {
+      "id": {
+        "content": "$1",
+        "example": "First 8 Character of a GUID"
+      }
+    }
+  },
+  "suspendedOrganizationTitle": {
+    "message": "The $ORGANIZATION$ is suspended",
+    "placeholders": {
+      "organization": {
+        "content": "$1",
+        "example": "Acme c"
+      }
+    }
+  },
+  "suspendedUserOrgMessage": {
+    "message": "Contact your organization owner for assistance."
+  },
+  "suspendedOwnerOrgMessage": {
+    "message": "To regain access to your organization, add a payment method."
+  },
+  "deleteMembers": {
+    "message": "Delete members"
+  },
+  "noSelectedMembersApplicable": {
+    "message": "This action is not applicable to any of the selected members."
+  },
+  "deletedSuccessfully": {
+    "message": "Deleted successfully"
   }
 }

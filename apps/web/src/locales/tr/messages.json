@@ -5,17 +5,20 @@
   "criticalApplications": {
     "message": "Critical applications"
   },
+  "accessIntelligence": {
+    "message": "Access Intelligence"
+  },
   "riskInsights": {
     "message": "Risk Insights"
   },
   "passwordRisk": {
-    "message": "Parola Riski"
+    "message": "Password Risk"
   },
-  "discoverAtRiskPasswords": {
-    "message": "Discover at-risk passwords and notify users to change those passwords."
+  "reviewAtRiskPasswords": {
+    "message": "Review at-risk passwords (weak, exposed, or reused) across applications. Select your most critical applications to prioritize security actions for your users to address at-risk passwords."
   },
   "dataLastUpdated": {
-    "message": "Son veri güncellemesi: $DATE$",
+    "message": "Data last updated: $DATE$",
     "placeholders": {
       "date": {
         "content": "$1",
@@ -24,7 +27,7 @@
     }
   },
   "notifiedMembers": {
-    "message": "Notified members"
+    "message": "Bildirilen üyeler"
   },
   "allApplicationsWithCount": {
     "message": "Tüm uygulamalar ($COUNT$)",
@@ -48,7 +51,7 @@
     }
   },
   "notifiedMembersWithCount": {
-    "message": "Notified members ($COUNT$)",
+    "message": "Bildirilen üyeler ($COUNT$)",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -81,7 +84,7 @@
     "message": "Mark app as critical"
   },
   "appsMarkedAsCritical": {
-    "message": "Kritik olarak işaretlenmiş uygulamalar"
+    "message": "Apps marked as critical"
   },
   "application": {
     "message": "Uygulama"
@@ -559,6 +562,9 @@
   "typeSecureNote": {
     "message": "Güvenli not"
   },
+  "typeSshKey": {
+    "message": "SSH key"
+  },
   "typeLoginPlural": {
     "message": "Hesaplar"
   },
@@ -635,7 +641,7 @@
     "message": "Kaydı göster"
   },
   "newItemHeader": {
-    "message": "New $TYPE$",
+    "message": "Yeni $TYPE$",
     "placeholders": {
       "type": {
         "content": "$1",
@@ -644,7 +650,7 @@
     }
   },
   "editItemHeader": {
-    "message": "Edit $TYPE$",
+    "message": "$TYPE$'ı düzenle",
     "placeholders": {
       "type": {
         "content": "$1",
@@ -722,7 +728,7 @@
     "description": "Copy passphrase to clipboard"
   },
   "passwordCopied": {
-    "message": "Parola kopyalandı"
+    "message": "Password copied"
   },
   "copyUsername": {
     "message": "Kullanıcı adını kopyala",
@@ -931,7 +937,7 @@
     "message": "Erişim seviyesi"
   },
   "accessing": {
-    "message": "Accessing"
+    "message": "Erişim"
   },
   "loggedOut": {
     "message": "Çıkış yapıldı"
@@ -991,13 +997,13 @@
     "message": "Başka bir giriş yöntemi kullan"
   },
   "logInWithPasskey": {
-    "message": "Geçiş anahtarıyla giriş yap"
+    "message": "Log in with passkey"
   },
   "useSingleSignOn": {
-    "message": "Çoklu oturum açma kullan"
+    "message": "Use single sign-on"
   },
   "welcomeBack": {
-    "message": "Tekrar hoş geldiniz"
+    "message": "Welcome back"
   },
   "invalidPasskeyPleaseTryAgain": {
     "message": "Geçersiz geçiş anahtarı. Lütfen tekrar deneyin."
@@ -1081,7 +1087,7 @@
     "message": "Hesap aç"
   },
   "newToBitwarden": {
-    "message": "Bitwarden'da yeni misiniz?"
+    "message": "New to Bitwarden?"
   },
   "setAStrongPassword": {
     "message": "Güçlü bir parola belirleyin"
@@ -1099,7 +1105,7 @@
     "message": "Giriş yap"
   },
   "logInToBitwarden": {
-    "message": "Bitwarden'a giriş yapın"
+    "message": "Log in to Bitwarden"
   },
   "verifyIdentity": {
     "message": "Kimliğinizi doğrulayın"
@@ -1270,7 +1276,7 @@
     "message": "Bu koleksiyondaki tüm kayıtları görmek için izniniz yok."
   },
   "youDoNotHavePermissions": {
-    "message": "Bu koleksiyona erişme izniniz yok"
+    "message": "You do not have permissions to this collection"
   },
   "noCollectionsInList": {
     "message": "Listelenecek koleksiyon yok."
@@ -1476,10 +1482,10 @@
     "message": "UUID'yi kopyala"
   },
   "errorRefreshingAccessToken": {
-    "message": "Access Token Refresh Error"
+    "message": "Erişim Anahtarı Yenileme Hatası"
   },
   "errorRefreshingAccessTokenDesc": {
-    "message": "No refresh token or API keys found. Please try logging out and logging back in."
+    "message": "Yenileme veya API anahtarı bulunamadı. Lütfen çıkış yapıp tekrar giriş yapmayı deneyin."
   },
   "warning": {
     "message": "Uyarı"
@@ -1738,7 +1744,7 @@
     "message": "Dikkatli olun, bu işlemleri geri alamazsınız!"
   },
   "dangerZoneDescSingular": {
-    "message": "Dikkatli olun, bu işlemi geri alamazsınız!"
+    "message": "Careful, this action is not reversible!"
   },
   "deauthorizeSessions": {
     "message": "Oturumları kapat"
@@ -1753,7 +1759,7 @@
     "message": "Tüm oturumlar kapatıldı"
   },
   "accountIsManagedMessage": {
-    "message": "Bu hesap $ORGANIZATIONNAME$ tarafından yönetilmektedir",
+    "message": "This account is managed by $ORGANIZATIONNAME$",
     "placeholders": {
       "organizationName": {
         "content": "$1",
@@ -1798,7 +1804,7 @@
     "message": "Hesabınız kapatıldı ve ilişkili tüm veriler silindi."
   },
   "deleteOrganizationWarning": {
-    "message": "Deleting your organization is permanent. It cannot be undone."
+    "message": "Kuruluşunuzu silmek kalıcı bir eylemdir ve geri alınamaz."
   },
   "myAccount": {
     "message": "Hesabım"
@@ -2087,19 +2093,19 @@
     }
   },
   "continueToExternalUrlDesc": {
-    "message": "You are leaving Bitwarden and launching an external website in a new window."
+    "message": "Bitwarden'dan çıkıyorsunuz ve harici bir siteye yeni pencerede giriş yapıyorsunuz."
   },
   "twoStepContinueToBitwardenUrlTitle": {
     "message": "bitwarden.com'a gitmek ister misiniz?"
   },
   "twoStepContinueToBitwardenUrlDesc": {
-    "message": "Bitwarden Authenticator allows you to store authenticator keys and generate TOTP codes for 2-step verification flows. Learn more on the bitwarden.com website."
+    "message": "Bitwarden Authenticator size kimlik doğrulayıcı anahtarınızı saklama ve 2 aşamalı doğrulama akışları için TOTP anahtarı üretme imkanı sağlar. Daha fazlası için bitwarden.com sitesini ziyaret edin."
   },
   "twoStepAuthenticatorScanCodeV2": {
     "message": "Aşağıdaki QR kodunu kimlik doğrulama uygulamanıza okutun veya anahtarı girin."
   },
   "twoStepAuthenticatorQRCanvasError": {
-    "message": "Could not load QR code. Try again or use the key below."
+    "message": "QR kodu yüklenemiyor. Yeniden deneyin ya da aşağıdaki kodu kullanın."
   },
   "key": {
     "message": "Anahtar"
@@ -3833,6 +3839,55 @@
   },
   "updateBrowserDesc": {
     "message": "Desteklenmeyen bir web tarayıcısı kullanıyorsunuz. Web kasası düzgün çalışmayabilir."
+  },
+  "freeTrialEndPrompt": {
+    "message": "Your free trial ends in $COUNT$ days. To maintain your subscription,",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "You must set up 2FA on your user account before you can join this organization."
+      }
+    }
+  },
+  "freeTrialEndPromptAboveTwoDays": {
+    "message": "$ORGANIZATION$, your free trial ends in $COUNT$ days. To maintain your subscription,",
+    "placeholders": {
+      "count": {
+        "content": "$2",
+        "example": "organization name"
+      },
+      "organization": {
+        "content": "$1",
+        "example": "remaining days"
+      }
+    }
+  },
+  "freeTrialEndPromptForOneDay": {
+    "message": "$ORGANIZATION$, your free trial ends tomorrow. To maintain your subscription,",
+    "placeholders": {
+      "organization": {
+        "content": "$1",
+        "example": "organization name"
+      }
+    }
+  },
+  "freeTrialEndPromptForOneDayNoOrgName": {
+    "message": "Your free trial ends tomorrow. To maintain your subscription,"
+  },
+  "freeTrialEndPromptForLessThanADay": {
+    "message": "$ORGANIZATION$, your free trial ends today. To maintain your subscription,",
+    "placeholders": {
+      "organization": {
+        "content": "$1",
+        "example": "organization name"
+      }
+    }
+  },
+  "freeTrialEndingSoonWithoutOrgName": {
+    "message": "Your free trial ends today. To maintain your subscription,"
+  },
+  "routeToPaymentMethodTrigger": {
+    "message": "add a payment method."
   },
   "joinOrganization": {
     "message": "Kuruluşa katıl"
@@ -6411,10 +6466,10 @@
     "message": "Kullanıcı adı oluştur"
   },
   "generateEmail": {
-    "message": "E-posta oluştur"
+    "message": "Generate email"
   },
   "generatorBoundariesHint": {
-    "message": "Değer $MIN$ ile $MAX$ arasında olmalıdır",
+    "message": "Value must be between $MIN$ and $MAX$",
     "description": "Explains spin box minimum and maximum values to the user",
     "placeholders": {
       "min": {
@@ -6533,11 +6588,11 @@
     "message": "Harici bir yönlendirme servisiyle e-posta maskesi oluştur."
   },
   "forwarderDomainName": {
-    "message": "E-posta alan adı",
+    "message": "Email domain",
     "description": "Labels the domain name email forwarder service option"
   },
   "forwarderDomainNameHint": {
-    "message": "Seçtiğiniz servisin desteklediği bir alan adı seçin",
+    "message": "Choose a domain that is supported by the selected service",
     "description": "Guidance provided for email forwarding services that support multiple email domains."
   },
   "forwarderError": {
@@ -8340,7 +8395,7 @@
     "message": "Sunucu URL'si"
   },
   "selfHostBaseUrl": {
-    "message": "Kendi kendine barındırılan sunucu URL'si",
+    "message": "Self-host server URL",
     "description": "Label for field requesting a self-hosted integration service URL"
   },
   "aliasDomain": {
@@ -8441,7 +8496,7 @@
   },
   "addAPaymentMethod": {
     "message": "bir ödeme yöntemi ekleyin",
-    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'To maintain your subscription for $ORG$, add a payment method.'"
+    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'To maintain your subscription for $ORG$, add a payment method'"
   },
   "organizationInformation": {
     "message": "Kuruluş bilgileri"
@@ -9014,6 +9069,12 @@
   "providerPlan": {
     "message": "Managed Service Provider"
   },
+  "managedServiceProvider": {
+    "message": "Managed service provider"
+  },
+  "multiOrganizationEnterprise": {
+    "message": "Multi-organization enterprise"
+  },
   "orgSeats": {
     "message": "Organization Seats"
   },
@@ -9416,6 +9477,30 @@
   "additionalStorageGbMessage": {
     "message": "GB additional storage"
   },
+  "sshKeyAlgorithm": {
+    "message": "Key algorithm"
+  },
+  "sshKeyFingerprint": {
+    "message": "Fingerprint"
+  },
+  "sshKeyPrivateKey": {
+    "message": "Private key"
+  },
+  "sshKeyPublicKey": {
+    "message": "Public key"
+  },
+  "sshKeyAlgorithmED25519": {
+    "message": "ED25519"
+  },
+  "sshKeyAlgorithmRSA2048": {
+    "message": "RSA 2048-Bit"
+  },
+  "sshKeyAlgorithmRSA3072": {
+    "message": "RSA 3072-Bit"
+  },
+  "sshKeyAlgorithmRSA4096": {
+    "message": "RSA 4096-Bit"
+  },
   "premiumAccounts": {
     "message": "6 premium hesap"
   },
@@ -9540,14 +9625,14 @@
     "message": "Bu dosyayı kalıcı olarak silmek istediğinizden emin misiniz?"
   },
   "manageSubscriptionFromThe": {
-    "message": "Aboneliğinizi yönetin:",
+    "message": "Manage subscription from the",
     "description": "This represents the beginning of a sentence. The full sentence will be 'Manage subscription from the Provider Portal', but 'Provider Portal' will be a link and thus cannot be included in the translation file."
   },
   "toHostBitwardenOnYourOwnServer": {
     "message": "To host Bitwarden on your own server, you will need to upload your license file. To support Free Families plans and advanced billing capabilities for your self-hosted organization, you will need to set up automatic sync in your self-hosted organization."
   },
   "selfHostingTitleProper": {
-    "message": "Kendi Kendinize Barındırma"
+    "message": "Self-Hosting"
   },
   "verified-domain-single-org-warning": {
     "message": "Verifying a domain will turn on the single organization policy."
@@ -9580,5 +9665,47 @@
   },
   "organizationUserDeletedDesc": {
     "message": "The user was removed from the organization and all associated user data has been deleted."
+  },
+  "deletedUserId": {
+    "message": "Deleted user $ID$ - an owner / admin deleted the user account",
+    "placeholders": {
+      "id": {
+        "content": "$1",
+        "example": "First 8 Character of a GUID"
+      }
+    }
+  },
+  "userLeftOrganization": {
+    "message": "User $ID$ left organization",
+    "placeholders": {
+      "id": {
+        "content": "$1",
+        "example": "First 8 Character of a GUID"
+      }
+    }
+  },
+  "suspendedOrganizationTitle": {
+    "message": "The $ORGANIZATION$ is suspended",
+    "placeholders": {
+      "organization": {
+        "content": "$1",
+        "example": "Acme c"
+      }
+    }
+  },
+  "suspendedUserOrgMessage": {
+    "message": "Contact your organization owner for assistance."
+  },
+  "suspendedOwnerOrgMessage": {
+    "message": "To regain access to your organization, add a payment method."
+  },
+  "deleteMembers": {
+    "message": "Üyeleri sil"
+  },
+  "noSelectedMembersApplicable": {
+    "message": "Bu eylem seçilen üyelerden hiçbirine uygulanamıyor."
+  },
+  "deletedSuccessfully": {
+    "message": "Başarıyla silindi"
   }
 }

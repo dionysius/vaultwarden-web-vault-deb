@@ -5,14 +5,17 @@
   "criticalApplications": {
     "message": "Critical applications"
   },
+  "accessIntelligence": {
+    "message": "Access Intelligence"
+  },
   "riskInsights": {
     "message": "Risk Insights"
   },
   "passwordRisk": {
     "message": "Password Risk"
   },
-  "discoverAtRiskPasswords": {
-    "message": "Discover at-risk passwords and notify users to change those passwords."
+  "reviewAtRiskPasswords": {
+    "message": "Review at-risk passwords (weak, exposed, or reused) across applications. Select your most critical applications to prioritize security actions for your users to address at-risk passwords."
   },
   "dataLastUpdated": {
     "message": "Data last updated: $DATE$",
@@ -457,7 +460,7 @@
     "message": "Δημιουργία Κωδικού"
   },
   "generatePassphrase": {
-    "message": "Δημιουργία φράσης πρόσβασης"
+    "message": "Generate passphrase"
   },
   "checkPassword": {
     "message": "Ελέγξτε εάν ο κωδικός έχει εκτεθεί."
@@ -558,6 +561,9 @@
   },
   "typeSecureNote": {
     "message": "Ασφαλής σημείωση"
+  },
+  "typeSshKey": {
+    "message": "SSH key"
   },
   "typeLoginPlural": {
     "message": "Συνδέσεις"
@@ -718,11 +724,11 @@
     "description": "Copy password to clipboard"
   },
   "copyPassphrase": {
-    "message": "Αντιγραφή φράσης πρόσβασης",
+    "message": "Copy passphrase",
     "description": "Copy passphrase to clipboard"
   },
   "passwordCopied": {
-    "message": "Ο κωδικός αντιγράφηκε"
+    "message": "Password copied"
   },
   "copyUsername": {
     "message": "Αντιγραφή ονόματος χρήστη",
@@ -991,13 +997,13 @@
     "message": "Χρήση διαφορετικής μεθόδου σύνδεσης"
   },
   "logInWithPasskey": {
-    "message": "Σύνδεση με κλειδί πρόσβασης"
+    "message": "Log in with passkey"
   },
   "useSingleSignOn": {
     "message": "Use single sign-on"
   },
   "welcomeBack": {
-    "message": "Καλωσορίσατε και πάλι"
+    "message": "Welcome back"
   },
   "invalidPasskeyPleaseTryAgain": {
     "message": "Μη έγκυρο κλειδί πρόσβασης. Παρακαλώ προσπαθήστε ξανά."
@@ -1099,7 +1105,7 @@
     "message": "Είσοδος"
   },
   "logInToBitwarden": {
-    "message": "Σύνδεση στο Bitwarden"
+    "message": "Log in to Bitwarden"
   },
   "verifyIdentity": {
     "message": "Επαληθεύστε την ταυτότητά σας"
@@ -3833,6 +3839,55 @@
   },
   "updateBrowserDesc": {
     "message": "Χρησιμοποιείτε ένα μη υποστηριζόμενο browser. Το web vault ενδέχεται να μην λειτουργεί σωστά."
+  },
+  "freeTrialEndPrompt": {
+    "message": "Your free trial ends in $COUNT$ days. To maintain your subscription,",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "You must set up 2FA on your user account before you can join this organization."
+      }
+    }
+  },
+  "freeTrialEndPromptAboveTwoDays": {
+    "message": "$ORGANIZATION$, your free trial ends in $COUNT$ days. To maintain your subscription,",
+    "placeholders": {
+      "count": {
+        "content": "$2",
+        "example": "organization name"
+      },
+      "organization": {
+        "content": "$1",
+        "example": "remaining days"
+      }
+    }
+  },
+  "freeTrialEndPromptForOneDay": {
+    "message": "$ORGANIZATION$, your free trial ends tomorrow. To maintain your subscription,",
+    "placeholders": {
+      "organization": {
+        "content": "$1",
+        "example": "organization name"
+      }
+    }
+  },
+  "freeTrialEndPromptForOneDayNoOrgName": {
+    "message": "Your free trial ends tomorrow. To maintain your subscription,"
+  },
+  "freeTrialEndPromptForLessThanADay": {
+    "message": "$ORGANIZATION$, your free trial ends today. To maintain your subscription,",
+    "placeholders": {
+      "organization": {
+        "content": "$1",
+        "example": "organization name"
+      }
+    }
+  },
+  "freeTrialEndingSoonWithoutOrgName": {
+    "message": "Your free trial ends today. To maintain your subscription,"
+  },
+  "routeToPaymentMethodTrigger": {
+    "message": "add a payment method."
   },
   "joinOrganization": {
     "message": "Εγγραφή στον οργανισμό"
@@ -8441,7 +8496,7 @@
   },
   "addAPaymentMethod": {
     "message": "προσθέστε μια μέθοδο πληρωμής",
-    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'To maintain your subscription for $ORG$, add a payment method.'"
+    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'To maintain your subscription for $ORG$, add a payment method'"
   },
   "organizationInformation": {
     "message": "Πληροφορίες οργανισμού"
@@ -9014,6 +9069,12 @@
   "providerPlan": {
     "message": "Πάροχος διαχειριζόμενης υπηρεσίας"
   },
+  "managedServiceProvider": {
+    "message": "Managed service provider"
+  },
+  "multiOrganizationEnterprise": {
+    "message": "Multi-organization enterprise"
+  },
   "orgSeats": {
     "message": "Θέσεις οργανισμού"
   },
@@ -9416,6 +9477,30 @@
   "additionalStorageGbMessage": {
     "message": "GB επιπλέον χώρου αποθήκευσης"
   },
+  "sshKeyAlgorithm": {
+    "message": "Key algorithm"
+  },
+  "sshKeyFingerprint": {
+    "message": "Fingerprint"
+  },
+  "sshKeyPrivateKey": {
+    "message": "Private key"
+  },
+  "sshKeyPublicKey": {
+    "message": "Public key"
+  },
+  "sshKeyAlgorithmED25519": {
+    "message": "ED25519"
+  },
+  "sshKeyAlgorithmRSA2048": {
+    "message": "RSA 2048-Bit"
+  },
+  "sshKeyAlgorithmRSA3072": {
+    "message": "RSA 3072-Bit"
+  },
+  "sshKeyAlgorithmRSA4096": {
+    "message": "RSA 4096-Bit"
+  },
   "premiumAccounts": {
     "message": "6 λογαριασμοί premium"
   },
@@ -9580,5 +9665,47 @@
   },
   "organizationUserDeletedDesc": {
     "message": "The user was removed from the organization and all associated user data has been deleted."
+  },
+  "deletedUserId": {
+    "message": "Deleted user $ID$ - an owner / admin deleted the user account",
+    "placeholders": {
+      "id": {
+        "content": "$1",
+        "example": "First 8 Character of a GUID"
+      }
+    }
+  },
+  "userLeftOrganization": {
+    "message": "User $ID$ left organization",
+    "placeholders": {
+      "id": {
+        "content": "$1",
+        "example": "First 8 Character of a GUID"
+      }
+    }
+  },
+  "suspendedOrganizationTitle": {
+    "message": "The $ORGANIZATION$ is suspended",
+    "placeholders": {
+      "organization": {
+        "content": "$1",
+        "example": "Acme c"
+      }
+    }
+  },
+  "suspendedUserOrgMessage": {
+    "message": "Contact your organization owner for assistance."
+  },
+  "suspendedOwnerOrgMessage": {
+    "message": "To regain access to your organization, add a payment method."
+  },
+  "deleteMembers": {
+    "message": "Delete members"
+  },
+  "noSelectedMembersApplicable": {
+    "message": "This action is not applicable to any of the selected members."
+  },
+  "deletedSuccessfully": {
+    "message": "Deleted successfully"
   }
 }

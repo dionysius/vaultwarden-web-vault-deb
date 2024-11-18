@@ -5,14 +5,17 @@
   "criticalApplications": {
     "message": "Kritik tətbiqlər"
   },
+  "accessIntelligence": {
+    "message": "Müraciət Kəşfiyyatı"
+  },
   "riskInsights": {
-    "message": "Risk Insights"
+    "message": "Risk Məlumatları"
   },
   "passwordRisk": {
     "message": "Parol riski"
   },
-  "discoverAtRiskPasswords": {
-    "message": "Discover at-risk passwords and notify users to change those passwords."
+  "reviewAtRiskPasswords": {
+    "message": "Tətbiqlər arasında riskli (zəif, ifşa olunmuş və ya təkrar istifadə olunmuş) parolları incələyin. İstifadəçilərinizin riskli parollara yönəlmiş təhlükəsizlik tədbirlərinə əhəmiyyət vermələri üçün kritik tətbiqlərinizi seçin."
   },
   "dataLastUpdated": {
     "message": "Datanın son güncəlləmə tarixi: $DATE$",
@@ -558,6 +561,9 @@
   },
   "typeSecureNote": {
     "message": "Güvənli qeyd"
+  },
+  "typeSshKey": {
+    "message": "SSH açarı"
   },
   "typeLoginPlural": {
     "message": "Girişlər"
@@ -1270,7 +1276,7 @@
     "message": "Bu kolleksiyadakı bütün elementlərə baxmaq üçün icazəniz yoxdur."
   },
   "youDoNotHavePermissions": {
-    "message": "Bu kolleksiya ilə bağlı icazəniz yoxdur"
+    "message": "Bu kolleksiyaya icazəniz yoxdur"
   },
   "noCollectionsInList": {
     "message": "Siyahılanacaq heç bir kolleksiya yoxdur."
@@ -3833,6 +3839,55 @@
   },
   "updateBrowserDesc": {
     "message": "Dəstəklənməyən bir veb brauzer istifadə edirsiniz. Veb seyf düzgün işləməyə bilər."
+  },
+  "freeTrialEndPrompt": {
+    "message": "Ödənişsiz sınağınız $COUNT$ günə bitir. Abunəliyi davam etdirmək üçün,",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "You must set up 2FA on your user account before you can join this organization."
+      }
+    }
+  },
+  "freeTrialEndPromptAboveTwoDays": {
+    "message": "$ORGANIZATION$, ödənişsiz sınağınız $COUNT$ günə bitir. Abunəliyi davam etdirmək üçün,",
+    "placeholders": {
+      "count": {
+        "content": "$2",
+        "example": "organization name"
+      },
+      "organization": {
+        "content": "$1",
+        "example": "remaining days"
+      }
+    }
+  },
+  "freeTrialEndPromptForOneDay": {
+    "message": "$ORGANIZATION$, ödənişsiz sınağınız sabah bitir. Abunəliyi davam etdirmək üçün,",
+    "placeholders": {
+      "organization": {
+        "content": "$1",
+        "example": "organization name"
+      }
+    }
+  },
+  "freeTrialEndPromptForOneDayNoOrgName": {
+    "message": "Ödənişsiz sınağınız sabah bitir. Abunəliyi davam etdirmək üçün,"
+  },
+  "freeTrialEndPromptForLessThanADay": {
+    "message": "$ORGANIZATION$, ödənişsiz sınağınız bu gün bitir. Abunəliyi davam etdirmək üçün,",
+    "placeholders": {
+      "organization": {
+        "content": "$1",
+        "example": "organization name"
+      }
+    }
+  },
+  "freeTrialEndingSoonWithoutOrgName": {
+    "message": "Ödənişsiz sınağınız bu gün bitir. Abunəliyi davam etdirmək üçün,"
+  },
+  "routeToPaymentMethodTrigger": {
+    "message": "bir ödəniş üsulu əlavə edin."
   },
   "joinOrganization": {
     "message": "Təşkilata qoşul"
@@ -8441,7 +8496,7 @@
   },
   "addAPaymentMethod": {
     "message": "bir ödəniş üsulu əlavə edin",
-    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'To maintain your subscription for $ORG$, add a payment method.'"
+    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'To maintain your subscription for $ORG$, add a payment method'"
   },
   "organizationInformation": {
     "message": "Təşkilat məlumatları"
@@ -9014,6 +9069,12 @@
   "providerPlan": {
     "message": "İdarə edilən Xidmət Provayderi"
   },
+  "managedServiceProvider": {
+    "message": "İdarə edilən xidmət provayderi"
+  },
+  "multiOrganizationEnterprise": {
+    "message": "Çoxlu təşkilat müəssisəsi"
+  },
   "orgSeats": {
     "message": "Təşkilat yerləri"
   },
@@ -9416,6 +9477,30 @@
   "additionalStorageGbMessage": {
     "message": "GB əlavə saxlama sahəsi"
   },
+  "sshKeyAlgorithm": {
+    "message": "Açar alqoritmi"
+  },
+  "sshKeyFingerprint": {
+    "message": "Barmaq izi"
+  },
+  "sshKeyPrivateKey": {
+    "message": "Private açar"
+  },
+  "sshKeyPublicKey": {
+    "message": "Public açar"
+  },
+  "sshKeyAlgorithmED25519": {
+    "message": "ED25519"
+  },
+  "sshKeyAlgorithmRSA2048": {
+    "message": "RSA 2048-Bit"
+  },
+  "sshKeyAlgorithmRSA3072": {
+    "message": "RSA 3072-Bit"
+  },
+  "sshKeyAlgorithmRSA4096": {
+    "message": "RSA 4096-Bit"
+  },
   "premiumAccounts": {
     "message": "6 premium hesab"
   },
@@ -9580,5 +9665,47 @@
   },
   "organizationUserDeletedDesc": {
     "message": "İstifadəçi təşkilatdan çıxarıldı və əlaqələndirilmiş bütün istifadəçi dataları silindi."
+  },
+  "deletedUserId": {
+    "message": "$ID$ istifadəçisi silindi - bir sahib/admin, istifadəçi hesabını sildi",
+    "placeholders": {
+      "id": {
+        "content": "$1",
+        "example": "First 8 Character of a GUID"
+      }
+    }
+  },
+  "userLeftOrganization": {
+    "message": "$ID$ istifadəçisi təşkilatı tərk etdi",
+    "placeholders": {
+      "id": {
+        "content": "$1",
+        "example": "First 8 Character of a GUID"
+      }
+    }
+  },
+  "suspendedOrganizationTitle": {
+    "message": "$ORGANIZATION$ fəaliyyəti dayandırıldı",
+    "placeholders": {
+      "organization": {
+        "content": "$1",
+        "example": "Acme c"
+      }
+    }
+  },
+  "suspendedUserOrgMessage": {
+    "message": "Kömək üçün təşkilatınızın sahibi ilə əlaqə saxlayın."
+  },
+  "suspendedOwnerOrgMessage": {
+    "message": "Təşkilatınıza yenidən müraciət qazanmaq üçün bir ödəniş üsulu əlavə edin."
+  },
+  "deleteMembers": {
+    "message": "Üzvləri sil"
+  },
+  "noSelectedMembersApplicable": {
+    "message": "Bu əməliyyat, seçilmiş üzvlərin heç birinə aid deyil."
+  },
+  "deletedSuccessfully": {
+    "message": "Uğurla silindi"
   }
 }

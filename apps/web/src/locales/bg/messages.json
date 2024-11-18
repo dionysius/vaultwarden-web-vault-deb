@@ -5,14 +5,17 @@
   "criticalApplications": {
     "message": "Важни приложения"
   },
+  "accessIntelligence": {
+    "message": "Access Intelligence"
+  },
   "riskInsights": {
-    "message": "Risk Insights"
+    "message": "Подробности за рисковете"
   },
   "passwordRisk": {
     "message": "Рискова парола"
   },
-  "discoverAtRiskPasswords": {
-    "message": "Discover at-risk passwords and notify users to change those passwords."
+  "reviewAtRiskPasswords": {
+    "message": "Review at-risk passwords (weak, exposed, or reused) across applications. Select your most critical applications to prioritize security actions for your users to address at-risk passwords."
   },
   "dataLastUpdated": {
     "message": "Последно обновяване на данните: $DATE$",
@@ -558,6 +561,9 @@
   },
   "typeSecureNote": {
     "message": "Защитена бележка"
+  },
+  "typeSshKey": {
+    "message": "SSH ключ"
   },
   "typeLoginPlural": {
     "message": "Записи"
@@ -1441,7 +1447,7 @@
     "message": "Наистина ли искате да продължите?"
   },
   "moveSelectedItemsDesc": {
-    "message": "Choose a folder that you would like to add the $COUNT$ selected item(s) to.",
+    "message": "Изберете папка, в която да се добавят $COUNT$ избран(и) запис(а).",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -1869,7 +1875,7 @@
     "message": "Грешка при дешифрирането на изнесения файл. Ключът за шифриране не отговаря на този, който е използван за изнасянето на данните."
   },
   "destination": {
-    "message": "Destination"
+    "message": "Дестинация"
   },
   "learnAboutImportOptions": {
     "message": "Научете повече относно възможностите за внасяне"
@@ -3833,6 +3839,55 @@
   },
   "updateBrowserDesc": {
     "message": "Ползвате неподдържан браузър. Трезорът по уеб може да не сработи правилно."
+  },
+  "freeTrialEndPrompt": {
+    "message": "Вашият безплатен пробен период приключва след $COUNT$ дни. Ако искате да продължите абонамента си,",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "You must set up 2FA on your user account before you can join this organization."
+      }
+    }
+  },
+  "freeTrialEndPromptAboveTwoDays": {
+    "message": "$ORGANIZATION$, Вашият безплатен пробен период приключва след $COUNT$ дни. Ако искате да продължите абонамента си,",
+    "placeholders": {
+      "count": {
+        "content": "$2",
+        "example": "organization name"
+      },
+      "organization": {
+        "content": "$1",
+        "example": "remaining days"
+      }
+    }
+  },
+  "freeTrialEndPromptForOneDay": {
+    "message": "$ORGANIZATION$, Вашият безплатен пробен период приключва утре. Ако искате да продължите абонамента си,",
+    "placeholders": {
+      "organization": {
+        "content": "$1",
+        "example": "organization name"
+      }
+    }
+  },
+  "freeTrialEndPromptForOneDayNoOrgName": {
+    "message": "Вашият безплатен пробен период приключва утре. Ако искате да продължите абонамента си,"
+  },
+  "freeTrialEndPromptForLessThanADay": {
+    "message": "$ORGANIZATION$, Вашият безплатен пробен период приключва днес. Ако искате да продължите абонамента си,",
+    "placeholders": {
+      "organization": {
+        "content": "$1",
+        "example": "organization name"
+      }
+    }
+  },
+  "freeTrialEndingSoonWithoutOrgName": {
+    "message": "Вашият безплатен пробен период приключва днес. Ако искате да продължите абонамента си,"
+  },
+  "routeToPaymentMethodTrigger": {
+    "message": "добавете разплащателен метод."
   },
   "joinOrganization": {
     "message": "Присъединяване към организация"
@@ -8441,7 +8496,7 @@
   },
   "addAPaymentMethod": {
     "message": "добавете разплащателен метод",
-    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'To maintain your subscription for $ORG$, add a payment method.'"
+    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'To maintain your subscription for $ORG$, add a payment method'"
   },
   "organizationInformation": {
     "message": "Информация за организацията"
@@ -9014,6 +9069,12 @@
   "providerPlan": {
     "message": "Managed Service Provider"
   },
+  "managedServiceProvider": {
+    "message": "Управляван доставчик на услуга"
+  },
+  "multiOrganizationEnterprise": {
+    "message": "Компания с множество организации"
+  },
   "orgSeats": {
     "message": "Места в организацията"
   },
@@ -9416,6 +9477,30 @@
   "additionalStorageGbMessage": {
     "message": "GB допълнително място за съхранение"
   },
+  "sshKeyAlgorithm": {
+    "message": "Алгоритъм на ключа"
+  },
+  "sshKeyFingerprint": {
+    "message": "Отпечатък"
+  },
+  "sshKeyPrivateKey": {
+    "message": "Частен ключ"
+  },
+  "sshKeyPublicKey": {
+    "message": "Публичен ключ"
+  },
+  "sshKeyAlgorithmED25519": {
+    "message": "ED25519"
+  },
+  "sshKeyAlgorithmRSA2048": {
+    "message": "RSA 2048 бита"
+  },
+  "sshKeyAlgorithmRSA3072": {
+    "message": "RSA 3072 бита"
+  },
+  "sshKeyAlgorithmRSA4096": {
+    "message": "RSA 4096 бита"
+  },
   "premiumAccounts": {
     "message": "6 платени регистрации"
   },
@@ -9580,5 +9665,47 @@
   },
   "organizationUserDeletedDesc": {
     "message": "Потребителят беше премахнат от организацията и всичките му данни бяха изтрити."
+  },
+  "deletedUserId": {
+    "message": "Изтрит потребител $ID$ – собственик / администратор е изтрил регистрацията на потребителя",
+    "placeholders": {
+      "id": {
+        "content": "$1",
+        "example": "First 8 Character of a GUID"
+      }
+    }
+  },
+  "userLeftOrganization": {
+    "message": "Потребител $ID$ напусна организацията",
+    "placeholders": {
+      "id": {
+        "content": "$1",
+        "example": "First 8 Character of a GUID"
+      }
+    }
+  },
+  "suspendedOrganizationTitle": {
+    "message": "Достъпът на $ORGANIZATION$ е преустановен",
+    "placeholders": {
+      "organization": {
+        "content": "$1",
+        "example": "Acme c"
+      }
+    }
+  },
+  "suspendedUserOrgMessage": {
+    "message": "Свържете се със собственика на организацията си за съдействие."
+  },
+  "suspendedOwnerOrgMessage": {
+    "message": "Ако искате отново да получите достъп до организацията си, добавете разплащателен метод."
+  },
+  "deleteMembers": {
+    "message": "Изтриване на членове"
+  },
+  "noSelectedMembersApplicable": {
+    "message": "Това действие не може да се изпълни за никого от избраните членове."
+  },
+  "deletedSuccessfully": {
+    "message": "Успешно изтриване"
   }
 }

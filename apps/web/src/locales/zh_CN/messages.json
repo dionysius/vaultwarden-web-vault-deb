@@ -5,14 +5,17 @@
   "criticalApplications": {
     "message": "关键应用程序"
   },
+  "accessIntelligence": {
+    "message": "Access Intelligence"
+  },
   "riskInsights": {
-    "message": "Risk Insights"
+    "message": "风险洞察"
   },
   "passwordRisk": {
     "message": "密码风险"
   },
-  "discoverAtRiskPasswords": {
-    "message": "Discover at-risk passwords and notify users to change those passwords."
+  "reviewAtRiskPasswords": {
+    "message": "跨应用程序审查有风险的密码（弱密码、暴露的密码或重复使用的密码）。选择最关键的应用程序，优先为用户采取安全措施，以解决密码风险问题。"
   },
   "dataLastUpdated": {
     "message": "数据最后更新于：$DATE$",
@@ -558,6 +561,9 @@
   },
   "typeSecureNote": {
     "message": "安全笔记"
+  },
+  "typeSshKey": {
+    "message": "SSH 密钥"
   },
   "typeLoginPlural": {
     "message": "登录"
@@ -3834,6 +3840,55 @@
   "updateBrowserDesc": {
     "message": "您使用的是不受支持的 Web 浏览器。网页密码库可能无法正常运行。"
   },
+  "freeTrialEndPrompt": {
+    "message": "您的免费试用将在 $COUNT$ 天后结束。要保留您的订阅，",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "You must set up 2FA on your user account before you can join this organization."
+      }
+    }
+  },
+  "freeTrialEndPromptAboveTwoDays": {
+    "message": "$ORGANIZATION$，您的免费试用将在 $COUNT$ 天后结束。要保留您的订阅，",
+    "placeholders": {
+      "count": {
+        "content": "$2",
+        "example": "organization name"
+      },
+      "organization": {
+        "content": "$1",
+        "example": "remaining days"
+      }
+    }
+  },
+  "freeTrialEndPromptForOneDay": {
+    "message": "$ORGANIZATION$，您的免费试用将在明天结束。要保留您的订阅，",
+    "placeholders": {
+      "organization": {
+        "content": "$1",
+        "example": "organization name"
+      }
+    }
+  },
+  "freeTrialEndPromptForOneDayNoOrgName": {
+    "message": "您的免费试用将在每天结束。要保留您的订阅，"
+  },
+  "freeTrialEndPromptForLessThanADay": {
+    "message": "$ORGANIZATION$，您的免费试用将在今天结束。要保留您的订阅，",
+    "placeholders": {
+      "organization": {
+        "content": "$1",
+        "example": "organization name"
+      }
+    }
+  },
+  "freeTrialEndingSoonWithoutOrgName": {
+    "message": "您的免费试用将在今天结束。要保留您的订阅，"
+  },
+  "routeToPaymentMethodTrigger": {
+    "message": "请添加一个付款方式。"
+  },
   "joinOrganization": {
     "message": "加入组织"
   },
@@ -6411,7 +6466,7 @@
     "message": "生成用户名"
   },
   "generateEmail": {
-    "message": "生成邮件地址"
+    "message": "生成电子邮件地址"
   },
   "generatorBoundariesHint": {
     "message": "值必须在 $MIN$ 和 $MAX$ 之间",
@@ -6533,7 +6588,7 @@
     "message": "使用外部转发服务生成一个电子邮件别名。"
   },
   "forwarderDomainName": {
-    "message": "邮件域名",
+    "message": "电子邮件域名",
     "description": "Labels the domain name email forwarder service option"
   },
   "forwarderDomainNameHint": {
@@ -8441,7 +8496,7 @@
   },
   "addAPaymentMethod": {
     "message": "请添加一个付款方式。",
-    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'To maintain your subscription for $ORG$, add a payment method.'"
+    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'To maintain your subscription for $ORG$, add a payment method'"
   },
   "organizationInformation": {
     "message": "组织信息"
@@ -9014,6 +9069,12 @@
   "providerPlan": {
     "message": "托管服务提供商"
   },
+  "managedServiceProvider": {
+    "message": "托管服务提供商"
+  },
+  "multiOrganizationEnterprise": {
+    "message": "多组织企业"
+  },
   "orgSeats": {
     "message": "组织席位"
   },
@@ -9416,6 +9477,30 @@
   "additionalStorageGbMessage": {
     "message": "GB 附加存储"
   },
+  "sshKeyAlgorithm": {
+    "message": "密钥算法"
+  },
+  "sshKeyFingerprint": {
+    "message": "指纹"
+  },
+  "sshKeyPrivateKey": {
+    "message": "私钥"
+  },
+  "sshKeyPublicKey": {
+    "message": "公钥"
+  },
+  "sshKeyAlgorithmED25519": {
+    "message": "ED25519"
+  },
+  "sshKeyAlgorithmRSA2048": {
+    "message": "RSA 2048-Bit"
+  },
+  "sshKeyAlgorithmRSA3072": {
+    "message": "RSA 3072-Bit"
+  },
+  "sshKeyAlgorithmRSA4096": {
+    "message": "RSA 4096-Bit"
+  },
   "premiumAccounts": {
     "message": "6 个高级账户"
   },
@@ -9570,7 +9655,7 @@
     "description": "Warning for the delete organization user dialog"
   },
   "organizationUserDeleted": {
-    "message": "已删除 $NAME$",
+    "message": "删除了 $NAME$",
     "placeholders": {
       "name": {
         "content": "$1",
@@ -9579,6 +9664,48 @@
     }
   },
   "organizationUserDeletedDesc": {
-    "message": "该用户已从组织中删除，所有关联的用户数据已被删除。"
+    "message": "该用户已从组织中删除，所有关联的用户数据也已删除。"
+  },
+  "deletedUserId": {
+    "message": "删除了用户 $ID$ - 某个所有者/管理员删除了此用户账户",
+    "placeholders": {
+      "id": {
+        "content": "$1",
+        "example": "First 8 Character of a GUID"
+      }
+    }
+  },
+  "userLeftOrganization": {
+    "message": "用户 $ID$ 离开了组织",
+    "placeholders": {
+      "id": {
+        "content": "$1",
+        "example": "First 8 Character of a GUID"
+      }
+    }
+  },
+  "suspendedOrganizationTitle": {
+    "message": "$ORGANIZATION$ 已停用",
+    "placeholders": {
+      "organization": {
+        "content": "$1",
+        "example": "Acme c"
+      }
+    }
+  },
+  "suspendedUserOrgMessage": {
+    "message": "联系您的组织所有者获取协助。"
+  },
+  "suspendedOwnerOrgMessage": {
+    "message": "要重新访问您的组织，请添加一个付款方式。"
+  },
+  "deleteMembers": {
+    "message": "删除成员"
+  },
+  "noSelectedMembersApplicable": {
+    "message": "此操作不适用于任何选定的成员。"
+  },
+  "deletedSuccessfully": {
+    "message": "删除成功"
   }
 }

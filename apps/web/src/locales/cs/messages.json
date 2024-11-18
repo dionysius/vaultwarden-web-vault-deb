@@ -5,14 +5,17 @@
   "criticalApplications": {
     "message": "Kritické aplikace"
   },
+  "accessIntelligence": {
+    "message": "Přístup k inteligenci"
+  },
   "riskInsights": {
-    "message": "Risk Insights"
+    "message": "Poznatky o rizicích"
   },
   "passwordRisk": {
     "message": "Rizikové heslo"
   },
-  "discoverAtRiskPasswords": {
-    "message": "Objevte riziková hesla a upozorněte uživatele na změnu těchto hesel."
+  "reviewAtRiskPasswords": {
+    "message": "Zkontrolujte riziková hesla (slabá, odhalená nebo opakovaně používaná) ve všech aplikacích. Vyberte nejkritičtější aplikace a stanovte priority bezpečnostních opatření pro uživatele, abyste se vypořádali s rizikovými hesly."
   },
   "dataLastUpdated": {
     "message": "Data naposledy aktualizována: $DATE$",
@@ -558,6 +561,9 @@
   },
   "typeSecureNote": {
     "message": "Zabezpečená poznámka"
+  },
+  "typeSshKey": {
+    "message": "SSH klíč"
   },
   "typeLoginPlural": {
     "message": "Přihlašovací údaje"
@@ -3833,6 +3839,55 @@
   },
   "updateBrowserDesc": {
     "message": "Používáte nepodporovaný webový prohlížeč. Webový trezor nemusí pracovat správně."
+  },
+  "freeTrialEndPrompt": {
+    "message": "Vaše zkušební verze končí za $COUNT$ dnů. Chcete-li si zachovat předplatné,",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "You must set up 2FA on your user account before you can join this organization."
+      }
+    }
+  },
+  "freeTrialEndPromptAboveTwoDays": {
+    "message": "$ORGANIZATION$, Vaše zkušební verze končí za $COUNT$ dnů. Chcete-li si zachovat předplatné,",
+    "placeholders": {
+      "count": {
+        "content": "$2",
+        "example": "organization name"
+      },
+      "organization": {
+        "content": "$1",
+        "example": "remaining days"
+      }
+    }
+  },
+  "freeTrialEndPromptForOneDay": {
+    "message": "$ORGANIZATION$, Vaše zkušební verze končí zítra. Chcete-li si zachovat předplatné,",
+    "placeholders": {
+      "organization": {
+        "content": "$1",
+        "example": "organization name"
+      }
+    }
+  },
+  "freeTrialEndPromptForOneDayNoOrgName": {
+    "message": "Vaše zkušební verze končí zítra. Chcete-li si zachovat předplatné,"
+  },
+  "freeTrialEndPromptForLessThanADay": {
+    "message": "$ORGANIZATION$, Vaše zkušební verze končí dnes. Chcete-li si zachovat předplatné,",
+    "placeholders": {
+      "organization": {
+        "content": "$1",
+        "example": "organization name"
+      }
+    }
+  },
+  "freeTrialEndingSoonWithoutOrgName": {
+    "message": "Vaše zkušební verze končí dnes. Chcete-li si zachovat předplatné,"
+  },
+  "routeToPaymentMethodTrigger": {
+    "message": "přidejte platební metodu."
   },
   "joinOrganization": {
     "message": "Přidat se k organizaci"
@@ -8441,7 +8496,7 @@
   },
   "addAPaymentMethod": {
     "message": "přidejte platební metodu",
-    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'To maintain your subscription for $ORG$, add a payment method.'"
+    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'To maintain your subscription for $ORG$, add a payment method'"
   },
   "organizationInformation": {
     "message": "Informace o organizaci"
@@ -9014,6 +9069,12 @@
   "providerPlan": {
     "message": "Spravovaný poskytovatel služby"
   },
+  "managedServiceProvider": {
+    "message": "Spravovaný poskytovatel služby"
+  },
+  "multiOrganizationEnterprise": {
+    "message": "Podniky s více organizacemi"
+  },
   "orgSeats": {
     "message": "Počet uživatelů v organizaci"
   },
@@ -9416,6 +9477,30 @@
   "additionalStorageGbMessage": {
     "message": "GB dodatečného úložiště"
   },
+  "sshKeyAlgorithm": {
+    "message": "Algoritmus klíče"
+  },
+  "sshKeyFingerprint": {
+    "message": "Otisk prstu"
+  },
+  "sshKeyPrivateKey": {
+    "message": "Soukromý klíč"
+  },
+  "sshKeyPublicKey": {
+    "message": "Veřejný klíč"
+  },
+  "sshKeyAlgorithmED25519": {
+    "message": "ED25519"
+  },
+  "sshKeyAlgorithmRSA2048": {
+    "message": "RSA 2048 bitový"
+  },
+  "sshKeyAlgorithmRSA3072": {
+    "message": "RSA 3072 bitový"
+  },
+  "sshKeyAlgorithmRSA4096": {
+    "message": "RSA 4096 bitový"
+  },
   "premiumAccounts": {
     "message": "6 účtů Premium"
   },
@@ -9580,5 +9665,47 @@
   },
   "organizationUserDeletedDesc": {
     "message": "Uživatel byl odebrán z organizace a všechna přidružená uživatelská data byla smazána."
+  },
+  "deletedUserId": {
+    "message": "Smazaný uživatel $ID$ - vlastník / správce smazal uživatelský účet",
+    "placeholders": {
+      "id": {
+        "content": "$1",
+        "example": "First 8 Character of a GUID"
+      }
+    }
+  },
+  "userLeftOrganization": {
+    "message": "Uživatel $ID$ opustil organizaci",
+    "placeholders": {
+      "id": {
+        "content": "$1",
+        "example": "First 8 Character of a GUID"
+      }
+    }
+  },
+  "suspendedOrganizationTitle": {
+    "message": "$ORGANIZATION$ je pozastaven",
+    "placeholders": {
+      "organization": {
+        "content": "$1",
+        "example": "Acme c"
+      }
+    }
+  },
+  "suspendedUserOrgMessage": {
+    "message": "Pro pomoc kontaktujte svého vlastníka organizace."
+  },
+  "suspendedOwnerOrgMessage": {
+    "message": "Chcete-li získat přístup k Vaší organizaci, přidejte platební metodu."
+  },
+  "deleteMembers": {
+    "message": "Smazat členy"
+  },
+  "noSelectedMembersApplicable": {
+    "message": "Tuto akci nelze použít na žádného z vybraných členů."
+  },
+  "deletedSuccessfully": {
+    "message": "Úspěšně smazáno"
   }
 }

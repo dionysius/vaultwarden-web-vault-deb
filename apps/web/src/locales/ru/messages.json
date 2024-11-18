@@ -5,14 +5,17 @@
   "criticalApplications": {
     "message": "Критичные приложения"
   },
+  "accessIntelligence": {
+    "message": "Access Intelligence"
+  },
   "riskInsights": {
-    "message": "Risk Insights"
+    "message": "Информация о рисках"
   },
   "passwordRisk": {
     "message": "Риск пароля"
   },
-  "discoverAtRiskPasswords": {
-    "message": "Discover at-risk passwords and notify users to change those passwords."
+  "reviewAtRiskPasswords": {
+    "message": "Проанализируйте пароли, подверженные риску (слабые, скомпрометированные или повторно используемые), во всех приложениях. Выберите наиболее важные приложения, чтобы определить приоритетные меры безопасности для пользователей, направленные на устранение подверженных риску паролей."
   },
   "dataLastUpdated": {
     "message": "Последнее обновление: $DATE$",
@@ -558,6 +561,9 @@
   },
   "typeSecureNote": {
     "message": "Защищенная заметка"
+  },
+  "typeSshKey": {
+    "message": "Ключ SSH"
   },
   "typeLoginPlural": {
     "message": "Логины"
@@ -2357,7 +2363,7 @@
     "message": "Проверить пароли на компрометацию"
   },
   "timesExposed": {
-    "message": "Times exposed"
+    "message": "Количество утечек"
   },
   "exposedXTimes": {
     "message": "Скомпрометирован $COUNT$ раз(а)",
@@ -2394,7 +2400,7 @@
     "message": "В вашем хранилище нет слабых паролей."
   },
   "weakness": {
-    "message": "Weakness"
+    "message": "Уязвимость"
   },
   "reusedPasswordsReport": {
     "message": "Повторно использованные пароли"
@@ -2422,7 +2428,7 @@
     "message": "В вашем хранилище нет повторно использованных паролей."
   },
   "timesReused": {
-    "message": "Times reused"
+    "message": "Повторных использований"
   },
   "reusedXTimes": {
     "message": "Повторно использован $COUNT$ раз(а)",
@@ -3833,6 +3839,55 @@
   },
   "updateBrowserDesc": {
     "message": "Вы используете неподдерживаемый браузер. Веб-хранилище может работать некорректно."
+  },
+  "freeTrialEndPrompt": {
+    "message": "Ваша бесплатная пробная версия заканчивается через $COUNT$ дней. Чтобы сохранить подписку,",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "You must set up 2FA on your user account before you can join this organization."
+      }
+    }
+  },
+  "freeTrialEndPromptAboveTwoDays": {
+    "message": "$ORGANIZATION$, ваша бесплатная пробная версия заканчивается через $COUNT$ дней. Чтобы сохранить подписку,",
+    "placeholders": {
+      "count": {
+        "content": "$2",
+        "example": "organization name"
+      },
+      "organization": {
+        "content": "$1",
+        "example": "remaining days"
+      }
+    }
+  },
+  "freeTrialEndPromptForOneDay": {
+    "message": "$ORGANIZATION$, ваша бесплатная пробная версия заканчивается завтра. Чтобы сохранить подписку,",
+    "placeholders": {
+      "organization": {
+        "content": "$1",
+        "example": "organization name"
+      }
+    }
+  },
+  "freeTrialEndPromptForOneDayNoOrgName": {
+    "message": "Ваша бесплатная пробная версия заканчивается завтра. Чтобы сохранить подписку,"
+  },
+  "freeTrialEndPromptForLessThanADay": {
+    "message": "$ORGANIZATION$, ваша бесплатная пробная версия заканчивается сегодня. Чтобы сохранить подписку,",
+    "placeholders": {
+      "organization": {
+        "content": "$1",
+        "example": "organization name"
+      }
+    }
+  },
+  "freeTrialEndingSoonWithoutOrgName": {
+    "message": "Ваша бесплатная пробная версия заканчивается сегодня. Чтобы сохранить подписку,"
+  },
+  "routeToPaymentMethodTrigger": {
+    "message": "добавьте способ оплаты."
   },
   "joinOrganization": {
     "message": "Присоединиться к организации"
@@ -8441,7 +8496,7 @@
   },
   "addAPaymentMethod": {
     "message": "добавьте способ оплаты",
-    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'To maintain your subscription for $ORG$, add a payment method.'"
+    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'To maintain your subscription for $ORG$, add a payment method'"
   },
   "organizationInformation": {
     "message": "Информация об организации"
@@ -9014,6 +9069,12 @@
   "providerPlan": {
     "message": "Поставщик управляемых услуг"
   },
+  "managedServiceProvider": {
+    "message": "Поставщик управляемых услуг"
+  },
+  "multiOrganizationEnterprise": {
+    "message": "Многоорганизационное предприятие"
+  },
   "orgSeats": {
     "message": "Места организации"
   },
@@ -9416,6 +9477,30 @@
   "additionalStorageGbMessage": {
     "message": "Дополнительное место в хранилище"
   },
+  "sshKeyAlgorithm": {
+    "message": "Алгоритм ключа"
+  },
+  "sshKeyFingerprint": {
+    "message": "Отпечаток"
+  },
+  "sshKeyPrivateKey": {
+    "message": "Приватный ключ"
+  },
+  "sshKeyPublicKey": {
+    "message": "Публичный ключ"
+  },
+  "sshKeyAlgorithmED25519": {
+    "message": "ED25519"
+  },
+  "sshKeyAlgorithmRSA2048": {
+    "message": "RSA 2048-Bit"
+  },
+  "sshKeyAlgorithmRSA3072": {
+    "message": "RSA 3072-Bit"
+  },
+  "sshKeyAlgorithmRSA4096": {
+    "message": "RSA 4096-Bit"
+  },
   "premiumAccounts": {
     "message": "6 Премиум-аккаунтов"
   },
@@ -9580,5 +9665,47 @@
   },
   "organizationUserDeletedDesc": {
     "message": "Пользователь был удален из организации, и все связанные с ним данные были удалены."
+  },
+  "deletedUserId": {
+    "message": "Владелец - удаленный пользователь $ID$ / администратор удалил аккаунт пользователя",
+    "placeholders": {
+      "id": {
+        "content": "$1",
+        "example": "First 8 Character of a GUID"
+      }
+    }
+  },
+  "userLeftOrganization": {
+    "message": "Пользователь $ID$ покинул организацию",
+    "placeholders": {
+      "id": {
+        "content": "$1",
+        "example": "First 8 Character of a GUID"
+      }
+    }
+  },
+  "suspendedOrganizationTitle": {
+    "message": "$ORGANIZATION$ приостановлена",
+    "placeholders": {
+      "organization": {
+        "content": "$1",
+        "example": "Acme c"
+      }
+    }
+  },
+  "suspendedUserOrgMessage": {
+    "message": "Обратитесь за помощью к владельцу организации."
+  },
+  "suspendedOwnerOrgMessage": {
+    "message": "Чтобы восстановить доступ к своей организации, добавьте способ оплаты."
+  },
+  "deleteMembers": {
+    "message": "Удалить участников"
+  },
+  "noSelectedMembersApplicable": {
+    "message": "Это действие не применимо ни к одному из выбранных участников."
+  },
+  "deletedSuccessfully": {
+    "message": "Успешно удален"
   }
 }

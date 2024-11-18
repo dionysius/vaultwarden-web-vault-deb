@@ -5,14 +5,17 @@
   "criticalApplications": {
     "message": "Applications critiques"
   },
+  "accessIntelligence": {
+    "message": "Accéder à Intelligence"
+  },
   "riskInsights": {
-    "message": "Risk Insights"
+    "message": "Aperçus des Risques"
   },
   "passwordRisk": {
     "message": "Risque du mot de passe"
   },
-  "discoverAtRiskPasswords": {
-    "message": "Discover at-risk passwords and notify users to change those passwords."
+  "reviewAtRiskPasswords": {
+    "message": "Examinez les mots de passe à risque (faibles, exposés ou réutilisés) à travers les applications. Sélectionnez vos applications les plus critiques pour prioriser les actions de sécurité pour que vos utilisateurs s'occupent des mots de passe à risque."
   },
   "dataLastUpdated": {
     "message": "Dernière mise à jour des données : $DATE$",
@@ -57,7 +60,7 @@
     }
   },
   "noAppsInOrgTitle": {
-    "message": "Aucune application trouvée dans $ORG NOM$",
+    "message": "Aucune application trouvée dans $ORG NAME$",
     "placeholders": {
       "org name": {
         "content": "$1",
@@ -559,6 +562,9 @@
   "typeSecureNote": {
     "message": "Note sécurisée"
   },
+  "typeSshKey": {
+    "message": "Clé SSH"
+  },
   "typeLoginPlural": {
     "message": "Identifiants"
   },
@@ -997,7 +1003,7 @@
     "message": "Utiliser l'authentification unique"
   },
   "welcomeBack": {
-    "message": "Bon retour"
+    "message": "Content de vous revoir"
   },
   "invalidPasskeyPleaseTryAgain": {
     "message": "Passkey invalide. Veuillez réessayer de nouveau."
@@ -1270,7 +1276,7 @@
     "message": "Vous n'avez pas la permission de voir tous les éléments de cette collection."
   },
   "youDoNotHavePermissions": {
-    "message": "Vous n'avez pas les permissions pour cette collection"
+    "message": "Vous n'avez pas les autorisations pour cette collection"
   },
   "noCollectionsInList": {
     "message": "Aucune collection à afficher."
@@ -3834,6 +3840,55 @@
   "updateBrowserDesc": {
     "message": "Vous utilisez un navigateur non supporté. Le coffre web pourrait ne pas fonctionner correctement."
   },
+  "freeTrialEndPrompt": {
+    "message": "Votre essai gratuit se termine dans $COUNT$ jours. Pour conserver votre abonnement,",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "You must set up 2FA on your user account before you can join this organization."
+      }
+    }
+  },
+  "freeTrialEndPromptAboveTwoDays": {
+    "message": "$ORGANIZATION$, votre essai gratuit se termine dans $COUNT$ jours. Pour conserver votre abonnement,",
+    "placeholders": {
+      "count": {
+        "content": "$2",
+        "example": "organization name"
+      },
+      "organization": {
+        "content": "$1",
+        "example": "remaining days"
+      }
+    }
+  },
+  "freeTrialEndPromptForOneDay": {
+    "message": "$ORGANIZATION$, votre essai gratuit se termine demain. Pour conserver votre abonnement,",
+    "placeholders": {
+      "organization": {
+        "content": "$1",
+        "example": "organization name"
+      }
+    }
+  },
+  "freeTrialEndPromptForOneDayNoOrgName": {
+    "message": "Votre essai gratuit se termine demain. Pour maintenir votre abonnement,"
+  },
+  "freeTrialEndPromptForLessThanADay": {
+    "message": "$ORGANIZATION$, votre essai gratuit se termine demain. Pour conserver votre abonnement,",
+    "placeholders": {
+      "organization": {
+        "content": "$1",
+        "example": "organization name"
+      }
+    }
+  },
+  "freeTrialEndingSoonWithoutOrgName": {
+    "message": "Votre essai gratuit se termine aujourd'hui. Pour maintenir votre abonnement,"
+  },
+  "routeToPaymentMethodTrigger": {
+    "message": "ajouter un moyen de paiement."
+  },
   "joinOrganization": {
     "message": "Rejoindre l'organisation"
   },
@@ -4686,7 +4741,7 @@
     "message": "Empêcher les utilisateurs de pouvoir rejoindre d'autres organisations."
   },
   "singleOrgPolicyDesc": {
-    "message": "Restreindre les membres de rejoindre d'autres organisations. Cette politique est nécessaire pour les organisations qui ont activé la vérification de domaine."
+    "message": "Restreindre aux membres de rejoindre d'autres organisations. Cette politique de sécurité est nécessaire pour les organisations qui ont activé la vérification de domaine."
   },
   "singleOrgBlockCreateMessage": {
     "message": "Votre organisation actuelle a une politique qui ne vous permet pas de rejoindre plus d'une organisation. Veuillez contacter les administrateurs de votre organisation ou vous inscrire à partir d'un compte Bitwarden différent."
@@ -8441,7 +8496,7 @@
   },
   "addAPaymentMethod": {
     "message": "ajouter un moyen de paiement",
-    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'To maintain your subscription for $ORG$, add a payment method.'"
+    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'To maintain your subscription for $ORG$, add a payment method'"
   },
   "organizationInformation": {
     "message": "Informations sur l'organisation"
@@ -9014,6 +9069,12 @@
   "providerPlan": {
     "message": "Service Provider géré"
   },
+  "managedServiceProvider": {
+    "message": "Fournisseur de services géré"
+  },
+  "multiOrganizationEnterprise": {
+    "message": "Entreprise multi-organisation"
+  },
   "orgSeats": {
     "message": "Licences de l'Organisation"
   },
@@ -9416,6 +9477,30 @@
   "additionalStorageGbMessage": {
     "message": "GB de stockage additionnel"
   },
+  "sshKeyAlgorithm": {
+    "message": "Algorithme de clé"
+  },
+  "sshKeyFingerprint": {
+    "message": "Empreinte digitale"
+  },
+  "sshKeyPrivateKey": {
+    "message": "Clé privée"
+  },
+  "sshKeyPublicKey": {
+    "message": "Clé publique"
+  },
+  "sshKeyAlgorithmED25519": {
+    "message": "ED25519"
+  },
+  "sshKeyAlgorithmRSA2048": {
+    "message": "RSA 2048 bits"
+  },
+  "sshKeyAlgorithmRSA3072": {
+    "message": "RSA 3072-Bit"
+  },
+  "sshKeyAlgorithmRSA4096": {
+    "message": "RSA 4096-Bit"
+  },
   "premiumAccounts": {
     "message": "6 comptes premium"
   },
@@ -9540,23 +9625,23 @@
     "message": "Êtes-vous sûr de vouloir supprimer définitivement cette pièce jointe ?"
   },
   "manageSubscriptionFromThe": {
-    "message": "Gérer l'abonnement à partir du",
+    "message": "Manage subscription from the",
     "description": "This represents the beginning of a sentence. The full sentence will be 'Manage subscription from the Provider Portal', but 'Provider Portal' will be a link and thus cannot be included in the translation file."
   },
   "toHostBitwardenOnYourOwnServer": {
-    "message": "Pour héberger Bitwarden sur votre propre serveur, vous devrez téléverser votre fichier de licence. Pour prendre en charge les forfaits Familles Gratuits et les fonctionnalités de facturation avancées pour votre organisation auto-hébergée, vous devrez configurer la synchronisation automatique dans votre organisation auto-hébergée."
+    "message": "To host Bitwarden on your own server, you will need to upload your license file. To support Free Families plans and advanced billing capabilities for your self-hosted organization, you will need to set up automatic sync in your self-hosted organization."
   },
   "selfHostingTitleProper": {
-    "message": "Auto-Hébergement"
+    "message": "Self-Hosting"
   },
   "verified-domain-single-org-warning": {
-    "message": "La vérification d'un domaine activera la politique d'organisation unique."
+    "message": "Verifying a domain will turn on the single organization policy."
   },
   "single-org-revoked-user-warning": {
-    "message": "Les membres non conformes seront révoqués. Les administrateurs peuvent restaurer les membres une fois qu'ils quittent toutes les autres organisations."
+    "message": "Non-compliant members will be revoked. Administrators can restore members once they leave all other organizations."
   },
   "deleteOrganizationUser": {
-    "message": "Supprimer $NAME$",
+    "message": "Delete $NAME$",
     "placeholders": {
       "name": {
         "content": "$1",
@@ -9566,11 +9651,11 @@
     }
   },
   "deleteOrganizationUserWarning": {
-    "message": "Lorsqu'un membre est supprimé, son compte Bitwarden et les données individuelles du coffre seront définitivement supprimées. Les données de Collection resteront dans l'organisation. Pour les rétablir, ils doivent créer un compte et être intégrés à nouveau.",
+    "message": "When a member is deleted, their Bitwarden account and individual vault data will be permanently deleted. Collection data will remain in the organization. To reinstate them they must create an account and be onboarded again.",
     "description": "Warning for the delete organization user dialog"
   },
   "organizationUserDeleted": {
-    "message": "Supprimer $NAME$",
+    "message": "Deleted $NAME$",
     "placeholders": {
       "name": {
         "content": "$1",
@@ -9579,6 +9664,48 @@
     }
   },
   "organizationUserDeletedDesc": {
-    "message": "L'utilisateur a été supprimé de l'organisation et toutes les données utilisateur associées ont été supprimées."
+    "message": "The user was removed from the organization and all associated user data has been deleted."
+  },
+  "deletedUserId": {
+    "message": "Deleted user $ID$ - an owner / admin deleted the user account",
+    "placeholders": {
+      "id": {
+        "content": "$1",
+        "example": "First 8 Character of a GUID"
+      }
+    }
+  },
+  "userLeftOrganization": {
+    "message": "User $ID$ left organization",
+    "placeholders": {
+      "id": {
+        "content": "$1",
+        "example": "First 8 Character of a GUID"
+      }
+    }
+  },
+  "suspendedOrganizationTitle": {
+    "message": "The $ORGANIZATION$ is suspended",
+    "placeholders": {
+      "organization": {
+        "content": "$1",
+        "example": "Acme c"
+      }
+    }
+  },
+  "suspendedUserOrgMessage": {
+    "message": "Contact your organization owner for assistance."
+  },
+  "suspendedOwnerOrgMessage": {
+    "message": "To regain access to your organization, add a payment method."
+  },
+  "deleteMembers": {
+    "message": "Supprimer les membres"
+  },
+  "noSelectedMembersApplicable": {
+    "message": "Cette action n'est applicable à aucun des membres sélectionnés."
+  },
+  "deletedSuccessfully": {
+    "message": "Supprimé avec succès"
   }
 }

@@ -5,14 +5,17 @@
   "criticalApplications": {
     "message": "Aplicações críticas"
   },
+  "accessIntelligence": {
+    "message": "Aceder à informação"
+  },
   "riskInsights": {
-    "message": "Risk Insights"
+    "message": "Perceções do risco"
   },
   "passwordRisk": {
     "message": "Risco da palavra-passe"
   },
-  "discoverAtRiskPasswords": {
-    "message": "Descubra as palavras-passe em risco e notifique os utilizadores para alterarem essas palavras-passe."
+  "reviewAtRiskPasswords": {
+    "message": "Reveja as palavras-passe em risco (fracas, expostas ou reutilizadas) em todas as aplicações. Selecione as suas aplicações mais críticas para dar prioridade a ações de segurança para os seus utilizadores para resolver as palavras-passe em risco."
   },
   "dataLastUpdated": {
     "message": "Última atualização dos dados: $DATE$",
@@ -36,7 +39,7 @@
     }
   },
   "createNewLoginItem": {
-    "message": "Criar novo item de credencial"
+    "message": "Criar nova credencial"
   },
   "criticalApplicationsWithCount": {
     "message": "Aplicações críticas ($COUNT$)",
@@ -75,10 +78,10 @@
     "message": "Selecione as suas aplicações mais críticas para descobrir palavras-passe em risco e notifique os utilizadores para alterarem essas palavras-passe."
   },
   "markCriticalApps": {
-    "message": "Marcar aplicações críticas"
+    "message": "Marcar apps críticas"
   },
   "markAppAsCritical": {
-    "message": "Marcar a aplicação como crítica"
+    "message": "Marcar a app como crítica"
   },
   "appsMarkedAsCritical": {
     "message": "Apps marcadas como críticas"
@@ -558,6 +561,9 @@
   },
   "typeSecureNote": {
     "message": "Nota segura"
+  },
+  "typeSshKey": {
+    "message": "Chave SSH"
   },
   "typeLoginPlural": {
     "message": "Credenciais"
@@ -3833,6 +3839,55 @@
   },
   "updateBrowserDesc": {
     "message": "Está a utilizar um navegador web não suportado. O cofre web pode não funcionar corretamente."
+  },
+  "freeTrialEndPrompt": {
+    "message": "O seu período experimental gratuito termina dentro de $COUNT$ dias. Para manter a sua subscrição,",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "You must set up 2FA on your user account before you can join this organization."
+      }
+    }
+  },
+  "freeTrialEndPromptAboveTwoDays": {
+    "message": "$ORGANIZATION$, o vosso período experimental gratuito termina dentro de $COUNT$ dias. Para manterem a vossa subscrição,",
+    "placeholders": {
+      "count": {
+        "content": "$2",
+        "example": "organization name"
+      },
+      "organization": {
+        "content": "$1",
+        "example": "remaining days"
+      }
+    }
+  },
+  "freeTrialEndPromptForOneDay": {
+    "message": "$ORGANIZATION$, o vosso período experimental gratuito termina amanhã. Para manterem a vossa subscrição,",
+    "placeholders": {
+      "organization": {
+        "content": "$1",
+        "example": "organization name"
+      }
+    }
+  },
+  "freeTrialEndPromptForOneDayNoOrgName": {
+    "message": "O seu período experimental gratuito termina amanhã. Para manter a sua subscrição,"
+  },
+  "freeTrialEndPromptForLessThanADay": {
+    "message": "$ORGANIZATION$, o vosso período experimental gratuito termina hoje. Para manterem a vossa subscrição,",
+    "placeholders": {
+      "organization": {
+        "content": "$1",
+        "example": "organization name"
+      }
+    }
+  },
+  "freeTrialEndingSoonWithoutOrgName": {
+    "message": "O seu período experimental gratuito termina hoje. Para manter a sua subscrição,"
+  },
+  "routeToPaymentMethodTrigger": {
+    "message": "adicione um método de pagamento."
   },
   "joinOrganization": {
     "message": "Aderir à organização"
@@ -8441,7 +8496,7 @@
   },
   "addAPaymentMethod": {
     "message": "adicione um método de pagamento",
-    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'To maintain your subscription for $ORG$, add a payment method.'"
+    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'To maintain your subscription for $ORG$, add a payment method'"
   },
   "organizationInformation": {
     "message": "Informações sobre a organização"
@@ -9014,6 +9069,12 @@
   "providerPlan": {
     "message": "Fornecedor de serviços geridos"
   },
+  "managedServiceProvider": {
+    "message": "Fornecedor de serviços geridos"
+  },
+  "multiOrganizationEnterprise": {
+    "message": "Empresa multiorganizacional"
+  },
   "orgSeats": {
     "message": "Lugares da organização"
   },
@@ -9416,6 +9477,30 @@
   "additionalStorageGbMessage": {
     "message": "GB de armazenamento adicional"
   },
+  "sshKeyAlgorithm": {
+    "message": "Algoritmo de chaves"
+  },
+  "sshKeyFingerprint": {
+    "message": "Impressão digital"
+  },
+  "sshKeyPrivateKey": {
+    "message": "Chave privada"
+  },
+  "sshKeyPublicKey": {
+    "message": "Chave pública"
+  },
+  "sshKeyAlgorithmED25519": {
+    "message": "ED25519"
+  },
+  "sshKeyAlgorithmRSA2048": {
+    "message": "RSA 2048-Bit"
+  },
+  "sshKeyAlgorithmRSA3072": {
+    "message": "RSA 3072-Bit"
+  },
+  "sshKeyAlgorithmRSA4096": {
+    "message": "RSA 4096-Bit"
+  },
   "premiumAccounts": {
     "message": "6 contas Premium"
   },
@@ -9580,5 +9665,47 @@
   },
   "organizationUserDeletedDesc": {
     "message": "O utilizador foi removido da organização e todos os dados de utilizador associados foram eliminados."
+  },
+  "deletedUserId": {
+    "message": "Utilizador $ID$ eliminado - um proprietário/administrador eliminou a conta de utilizador",
+    "placeholders": {
+      "id": {
+        "content": "$1",
+        "example": "First 8 Character of a GUID"
+      }
+    }
+  },
+  "userLeftOrganization": {
+    "message": "O utilizador $ID$ saiu da organização",
+    "placeholders": {
+      "id": {
+        "content": "$1",
+        "example": "First 8 Character of a GUID"
+      }
+    }
+  },
+  "suspendedOrganizationTitle": {
+    "message": "A $ORGANIZATION$ está suspensa",
+    "placeholders": {
+      "organization": {
+        "content": "$1",
+        "example": "Acme c"
+      }
+    }
+  },
+  "suspendedUserOrgMessage": {
+    "message": "Contacte o proprietário da sua organização para obter assistência."
+  },
+  "suspendedOwnerOrgMessage": {
+    "message": "Para recuperar o acesso à sua organização, adicione um método de pagamento."
+  },
+  "deleteMembers": {
+    "message": "Eliminar membros"
+  },
+  "noSelectedMembersApplicable": {
+    "message": "Esta ação não é aplicável a nenhum dos membros selecionados."
+  },
+  "deletedSuccessfully": {
+    "message": "Eliminados com sucesso"
   }
 }

@@ -5,17 +5,20 @@
   "criticalApplications": {
     "message": "Kriittiset sovellukset"
   },
+  "accessIntelligence": {
+    "message": "Access Intelligence"
+  },
   "riskInsights": {
     "message": "Risk Insights"
   },
   "passwordRisk": {
-    "message": "Salasanariski"
+    "message": "Password Risk"
   },
-  "discoverAtRiskPasswords": {
-    "message": "Discover at-risk passwords and notify users to change those passwords."
+  "reviewAtRiskPasswords": {
+    "message": "Review at-risk passwords (weak, exposed, or reused) across applications. Select your most critical applications to prioritize security actions for your users to address at-risk passwords."
   },
   "dataLastUpdated": {
-    "message": "Tiedot päivitetty viimeksi: $DATE$",
+    "message": "Data last updated: $DATE$",
     "placeholders": {
       "date": {
         "content": "$1",
@@ -57,7 +60,7 @@
     }
   },
   "noAppsInOrgTitle": {
-    "message": "Sovelluksia ei löytynyt organisaatiosta $ORG NAME$",
+    "message": "No applications found in $ORG NAME$",
     "placeholders": {
       "org name": {
         "content": "$1",
@@ -66,13 +69,13 @@
     }
   },
   "noAppsInOrgDescription": {
-    "message": "Kun käyttäjät tallentavat kirjautumistietoja, näytetään sovellukset ja vaarantuneet salasanat täällä. Merkitse kriittiset sovellukset ja ilmoita käyttäjille salasanojen vaihdosta."
+    "message": "As users save logins, applications appear here, showing any at-risk passwords. Mark critical apps and notify users to update passwords."
   },
   "noCriticalAppsTitle": {
-    "message": "Sovelluksia ei ole merkitty kriittisiksi"
+    "message": "You haven't marked any applications as a Critical"
   },
   "noCriticalAppsDescription": {
-    "message": "Valitse kriittisimmät sovelluksesi havaitaksesi vaarantuneet salasanat ja ilmoita käyttäjille niiden vaihdosta."
+    "message": "Select your most critical applications to discover at-risk passwords, and notify users to change those passwords."
   },
   "markCriticalApps": {
     "message": "Merkitse kriittiset sovellukset"
@@ -558,6 +561,9 @@
   },
   "typeSecureNote": {
     "message": "Salattu muistio"
+  },
+  "typeSshKey": {
+    "message": "SSH-avain"
   },
   "typeLoginPlural": {
     "message": "Kirjautumistiedot"
@@ -1738,7 +1744,7 @@
     "message": "Ole varovainen! Näitä toimintoja ei ole mahdollista kumota!"
   },
   "dangerZoneDescSingular": {
-    "message": "Ole varoivainen. Tätä ei ole mahdollista perua!"
+    "message": "Careful, this action is not reversible!"
   },
   "deauthorizeSessions": {
     "message": "Mitätöi kaikki istunnot"
@@ -1753,7 +1759,7 @@
     "message": "Kaikki istunnot mitätöitiin"
   },
   "accountIsManagedMessage": {
-    "message": "Tiliä hallinnoi $ORGANIZATIONNAME$",
+    "message": "This account is managed by $ORGANIZATIONNAME$",
     "placeholders": {
       "organizationName": {
         "content": "$1",
@@ -3834,6 +3840,55 @@
   "updateBrowserDesc": {
     "message": "Käytät selainta, jota ei tueta. Verkkoholvi ei välttämättä toimi oikein."
   },
+  "freeTrialEndPrompt": {
+    "message": "Your free trial ends in $COUNT$ days. To maintain your subscription,",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "You must set up 2FA on your user account before you can join this organization."
+      }
+    }
+  },
+  "freeTrialEndPromptAboveTwoDays": {
+    "message": "$ORGANIZATION$, your free trial ends in $COUNT$ days. To maintain your subscription,",
+    "placeholders": {
+      "count": {
+        "content": "$2",
+        "example": "organization name"
+      },
+      "organization": {
+        "content": "$1",
+        "example": "remaining days"
+      }
+    }
+  },
+  "freeTrialEndPromptForOneDay": {
+    "message": "$ORGANIZATION$, your free trial ends tomorrow. To maintain your subscription,",
+    "placeholders": {
+      "organization": {
+        "content": "$1",
+        "example": "organization name"
+      }
+    }
+  },
+  "freeTrialEndPromptForOneDayNoOrgName": {
+    "message": "Your free trial ends tomorrow. To maintain your subscription,"
+  },
+  "freeTrialEndPromptForLessThanADay": {
+    "message": "$ORGANIZATION$, your free trial ends today. To maintain your subscription,",
+    "placeholders": {
+      "organization": {
+        "content": "$1",
+        "example": "organization name"
+      }
+    }
+  },
+  "freeTrialEndingSoonWithoutOrgName": {
+    "message": "Ilmainen kokeilujaksosi päättyy tänään. Säilyttääksesi tilauksesi,"
+  },
+  "routeToPaymentMethodTrigger": {
+    "message": "lisää maksutapa."
+  },
   "joinOrganization": {
     "message": "Liity organisaatioon"
   },
@@ -4686,7 +4741,7 @@
     "message": "Estä jäseniä liittymästä muihin organisaatioihin."
   },
   "singleOrgPolicyDesc": {
-    "message": "Estä jäseniä liittymästä muihin organisaatioihin. Tätä käytäntöä tarvitaan organisaatioille, jotka käyttävät verkkotunnustodennusta."
+    "message": "Restrict members from joining other organizations. This policy is required for organizations that have enabled domain verification."
   },
   "singleOrgBlockCreateMessage": {
     "message": "Nykyisen organisaatiosi käytäntö ei salli liittymistä yhtä useampaan organisaatioon. Ole yhteydessä organisaatiosi ylläpitoon tai liity eri Bitwarden-tilin kautta."
@@ -4695,7 +4750,7 @@
     "message": "Organisaation jäsenet, jotka eivät ole omistajia tai ylläpitäjiä ja jotka ovat jo toisen organisaation jäseniä, poistetaan organisaatiostasi."
   },
   "singleOrgPolicyMemberWarning": {
-    "message": "Käytännöstä poikkeavat jäsenet asetetaan mitätöityyn tilaan, kunnes he poistuvat kaikista muista organisaatioista. Poikkeuksena ylläpitäjät, jotka voivat palauttaa jäsenten tilan vaatimusten täytyttyä."
+    "message": "Non-compliant members will be placed in revoked status until they leave all other organizations. Administrators are exempt and can restore members once compliance is met."
   },
   "requireSso": {
     "message": "Vaadi todennus kertakirjautumisella"
@@ -6414,7 +6469,7 @@
     "message": "Luo sähköpostiosoite"
   },
   "generatorBoundariesHint": {
-    "message": "Arvon tulee olla väliltä $MIN$ - $MAX$",
+    "message": "Arvon tulee olla väliltä $MIN$—$MAX$",
     "description": "Explains spin box minimum and maximum values to the user",
     "placeholders": {
       "min": {
@@ -6537,7 +6592,7 @@
     "description": "Labels the domain name email forwarder service option"
   },
   "forwarderDomainNameHint": {
-    "message": "Valitse verkkotunnus, jota valittu palvelu tukee",
+    "message": "Choose a domain that is supported by the selected service",
     "description": "Guidance provided for email forwarding services that support multiple email domains."
   },
   "forwarderError": {
@@ -8441,7 +8496,7 @@
   },
   "addAPaymentMethod": {
     "message": "lisää maksutapa",
-    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'To maintain your subscription for $ORG$, add a payment method.'"
+    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'To maintain your subscription for $ORG$, add a payment method'"
   },
   "organizationInformation": {
     "message": "Organisaation tiedot"
@@ -9014,6 +9069,12 @@
   "providerPlan": {
     "message": "Hallintapalvelun toimittaja"
   },
+  "managedServiceProvider": {
+    "message": "Managed service provider"
+  },
+  "multiOrganizationEnterprise": {
+    "message": "Multi-organization enterprise"
+  },
   "orgSeats": {
     "message": "Organisaation käyttäjäpaikat"
   },
@@ -9416,6 +9477,30 @@
   "additionalStorageGbMessage": {
     "message": "Gt enemmän tallennustilaa"
   },
+  "sshKeyAlgorithm": {
+    "message": "Avainalgoritmi"
+  },
+  "sshKeyFingerprint": {
+    "message": "Sormenjälki"
+  },
+  "sshKeyPrivateKey": {
+    "message": "Yksityinen avain"
+  },
+  "sshKeyPublicKey": {
+    "message": "Julkinen avain"
+  },
+  "sshKeyAlgorithmED25519": {
+    "message": "ED25519"
+  },
+  "sshKeyAlgorithmRSA2048": {
+    "message": "RSA 2048-Bit"
+  },
+  "sshKeyAlgorithmRSA3072": {
+    "message": "RSA 3072-Bit"
+  },
+  "sshKeyAlgorithmRSA4096": {
+    "message": "RSA 4096-Bit"
+  },
   "premiumAccounts": {
     "message": "Kuusi premium-tiliä"
   },
@@ -9540,7 +9625,7 @@
     "message": "Haluatko varmasti poistaa liitteen pysyvästi?"
   },
   "manageSubscriptionFromThe": {
-    "message": "Hallitse tilausta sivulta",
+    "message": "Manage subscription from the",
     "description": "This represents the beginning of a sentence. The full sentence will be 'Manage subscription from the Provider Portal', but 'Provider Portal' will be a link and thus cannot be included in the translation file."
   },
   "toHostBitwardenOnYourOwnServer": {
@@ -9556,7 +9641,7 @@
     "message": "Non-compliant members will be revoked. Administrators can restore members once they leave all other organizations."
   },
   "deleteOrganizationUser": {
-    "message": "Delete $NAME$",
+    "message": "Poista $NAME$",
     "placeholders": {
       "name": {
         "content": "$1",
@@ -9570,7 +9655,7 @@
     "description": "Warning for the delete organization user dialog"
   },
   "organizationUserDeleted": {
-    "message": "Deleted $NAME$",
+    "message": "$NAME$ poistettiin",
     "placeholders": {
       "name": {
         "content": "$1",
@@ -9580,5 +9665,47 @@
   },
   "organizationUserDeletedDesc": {
     "message": "The user was removed from the organization and all associated user data has been deleted."
+  },
+  "deletedUserId": {
+    "message": "Deleted user $ID$ - an owner / admin deleted the user account",
+    "placeholders": {
+      "id": {
+        "content": "$1",
+        "example": "First 8 Character of a GUID"
+      }
+    }
+  },
+  "userLeftOrganization": {
+    "message": "Käyttäjä $ID$ jätti organisaation",
+    "placeholders": {
+      "id": {
+        "content": "$1",
+        "example": "First 8 Character of a GUID"
+      }
+    }
+  },
+  "suspendedOrganizationTitle": {
+    "message": "The $ORGANIZATION$ is suspended",
+    "placeholders": {
+      "organization": {
+        "content": "$1",
+        "example": "Acme c"
+      }
+    }
+  },
+  "suspendedUserOrgMessage": {
+    "message": "Pyydä organisaation omistajalta apua."
+  },
+  "suspendedOwnerOrgMessage": {
+    "message": "To regain access to your organization, add a payment method."
+  },
+  "deleteMembers": {
+    "message": "Poista jäsenet"
+  },
+  "noSelectedMembersApplicable": {
+    "message": "This action is not applicable to any of the selected members."
+  },
+  "deletedSuccessfully": {
+    "message": "Poisto onnistui"
   }
 }

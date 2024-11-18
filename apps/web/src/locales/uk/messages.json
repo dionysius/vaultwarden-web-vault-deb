@@ -5,14 +5,17 @@
   "criticalApplications": {
     "message": "Критичні програми"
   },
+  "accessIntelligence": {
+    "message": "Управління доступом"
+  },
   "riskInsights": {
-    "message": "Risk Insights"
+    "message": "Інформація щодо ризику"
   },
   "passwordRisk": {
     "message": "Ризиковані паролі"
   },
-  "discoverAtRiskPasswords": {
-    "message": "Discover at-risk passwords and notify users to change those passwords."
+  "reviewAtRiskPasswords": {
+    "message": "Переглядайте ризиковані паролі в різних програмах (слабкі, викриті, або повторно використані). Виберіть найбільш критичні програми, щоб визначити пріоритети дій щодо безпеки для користувачів, які використовують ризиковані паролі."
   },
   "dataLastUpdated": {
     "message": "Дані востаннє оновлено: $DATE$",
@@ -559,6 +562,9 @@
   "typeSecureNote": {
     "message": "Захищена нотатка"
   },
+  "typeSshKey": {
+    "message": "Ключ SSH"
+  },
   "typeLoginPlural": {
     "message": "Записи"
   },
@@ -994,7 +1000,7 @@
     "message": "Увійти з ключем доступу"
   },
   "useSingleSignOn": {
-    "message": "Використовувати єдиний вхід"
+    "message": "Використати єдиний вхід"
   },
   "welcomeBack": {
     "message": "З поверненням"
@@ -3833,6 +3839,55 @@
   },
   "updateBrowserDesc": {
     "message": "Ви використовуєте непідтримуваний браузер. Вебсховище може працювати неправильно."
+  },
+  "freeTrialEndPrompt": {
+    "message": "Ваш безплатний пробний період завершується через $COUNT$ днів. Щоб продовжити передплату,",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "You must set up 2FA on your user account before you can join this organization."
+      }
+    }
+  },
+  "freeTrialEndPromptAboveTwoDays": {
+    "message": "$ORGANIZATION$, ваш безплатний пробний період завершується через $COUNT$ днів. Щоб продовжити передплату,",
+    "placeholders": {
+      "count": {
+        "content": "$2",
+        "example": "organization name"
+      },
+      "organization": {
+        "content": "$1",
+        "example": "remaining days"
+      }
+    }
+  },
+  "freeTrialEndPromptForOneDay": {
+    "message": "$ORGANIZATION$, ваш безплатний пробний період завершується завтра. Щоб продовжити передплату,",
+    "placeholders": {
+      "organization": {
+        "content": "$1",
+        "example": "organization name"
+      }
+    }
+  },
+  "freeTrialEndPromptForOneDayNoOrgName": {
+    "message": "Ваш безплатний пробний період завершується завтра. Щоб продовжити передплату,"
+  },
+  "freeTrialEndPromptForLessThanADay": {
+    "message": "$ORGANIZATION$, ваш безплатний пробний період завершується сьогодні. Щоб продовжити передплату,",
+    "placeholders": {
+      "organization": {
+        "content": "$1",
+        "example": "organization name"
+      }
+    }
+  },
+  "freeTrialEndingSoonWithoutOrgName": {
+    "message": "Ваш безплатний пробний період завершується сьогодні. Щоб продовжити передплату,"
+  },
+  "routeToPaymentMethodTrigger": {
+    "message": "додайте спосіб оплати."
   },
   "joinOrganization": {
     "message": "Приєднатися до організації"
@@ -8441,7 +8496,7 @@
   },
   "addAPaymentMethod": {
     "message": "додайте спосіб оплати",
-    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'To maintain your subscription for $ORG$, add a payment method.'"
+    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'To maintain your subscription for $ORG$, add a payment method'"
   },
   "organizationInformation": {
     "message": "Інформація про організацію"
@@ -9014,6 +9069,12 @@
   "providerPlan": {
     "message": "Керований постачальник послуг"
   },
+  "managedServiceProvider": {
+    "message": "Провайдер керованих послуг"
+  },
+  "multiOrganizationEnterprise": {
+    "message": "Підприємство з розгалуженою організацією"
+  },
   "orgSeats": {
     "message": "Місць в організації"
   },
@@ -9416,6 +9477,30 @@
   "additionalStorageGbMessage": {
     "message": "ГБ додаткового сховища"
   },
+  "sshKeyAlgorithm": {
+    "message": "Алгоритм ключа"
+  },
+  "sshKeyFingerprint": {
+    "message": "Цифровий відбиток"
+  },
+  "sshKeyPrivateKey": {
+    "message": "Закритий ключ"
+  },
+  "sshKeyPublicKey": {
+    "message": "Відкритий ключ"
+  },
+  "sshKeyAlgorithmED25519": {
+    "message": "ED25519"
+  },
+  "sshKeyAlgorithmRSA2048": {
+    "message": "RSA 2048-Bit"
+  },
+  "sshKeyAlgorithmRSA3072": {
+    "message": "RSA 3072-Bit"
+  },
+  "sshKeyAlgorithmRSA4096": {
+    "message": "RSA 4096-Bit"
+  },
   "premiumAccounts": {
     "message": "6 облікових записів Преміум"
   },
@@ -9580,5 +9665,47 @@
   },
   "organizationUserDeletedDesc": {
     "message": "Користувача вилучено з організації. Всі пов'язані дані користувача видалено."
+  },
+  "deletedUserId": {
+    "message": "Видалений користувач $ID$ - власник / адміністратор видалив обліковий запис користувача",
+    "placeholders": {
+      "id": {
+        "content": "$1",
+        "example": "First 8 Character of a GUID"
+      }
+    }
+  },
+  "userLeftOrganization": {
+    "message": "Користувач $ID$ покинув організацію",
+    "placeholders": {
+      "id": {
+        "content": "$1",
+        "example": "First 8 Character of a GUID"
+      }
+    }
+  },
+  "suspendedOrganizationTitle": {
+    "message": "Організацію $ORGANIZATION$ призупинено",
+    "placeholders": {
+      "organization": {
+        "content": "$1",
+        "example": "Acme c"
+      }
+    }
+  },
+  "suspendedUserOrgMessage": {
+    "message": "Зверніться до власника організації для консультації."
+  },
+  "suspendedOwnerOrgMessage": {
+    "message": "Щоб повернути доступ до своєї організації, додайте спосіб оплати."
+  },
+  "deleteMembers": {
+    "message": "Видалити учасників"
+  },
+  "noSelectedMembersApplicable": {
+    "message": "Ця дія не застосовується для жодного з вибраних учасників."
+  },
+  "deletedSuccessfully": {
+    "message": "Успішно видалено"
   }
 }
