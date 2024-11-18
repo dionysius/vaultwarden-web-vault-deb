@@ -24,6 +24,7 @@ import {
 } from "@bitwarden/components";
 
 import { flagEnabled } from "../platform/flags";
+import { PopupCompactModeService } from "../platform/popup/layout/popup-compact-mode.service";
 import { PopupViewCacheService } from "../platform/popup/view-cache/popup-view-cache.service";
 import { initPopupClosedListener } from "../platform/services/popup-view-cache-background.service";
 import { BrowserSendStateService } from "../tools/popup/services/browser-send-state.service";
@@ -42,6 +43,7 @@ import { DesktopSyncVerificationDialogComponent } from "./components/desktop-syn
 })
 export class AppComponent implements OnInit, OnDestroy {
   private viewCacheService = inject(PopupViewCacheService);
+  private compactModeService = inject(PopupCompactModeService);
 
   private lastActivity: Date;
   private activeUserId: UserId;
@@ -95,6 +97,8 @@ export class AppComponent implements OnInit, OnDestroy {
   async ngOnInit() {
     initPopupClosedListener();
     await this.viewCacheService.init();
+
+    this.compactModeService.init();
 
     // Component states must not persist between closing and reopening the popup, otherwise they become dead objects
     // Clear them aggressively to make sure this doesn't occur

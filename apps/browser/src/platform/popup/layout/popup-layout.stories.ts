@@ -117,11 +117,7 @@ class MockCurrentAccountComponent {}
 
 @Component({
   selector: "mock-search",
-  template: `
-    <div class="tw-p-4">
-      <bit-search placeholder="Search"> </bit-search>
-    </div>
-  `,
+  template: ` <bit-search placeholder="Search"> </bit-search> `,
   standalone: true,
   imports: [SearchModule],
 })
@@ -408,6 +404,46 @@ export const PopupPageWithFooter: Story = {
       </extension-container>
     `,
   }),
+};
+
+export const CompactMode: Story = {
+  render: (args) => ({
+    props: args,
+    template: /* HTML */ `
+      <div class="tw-flex tw-gap-6 tw-text-main">
+        <div id="regular-example">
+          <p>Relaxed</p>
+          <p class="example-label"></p>
+          <extension-container>
+            <mock-vault-subpage></mock-vault-subpage>
+          </extension-container>
+        </div>
+
+        <div id="compact-example" class="tw-bit-compact">
+          <p>Compact</p>
+          <p class="example-label"></p>
+          <extension-container>
+            <mock-vault-subpage></mock-vault-subpage>
+          </extension-container>
+        </div>
+      </div>
+    `,
+  }),
+  play: async (context) => {
+    const canvasEl = context.canvasElement;
+    const updateLabel = (containerId: string) => {
+      const compact = canvasEl.querySelector(
+        `#${containerId} [data-testid=popup-layout-scroll-region]`,
+      );
+      const label = canvasEl.querySelector(`#${containerId} .example-label`);
+      const percentVisible =
+        100 -
+        Math.round((100 * (compact.scrollHeight - compact.clientHeight)) / compact.scrollHeight);
+      label.textContent = `${percentVisible}% above the fold`;
+    };
+    updateLabel("compact-example");
+    updateLabel("regular-example");
+  },
 };
 
 export const PoppedOut: Story = {

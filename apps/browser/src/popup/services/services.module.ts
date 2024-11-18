@@ -103,7 +103,7 @@ import {
 } from "@bitwarden/common/vault/abstractions/folder/folder.service.abstraction";
 import { TotpService as TotpServiceAbstraction } from "@bitwarden/common/vault/abstractions/totp.service";
 import { TotpService } from "@bitwarden/common/vault/services/totp.service";
-import { DialogService, ToastService } from "@bitwarden/components";
+import { CompactModeService, DialogService, ToastService } from "@bitwarden/components";
 import { PasswordGenerationServiceAbstraction } from "@bitwarden/generator-legacy";
 import { BiometricStateService, BiometricsService, KeyService } from "@bitwarden/key-management";
 import { PasswordRepromptService } from "@bitwarden/vault";
@@ -123,6 +123,7 @@ import { ChromeMessageSender } from "../../platform/messaging/chrome-message.sen
 /* eslint-enable no-restricted-imports */
 import { OffscreenDocumentService } from "../../platform/offscreen-document/abstractions/offscreen-document";
 import { DefaultOffscreenDocumentService } from "../../platform/offscreen-document/offscreen-document.service";
+import { PopupCompactModeService } from "../../platform/popup/layout/popup-compact-mode.service";
 import { BrowserFileDownloadService } from "../../platform/popup/services/browser-file-download.service";
 import { PopupViewCacheService } from "../../platform/popup/view-cache/popup-view-cache.service";
 import { ScriptInjectorService } from "../../platform/services/abstractions/script-injector.service";
@@ -579,6 +580,11 @@ const safeProviders: SafeProvider[] = [
   safeProvider({
     provide: ExtensionAnonLayoutWrapperDataService,
     useClass: ExtensionAnonLayoutWrapperDataService,
+    deps: [],
+  }),
+  safeProvider({
+    provide: CompactModeService,
+    useExisting: PopupCompactModeService,
     deps: [],
   }),
 ];

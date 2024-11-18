@@ -13,6 +13,7 @@ import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/pl
 import { ThemeType } from "@bitwarden/common/platform/enums";
 import { ThemeStateService } from "@bitwarden/common/platform/theming/theme-state.service";
 
+import { PopupCompactModeService } from "../../../platform/popup/layout/popup-compact-mode.service";
 import { PopupHeaderComponent } from "../../../platform/popup/layout/popup-header.component";
 import { PopupPageComponent } from "../../../platform/popup/layout/popup-page.component";
 
@@ -43,10 +44,12 @@ describe("AppearanceV2Component", () => {
   const enableBadgeCounter$ = new BehaviorSubject<boolean>(true);
   const selectedTheme$ = new BehaviorSubject<ThemeType>(ThemeType.Nord);
   const enableRoutingAnimation$ = new BehaviorSubject<boolean>(true);
+  const enableCompactMode$ = new BehaviorSubject<boolean>(false);
   const setSelectedTheme = jest.fn().mockResolvedValue(undefined);
   const setShowFavicons = jest.fn().mockResolvedValue(undefined);
   const setEnableBadgeCounter = jest.fn().mockResolvedValue(undefined);
   const setEnableRoutingAnimation = jest.fn().mockResolvedValue(undefined);
+  const setEnableCompactMode = jest.fn().mockResolvedValue(undefined);
 
   beforeEach(async () => {
     setSelectedTheme.mockClear();
@@ -71,6 +74,10 @@ describe("AppearanceV2Component", () => {
           provide: BadgeSettingsServiceAbstraction,
           useValue: { enableBadgeCounter$, setEnableBadgeCounter },
         },
+        {
+          provide: PopupCompactModeService,
+          useValue: { enabled$: enableCompactMode$, setEnabled: setEnableCompactMode },
+        },
       ],
     })
       .overrideComponent(AppearanceV2Component, {
@@ -94,6 +101,7 @@ describe("AppearanceV2Component", () => {
       enableFavicon: true,
       enableBadgeCounter: true,
       theme: ThemeType.Nord,
+      enableCompactMode: false,
     });
   });
 

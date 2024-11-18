@@ -175,5 +175,9 @@ module.exports = {
         addVariant(state, [`&:${state}`, `&.test-${state}`]);
       }
     }),
+    /** Plugin for compact mode */
+    plugin(function ({ addVariant }) {
+      addVariant("bit-compact", ".bit-compact &");
+    }),
   ],
 };

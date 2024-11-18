@@ -20,7 +20,7 @@
   </div>
   <bit-item-group>
     <cdk-virtual-scroll-viewport
-      [itemSize]="ItemHeight"
+      [itemSize]="itemHeight$ | async"
       class="tw-overflow-visible [&>.cdk-virtual-scroll-content-wrapper]:[contain:layout_style]"
     >
       <bit-item *cdkVirtualFor="let cipher of ciphers">
@@ -30,7 +30,7 @@
           (click)="onViewCipher(cipher)"
           (dblclick)="launchCipher(cipher)"
           [appA11yTitle]="'viewItemTitle' | i18n: cipher.name"
-          class="{{ ItemHeightClass }}"
+          class="{{ itemHeightClass }}"
         >
           <app-vault-icon slot="start" [cipher]="cipher"></app-vault-icon>
           <span data-testid="item-name">{{ cipher.name }}</span>
