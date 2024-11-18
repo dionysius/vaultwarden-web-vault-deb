@@ -26,6 +26,9 @@
   "typeSecureNote": {
     "message": "Biztonságos jegyzet"
   },
+  "typeSshKey": {
+    "message": "SSH kulcs"
+  },
   "folders": {
     "message": "Mappák"
   },
@@ -176,6 +179,48 @@
   },
   "address": {
     "message": "Postai cím"
+  },
+  "sshPrivateKey": {
+    "message": "Személyes kulcs"
+  },
+  "sshPublicKey": {
+    "message": "Nyilvános kulcs"
+  },
+  "sshFingerprint": {
+    "message": "Ujjlenyomat"
+  },
+  "sshKeyAlgorithm": {
+    "message": "Kulcs típusa"
+  },
+  "sshKeyAlgorithmED25519": {
+    "message": "ED25519"
+  },
+  "sshKeyAlgorithmRSA2048": {
+    "message": "RSA 2048-Bit"
+  },
+  "sshKeyAlgorithmRSA3072": {
+    "message": "RSA 3072-Bit"
+  },
+  "sshKeyAlgorithmRSA4096": {
+    "message": "RSA 4096-Bit"
+  },
+  "sshKeyGenerated": {
+    "message": "Új SSH-kulcs jött létre."
+  },
+  "sshAgentUnlockRequired": {
+    "message": "Az SSH-kulcskérés jóváhagyásához oldjuk fel a széfet."
+  },
+  "sshAgentUnlockTimeout": {
+    "message": "Az SSH-kulcs kérése időtúllépést okozott."
+  },
+  "enableSshAgent": {
+    "message": "SSH ügynök engedélyezése"
+  },
+  "enableSshAgentDesc": {
+    "message": "Engedélyezzük az SSH ügynök számára az SSH kérelmek aláírását közvetlenül a Bitwarden széfből."
+  },
+  "enableSshAgentHelp": {
+    "message": "Az SSH ügynök egy fejlesztőknek szánt szolgáltatás, amely lehetővé teszi az SSH kérések közvetlenül a Bitwarden széfből történő aláírását."
   },
   "premiumRequired": {
     "message": "Prémium szükséges"
@@ -400,6 +445,12 @@
   "copyPassword": {
     "message": "Jelszó másolása"
   },
+  "regenerateSshKey": {
+    "message": "SSH kulcs újragenerálása"
+  },
+  "copySshPrivateKey": {
+    "message": "SSH személyes kulcs másolása"
+  },
   "copyPassphrase": {
     "message": "Jelmondat másolása",
     "description": "Copy passphrase to clipboard"
@@ -573,7 +624,7 @@
     "message": "Bejelentkezés a Bitwardenbe"
   },
   "logInWithPasskey": {
-    "message": "Bejelentkezés azonosító kulcssal"
+    "message": "Bejelentkezés hozzáférési kulccsal"
   },
   "loginWithDevice": {
     "message": "Bejelentkezés eszközzel"
@@ -3224,6 +3275,36 @@
   },
   "ssoError": {
     "message": "Nem található szabad port az sso bejelentkezéshez."
+  },
+  "authorize": {
+    "message": "Hitelesítés"
+  },
+  "deny": {
+    "message": "Elutasítás"
+  },
+  "sshkeyApprovalTitle": {
+    "message": "SSH kulcs használat megerősítése"
+  },
+  "sshkeyApprovalMessageInfix": {
+    "message": "hozzáférést kér:"
+  },
+  "unknownApplication": {
+    "message": "Egy alkalmazás"
+  },
+  "sshKeyPasswordUnsupported": {
+    "message": "A jelszóval védett SSH kulcsok importálása még nem támogatott."
+  },
+  "invalidSshKey": {
+    "message": "Az SSH kulcs érvénytelen."
+  },
+  "sshKeyTypeUnsupported": {
+    "message": "Az SSH kulcstípus nem támogatott."
+  },
+  "importSshKeyFromClipboard": {
+    "message": "Kulcs importálása vágólapból"
+  },
+  "sshKeyPasted": {
+    "message": "Az SSH kulcs sikeresen importálásra került."
   },
   "fileSavedToDevice": {
     "message": "A fájl mentésre került az eszközre. Kezeljük az eszközről a letöltéseket."

@@ -26,6 +26,9 @@
   "typeSecureNote": {
     "message": "Salattu muistio"
   },
+  "typeSshKey": {
+    "message": "SSH-avain"
+  },
   "folders": {
     "message": "Kansiot"
   },
@@ -176,6 +179,48 @@
   },
   "address": {
     "message": "Osoite"
+  },
+  "sshPrivateKey": {
+    "message": "Yksityinen avain"
+  },
+  "sshPublicKey": {
+    "message": "Julkinen avain"
+  },
+  "sshFingerprint": {
+    "message": "Sormenjälki"
+  },
+  "sshKeyAlgorithm": {
+    "message": "Avaintyyppi"
+  },
+  "sshKeyAlgorithmED25519": {
+    "message": "ED25519"
+  },
+  "sshKeyAlgorithmRSA2048": {
+    "message": "RSA 2048-Bit"
+  },
+  "sshKeyAlgorithmRSA3072": {
+    "message": "RSA 3072-Bit"
+  },
+  "sshKeyAlgorithmRSA4096": {
+    "message": "RSA 4096-Bit"
+  },
+  "sshKeyGenerated": {
+    "message": "Uusi SSH-avain luotiin"
+  },
+  "sshAgentUnlockRequired": {
+    "message": "Ole hyvä ja avaa holvisi hyväksyäksesi SSH-avainpyynnön."
+  },
+  "sshAgentUnlockTimeout": {
+    "message": "SSH-avainpyyntö aikakatkaistiin."
+  },
+  "enableSshAgent": {
+    "message": "Ota SSH-agentti käyttöön"
+  },
+  "enableSshAgentDesc": {
+    "message": "Enable the SSH agent to sign SSH requests right from your Bitwarden vault."
+  },
+  "enableSshAgentHelp": {
+    "message": "The SSH agent is a service targeted at developers that allows you to sign SSH requests directly from your Bitwarden vault."
   },
   "premiumRequired": {
     "message": "Premium vaaditaan"
@@ -400,6 +445,12 @@
   "copyPassword": {
     "message": "Kopioi salasana"
   },
+  "regenerateSshKey": {
+    "message": "Luo SSH-avain uudelleen"
+  },
+  "copySshPrivateKey": {
+    "message": "Kopioi yksityinen SSH-avain"
+  },
   "copyPassphrase": {
     "message": "Kopioi salalause",
     "description": "Copy passphrase to clipboard"
@@ -558,7 +609,7 @@
     "message": "Luo tili"
   },
   "newToBitwarden": {
-    "message": "Oletko uusi Bitwardenissa?"
+    "message": "Oletko uusi Bitwarden-käyttäjä?"
   },
   "setAStrongPassword": {
     "message": "Aseta vahva salasana"
@@ -1687,7 +1738,7 @@
     "message": "Tiliä ei voi poistaa"
   },
   "cannotDeleteAccountDesc": {
-    "message": "Tätä toimintoa ei voida suorittaa, koska tilisi on organisaation omistama. Ota yhteyttä organisaation ylläpitäjään saadaksesi lisätietoja."
+    "message": "This action cannot be completed because your account is owned by an organization. Contact your organization administrator for additional details."
   },
   "accountDeleted": {
     "message": "Tili poistettiin"
@@ -2394,7 +2445,7 @@
     "message": "Luo sähköpostiosoite"
   },
   "generatorBoundariesHint": {
-    "message": "Arvon tulee olla väliltä $MIN$ - $MAX$",
+    "message": "Value must be between $MIN$ and $MAX$",
     "description": "Explains spin box minimum and maximum values to the user",
     "placeholders": {
       "min": {
@@ -3224,6 +3275,36 @@
   },
   "ssoError": {
     "message": "Kertakirjautumiselle ei löytynyt vapaita portteja."
+  },
+  "authorize": {
+    "message": "Authorize"
+  },
+  "deny": {
+    "message": "Deny"
+  },
+  "sshkeyApprovalTitle": {
+    "message": "Confirm SSH key usage"
+  },
+  "sshkeyApprovalMessageInfix": {
+    "message": "is requesting access to"
+  },
+  "unknownApplication": {
+    "message": "An application"
+  },
+  "sshKeyPasswordUnsupported": {
+    "message": "Importing password protected SSH keys is not yet supported"
+  },
+  "invalidSshKey": {
+    "message": "SSH-avain on virheellinen"
+  },
+  "sshKeyTypeUnsupported": {
+    "message": "SSH-avaintyyppiä ei ole tuettui"
+  },
+  "importSshKeyFromClipboard": {
+    "message": "Tuo avain leikepöydältä"
+  },
+  "sshKeyPasted": {
+    "message": "SSH-avain on tuotu"
   },
   "fileSavedToDevice": {
     "message": "Tiedosto tallennettiin laitteelle. Hallitse sitä laitteesi latauksista."

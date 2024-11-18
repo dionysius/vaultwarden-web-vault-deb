@@ -26,6 +26,9 @@
   "typeSecureNote": {
     "message": "Zabezpečená poznámka"
   },
+  "typeSshKey": {
+    "message": "Kľúč SSH"
+  },
   "folders": {
     "message": "Priečinky"
   },
@@ -45,7 +48,7 @@
     "message": "Zdieľať"
   },
   "moveToOrganization": {
-    "message": "Presunúť do Organizácie"
+    "message": "Presunúť do organizácie"
   },
   "movedItemToOrg": {
     "message": "$ITEMNAME$ presunuté do $ORGNAME$",
@@ -176,6 +179,48 @@
   },
   "address": {
     "message": "Adresa"
+  },
+  "sshPrivateKey": {
+    "message": "Súkromný kľúč"
+  },
+  "sshPublicKey": {
+    "message": "Verejný kľúč"
+  },
+  "sshFingerprint": {
+    "message": "Odtlačok"
+  },
+  "sshKeyAlgorithm": {
+    "message": "Typ kľúča"
+  },
+  "sshKeyAlgorithmED25519": {
+    "message": "ED25519"
+  },
+  "sshKeyAlgorithmRSA2048": {
+    "message": "RSA 2048-Bit"
+  },
+  "sshKeyAlgorithmRSA3072": {
+    "message": "RSA 3072-Bit"
+  },
+  "sshKeyAlgorithmRSA4096": {
+    "message": "RSA 4096-Bit"
+  },
+  "sshKeyGenerated": {
+    "message": "Bol vygenerovaný nový kľúč SSH"
+  },
+  "sshAgentUnlockRequired": {
+    "message": "Prosím, odomknite svoj trezor, aby ste mohli schváliť žiadosť o kľúč SSH."
+  },
+  "sshAgentUnlockTimeout": {
+    "message": "Požiadavka na kľúč SSH vypršala."
+  },
+  "enableSshAgent": {
+    "message": "Povoliť agenta SSH"
+  },
+  "enableSshAgentDesc": {
+    "message": "Povolí agentovi SSH podpisovať požiadavky SSH priamo z vášho trezoru Bitwarden."
+  },
+  "enableSshAgentHelp": {
+    "message": "Agent SSH je služba určená pre vývojárov, ktorá vám umožňuje podpisovať požiadavky SSH priamo z vášho trezora Bitwarden."
   },
   "premiumRequired": {
     "message": "Vyžaduje prémiový účet"
@@ -399,6 +444,12 @@
   },
   "copyPassword": {
     "message": "Skopírovať heslo"
+  },
+  "regenerateSshKey": {
+    "message": "Generovať nový kľúč SSH"
+  },
+  "copySshPrivateKey": {
+    "message": "Kopírovať súkromný kľúč SSH"
   },
   "copyPassphrase": {
     "message": "Kopírovať prístupovú frázu",
@@ -2750,7 +2801,7 @@
     "message": "Dôležité:"
   },
   "accessing": {
-    "message": "Accessing"
+    "message": "Pristupovanie"
   },
   "accessTokenUnableToBeDecrypted": {
     "message": "Boli ste odhlásení, pretože váš prístupový token nebolo možné dešifrovať. Na vyriešenie tohto problému sa znova prihláste."
@@ -3224,6 +3275,36 @@
   },
   "ssoError": {
     "message": "Pre prihlásenie SSO sa nepodarilo nájsť žiadne voľné porty."
+  },
+  "authorize": {
+    "message": "Autorizovať"
+  },
+  "deny": {
+    "message": "Odmietnuť"
+  },
+  "sshkeyApprovalTitle": {
+    "message": "Potvrdiť použitie kľúča SSH"
+  },
+  "sshkeyApprovalMessageInfix": {
+    "message": "žiada o prístup k"
+  },
+  "unknownApplication": {
+    "message": "Aplikácia"
+  },
+  "sshKeyPasswordUnsupported": {
+    "message": "Importovanie kľúčov SSH chránených heslom zatiaľ nie je podporované"
+  },
+  "invalidSshKey": {
+    "message": "Kľúč SSH je neplatný"
+  },
+  "sshKeyTypeUnsupported": {
+    "message": "Tento typ kľúča SSH nie je podporovaný"
+  },
+  "importSshKeyFromClipboard": {
+    "message": "Importovať kľúč zo schránky"
+  },
+  "sshKeyPasted": {
+    "message": "Kľúč SSH bol úspešne importovaný"
   },
   "fileSavedToDevice": {
     "message": "Súbor sa uložil do zariadenia. Spravujte stiahnuté súbory zo zariadenia."

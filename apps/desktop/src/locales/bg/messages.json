@@ -26,6 +26,9 @@
   "typeSecureNote": {
     "message": "Защитена бележка"
   },
+  "typeSshKey": {
+    "message": "SSH ключ"
+  },
   "folders": {
     "message": "Папки"
   },
@@ -176,6 +179,48 @@
   },
   "address": {
     "message": "Адрес"
+  },
+  "sshPrivateKey": {
+    "message": "Частен ключ"
+  },
+  "sshPublicKey": {
+    "message": "Публичен ключ"
+  },
+  "sshFingerprint": {
+    "message": "Отпечатък"
+  },
+  "sshKeyAlgorithm": {
+    "message": "Тип на ключа"
+  },
+  "sshKeyAlgorithmED25519": {
+    "message": "ED25519"
+  },
+  "sshKeyAlgorithmRSA2048": {
+    "message": "RSA 2048 бита"
+  },
+  "sshKeyAlgorithmRSA3072": {
+    "message": "RSA 3072 бита"
+  },
+  "sshKeyAlgorithmRSA4096": {
+    "message": "RSA 4096 бита"
+  },
+  "sshKeyGenerated": {
+    "message": "Генериран е нов SSH ключ"
+  },
+  "sshAgentUnlockRequired": {
+    "message": "Отключете трезора си, за да одобрите заявката за SSH ключ."
+  },
+  "sshAgentUnlockTimeout": {
+    "message": "Времето на заявката за SSH ключ е изтекло."
+  },
+  "enableSshAgent": {
+    "message": "Включване на SSH-агента"
+  },
+  "enableSshAgentDesc": {
+    "message": "Включете SSH-агента, за да подписвате заявки за SSH направо от трезора си в Битуорден."
+  },
+  "enableSshAgentHelp": {
+    "message": "SSH-агентът е услуга, предназначена за разработчици, чрез която можете да подписвате заявки за SSH направо от трезора си в Битуорден."
   },
   "premiumRequired": {
     "message": "Изисква се платен абонамент"
@@ -399,6 +444,12 @@
   },
   "copyPassword": {
     "message": "Копиране на паролата"
+  },
+  "regenerateSshKey": {
+    "message": "Генериране на нов SSH ключ"
+  },
+  "copySshPrivateKey": {
+    "message": "Копиране на частния SSH ключ"
   },
   "copyPassphrase": {
     "message": "Копиране на паролата-фраза",
@@ -3224,6 +3275,36 @@
   },
   "ssoError": {
     "message": "Не могат да бъдат открити свободни портове за еднократната идентификация."
+  },
+  "authorize": {
+    "message": "Упълномощаване"
+  },
+  "deny": {
+    "message": "Отказване"
+  },
+  "sshkeyApprovalTitle": {
+    "message": "Потвърждаване на употребата на SSH ключа"
+  },
+  "sshkeyApprovalMessageInfix": {
+    "message": "иска достъп до"
+  },
+  "unknownApplication": {
+    "message": "Приложение"
+  },
+  "sshKeyPasswordUnsupported": {
+    "message": "Внасянето на SSH ключ, които са защитени с парола, все още не се поддържа"
+  },
+  "invalidSshKey": {
+    "message": "SSH ключът е неправилен"
+  },
+  "sshKeyTypeUnsupported": {
+    "message": "Типът на SSH ключа не се поддържа"
+  },
+  "importSshKeyFromClipboard": {
+    "message": "Внасяне на ключ от буфера за обмен"
+  },
+  "sshKeyPasted": {
+    "message": "SSH ключът е внесен успешно"
   },
   "fileSavedToDevice": {
     "message": "Файлът е запазен на устройството. Можете да го намерите в мястото за сваляния на устройството."

@@ -26,6 +26,9 @@
   "typeSecureNote": {
     "message": "Захищена нотатка"
   },
+  "typeSshKey": {
+    "message": "Ключ SSH"
+  },
   "folders": {
     "message": "Теки"
   },
@@ -176,6 +179,48 @@
   },
   "address": {
     "message": "Адреса"
+  },
+  "sshPrivateKey": {
+    "message": "Закритий ключ"
+  },
+  "sshPublicKey": {
+    "message": "Відкритий ключ"
+  },
+  "sshFingerprint": {
+    "message": "Цифровий відбиток"
+  },
+  "sshKeyAlgorithm": {
+    "message": "Тип ключа"
+  },
+  "sshKeyAlgorithmED25519": {
+    "message": "ED25519"
+  },
+  "sshKeyAlgorithmRSA2048": {
+    "message": "RSA 2048-Bit"
+  },
+  "sshKeyAlgorithmRSA3072": {
+    "message": "RSA 3072-Bit"
+  },
+  "sshKeyAlgorithmRSA4096": {
+    "message": "RSA 4096-Bit"
+  },
+  "sshKeyGenerated": {
+    "message": "Згенеровано новий ключ SSH"
+  },
+  "sshAgentUnlockRequired": {
+    "message": "Розблокуйте своє сховище, щоб затвердити запит ключа SSH."
+  },
+  "sshAgentUnlockTimeout": {
+    "message": "Вичерпано час очікування запиту ключа SSH."
+  },
+  "enableSshAgent": {
+    "message": "Увімкнути агента SSH"
+  },
+  "enableSshAgentDesc": {
+    "message": "Увімкніть агента SSH, щоб підписувати запити SSH безпосередньо зі сховища Bitwarden."
+  },
+  "enableSshAgentHelp": {
+    "message": "Агент SSH – це служба, призначена для розробників, яка дає можливість підписувати запити SSH безпосередньо зі сховища Bitwarden."
   },
   "premiumRequired": {
     "message": "Необхідна передплата преміум"
@@ -400,6 +445,12 @@
   "copyPassword": {
     "message": "Копіювати пароль"
   },
+  "regenerateSshKey": {
+    "message": "Повторно згенерувати ключ SSH"
+  },
+  "copySshPrivateKey": {
+    "message": "Копіювати закритий ключ SSH"
+  },
   "copyPassphrase": {
     "message": "Копіювати парольну фразу",
     "description": "Copy passphrase to clipboard"
@@ -579,7 +630,7 @@
     "message": "Увійти з пристроєм"
   },
   "useSingleSignOn": {
-    "message": "Використовувати єдиний вхід"
+    "message": "Використати єдиний вхід"
   },
   "submit": {
     "message": "Відправити"
@@ -2394,7 +2445,7 @@
     "message": "Генерувати е-пошту"
   },
   "generatorBoundariesHint": {
-    "message": "Значення має бути між $MIN$ та $MAX$",
+    "message": "Value must be between $MIN$ and $MAX$",
     "description": "Explains spin box minimum and maximum values to the user",
     "placeholders": {
       "min": {
@@ -3224,6 +3275,36 @@
   },
   "ssoError": {
     "message": "Не знайдено вільних портів для цього входу SSO."
+  },
+  "authorize": {
+    "message": "Авторизувати"
+  },
+  "deny": {
+    "message": "Відмовити"
+  },
+  "sshkeyApprovalTitle": {
+    "message": "Підтвердження використання ключа SSH"
+  },
+  "sshkeyApprovalMessageInfix": {
+    "message": "запитує доступ до"
+  },
+  "unknownApplication": {
+    "message": "Програма"
+  },
+  "sshKeyPasswordUnsupported": {
+    "message": "Імпортування захищених паролем ключів SSH ще не підтримується"
+  },
+  "invalidSshKey": {
+    "message": "Ключ SSH недійсний"
+  },
+  "sshKeyTypeUnsupported": {
+    "message": "Тип ключа SSH не підтримується"
+  },
+  "importSshKeyFromClipboard": {
+    "message": "Імпортувати ключ із буфера обміну"
+  },
+  "sshKeyPasted": {
+    "message": "Ключ SSH успішно імпортовано"
   },
   "fileSavedToDevice": {
     "message": "Файл збережено на пристрої. Ви можете його знайти у теці завантажень."

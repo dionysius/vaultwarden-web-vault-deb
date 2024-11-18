@@ -26,6 +26,9 @@
   "typeSecureNote": {
     "message": "פתק מאובטח"
   },
+  "typeSshKey": {
+    "message": "מפתח SSH"
+  },
   "folders": {
     "message": "תיקיות"
   },
@@ -61,7 +64,7 @@
     }
   },
   "welcomeBack": {
-    "message": "Welcome back"
+    "message": "ברוך שובך"
   },
   "moveToOrgDesc": {
     "message": "בחר ארגון שאליו תרצה להעביר פריט זה. העברה לארגון מעבירה את הבעלות על הפריט לאותו ארגון. לאחר העברת פריט זה לא תהיה יותר הבעלים הישיר."
@@ -176,6 +179,48 @@
   },
   "address": {
     "message": "כתובת"
+  },
+  "sshPrivateKey": {
+    "message": "מפתח פרטי"
+  },
+  "sshPublicKey": {
+    "message": "מפתח ציבורי"
+  },
+  "sshFingerprint": {
+    "message": "טביעת אצבע"
+  },
+  "sshKeyAlgorithm": {
+    "message": "סוג מפתח"
+  },
+  "sshKeyAlgorithmED25519": {
+    "message": "ED25519"
+  },
+  "sshKeyAlgorithmRSA2048": {
+    "message": "RSA‏ 2048 סיביות"
+  },
+  "sshKeyAlgorithmRSA3072": {
+    "message": "RSA‏ 3072 סיביות"
+  },
+  "sshKeyAlgorithmRSA4096": {
+    "message": "RSA‏ 4096 סיביות"
+  },
+  "sshKeyGenerated": {
+    "message": "נוצר מפתח SSH חדש"
+  },
+  "sshAgentUnlockRequired": {
+    "message": "Please unlock your vault to approve the SSH key request."
+  },
+  "sshAgentUnlockTimeout": {
+    "message": "SSH key request timed out."
+  },
+  "enableSshAgent": {
+    "message": "הפעלת סוכן SSH"
+  },
+  "enableSshAgentDesc": {
+    "message": "Enable the SSH agent to sign SSH requests right from your Bitwarden vault."
+  },
+  "enableSshAgentHelp": {
+    "message": "The SSH agent is a service targeted at developers that allows you to sign SSH requests directly from your Bitwarden vault."
   },
   "premiumRequired": {
     "message": "נדרש חשבון פרימיום"
@@ -399,6 +444,12 @@
   },
   "copyPassword": {
     "message": "העתק סיסמה"
+  },
+  "regenerateSshKey": {
+    "message": "Regenerate SSH key"
+  },
+  "copySshPrivateKey": {
+    "message": "Copy SSH private key"
   },
   "copyPassphrase": {
     "message": "Copy passphrase",
@@ -2394,7 +2445,7 @@
     "message": "Generate email"
   },
   "generatorBoundariesHint": {
-    "message": "Value must be between $MIN$ and $MAX$",
+    "message": "הערך חייב להיות בין $MIN$ ל־$MAX$",
     "description": "Explains spin box minimum and maximum values to the user",
     "placeholders": {
       "min": {
@@ -3224,6 +3275,36 @@
   },
   "ssoError": {
     "message": "No free ports could be found for the sso login."
+  },
+  "authorize": {
+    "message": "Authorize"
+  },
+  "deny": {
+    "message": "Deny"
+  },
+  "sshkeyApprovalTitle": {
+    "message": "Confirm SSH key usage"
+  },
+  "sshkeyApprovalMessageInfix": {
+    "message": "is requesting access to"
+  },
+  "unknownApplication": {
+    "message": "An application"
+  },
+  "sshKeyPasswordUnsupported": {
+    "message": "Importing password protected SSH keys is not yet supported"
+  },
+  "invalidSshKey": {
+    "message": "The SSH key is invalid"
+  },
+  "sshKeyTypeUnsupported": {
+    "message": "The SSH key type is not supported"
+  },
+  "importSshKeyFromClipboard": {
+    "message": "Import key from clipboard"
+  },
+  "sshKeyPasted": {
+    "message": "SSH key imported successfully"
   },
   "fileSavedToDevice": {
     "message": "File saved to device. Manage from your device downloads."

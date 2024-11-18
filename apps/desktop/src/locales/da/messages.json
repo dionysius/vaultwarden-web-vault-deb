@@ -26,6 +26,9 @@
   "typeSecureNote": {
     "message": "Sikret notat"
   },
+  "typeSshKey": {
+    "message": "SSH-nøgle"
+  },
   "folders": {
     "message": "Mapper"
   },
@@ -176,6 +179,48 @@
   },
   "address": {
     "message": "Adresse"
+  },
+  "sshPrivateKey": {
+    "message": "Privat nøgle"
+  },
+  "sshPublicKey": {
+    "message": "Offentlig nøgle"
+  },
+  "sshFingerprint": {
+    "message": "Fingeraftryk"
+  },
+  "sshKeyAlgorithm": {
+    "message": "Nøgletype"
+  },
+  "sshKeyAlgorithmED25519": {
+    "message": "ED25519"
+  },
+  "sshKeyAlgorithmRSA2048": {
+    "message": "RSA 2048-Bit"
+  },
+  "sshKeyAlgorithmRSA3072": {
+    "message": "RSA 3072-Bit"
+  },
+  "sshKeyAlgorithmRSA4096": {
+    "message": "RSA 4096-Bit"
+  },
+  "sshKeyGenerated": {
+    "message": "En ny SSH-nøgle er genereret"
+  },
+  "sshAgentUnlockRequired": {
+    "message": "Oplås boksen op for at godkende SSH-nøgleanmodningen."
+  },
+  "sshAgentUnlockTimeout": {
+    "message": "SSH-nøgleanmodning fik timeout."
+  },
+  "enableSshAgent": {
+    "message": "Aktivér SSH-agent"
+  },
+  "enableSshAgentDesc": {
+    "message": "Aktivér SSH-agenten for at signere SSH-forespørgsler direkte fra Bitwarden-boksen."
+  },
+  "enableSshAgentHelp": {
+    "message": "SSH-agent er en tjeneste rettet mod udviklere, der muliggør at signere SSH-forespørgsler direkte fra Bitwarden-boksen."
   },
   "premiumRequired": {
     "message": "Premium kræves"
@@ -399,6 +444,12 @@
   },
   "copyPassword": {
     "message": "Kopiér adgangskode"
+  },
+  "regenerateSshKey": {
+    "message": "Regenerér SSH-nøgle"
+  },
+  "copySshPrivateKey": {
+    "message": "Kopiér SSH privat nøgle"
   },
   "copyPassphrase": {
     "message": "Kopiér adgangssætning",
@@ -2394,7 +2445,7 @@
     "message": "Generér e-mail"
   },
   "generatorBoundariesHint": {
-    "message": "Værdi skal være mellem $MIN$ og $MAX$",
+    "message": "Value must be between $MIN$ and $MAX$",
     "description": "Explains spin box minimum and maximum values to the user",
     "placeholders": {
       "min": {
@@ -3224,6 +3275,36 @@
   },
   "ssoError": {
     "message": "Ingen ledige porte fundet til SSO-login."
+  },
+  "authorize": {
+    "message": "Godkend"
+  },
+  "deny": {
+    "message": "Afvis"
+  },
+  "sshkeyApprovalTitle": {
+    "message": "Bekræft brug af SSH-nøgle"
+  },
+  "sshkeyApprovalMessageInfix": {
+    "message": "anmoder om adgang til"
+  },
+  "unknownApplication": {
+    "message": "En applikation"
+  },
+  "sshKeyPasswordUnsupported": {
+    "message": "Import af adgangskodebeskyttede SSH-nøgler understøttes endnu ikke"
+  },
+  "invalidSshKey": {
+    "message": "SSH-nøglen er ugyldig"
+  },
+  "sshKeyTypeUnsupported": {
+    "message": "SSH-nøgletypen understøttes ikke"
+  },
+  "importSshKeyFromClipboard": {
+    "message": "Importér nøgle fra udklipsholder"
+  },
+  "sshKeyPasted": {
+    "message": "SSH-nøgle er importeret"
   },
   "fileSavedToDevice": {
     "message": "Fil gemt på enheden. Håndtér fra enhedens downloads."

@@ -26,6 +26,9 @@
   "typeSecureNote": {
     "message": "安全笔记"
   },
+  "typeSshKey": {
+    "message": "SSH 密钥"
+  },
   "folders": {
     "message": "文件夹"
   },
@@ -176,6 +179,48 @@
   },
   "address": {
     "message": "地址"
+  },
+  "sshPrivateKey": {
+    "message": "私钥"
+  },
+  "sshPublicKey": {
+    "message": "公钥"
+  },
+  "sshFingerprint": {
+    "message": "指纹"
+  },
+  "sshKeyAlgorithm": {
+    "message": "密钥类型"
+  },
+  "sshKeyAlgorithmED25519": {
+    "message": "ED25519"
+  },
+  "sshKeyAlgorithmRSA2048": {
+    "message": "RSA 2048-Bit"
+  },
+  "sshKeyAlgorithmRSA3072": {
+    "message": "RSA 3072-Bit"
+  },
+  "sshKeyAlgorithmRSA4096": {
+    "message": "RSA 4096-Bit"
+  },
+  "sshKeyGenerated": {
+    "message": "生成了新的 SSH 密钥"
+  },
+  "sshAgentUnlockRequired": {
+    "message": "请解锁您的密码库以批准 SSH 密钥请求。"
+  },
+  "sshAgentUnlockTimeout": {
+    "message": "SSH 密钥请求已超时。"
+  },
+  "enableSshAgent": {
+    "message": "启用 SSH 代理"
+  },
+  "enableSshAgentDesc": {
+    "message": "启用 SSH 代理以直接从您的 Bitwarden 密码库签署 SSH 请求。"
+  },
+  "enableSshAgentHelp": {
+    "message": "SSH 代理是一个针对开发者的服务，允许您直接从 Bitwarden 密码库签署 SSH 请求。"
   },
   "premiumRequired": {
     "message": "需要高级版"
@@ -400,6 +445,12 @@
   "copyPassword": {
     "message": "复制密码"
   },
+  "regenerateSshKey": {
+    "message": "重新生成 SSH 密钥"
+  },
+  "copySshPrivateKey": {
+    "message": "复制 SSH 私钥"
+  },
   "copyPassphrase": {
     "message": "复制密码短语",
     "description": "Copy passphrase to clipboard"
@@ -558,7 +609,7 @@
     "message": "创建账户"
   },
   "newToBitwarden": {
-    "message": "Bitwarden 新手吗？"
+    "message": "您是 Bitwarden 新手吗？"
   },
   "setAStrongPassword": {
     "message": "设置强密码"
@@ -2391,7 +2442,7 @@
     "message": "生成用户名"
   },
   "generateEmail": {
-    "message": "生成邮件地址"
+    "message": "生成电子邮件地址"
   },
   "generatorBoundariesHint": {
     "message": "值必须在 $MIN$ 和 $MAX$ 之间",
@@ -2451,7 +2502,7 @@
     "message": "使用外部转发服务生成一个电子邮件别名。"
   },
   "forwarderDomainName": {
-    "message": "邮件域名",
+    "message": "电子邮件域名",
     "description": "Labels the domain name email forwarder service option"
   },
   "forwarderDomainNameHint": {
@@ -3224,6 +3275,36 @@
   },
   "ssoError": {
     "message": "找不到用于 SSO 登录的可用端口。"
+  },
+  "authorize": {
+    "message": "批准"
+  },
+  "deny": {
+    "message": "拒绝"
+  },
+  "sshkeyApprovalTitle": {
+    "message": "确认 SSH 密钥使用"
+  },
+  "sshkeyApprovalMessageInfix": {
+    "message": "正在请求访问"
+  },
+  "unknownApplication": {
+    "message": "某个应用程序"
+  },
+  "sshKeyPasswordUnsupported": {
+    "message": "尚不支持导入受密码保护的 SSH 密钥"
+  },
+  "invalidSshKey": {
+    "message": "此 SSH 密钥无效"
+  },
+  "sshKeyTypeUnsupported": {
+    "message": "不支持此 SSH 密钥类型"
+  },
+  "importSshKeyFromClipboard": {
+    "message": "从剪贴板导入密钥"
+  },
+  "sshKeyPasted": {
+    "message": "SSH 密钥导入成功"
   },
   "fileSavedToDevice": {
     "message": "文件已保存到设备。可以在设备下载中进行管理。"

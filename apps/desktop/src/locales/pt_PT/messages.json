@@ -26,6 +26,9 @@
   "typeSecureNote": {
     "message": "Nota segura"
   },
+  "typeSshKey": {
+    "message": "Chave SSH"
+  },
   "folders": {
     "message": "Pastas"
   },
@@ -176,6 +179,48 @@
   },
   "address": {
     "message": "Endereço"
+  },
+  "sshPrivateKey": {
+    "message": "Chave privada"
+  },
+  "sshPublicKey": {
+    "message": "Chave pública"
+  },
+  "sshFingerprint": {
+    "message": "Impressão digital"
+  },
+  "sshKeyAlgorithm": {
+    "message": "Tipo de chave"
+  },
+  "sshKeyAlgorithmED25519": {
+    "message": "ED25519"
+  },
+  "sshKeyAlgorithmRSA2048": {
+    "message": "RSA 2048-Bit"
+  },
+  "sshKeyAlgorithmRSA3072": {
+    "message": "RSA 3072-Bit"
+  },
+  "sshKeyAlgorithmRSA4096": {
+    "message": "RSA 4096-Bit"
+  },
+  "sshKeyGenerated": {
+    "message": "Foi gerada uma nova chave SSH"
+  },
+  "sshAgentUnlockRequired": {
+    "message": "Por favor, desbloqueie o seu cofre para aprovar o pedido de chave SSH."
+  },
+  "sshAgentUnlockTimeout": {
+    "message": "O pedido de chave SSH expirou."
+  },
+  "enableSshAgent": {
+    "message": "Ativar o agente SSH"
+  },
+  "enableSshAgentDesc": {
+    "message": "Ative o agente SSH para assinar pedidos SSH diretamente do seu cofre Bitwarden."
+  },
+  "enableSshAgentHelp": {
+    "message": "O agente SSH é um serviço direcionado a programadores que lhe permite assinar pedidos SSH diretamente do seu cofre Bitwarden."
   },
   "premiumRequired": {
     "message": "É necessária uma subscrição Premium"
@@ -399,6 +444,12 @@
   },
   "copyPassword": {
     "message": "Copiar palavra-passe"
+  },
+  "regenerateSshKey": {
+    "message": "Regenerar chave SSH"
+  },
+  "copySshPrivateKey": {
+    "message": "Copiar chave privada SSH"
   },
   "copyPassphrase": {
     "message": "Copiar frase de acesso",
@@ -3224,6 +3275,36 @@
   },
   "ssoError": {
     "message": "Não foi possível encontrar portas livres para o início de sessão sso."
+  },
+  "authorize": {
+    "message": "Autorizar"
+  },
+  "deny": {
+    "message": "Recusar"
+  },
+  "sshkeyApprovalTitle": {
+    "message": "Confirmar a utilização da chave SSH"
+  },
+  "sshkeyApprovalMessageInfix": {
+    "message": "está a pedir acesso a"
+  },
+  "unknownApplication": {
+    "message": "Uma aplicação"
+  },
+  "sshKeyPasswordUnsupported": {
+    "message": "A importação de chaves SSH protegidas por palavra-passe ainda não é suportada"
+  },
+  "invalidSshKey": {
+    "message": "A chave SSH é inválida"
+  },
+  "sshKeyTypeUnsupported": {
+    "message": "O tipo de chave SSH não é suportado"
+  },
+  "importSshKeyFromClipboard": {
+    "message": "Importar chave da área de transferência"
+  },
+  "sshKeyPasted": {
+    "message": "Chave SSH importada com sucesso"
   },
   "fileSavedToDevice": {
     "message": "Ficheiro guardado no dispositivo. Gira-o a partir das transferências do seu dispositivo."

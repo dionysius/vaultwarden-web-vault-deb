@@ -26,6 +26,9 @@
   "typeSecureNote": {
     "message": "Veilige notitie"
   },
+  "typeSshKey": {
+    "message": "SSH-sleutel"
+  },
   "folders": {
     "message": "Mappen"
   },
@@ -176,6 +179,48 @@
   },
   "address": {
     "message": "Adres"
+  },
+  "sshPrivateKey": {
+    "message": "Privésleutel"
+  },
+  "sshPublicKey": {
+    "message": "Publieke sleutel"
+  },
+  "sshFingerprint": {
+    "message": "Vingerafdruk"
+  },
+  "sshKeyAlgorithm": {
+    "message": "Sleuteltype"
+  },
+  "sshKeyAlgorithmED25519": {
+    "message": "ED25519"
+  },
+  "sshKeyAlgorithmRSA2048": {
+    "message": "RSA 2048-bit"
+  },
+  "sshKeyAlgorithmRSA3072": {
+    "message": "RSA 3072-bit"
+  },
+  "sshKeyAlgorithmRSA4096": {
+    "message": "RSA 4096-bit"
+  },
+  "sshKeyGenerated": {
+    "message": "Nieuwe SSH-sleutel gegenereerd"
+  },
+  "sshAgentUnlockRequired": {
+    "message": "Ontgrendel je kluis voor het goedkeuren van het SSH-sleutelverzoek."
+  },
+  "sshAgentUnlockTimeout": {
+    "message": "Time-out SSH-sleutelaanvraag."
+  },
+  "enableSshAgent": {
+    "message": "SSH-agent inschakelen"
+  },
+  "enableSshAgentDesc": {
+    "message": "Schakel de SSH-agent in om SSH-verzoeken rechtstreeks vanuit je Bitwarden-kluis te ondertekenen."
+  },
+  "enableSshAgentHelp": {
+    "message": "De SSH-agent is een dienst gericht op ontwikkelaars waarmee je SSH-verzoeken rechtstreeks vanuit je Bitwarden-kluis kunt ondertekenen."
   },
   "premiumRequired": {
     "message": "Premium vereist"
@@ -399,6 +444,12 @@
   },
   "copyPassword": {
     "message": "Kopieer wachtwoord"
+  },
+  "regenerateSshKey": {
+    "message": "SSH-sleutel opnieuw genereren"
+  },
+  "copySshPrivateKey": {
+    "message": "Privésleutel kopiëren"
   },
   "copyPassphrase": {
     "message": "Wachtwoordzin kopiëren",
@@ -3224,6 +3275,36 @@
   },
   "ssoError": {
     "message": "Er zijn geen vrije poorten gevonden voor de sso-login."
+  },
+  "authorize": {
+    "message": "Autoriseren"
+  },
+  "deny": {
+    "message": "Afwijzen"
+  },
+  "sshkeyApprovalTitle": {
+    "message": "Gebruik SSH-sleutel bevestigen"
+  },
+  "sshkeyApprovalMessageInfix": {
+    "message": "vraagt toegang tot"
+  },
+  "unknownApplication": {
+    "message": "Een applicatie"
+  },
+  "sshKeyPasswordUnsupported": {
+    "message": "Importeren van met wachtwoord beveiligde SSH-sleutels wordt nog niet ondersteund"
+  },
+  "invalidSshKey": {
+    "message": "De SSH-sleutel is ongeldig"
+  },
+  "sshKeyTypeUnsupported": {
+    "message": "Het type SSH-sleutel is niet ondersteund"
+  },
+  "importSshKeyFromClipboard": {
+    "message": "Sleutel van klembord importeren"
+  },
+  "sshKeyPasted": {
+    "message": "SSH-sleutel succesvol geïmporteerd"
   },
   "fileSavedToDevice": {
     "message": "Bestand op apparaat opgeslagen. Beheer vanaf de downloads op je apparaat."

@@ -26,6 +26,9 @@
   "typeSecureNote": {
     "message": "Note sécurisée"
   },
+  "typeSshKey": {
+    "message": "Clé SSH"
+  },
   "folders": {
     "message": "Dossiers"
   },
@@ -176,6 +179,48 @@
   },
   "address": {
     "message": "Adresse"
+  },
+  "sshPrivateKey": {
+    "message": "Clé privée"
+  },
+  "sshPublicKey": {
+    "message": "Clé publique"
+  },
+  "sshFingerprint": {
+    "message": "Empreinte digitale"
+  },
+  "sshKeyAlgorithm": {
+    "message": "Type de clé"
+  },
+  "sshKeyAlgorithmED25519": {
+    "message": "ED25519"
+  },
+  "sshKeyAlgorithmRSA2048": {
+    "message": "RSA 2048-bits"
+  },
+  "sshKeyAlgorithmRSA3072": {
+    "message": "RSA 3072-bits"
+  },
+  "sshKeyAlgorithmRSA4096": {
+    "message": "RSA 4096-bits"
+  },
+  "sshKeyGenerated": {
+    "message": "Une nouvelle clé SSH a été générée"
+  },
+  "sshAgentUnlockRequired": {
+    "message": "Veuillez déverrouiller votre coffre pour approuver la demande de clé SSH."
+  },
+  "sshAgentUnlockTimeout": {
+    "message": "La requête de clé SSH a expiré."
+  },
+  "enableSshAgent": {
+    "message": "Activer l'agent SSH"
+  },
+  "enableSshAgentDesc": {
+    "message": "Activez l'agent SSH pour signer les requêtes SSH directement depuis votre coffre Bitwarden."
+  },
+  "enableSshAgentHelp": {
+    "message": "L'agent SSH est un service destiné aux développeurs qui vous permet de signer des requêtes SSH directement depuis votre coffre Bitwarden."
   },
   "premiumRequired": {
     "message": "Premium requis"
@@ -399,6 +444,12 @@
   },
   "copyPassword": {
     "message": "Copier le mot de passe"
+  },
+  "regenerateSshKey": {
+    "message": "Régénérer la clé SSH"
+  },
+  "copySshPrivateKey": {
+    "message": "Copier la clé privée SSH"
   },
   "copyPassphrase": {
     "message": "Copy passphrase",
@@ -2394,7 +2445,7 @@
     "message": "Generate email"
   },
   "generatorBoundariesHint": {
-    "message": "La valeur doit être comprise entre $MIN$ et $MAX$",
+    "message": "Value must be between $MIN$ and $MAX$",
     "description": "Explains spin box minimum and maximum values to the user",
     "placeholders": {
       "min": {
@@ -3224,6 +3275,36 @@
   },
   "ssoError": {
     "message": "No free ports could be found for the sso login."
+  },
+  "authorize": {
+    "message": "Autoriser"
+  },
+  "deny": {
+    "message": "Refuser"
+  },
+  "sshkeyApprovalTitle": {
+    "message": "Confirmer l'utilisation de la clé SSH"
+  },
+  "sshkeyApprovalMessageInfix": {
+    "message": "demande l'accès à"
+  },
+  "unknownApplication": {
+    "message": "Une application"
+  },
+  "sshKeyPasswordUnsupported": {
+    "message": "L'importation de clés SSH protégées par mot de passe n'est pas encore prise en charge"
+  },
+  "invalidSshKey": {
+    "message": "La clé SSH est invalide"
+  },
+  "sshKeyTypeUnsupported": {
+    "message": "Le type de clé SSH n'est pas pris en charge"
+  },
+  "importSshKeyFromClipboard": {
+    "message": "Importer une clé depuis le presse-papiers"
+  },
+  "sshKeyPasted": {
+    "message": "Clé SSH importée avec succès"
   },
   "fileSavedToDevice": {
     "message": "Fichier enregistré sur l'appareil. Gérez à partir des téléchargements de votre appareil."

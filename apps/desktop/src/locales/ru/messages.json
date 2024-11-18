@@ -26,6 +26,9 @@
   "typeSecureNote": {
     "message": "Защищенная заметка"
   },
+  "typeSshKey": {
+    "message": "Ключ SSH"
+  },
   "folders": {
     "message": "Папки"
   },
@@ -176,6 +179,48 @@
   },
   "address": {
     "message": "Адрес"
+  },
+  "sshPrivateKey": {
+    "message": "Приватный ключ"
+  },
+  "sshPublicKey": {
+    "message": "Публичный ключ"
+  },
+  "sshFingerprint": {
+    "message": "Отпечаток"
+  },
+  "sshKeyAlgorithm": {
+    "message": "Тип ключа"
+  },
+  "sshKeyAlgorithmED25519": {
+    "message": "ED25519"
+  },
+  "sshKeyAlgorithmRSA2048": {
+    "message": "RSA 2048-Bit"
+  },
+  "sshKeyAlgorithmRSA3072": {
+    "message": "RSA 3072-Bit"
+  },
+  "sshKeyAlgorithmRSA4096": {
+    "message": "RSA 4096-Bit"
+  },
+  "sshKeyGenerated": {
+    "message": "Был создан новый ключ SSH"
+  },
+  "sshAgentUnlockRequired": {
+    "message": "Пожалуйста, разблокируйте свое хранилище для подтверждения запроса ключа SSH."
+  },
+  "sshAgentUnlockTimeout": {
+    "message": "Время ожидания запроса ключа SSH истекло."
+  },
+  "enableSshAgent": {
+    "message": "Включить агент SSH"
+  },
+  "enableSshAgentDesc": {
+    "message": "Включите агент SSH, чтобы подписывать запросы SSH прямо из вашего хранилища Bitwarden."
+  },
+  "enableSshAgentHelp": {
+    "message": "Агент SSH - это сервис, ориентированный на разработчиков, позволяющий подписывать запросы SSH непосредственно из вашего хранилища Bitwarden."
   },
   "premiumRequired": {
     "message": "Требуется Премиум"
@@ -399,6 +444,12 @@
   },
   "copyPassword": {
     "message": "Скопировать пароль"
+  },
+  "regenerateSshKey": {
+    "message": "Пересоздать ключ SSH"
+  },
+  "copySshPrivateKey": {
+    "message": "Скопировать приватный ключ SSH"
   },
   "copyPassphrase": {
     "message": "Скопировать парольную фразу",
@@ -3224,6 +3275,36 @@
   },
   "ssoError": {
     "message": "Не удалось найти свободные порты для авторизации SSO."
+  },
+  "authorize": {
+    "message": "Разрешить"
+  },
+  "deny": {
+    "message": "Запретить"
+  },
+  "sshkeyApprovalTitle": {
+    "message": "Подтвердить использование ключа SSH"
+  },
+  "sshkeyApprovalMessageInfix": {
+    "message": "запрашивает доступ к"
+  },
+  "unknownApplication": {
+    "message": "Приложение"
+  },
+  "sshKeyPasswordUnsupported": {
+    "message": "Импорт защищенных паролем ключей SSH пока не поддерживается"
+  },
+  "invalidSshKey": {
+    "message": "Ключ SSH недействителен"
+  },
+  "sshKeyTypeUnsupported": {
+    "message": "Тип ключа SSH не поддерживается"
+  },
+  "importSshKeyFromClipboard": {
+    "message": "Импорт ключа из буфера обмена"
+  },
+  "sshKeyPasted": {
+    "message": "Ключ SSH успешно импортирован"
   },
   "fileSavedToDevice": {
     "message": "Файл сохранен на устройстве. Управляйте им из загрузок устройства."

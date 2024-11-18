@@ -26,6 +26,9 @@
   "typeSecureNote": {
     "message": "Droša piezīme"
   },
+  "typeSshKey": {
+    "message": "SSH atslēga"
+  },
   "folders": {
     "message": "Mapes"
   },
@@ -176,6 +179,48 @@
   },
   "address": {
     "message": "Adrese"
+  },
+  "sshPrivateKey": {
+    "message": "Privātā atslēga"
+  },
+  "sshPublicKey": {
+    "message": "Publiskā atslēga"
+  },
+  "sshFingerprint": {
+    "message": "Pirkstu nospiedums"
+  },
+  "sshKeyAlgorithm": {
+    "message": "Atslēgas veids"
+  },
+  "sshKeyAlgorithmED25519": {
+    "message": "ED25519"
+  },
+  "sshKeyAlgorithmRSA2048": {
+    "message": "RSA 2048-Bit"
+  },
+  "sshKeyAlgorithmRSA3072": {
+    "message": "RSA 3072-Bit"
+  },
+  "sshKeyAlgorithmRSA4096": {
+    "message": "RSA 4096-Bit"
+  },
+  "sshKeyGenerated": {
+    "message": "Tika izveidota jauna SSH atslēga"
+  },
+  "sshAgentUnlockRequired": {
+    "message": "Lūgums atslēgt savu glabātavu, lai apstiprinātu SSH atslēgas pieprasījumu."
+  },
+  "sshAgentUnlockTimeout": {
+    "message": "SSH atslēgas pieprasījumam iestājās noildze."
+  },
+  "enableSshAgent": {
+    "message": "Iespējot SSH aģentu"
+  },
+  "enableSshAgentDesc": {
+    "message": "Iespējo SSH aģentu, lai parakstītu SSH pieprasījumus tieši no savas Bitwarden glabātavas."
+  },
+  "enableSshAgentHelp": {
+    "message": "SSH aģents ir izstrādātājiem paredzēts pakalpojums, kas ļauj parakstīt SSH pieprasījumus tieši no savas Bitwarden glabātavas."
   },
   "premiumRequired": {
     "message": "Nepieciešams Premium"
@@ -399,6 +444,12 @@
   },
   "copyPassword": {
     "message": "Ievietot paroli starpliktuvē"
+  },
+  "regenerateSshKey": {
+    "message": "Atkārtoti izveidot SSH atslēgu"
+  },
+  "copySshPrivateKey": {
+    "message": "Ievietot privāto SSH atslēgu starpliktuvē"
   },
   "copyPassphrase": {
     "message": "Ievietot paroles vārdkopu starpliktuvē",
@@ -2391,10 +2442,10 @@
     "message": "Izveidot lietotājvārdu"
   },
   "generateEmail": {
-    "message": "Izveidot e-pastu"
+    "message": "Izveidot e-pasta adresi"
   },
   "generatorBoundariesHint": {
-    "message": "Vērtībai jābūt starp $MIN$ un $MAX$",
+    "message": "Value must be between $MIN$ and $MAX$",
     "description": "Explains spin box minimum and maximum values to the user",
     "placeholders": {
       "min": {
@@ -2448,7 +2499,7 @@
     "message": "Pārvirzīto e-pastu aizstājvārds"
   },
   "forwardedEmailDesc": {
-    "message": "Izveidot e-pastu aizstājvārdu ar ārēju pārvirzīšanas pakalpojumu."
+    "message": "Izveidot e-pasta aizstājadresi ar ārēju pārvirzīšanas pakalpojumu."
   },
   "forwarderDomainName": {
     "message": "E-pasta domēns",
@@ -3224,6 +3275,36 @@
   },
   "ssoError": {
     "message": "Netika atrasti brīvi vienotās (SSO) pieteikšanās porti."
+  },
+  "authorize": {
+    "message": "Pilnvarot"
+  },
+  "deny": {
+    "message": "Noraidīt"
+  },
+  "sshkeyApprovalTitle": {
+    "message": "Apstiprināt SSH atslēgas lietojumu"
+  },
+  "sshkeyApprovalMessageInfix": {
+    "message": "pieprasa piekļuvi"
+  },
+  "unknownApplication": {
+    "message": "Lietotne"
+  },
+  "sshKeyPasswordUnsupported": {
+    "message": "Ar paroli aizsargātu SSH atslēgu ievietošana pagaidām netiek nodrošināta"
+  },
+  "invalidSshKey": {
+    "message": "SSH atslēga ir nederīga"
+  },
+  "sshKeyTypeUnsupported": {
+    "message": "SSH atslēgas veids netiek atbalstīts"
+  },
+  "importSshKeyFromClipboard": {
+    "message": "Ievietot atslēgu no starpliktuves"
+  },
+  "sshKeyPasted": {
+    "message": "SSH atslēga tika veiksmīgi ievietota"
   },
   "fileSavedToDevice": {
     "message": "Datne saglabāta ierīcē. Tā ir atrodama ierīces lejupielāžu mapē."

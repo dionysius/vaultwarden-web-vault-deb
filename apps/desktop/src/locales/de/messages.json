@@ -26,6 +26,9 @@
   "typeSecureNote": {
     "message": "Sichere Notiz"
   },
+  "typeSshKey": {
+    "message": "SSH-Schlüssel"
+  },
   "folders": {
     "message": "Ordner"
   },
@@ -176,6 +179,48 @@
   },
   "address": {
     "message": "Adresse"
+  },
+  "sshPrivateKey": {
+    "message": "Privater Schlüssel"
+  },
+  "sshPublicKey": {
+    "message": "Öffentlicher Schlüssel"
+  },
+  "sshFingerprint": {
+    "message": "Fingerabdruck"
+  },
+  "sshKeyAlgorithm": {
+    "message": "Schlüsseltyp"
+  },
+  "sshKeyAlgorithmED25519": {
+    "message": "ED25519"
+  },
+  "sshKeyAlgorithmRSA2048": {
+    "message": "RSA 2048-Bit"
+  },
+  "sshKeyAlgorithmRSA3072": {
+    "message": "RSA 3072-Bit"
+  },
+  "sshKeyAlgorithmRSA4096": {
+    "message": "RSA 4096-Bit"
+  },
+  "sshKeyGenerated": {
+    "message": "Ein neuer SSH-Schlüssel wurde generiert"
+  },
+  "sshAgentUnlockRequired": {
+    "message": "Bitte entsperre deinen Tresor, um die SSH-Schlüsselanfrage zu genehmigen."
+  },
+  "sshAgentUnlockTimeout": {
+    "message": "Zeitüberschreitung bei der SSH-Schlüsselanfrage."
+  },
+  "enableSshAgent": {
+    "message": "SSH-Agent aktivieren"
+  },
+  "enableSshAgentDesc": {
+    "message": "Aktiviere den SSH-Agenten, um SSH-Anfragen direkt aus deinem Bitwarden-Tresor aus zu signieren."
+  },
+  "enableSshAgentHelp": {
+    "message": "Der SSH-Agent ist ein Dienst, der sich an Entwickler richtet, mit dem du SSH-Anfragen direkt aus deinem Bitwarden-Tresor aus signieren kannst."
   },
   "premiumRequired": {
     "message": "Premium notwendig"
@@ -400,6 +445,12 @@
   "copyPassword": {
     "message": "Passwort kopieren"
   },
+  "regenerateSshKey": {
+    "message": "SSH-Schlüssel neu generieren"
+  },
+  "copySshPrivateKey": {
+    "message": "Privaten SSH-Schlüssel kopieren"
+  },
   "copyPassphrase": {
     "message": "Passphrase kopieren",
     "description": "Copy passphrase to clipboard"
@@ -576,7 +627,7 @@
     "message": "Mit Passkey anmelden"
   },
   "loginWithDevice": {
-    "message": "Mit Gerät anmelden"
+    "message": "Anmelden mit einem anderen Gerät"
   },
   "useSingleSignOn": {
     "message": "Single Sign-on verwenden"
@@ -2394,7 +2445,7 @@
     "message": "E-Mail generieren"
   },
   "generatorBoundariesHint": {
-    "message": "Wert muss zwischen $MIN$ und $MAX$ liegen",
+    "message": "Value must be between $MIN$ and $MAX$",
     "description": "Explains spin box minimum and maximum values to the user",
     "placeholders": {
       "min": {
@@ -3224,6 +3275,36 @@
   },
   "ssoError": {
     "message": "Es konnten keine freien Ports für die SSO-Anmeldung gefunden werden."
+  },
+  "authorize": {
+    "message": "Autorisieren"
+  },
+  "deny": {
+    "message": "Ablehnen"
+  },
+  "sshkeyApprovalTitle": {
+    "message": "Verwendung des SSH-Schlüssels bestätigen"
+  },
+  "sshkeyApprovalMessageInfix": {
+    "message": "fragt den Zugriff an für"
+  },
+  "unknownApplication": {
+    "message": "Eine Anwendung"
+  },
+  "sshKeyPasswordUnsupported": {
+    "message": "Das Importieren passwortgeschützter SSH-Schlüssel wird noch nicht unterstützt"
+  },
+  "invalidSshKey": {
+    "message": "Der SSH-Schlüssel ist ungültig"
+  },
+  "sshKeyTypeUnsupported": {
+    "message": "Der SSH-Schlüsseltyp wird nicht unterstützt"
+  },
+  "importSshKeyFromClipboard": {
+    "message": "Schlüssel aus Zwischenablage importieren"
+  },
+  "sshKeyPasted": {
+    "message": "SSH-Schlüssel erfolgreich importiert"
   },
   "fileSavedToDevice": {
     "message": "Datei auf Gerät gespeichert. Greife darauf über die Downloads deines Geräts zu."
