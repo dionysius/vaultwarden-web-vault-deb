@@ -11,6 +11,11 @@ export abstract class SdkService {
   supported$: Observable<boolean>;
 
   /**
+   * Retrieve the version of the SDK.
+   */
+  version$: Observable<string>;
+
+  /**
    * Retrieve a client initialized without a user.
    * This client can only be used for operations that don't require a user context.
    */

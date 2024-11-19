@@ -39,6 +39,7 @@ import { ClipboardMain } from "./platform/main/clipboard.main";
 import { DesktopCredentialStorageListener } from "./platform/main/desktop-credential-storage-listener";
 import { MainCryptoFunctionService } from "./platform/main/main-crypto-function.service";
 import { MainSshAgentService } from "./platform/main/main-ssh-agent.service";
+import { VersionMain } from "./platform/main/version.main";
 import { DesktopSettingsService } from "./platform/services/desktop-settings.service";
 import { ElectronLogMainService } from "./platform/services/electron-log.main.service";
 import { ElectronStorageService } from "./platform/services/electron-storage.service";
@@ -72,6 +73,7 @@ export class Main {
   nativeMessagingMain: NativeMessagingMain;
   clipboardMain: ClipboardMain;
   desktopAutofillSettingsService: DesktopAutofillSettingsService;
+  versionMain: VersionMain;
   sshAgentService: MainSshAgentService;
 
   constructor() {
@@ -199,6 +201,8 @@ export class Main {
       });
     });
 
+    this.versionMain = new VersionMain(this.windowMain);
+
     this.powerMonitorMain = new PowerMonitorMain(this.messagingService, this.logService);
     this.menuMain = new MenuMain(
       this.i18nService,
@@ -207,6 +211,7 @@ export class Main {
       this.windowMain,
       this.updaterMain,
       this.desktopSettingsService,
+      this.versionMain,
     );
 
     this.biometricsService = new BiometricsService(

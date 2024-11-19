@@ -1,5 +1,6 @@
 import * as chalk from "chalk";
 import { program, Command, OptionValues } from "commander";
+import { firstValueFrom } from "rxjs";
 
 import { AuthenticationStatus } from "@bitwarden/common/auth/enums/authentication-status";
 
@@ -101,6 +102,14 @@ export class Program extends BaseProgram {
       );
       writeLn("", true);
     });
+
+    program
+      .command("sdk-version")
+      .description("Print the SDK version.")
+      .action(async () => {
+        const sdkVersion = await firstValueFrom(this.serviceContainer.sdkService.version$);
+        writeLn(sdkVersion, true);
+      });
 
     program
       .command("login [email] [password]")
