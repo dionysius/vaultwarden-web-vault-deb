@@ -24,6 +24,9 @@ export * from "./login/login-secondary-content.component";
 export * from "./login/login-component.service";
 export * from "./login/default-login-component.service";
 
+// login via auth request
+export * from "./login-via-auth-request/login-via-auth-request.component";
+
 // password callout
 export * from "./password-callout/password-callout.component";
 

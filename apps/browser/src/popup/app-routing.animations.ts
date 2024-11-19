@@ -132,6 +132,9 @@ export const routerTransition = trigger("routerTransition", [
   transition("login-with-device => tabs, login-with-device => 2fa", inSlideLeft),
   transition("login-with-device => login", outSlideRight),
 
+  transition("admin-approval-requested => tabs, admin-approval-requested => 2fa", inSlideLeft),
+  transition("admin-approval-requested => login", outSlideRight),
+
   transition(tabsToCiphers, inSlideLeft),
   transition(ciphersToTabs, outSlideRight),
 
