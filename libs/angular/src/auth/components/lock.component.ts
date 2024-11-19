@@ -22,6 +22,7 @@ import {
   MasterPasswordVerification,
   MasterPasswordVerificationResponse,
 } from "@bitwarden/common/auth/types/verification";
+import { ClientType } from "@bitwarden/common/enums";
 import { EnvironmentService } from "@bitwarden/common/platform/abstractions/environment.service";
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 import { LogService } from "@bitwarden/common/platform/abstractions/log.service";
@@ -318,7 +319,24 @@ export class LockComponent implements OnInit, OnDestroy {
     }
 
     // Vault can be de-synced since notifications get ignored while locked. Need to check whether sync is required using the sync service.
-    await this.syncService.fullSync(false);
+    const clientType = this.platformUtilsService.getClientType();
+    if (clientType === ClientType.Browser || clientType === ClientType.Desktop) {
+      // Desktop and Browser have better offline support and to facilitate this we don't make the user wait for what
+      // could be an HTTP Timeout because their server is unreachable.
+      await Promise.race([
+        this.syncService
+          .fullSync(false)
+          .catch((err) => this.logService.error("Error during unlock sync", err)),
+        new Promise<void>((resolve) =>
+          setTimeout(() => {
+            this.logService.warning("Skipping sync wait, continuing to unlock.");
+            resolve();
+          }, 5_000),
+        ),
+      ]);
+    } else {
+      await this.syncService.fullSync(false);
+    }
 
     if (this.onSuccessfulSubmit != null) {
       await this.onSuccessfulSubmit();
