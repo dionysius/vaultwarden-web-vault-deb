@@ -6,6 +6,7 @@ import {
   distinctUntilChanged,
   map,
   Observable,
+  shareReplay,
   startWith,
   switchMap,
   tap,
@@ -20,6 +21,11 @@ import { Organization } from "@bitwarden/common/admin-console/models/domain/orga
 import { ProductTierType } from "@bitwarden/common/billing/enums";
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 import { Utils } from "@bitwarden/common/platform/misc/utils";
+import {
+  KeyDefinition,
+  StateProvider,
+  VAULT_SETTINGS_DISK,
+} from "@bitwarden/common/platform/state";
 import { CipherService } from "@bitwarden/common/vault/abstractions/cipher.service";
 import { FolderService } from "@bitwarden/common/vault/abstractions/folder/folder.service.abstraction";
 import { CipherType } from "@bitwarden/common/vault/enums";
@@ -28,6 +34,10 @@ import { CipherView } from "@bitwarden/common/vault/models/view/cipher.view";
 import { FolderView } from "@bitwarden/common/vault/models/view/folder.view";
 import { ServiceUtils } from "@bitwarden/common/vault/service-utils";
 import { ChipSelectOption } from "@bitwarden/components";
+
+const FILTER_VISIBILITY_KEY = new KeyDefinition<boolean>(VAULT_SETTINGS_DISK, "filterVisibility", {
+  deserializer: (obj) => obj,
+});
 
 /** All available cipher filters */
 export type PopupListFilter = {
@@ -66,6 +76,15 @@ export class VaultPopupListFiltersService {
     startWith(INITIAL_FILTERS),
   ) as Observable<PopupListFilter>;
 
+  /** Emits the number of applied filters. */
+  numberOfAppliedFilters$ = this.filters$.pipe(
+    map((filters) => Object.values(filters).filter((filter) => Boolean(filter)).length),
+    shareReplay({ refCount: true, bufferSize: 1 }),
+  );
+
+  /** Stored state for the visibility of the filters. */
+  private filterVisibilityState = this.stateProvider.getGlobal(FILTER_VISIBILITY_KEY);
+
   /**
    * Static list of ciphers views used in synchronous context
    */
@@ -89,11 +108,15 @@ export class VaultPopupListFiltersService {
     private collectionService: CollectionService,
     private formBuilder: FormBuilder,
     private policyService: PolicyService,
+    private stateProvider: StateProvider,
   ) {
     this.filterForm.controls.organization.valueChanges
       .pipe(takeUntilDestroyed())
       .subscribe(this.validateOrganizationChange.bind(this));
   }
+
+  /** Stored state for the visibility of the filters. */
+  filterVisibilityState$ = this.filterVisibilityState.state$;
 
   /**
    * Observable whose value is a function that filters an array of `CipherView` objects based on the current filters
@@ -331,6 +354,11 @@ export class VaultPopupListFiltersService {
       collections.nestedList.map((c) => this.convertToChipSelectOption(c, "bwi-collection")),
     ),
   );
+
+  /** Updates the stored state for filter visibility. */
+  async updateFilterVisibility(isVisible: boolean): Promise<void> {
+    await this.filterVisibilityState.update(() => isVisible);
+  }
 
   /**
    * Converts the given item into the `ChipSelectOption` structure
