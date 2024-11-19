@@ -9,6 +9,7 @@ import { OrganizationService } from "@bitwarden/common/admin-console/abstraction
 import { OrganizationUserType } from "@bitwarden/common/admin-console/enums";
 import { Organization } from "@bitwarden/common/admin-console/models/domain/organization";
 import { OrganizationSponsorshipRedeemRequest } from "@bitwarden/common/admin-console/models/request/organization/organization-sponsorship-redeem.request";
+import { PreValidateSponsorshipResponse } from "@bitwarden/common/admin-console/models/response/pre-validate-sponsorship.response";
 import { PlanSponsorshipType, PlanType, ProductTierType } from "@bitwarden/common/billing/enums";
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
@@ -51,6 +52,7 @@ export class FamiliesForEnterpriseSetupComponent implements OnInit, OnDestroy {
 
   showNewOrganization = false;
   _organizationPlansComponent: OrganizationPlansComponent;
+  preValidateSponsorshipResponse: PreValidateSponsorshipResponse;
   _selectedFamilyOrganizationId = "";
 
   private _destroy = new Subject<void>();
@@ -92,7 +94,20 @@ export class FamiliesForEnterpriseSetupComponent implements OnInit, OnDestroy {
       this.token = qParams.token;
 
       await this.syncService.fullSync(true);
-      this.badToken = !(await this.apiService.postPreValidateSponsorshipToken(this.token));
+
+      this.preValidateSponsorshipResponse = await this.apiService.postPreValidateSponsorshipToken(
+        this.token,
+      );
+      if (this.preValidateSponsorshipResponse.isFreeFamilyPolicyEnabled) {
+        this.toastService.showToast({
+          variant: "error",
+          title: this.i18nService.t("errorOccured"),
+          message: this.i18nService.t("offerNoLongerValid"),
+        });
+      } else {
+        this.badToken = !this.preValidateSponsorshipResponse.isTokenValid;
+      }
+
       this.loading = false;
     });
 

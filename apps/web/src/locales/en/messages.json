@@ -6376,6 +6376,9 @@
   "idpSingleSignOnServiceUrlRequired": {
     "message": "Required if Entity ID is not a URL."
   },
+  "offerNoLongerValid": {
+    "message": "This offer is no longer valid. Contact your organization administrators for more information."
+  },
   "openIdOptionalCustomizations": {
     "message": "Optional customizations"
   },
@@ -9727,5 +9730,11 @@
   },
   "deletedSuccessfully": {
     "message": "Deleted successfully"
+  },
+  "freeFamiliesSponsorship": {
+    "message": "Remove Free Bitwarden Families sponsorship"
+  },
+  "freeFamiliesSponsorshipPolicyDesc": {
+    "message": "Do not allow members to redeem a Families plan through this organization."
   }
 }

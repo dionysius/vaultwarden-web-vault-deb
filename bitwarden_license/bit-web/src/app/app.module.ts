@@ -19,6 +19,7 @@ import { DisablePersonalVaultExportPolicyComponent } from "./admin-console/polic
 import { MaximumVaultTimeoutPolicyComponent } from "./admin-console/policies/maximum-vault-timeout.component";
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
+import { FreeFamiliesSponsorshipPolicyComponent } from "./billing/policies/free-families-sponsorship.component";
 
 /**
  * This is the AppModule for the commercial version of Bitwarden.
@@ -49,6 +50,7 @@ import { AppComponent } from "./app.component";
     MaximumVaultTimeoutPolicyComponent,
     ActivateAutofillPolicyComponent,
     AutomaticAppLoginPolicyComponent,
+    FreeFamiliesSponsorshipPolicyComponent,
   ],
   bootstrap: [AppComponent],
 })

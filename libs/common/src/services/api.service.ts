@@ -29,6 +29,7 @@ import {
 } from "../admin-console/models/response/organization-connection.response";
 import { OrganizationExportResponse } from "../admin-console/models/response/organization-export.response";
 import { OrganizationSponsorshipSyncStatusResponse } from "../admin-console/models/response/organization-sponsorship-sync-status.response";
+import { PreValidateSponsorshipResponse } from "../admin-console/models/response/pre-validate-sponsorship.response";
 import {
   ProviderOrganizationOrganizationDetailsResponse,
   ProviderOrganizationResponse,
@@ -1680,8 +1681,10 @@ export class ApiService implements ApiServiceAbstraction {
     );
   }
 
-  async postPreValidateSponsorshipToken(sponsorshipToken: string): Promise<boolean> {
-    const r = await this.send(
+  async postPreValidateSponsorshipToken(
+    sponsorshipToken: string,
+  ): Promise<PreValidateSponsorshipResponse> {
+    const response = await this.send(
       "POST",
       "/organization/sponsorship/validate-token?sponsorshipToken=" +
         encodeURIComponent(sponsorshipToken),
@@ -1689,7 +1692,8 @@ export class ApiService implements ApiServiceAbstraction {
       true,
       true,
     );
-    return r as boolean;
+
+    return new PreValidateSponsorshipResponse(response);
   }
 
   async postRedeemSponsorship(

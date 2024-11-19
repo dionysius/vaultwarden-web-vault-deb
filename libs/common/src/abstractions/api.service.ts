@@ -24,6 +24,7 @@ import {
 } from "../admin-console/models/response/organization-connection.response";
 import { OrganizationExportResponse } from "../admin-console/models/response/organization-export.response";
 import { OrganizationSponsorshipSyncStatusResponse } from "../admin-console/models/response/organization-sponsorship-sync-status.response";
+import { PreValidateSponsorshipResponse } from "../admin-console/models/response/pre-validate-sponsorship.response";
 import {
   ProviderOrganizationOrganizationDetailsResponse,
   ProviderOrganizationResponse,
@@ -490,7 +491,9 @@ export abstract class ApiService {
   ) => Promise<OrganizationSponsorshipSyncStatusResponse>;
   deleteRevokeSponsorship: (sponsoringOrganizationId: string) => Promise<void>;
   deleteRemoveSponsorship: (sponsoringOrgId: string) => Promise<void>;
-  postPreValidateSponsorshipToken: (sponsorshipToken: string) => Promise<boolean>;
+  postPreValidateSponsorshipToken: (
+    sponsorshipToken: string,
+  ) => Promise<PreValidateSponsorshipResponse>;
   postRedeemSponsorship: (
     sponsorshipToken: string,
     request: OrganizationSponsorshipRedeemRequest,

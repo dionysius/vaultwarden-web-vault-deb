@@ -39,6 +39,7 @@ export enum FeatureFlag {
   SecurityTasks = "security-tasks",
   NewDeviceVerificationTemporaryDismiss = "new-device-temporary-dismiss",
   NewDeviceVerificationPermanentDismiss = "new-device-permanent-dismiss",
+  DisableFreeFamiliesSponsorship = "PM-12274-disable-free-families-sponsorship",
 }
 
 export type AllowedFeatureFlagTypes = boolean | number | string;
@@ -88,6 +89,7 @@ export const DefaultFeatureFlagValue = {
   [FeatureFlag.SecurityTasks]: FALSE,
   [FeatureFlag.NewDeviceVerificationTemporaryDismiss]: FALSE,
   [FeatureFlag.NewDeviceVerificationPermanentDismiss]: FALSE,
+  [FeatureFlag.DisableFreeFamiliesSponsorship]: FALSE,
 } satisfies Record<FeatureFlag, AllowedFeatureFlagTypes>;
 
 export type DefaultFeatureFlagValueType = typeof DefaultFeatureFlagValue;
