@@ -27,24 +27,24 @@ anyhow = "=1.0.93"
 arboard = { version = "=3.4.1", default-features = false, features = [
   "wayland-data-control",
 ] }
-async-stream = "0.3.5"
+async-stream = "=0.3.5"
 base64 = "=0.22.1"
-byteorder = "1.5.0"
+byteorder = "=1.5.0"
 cbc = { version = "=0.1.2", features = ["alloc"] }
-homedir = "0.3.3"
+homedir = "=0.3.3"
 libc = "=0.2.162"
-pin-project = "1.1.5"
+pin-project = "=1.1.5"
 dirs = "=5.0.1"
 futures = "=0.3.31"
 interprocess = { version = "=2.2.1", features = ["tokio"] }
 log = "=0.4.22"
 rand = "=0.8.5"
 retry = "=2.0.0"
-russh-cryptovec = "0.7.3"
+russh-cryptovec = "=0.7.3"
 scopeguard = "=1.2.0"
 sha2 = "=0.10.8"
-ssh-encoding = "0.2.0"
-ssh-key = { version = "0.6.6", default-features = false, features = [
+ssh-encoding = "=0.2.0"
+ssh-key = { version = "=0.6.6", default-features = false, features = [
     "encryption",
     "ed25519",
     "rsa",
