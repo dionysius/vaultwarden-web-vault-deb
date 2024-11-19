@@ -57,7 +57,7 @@ export class VaultHeaderComponent implements OnInit {
    */
   @Input() loading: boolean;
 
-  /** Current active fitler */
+  /** Current active filter */
   @Input() filter: RoutedVaultFilterModel;
 
   /** The organization currently being viewed */
