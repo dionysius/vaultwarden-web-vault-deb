@@ -1,5 +1,7 @@
 use std::{
     collections::HashMap,
+    fs,
+    os::unix::fs::PermissionsExt,
     sync::{Arc, RwLock},
 };
 
@@ -15,14 +17,13 @@ impl BitwardenDesktopAgent {
         auth_request_tx: tokio::sync::mpsc::Sender<(u32, String)>,
         auth_response_rx: Arc<Mutex<tokio::sync::broadcast::Receiver<(u32, bool)>>>,
     ) -> Result<Self, anyhow::Error> {
-        use std::path::PathBuf;
-
         let agent = BitwardenDesktopAgent {
             keystore: ssh_agent::KeyStore(Arc::new(RwLock::new(HashMap::new()))),
             cancellation_token: CancellationToken::new(),
             show_ui_request_tx: auth_request_tx,
             get_ui_response_rx: auth_response_rx,
             request_id: Arc::new(tokio::sync::Mutex::new(0)),
+            is_running: Arc::new(tokio::sync::Mutex::new(false)),
         };
         let cloned_agent_state = agent.clone();
         tokio::spawn(async move {
@@ -33,7 +34,12 @@ impl BitwardenDesktopAgent {
 
                     let ssh_agent_directory = match my_home() {
                         Ok(Some(home)) => home,
-                        _ => PathBuf::from("/tmp/"),
+                        _ => {
+                            println!(
+                                "[SSH Agent Native Module] Could not determine home directory"
+                            );
+                            return;
+                        }
                     };
                     ssh_agent_directory
                         .join(".bitwarden-ssh-agent.sock")
@@ -48,19 +54,38 @@ impl BitwardenDesktopAgent {
                 ssh_path
             );
             let sockname = std::path::Path::new(&ssh_path);
-            let _ = std::fs::remove_file(sockname);
+            if let Err(e) = std::fs::remove_file(sockname) {
+                println!(
+                    "[SSH Agent Native Module] Could not remove existing socket file: {}",
+                    e
+                );
+                return;
+            }
+
             match UnixListener::bind(sockname) {
                 Ok(listener) => {
+                    // Only the current user should be able to access the socket
+                    if let Err(e) = fs::set_permissions(sockname, fs::Permissions::from_mode(0o600))
+                    {
+                        println!(
+                            "[SSH Agent Native Module] Could not set socket permissions: {}",
+                            e
+                        );
+                        return;
+                    }
+
                     let wrapper = tokio_stream::wrappers::UnixListenerStream::new(listener);
                     let cloned_keystore = cloned_agent_state.keystore.clone();
                     let cloned_cancellation_token = cloned_agent_state.cancellation_token.clone();
+                    *cloned_agent_state.is_running.lock().await = true;
                     let _ = ssh_agent::serve(
                         wrapper,
-                        cloned_agent_state,
+                        cloned_agent_state.clone(),
                         cloned_keystore,
                         cloned_cancellation_token,
                     )
                     .await;
+                    *cloned_agent_state.is_running.lock().await = false;
                     println!("[SSH Agent Native Module] SSH Agent server exited");
                 }
                 Err(e) => {

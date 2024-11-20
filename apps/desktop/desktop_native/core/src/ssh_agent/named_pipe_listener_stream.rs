@@ -1,7 +1,5 @@
 use std::{
-    io,
-    pin::Pin,
-    task::{Context, Poll},
+    io, pin::Pin, sync::Arc, task::{Context, Poll}
 };
 
 use futures::Stream;
@@ -19,14 +17,23 @@ pub struct NamedPipeServerStream {
 }
 
 impl NamedPipeServerStream {
-    pub fn new(cancellation_token: CancellationToken) -> Self {
+    pub fn new(cancellation_token: CancellationToken, is_running: Arc<tokio::sync::Mutex<bool>>) -> Self {
         let (tx, rx) = tokio::sync::mpsc::channel(16);
         tokio::spawn(async move {
             println!(
                 "[SSH Agent Native Module] Creating named pipe server on {}",
                 PIPE_NAME
             );
-            let mut listener = ServerOptions::new().create(PIPE_NAME).unwrap();
+            let mut listener = match ServerOptions::new().create(PIPE_NAME) {
+                Ok(pipe) => pipe,
+                Err(err) => {
+                    println!("[SSH Agent Native Module] Encountered an error creating the first pipe. The system's openssh service must likely be disabled");
+                    println!("[SSH Agent Natvie Module] error: {}", err);
+                    cancellation_token.cancel();
+                    *is_running.lock().await = false;
+                    return;
+                }
+            };
             loop {
                 println!("[SSH Agent Native Module] Waiting for connection");
                 select! {
@@ -37,7 +44,16 @@ impl NamedPipeServerStream {
                     _ = listener.connect() => {
                         println!("[SSH Agent Native Module] Incoming connection");
                         tx.send(listener).await.unwrap();
-                        listener = ServerOptions::new().create(PIPE_NAME).unwrap();
+
+                        listener = match ServerOptions::new().create(PIPE_NAME) {
+                            Ok(pipe) => pipe,
+                            Err(err) => {
+                                println!("[SSH Agent Native Module] Encountered an error creating a new pipe {}", err);
+                                cancellation_token.cancel();
+                                *is_running.lock().await = false;
+                                return;
+                            }
+                        };
                     }
                 }
             }

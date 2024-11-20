@@ -79,7 +79,7 @@ export class MainSshAgentService {
     ipcMain.handle(
       "sshagent.setkeys",
       async (event: any, keys: { name: string; privateKey: string; cipherId: string }[]) => {
-        if (this.agentState != null) {
+        if (this.agentState != null && (await sshagent.isRunning(this.agentState))) {
           sshagent.setKeys(this.agentState, keys);
         }
       },
@@ -107,7 +107,7 @@ export class MainSshAgentService {
     );
 
     ipcMain.handle("sshagent.lock", async (event: any) => {
-      if (this.agentState != null) {
+      if (this.agentState != null && (await sshagent.isRunning(this.agentState))) {
         sshagent.lock(this.agentState);
       }
     });

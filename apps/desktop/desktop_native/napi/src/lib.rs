@@ -308,6 +308,12 @@ pub mod sshagent {
     }
 
     #[napi]
+    pub fn is_running(agent_state: &mut SshAgentState) -> bool {
+        let bitwarden_agent_state = agent_state.state.clone();
+        bitwarden_agent_state.is_running()
+    }
+
+    #[napi]
     pub fn set_keys(
         agent_state: &mut SshAgentState,
         new_keys: Vec<PrivateKey>,
