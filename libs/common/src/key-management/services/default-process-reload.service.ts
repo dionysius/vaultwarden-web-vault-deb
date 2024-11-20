@@ -12,7 +12,7 @@ import { VaultTimeoutAction } from "../../enums/vault-timeout-action.enum";
 import { UserId } from "../../types/guid";
 import { ProcessReloadServiceAbstraction } from "../abstractions/process-reload.service";
 
-export class ProcessReloadService implements ProcessReloadServiceAbstraction {
+export class DefaultProcessReloadService implements ProcessReloadServiceAbstraction {
   private reloadInterval: any = null;
 
   constructor(

@@ -50,7 +50,7 @@ import { SsoLoginServiceAbstraction } from "@bitwarden/common/auth/abstractions/
 import { AutofillSettingsServiceAbstraction } from "@bitwarden/common/autofill/services/autofill-settings.service";
 import { ClientType } from "@bitwarden/common/enums";
 import { ProcessReloadServiceAbstraction } from "@bitwarden/common/key-management/abstractions/process-reload.service";
-import { ProcessReloadService } from "@bitwarden/common/key-management/services/process-reload.service";
+import { DefaultProcessReloadService } from "@bitwarden/common/key-management/services/default-process-reload.service";
 import { CryptoFunctionService as CryptoFunctionServiceAbstraction } from "@bitwarden/common/platform/abstractions/crypto-function.service";
 import { EncryptService } from "@bitwarden/common/platform/abstractions/encrypt.service";
 import { EnvironmentService } from "@bitwarden/common/platform/abstractions/environment.service";
@@ -221,7 +221,7 @@ const safeProviders: SafeProvider[] = [
   }),
   safeProvider({
     provide: ProcessReloadServiceAbstraction,
-    useClass: ProcessReloadService,
+    useClass: DefaultProcessReloadService,
     deps: [
       PinServiceAbstraction,
       MessagingServiceAbstraction,

@@ -6,7 +6,6 @@ import * as jq from "jquery";
 import { Subject, filter, firstValueFrom, map, takeUntil, timeout, catchError, of } from "rxjs";
 
 import { CollectionService } from "@bitwarden/admin-console/common";
-import { LogoutReason } from "@bitwarden/auth/common";
 import { EventUploadService } from "@bitwarden/common/abstractions/event/event-upload.service";
 import { NotificationsService } from "@bitwarden/common/abstractions/notifications.service";
 import { SearchService } from "@bitwarden/common/abstractions/search.service";
@@ -17,6 +16,7 @@ import { AccountService } from "@bitwarden/common/auth/abstractions/account.serv
 import { AuthService } from "@bitwarden/common/auth/abstractions/auth.service";
 import { KeyConnectorService } from "@bitwarden/common/auth/abstractions/key-connector.service";
 import { AuthenticationStatus } from "@bitwarden/common/auth/enums/authentication-status";
+import { ProcessReloadServiceAbstraction } from "@bitwarden/common/key-management/abstractions/process-reload.service";
 import { BroadcasterService } from "@bitwarden/common/platform/abstractions/broadcaster.service";
 import { ConfigService } from "@bitwarden/common/platform/abstractions/config/config.service";
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
@@ -28,7 +28,7 @@ import { StateEventRunnerService } from "@bitwarden/common/platform/state";
 import { SyncService } from "@bitwarden/common/platform/sync";
 import { CipherService } from "@bitwarden/common/vault/abstractions/cipher.service";
 import { InternalFolderService } from "@bitwarden/common/vault/abstractions/folder/folder.service.abstraction";
-import { DialogService, ToastOptions, ToastService } from "@bitwarden/components";
+import { DialogService, ToastService } from "@bitwarden/components";
 import { PasswordGenerationServiceAbstraction } from "@bitwarden/generator-legacy";
 import { KeyService, BiometricStateService } from "@bitwarden/key-management";
 
@@ -59,6 +59,8 @@ export class AppComponent implements OnDestroy, OnInit {
   private idleTimer: number = null;
   private isIdle = false;
   private destroy$ = new Subject<void>();
+
+  loading = false;
 
   constructor(
     @Inject(DOCUMENT) private document: Document,
@@ -91,6 +93,7 @@ export class AppComponent implements OnDestroy, OnInit {
     private accountService: AccountService,
     private logService: LogService,
     private sdkService: SdkService,
+    private processReloadService: ProcessReloadServiceAbstraction,
   ) {
     if (flagEnabled("sdk")) {
       // Warn if the SDK for some reason can't be initialized
@@ -161,7 +164,8 @@ export class AppComponent implements OnDestroy, OnInit {
             this.router.navigate(["/"]);
             break;
           case "logout":
-            await this.logOut(message.logoutReason, message.redirect);
+            // note: the message.logoutReason isn't consumed anymore because of the process reload clearing any toasts.
+            await this.logOut(message.redirect);
             break;
           case "lockVault":
             await this.vaultTimeoutService.lock();
@@ -170,9 +174,8 @@ export class AppComponent implements OnDestroy, OnInit {
             // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
             // eslint-disable-next-line @typescript-eslint/no-floating-promises
             this.notificationsService.updateConnection(false);
-            // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
-            // eslint-disable-next-line @typescript-eslint/no-floating-promises
-            this.router.navigate(["lock"]);
+
+            await this.processReloadService.startProcessReload(this.authService);
             break;
           case "lockedUrl":
             break;
@@ -272,33 +275,16 @@ export class AppComponent implements OnDestroy, OnInit {
     this.destroy$.complete();
   }
 
-  private async displayLogoutReason(logoutReason: LogoutReason) {
-    let toastOptions: ToastOptions;
-    switch (logoutReason) {
-      case "invalidSecurityStamp":
-      case "sessionExpired": {
-        toastOptions = {
-          variant: "warning",
-          title: this.i18nService.t("loggedOut"),
-          message: this.i18nService.t("loginExpired"),
-        };
-        break;
-      }
-      default: {
-        toastOptions = {
-          variant: "info",
-          title: this.i18nService.t("loggedOut"),
-          message: this.i18nService.t("loggedOutDesc"),
-        };
-        break;
-      }
-    }
+  private async logOut(redirect = true) {
+    // Ensure the loading state is applied before proceeding to avoid a flash
+    // of the login screen before the process reload fires.
+    this.ngZone.run(() => {
+      this.loading = true;
+      document.body.classList.add("layout_frontend");
+    });
 
-    this.toastService.showToast(toastOptions);
-  }
-
-  private async logOut(logoutReason: LogoutReason, redirect = true) {
-    await this.displayLogoutReason(logoutReason);
+    // Note: we don't display a toast logout reason anymore as the process reload
+    // will prevent any toasts from being displayed long enough to be read
 
     await this.eventUploadService.uploadEvents();
     const userId = await firstValueFrom(this.accountService.activeAccount$.pipe(map((a) => a?.id)));
@@ -334,10 +320,14 @@ export class AppComponent implements OnDestroy, OnInit {
       await logoutPromise;
 
       if (redirect) {
-        // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
-        // eslint-disable-next-line @typescript-eslint/no-floating-promises
-        this.router.navigate(["/"]);
+        await this.router.navigate(["/"]);
       }
+
+      await this.processReloadService.startProcessReload(this.authService);
+
+      // Normally we would need to reset the loading state to false or remove the layout_frontend
+      // class from the body here, but the process reload completely reloads the app so
+      // it handles it.
     }, userId);
   }
 

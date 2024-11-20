@@ -49,6 +49,7 @@ import { KdfConfigService } from "@bitwarden/common/auth/abstractions/kdf-config
 import { InternalMasterPasswordServiceAbstraction } from "@bitwarden/common/auth/abstractions/master-password.service.abstraction";
 import { SsoLoginServiceAbstraction } from "@bitwarden/common/auth/abstractions/sso-login.service.abstraction";
 import { ClientType } from "@bitwarden/common/enums";
+import { ProcessReloadServiceAbstraction } from "@bitwarden/common/key-management/abstractions/process-reload.service";
 import { AppIdService } from "@bitwarden/common/platform/abstractions/app-id.service";
 import { ConfigService } from "@bitwarden/common/platform/abstractions/config/config.service";
 import { CryptoFunctionService } from "@bitwarden/common/platform/abstractions/crypto-function.service";
@@ -95,6 +96,7 @@ import {
 import { AcceptOrganizationInviteService } from "../auth/organization-invite/accept-organization.service";
 import { HtmlStorageService } from "../core/html-storage.service";
 import { I18nService } from "../core/i18n.service";
+import { WebProcessReloadService } from "../key-management/services/web-process-reload.service";
 import { WebBiometricsService } from "../key-management/web-biometric.service";
 import { WebEnvironmentService } from "../platform/web-environment.service";
 import { WebMigrationRunner } from "../platform/web-migration-runner";
@@ -280,6 +282,11 @@ const safeProviders: SafeProvider[] = [
     provide: SdkClientFactory,
     useClass: flagEnabled("sdk") ? WebSdkClientFactory : NoopSdkClientFactory,
     deps: [],
+  }),
+  safeProvider({
+    provide: ProcessReloadServiceAbstraction,
+    useClass: WebProcessReloadService,
+    deps: [WINDOW],
   }),
   safeProvider({
     provide: LoginEmailService,

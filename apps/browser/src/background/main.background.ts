@@ -76,7 +76,7 @@ import { DefaultBillingAccountProfileStateService } from "@bitwarden/common/bill
 import { ClientType } from "@bitwarden/common/enums";
 import { FeatureFlag } from "@bitwarden/common/enums/feature-flag.enum";
 import { ProcessReloadServiceAbstraction } from "@bitwarden/common/key-management/abstractions/process-reload.service";
-import { ProcessReloadService } from "@bitwarden/common/key-management/services/process-reload.service";
+import { DefaultProcessReloadService } from "@bitwarden/common/key-management/services/default-process-reload.service";
 import { AppIdService as AppIdServiceAbstraction } from "@bitwarden/common/platform/abstractions/app-id.service";
 import { ConfigApiServiceAbstraction } from "@bitwarden/common/platform/abstractions/config/config-api.service.abstraction";
 import { ConfigService } from "@bitwarden/common/platform/abstractions/config/config.service";
@@ -1068,7 +1068,7 @@ export default class MainBackground {
       this.taskSchedulerService,
     );
 
-    this.processReloadService = new ProcessReloadService(
+    this.processReloadService = new DefaultProcessReloadService(
       this.pinService,
       this.messagingService,
       systemUtilsServiceReloadCallback,
