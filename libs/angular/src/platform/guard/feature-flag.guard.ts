@@ -16,11 +16,13 @@ type FlagValue = boolean | number | string;
  * @param featureFlag - The feature flag to check
  * @param requiredFlagValue - Optional value to the feature flag must be equal to, defaults to true
  * @param redirectUrlOnDisabled - Optional url to redirect to if the feature flag is disabled
+ * @param showToast - Optional boolean to show a toast if the feature flag is disabled - defaults to true
  */
 export const canAccessFeature = (
   featureFlag: FeatureFlag,
   requiredFlagValue: FlagValue = true,
   redirectUrlOnDisabled?: string,
+  showToast = true,
 ): CanActivateFn => {
   return async () => {
     const configService = inject(ConfigService);
@@ -36,11 +38,13 @@ export const canAccessFeature = (
         return true;
       }
 
-      toastService.showToast({
-        variant: "error",
-        title: null,
-        message: i18nService.t("accessDenied"),
-      });
+      if (showToast) {
+        toastService.showToast({
+          variant: "error",
+          title: null,
+          message: i18nService.t("accessDenied"),
+        });
+      }
 
       if (redirectUrlOnDisabled != null) {
         return router.createUrlTree([redirectUrlOnDisabled]);

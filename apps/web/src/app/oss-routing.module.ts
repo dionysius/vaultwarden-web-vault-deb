@@ -112,7 +112,7 @@ const routes: Routes = [
         path: "register",
         component: TrialInitiationComponent,
         canActivate: [
-          canAccessFeature(FeatureFlag.EmailVerification, false, "/signup"),
+          canAccessFeature(FeatureFlag.EmailVerification, false, "/signup", false),
           unauthGuardFn(),
         ],
         data: { titleId: "createAccount" } satisfies RouteDataProperties,
