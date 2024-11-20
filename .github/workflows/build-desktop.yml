@@ -272,7 +272,7 @@ jobs:
           name: ${{ needs.setup.outputs.release_channel }}-linux.yml
           path: apps/desktop/dist/${{ needs.setup.outputs.release_channel }}-linux.yml
           if-no-files-found: error
-      
+
       - name: Build flatpak
         working-directory: apps/desktop
         run: |

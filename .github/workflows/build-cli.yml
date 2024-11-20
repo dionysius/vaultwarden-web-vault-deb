@@ -72,7 +72,7 @@ jobs:
           echo "node_version=$NODE_VERSION" >> $GITHUB_OUTPUT
 
   cli:
-    name: "${{ matrix.os.base }} - ${{ matrix.license_type.readable }}"
+    name: CLI ${{ matrix.os.base }} - ${{ matrix.license_type.readable }}
     strategy:
       matrix:
         os:
@@ -177,7 +177,7 @@ jobs:
           if-no-files-found: error
 
   cli-windows:
-    name: "windows - ${{ matrix.license_type.readable }}"
+    name: Windows - ${{ matrix.license_type.readable }}
     strategy:
       matrix:
         license_type:
