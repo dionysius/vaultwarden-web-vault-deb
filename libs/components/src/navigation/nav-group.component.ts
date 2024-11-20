@@ -1,5 +1,6 @@
 import {
   AfterContentInit,
+  booleanAttribute,
   Component,
   ContentChildren,
   EventEmitter,
@@ -39,6 +40,12 @@ export class NavGroupComponent extends NavBaseComponent implements AfterContentI
    */
   @Input()
   open = false;
+
+  /**
+   * Automatically hide the nav group if there are no child buttons
+   */
+  @Input({ transform: booleanAttribute })
+  hideIfEmpty = false;
 
   @Output()
   openChange = new EventEmitter<boolean>();
