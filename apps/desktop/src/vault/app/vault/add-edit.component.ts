@@ -111,9 +111,19 @@ export class AddEditComponent extends BaseAddEditComponent implements OnInit, On
     ) {
       this.cipher = null;
     }
-    // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
-    // eslint-disable-next-line @typescript-eslint/no-floating-promises
-    super.load();
+
+    await super.load();
+
+    if (!this.editMode || this.cloneMode) {
+      // Creating an ssh key directly while filtering to the ssh key category
+      // must force a key to be set. SSH keys must never be created with an empty private key field
+      if (
+        this.cipher.type === CipherType.SshKey &&
+        (this.cipher.sshKey.privateKey == null || this.cipher.sshKey.privateKey === "")
+      ) {
+        await this.generateSshKey(false);
+      }
+    }
   }
 
   onWindowHidden() {
@@ -145,16 +155,19 @@ export class AddEditComponent extends BaseAddEditComponent implements OnInit, On
     );
   }
 
-  async generateSshKey() {
+  async generateSshKey(showNotification: boolean = true) {
     const sshKey = await ipc.platform.sshAgent.generateKey("ed25519");
     this.cipher.sshKey.privateKey = sshKey.privateKey;
     this.cipher.sshKey.publicKey = sshKey.publicKey;
     this.cipher.sshKey.keyFingerprint = sshKey.keyFingerprint;
-    this.toastService.showToast({
-      variant: "success",
-      title: "",
-      message: this.i18nService.t("sshKeyGenerated"),
-    });
+
+    if (showNotification) {
+      this.toastService.showToast({
+        variant: "success",
+        title: "",
+        message: this.i18nService.t("sshKeyGenerated"),
+      });
+    }
   }
 
   async importSshKeyFromClipboard() {
