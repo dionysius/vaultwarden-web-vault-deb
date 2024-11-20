@@ -392,4 +392,33 @@ mod tests {
         let result = import_key(private_key.to_string(), "".to_string()).unwrap();
         assert_eq!(result.status, SshKeyImportStatus::UnsupportedKeyType);
     }
+
+    // Putty-exported keys should be supported, but are not due to a parser incompatibility.
+    // Should this test start failing, please change it to expect a correct key, and
+    // make sure the documentation support for putty-exported keys this is updated.
+    // https://bitwarden.atlassian.net/browse/PM-14989
+    #[test]
+    fn import_key_ed25519_putty() {
+        let private_key = include_str!("./test_keys/ed25519_putty_openssh_unencrypted");
+        let result = import_key(private_key.to_string(), "".to_string()).unwrap();
+        assert_eq!(result.status, SshKeyImportStatus::ParsingError);
+    }
+
+    // Putty-exported keys should be supported, but are not due to a parser incompatibility.
+    // Should this test start failing, please change it to expect a correct key, and
+    // make sure the documentation support for putty-exported keys this is updated.
+    // https://bitwarden.atlassian.net/browse/PM-14989
+    #[test]
+    fn import_key_rsa_openssh_putty() {
+        let private_key = include_str!("./test_keys/rsa_putty_openssh_unencrypted");
+        let result = import_key(private_key.to_string(), "".to_string()).unwrap();
+        assert_eq!(result.status, SshKeyImportStatus::ParsingError);
+    }
+
+    #[test]
+    fn import_key_rsa_pkcs8_putty() {
+        let private_key = include_str!("./test_keys/rsa_putty_pkcs1_unencrypted");
+        let result = import_key(private_key.to_string(), "".to_string()).unwrap();
+        assert_eq!(result.status, SshKeyImportStatus::UnsupportedKeyType);
+    }
 }
