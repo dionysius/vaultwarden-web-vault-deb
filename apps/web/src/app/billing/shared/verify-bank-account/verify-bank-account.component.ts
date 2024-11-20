@@ -16,25 +16,17 @@ export class VerifyBankAccountComponent {
   @Output() submitted = new EventEmitter();
 
   protected formGroup = this.formBuilder.group({
-    amount1: new FormControl<number>(null, [
+    descriptorCode: new FormControl<string>(null, [
       Validators.required,
-      Validators.min(0),
-      Validators.max(99),
-    ]),
-    amount2: new FormControl<number>(null, [
-      Validators.required,
-      Validators.min(0),
-      Validators.max(99),
+      Validators.minLength(6),
+      Validators.maxLength(6),
     ]),
   });
 
   constructor(private formBuilder: FormBuilder) {}
 
   submit = async () => {
-    const request = new VerifyBankAccountRequest(
-      this.formGroup.value.amount1,
-      this.formGroup.value.amount2,
-    );
+    const request = new VerifyBankAccountRequest(this.formGroup.value.descriptorCode);
     await this.onSubmit?.(request);
     this.submitted.emit();
   };
