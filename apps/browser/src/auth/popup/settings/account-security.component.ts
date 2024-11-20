@@ -215,7 +215,6 @@ export class AccountSecurityComponent implements OnInit, OnDestroy {
 
     this.form.controls.vaultTimeoutAction.valueChanges
       .pipe(
-        startWith(initialValues.vaultTimeoutAction), // emit to init pairwise
         map(async (value) => {
           await this.saveVaultTimeoutAction(value);
         }),
