@@ -184,6 +184,8 @@ export class ViewComponent implements OnInit {
         return this.i18nService.t("viewItemType", this.i18nService.t("typeCard").toLowerCase());
       case CipherType.Identity:
         return this.i18nService.t("viewItemType", this.i18nService.t("typeIdentity").toLowerCase());
+      case CipherType.SshKey:
+        return this.i18nService.t("viewItemType", this.i18nService.t("typeSshKey").toLowerCase());
       default:
         return null;
     }
