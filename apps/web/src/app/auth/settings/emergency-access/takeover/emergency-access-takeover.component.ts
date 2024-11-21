@@ -6,17 +6,15 @@ import { takeUntil } from "rxjs";
 import { ChangePasswordComponent } from "@bitwarden/angular/auth/components/change-password.component";
 import { PolicyService } from "@bitwarden/common/admin-console/abstractions/policy/policy.service.abstraction";
 import { AccountService } from "@bitwarden/common/auth/abstractions/account.service";
-import { KdfConfigService } from "@bitwarden/common/auth/abstractions/kdf-config.service";
 import { InternalMasterPasswordServiceAbstraction } from "@bitwarden/common/auth/abstractions/master-password.service.abstraction";
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 import { LogService } from "@bitwarden/common/platform/abstractions/log.service";
 import { MessagingService } from "@bitwarden/common/platform/abstractions/messaging.service";
 import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
 import { StateService } from "@bitwarden/common/platform/abstractions/state.service";
-import { KdfType } from "@bitwarden/common/platform/enums";
 import { DialogService, ToastService } from "@bitwarden/components";
 import { PasswordGenerationServiceAbstraction } from "@bitwarden/generator-legacy";
-import { KeyService } from "@bitwarden/key-management";
+import { KdfType, KdfConfigService, KeyService } from "@bitwarden/key-management";
 
 import { EmergencyAccessService } from "../../../emergency-access";
 

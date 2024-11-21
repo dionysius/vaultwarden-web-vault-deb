@@ -34,7 +34,6 @@ import {
   AccountService as AccountServiceAbstraction,
 } from "@bitwarden/common/auth/abstractions/account.service";
 import { AuthService } from "@bitwarden/common/auth/abstractions/auth.service";
-import { KdfConfigService } from "@bitwarden/common/auth/abstractions/kdf-config.service";
 import { InternalMasterPasswordServiceAbstraction } from "@bitwarden/common/auth/abstractions/master-password.service.abstraction";
 import { SsoLoginServiceAbstraction } from "@bitwarden/common/auth/abstractions/sso-login.service.abstraction";
 import { UserVerificationService } from "@bitwarden/common/auth/abstractions/user-verification/user-verification.service.abstraction";
@@ -105,7 +104,12 @@ import { TotpService as TotpServiceAbstraction } from "@bitwarden/common/vault/a
 import { TotpService } from "@bitwarden/common/vault/services/totp.service";
 import { CompactModeService, DialogService, ToastService } from "@bitwarden/components";
 import { PasswordGenerationServiceAbstraction } from "@bitwarden/generator-legacy";
-import { BiometricStateService, BiometricsService, KeyService } from "@bitwarden/key-management";
+import {
+  KdfConfigService,
+  KeyService,
+  BiometricStateService,
+  BiometricsService,
+} from "@bitwarden/key-management";
 import { PasswordRepromptService } from "@bitwarden/vault";
 
 import { ForegroundLockService } from "../../auth/popup/accounts/foreground-lock.service";

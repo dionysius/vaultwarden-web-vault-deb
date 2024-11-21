@@ -2,7 +2,6 @@ import { firstValueFrom } from "rxjs";
 
 import { PinServiceAbstraction } from "@bitwarden/auth/common";
 import { AccountService } from "@bitwarden/common/auth/abstractions/account.service";
-import { KdfConfigService } from "@bitwarden/common/auth/abstractions/kdf-config.service";
 import { InternalMasterPasswordServiceAbstraction } from "@bitwarden/common/auth/abstractions/master-password.service.abstraction";
 import { CryptoFunctionService } from "@bitwarden/common/platform/abstractions/crypto-function.service";
 import { EncryptService } from "@bitwarden/common/platform/abstractions/encrypt.service";
@@ -17,7 +16,11 @@ import { StateProvider } from "@bitwarden/common/platform/state";
 import { CsprngString } from "@bitwarden/common/types/csprng";
 import { UserId } from "@bitwarden/common/types/guid";
 import { UserKey } from "@bitwarden/common/types/key";
-import { DefaultKeyService, BiometricStateService } from "@bitwarden/key-management";
+import {
+  KdfConfigService,
+  DefaultKeyService,
+  BiometricStateService,
+} from "@bitwarden/key-management";
 
 export class ElectronKeyService extends DefaultKeyService {
   constructor(

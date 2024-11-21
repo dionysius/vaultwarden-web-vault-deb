@@ -1,5 +1,6 @@
+import { KdfType } from "@bitwarden/key-management";
+
 import { CaptchaProtectedRequest } from "../../auth/models/request/captcha-protected.request";
-import { KdfType } from "../../platform/enums";
 
 import { KeysRequest } from "./keys.request";
 import { ReferenceEventRequest } from "./reference-event.request";

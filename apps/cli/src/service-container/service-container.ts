@@ -33,14 +33,12 @@ import { AccountService } from "@bitwarden/common/auth/abstractions/account.serv
 import { AvatarService as AvatarServiceAbstraction } from "@bitwarden/common/auth/abstractions/avatar.service";
 import { DeviceTrustServiceAbstraction } from "@bitwarden/common/auth/abstractions/device-trust.service.abstraction";
 import { DevicesApiServiceAbstraction } from "@bitwarden/common/auth/abstractions/devices-api.service.abstraction";
-import { KdfConfigService as KdfConfigServiceAbstraction } from "@bitwarden/common/auth/abstractions/kdf-config.service";
 import { InternalMasterPasswordServiceAbstraction } from "@bitwarden/common/auth/abstractions/master-password.service.abstraction";
 import { AccountServiceImplementation } from "@bitwarden/common/auth/services/account.service";
 import { AuthService } from "@bitwarden/common/auth/services/auth.service";
 import { AvatarService } from "@bitwarden/common/auth/services/avatar.service";
 import { DeviceTrustService } from "@bitwarden/common/auth/services/device-trust.service.implementation";
 import { DevicesApiServiceImplementation } from "@bitwarden/common/auth/services/devices-api.service.implementation";
-import { KdfConfigService } from "@bitwarden/common/auth/services/kdf-config.service";
 import { KeyConnectorService } from "@bitwarden/common/auth/services/key-connector.service";
 import { MasterPasswordService } from "@bitwarden/common/auth/services/master-password/master-password.service";
 import { TokenService } from "@bitwarden/common/auth/services/token.service";
@@ -149,6 +147,8 @@ import {
   ImportServiceAbstraction,
 } from "@bitwarden/importer/core";
 import {
+  DefaultKdfConfigService,
+  KdfConfigService,
   DefaultKeyService as KeyService,
   BiometricStateService,
   DefaultBiometricStateService,
@@ -260,7 +260,7 @@ export class ServiceContainer {
   billingAccountProfileStateService: BillingAccountProfileStateService;
   providerApiService: ProviderApiServiceAbstraction;
   userAutoUnlockKeyService: UserAutoUnlockKeyService;
-  kdfConfigService: KdfConfigServiceAbstraction;
+  kdfConfigService: KdfConfigService;
   taskSchedulerService: TaskSchedulerService;
   sdkService: SdkService;
   cipherAuthorizationService: CipherAuthorizationService;
@@ -407,7 +407,7 @@ export class ServiceContainer {
       this.logService,
     );
 
-    this.kdfConfigService = new KdfConfigService(this.stateProvider);
+    this.kdfConfigService = new DefaultKdfConfigService(this.stateProvider);
 
     this.pinService = new PinService(
       this.accountService,

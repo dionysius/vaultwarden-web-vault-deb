@@ -5,7 +5,6 @@ import { ApiService } from "@bitwarden/common/abstractions/api.service";
 import { PolicyService } from "@bitwarden/common/admin-console/abstractions/policy/policy.service.abstraction";
 import { MasterPasswordPolicyOptions } from "@bitwarden/common/admin-console/models/domain/master-password-policy-options";
 import { AccountService } from "@bitwarden/common/auth/abstractions/account.service";
-import { KdfConfigService } from "@bitwarden/common/auth/abstractions/kdf-config.service";
 import { InternalMasterPasswordServiceAbstraction } from "@bitwarden/common/auth/abstractions/master-password.service.abstraction";
 import { UserVerificationService } from "@bitwarden/common/auth/abstractions/user-verification/user-verification.service.abstraction";
 import { VerificationType } from "@bitwarden/common/auth/enums/verification-type";
@@ -20,7 +19,7 @@ import { EncString } from "@bitwarden/common/platform/models/domain/enc-string";
 import { MasterKey, UserKey } from "@bitwarden/common/types/key";
 import { DialogService, ToastService } from "@bitwarden/components";
 import { PasswordGenerationServiceAbstraction } from "@bitwarden/generator-legacy";
-import { KeyService } from "@bitwarden/key-management";
+import { KdfConfigService, KeyService } from "@bitwarden/key-management";
 
 import { ChangePasswordComponent as BaseChangePasswordComponent } from "./change-password.component";
 

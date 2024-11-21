@@ -5,14 +5,12 @@ import { firstValueFrom, map } from "rxjs";
 
 import { ApiService } from "@bitwarden/common/abstractions/api.service";
 import { AccountService } from "@bitwarden/common/auth/abstractions/account.service";
-import { KdfConfig } from "@bitwarden/common/auth/models/domain/kdf-config";
 import { KdfRequest } from "@bitwarden/common/models/request/kdf.request";
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 import { MessagingService } from "@bitwarden/common/platform/abstractions/messaging.service";
 import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
-import { KdfType } from "@bitwarden/common/platform/enums";
 import { ToastService } from "@bitwarden/components";
-import { KeyService } from "@bitwarden/key-management";
+import { KdfConfig, KdfType, KeyService } from "@bitwarden/key-management";
 
 @Component({
   selector: "app-change-kdf-confirmation",
