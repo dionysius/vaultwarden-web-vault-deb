@@ -1,14 +1,14 @@
 import { Component, inject } from "@angular/core";
 
-import { BaseLoginDecryptionOptionsComponent } from "@bitwarden/angular/auth/components/base-login-decryption-options.component";
+import { BaseLoginDecryptionOptionsComponentV1 } from "@bitwarden/angular/auth/components/base-login-decryption-options-v1.component";
 
 import { RouterService } from "../../../core";
 import { AcceptOrganizationInviteService } from "../../organization-invite/accept-organization.service";
 @Component({
   selector: "web-login-decryption-options",
-  templateUrl: "login-decryption-options.component.html",
+  templateUrl: "login-decryption-options-v1.component.html",
 })
-export class LoginDecryptionOptionsComponent extends BaseLoginDecryptionOptionsComponent {
+export class LoginDecryptionOptionsComponentV1 extends BaseLoginDecryptionOptionsComponentV1 {
   protected routerService = inject(RouterService);
   protected acceptOrganizationInviteService = inject(AcceptOrganizationInviteService);
 

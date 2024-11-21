@@ -63,7 +63,7 @@ type ExistingUserUntrustedDeviceData = {
 type Data = NewUserData | ExistingUserUntrustedDeviceData;
 
 @Directive()
-export class BaseLoginDecryptionOptionsComponent implements OnInit, OnDestroy {
+export class BaseLoginDecryptionOptionsComponentV1 implements OnInit, OnDestroy {
   private destroy$ = new Subject<void>();
 
   protected State = State;

@@ -24,6 +24,11 @@ export * from "./login/login-secondary-content.component";
 export * from "./login/login-component.service";
 export * from "./login/default-login-component.service";
 
+// login decryption options
+export * from "./login-decryption-options/login-decryption-options.component";
+export * from "./login-decryption-options/login-decryption-options.service";
+export * from "./login-decryption-options/default-login-decryption-options.service";
+
 // login via auth request
 export * from "./login-via-auth-request/login-via-auth-request.component";
 

@@ -1,15 +1,15 @@
 import { Component } from "@angular/core";
 import { firstValueFrom } from "rxjs";
 
-import { BaseLoginDecryptionOptionsComponent } from "@bitwarden/angular/auth/components/base-login-decryption-options.component";
+import { BaseLoginDecryptionOptionsComponentV1 } from "@bitwarden/angular/auth/components/base-login-decryption-options-v1.component";
 
 import { postLogoutMessageListener$ } from "../utils/post-logout-message-listener";
 
 @Component({
   selector: "browser-login-decryption-options",
-  templateUrl: "login-decryption-options.component.html",
+  templateUrl: "login-decryption-options-v1.component.html",
 })
-export class LoginDecryptionOptionsComponent extends BaseLoginDecryptionOptionsComponent {
+export class LoginDecryptionOptionsComponentV1 extends BaseLoginDecryptionOptionsComponentV1 {
   override async createUser(): Promise<void> {
     try {
       await super.createUser();
