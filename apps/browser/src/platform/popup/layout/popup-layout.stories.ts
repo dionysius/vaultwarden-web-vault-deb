@@ -313,6 +313,10 @@ export default {
               back: "Back",
               loading: "Loading",
               search: "Search",
+              vault: "Vault",
+              generator: "Generator",
+              send: "Send",
+              settings: "Settings",
             });
           },
         },
