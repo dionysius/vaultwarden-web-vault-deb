@@ -84,12 +84,12 @@
       <bit-nav-item
         [text]="'importData' | i18n"
         route="settings/tools/import"
-        *ngIf="organization.canAccessImportExport"
+        *ngIf="organization.canAccessImport"
       ></bit-nav-item>
       <bit-nav-item
         [text]="'exportVault' | i18n"
         route="settings/tools/export"
-        *ngIf="organization.canAccessImportExport"
+        *ngIf="canAccessExport$ | async"
       ></bit-nav-item>
       <bit-nav-item
         [text]="'domainVerification' | i18n"

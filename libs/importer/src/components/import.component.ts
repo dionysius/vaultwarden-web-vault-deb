@@ -21,10 +21,7 @@ import { JslibModule } from "@bitwarden/angular/jslib.module";
 import { safeProvider, SafeProvider } from "@bitwarden/angular/platform/utils/safe-provider";
 import { PinServiceAbstraction } from "@bitwarden/auth/common";
 import { ApiService } from "@bitwarden/common/abstractions/api.service";
-import {
-  canAccessImport,
-  OrganizationService,
-} from "@bitwarden/common/admin-console/abstractions/organization/organization.service.abstraction";
+import { OrganizationService } from "@bitwarden/common/admin-console/abstractions/organization/organization.service.abstraction";
 import { PolicyService } from "@bitwarden/common/admin-console/abstractions/policy/policy.service.abstraction";
 import { PolicyType } from "@bitwarden/common/admin-console/enums";
 import { Organization } from "@bitwarden/common/admin-console/models/domain/organization";
@@ -226,7 +223,7 @@ export class ImportComponent implements OnInit, OnDestroy, AfterViewInit {
     this.setImportOptions();
 
     await this.initializeOrganizations();
-    if (this.organizationId && (await this.canAccessImportExport(this.organizationId))) {
+    if (this.organizationId && (await this.canAccessImport(this.organizationId))) {
       this.handleOrganizationImportInit();
     } else {
       this.handleImportInit();
@@ -289,7 +286,7 @@ export class ImportComponent implements OnInit, OnDestroy, AfterViewInit {
   private async initializeOrganizations() {
     this.organizations$ = concat(
       this.organizationService.memberOrganizations$.pipe(
-        canAccessImport(this.i18nService),
+        map((orgs) => orgs.filter((org) => org.canAccessImport)),
         map((orgs) => orgs.sort(Utils.getSortFunction(this.i18nService, "name"))),
       ),
     );
@@ -375,7 +372,7 @@ export class ImportComponent implements OnInit, OnDestroy, AfterViewInit {
         importContents,
         this.organizationId,
         this.formGroup.controls.targetSelector.value,
-        (await this.canAccessImportExport(this.organizationId)) && this.isFromAC,
+        (await this.canAccessImport(this.organizationId)) && this.isFromAC,
       );
 
       //No errors, display success message
@@ -395,11 +392,11 @@ export class ImportComponent implements OnInit, OnDestroy, AfterViewInit {
     }
   }
 
-  private async canAccessImportExport(organizationId?: string): Promise<boolean> {
+  private async canAccessImport(organizationId?: string): Promise<boolean> {
     if (!organizationId) {
       return false;
     }
-    return (await this.organizationService.get(this.organizationId))?.canAccessImportExport;
+    return (await this.organizationService.get(this.organizationId))?.canAccessImport;
   }
 
   getFormatInstructionTitle() {

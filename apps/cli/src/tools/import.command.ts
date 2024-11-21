@@ -27,7 +27,7 @@ export class ImportCommand {
         );
       }
 
-      if (!organization.canAccessImportExport) {
+      if (!organization.canAccessImport) {
         return Response.badRequest(
           "You are not authorized to import into the provided organization.",
         );
