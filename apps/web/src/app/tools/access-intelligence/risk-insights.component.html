@@ -4,7 +4,7 @@
   {{ "reviewAtRiskPasswords" | i18n }}
   &nbsp;<a class="text-primary" routerLink="/login">{{ "learnMore" | i18n }}</a>
 </div>
-<div *ngIf="apps.length" class="tw-bg-primary-100 tw-rounded-lg tw-w-full tw-px-8 tw-py-2 tw-my-4">
+<div class="tw-bg-primary-100 tw-rounded-lg tw-w-full tw-px-8 tw-py-2 tw-my-4">
   <i class="bwi bwi-exclamation-triangle bwi-lg tw-text-[1.2rem] text-muted" aria-hidden="true"></i>
   <span class="tw-mx-4">{{
     "dataLastUpdated" | i18n: (dataLastUpdated | date: "MMMM d, y 'at' h:mm a")
