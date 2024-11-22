@@ -62,6 +62,7 @@ import { CipherService } from "@bitwarden/common/vault/abstractions/cipher.servi
 import { InternalFolderService } from "@bitwarden/common/vault/abstractions/folder/folder.service.abstraction";
 import { CipherType } from "@bitwarden/common/vault/enums";
 import { DialogService, ToastOptions, ToastService } from "@bitwarden/components";
+import { CredentialGeneratorHistoryDialogComponent } from "@bitwarden/generator-components";
 import { PasswordGenerationServiceAbstraction } from "@bitwarden/generator-legacy";
 import { KeyService, BiometricStateService } from "@bitwarden/key-management";
 
@@ -324,10 +325,7 @@ export class AppComponent implements OnInit, OnDestroy {
             await this.deleteAccount();
             break;
           case "openPasswordHistory":
-            await this.openModal<PasswordGeneratorHistoryComponent>(
-              PasswordGeneratorHistoryComponent,
-              this.passwordHistoryRef,
-            );
+            await this.openGeneratorHistory();
             break;
           case "showToast":
             this.toastService._showToast(message);
@@ -556,6 +554,21 @@ export class AppComponent implements OnInit, OnDestroy {
     this.modal.onClosed.subscribe(() => {
       this.modal = null;
     });
+  }
+
+  async openGeneratorHistory() {
+    const isGeneratorSwapEnabled = await this.configService.getFeatureFlag(
+      FeatureFlag.GeneratorToolsModernization,
+    );
+    if (isGeneratorSwapEnabled) {
+      await this.dialogService.open(CredentialGeneratorHistoryDialogComponent);
+      return;
+    }
+
+    await this.openModal<PasswordGeneratorHistoryComponent>(
+      PasswordGeneratorHistoryComponent,
+      this.passwordHistoryRef,
+    );
   }
 
   private async updateAppMenu() {
