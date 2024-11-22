@@ -1738,7 +1738,7 @@
     "message": "Tiliä ei voi poistaa"
   },
   "cannotDeleteAccountDesc": {
-    "message": "This action cannot be completed because your account is owned by an organization. Contact your organization administrator for additional details."
+    "message": "Tätä toimintoa ei voida suorittaa, koska tilisi on organisaation omistama. Ota yhteyttä organisaation ylläpitäjään saadaksesi lisätietoja."
   },
   "accountDeleted": {
     "message": "Tili poistettiin"
@@ -2444,8 +2444,8 @@
   "generateEmail": {
     "message": "Luo sähköpostiosoite"
   },
-  "generatorBoundariesHint": {
-    "message": "Value must be between $MIN$ and $MAX$",
+  "spinboxBoundariesHint": {
+    "message": "Arvon tulee olla väliltä $MIN$—$MAX$.",
     "description": "Explains spin box minimum and maximum values to the user",
     "placeholders": {
       "min": {
@@ -2455,6 +2455,26 @@
       "max": {
         "content": "$2",
         "example": "128"
+      }
+    }
+  },
+  "passwordLengthRecommendationHint": {
+    "message": " Käytä $RECOMMENDED$ tai useampaa merkkiä vahvan salasanan luomiseen.",
+    "description": "Appended to `spinboxBoundariesHint` to recommend a length to the user. This must include any language-specific 'sentence' separator characters (e.g. a space in english).",
+    "placeholders": {
+      "recommended": {
+        "content": "$1",
+        "example": "14"
+      }
+    }
+  },
+  "passphraseNumWordsRecommendationHint": {
+    "message": " Käytä $RECOMMENDED$ tai useampaa sanaa vahvan salalauseen luomiseen.",
+    "description": "Appended to `spinboxBoundariesHint` to recommend a number of words to the user. This must include any language-specific 'sentence' separator characters (e.g. a space in english).",
+    "placeholders": {
+      "recommended": {
+        "content": "$1",
+        "example": "6"
       }
     }
   },
@@ -3277,22 +3297,22 @@
     "message": "Kertakirjautumiselle ei löytynyt vapaita portteja."
   },
   "authorize": {
-    "message": "Authorize"
+    "message": "Valtuuta"
   },
   "deny": {
     "message": "Deny"
   },
   "sshkeyApprovalTitle": {
-    "message": "Confirm SSH key usage"
+    "message": "Vahvista SSH-avainkäyttö"
   },
   "sshkeyApprovalMessageInfix": {
     "message": "is requesting access to"
   },
   "unknownApplication": {
-    "message": "An application"
+    "message": "Sovellus"
   },
   "sshKeyPasswordUnsupported": {
-    "message": "Importing password protected SSH keys is not yet supported"
+    "message": "Salasanasuojattujen SSH-avainten tuontia ei vielä tueta"
   },
   "invalidSshKey": {
     "message": "SSH-avain on virheellinen"
