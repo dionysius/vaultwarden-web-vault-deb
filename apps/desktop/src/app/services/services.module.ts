@@ -26,6 +26,7 @@ import {
 } from "@bitwarden/auth/angular";
 import {
   InternalUserDecryptionOptionsServiceAbstraction,
+  LoginApprovalComponentServiceAbstraction,
   LoginEmailService,
   PinServiceAbstraction,
 } from "@bitwarden/auth/common";
@@ -87,6 +88,7 @@ import {
   BiometricsService,
 } from "@bitwarden/key-management";
 
+import { DesktopLoginApprovalComponentService } from "../../auth/login/desktop-login-approval-component.service";
 import { DesktopLoginComponentService } from "../../auth/login/desktop-login-component.service";
 import { DesktopAutofillSettingsService } from "../../autofill/services/desktop-autofill-settings.service";
 import { ElectronBiometricsService } from "../../key-management/biometrics/electron-biometrics.service";
@@ -348,6 +350,11 @@ const safeProviders: SafeProvider[] = [
     provide: LoginEmailService,
     useClass: LoginEmailService,
     deps: [AccountService, AuthService, StateProvider],
+  }),
+  safeProvider({
+    provide: LoginApprovalComponentServiceAbstraction,
+    useClass: DesktopLoginApprovalComponentService,
+    deps: [I18nServiceAbstraction],
   }),
 ];
 

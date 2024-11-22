@@ -25,7 +25,7 @@ import {
 import { CollectionService } from "@bitwarden/admin-console/common";
 import { ModalRef } from "@bitwarden/angular/components/modal/modal.ref";
 import { ModalService } from "@bitwarden/angular/services/modal.service";
-import { FingerprintDialogComponent } from "@bitwarden/auth/angular";
+import { FingerprintDialogComponent, LoginApprovalComponent } from "@bitwarden/auth/angular";
 import { LogoutReason } from "@bitwarden/auth/common";
 import { EventUploadService } from "@bitwarden/common/abstractions/event/event-upload.service";
 import { NotificationsService } from "@bitwarden/common/abstractions/notifications.service";
@@ -67,7 +67,6 @@ import { PasswordGenerationServiceAbstraction } from "@bitwarden/generator-legac
 import { KeyService, BiometricStateService } from "@bitwarden/key-management";
 
 import { DeleteAccountComponent } from "../auth/delete-account.component";
-import { LoginApprovalComponent } from "../auth/login/login-approval.component";
 import { MenuAccount, MenuUpdateRequest } from "../main/menu/menu.updater";
 import { flagEnabled } from "../platform/flags";
 import { PremiumComponent } from "../vault/app/accounts/premium.component";
