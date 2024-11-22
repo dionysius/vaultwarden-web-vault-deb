@@ -29,13 +29,13 @@ import { ProductTierType } from "@bitwarden/common/billing/enums";
 import { MessagingService } from "@bitwarden/common/platform/abstractions/messaging.service";
 import { DialogService } from "@bitwarden/components";
 
-import { TwoFactorAuthenticatorComponent } from "./two-factor-authenticator.component";
-import { TwoFactorDuoComponent } from "./two-factor-duo.component";
-import { TwoFactorEmailComponent } from "./two-factor-email.component";
 import { TwoFactorRecoveryComponent } from "./two-factor-recovery.component";
+import { TwoFactorSetupAuthenticatorComponent } from "./two-factor-setup-authenticator.component";
+import { TwoFactorSetupDuoComponent } from "./two-factor-setup-duo.component";
+import { TwoFactorSetupEmailComponent } from "./two-factor-setup-email.component";
+import { TwoFactorSetupWebAuthnComponent } from "./two-factor-setup-webauthn.component";
+import { TwoFactorSetupYubiKeyComponent } from "./two-factor-setup-yubikey.component";
 import { TwoFactorVerifyComponent } from "./two-factor-verify.component";
-import { TwoFactorWebAuthnComponent } from "./two-factor-webauthn.component";
-import { TwoFactorYubiKeyComponent } from "./two-factor-yubikey.component";
 
 @Component({
   selector: "app-two-factor-setup",
@@ -142,7 +142,7 @@ export class TwoFactorSetupComponent implements OnInit, OnDestroy {
         if (!result) {
           return;
         }
-        const authComp: DialogRef<boolean, any> = TwoFactorAuthenticatorComponent.open(
+        const authComp: DialogRef<boolean, any> = TwoFactorSetupAuthenticatorComponent.open(
           this.dialogService,
           { data: result },
         );
@@ -160,7 +160,7 @@ export class TwoFactorSetupComponent implements OnInit, OnDestroy {
         if (!result) {
           return;
         }
-        const yubiComp: DialogRef<boolean, any> = TwoFactorYubiKeyComponent.open(
+        const yubiComp: DialogRef<boolean, any> = TwoFactorSetupYubiKeyComponent.open(
           this.dialogService,
           { data: result },
         );
@@ -177,11 +177,14 @@ export class TwoFactorSetupComponent implements OnInit, OnDestroy {
         if (!result) {
           return;
         }
-        const duoComp: DialogRef<boolean, any> = TwoFactorDuoComponent.open(this.dialogService, {
-          data: {
-            authResponse: result,
+        const duoComp: DialogRef<boolean, any> = TwoFactorSetupDuoComponent.open(
+          this.dialogService,
+          {
+            data: {
+              authResponse: result,
+            },
           },
-        });
+        );
         this.twoFactorSetupSubscription = duoComp.componentInstance.onChangeStatus
           .pipe(first(), takeUntil(this.destroy$))
           .subscribe((enabled: boolean) => {
@@ -196,7 +199,7 @@ export class TwoFactorSetupComponent implements OnInit, OnDestroy {
         if (!result) {
           return;
         }
-        const emailComp: DialogRef<boolean, any> = TwoFactorEmailComponent.open(
+        const emailComp: DialogRef<boolean, any> = TwoFactorSetupEmailComponent.open(
           this.dialogService,
           {
             data: result,
@@ -216,7 +219,7 @@ export class TwoFactorSetupComponent implements OnInit, OnDestroy {
         if (!result) {
           return;
         }
-        const webAuthnComp: DialogRef<boolean, any> = TwoFactorWebAuthnComponent.open(
+        const webAuthnComp: DialogRef<boolean, any> = TwoFactorSetupWebAuthnComponent.open(
           this.dialogService,
           { data: result },
         );

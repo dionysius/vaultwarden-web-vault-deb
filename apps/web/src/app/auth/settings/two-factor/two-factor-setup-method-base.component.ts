@@ -12,8 +12,11 @@ import { LogService } from "@bitwarden/common/platform/abstractions/log.service"
 import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
 import { DialogService, ToastService } from "@bitwarden/components";
 
+/**
+ * Base class for two-factor setup components (ex: email, yubikey, webauthn, duo).
+ */
 @Directive()
-export abstract class TwoFactorBaseComponent {
+export abstract class TwoFactorSetupMethodBaseComponent {
   @Output() onUpdated = new EventEmitter<boolean>();
 
   type: TwoFactorProviderType;

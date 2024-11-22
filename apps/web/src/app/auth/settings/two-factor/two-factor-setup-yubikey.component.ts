@@ -13,7 +13,7 @@ import { LogService } from "@bitwarden/common/platform/abstractions/log.service"
 import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
 import { DialogService, ToastService } from "@bitwarden/components";
 
-import { TwoFactorBaseComponent } from "./two-factor-base.component";
+import { TwoFactorSetupMethodBaseComponent } from "./two-factor-setup-method-base.component";
 
 interface Key {
   key: string;
@@ -21,10 +21,13 @@ interface Key {
 }
 
 @Component({
-  selector: "app-two-factor-yubikey",
-  templateUrl: "two-factor-yubikey.component.html",
+  selector: "app-two-factor-setup-yubikey",
+  templateUrl: "two-factor-setup-yubikey.component.html",
 })
-export class TwoFactorYubiKeyComponent extends TwoFactorBaseComponent implements OnInit {
+export class TwoFactorSetupYubiKeyComponent
+  extends TwoFactorSetupMethodBaseComponent
+  implements OnInit
+{
   type = TwoFactorProviderType.Yubikey;
   keys: Key[];
   anyKeyHasNfc = false;
@@ -169,6 +172,6 @@ export class TwoFactorYubiKeyComponent extends TwoFactorBaseComponent implements
     dialogService: DialogService,
     config: DialogConfig<AuthResponse<TwoFactorYubiKeyResponse>>,
   ) {
-    return dialogService.open<boolean>(TwoFactorYubiKeyComponent, config);
+    return dialogService.open<boolean>(TwoFactorSetupYubiKeyComponent, config);
   }
 }
