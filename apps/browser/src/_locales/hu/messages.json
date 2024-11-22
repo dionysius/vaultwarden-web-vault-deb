@@ -1851,6 +1851,9 @@
   "secureNotes": {
     "message": "Biztonságos jegyzetek"
   },
+  "sshKeys": {
+    "message": "SSH kulcsok"
+  },
   "clear": {
     "message": "Kiürítés",
     "description": "To clear something out. example: To clear browser history."
@@ -2889,7 +2892,7 @@
   "generateEmail": {
     "message": "Email generálása"
   },
-  "generatorBoundariesHint": {
+  "spinboxBoundariesHint": {
     "message": "Az érték legyen $MIN$ és $MAX$ között.",
     "description": "Explains spin box minimum and maximum values to the user",
     "placeholders": {
@@ -2900,6 +2903,26 @@
       "max": {
         "content": "$2",
         "example": "128"
+      }
+    }
+  },
+  "passwordLengthRecommendationHint": {
+    "message": " Használjunk $RECOMMENDED$ vagy több karaktert egy erős jelszó előállításához.",
+    "description": "Appended to `spinboxBoundariesHint` to recommend a length to the user. This must include any language-specific 'sentence' separator characters (e.g. a space in english).",
+    "placeholders": {
+      "recommended": {
+        "content": "$1",
+        "example": "14"
+      }
+    }
+  },
+  "passphraseNumWordsRecommendationHint": {
+    "message": " $RECOMMENDED$ vagy több szó erős jelmondat generálásához.",
+    "description": "Appended to `spinboxBoundariesHint` to recommend a number of words to the user. This must include any language-specific 'sentence' separator characters (e.g. a space in english).",
+    "placeholders": {
+      "recommended": {
+        "content": "$1",
+        "example": "6"
       }
     }
   },
@@ -3150,11 +3173,26 @@
   "resendNotification": {
     "message": "Értesítés újraküldése"
   },
+  "viewAllLogInOptions": {
+    "message": "Összes bejelentkezési opció megtekintése"
+  },
   "viewAllLoginOptions": {
     "message": "Összes bejelentkezési opció megtekintése"
   },
   "notificationSentDevice": {
     "message": "Egy értesítés lett elküldve az eszközre."
+  },
+  "aNotificationWasSentToYourDevice": {
+    "message": "Egy értesítés lett elküldve az eszközre."
+  },
+  "makeSureYourAccountIsUnlockedAndTheFingerprintEtc": {
+    "message": "Ellenőrizzük, hogy a széf feloldásra került és az ujjlenyomat kifejezés egyezik a másik eszközön levővel."
+  },
+  "youWillBeNotifiedOnceTheRequestIsApproved": {
+    "message": "A kérelem jóváhagyása után értesítés érkezik."
+  },
+  "needAnotherOptionV1": {
+    "message": "Másik opció szükséges?"
   },
   "loginInitiated": {
     "message": "A bejelentkezés elindításra került."
@@ -3249,8 +3287,17 @@
   "opensInANewWindow": {
     "message": "Megnyitás új ablakban"
   },
+  "rememberThisDeviceToMakeFutureLoginsSeamless": {
+    "message": "Remember this device to make future logins seamless"
+  },
   "deviceApprovalRequired": {
     "message": "Az eszköz jóváhagyása szükséges. Válasszunk egy jóváhagyási lehetőséget lentebb:"
+  },
+  "deviceApprovalRequiredV2": {
+    "message": "Device approval required"
+  },
+  "selectAnApprovalOptionBelow": {
+    "message": "Select an approval option below"
   },
   "rememberThisDevice": {
     "message": "Eszköz megjegyzése"
@@ -3324,6 +3371,9 @@
   },
   "userEmailMissing": {
     "message": "A felhasználói email cím hiányzik."
+  },
+  "activeUserEmailNotFoundLoggingYouOut": {
+    "message": "Active user email not found. Logging you out."
   },
   "deviceTrusted": {
     "message": "Az eszköz megbízható."
@@ -3760,6 +3810,9 @@
   },
   "accessing": {
     "message": "Elérés"
+  },
+  "loggedInExclamation": {
+    "message": "Logged in!"
   },
   "passkeyNotCopied": {
     "message": "A hozzáférési kulcs nem kerül másolásra."
@@ -4251,6 +4304,21 @@
   },
   "filters": {
     "message": "Szűrők"
+  },
+  "filterVault": {
+    "message": "Széf szűrése"
+  },
+  "filterApplied": {
+    "message": "Egy szűrő került alkalmazásra."
+  },
+  "filterAppliedPlural": {
+    "message": "$COUNT$ szűrő került alkalmazásra.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
   },
   "personalDetails": {
     "message": "Személyes adatok"
@@ -4823,5 +4891,11 @@
   },
   "generatedPassword": {
     "message": "Generált jelszó"
+  },
+  "compactMode": {
+    "message": "Kompakt mód"
+  },
+  "beta": {
+    "message": "Béta"
   }
 }

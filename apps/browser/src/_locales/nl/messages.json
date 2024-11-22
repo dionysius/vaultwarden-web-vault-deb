@@ -1851,6 +1851,9 @@
   "secureNotes": {
     "message": "Veilige notities"
   },
+  "sshKeys": {
+    "message": "SSH-sleutels"
+  },
   "clear": {
     "message": "Wissen",
     "description": "To clear something out. example: To clear browser history."
@@ -2889,8 +2892,8 @@
   "generateEmail": {
     "message": "E-mailadres genereren"
   },
-  "generatorBoundariesHint": {
-    "message": "Waarde moet tussen $MIN$ en $MAX$ liggen",
+  "spinboxBoundariesHint": {
+    "message": "Waarde moet tussen $MIN$ en $MAX$ liggen.",
     "description": "Explains spin box minimum and maximum values to the user",
     "placeholders": {
       "min": {
@@ -2900,6 +2903,26 @@
       "max": {
         "content": "$2",
         "example": "128"
+      }
+    }
+  },
+  "passwordLengthRecommendationHint": {
+    "message": " Gebruik $RECOMMENDED$ tekens of meer om een sterk wachtwoord te genereren.",
+    "description": "Appended to `spinboxBoundariesHint` to recommend a length to the user. This must include any language-specific 'sentence' separator characters (e.g. a space in english).",
+    "placeholders": {
+      "recommended": {
+        "content": "$1",
+        "example": "14"
+      }
+    }
+  },
+  "passphraseNumWordsRecommendationHint": {
+    "message": " Gebruik $RECOMMENDED$ woorden of meer om een sterke wachtwoordzin te genereren.",
+    "description": "Appended to `spinboxBoundariesHint` to recommend a number of words to the user. This must include any language-specific 'sentence' separator characters (e.g. a space in english).",
+    "placeholders": {
+      "recommended": {
+        "content": "$1",
+        "example": "6"
       }
     }
   },
@@ -3150,11 +3173,26 @@
   "resendNotification": {
     "message": "Melding opnieuw verzenden"
   },
+  "viewAllLogInOptions": {
+    "message": "Alle inlogopties bekijken"
+  },
   "viewAllLoginOptions": {
     "message": "Alle loginopties bekijken"
   },
   "notificationSentDevice": {
     "message": "Er is een melding naar je apparaat verzonden."
+  },
+  "aNotificationWasSentToYourDevice": {
+    "message": "Er is een melding naar je apparaat verzonden"
+  },
+  "makeSureYourAccountIsUnlockedAndTheFingerprintEtc": {
+    "message": "Zorg ervoor dat je kluis is ontgrendeld en de vingerafdrukzin hetzelfde is op het andere apparaat"
+  },
+  "youWillBeNotifiedOnceTheRequestIsApproved": {
+    "message": "Je krijgt een melding zodra de aanvraag is goedgekeurd"
+  },
+  "needAnotherOptionV1": {
+    "message": "Nog een optie nodig?"
   },
   "loginInitiated": {
     "message": "Inloggen gestart"
@@ -3249,8 +3287,17 @@
   "opensInANewWindow": {
     "message": "Opent in een nieuw venster"
   },
+  "rememberThisDeviceToMakeFutureLoginsSeamless": {
+    "message": "Onthoud dit apparaat om in het vervolg naadloos in te loggen"
+  },
   "deviceApprovalRequired": {
     "message": "Apparaattoestemming vereist. Kies een goedkeuringsoptie hieronder:"
+  },
+  "deviceApprovalRequiredV2": {
+    "message": "Toestemming apparaat vereist"
+  },
+  "selectAnApprovalOptionBelow": {
+    "message": "Kies hieronder een goedkeuringsoptie"
   },
   "rememberThisDevice": {
     "message": "Dit apparaat onthouden"
@@ -3324,6 +3371,9 @@
   },
   "userEmailMissing": {
     "message": "Gebruikerse-mailadres ontbreekt"
+  },
+  "activeUserEmailNotFoundLoggingYouOut": {
+    "message": "E-mailadres voor actieve gebruiker niet gevonden. Je wordt uitgelogd."
   },
   "deviceTrusted": {
     "message": "Vertrouwd apparaat"
@@ -3760,6 +3810,9 @@
   },
   "accessing": {
     "message": "Toegang verkrijgen"
+  },
+  "loggedInExclamation": {
+    "message": "Ingelogd!"
   },
   "passkeyNotCopied": {
     "message": "Passkey wordt niet gekopieerd"
@@ -4251,6 +4304,21 @@
   },
   "filters": {
     "message": "Filters"
+  },
+  "filterVault": {
+    "message": "Filter kluis"
+  },
+  "filterApplied": {
+    "message": "Eén filter toegepast"
+  },
+  "filterAppliedPlural": {
+    "message": "$COUNT$ filters toegepast",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
   },
   "personalDetails": {
     "message": "Persoonlijke gegevens"
@@ -4823,5 +4891,11 @@
   },
   "generatedPassword": {
     "message": "Gegenereerd wachtwoord"
+  },
+  "compactMode": {
+    "message": "Compacte modus"
+  },
+  "beta": {
+    "message": "Beta"
   }
 }

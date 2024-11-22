@@ -1851,6 +1851,9 @@
   "secureNotes": {
     "message": "Drošās piezīmes"
   },
+  "sshKeys": {
+    "message": "SSH Keys"
+  },
   "clear": {
     "message": "Notīrīt",
     "description": "To clear something out. example: To clear browser history."
@@ -2889,8 +2892,8 @@
   "generateEmail": {
     "message": "Izveidot e-pasta adresi"
   },
-  "generatorBoundariesHint": {
-    "message": "Vērtībai jābūt starp $MIN$ un $MAX$",
+  "spinboxBoundariesHint": {
+    "message": "Vērtībai jābūt starp $MIN$ un $MAX$.",
     "description": "Explains spin box minimum and maximum values to the user",
     "placeholders": {
       "min": {
@@ -2900,6 +2903,26 @@
       "max": {
         "content": "$2",
         "example": "128"
+      }
+    }
+  },
+  "passwordLengthRecommendationHint": {
+    "message": " Jāizmanto $RECOMMENDED$ vai vairāk rakstzīmju, la izveidotu spēcīgu paroli.",
+    "description": "Appended to `spinboxBoundariesHint` to recommend a length to the user. This must include any language-specific 'sentence' separator characters (e.g. a space in english).",
+    "placeholders": {
+      "recommended": {
+        "content": "$1",
+        "example": "14"
+      }
+    }
+  },
+  "passphraseNumWordsRecommendationHint": {
+    "message": " Jāizmanto $RECOMMENDED$ vai vairāk vārdu, lai aizveidotu spēcīgu parles vārdkopu.",
+    "description": "Appended to `spinboxBoundariesHint` to recommend a number of words to the user. This must include any language-specific 'sentence' separator characters (e.g. a space in english).",
+    "placeholders": {
+      "recommended": {
+        "content": "$1",
+        "example": "6"
       }
     }
   },
@@ -3150,11 +3173,26 @@
   "resendNotification": {
     "message": "Atkārtoti nosūtīt paziņojumu"
   },
+  "viewAllLogInOptions": {
+    "message": "Skatīt visas pieteikšanās iespējas"
+  },
   "viewAllLoginOptions": {
     "message": "Skatīt visas pieteikšanās iespējas"
   },
   "notificationSentDevice": {
     "message": "Uz ierīci ir nosūtīts paziņojums."
+  },
+  "aNotificationWasSentToYourDevice": {
+    "message": "Uz ierīci tika nosūtīts paziņojums"
+  },
+  "makeSureYourAccountIsUnlockedAndTheFingerprintEtc": {
+    "message": "Lūgums pārliecināties, ka konts ir atslēgts un atpazīšanas vārdkopa ir tāda pati arī otrā ierīcē"
+  },
+  "youWillBeNotifiedOnceTheRequestIsApproved": {
+    "message": "Tiks paziņots, tiklīdz pieprasījums būs apstiprināts"
+  },
+  "needAnotherOptionV1": {
+    "message": "Nepieciešama cita iespēja?"
   },
   "loginInitiated": {
     "message": "Uzsākta pieteikšanās"
@@ -3249,8 +3287,17 @@
   "opensInANewWindow": {
     "message": "Atver jaunā logā"
   },
+  "rememberThisDeviceToMakeFutureLoginsSeamless": {
+    "message": "Remember this device to make future logins seamless"
+  },
   "deviceApprovalRequired": {
     "message": "Nepieciešams ierīces apstiprinājums. Zemāk jāatlasa apstiprinājuma iespēja:"
+  },
+  "deviceApprovalRequiredV2": {
+    "message": "Device approval required"
+  },
+  "selectAnApprovalOptionBelow": {
+    "message": "Select an approval option below"
   },
   "rememberThisDevice": {
     "message": "Atcerēties šo ierīci"
@@ -3324,6 +3371,9 @@
   },
   "userEmailMissing": {
     "message": "Trūkst lietotāja e-pasta adreses"
+  },
+  "activeUserEmailNotFoundLoggingYouOut": {
+    "message": "Active user email not found. Logging you out."
   },
   "deviceTrusted": {
     "message": "Ierīce ir uzticama"
@@ -3760,6 +3810,9 @@
   },
   "accessing": {
     "message": "Piekļūst"
+  },
+  "loggedInExclamation": {
+    "message": "Logged in!"
   },
   "passkeyNotCopied": {
     "message": "Piekļuves atslēga netiks ievietota starpliktuvē"
@@ -4251,6 +4304,21 @@
   },
   "filters": {
     "message": "Atlases"
+  },
+  "filterVault": {
+    "message": "Atlasīt glabātavu"
+  },
+  "filterApplied": {
+    "message": "Pielietots viens atlasītājs"
+  },
+  "filterAppliedPlural": {
+    "message": "Pielietoti $COUNT$ atlasītāji",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
   },
   "personalDetails": {
     "message": "Personiskā informācija"
@@ -4823,5 +4891,11 @@
   },
   "generatedPassword": {
     "message": "Izveidotā parole"
+  },
+  "compactMode": {
+    "message": "Cieši"
+  },
+  "beta": {
+    "message": "Beta"
   }
 }

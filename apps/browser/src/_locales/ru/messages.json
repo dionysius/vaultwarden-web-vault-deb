@@ -1851,6 +1851,9 @@
   "secureNotes": {
     "message": "Защищенные заметки"
   },
+  "sshKeys": {
+    "message": "Ключи SSH"
+  },
   "clear": {
     "message": "Очистить",
     "description": "To clear something out. example: To clear browser history."
@@ -2889,8 +2892,8 @@
   "generateEmail": {
     "message": "Сгенерировать email"
   },
-  "generatorBoundariesHint": {
-    "message": "Значение должно быть между $MIN$ и $MAX$",
+  "spinboxBoundariesHint": {
+    "message": "Значение должно быть между $MIN$ и $MAX$.",
     "description": "Explains spin box minimum and maximum values to the user",
     "placeholders": {
       "min": {
@@ -2900,6 +2903,26 @@
       "max": {
         "content": "$2",
         "example": "128"
+      }
+    }
+  },
+  "passwordLengthRecommendationHint": {
+    "message": " Для создания надежного пароля используйте $RECOMMENDED$ символов или больше.",
+    "description": "Appended to `spinboxBoundariesHint` to recommend a length to the user. This must include any language-specific 'sentence' separator characters (e.g. a space in english).",
+    "placeholders": {
+      "recommended": {
+        "content": "$1",
+        "example": "14"
+      }
+    }
+  },
+  "passphraseNumWordsRecommendationHint": {
+    "message": " Для создания надежной парольной фразы используйте $RECOMMENDED$ слов или больше.",
+    "description": "Appended to `spinboxBoundariesHint` to recommend a number of words to the user. This must include any language-specific 'sentence' separator characters (e.g. a space in english).",
+    "placeholders": {
+      "recommended": {
+        "content": "$1",
+        "example": "6"
       }
     }
   },
@@ -3150,11 +3173,26 @@
   "resendNotification": {
     "message": "Отправить уведомление повторно"
   },
+  "viewAllLogInOptions": {
+    "message": "Посмотреть все варианты авторизации"
+  },
   "viewAllLoginOptions": {
     "message": "Посмотреть все варианты авторизации"
   },
   "notificationSentDevice": {
     "message": "На ваше устройство отправлено уведомление."
+  },
+  "aNotificationWasSentToYourDevice": {
+    "message": "На ваше устройство было отправлено уведомление"
+  },
+  "makeSureYourAccountIsUnlockedAndTheFingerprintEtc": {
+    "message": "Убедитесь, что ваш аккаунт разблокирован и фраза отпечатка совпадает с фразой на другом устройстве"
+  },
+  "youWillBeNotifiedOnceTheRequestIsApproved": {
+    "message": "Вы получите уведомление, когда запрос будет одобрен"
+  },
+  "needAnotherOptionV1": {
+    "message": "Нужен другой вариант?"
   },
   "loginInitiated": {
     "message": "Вход инициирован"
@@ -3249,8 +3287,17 @@
   "opensInANewWindow": {
     "message": "Откроется в новом окне"
   },
+  "rememberThisDeviceToMakeFutureLoginsSeamless": {
+    "message": "Remember this device to make future logins seamless"
+  },
   "deviceApprovalRequired": {
     "message": "Требуется одобрение устройства. Выберите вариант ниже:"
+  },
+  "deviceApprovalRequiredV2": {
+    "message": "Device approval required"
+  },
+  "selectAnApprovalOptionBelow": {
+    "message": "Select an approval option below"
   },
   "rememberThisDevice": {
     "message": "Запомнить это устройство"
@@ -3324,6 +3371,9 @@
   },
   "userEmailMissing": {
     "message": "Отсутствует email пользователя"
+  },
+  "activeUserEmailNotFoundLoggingYouOut": {
+    "message": "Active user email not found. Logging you out."
   },
   "deviceTrusted": {
     "message": "Доверенное устройство"
@@ -3760,6 +3810,9 @@
   },
   "accessing": {
     "message": "Доступ"
+  },
+  "loggedInExclamation": {
+    "message": "Logged in!"
   },
   "passkeyNotCopied": {
     "message": "Passkey не будет скопирован"
@@ -4251,6 +4304,21 @@
   },
   "filters": {
     "message": "Фильтры"
+  },
+  "filterVault": {
+    "message": "Фильтр хранилища"
+  },
+  "filterApplied": {
+    "message": "Применен один фильтр"
+  },
+  "filterAppliedPlural": {
+    "message": "Применено фильтров: $COUNT$",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
   },
   "personalDetails": {
     "message": "Личные данные"
@@ -4823,5 +4891,11 @@
   },
   "generatedPassword": {
     "message": "Сгенерированный пароль"
+  },
+  "compactMode": {
+    "message": "Компактный режим"
+  },
+  "beta": {
+    "message": "Beta"
   }
 }

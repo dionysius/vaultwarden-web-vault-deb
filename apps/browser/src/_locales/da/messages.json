@@ -1851,6 +1851,9 @@
   "secureNotes": {
     "message": "Sikre notater"
   },
+  "sshKeys": {
+    "message": "SSH-nøgler"
+  },
   "clear": {
     "message": "Ryd",
     "description": "To clear something out. example: To clear browser history."
@@ -2889,8 +2892,8 @@
   "generateEmail": {
     "message": "Generér e-mail"
   },
-  "generatorBoundariesHint": {
-    "message": "Værdi skal være mellem $MIN$ og $MAX$",
+  "spinboxBoundariesHint": {
+    "message": "Værdi skal være mellem $MIN$ og $MAX$.",
     "description": "Explains spin box minimum and maximum values to the user",
     "placeholders": {
       "min": {
@@ -2900,6 +2903,26 @@
       "max": {
         "content": "$2",
         "example": "128"
+      }
+    }
+  },
+  "passwordLengthRecommendationHint": {
+    "message": " Brug minimum $RECOMMENDED$ tegn for at generere en stærk adgangskode.",
+    "description": "Appended to `spinboxBoundariesHint` to recommend a length to the user. This must include any language-specific 'sentence' separator characters (e.g. a space in english).",
+    "placeholders": {
+      "recommended": {
+        "content": "$1",
+        "example": "14"
+      }
+    }
+  },
+  "passphraseNumWordsRecommendationHint": {
+    "message": " Brug minimum $RECOMMENDED$ ord for at generere en stærk adgangssætning.",
+    "description": "Appended to `spinboxBoundariesHint` to recommend a number of words to the user. This must include any language-specific 'sentence' separator characters (e.g. a space in english).",
+    "placeholders": {
+      "recommended": {
+        "content": "$1",
+        "example": "6"
       }
     }
   },
@@ -3150,11 +3173,26 @@
   "resendNotification": {
     "message": "Gensend notifikation"
   },
+  "viewAllLogInOptions": {
+    "message": "Vis alle indlogningsmuligheder"
+  },
   "viewAllLoginOptions": {
     "message": "Vis alle indlogningsmuligheder"
   },
   "notificationSentDevice": {
     "message": "En notifikation er sendt til din enhed."
+  },
+  "aNotificationWasSentToYourDevice": {
+    "message": "En notifikation er sendt til enheden"
+  },
+  "makeSureYourAccountIsUnlockedAndTheFingerprintEtc": {
+    "message": "Sørg for, at boksen er oplåst, samt at fingeraftrykssætningen matcher på den anden enhed"
+  },
+  "youWillBeNotifiedOnceTheRequestIsApproved": {
+    "message": "Man vil få besked, når anmodningen er godkendt"
+  },
+  "needAnotherOptionV1": {
+    "message": "Behov for en anden mulighed?"
   },
   "loginInitiated": {
     "message": "Indlogning påbegyndt"
@@ -3249,8 +3287,17 @@
   "opensInANewWindow": {
     "message": "Åbnes i et nyt vindue"
   },
+  "rememberThisDeviceToMakeFutureLoginsSeamless": {
+    "message": "Remember this device to make future logins seamless"
+  },
   "deviceApprovalRequired": {
     "message": "Enhedsgodkendelse kræves. Vælg en godkendelsesmulighed nedenfor:"
+  },
+  "deviceApprovalRequiredV2": {
+    "message": "Device approval required"
+  },
+  "selectAnApprovalOptionBelow": {
+    "message": "Select an approval option below"
   },
   "rememberThisDevice": {
     "message": "Husk denne enhed"
@@ -3324,6 +3371,9 @@
   },
   "userEmailMissing": {
     "message": "Brugers e-mail mangler"
+  },
+  "activeUserEmailNotFoundLoggingYouOut": {
+    "message": "Active user email not found. Logging you out."
   },
   "deviceTrusted": {
     "message": "Enhed betroet"
@@ -3760,6 +3810,9 @@
   },
   "accessing": {
     "message": "Tilgår"
+  },
+  "loggedInExclamation": {
+    "message": "Logged in!"
   },
   "passkeyNotCopied": {
     "message": "Adgangsnøglen kopieres ikke"
@@ -4251,6 +4304,21 @@
   },
   "filters": {
     "message": "Filtre"
+  },
+  "filterVault": {
+    "message": "Filtrér boks"
+  },
+  "filterApplied": {
+    "message": "Ét filter anvendt"
+  },
+  "filterAppliedPlural": {
+    "message": "$COUNT$ filtre anvendt",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
   },
   "personalDetails": {
     "message": "Personlige oplysninger"
@@ -4823,5 +4891,11 @@
   },
   "generatedPassword": {
     "message": "Genereret adgangskode"
+  },
+  "compactMode": {
+    "message": "Kompakt-tilstand"
+  },
+  "beta": {
+    "message": "Beta"
   }
 }

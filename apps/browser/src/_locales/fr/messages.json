@@ -1851,6 +1851,9 @@
   "secureNotes": {
     "message": "Notes sécurisées"
   },
+  "sshKeys": {
+    "message": "SSH Keys"
+  },
   "clear": {
     "message": "Effacer",
     "description": "To clear something out. example: To clear browser history."
@@ -2889,8 +2892,8 @@
   "generateEmail": {
     "message": "Générer un courriel"
   },
-  "generatorBoundariesHint": {
-    "message": "La valeur doit être comprise entre $MIN$ et $MAX$",
+  "spinboxBoundariesHint": {
+    "message": "La valeur doit être comprise entre $MIN$ et $MAX$.",
     "description": "Explains spin box minimum and maximum values to the user",
     "placeholders": {
       "min": {
@@ -2900,6 +2903,26 @@
       "max": {
         "content": "$2",
         "example": "128"
+      }
+    }
+  },
+  "passwordLengthRecommendationHint": {
+    "message": " Utilisez $RECOMMENDED$ caractères ou plus pour générer un mot de passe fort.",
+    "description": "Appended to `spinboxBoundariesHint` to recommend a length to the user. This must include any language-specific 'sentence' separator characters (e.g. a space in english).",
+    "placeholders": {
+      "recommended": {
+        "content": "$1",
+        "example": "14"
+      }
+    }
+  },
+  "passphraseNumWordsRecommendationHint": {
+    "message": " Utilisez $RECOMMENDED$ mots ou plus pour générer une phrase de passe forte.",
+    "description": "Appended to `spinboxBoundariesHint` to recommend a number of words to the user. This must include any language-specific 'sentence' separator characters (e.g. a space in english).",
+    "placeholders": {
+      "recommended": {
+        "content": "$1",
+        "example": "6"
       }
     }
   },
@@ -3150,11 +3173,26 @@
   "resendNotification": {
     "message": "Renvoyer la notification"
   },
+  "viewAllLogInOptions": {
+    "message": "Afficher toutes les options de connexion"
+  },
   "viewAllLoginOptions": {
     "message": "Afficher toutes les options de connexion"
   },
   "notificationSentDevice": {
     "message": "Une notification a été envoyée à votre appareil."
+  },
+  "aNotificationWasSentToYourDevice": {
+    "message": "Une notification a été envoyée à votre appareil"
+  },
+  "makeSureYourAccountIsUnlockedAndTheFingerprintEtc": {
+    "message": "Assurez-vous que votre compte est déverrouillé et que la phrase d'empreinte correspond à l'autre appareil"
+  },
+  "youWillBeNotifiedOnceTheRequestIsApproved": {
+    "message": "Vous serez notifié une fois que la demande sera approuvée"
+  },
+  "needAnotherOptionV1": {
+    "message": "Besoin d'une autre option ?"
   },
   "loginInitiated": {
     "message": "Connexion initiée"
@@ -3249,8 +3287,17 @@
   "opensInANewWindow": {
     "message": "S'ouvre dans une nouvelle fenêtre"
   },
+  "rememberThisDeviceToMakeFutureLoginsSeamless": {
+    "message": "Remember this device to make future logins seamless"
+  },
   "deviceApprovalRequired": {
     "message": "L'approbation de l'appareil est requise. Sélectionnez une option d'approbation ci-dessous :"
+  },
+  "deviceApprovalRequiredV2": {
+    "message": "Device approval required"
+  },
+  "selectAnApprovalOptionBelow": {
+    "message": "Select an approval option below"
   },
   "rememberThisDevice": {
     "message": "Se souvenir de cet appareil"
@@ -3324,6 +3371,9 @@
   },
   "userEmailMissing": {
     "message": "Courriel de l'utilisateur manquant"
+  },
+  "activeUserEmailNotFoundLoggingYouOut": {
+    "message": "Active user email not found. Logging you out."
   },
   "deviceTrusted": {
     "message": "Appareil de confiance"
@@ -3760,6 +3810,9 @@
   },
   "accessing": {
     "message": "Accès en cours"
+  },
+  "loggedInExclamation": {
+    "message": "Logged in!"
   },
   "passkeyNotCopied": {
     "message": "La clé d'identification (passkey) ne sera pas copiée"
@@ -4251,6 +4304,21 @@
   },
   "filters": {
     "message": "Filtres"
+  },
+  "filterVault": {
+    "message": "Filtrer le coffre"
+  },
+  "filterApplied": {
+    "message": "Un filtre a été appliqué"
+  },
+  "filterAppliedPlural": {
+    "message": "$COUNT$ filtres appliqués",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
   },
   "personalDetails": {
     "message": "Données personnelles"
@@ -4823,5 +4891,11 @@
   },
   "generatedPassword": {
     "message": "Mot de passe généré"
+  },
+  "compactMode": {
+    "message": "Mode compact"
+  },
+  "beta": {
+    "message": "Beta"
   }
 }

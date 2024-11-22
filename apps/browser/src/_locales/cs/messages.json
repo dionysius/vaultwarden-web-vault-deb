@@ -1851,6 +1851,9 @@
   "secureNotes": {
     "message": "Zabezpečené poznámky"
   },
+  "sshKeys": {
+    "message": "SSH klíče"
+  },
   "clear": {
     "message": "Vymazat",
     "description": "To clear something out. example: To clear browser history."
@@ -2889,8 +2892,8 @@
   "generateEmail": {
     "message": "Vygenerovat e-mail"
   },
-  "generatorBoundariesHint": {
-    "message": "Hodnota musí být mezi $MIN$ a $MAX$",
+  "spinboxBoundariesHint": {
+    "message": "Hodnota musí být mezi $MIN$ a $MAX$.",
     "description": "Explains spin box minimum and maximum values to the user",
     "placeholders": {
       "min": {
@@ -2900,6 +2903,26 @@
       "max": {
         "content": "$2",
         "example": "128"
+      }
+    }
+  },
+  "passwordLengthRecommendationHint": {
+    "message": " Použijte $RECOMMENDED$ nebo více znaků k vytvoření silného hesla.",
+    "description": "Appended to `spinboxBoundariesHint` to recommend a length to the user. This must include any language-specific 'sentence' separator characters (e.g. a space in english).",
+    "placeholders": {
+      "recommended": {
+        "content": "$1",
+        "example": "14"
+      }
+    }
+  },
+  "passphraseNumWordsRecommendationHint": {
+    "message": " Použijte $RECOMMENDED$ slov nebo více slov k vytvoření silné heslové fráze.",
+    "description": "Appended to `spinboxBoundariesHint` to recommend a number of words to the user. This must include any language-specific 'sentence' separator characters (e.g. a space in english).",
+    "placeholders": {
+      "recommended": {
+        "content": "$1",
+        "example": "6"
       }
     }
   },
@@ -3150,11 +3173,26 @@
   "resendNotification": {
     "message": "Znovu odeslat oznámení"
   },
+  "viewAllLogInOptions": {
+    "message": "Zobrazit všechny volby přihlášení"
+  },
   "viewAllLoginOptions": {
     "message": "Zobrazit všechny volby přihlášení"
   },
   "notificationSentDevice": {
     "message": "Na Vaše zařízení bylo odesláno oznámení."
+  },
+  "aNotificationWasSentToYourDevice": {
+    "message": "Na Vaše zařízení bylo odesláno oznámení"
+  },
+  "makeSureYourAccountIsUnlockedAndTheFingerprintEtc": {
+    "message": "Ujistěte se, že je Váš trezor odemčen a fráze otisku prstu se shodují s druhým zařízením"
+  },
+  "youWillBeNotifiedOnceTheRequestIsApproved": {
+    "message": "Budete upozorněni, jakmile bude žádost schválena"
+  },
+  "needAnotherOptionV1": {
+    "message": "Potřebujete další volby?"
   },
   "loginInitiated": {
     "message": "Bylo zahájeno přihlášení"
@@ -3249,8 +3287,17 @@
   "opensInANewWindow": {
     "message": "Otevře se v novém okně"
   },
+  "rememberThisDeviceToMakeFutureLoginsSeamless": {
+    "message": "Remember this device to make future logins seamless"
+  },
   "deviceApprovalRequired": {
     "message": "Vyžaduje se schválení zařízení. Vyberte možnost schválení níže:"
+  },
+  "deviceApprovalRequiredV2": {
+    "message": "Device approval required"
+  },
+  "selectAnApprovalOptionBelow": {
+    "message": "Select an approval option below"
   },
   "rememberThisDevice": {
     "message": "Zapamatovat toto zařízení"
@@ -3324,6 +3371,9 @@
   },
   "userEmailMissing": {
     "message": "Chybí e-mail uživatele"
+  },
+  "activeUserEmailNotFoundLoggingYouOut": {
+    "message": "Active user email not found. Logging you out."
   },
   "deviceTrusted": {
     "message": "Zařízení zařazeno mezi důvěryhodné"
@@ -3760,6 +3810,9 @@
   },
   "accessing": {
     "message": "Přistupování"
+  },
+  "loggedInExclamation": {
+    "message": "Logged in!"
   },
   "passkeyNotCopied": {
     "message": "Přístupový klíč nebude zkopírován"
@@ -4251,6 +4304,21 @@
   },
   "filters": {
     "message": "Filtry"
+  },
+  "filterVault": {
+    "message": "Filtrovat trezor"
+  },
+  "filterApplied": {
+    "message": "Byl použit jeden filtr"
+  },
+  "filterAppliedPlural": {
+    "message": "Bylo použito $COUNT$ filtrů",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
   },
   "personalDetails": {
     "message": "Osobní údaje"
@@ -4823,5 +4891,11 @@
   },
   "generatedPassword": {
     "message": "Vygenerované heslo"
+  },
+  "compactMode": {
+    "message": "Kompaktní režim"
+  },
+  "beta": {
+    "message": "Beta"
   }
 }

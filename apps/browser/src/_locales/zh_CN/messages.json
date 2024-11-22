@@ -1851,6 +1851,9 @@
   "secureNotes": {
     "message": "安全笔记"
   },
+  "sshKeys": {
+    "message": "SSH Keys"
+  },
   "clear": {
     "message": "清除",
     "description": "To clear something out. example: To clear browser history."
@@ -2889,8 +2892,8 @@
   "generateEmail": {
     "message": "生成电子邮件地址"
   },
-  "generatorBoundariesHint": {
-    "message": "值必须在 $MIN$ 和 $MAX$ 之间",
+  "spinboxBoundariesHint": {
+    "message": "值必须在 $MIN$ 和 $MAX$ 之间。",
     "description": "Explains spin box minimum and maximum values to the user",
     "placeholders": {
       "min": {
@@ -2900,6 +2903,26 @@
       "max": {
         "content": "$2",
         "example": "128"
+      }
+    }
+  },
+  "passwordLengthRecommendationHint": {
+    "message": " 使用 $RECOMMENDED$ 或更多个字符生成强大的密码。",
+    "description": "Appended to `spinboxBoundariesHint` to recommend a length to the user. This must include any language-specific 'sentence' separator characters (e.g. a space in english).",
+    "placeholders": {
+      "recommended": {
+        "content": "$1",
+        "example": "14"
+      }
+    }
+  },
+  "passphraseNumWordsRecommendationHint": {
+    "message": " 使用 $RECOMMENDED$ 或更多个单词生成强大的密码短语。",
+    "description": "Appended to `spinboxBoundariesHint` to recommend a number of words to the user. This must include any language-specific 'sentence' separator characters (e.g. a space in english).",
+    "placeholders": {
+      "recommended": {
+        "content": "$1",
+        "example": "6"
       }
     }
   },
@@ -3150,11 +3173,26 @@
   "resendNotification": {
     "message": "重新发送通知"
   },
+  "viewAllLogInOptions": {
+    "message": "查看所有登录选项"
+  },
   "viewAllLoginOptions": {
     "message": "查看所有登录选项"
   },
   "notificationSentDevice": {
     "message": "通知已发送到您的设备。"
+  },
+  "aNotificationWasSentToYourDevice": {
+    "message": "通知已发送到您的设备"
+  },
+  "makeSureYourAccountIsUnlockedAndTheFingerprintEtc": {
+    "message": "确保您的账户已解锁，并且指纹短语与其他设备上的相匹配。"
+  },
+  "youWillBeNotifiedOnceTheRequestIsApproved": {
+    "message": "请求获得批准后，您将收到通知"
+  },
+  "needAnotherOptionV1": {
+    "message": "需要其他选项吗？"
   },
   "loginInitiated": {
     "message": "登录已发起"
@@ -3249,8 +3287,17 @@
   "opensInANewWindow": {
     "message": "在新窗口中打开"
   },
+  "rememberThisDeviceToMakeFutureLoginsSeamless": {
+    "message": "Remember this device to make future logins seamless"
+  },
   "deviceApprovalRequired": {
     "message": "需要设备批准。请在下面选择一个批准选项："
+  },
+  "deviceApprovalRequiredV2": {
+    "message": "Device approval required"
+  },
+  "selectAnApprovalOptionBelow": {
+    "message": "Select an approval option below"
   },
   "rememberThisDevice": {
     "message": "记住此设备"
@@ -3324,6 +3371,9 @@
   },
   "userEmailMissing": {
     "message": "缺少用户电子邮件"
+  },
+  "activeUserEmailNotFoundLoggingYouOut": {
+    "message": "Active user email not found. Logging you out."
   },
   "deviceTrusted": {
     "message": "设备已信任"
@@ -3760,6 +3810,9 @@
   },
   "accessing": {
     "message": "正在访问"
+  },
+  "loggedInExclamation": {
+    "message": "Logged in!"
   },
   "passkeyNotCopied": {
     "message": "通行密钥不会被复制"
@@ -4251,6 +4304,21 @@
   },
   "filters": {
     "message": "筛选"
+  },
+  "filterVault": {
+    "message": "密码库筛选"
+  },
+  "filterApplied": {
+    "message": "已应用一个筛选"
+  },
+  "filterAppliedPlural": {
+    "message": "已应用 $COUNT$ 个筛选",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
   },
   "personalDetails": {
     "message": "个人详细信息"
@@ -4823,5 +4891,11 @@
   },
   "generatedPassword": {
     "message": "生成了密码"
+  },
+  "compactMode": {
+    "message": "紧凑模式"
+  },
+  "beta": {
+    "message": "Beta 版"
   }
 }

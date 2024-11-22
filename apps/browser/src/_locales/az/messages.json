@@ -1851,6 +1851,9 @@
   "secureNotes": {
     "message": "Güvənli qeydlər"
   },
+  "sshKeys": {
+    "message": "SSH Açarları"
+  },
   "clear": {
     "message": "Təmizlə",
     "description": "To clear something out. example: To clear browser history."
@@ -2889,8 +2892,8 @@
   "generateEmail": {
     "message": "E-poçt yarat"
   },
-  "generatorBoundariesHint": {
-    "message": "Dəyər $MIN$-$MAX$ arasında olmalıdır",
+  "spinboxBoundariesHint": {
+    "message": "Dəyər, $MIN$-$MAX$ arasında olmalıdır.",
     "description": "Explains spin box minimum and maximum values to the user",
     "placeholders": {
       "min": {
@@ -2900,6 +2903,26 @@
       "max": {
         "content": "$2",
         "example": "128"
+      }
+    }
+  },
+  "passwordLengthRecommendationHint": {
+    "message": " Güclü bir parol yaratmaq üçün $RECOMMENDED$ və ya daha çox xarakter istifadə edin.",
+    "description": "Appended to `spinboxBoundariesHint` to recommend a length to the user. This must include any language-specific 'sentence' separator characters (e.g. a space in english).",
+    "placeholders": {
+      "recommended": {
+        "content": "$1",
+        "example": "14"
+      }
+    }
+  },
+  "passphraseNumWordsRecommendationHint": {
+    "message": " Güclü bir keçid ifadəsi yaratmaq üçün $RECOMMENDED$ və ya daha çox söz istifadə edin.",
+    "description": "Appended to `spinboxBoundariesHint` to recommend a number of words to the user. This must include any language-specific 'sentence' separator characters (e.g. a space in english).",
+    "placeholders": {
+      "recommended": {
+        "content": "$1",
+        "example": "6"
       }
     }
   },
@@ -3150,11 +3173,26 @@
   "resendNotification": {
     "message": "Bildirişi təkrar göndər"
   },
+  "viewAllLogInOptions": {
+    "message": "Bütün giriş seçimlərinə bax"
+  },
   "viewAllLoginOptions": {
     "message": "Bütün giriş seçimlərinə bax"
   },
   "notificationSentDevice": {
     "message": "Cihazınıza bir bildiriş göndərildi."
+  },
+  "aNotificationWasSentToYourDevice": {
+    "message": "Cihazınıza bir bildiriş göndərildi"
+  },
+  "makeSureYourAccountIsUnlockedAndTheFingerprintEtc": {
+    "message": "Hesabınızın kilidinin açıq olduğuna və barmaq izi ifadəsinin digər cihazda uyuşduğuna əmin olun"
+  },
+  "youWillBeNotifiedOnceTheRequestIsApproved": {
+    "message": "Tələbiniz təsdiqləndikdə bildiriş alacaqsınız"
+  },
+  "needAnotherOptionV1": {
+    "message": "Başqa bir seçimə ehtiyacınız var?"
   },
   "loginInitiated": {
     "message": "Giriş başladıldı"
@@ -3249,8 +3287,17 @@
   "opensInANewWindow": {
     "message": "Yeni bir pəncərədə açılır"
   },
+  "rememberThisDeviceToMakeFutureLoginsSeamless": {
+    "message": "Remember this device to make future logins seamless"
+  },
   "deviceApprovalRequired": {
     "message": "Cihaz təsdiqi tələb olunur. Aşağıdan bir təsdiq variantı seçin:"
+  },
+  "deviceApprovalRequiredV2": {
+    "message": "Device approval required"
+  },
+  "selectAnApprovalOptionBelow": {
+    "message": "Select an approval option below"
   },
   "rememberThisDevice": {
     "message": "Bu cihazı xatırla"
@@ -3324,6 +3371,9 @@
   },
   "userEmailMissing": {
     "message": "İstifadəçi e-poçtu əskikdir"
+  },
+  "activeUserEmailNotFoundLoggingYouOut": {
+    "message": "Active user email not found. Logging you out."
   },
   "deviceTrusted": {
     "message": "Cihaz güvənlidir"
@@ -3760,6 +3810,9 @@
   },
   "accessing": {
     "message": "Müraciət edilir"
+  },
+  "loggedInExclamation": {
+    "message": "Logged in!"
   },
   "passkeyNotCopied": {
     "message": "Keçid açarı kopyalanmır"
@@ -4251,6 +4304,21 @@
   },
   "filters": {
     "message": "Filtrlər"
+  },
+  "filterVault": {
+    "message": "Seyfi filtrlə"
+  },
+  "filterApplied": {
+    "message": "Bir filtr tətbiq olundu"
+  },
+  "filterAppliedPlural": {
+    "message": "$COUNT$ filtr tətbiq olundu",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
   },
   "personalDetails": {
     "message": "Şəxsi detallar"
@@ -4823,5 +4891,11 @@
   },
   "generatedPassword": {
     "message": "Parol yarat"
+  },
+  "compactMode": {
+    "message": "Yığcam rejim"
+  },
+  "beta": {
+    "message": "Beta"
   }
 }
