@@ -53,8 +53,6 @@ describe("ORGANIZATIONS state", () => {
         accessSecretsManager: false,
         limitCollectionCreation: false,
         limitCollectionDeletion: false,
-        // Deprecated: https://bitwarden.atlassian.net/browse/PM-10863
-        limitCollectionCreationDeletion: false,
         allowAdminAccessToAllCollectionItems: false,
         familySponsorshipLastSyncDate: new Date(),
         userIsManagedByOrganization: false,

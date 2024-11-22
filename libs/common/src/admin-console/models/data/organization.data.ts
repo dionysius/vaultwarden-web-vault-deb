@@ -54,8 +54,6 @@ export class OrganizationData {
   accessSecretsManager: boolean;
   limitCollectionCreation: boolean;
   limitCollectionDeletion: boolean;
-  // Deprecated: https://bitwarden.atlassian.net/browse/PM-10863
-  limitCollectionCreationDeletion: boolean;
   allowAdminAccessToAllCollectionItems: boolean;
   userIsManagedByOrganization: boolean;
 
@@ -116,8 +114,6 @@ export class OrganizationData {
     this.accessSecretsManager = response.accessSecretsManager;
     this.limitCollectionCreation = response.limitCollectionCreation;
     this.limitCollectionDeletion = response.limitCollectionDeletion;
-    // Deprecated: https://bitwarden.atlassian.net/browse/PM-10863
-    this.limitCollectionCreationDeletion = response.limitCollectionCreationDeletion;
     this.allowAdminAccessToAllCollectionItems = response.allowAdminAccessToAllCollectionItems;
     this.userIsManagedByOrganization = response.userIsManagedByOrganization;
 

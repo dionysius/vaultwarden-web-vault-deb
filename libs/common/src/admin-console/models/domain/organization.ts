@@ -70,8 +70,6 @@ export class Organization {
    */
   limitCollectionCreation: boolean;
   limitCollectionDeletion: boolean;
-  // Deprecated: https://bitwarden.atlassian.net/browse/PM-10863
-  limitCollectionCreationDeletion: boolean;
 
   /**
    * Refers to the ability for an owner/admin to access all collection items, regardless of assigned collections
@@ -137,8 +135,6 @@ export class Organization {
     this.accessSecretsManager = obj.accessSecretsManager;
     this.limitCollectionCreation = obj.limitCollectionCreation;
     this.limitCollectionDeletion = obj.limitCollectionDeletion;
-    // Deprecated: https://bitwarden.atlassian.net/browse/PM-10863
-    this.limitCollectionCreationDeletion = obj.limitCollectionCreationDeletion;
     this.allowAdminAccessToAllCollectionItems = obj.allowAdminAccessToAllCollectionItems;
     this.userIsManagedByOrganization = obj.userIsManagedByOrganization;
   }
@@ -241,7 +237,7 @@ export class Organization {
       return true;
     }
 
-    // If AllowAdminAccessToAllCollectionItems is true, Owners and Admins can delete any collection, regardless of LimitCollectionCreationDeletion setting
+    // If AllowAdminAccessToAllCollectionItems is true, Owners and Admins can delete any collection, regardless of LimitCollectionDeletion setting
     // Using explicit type checks because provider users are handled above and this mimics the server's permission checks closely
     if (this.allowAdminAccessToAllCollectionItems) {
       return this.type == OrganizationUserType.Owner || this.type == OrganizationUserType.Admin;
