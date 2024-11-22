@@ -97,14 +97,6 @@
       {{ "getMasterPasswordHint" | i18n }}
     </a>
 
-    <!-- Captcha iframe -->
-    <iframe
-      [ngClass]="{ 'tw-hidden': !showCaptcha() }"
-      id="hcaptcha_iframe"
-      height="80"
-      sandbox="allow-scripts allow-same-origin"
-    ></iframe>
-
     <div class="tw-grid tw-gap-3">
       <!-- Submit button to Login with Master Password -->
       <button type="submit" bitButton bitFormButton block buttonType="primary">

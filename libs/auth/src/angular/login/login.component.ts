@@ -1,5 +1,5 @@
 import { CommonModule } from "@angular/common";
-import { Component, ElementRef, Input, NgZone, OnDestroy, OnInit, ViewChild } from "@angular/core";
+import { Component, ElementRef, NgZone, OnDestroy, OnInit, ViewChild } from "@angular/core";
 import { FormBuilder, FormControl, ReactiveFormsModule, Validators } from "@angular/forms";
 import { ActivatedRoute, Router, RouterModule } from "@angular/router";
 import { firstValueFrom, Subject, take, takeUntil, tap } from "rxjs";
@@ -15,7 +15,6 @@ import { InternalPolicyService } from "@bitwarden/common/admin-console/abstracti
 import { MasterPasswordPolicyOptions } from "@bitwarden/common/admin-console/models/domain/master-password-policy-options";
 import { Policy } from "@bitwarden/common/admin-console/models/domain/policy";
 import { DevicesApiServiceAbstraction } from "@bitwarden/common/auth/abstractions/devices-api.service.abstraction";
-import { CaptchaIFrame } from "@bitwarden/common/auth/captcha-iframe";
 import { AuthResult } from "@bitwarden/common/auth/models/domain/auth-result";
 import { ForceSetPasswordReason } from "@bitwarden/common/auth/models/domain/force-set-password-reason";
 import { ClientType, HttpStatusCode } from "@bitwarden/common/enums";
@@ -24,7 +23,6 @@ import { ErrorResponse } from "@bitwarden/common/models/response/error.response"
 import { AppIdService } from "@bitwarden/common/platform/abstractions/app-id.service";
 import { BroadcasterService } from "@bitwarden/common/platform/abstractions/broadcaster.service";
 import { ConfigService } from "@bitwarden/common/platform/abstractions/config/config.service";
-import { EnvironmentService } from "@bitwarden/common/platform/abstractions/environment.service";
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 import { LogService } from "@bitwarden/common/platform/abstractions/log.service";
 import { MessagingService } from "@bitwarden/common/platform/abstractions/messaging.service";
@@ -73,14 +71,11 @@ export enum LoginUiState {
 })
 export class LoginComponent implements OnInit, OnDestroy {
   @ViewChild("masterPasswordInputRef") masterPasswordInputRef: ElementRef;
-  @Input() captchaSiteKey: string = null;
 
   private destroy$ = new Subject<void>();
   private enforcedMasterPasswordOptions: MasterPasswordPolicyOptions = undefined;
   readonly Icons = { WaveIcon, VaultIcon };
 
-  captcha: CaptchaIFrame;
-  captchaToken: string = null;
   clientType: ClientType;
   ClientType = ClientType;
   LoginUiState = LoginUiState;
@@ -118,7 +113,6 @@ export class LoginComponent implements OnInit, OnDestroy {
     private appIdService: AppIdService,
     private broadcasterService: BroadcasterService,
     private devicesApiService: DevicesApiServiceAbstraction,
-    private environmentService: EnvironmentService,
     private formBuilder: FormBuilder,
     private i18nService: I18nService,
     private loginEmailService: LoginEmailServiceAbstraction,
@@ -193,8 +187,6 @@ export class LoginComponent implements OnInit, OnDestroy {
 
     const { email, masterPassword } = this.formGroup.value;
 
-    await this.setupCaptcha();
-
     this.formGroup.markAllAsTouched();
     if (this.formGroup.invalid) {
       return;
@@ -203,7 +195,7 @@ export class LoginComponent implements OnInit, OnDestroy {
     const credentials = new PasswordLoginCredentials(
       email,
       masterPassword,
-      this.captchaToken,
+      null, // captcha no longer used in new login / registration scenarios
       null,
     );
 
@@ -212,13 +204,6 @@ export class LoginComponent implements OnInit, OnDestroy {
 
       await this.saveEmailSettings();
       await this.handleAuthResult(authResult);
-
-      if (this.clientType === ClientType.Desktop) {
-        if (this.captchaSiteKey) {
-          const content = document.getElementById("content") as HTMLDivElement;
-          content.setAttribute("style", "width:335px");
-        }
-      }
     } catch (error) {
       this.logService.error(error);
       this.handleSubmitError(error);
@@ -264,12 +249,6 @@ export class LoginComponent implements OnInit, OnDestroy {
    *          to each if-condition block where necessary to stop code execution.
    */
   private async handleAuthResult(authResult: AuthResult): Promise<void> {
-    if (this.handleCaptchaRequired(authResult)) {
-      this.captchaSiteKey = authResult.captchaSiteKey;
-      this.captcha.init(authResult.captchaSiteKey);
-      return;
-    }
-
     if (authResult.requiresEncryptionKeyMigration) {
       /* Legacy accounts used the master key to encrypt data.
          Migration is required but only performed on Web. */
@@ -357,10 +336,6 @@ export class LoginComponent implements OnInit, OnDestroy {
       masterPassword,
       this.enforcedMasterPasswordOptions,
     );
-  }
-
-  protected showCaptcha(): boolean {
-    return !Utils.isNullOrWhitespace(this.captchaSiteKey);
   }
 
   protected async startAuthRequestLogin(): Promise<void> {
@@ -480,38 +455,6 @@ export class LoginComponent implements OnInit, OnDestroy {
     } catch (e) {
       this.isKnownDevice = false;
     }
-  }
-
-  private async setupCaptcha(): Promise<void> {
-    const env = await firstValueFrom(this.environmentService.environment$);
-    const webVaultUrl = env.getWebVaultUrl();
-
-    this.captcha = new CaptchaIFrame(
-      window,
-      webVaultUrl,
-      this.i18nService,
-      (token: string) => {
-        this.captchaToken = token;
-      },
-      (error: string) => {
-        this.toastService.showToast({
-          variant: "error",
-          title: this.i18nService.t("errorOccurred"),
-          message: error,
-        });
-      },
-      (info: string) => {
-        this.toastService.showToast({
-          variant: "info",
-          title: this.i18nService.t("info"),
-          message: info,
-        });
-      },
-    );
-  }
-
-  private handleCaptchaRequired(authResult: AuthResult): boolean {
-    return !Utils.isNullOrWhitespace(authResult.captchaSiteKey);
   }
 
   private async loadEmailSettings(): Promise<void> {
