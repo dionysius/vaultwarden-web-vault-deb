@@ -984,6 +984,9 @@
   "loginWithDeviceEnabledNote": {
     "message": "Log ind med enhed skal være opsat i indstillingerne i Bitwarden-appen. Brug for en anden mulighed?"
   },
+  "needAnotherOptionV1": {
+    "message": "Behov for en anden mulighed?"
+  },
   "loginWithMasterPassword": {
     "message": "Log ind med hovedadgangskode"
   },
@@ -1301,6 +1304,12 @@
   },
   "notificationSentDevice": {
     "message": "En notifikation er sendt til din enhed."
+  },
+  "aNotificationWasSentToYourDevice": {
+    "message": "En notifikation er sendt til enheden"
+  },
+  "makeSureYourAccountIsUnlockedAndTheFingerprintEtc": {
+    "message": "Sørg for, at boksen er oplåst, samt at fingeraftrykssætningen matcher på den anden enhed"
   },
   "versionNumber": {
     "message": "Version $VERSION_NUMBER$",
@@ -3387,6 +3396,9 @@
       }
     }
   },
+  "viewAllLogInOptions": {
+    "message": "Vis alle indlogningsmuligheder"
+  },
   "viewAllLoginOptions": {
     "message": "Vis alle indlogningsmuligheder"
   },
@@ -4442,6 +4454,9 @@
   "dontAskFingerprintAgain": {
     "message": "Bed aldrig om at bekræfte fingeraftrykssætninger for inviterede brugere (anbefales ikke)",
     "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing."
+  },
+  "youWillBeNotifiedOnceTheRequestIsApproved": {
+    "message": "Man vil få besked, når anmodningen er godkendt"
   },
   "free": {
     "message": "Gratis",
@@ -6376,6 +6391,9 @@
   "idpSingleSignOnServiceUrlRequired": {
     "message": "Obligatorisk, såfremt Enheds-ID ikke er en URL."
   },
+  "offerNoLongerValid": {
+    "message": "Dette tilbud er udløbet. Kontakt organisationsadministratorer for mere information."
+  },
   "openIdOptionalCustomizations": {
     "message": "Valgfrie tilpasninger"
   },
@@ -6468,8 +6486,8 @@
   "generateEmail": {
     "message": "Generér e-mail"
   },
-  "generatorBoundariesHint": {
-    "message": "Værdi skal være mellem $MIN$ og $MAX$",
+  "spinboxBoundariesHint": {
+    "message": "Værdi skal være mellem $MIN$ og $MAX$.",
     "description": "Explains spin box minimum and maximum values to the user",
     "placeholders": {
       "min": {
@@ -6479,6 +6497,26 @@
       "max": {
         "content": "$2",
         "example": "128"
+      }
+    }
+  },
+  "passwordLengthRecommendationHint": {
+    "message": " Brug minimum $RECOMMENDED$ tegn for at generere en stærk adgangskode.",
+    "description": "Appended to `spinboxBoundariesHint` to recommend a length to the user. This must include any language-specific 'sentence' separator characters (e.g. a space in english).",
+    "placeholders": {
+      "recommended": {
+        "content": "$1",
+        "example": "14"
+      }
+    }
+  },
+  "passphraseNumWordsRecommendationHint": {
+    "message": " Brug minimum $RECOMMENDED$ ord for at generere en stærk adgangssætning.",
+    "description": "Appended to `spinboxBoundariesHint` to recommend a number of words to the user. This must include any language-specific 'sentence' separator characters (e.g. a space in english).",
+    "placeholders": {
+      "recommended": {
+        "content": "$1",
+        "example": "6"
       }
     }
   },
@@ -8013,8 +8051,17 @@
   "loginInitiated": {
     "message": "Indlogning påbegyndt"
   },
+  "rememberThisDeviceToMakeFutureLoginsSeamless": {
+    "message": "Remember this device to make future logins seamless"
+  },
   "deviceApprovalRequired": {
     "message": "Enhedsgodkendelse kræves. Vælg en godkendelsesmulighed nedenfor:"
+  },
+  "deviceApprovalRequiredV2": {
+    "message": "Device approval required"
+  },
+  "selectAnApprovalOptionBelow": {
+    "message": "Select an approval option below"
   },
   "rememberThisDevice": {
     "message": "Husk denne enhed"
@@ -8244,6 +8291,9 @@
   },
   "userEmailMissing": {
     "message": "Brugers e-mail mangler"
+  },
+  "activeUserEmailNotFoundLoggingYouOut": {
+    "message": "Active user email not found. Logging you out."
   },
   "deviceTrusted": {
     "message": "Enhed betroet"
@@ -9707,5 +9757,20 @@
   },
   "deletedSuccessfully": {
     "message": "Slettet"
+  },
+  "freeFamiliesSponsorship": {
+    "message": "Fjern Gratis Bitwarden Families-sponsorering"
+  },
+  "freeFamiliesSponsorshipPolicyDesc": {
+    "message": "Tillad ikke medlemmer at indløse en Families-abonnementstype via denne organisation."
+  },
+  "verifyBankAccountWithStatementDescriptorWarning": {
+    "message": "Betaling via bankkonto er kun tilgængelig for kunder i USA. Man anmodes om at bekræfte sin bankkonto. Vi vil foretage en mikro-indbetaling inden for de næste 1-2 arbejdsdage. Indtast kontoudtogsbeskrivelseskoden fra denne indbetaling på organisationens faktureringsside for at bekræfte bankkontoen. Manglende bekræftelse af bankkontoen vil resultere i manglende betaling, hvorefter abonnementet suspenderes."
+  },
+  "verifyBankAccountWithStatementDescriptorInstructions": {
+    "message": "Vi har foretaget en mikro-indbetaling på den oplyste bankkonto (hvilket kan tage 1-2 hverdage). Angiv den sekscifrede kode startende med 'SM' fra på indbetalingsbeskrivelsen. Manglende bekræftelse af bankkontoen vil resultere i manglende betaling, hvorefter abonnementet suspenderes."
+  },
+  "descriptorCode": {
+    "message": "Beskrivelseskode"
   }
 }

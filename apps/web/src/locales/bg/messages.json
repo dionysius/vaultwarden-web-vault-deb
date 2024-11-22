@@ -984,6 +984,9 @@
   "loginWithDeviceEnabledNote": {
     "message": "Вписването с устройство трябва да е включено в настройките на приложението на Битуорден. Друга настройка ли търсите?"
   },
+  "needAnotherOptionV1": {
+    "message": "Предпочитате друг вариант?"
+  },
   "loginWithMasterPassword": {
     "message": "Вписване с главната парола"
   },
@@ -1301,6 +1304,12 @@
   },
   "notificationSentDevice": {
     "message": "Към устройството Ви е изпратено известие."
+  },
+  "aNotificationWasSentToYourDevice": {
+    "message": "Към устройството Ви е изпратено известие"
+  },
+  "makeSureYourAccountIsUnlockedAndTheFingerprintEtc": {
+    "message": "Уверете се, че регистрацията Ви е отключена и че уникалната фраза съвпада с другото устройство"
   },
   "versionNumber": {
     "message": "Версия $VERSION_NUMBER$",
@@ -3387,6 +3396,9 @@
       }
     }
   },
+  "viewAllLogInOptions": {
+    "message": "Вижте всички възможности за вписване"
+  },
   "viewAllLoginOptions": {
     "message": "Вижте всички възможности за вписване"
   },
@@ -4442,6 +4454,9 @@
   "dontAskFingerprintAgain": {
     "message": "Без повторно питане за уникалната фраза",
     "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing."
+  },
+  "youWillBeNotifiedOnceTheRequestIsApproved": {
+    "message": "Ще получите уведомление когато заявката бъде одобрена"
   },
   "free": {
     "message": "Безплатно",
@@ -6376,6 +6391,9 @@
   "idpSingleSignOnServiceUrlRequired": {
     "message": "Required if Entity ID is not a URL."
   },
+  "offerNoLongerValid": {
+    "message": "Това предложение е вече не важи. Свържете се с администраторите на организацията си за повече информация."
+  },
   "openIdOptionalCustomizations": {
     "message": "Незадължителни персонализации"
   },
@@ -6468,8 +6486,8 @@
   "generateEmail": {
     "message": "Генериране на електронна поща"
   },
-  "generatorBoundariesHint": {
-    "message": "Стойността трябва да бъде между $MIN$ и $MAX$",
+  "spinboxBoundariesHint": {
+    "message": "Стойността трябва да бъде между $MIN$ и $MAX$.",
     "description": "Explains spin box minimum and maximum values to the user",
     "placeholders": {
       "min": {
@@ -6479,6 +6497,26 @@
       "max": {
         "content": "$2",
         "example": "128"
+      }
+    }
+  },
+  "passwordLengthRecommendationHint": {
+    "message": " Използвайте поне $RECOMMENDED$ знака, за да генерирате сложна парола.",
+    "description": "Appended to `spinboxBoundariesHint` to recommend a length to the user. This must include any language-specific 'sentence' separator characters (e.g. a space in english).",
+    "placeholders": {
+      "recommended": {
+        "content": "$1",
+        "example": "14"
+      }
+    }
+  },
+  "passphraseNumWordsRecommendationHint": {
+    "message": " Използвайте поне $RECOMMENDED$ думи, за да генерирате сложна парола-фраза.",
+    "description": "Appended to `spinboxBoundariesHint` to recommend a number of words to the user. This must include any language-specific 'sentence' separator characters (e.g. a space in english).",
+    "placeholders": {
+      "recommended": {
+        "content": "$1",
+        "example": "6"
       }
     }
   },
@@ -8013,8 +8051,17 @@
   "loginInitiated": {
     "message": "Вписването е стартирано"
   },
+  "rememberThisDeviceToMakeFutureLoginsSeamless": {
+    "message": "Remember this device to make future logins seamless"
+  },
   "deviceApprovalRequired": {
     "message": "Изисква се одобрение на устройството. Изберете начин за одобрение по-долу:"
+  },
+  "deviceApprovalRequiredV2": {
+    "message": "Device approval required"
+  },
+  "selectAnApprovalOptionBelow": {
+    "message": "Select an approval option below"
   },
   "rememberThisDevice": {
     "message": "Запомняне на това устройство"
@@ -8244,6 +8291,9 @@
   },
   "userEmailMissing": {
     "message": "Липсва е-поща на потребителя"
+  },
+  "activeUserEmailNotFoundLoggingYouOut": {
+    "message": "Active user email not found. Logging you out."
   },
   "deviceTrusted": {
     "message": "Устройството е доверено"
@@ -9707,5 +9757,20 @@
   },
   "deletedSuccessfully": {
     "message": "Успешно изтриване"
+  },
+  "freeFamiliesSponsorship": {
+    "message": "Премахване на безплатното спонсориране на Битуорден за семейства"
+  },
+  "freeFamiliesSponsorshipPolicyDesc": {
+    "message": "Да не се разрешава на членовете да се възползват от Семейния план чрез тази организация."
+  },
+  "verifyBankAccountWithStatementDescriptorWarning": {
+    "message": "Плащането чрез банкова сметка е налично само за клиенти от САЩ. Ще трябва да потвърдите банковата си сметка. В следващите 1-2 работни дни ще направим малък депозит. Въведете кода от описанието на трансакцията в страницата за плащанията на организацията, за да потвърдите банковата сметка. Ако не потвърдите банковата сметка, може да пропуснете плащането и абонаментът Ви да бъде спрян."
+  },
+  "verifyBankAccountWithStatementDescriptorInstructions": {
+    "message": "Направихме малък депозит по банковата Ви сметка (може да отнеме 1-2 дни да го видите). Въведете шест цифрения код, започващ с „SM“, който ще намерите в описанието на трансакцията. Ако не потвърдите банковата сметка, може да пропуснете плащането и абонаментът Ви да бъде спрян."
+  },
+  "descriptorCode": {
+    "message": "Код от описанието"
   }
 }

@@ -984,6 +984,9 @@
   "loginWithDeviceEnabledNote": {
     "message": "O início de sessão com o dispositivo deve ser ativado nas definições da aplicação Bitwarden. Precisa de outra opção?"
   },
+  "needAnotherOptionV1": {
+    "message": "Precisa de outra opção?"
+  },
   "loginWithMasterPassword": {
     "message": "Iniciar sessão com a palavra-passe mestra"
   },
@@ -1301,6 +1304,12 @@
   },
   "notificationSentDevice": {
     "message": "Foi enviada uma notificação para o seu dispositivo."
+  },
+  "aNotificationWasSentToYourDevice": {
+    "message": "Foi enviada uma notificação para o seu dispositivo"
+  },
+  "makeSureYourAccountIsUnlockedAndTheFingerprintEtc": {
+    "message": "Certifique-se de que a sua conta está desbloqueada e que a frase de impressão digital corresponde à do outro dispositivo"
   },
   "versionNumber": {
     "message": "Versão $VERSION_NUMBER$",
@@ -3387,6 +3396,9 @@
       }
     }
   },
+  "viewAllLogInOptions": {
+    "message": "Ver todas as opções de início de sessão"
+  },
   "viewAllLoginOptions": {
     "message": "Ver todas as opções de início de sessão"
   },
@@ -4442,6 +4454,9 @@
   "dontAskFingerprintAgain": {
     "message": "Nunca solicitar a verificação de frases de impressões digitais para utilizadores convidados (não recomendado)",
     "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing."
+  },
+  "youWillBeNotifiedOnceTheRequestIsApproved": {
+    "message": "Será notificado quando o pedido for aprovado"
   },
   "free": {
     "message": "Gratuito",
@@ -6376,6 +6391,9 @@
   "idpSingleSignOnServiceUrlRequired": {
     "message": "Necessário se o ID da entidade não for um URL."
   },
+  "offerNoLongerValid": {
+    "message": "Esta oferta já não é válida. Contacte os administradores da sua organização para obter mais informações."
+  },
   "openIdOptionalCustomizations": {
     "message": "Personalizações opcionais"
   },
@@ -6468,8 +6486,8 @@
   "generateEmail": {
     "message": "Gerar e-mail"
   },
-  "generatorBoundariesHint": {
-    "message": "O valor deve estar entre $MIN$ e $MAX$",
+  "spinboxBoundariesHint": {
+    "message": "O valor deve estar entre $MIN$ e $MAX$.",
     "description": "Explains spin box minimum and maximum values to the user",
     "placeholders": {
       "min": {
@@ -6479,6 +6497,26 @@
       "max": {
         "content": "$2",
         "example": "128"
+      }
+    }
+  },
+  "passwordLengthRecommendationHint": {
+    "message": " Utilize $RECOMMENDED$ caracteres ou mais para gerar uma palavra-passe forte.",
+    "description": "Appended to `spinboxBoundariesHint` to recommend a length to the user. This must include any language-specific 'sentence' separator characters (e.g. a space in english).",
+    "placeholders": {
+      "recommended": {
+        "content": "$1",
+        "example": "14"
+      }
+    }
+  },
+  "passphraseNumWordsRecommendationHint": {
+    "message": " Utilize $RECOMMENDED$ palavras ou mais para gerar uma frase de acesso forte.",
+    "description": "Appended to `spinboxBoundariesHint` to recommend a number of words to the user. This must include any language-specific 'sentence' separator characters (e.g. a space in english).",
+    "placeholders": {
+      "recommended": {
+        "content": "$1",
+        "example": "6"
       }
     }
   },
@@ -8013,8 +8051,17 @@
   "loginInitiated": {
     "message": "A preparar o início de sessão"
   },
+  "rememberThisDeviceToMakeFutureLoginsSeamless": {
+    "message": "Memorizar este dispositivo para facilitar futuros inícios de sessão"
+  },
   "deviceApprovalRequired": {
     "message": "É necessária a aprovação do dispositivo. Selecione uma opção de aprovação abaixo:"
+  },
+  "deviceApprovalRequiredV2": {
+    "message": "Aprovação do dispositivo necessária"
+  },
+  "selectAnApprovalOptionBelow": {
+    "message": "Selecione uma opção de aprovação abaixo"
   },
   "rememberThisDevice": {
     "message": "Lembrar este dispositivo"
@@ -8244,6 +8291,9 @@
   },
   "userEmailMissing": {
     "message": "E-mail do utilizador em falta"
+  },
+  "activeUserEmailNotFoundLoggingYouOut": {
+    "message": "O e-mail do utilizador ativo não foi encontrado. A terminar a sessão."
   },
   "deviceTrusted": {
     "message": "Dispositivo de confiança"
@@ -9707,5 +9757,20 @@
   },
   "deletedSuccessfully": {
     "message": "Eliminados com sucesso"
+  },
+  "freeFamiliesSponsorship": {
+    "message": "Remover o patrocínio do plano Bitwarden Familiar Gratuito"
+  },
+  "freeFamiliesSponsorshipPolicyDesc": {
+    "message": "Não permitir que os membros resgatem um plano Familiar através desta organização."
+  },
+  "verifyBankAccountWithStatementDescriptorWarning": {
+    "message": "O pagamento com uma conta bancária só está disponível para clientes nos Estados Unidos. Ser-lhe-á pedido que verifique a sua conta bancária. Efetuaremos um micro-depósito nos próximos 1-2 dias úteis. Introduza o código descritor do extrato deste depósito na página de faturação da organização para verificar a conta bancária. A não verificação da conta bancária resultará na falta de pagamento e na suspensão da sua subscrição."
+  },
+  "verifyBankAccountWithStatementDescriptorInstructions": {
+    "message": "Efetuámos um micro-depósito na sua conta bancária (pode demorar 1-2 dias úteis). Introduza o código de seis dígitos que começa por \"SM\" e que se encontra na descrição do depósito. Se a conta bancária não for verificada, o pagamento não será efetuado e a sua subscrição será suspensa."
+  },
+  "descriptorCode": {
+    "message": "Código descritor"
   }
 }

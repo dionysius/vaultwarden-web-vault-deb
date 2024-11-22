@@ -984,6 +984,9 @@
   "loginWithDeviceEnabledNote": {
     "message": "Вход с устройства должен быть настроен в настройках мобильного приложения Bitwarden. Нужен другой вариант?"
   },
+  "needAnotherOptionV1": {
+    "message": "Нужен другой вариант?"
+  },
   "loginWithMasterPassword": {
     "message": "Войти с мастер-паролем"
   },
@@ -1301,6 +1304,12 @@
   },
   "notificationSentDevice": {
     "message": "На ваше устройство отправлено уведомление."
+  },
+  "aNotificationWasSentToYourDevice": {
+    "message": "На ваше устройство было отправлено уведомление"
+  },
+  "makeSureYourAccountIsUnlockedAndTheFingerprintEtc": {
+    "message": "Убедитесь, что ваш аккаунт разблокирован и фраза отпечатка совпадает с фразой на другом устройстве"
   },
   "versionNumber": {
     "message": "Версия $VERSION_NUMBER$",
@@ -3387,6 +3396,9 @@
       }
     }
   },
+  "viewAllLogInOptions": {
+    "message": "Посмотреть все варианты авторизации"
+  },
   "viewAllLoginOptions": {
     "message": "Посмотреть все варианты авторизации"
   },
@@ -4442,6 +4454,9 @@
   "dontAskFingerprintAgain": {
     "message": "Никогда не запрашивать верификацию фразы отпечатка для приглашенных пользователей (не рекомендуется)",
     "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing."
+  },
+  "youWillBeNotifiedOnceTheRequestIsApproved": {
+    "message": "Вы получите уведомление, когда запрос будет одобрен"
   },
   "free": {
     "message": "Бесплатно",
@@ -6376,6 +6391,9 @@
   "idpSingleSignOnServiceUrlRequired": {
     "message": "Обязательно, если ID сущности не является URL."
   },
+  "offerNoLongerValid": {
+    "message": "Это предложение больше не действует. Для получения дополнительной информации обратитесь к администраторам вашей организации."
+  },
   "openIdOptionalCustomizations": {
     "message": "Дополнительные настройки"
   },
@@ -6468,8 +6486,8 @@
   "generateEmail": {
     "message": "Сгенерировать email"
   },
-  "generatorBoundariesHint": {
-    "message": "Значение должно быть между $MIN$ и $MAX$",
+  "spinboxBoundariesHint": {
+    "message": "Значение должно быть между $MIN$ и $MAX$.",
     "description": "Explains spin box minimum and maximum values to the user",
     "placeholders": {
       "min": {
@@ -6479,6 +6497,26 @@
       "max": {
         "content": "$2",
         "example": "128"
+      }
+    }
+  },
+  "passwordLengthRecommendationHint": {
+    "message": " Для создания надежного пароля используйте $RECOMMENDED$ символов или больше.",
+    "description": "Appended to `spinboxBoundariesHint` to recommend a length to the user. This must include any language-specific 'sentence' separator characters (e.g. a space in english).",
+    "placeholders": {
+      "recommended": {
+        "content": "$1",
+        "example": "14"
+      }
+    }
+  },
+  "passphraseNumWordsRecommendationHint": {
+    "message": " Для создания надежной парольной фразы используйте $RECOMMENDED$ слов или больше.",
+    "description": "Appended to `spinboxBoundariesHint` to recommend a number of words to the user. This must include any language-specific 'sentence' separator characters (e.g. a space in english).",
+    "placeholders": {
+      "recommended": {
+        "content": "$1",
+        "example": "6"
       }
     }
   },
@@ -8013,8 +8051,17 @@
   "loginInitiated": {
     "message": "Вход инициирован"
   },
+  "rememberThisDeviceToMakeFutureLoginsSeamless": {
+    "message": "Remember this device to make future logins seamless"
+  },
   "deviceApprovalRequired": {
     "message": "Требуется одобрение устройства. Выберите вариант ниже:"
+  },
+  "deviceApprovalRequiredV2": {
+    "message": "Device approval required"
+  },
+  "selectAnApprovalOptionBelow": {
+    "message": "Select an approval option below"
   },
   "rememberThisDevice": {
     "message": "Запомнить это устройство"
@@ -8244,6 +8291,9 @@
   },
   "userEmailMissing": {
     "message": "Отсутствует email пользователя"
+  },
+  "activeUserEmailNotFoundLoggingYouOut": {
+    "message": "Active user email not found. Logging you out."
   },
   "deviceTrusted": {
     "message": "Доверенное устройство"
@@ -9707,5 +9757,20 @@
   },
   "deletedSuccessfully": {
     "message": "Успешно удален"
+  },
+  "freeFamiliesSponsorship": {
+    "message": "Удалить спонсорство Free Bitwarden Families"
+  },
+  "freeFamiliesSponsorshipPolicyDesc": {
+    "message": "Не разрешать участникам выкупать план Families через эту организацию."
+  },
+  "verifyBankAccountWithStatementDescriptorWarning": {
+    "message": "Оплата с помощью банковского счета доступна только для клиентов в США. Вам потребуется подтвердить свой банковский счет. Мы сделаем микродепозит в течение следующих 1-2 рабочих дней. Введите код дескриптора выписки из этого депозита на странице выставления счетов организации, чтобы подтвердить банковский счет. Неподтверждение банковского счета приведет к пропуску платежа и приостановке подписки."
+  },
+  "verifyBankAccountWithStatementDescriptorInstructions": {
+    "message": "Мы перевели микродепозит на ваш банковский счет (это может занять 1-2 рабочих дня). Введите шестизначный код, начинающийся с 'SM', который указан в описании депозита. Если вы не подтвердите банковский счет, это приведет к пропуску платежа и приостановке подписки."
+  },
+  "descriptorCode": {
+    "message": "Код дескриптора"
   }
 }

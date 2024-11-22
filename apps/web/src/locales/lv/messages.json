@@ -984,6 +984,9 @@
   "loginWithDeviceEnabledNote": {
     "message": "Ir jāuzstāda pieteikšanās ar ierīci Bitwarden lietotnes iestatījumos. Nepieciešama cita iespēja?"
   },
+  "needAnotherOptionV1": {
+    "message": "Nepieciešama cita iespēja?"
+  },
   "loginWithMasterPassword": {
     "message": "Pieteikties ar galveno paroli"
   },
@@ -1301,6 +1304,12 @@
   },
   "notificationSentDevice": {
     "message": "Uz ierīci ir nosūtīts paziņojums."
+  },
+  "aNotificationWasSentToYourDevice": {
+    "message": "Uz ierīci tika nosūtīts paziņojums"
+  },
+  "makeSureYourAccountIsUnlockedAndTheFingerprintEtc": {
+    "message": "Lūgums pārliecināties, ka konts ir atslēgts un atpazīšanas vārdkopa ir tāda pati arī otrā ierīcē"
   },
   "versionNumber": {
     "message": "Laidiens $VERSION_NUMBER$",
@@ -3387,6 +3396,9 @@
       }
     }
   },
+  "viewAllLogInOptions": {
+    "message": "Skatīt visas pieteikšanās iespējas"
+  },
   "viewAllLoginOptions": {
     "message": "Skatīt visas pieteikšanās iespējas"
   },
@@ -4442,6 +4454,9 @@
   "dontAskFingerprintAgain": {
     "message": "Vairs nevaicāt pārbaudīt atpazīšanas vārdkopu",
     "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing."
+  },
+  "youWillBeNotifiedOnceTheRequestIsApproved": {
+    "message": "Tiks paziņots, tiklīdz pieprasījums būs apstiprināts"
   },
   "free": {
     "message": "Bezmaksas",
@@ -6376,6 +6391,9 @@
   "idpSingleSignOnServiceUrlRequired": {
     "message": "Nepieciešams, ja vienības Id nav URL."
   },
+  "offerNoLongerValid": {
+    "message": "Šis piedāvājums vairs nav derīgs. Jāsazinās ar savas apvienības pārvaldītājiem, lai iegūtu vairāk informācijas."
+  },
   "openIdOptionalCustomizations": {
     "message": "Papildu pielāgojumi"
   },
@@ -6468,8 +6486,8 @@
   "generateEmail": {
     "message": "Izveidot e-pasta adresi"
   },
-  "generatorBoundariesHint": {
-    "message": "Vērtībai jābūt starp $MIN$ un $MAX$",
+  "spinboxBoundariesHint": {
+    "message": "Vērtībai jābūt starp $MIN$ un $MAX$.",
     "description": "Explains spin box minimum and maximum values to the user",
     "placeholders": {
       "min": {
@@ -6479,6 +6497,26 @@
       "max": {
         "content": "$2",
         "example": "128"
+      }
+    }
+  },
+  "passwordLengthRecommendationHint": {
+    "message": " Jāizmanto $RECOMMENDED$ vai vairāk rakstzīmju, la izveidotu spēcīgu paroli.",
+    "description": "Appended to `spinboxBoundariesHint` to recommend a length to the user. This must include any language-specific 'sentence' separator characters (e.g. a space in english).",
+    "placeholders": {
+      "recommended": {
+        "content": "$1",
+        "example": "14"
+      }
+    }
+  },
+  "passphraseNumWordsRecommendationHint": {
+    "message": " Jāizmanto $RECOMMENDED$ vai vairāk vārdu, lai aizveidotu spēcīgu parles vārdkopu.",
+    "description": "Appended to `spinboxBoundariesHint` to recommend a number of words to the user. This must include any language-specific 'sentence' separator characters (e.g. a space in english).",
+    "placeholders": {
+      "recommended": {
+        "content": "$1",
+        "example": "6"
       }
     }
   },
@@ -8013,8 +8051,17 @@
   "loginInitiated": {
     "message": "Uzsākta pieteikšanās"
   },
+  "rememberThisDeviceToMakeFutureLoginsSeamless": {
+    "message": "Remember this device to make future logins seamless"
+  },
   "deviceApprovalRequired": {
     "message": "Nepieciešams ierīces apstiprinājums. Zemāk jāatlasa apstiprinājuma iespēja:"
+  },
+  "deviceApprovalRequiredV2": {
+    "message": "Device approval required"
+  },
+  "selectAnApprovalOptionBelow": {
+    "message": "Select an approval option below"
   },
   "rememberThisDevice": {
     "message": "Atcerēties šo ierīci"
@@ -8244,6 +8291,9 @@
   },
   "userEmailMissing": {
     "message": "Trūkst lietotāja e-pasta adreses"
+  },
+  "activeUserEmailNotFoundLoggingYouOut": {
+    "message": "Active user email not found. Logging you out."
   },
   "deviceTrusted": {
     "message": "Ierīce ir uzticama"
@@ -9707,5 +9757,20 @@
   },
   "deletedSuccessfully": {
     "message": "Veiksmīgi izdzēsts"
+  },
+  "freeFamiliesSponsorship": {
+    "message": "Noņemt bezmaksas Bitwarden ģimeņu pabalstītājdarbību"
+  },
+  "freeFamiliesSponsorshipPolicyDesc": {
+    "message": "Neļaut dalībniekiem iegūt plānu \"Ģimenes\" caur šo apvienību."
+  },
+  "verifyBankAccountWithStatementDescriptorWarning": {
+    "message": "Apmaksa ar bankas kontu ir pieejama tikai klientiem Savienotajās Valstīs. Būs nepieciešams apliecināt savu bankas kontu. Mēs veiksim sīkiemaksu nākamās darba dienas vai divu laikā. Pēc tam šīs iemaksas uzdevuma aprakstā esošais kods būs jāievada apvienības apmaksas lapā, lai apliecinātu bankas kontu. Bankas konta apliecināšanas neveikšana beigsies ar nokavētu maksājumu un apturētu abonementu."
+  },
+  "verifyBankAccountWithStatementDescriptorInstructions": {
+    "message": "Mēs veicām sīkiemaksu Tavā bankas kontā (tas var aizņemt 1 līdz 2 darba dienas). Jāievada iemaksas aprakstā atrodamais sešu ciparu kods, kas sākas ar \"SM\". Bankas konta apliecināšans neveikšana beigsies ar nokavētu maksājumu un apturētu abonementu."
+  },
+  "descriptorCode": {
+    "message": "Apraksta kods"
   }
 }
