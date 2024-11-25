@@ -10,7 +10,6 @@ import {
   startWith,
   Subject,
   switchMap,
-  timeout,
 } from "rxjs";
 
 import { AccountService } from "@bitwarden/common/auth/abstractions/account.service";
@@ -75,9 +74,7 @@ export class VaultPopupAutofillService {
       if (!tab) {
         return of([]);
       }
-      return this.autofillService
-        .collectPageDetailsFromTab$(tab)
-        .pipe(timeout({ first: 1500, with: () => of([]) }));
+      return this.autofillService.collectPageDetailsFromTab$(tab);
     }),
     shareReplay({ refCount: false, bufferSize: 1 }),
   );

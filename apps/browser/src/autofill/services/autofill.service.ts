@@ -1,4 +1,4 @@
-import { filter, firstValueFrom, Observable, scan, startWith } from "rxjs";
+import { filter, firstValueFrom, merge, Observable, ReplaySubject, scan, startWith } from "rxjs";
 import { pairwise } from "rxjs/operators";
 
 import { EventCollectionService } from "@bitwarden/common/abstractions/event/event-collection.service";
@@ -91,6 +91,9 @@ export default class AutofillService implements AutofillServiceInterface {
    * @param tab The tab to collect page details from
    */
   collectPageDetailsFromTab$(tab: chrome.tabs.Tab): Observable<PageDetail[]> {
+    /** Replay Subject that can be utilized when `messages$` may not emit the page details. */
+    const pageDetailsFallback$ = new ReplaySubject<[]>(1);
+
     const pageDetailsFromTab$ = this.messageListener
       .messages$(COLLECT_PAGE_DETAILS_RESPONSE_COMMAND)
       .pipe(
@@ -112,13 +115,28 @@ export default class AutofillService implements AutofillServiceInterface {
         ),
       );
 
-    void BrowserApi.tabSendMessage(tab, {
-      tab: tab,
-      command: AutofillMessageCommand.collectPageDetails,
-      sender: AutofillMessageSender.collectPageDetailsFromTabObservable,
+    void BrowserApi.tabSendMessage(
+      tab,
+      {
+        tab: tab,
+        command: AutofillMessageCommand.collectPageDetails,
+        sender: AutofillMessageSender.collectPageDetailsFromTabObservable,
+      },
+      null,
+      true,
+    ).catch(() => {
+      // When `tabSendMessage` throws an error the `pageDetailsFromTab$` will not emit,
+      // fallback to an empty array
+      pageDetailsFallback$.next([]);
     });
 
-    return pageDetailsFromTab$;
+    // Empty/New tabs do not have a URL.
+    // In Safari, `tabSendMessage` doesn't throw an error for this case. Fallback to the empty array to handle.
+    if (!tab.url) {
+      pageDetailsFallback$.next([]);
+    }
+
+    return merge(pageDetailsFromTab$, pageDetailsFallback$);
   }
 
   /**

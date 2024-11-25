@@ -143,7 +143,7 @@ describe("AutofillService", () => {
   });
 
   describe("collectPageDetailsFromTab$", () => {
-    const tab = mock<chrome.tabs.Tab>({ id: 1 });
+    const tab = mock<chrome.tabs.Tab>({ id: 1, url: "https://www.example.com" });
     const messages = new Subject<CollectPageDetailsResponseMessage>();
 
     function mockCollectPageDetailsResponseMessage(
@@ -165,11 +165,16 @@ describe("AutofillService", () => {
     it("sends a `collectPageDetails` message to the passed tab", () => {
       autofillService.collectPageDetailsFromTab$(tab);
 
-      expect(BrowserApi.tabSendMessage).toHaveBeenCalledWith(tab, {
-        command: AutofillMessageCommand.collectPageDetails,
-        sender: AutofillMessageSender.collectPageDetailsFromTabObservable,
+      expect(BrowserApi.tabSendMessage).toHaveBeenCalledWith(
         tab,
-      });
+        {
+          command: AutofillMessageCommand.collectPageDetails,
+          sender: AutofillMessageSender.collectPageDetailsFromTabObservable,
+          tab,
+        },
+        null,
+        true,
+      );
     });
 
     it("builds an array of page details from received `collectPageDetailsResponse` messages", async () => {
@@ -217,6 +222,24 @@ describe("AutofillService", () => {
       await pausePromise;
 
       expect(tracker.emissions[1]).toBeUndefined();
+    });
+
+    it("returns an empty array when the tab.url is empty", async () => {
+      const tracker = subscribeTo(autofillService.collectPageDetailsFromTab$({ ...tab, url: "" }));
+
+      await tracker.pauseUntilReceived(1);
+
+      expect(tracker.emissions[0]).toEqual([]);
+    });
+
+    it("returns an empty array when the `BrowserApi.tabSendMessage` throws an error", async () => {
+      (BrowserApi.tabSendMessage as jest.Mock).mockRejectedValueOnce(undefined);
+
+      const tracker = subscribeTo(autofillService.collectPageDetailsFromTab$(tab));
+
+      await tracker.pauseUntilReceived(1);
+
+      expect(tracker.emissions[0]).toEqual([]);
     });
   });
 
