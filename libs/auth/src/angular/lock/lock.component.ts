@@ -228,6 +228,7 @@ export class LockV2Component implements OnInit, OnDestroy {
     this.unlockOptions = null;
     this.activeUnlockOption = null;
     this.formGroup = null; // new form group will be created based on new active unlock option
+    this.isInitialLockScreen = true;
 
     // Desktop properties:
     this.biometricAsked = false;
