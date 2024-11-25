@@ -104,6 +104,9 @@ export class FamiliesForEnterpriseSetupComponent implements OnInit, OnDestroy {
           title: this.i18nService.t("errorOccured"),
           message: this.i18nService.t("offerNoLongerValid"),
         });
+
+        await this.router.navigate(["/"]);
+        return;
       } else {
         this.badToken = !this.preValidateSponsorshipResponse.isTokenValid;
       }
