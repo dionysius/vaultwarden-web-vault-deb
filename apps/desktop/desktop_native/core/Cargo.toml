@@ -27,7 +27,7 @@ anyhow = "=1.0.93"
 arboard = { version = "=3.4.1", default-features = false, features = [
   "wayland-data-control",
 ] }
-async-stream = "=0.3.5"
+async-stream = "=0.3.6"
 base64 = "=0.22.1"
 byteorder = "=1.5.0"
 cbc = { version = "=0.1.2", features = ["alloc"] }
