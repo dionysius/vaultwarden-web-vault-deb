@@ -12,7 +12,7 @@ import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.servic
 import { MessagingService } from "@bitwarden/common/platform/abstractions/messaging.service";
 import { ThemeType } from "@bitwarden/common/platform/enums";
 import { ThemeStateService } from "@bitwarden/common/platform/theming/theme-state.service";
-import { BadgeModule, CheckboxModule } from "@bitwarden/components";
+import { BadgeModule, CheckboxModule, Option } from "@bitwarden/components";
 
 import { CardComponent } from "../../../../../../libs/components/src/card/card.component";
 import { FormFieldModule } from "../../../../../../libs/components/src/form-field/form-field.module";
@@ -21,6 +21,10 @@ import { PopOutComponent } from "../../../platform/popup/components/pop-out.comp
 import { PopupCompactModeService } from "../../../platform/popup/layout/popup-compact-mode.service";
 import { PopupHeaderComponent } from "../../../platform/popup/layout/popup-header.component";
 import { PopupPageComponent } from "../../../platform/popup/layout/popup-page.component";
+import {
+  PopupWidthOption,
+  PopupWidthService,
+} from "../../../platform/popup/layout/popup-width.service";
 
 @Component({
   standalone: true,
@@ -41,6 +45,8 @@ import { PopupPageComponent } from "../../../platform/popup/layout/popup-page.co
 })
 export class AppearanceV2Component implements OnInit {
   private compactModeService = inject(PopupCompactModeService);
+  private popupWidthService = inject(PopupWidthService);
+  private i18nService = inject(I18nService);
 
   appearanceForm = this.formBuilder.group({
     enableFavicon: false,
@@ -48,6 +54,7 @@ export class AppearanceV2Component implements OnInit {
     theme: ThemeType.System,
     enableAnimations: true,
     enableCompactMode: false,
+    width: "default" as PopupWidthOption,
   });
 
   /** To avoid flashes of inaccurate values, only show the form after the entire form is populated. */
@@ -55,6 +62,13 @@ export class AppearanceV2Component implements OnInit {
 
   /** Available theme options */
   themeOptions: { name: string; value: ThemeType }[];
+
+  /** Available width options */
+  protected readonly widthOptions: Option<PopupWidthOption>[] = [
+    { label: this.i18nService.t("default"), value: "default" },
+    { label: this.i18nService.t("wide"), value: "wide" },
+    { label: this.i18nService.t("extraWide"), value: "extra-wide" },
+  ];
 
   constructor(
     private messagingService: MessagingService,
@@ -81,6 +95,7 @@ export class AppearanceV2Component implements OnInit {
       this.animationControlService.enableRoutingAnimation$,
     );
     const enableCompactMode = await firstValueFrom(this.compactModeService.enabled$);
+    const width = await firstValueFrom(this.popupWidthService.width$);
 
     // Set initial values for the form
     this.appearanceForm.setValue({
@@ -89,6 +104,7 @@ export class AppearanceV2Component implements OnInit {
       theme,
       enableAnimations,
       enableCompactMode,
+      width,
     });
 
     this.formLoading = false;
@@ -122,6 +138,12 @@ export class AppearanceV2Component implements OnInit {
       .subscribe((enableCompactMode) => {
         void this.updateCompactMode(enableCompactMode);
       });
+
+    this.appearanceForm.controls.width.valueChanges
+      .pipe(takeUntilDestroyed(this.destroyRef))
+      .subscribe((width) => {
+        void this.updateWidth(width);
+      });
   }
 
   async updateFavicon(enableFavicon: boolean) {
@@ -143,5 +165,9 @@ export class AppearanceV2Component implements OnInit {
 
   async updateCompactMode(enableCompactMode: boolean) {
     await this.compactModeService.setEnabled(enableCompactMode);
+  }
+
+  async updateWidth(width: PopupWidthOption) {
+    await this.popupWidthService.setWidth(width);
   }
 }

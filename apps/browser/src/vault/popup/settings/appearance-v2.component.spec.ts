@@ -16,6 +16,7 @@ import { ThemeStateService } from "@bitwarden/common/platform/theming/theme-stat
 import { PopupCompactModeService } from "../../../platform/popup/layout/popup-compact-mode.service";
 import { PopupHeaderComponent } from "../../../platform/popup/layout/popup-header.component";
 import { PopupPageComponent } from "../../../platform/popup/layout/popup-page.component";
+import { PopupWidthService } from "../../../platform/popup/layout/popup-width.service";
 
 import { AppearanceV2Component } from "./appearance-v2.component";
 
@@ -51,6 +52,11 @@ describe("AppearanceV2Component", () => {
   const setEnableRoutingAnimation = jest.fn().mockResolvedValue(undefined);
   const setEnableCompactMode = jest.fn().mockResolvedValue(undefined);
 
+  const mockWidthService: Partial<PopupWidthService> = {
+    width$: new BehaviorSubject("default"),
+    setWidth: jest.fn().mockResolvedValue(undefined),
+  };
+
   beforeEach(async () => {
     setSelectedTheme.mockClear();
     setShowFavicons.mockClear();
@@ -78,6 +84,10 @@ describe("AppearanceV2Component", () => {
           provide: PopupCompactModeService,
           useValue: { enabled$: enableCompactMode$, setEnabled: setEnableCompactMode },
         },
+        {
+          provide: PopupWidthService,
+          useValue: mockWidthService,
+        },
       ],
     })
       .overrideComponent(AppearanceV2Component, {
@@ -102,6 +112,7 @@ describe("AppearanceV2Component", () => {
       enableBadgeCounter: true,
       theme: ThemeType.Nord,
       enableCompactMode: false,
+      width: "default",
     });
   });
 
