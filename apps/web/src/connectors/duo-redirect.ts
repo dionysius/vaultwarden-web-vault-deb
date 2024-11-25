@@ -51,14 +51,12 @@ window.addEventListener("load", async () => {
  */
 function redirectToDuoFrameless(redirectUrl: string) {
   const validateUrl = new URL(redirectUrl);
+  const validDuoUrl =
+    validateUrl.protocol === "https:" &&
+    (validateUrl.hostname.endsWith(".duosecurity.com") ||
+      validateUrl.hostname.endsWith(".duofederal.com"));
 
-  if (
-    validateUrl.protocol !== "https:" ||
-    !(
-      validateUrl.hostname.endsWith("duosecurity.com") ||
-      validateUrl.hostname.endsWith("duofederal.com")
-    )
-  ) {
+  if (!validDuoUrl) {
     throw new Error("Invalid redirect URL");
   }
 
