@@ -1,4 +1,4 @@
-use std::str::FromStr;
+use std::{ffi::c_void, str::FromStr};
 
 use anyhow::{anyhow, Result};
 use base64::{engine::general_purpose::STANDARD as base64_engine, Engine};
@@ -40,6 +40,8 @@ pub struct Biometric {}
 impl super::BiometricTrait for Biometric {
     async fn prompt(hwnd: Vec<u8>, message: String) -> Result<bool> {
         let h = isize::from_le_bytes(hwnd.clone().try_into().unwrap());
+
+        let h = h as *mut c_void;
         let window = HWND(h);
 
         // The Windows Hello prompt is displayed inside the application window. For best result we
@@ -174,7 +176,7 @@ fn focus_security_prompt() -> Result<()> {
         class_name: windows::core::PCSTR,
     ) -> retry::OperationResult<(), ()> {
         let hwnd = unsafe { FindWindowA(class_name, None) };
-        if hwnd.0 != 0 {
+        if let Ok(hwnd) = hwnd {
             set_focus(hwnd);
             return retry::OperationResult::Ok(());
         }
