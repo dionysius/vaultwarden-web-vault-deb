@@ -120,7 +120,6 @@ jobs:
           whoami
           node --version
           npm --version
-          gulp --version
           docker --version
           echo "GitHub ref: $GITHUB_REF"
           echo "GitHub event: $GITHUB_EVENT"
