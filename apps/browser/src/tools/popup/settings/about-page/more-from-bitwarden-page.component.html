@@ -30,6 +30,7 @@
         class="box-content-row box-content-row-flex text-default"
         appStopClick
         (click)="openFreeBitwardenFamiliesPage()"
+        *ngIf="!((isFreeFamilyPolicyEnabled$ | async) && (hasSingleEnterpriseOrg$ | async))"
       >
         <div class="row-main">{{ "freeBitwardenFamilies" | i18n }}</div>
         <i class="bwi bwi-external-link bwi-lg row-sub-icon" aria-hidden="true"></i>

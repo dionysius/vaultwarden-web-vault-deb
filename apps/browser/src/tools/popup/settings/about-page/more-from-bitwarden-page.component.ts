@@ -10,6 +10,7 @@ import { DialogService } from "@bitwarden/components";
 
 import { BrowserApi } from "../../../../platform/browser/browser-api";
 import { PopOutComponent } from "../../../../platform/popup/components/pop-out.component";
+import { FamiliesPolicyService } from "../../../../services/families-policy.service";
 
 @Component({
   templateUrl: "more-from-bitwarden-page.component.html",
@@ -18,13 +19,18 @@ import { PopOutComponent } from "../../../../platform/popup/components/pop-out.c
 })
 export class MoreFromBitwardenPageComponent {
   canAccessPremium$: Observable<boolean>;
+  protected isFreeFamilyPolicyEnabled$: Observable<boolean>;
+  protected hasSingleEnterpriseOrg$: Observable<boolean>;
 
   constructor(
     private dialogService: DialogService,
     private billingAccountProfileStateService: BillingAccountProfileStateService,
     private environmentService: EnvironmentService,
+    private familiesPolicyService: FamiliesPolicyService,
   ) {
     this.canAccessPremium$ = billingAccountProfileStateService.hasPremiumFromAnySource$;
+    this.hasSingleEnterpriseOrg$ = this.familiesPolicyService.hasSingleEnterpriseOrg$();
+    this.isFreeFamilyPolicyEnabled$ = this.familiesPolicyService.isFreeFamilyPolicyEnabled$();
   }
 
   async openFreeBitwardenFamiliesPage() {

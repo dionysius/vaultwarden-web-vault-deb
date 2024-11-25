@@ -238,6 +238,9 @@ export class PolicyService implements InternalPolicyServiceAbstraction {
       case PolicyType.PersonalOwnership:
         // individual vault policy applies to everyone except admins and owners
         return organization.isAdmin;
+      case PolicyType.FreeFamiliesSponsorshipPolicy:
+        // free Bitwarden families policy applies to everyone
+        return false;
       default:
         return organization.canManagePolicies;
     }
