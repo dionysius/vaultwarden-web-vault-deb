@@ -7,8 +7,7 @@ import { JslibModule } from "@bitwarden/angular/jslib.module";
 import { FeatureFlag } from "@bitwarden/common/enums/feature-flag.enum";
 import { ConfigService } from "@bitwarden/common/platform/abstractions/config/config.service";
 import { AsyncActionsModule, ButtonModule, TabsModule } from "@bitwarden/components";
-
-import { HeaderModule } from "../../layouts/header/header.module";
+import { HeaderModule } from "@bitwarden/web-vault/app/layouts/header/header.module";
 
 import { AllApplicationsComponent } from "./all-applications.component";
 import { CriticalApplicationsComponent } from "./critical-applications.component";

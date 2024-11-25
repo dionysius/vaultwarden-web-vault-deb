@@ -21,10 +21,9 @@ import {
   ToastService,
 } from "@bitwarden/components";
 import { CardComponent } from "@bitwarden/tools-card";
-
-import { HeaderModule } from "../../layouts/header/header.module";
-import { SharedModule } from "../../shared";
-import { PipesModule } from "../../vault/individual-vault/pipes/pipes.module";
+import { HeaderModule } from "@bitwarden/web-vault/app/layouts/header/header.module";
+import { SharedModule } from "@bitwarden/web-vault/app/shared";
+import { PipesModule } from "@bitwarden/web-vault/app/vault/individual-vault/pipes/pipes.module";
 
 import { applicationTableMockData } from "./application-table.mock";
 

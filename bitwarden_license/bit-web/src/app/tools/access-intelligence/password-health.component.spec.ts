@@ -1,48 +1,47 @@
 import { ComponentFixture, TestBed } from "@angular/core/testing";
 import { ActivatedRoute, convertToParamMap } from "@angular/router";
-import { mock, MockProxy } from "jest-mock-extended";
+import { mock } from "jest-mock-extended";
 import { of } from "rxjs";
 
-// eslint-disable-next-line no-restricted-imports
 import {
   MemberCipherDetailsApiService,
   PasswordHealthService,
 } from "@bitwarden/bit-common/tools/reports/risk-insights";
 import { ApiService } from "@bitwarden/common/abstractions/api.service";
 import { AuditService } from "@bitwarden/common/abstractions/audit.service";
-import { OrganizationService } from "@bitwarden/common/admin-console/abstractions/organization/organization.service.abstraction";
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 import { PasswordStrengthServiceAbstraction } from "@bitwarden/common/tools/password-strength";
 import { CipherService } from "@bitwarden/common/vault/abstractions/cipher.service";
 import { TableModule } from "@bitwarden/components";
+import { TableBodyDirective } from "@bitwarden/components/src/table/table.component";
+import { LooseComponentsModule } from "@bitwarden/web-vault/app/shared";
+import { PipesModule } from "@bitwarden/web-vault/app/vault/individual-vault/pipes/pipes.module";
 
-import { LooseComponentsModule } from "../../shared";
-import { PipesModule } from "../../vault/individual-vault/pipes/pipes.module";
+import { PasswordHealthComponent } from "./password-health.component";
 
-import { PasswordHealthMembersURIComponent } from "./password-health-members-uri.component";
-
-describe("PasswordHealthMembersUriComponent", () => {
-  let component: PasswordHealthMembersURIComponent;
-  let fixture: ComponentFixture<PasswordHealthMembersURIComponent>;
-  let cipherServiceMock: MockProxy<CipherService>;
-  const passwordHealthServiceMock = mock<PasswordHealthService>();
-
+describe("PasswordHealthComponent", () => {
+  let component: PasswordHealthComponent;
+  let fixture: ComponentFixture<PasswordHealthComponent>;
   const activeRouteParams = convertToParamMap({ organizationId: "orgId" });
 
   beforeEach(async () => {
-    cipherServiceMock = mock<CipherService>();
     await TestBed.configureTestingModule({
-      imports: [PasswordHealthMembersURIComponent, PipesModule, TableModule, LooseComponentsModule],
+      imports: [PasswordHealthComponent, PipesModule, TableModule, LooseComponentsModule],
+      declarations: [TableBodyDirective],
       providers: [
-        { provide: CipherService, useValue: cipherServiceMock },
+        { provide: CipherService, useValue: mock<CipherService>() },
         { provide: I18nService, useValue: mock<I18nService>() },
         { provide: AuditService, useValue: mock<AuditService>() },
-        { provide: OrganizationService, useValue: mock<OrganizationService>() },
+        { provide: ApiService, useValue: mock<ApiService>() },
+        { provide: MemberCipherDetailsApiService, useValue: mock<MemberCipherDetailsApiService>() },
         {
           provide: PasswordStrengthServiceAbstraction,
           useValue: mock<PasswordStrengthServiceAbstraction>(),
         },
-        { provide: PasswordHealthService, useValue: passwordHealthServiceMock },
+        {
+          provide: PasswordHealthService,
+          useValue: mock<PasswordHealthService>(),
+        },
         {
           provide: ActivatedRoute,
           useValue: {
@@ -50,24 +49,20 @@ describe("PasswordHealthMembersUriComponent", () => {
             url: of([]),
           },
         },
-        {
-          provide: MemberCipherDetailsApiService,
-          useValue: mock<MemberCipherDetailsApiService>(),
-        },
-        {
-          provide: ApiService,
-          useValue: mock<ApiService>(),
-        },
       ],
     }).compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(PasswordHealthMembersURIComponent);
+    fixture = TestBed.createComponent(PasswordHealthComponent);
     component = fixture.componentInstance;
+
+    fixture.detectChanges();
   });
 
   it("should initialize component", () => {
     expect(component).toBeTruthy();
   });
+
+  it("should call generateReport on init", () => {});
 });

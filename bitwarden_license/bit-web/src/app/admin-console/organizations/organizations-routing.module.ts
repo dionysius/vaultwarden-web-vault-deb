@@ -76,6 +76,13 @@ const routes: Routes = [
           },
         ],
       },
+      {
+        path: "access-intelligence",
+        loadChildren: () =>
+          import("../../tools/access-intelligence/access-intelligence.module").then(
+            (m) => m.AccessIntelligenceModule,
+          ),
+      },
     ],
   },
 ];

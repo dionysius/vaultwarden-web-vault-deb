@@ -63,13 +63,6 @@ const routes: Routes = [
           ),
       },
       {
-        path: "access-intelligence",
-        loadChildren: () =>
-          import("../../tools/access-intelligence/access-intelligence.module").then(
-            (m) => m.AccessIntelligenceModule,
-          ),
-      },
-      {
         path: "billing",
         loadChildren: () =>
           import("../../billing/organizations/organization-billing.module").then(

@@ -5,7 +5,6 @@ import { ActivatedRoute } from "@angular/router";
 import { map } from "rxjs";
 
 import { JslibModule } from "@bitwarden/angular/jslib.module";
-// eslint-disable-next-line no-restricted-imports
 import {
   MemberCipherDetailsApiService,
   PasswordHealthService,
@@ -24,11 +23,8 @@ import {
   TableDataSource,
   TableModule,
 } from "@bitwarden/components";
-
-// eslint-disable-next-line no-restricted-imports
-import { HeaderModule } from "../../layouts/header/header.module";
-// eslint-disable-next-line no-restricted-imports
-import { PipesModule } from "../../vault/individual-vault/pipes/pipes.module";
+import { HeaderModule } from "@bitwarden/web-vault/app/layouts/header/header.module";
+import { PipesModule } from "@bitwarden/web-vault/app/vault/individual-vault/pipes/pipes.module";
 
 @Component({
   standalone: true,
