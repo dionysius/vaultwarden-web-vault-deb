@@ -50,7 +50,7 @@ export class PopupWidthService {
 
   private static setStyle(width: PopupWidthOption) {
     const pxWidth = PopupWidthOptions[width] ?? PopupWidthOptions.default;
-    document.body.style.width = `${pxWidth}px`;
+    document.body.style.minWidth = `${pxWidth}px`;
   }
 
   /**
