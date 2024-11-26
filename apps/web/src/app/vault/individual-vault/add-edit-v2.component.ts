@@ -130,6 +130,8 @@ export class AddEditComponentV2 implements OnInit {
         return this.i18nService.t(partOne, this.i18nService.t("typeIdentity").toLowerCase());
       case CipherType.SecureNote:
         return this.i18nService.t(partOne, this.i18nService.t("note").toLowerCase());
+      case CipherType.SshKey:
+        return this.i18nService.t(partOne, this.i18nService.t("typeSshKey").toLowerCase());
     }
   }
 
