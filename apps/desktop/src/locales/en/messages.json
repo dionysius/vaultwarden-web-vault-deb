@@ -207,6 +207,21 @@
   "sshKeyGenerated": {
     "message": "A new SSH key was generated"
   },
+  "sshKeyWrongPassword": {
+    "message": "The password you entered is incorrect."
+  },
+  "importSshKey": {
+    "message": "Import"
+  },
+  "confirmSshKeyPassword": {
+    "message": "Confirm password"
+  },
+  "enterSshKeyPasswordDesc": {
+    "message": "Enter the password for the SSH key."
+  },
+  "enterSshKeyPassword": {
+    "message": "Enter password"
+  },
   "sshAgentUnlockRequired": {
     "message": "Please unlock your vault to approve the SSH key request."
   },
@@ -1752,10 +1767,10 @@
   "deleteAccountWarning": {
     "message": "Deleting your account is permanent. It cannot be undone."
   },
-  "cannotDeleteAccount":{
+  "cannotDeleteAccount": {
     "message": "Cannot delete account"
   },
-  "cannotDeleteAccountDesc":{
+  "cannotDeleteAccountDesc": {
     "message": "This action cannot be completed because your account is owned by an organization. Contact your organization administrator for additional details."
   },
   "accountDeleted": {
