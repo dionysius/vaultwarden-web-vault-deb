@@ -109,7 +109,10 @@ class BrowserPopupUtils {
     const defaultPopoutWindowOptions: chrome.windows.CreateData = {
       type: "popup",
       focused: true,
-      width: Math.max(PopupWidthOptions.default, document.body.clientWidth),
+      width: Math.max(
+        PopupWidthOptions.default,
+        typeof document === "undefined" ? PopupWidthOptions.default : document.body.clientWidth,
+      ),
       height: 630,
     };
     const offsetRight = 15;
