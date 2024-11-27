@@ -164,13 +164,17 @@ export class Organization {
     return (this.isAdmin || this.permissions.accessEventLogs) && this.useEvents;
   }
 
+  /**
+   * Returns true if the user can access the Import page in the Admin Console.
+   * Note: this does not affect user access to the Import page in Password Manager, which can also be used to import
+   * into organization collections.
+   */
   get canAccessImport() {
     return (
       this.isProviderUser ||
       this.type === OrganizationUserType.Owner ||
       this.type === OrganizationUserType.Admin ||
-      this.permissions.accessImportExport ||
-      this.canCreateNewCollections // To allow users to create collections and then import into them
+      this.permissions.accessImportExport
     );
   }
 
