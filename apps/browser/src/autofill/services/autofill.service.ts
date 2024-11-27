@@ -130,9 +130,16 @@ export default class AutofillService implements AutofillServiceInterface {
       pageDetailsFallback$.next([]);
     });
 
-    // Empty/New tabs do not have a URL.
-    // In Safari, `tabSendMessage` doesn't throw an error for this case. Fallback to the empty array to handle.
-    if (!tab.url) {
+    // Fallback to empty array when:
+    // - In Safari, `tabSendMessage` doesn't throw an error for this case.
+    // - When opening the extension directly via the URL, `tabSendMessage` doesn't always respond nor throw an error in FireFox.
+    //   Adding checks for the major 3 browsers here to be safe.
+    const urlHasBrowserProtocol = [
+      "moz-extension://",
+      "chrome-extension://",
+      "safari-web-extension://",
+    ].some((protocol) => tab.url.startsWith(protocol));
+    if (!tab.url || urlHasBrowserProtocol) {
       pageDetailsFallback$.next([]);
     }
 
