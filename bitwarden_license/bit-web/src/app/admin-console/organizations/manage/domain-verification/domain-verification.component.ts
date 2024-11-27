@@ -14,6 +14,8 @@ import {
 import { OrgDomainApiServiceAbstraction } from "@bitwarden/common/admin-console/abstractions/organization-domain/org-domain-api.service.abstraction";
 import { OrgDomainServiceAbstraction } from "@bitwarden/common/admin-console/abstractions/organization-domain/org-domain.service.abstraction";
 import { OrganizationDomainResponse } from "@bitwarden/common/admin-console/abstractions/organization-domain/responses/organization-domain.response";
+import { PolicyApiServiceAbstraction } from "@bitwarden/common/admin-console/abstractions/policy/policy-api.service.abstraction";
+import { PolicyType } from "@bitwarden/common/admin-console/enums";
 import { HttpStatusCode } from "@bitwarden/common/enums";
 import { FeatureFlag } from "@bitwarden/common/enums/feature-flag.enum";
 import { ErrorResponse } from "@bitwarden/common/models/response/error.response";
@@ -33,6 +35,7 @@ import {
 })
 export class DomainVerificationComponent implements OnInit, OnDestroy {
   private componentDestroyed$ = new Subject<void>();
+  private singleOrgPolicyEnabled = false;
 
   loading = true;
 
@@ -48,6 +51,7 @@ export class DomainVerificationComponent implements OnInit, OnDestroy {
     private validationService: ValidationService,
     private toastService: ToastService,
     private configService: ConfigService,
+    private policyApiService: PolicyApiServiceAbstraction,
   ) {}
 
   // eslint-disable-next-line @typescript-eslint/no-empty-function
@@ -71,6 +75,14 @@ export class DomainVerificationComponent implements OnInit, OnDestroy {
   async load() {
     await this.orgDomainApiService.getAllByOrgId(this.organizationId);
 
+    if (await this.configService.getFeatureFlag(FeatureFlag.AccountDeprovisioning)) {
+      const singleOrgPolicy = await this.policyApiService.getPolicy(
+        this.organizationId,
+        PolicyType.SingleOrg,
+      );
+      this.singleOrgPolicyEnabled = singleOrgPolicy?.enabled ?? false;
+    }
+
     this.loading = false;
   }
 
@@ -87,6 +99,7 @@ export class DomainVerificationComponent implements OnInit, OnDestroy {
         map(async ([accountDeprovisioningEnabled, organizationDomains]) => {
           if (
             accountDeprovisioningEnabled &&
+            !this.singleOrgPolicyEnabled &&
             organizationDomains.every((domain) => domain.verifiedDate === null)
           ) {
             await this.dialogService.openSimpleDialog({
