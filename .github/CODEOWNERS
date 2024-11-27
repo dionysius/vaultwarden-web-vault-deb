@@ -102,6 +102,7 @@ apps/desktop/src/services/duckduckgo-message-handler.service.ts @bitwarden/team-
 .storybook @bitwarden/team-design-system
 libs/components @bitwarden/team-design-system
 apps/browser/src/platform/popup/layout @bitwarden/team-design-system
+apps/browser/src/popup/app-routing.animations.ts @bitwarden/team-design-system
 apps/web/src/app/layouts @bitwarden/team-design-system
 
 ## Desktop native module ##
