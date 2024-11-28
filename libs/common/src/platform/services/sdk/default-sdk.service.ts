@@ -32,13 +32,33 @@ import { SdkService } from "../../abstractions/sdk/sdk.service";
 import { compareValues } from "../../misc/compare-values";
 import { EncryptedString } from "../../models/domain/enc-string";
 
+export class RecoverableSDKError extends Error {
+  sdk: BitwardenClient;
+  timeout: number;
+
+  constructor(sdk: BitwardenClient, timeout: number) {
+    super(`SDK took ${timeout}s to initialize`);
+
+    this.sdk = sdk;
+    this.timeout = timeout;
+  }
+}
+
 export class DefaultSdkService implements SdkService {
   private sdkClientCache = new Map<UserId, Observable<BitwardenClient>>();
 
   client$ = this.environmentService.environment$.pipe(
     concatMap(async (env) => {
       const settings = this.toSettings(env);
-      return await this.sdkClientFactory.createSdkClient(settings, LogLevel.Info);
+      try {
+        return await this.sdkClientFactory.createSdkClient(settings, LogLevel.Info);
+      } catch (e) {
+        if (e instanceof RecoverableSDKError) {
+          await this.failedToInitialize("sdk", e);
+          return e.sdk;
+        }
+        throw e;
+      }
     }),
     shareReplay({ refCount: true, bufferSize: 1 }),
   );

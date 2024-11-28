@@ -1,4 +1,6 @@
+import { LogService } from "@bitwarden/common/platform/abstractions/log.service";
 import { SdkClientFactory } from "@bitwarden/common/platform/abstractions/sdk/sdk-client-factory";
+import { RecoverableSDKError } from "@bitwarden/common/platform/services/sdk/default-sdk.service";
 import type { BitwardenClient } from "@bitwarden/sdk-internal";
 
 import { BrowserApi } from "../../browser/browser-api";
@@ -62,24 +64,39 @@ async function load() {
  * Works both in popup and service worker.
  */
 export class BrowserSdkClientFactory implements SdkClientFactory {
+  constructor(private logService: LogService) {}
+
   async createSdkClient(
     ...args: ConstructorParameters<typeof BitwardenClient>
   ): Promise<BitwardenClient> {
+    const startTime = performance.now();
     try {
       await loadWithTimeout();
     } catch (error) {
       throw new Error(`Failed to load: ${error.message}`);
     }
 
-    return Promise.resolve((globalThis as any).init_sdk(...args));
+    const endTime = performance.now();
+    const elapsed = Math.round((endTime - startTime) / 1000);
+
+    const instance = (globalThis as any).init_sdk(...args);
+
+    this.logService.info("WASM SDK loaded in", Math.round(endTime - startTime), "ms");
+
+    // If it takes 3 seconds or more to load, we want to capture it.
+    if (elapsed >= 3) {
+      throw new RecoverableSDKError(instance, elapsed);
+    }
+
+    return instance;
   }
 }
 
 const loadWithTimeout = async () => {
   return new Promise<void>((resolve, reject) => {
     const timer = setTimeout(() => {
-      reject(new Error("Operation timed out after 1 second"));
-    }, 1000);
+      reject(new Error("Operation timed out after 10 second"));
+    }, 10000);
 
     load()
       .then(() => {
