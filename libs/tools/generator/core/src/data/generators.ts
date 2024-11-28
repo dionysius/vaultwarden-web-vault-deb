@@ -369,7 +369,7 @@ export function toCredentialGeneratorConfiguration<Settings extends ApiSettings 
     settings: {
       initial: configuration.forwarder.defaultSettings,
       constraints: configuration.forwarder.settingsConstraints,
-      account: configuration.forwarder.settings,
+      account: configuration.forwarder.local.settings,
     },
     policy: {
       type: PolicyType.PasswordGenerator,

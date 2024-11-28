@@ -8,10 +8,10 @@ import {
   CombinedState,
 } from "../../platform/state";
 import { UserId } from "../../types/guid";
+import { UserEncryptor } from "../cryptography/user-encryptor.abstraction";
 
 import { ClassifiedFormat } from "./classified-format";
 import { SecretKeyDefinition } from "./secret-key-definition";
-import { UserEncryptor } from "./user-encryptor.abstraction";
 
 const ONE_MINUTE = 1000 * 60;
 

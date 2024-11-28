@@ -6,8 +6,8 @@ import { SymmetricCryptoKey } from "../../platform/models/domain/symmetric-crypt
 import { CsprngArray } from "../../types/csprng";
 import { UserId } from "../../types/guid";
 import { UserKey } from "../../types/key";
+import { DataPacker } from "../state/data-packer.abstraction";
 
-import { DataPacker } from "./data-packer.abstraction";
 import { UserKeyEncryptor } from "./user-key-encryptor";
 
 describe("UserKeyEncryptor", () => {

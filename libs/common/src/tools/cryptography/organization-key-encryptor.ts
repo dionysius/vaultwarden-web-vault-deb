@@ -1,32 +1,32 @@
 import { Jsonify } from "type-fest";
 
-import { UserId } from "@bitwarden/common/types/guid";
+import { OrganizationId } from "@bitwarden/common/types/guid";
 
 import { EncryptService } from "../../platform/abstractions/encrypt.service";
 import { EncString } from "../../platform/models/domain/enc-string";
-import { UserKey } from "../../types/key";
+import { OrgKey } from "../../types/key";
+import { DataPacker } from "../state/data-packer.abstraction";
 
-import { DataPacker } from "./data-packer.abstraction";
-import { UserEncryptor } from "./user-encryptor.abstraction";
+import { OrganizationEncryptor } from "./organization-encryptor.abstraction";
 
 /** A classification strategy that protects a type's secrets by encrypting them
- *  with a `UserKey`
+ *  with an `OrgKey`
  */
-export class UserKeyEncryptor extends UserEncryptor {
+export class OrganizationKeyEncryptor extends OrganizationEncryptor {
   /** Instantiates the encryptor
-   *  @param userId identifies the user bound to the encryptor.
+   *  @param organizationId identifies the organization bound to the encryptor.
    *  @param encryptService protects properties of `Secret`.
-   *  @param keyService looks up the user key when protecting data.
+   *  @param key the key instance protecting the data.
    *  @param dataPacker packs and unpacks data classified as secrets.
    */
   constructor(
-    readonly userId: UserId,
+    readonly organizationId: OrganizationId,
     private readonly encryptService: EncryptService,
-    private readonly key: UserKey,
+    private readonly key: OrgKey,
     private readonly dataPacker: DataPacker,
   ) {
     super();
-    this.assertHasValue("userId", userId);
+    this.assertHasValue("organizationId", organizationId);
     this.assertHasValue("key", key);
     this.assertHasValue("dataPacker", dataPacker);
     this.assertHasValue("encryptService", encryptService);
