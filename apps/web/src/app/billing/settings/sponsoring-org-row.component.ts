@@ -1,9 +1,13 @@
 import { formatDate } from "@angular/common";
 import { Component, EventEmitter, Input, Output, OnInit } from "@angular/core";
-import { firstValueFrom } from "rxjs";
+import { firstValueFrom, map, Observable } from "rxjs";
 
 import { ApiService } from "@bitwarden/common/abstractions/api.service";
+import { PolicyService } from "@bitwarden/common/admin-console/abstractions/policy/policy.service.abstraction";
+import { PolicyType } from "@bitwarden/common/admin-console/enums";
 import { Organization } from "@bitwarden/common/admin-console/models/domain/organization";
+import { FeatureFlag } from "@bitwarden/common/enums/feature-flag.enum";
+import { ConfigService } from "@bitwarden/common/platform/abstractions/config/config.service";
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 import { LogService } from "@bitwarden/common/platform/abstractions/log.service";
 import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
@@ -21,7 +25,8 @@ export class SponsoringOrgRowComponent implements OnInit {
 
   statusMessage = "loading";
   statusClass: "tw-text-success" | "tw-text-danger" = "tw-text-success";
-
+  isFreeFamilyPolicyEnabled$: Observable<boolean>;
+  isFreeFamilyFlagEnabled: boolean;
   private locale = "";
 
   constructor(
@@ -31,6 +36,8 @@ export class SponsoringOrgRowComponent implements OnInit {
     private platformUtilsService: PlatformUtilsService,
     private dialogService: DialogService,
     private toastService: ToastService,
+    private configService: ConfigService,
+    private policyService: PolicyService,
   ) {}
 
   async ngOnInit() {
@@ -42,6 +49,23 @@ export class SponsoringOrgRowComponent implements OnInit {
       this.sponsoringOrg.familySponsorshipValidUntil,
       this.sponsoringOrg.familySponsorshipLastSyncDate,
     );
+    this.isFreeFamilyFlagEnabled = await this.configService.getFeatureFlag(
+      FeatureFlag.DisableFreeFamiliesSponsorship,
+    );
+
+    if (this.isFreeFamilyFlagEnabled) {
+      this.isFreeFamilyPolicyEnabled$ = this.policyService
+        .getAll$(PolicyType.FreeFamiliesSponsorshipPolicy)
+        .pipe(
+          map(
+            (policies) =>
+              Array.isArray(policies) &&
+              policies.some(
+                (policy) => policy.organizationId === this.sponsoringOrg.id && policy.enabled,
+              ),
+          ),
+        );
+    }
   }
 
   async revokeSponsorship() {
