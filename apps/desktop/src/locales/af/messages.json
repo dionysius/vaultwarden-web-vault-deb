@@ -2689,14 +2689,29 @@
   "notificationSentDevice": {
     "message": "'n Kennisgewing was na jou toestel gestuur."
   },
+  "aNotificationWasSentToYourDevice": {
+    "message": "A notification was sent to your device"
+  },
+  "makeSureYourAccountIsUnlockedAndTheFingerprintEtc": {
+    "message": "Make sure your account is unlocked and the fingerprint phrase matches on the other device"
+  },
+  "needAnotherOptionV1": {
+    "message": "Need another option?"
+  },
   "fingerprintMatchInfo": {
     "message": "Maak asseblief seker dat jou kluis oopgesluit is en die Vingerafdrukfrase met die ander toestel vergelyk."
   },
   "fingerprintPhraseHeader": {
     "message": "Vingerafdrukfrase"
   },
+  "youWillBeNotifiedOnceTheRequestIsApproved": {
+    "message": "You will be notified once the request is approved"
+  },
   "needAnotherOption": {
     "message": "Aan teken met toestel moet opgestel word in die instellings van die Bitwarden toep. Nodig 'n ander opsie?"
+  },
+  "viewAllLogInOptions": {
+    "message": "View all log in options"
   },
   "viewAllLoginOptions": {
     "message": "Beskou alle aantekenings opsies"

@@ -2689,14 +2689,29 @@
   "notificationSentDevice": {
     "message": "На ваше устройство отправлено уведомление."
   },
+  "aNotificationWasSentToYourDevice": {
+    "message": "На ваше устройство было отправлено уведомление"
+  },
+  "makeSureYourAccountIsUnlockedAndTheFingerprintEtc": {
+    "message": "Убедитесь, что ваш аккаунт разблокирован и фраза отпечатка совпадает с фразой на другом устройстве"
+  },
+  "needAnotherOptionV1": {
+    "message": "Нужен другой вариант?"
+  },
   "fingerprintMatchInfo": {
     "message": "Убедитесь, что ваше хранилище разблокировано и фраза отпечатка совпадает на другом устройстве."
   },
   "fingerprintPhraseHeader": {
     "message": "Фраза отпечатка"
   },
+  "youWillBeNotifiedOnceTheRequestIsApproved": {
+    "message": "Вы получите уведомление, когда запрос будет одобрен"
+  },
   "needAnotherOption": {
     "message": "Вход с устройства должен быть настроен в настройках мобильного приложения Bitwarden. Нужен другой вариант?"
+  },
+  "viewAllLogInOptions": {
+    "message": "Посмотреть все варианты авторизации"
   },
   "viewAllLoginOptions": {
     "message": "Посмотреть все варианты авторизации"

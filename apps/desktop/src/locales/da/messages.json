@@ -2689,14 +2689,29 @@
   "notificationSentDevice": {
     "message": "En notifikation er sendt til din enhed."
   },
+  "aNotificationWasSentToYourDevice": {
+    "message": "En notifikation er sendt til enheden"
+  },
+  "makeSureYourAccountIsUnlockedAndTheFingerprintEtc": {
+    "message": "Sørg for, at boksen er oplåst, samt at fingeraftrykssætningen matcher på den anden enhed"
+  },
+  "needAnotherOptionV1": {
+    "message": "Behov for en anden mulighed?"
+  },
   "fingerprintMatchInfo": {
     "message": "Sørg for, at din boks er oplåst, og at fingeraftrykssætningen matcher den anden enheds."
   },
   "fingerprintPhraseHeader": {
     "message": "Fingeraftrykssætning"
   },
+  "youWillBeNotifiedOnceTheRequestIsApproved": {
+    "message": "Man vil få besked, når anmodningen er godkendt"
+  },
   "needAnotherOption": {
     "message": "Log ind med enhed skal være opsat i indstillingerne i Bitwarden mobil-appen. Behov for en anden mulighed?"
+  },
+  "viewAllLogInOptions": {
+    "message": "Vis alle indlogningsmuligheder"
   },
   "viewAllLoginOptions": {
     "message": "Vis alle indlogningsmuligheder"

@@ -2689,14 +2689,29 @@
   "notificationSentDevice": {
     "message": "Er is een melding naar je apparaat verzonden."
   },
+  "aNotificationWasSentToYourDevice": {
+    "message": "Er is een melding naar je apparaat verzonden"
+  },
+  "makeSureYourAccountIsUnlockedAndTheFingerprintEtc": {
+    "message": "Zorg ervoor dat je account is ontgrendeld en dat de vingerafdrukzin overeenkomt met het andere apparaat"
+  },
+  "needAnotherOptionV1": {
+    "message": "Nog een optie nodig?"
+  },
   "fingerprintMatchInfo": {
     "message": "Controleer of je kluis is ontgrendeld en de vingerafdrukzin overeenkomt met het andere apparaat."
   },
   "fingerprintPhraseHeader": {
     "message": "Vingerafdrukzin"
   },
+  "youWillBeNotifiedOnceTheRequestIsApproved": {
+    "message": "Je krijgt een melding zodra de aanvraag is goedgekeurd"
+  },
   "needAnotherOption": {
     "message": "Je moet Inloggen met apparaat instellen in de instellingen van de Bitwarden-app. Behoefte aan een andere mogelijkheid?"
+  },
+  "viewAllLogInOptions": {
+    "message": "Alle inlogopties bekijken"
   },
   "viewAllLoginOptions": {
     "message": "Alle loginopties bekijken"

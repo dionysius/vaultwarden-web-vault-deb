@@ -2689,14 +2689,29 @@
   "notificationSentDevice": {
     "message": "Į jūsų įrenginį išsiųstas pranešimas."
   },
+  "aNotificationWasSentToYourDevice": {
+    "message": "A notification was sent to your device"
+  },
+  "makeSureYourAccountIsUnlockedAndTheFingerprintEtc": {
+    "message": "Make sure your account is unlocked and the fingerprint phrase matches on the other device"
+  },
+  "needAnotherOptionV1": {
+    "message": "Need another option?"
+  },
   "fingerprintMatchInfo": {
     "message": "Prašome užtikrinti jog jūsų saugykla atrakinta ir piršto antspaudo frazė sutampa su kitu įrenginiu."
   },
   "fingerprintPhraseHeader": {
     "message": "Piršto antspaudo frazė"
   },
+  "youWillBeNotifiedOnceTheRequestIsApproved": {
+    "message": "You will be notified once the request is approved"
+  },
   "needAnotherOption": {
     "message": "Prisijungimas su įrenginiu turi būti nustatytas Bitwarden aplikacijos nustatymuose. Reikia kito pasirinkimo?"
+  },
+  "viewAllLogInOptions": {
+    "message": "View all log in options"
   },
   "viewAllLoginOptions": {
     "message": "Peržiūrėti visas prisijungimo parinktis"

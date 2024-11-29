@@ -2689,14 +2689,29 @@
   "notificationSentDevice": {
     "message": "Do vášho zariadenia bolo odoslané upozornenie."
   },
+  "aNotificationWasSentToYourDevice": {
+    "message": "Do vášho zariadenia bolo odoslané upozornenie"
+  },
+  "makeSureYourAccountIsUnlockedAndTheFingerprintEtc": {
+    "message": "Uistite sa, že je váš účet odomknutý a fráza odtlačku prsta sa zhoduje s frázou na druhom zariadení"
+  },
+  "needAnotherOptionV1": {
+    "message": "Potrebujete inú možnosť?"
+  },
   "fingerprintMatchInfo": {
     "message": "Skontrolujte, či je trezor odomknutý a či sa fráza odtlačku prsta zhoduje s druhým zariadením."
   },
   "fingerprintPhraseHeader": {
     "message": "Fráza odtlačku prsta"
   },
+  "youWillBeNotifiedOnceTheRequestIsApproved": {
+    "message": "Po schválení žiadosti budete informovaní"
+  },
   "needAnotherOption": {
     "message": "Prihlásenie pomocou zariadenia musí byť nastavené v nastaveniach aplikácie Bitwarden. Potrebujete inú možnosť?"
+  },
+  "viewAllLogInOptions": {
+    "message": "Zobraziť všetky možnosti prihlásenia"
   },
   "viewAllLoginOptions": {
     "message": "Zobraziť všetky možnosti prihlásenia"

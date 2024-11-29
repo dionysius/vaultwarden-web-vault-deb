@@ -2469,7 +2469,7 @@
     }
   },
   "passphraseNumWordsRecommendationHint": {
-    "message": " $RECOMMENDED$ vagy több szó erős jelmondat generálásához.",
+    "message": "Használjunk $RECOMMENDED$ vagy több szót erős jelmondat generálásához.",
     "description": "Appended to `spinboxBoundariesHint` to recommend a number of words to the user. This must include any language-specific 'sentence' separator characters (e.g. a space in english).",
     "placeholders": {
       "recommended": {
@@ -2689,14 +2689,29 @@
   "notificationSentDevice": {
     "message": "Egy értesítés lett elküldve az eszközre."
   },
+  "aNotificationWasSentToYourDevice": {
+    "message": "Egy értesítés lett elküldve az eszközre."
+  },
+  "makeSureYourAccountIsUnlockedAndTheFingerprintEtc": {
+    "message": "Ellenőrizzük, hogy a széf feloldásra került és az ujjlenyomat kifejezés egyezik a másik eszközön levővel."
+  },
+  "needAnotherOptionV1": {
+    "message": "Másik opció szükséges?"
+  },
   "fingerprintMatchInfo": {
     "message": "Ellenőrizzük, hogy a széf feloldásra került és az Ujjlenyomat kifejezés egyezik a másik eszközön levővel."
   },
   "fingerprintPhraseHeader": {
     "message": "Ujjlenyomat kifejezés"
   },
+  "youWillBeNotifiedOnceTheRequestIsApproved": {
+    "message": "A kérelem jóváhagyása után értesítés érkezik."
+  },
   "needAnotherOption": {
     "message": "Az eszközzel történő bejelentkezést a Biwarden mobilalkalmazás beállításaiban kell beállítani. Másik opcióra van szükség?"
+  },
+  "viewAllLogInOptions": {
+    "message": "Összes bejelentkezési opció megtekintése"
   },
   "viewAllLoginOptions": {
     "message": "Összes bejelentkezési opció megtekintése"

@@ -2689,14 +2689,29 @@
   "notificationSentDevice": {
     "message": "Powiadomienie zostało wysłane na urządzenie."
   },
+  "aNotificationWasSentToYourDevice": {
+    "message": "A notification was sent to your device"
+  },
+  "makeSureYourAccountIsUnlockedAndTheFingerprintEtc": {
+    "message": "Make sure your account is unlocked and the fingerprint phrase matches on the other device"
+  },
+  "needAnotherOptionV1": {
+    "message": "Need another option?"
+  },
   "fingerprintMatchInfo": {
     "message": "Upewnij się, że sejf jest odblokowany, a unikalny identyfikator konta pasuje do innego urządzenia."
   },
   "fingerprintPhraseHeader": {
     "message": "Unikalny identyfikator konta"
   },
+  "youWillBeNotifiedOnceTheRequestIsApproved": {
+    "message": "You will be notified once the request is approved"
+  },
   "needAnotherOption": {
     "message": "Logowanie za pomocą urządzenia musi być włączone w ustawieniach aplikacji Bitwarden. Potrzebujesz innej opcji?"
+  },
+  "viewAllLogInOptions": {
+    "message": "View all log in options"
   },
   "viewAllLoginOptions": {
     "message": "Zobacz wszystkie sposoby logowania"

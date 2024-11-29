@@ -2469,7 +2469,7 @@
     }
   },
   "passphraseNumWordsRecommendationHint": {
-    "message": " Jāizmanto $RECOMMENDED$ vai vairāk vārdu, lai aizveidotu spēcīgu parles vārdkopu.",
+    "message": " Jāizmanto $RECOMMENDED$ vai vairāk vārdu, lai aizveidotu spēcīgu paroles vārdkopu.",
     "description": "Appended to `spinboxBoundariesHint` to recommend a number of words to the user. This must include any language-specific 'sentence' separator characters (e.g. a space in english).",
     "placeholders": {
       "recommended": {
@@ -2689,14 +2689,29 @@
   "notificationSentDevice": {
     "message": "Uz jūsu ierīci ir nosūtīts paziņojums."
   },
+  "aNotificationWasSentToYourDevice": {
+    "message": "Uz ierīci tika nosūtīts paziņojums"
+  },
+  "makeSureYourAccountIsUnlockedAndTheFingerprintEtc": {
+    "message": "Lūgums pārliecināties, ka konts ir atslēgts un atpazīšanas vārdkopa ir tāda pati arī otrā ierīcē"
+  },
+  "needAnotherOptionV1": {
+    "message": "Nepieciešama cita iespēja?"
+  },
   "fingerprintMatchInfo": {
     "message": "Lūgums pārliecināties, ka glabātava ir atslēgta un atpazīšanas vārdkopa ir tāda pati arī citā ierīcē."
   },
   "fingerprintPhraseHeader": {
     "message": "Atpazīšanas vārdkopa"
   },
+  "youWillBeNotifiedOnceTheRequestIsApproved": {
+    "message": "Tiks paziņots, tiklīdz pieprasījums būs apstiprināts"
+  },
   "needAnotherOption": {
     "message": "Ir jāuzstāda pieteikšanās ar ierīci Bitwarden lietotnes iestatījumos. Nepieciešama cita iespēja?"
+  },
+  "viewAllLogInOptions": {
+    "message": "Skatīt visas pieteikšanās iespējas"
   },
   "viewAllLoginOptions": {
     "message": "Skatīt visas pieteikšanās iespējas"

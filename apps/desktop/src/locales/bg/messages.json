@@ -2689,14 +2689,29 @@
   "notificationSentDevice": {
     "message": "Към устройството Ви е изпратено известие."
   },
+  "aNotificationWasSentToYourDevice": {
+    "message": "Към устройството Ви е изпратено известие"
+  },
+  "makeSureYourAccountIsUnlockedAndTheFingerprintEtc": {
+    "message": "Уверете се, че регистрацията Ви е отключена и че уникалната фраза съвпада с другото устройство"
+  },
+  "needAnotherOptionV1": {
+    "message": "Предпочитате друг вариант?"
+  },
   "fingerprintMatchInfo": {
     "message": "Уверете се, че трезорът Ви е отключен и че Уникалната фраза съвпада с другото устройство."
   },
   "fingerprintPhraseHeader": {
     "message": "Уникална фраза"
   },
+  "youWillBeNotifiedOnceTheRequestIsApproved": {
+    "message": "Ще получите уведомление когато заявката бъде одобрена"
+  },
   "needAnotherOption": {
     "message": "Вписването с устройство трябва да е включено в настройките на приложението на Битуорден. Друга настройка ли търсите?"
+  },
+  "viewAllLogInOptions": {
+    "message": "Вижте всички възможности за вписване"
   },
   "viewAllLoginOptions": {
     "message": "Вижте всички възможности за вписване"

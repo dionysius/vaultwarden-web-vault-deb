@@ -2689,14 +2689,29 @@
   "notificationSentDevice": {
     "message": "已傳送通知至您的裝置。"
   },
+  "aNotificationWasSentToYourDevice": {
+    "message": "A notification was sent to your device"
+  },
+  "makeSureYourAccountIsUnlockedAndTheFingerprintEtc": {
+    "message": "Make sure your account is unlocked and the fingerprint phrase matches on the other device"
+  },
+  "needAnotherOptionV1": {
+    "message": "Need another option?"
+  },
   "fingerprintMatchInfo": {
     "message": "請確保您的密碼庫已解鎖，並且指紋短語與其他裝置的一致。"
   },
   "fingerprintPhraseHeader": {
     "message": "指紋短語"
   },
+  "youWillBeNotifiedOnceTheRequestIsApproved": {
+    "message": "You will be notified once the request is approved"
+  },
   "needAnotherOption": {
     "message": "必須先在 Bitwarden 應用程式設定中開啟，才可以使用裝置登入。要改用其他選項嗎？"
+  },
+  "viewAllLogInOptions": {
+    "message": "View all log in options"
   },
   "viewAllLoginOptions": {
     "message": "檢視所有登入選項"
