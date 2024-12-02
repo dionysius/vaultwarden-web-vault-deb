@@ -20,16 +20,16 @@
     "message": "Konto loomine"
   },
   "newToBitwarden": {
-    "message": "New to Bitwarden?"
+    "message": "Esimene kord?"
   },
   "logInWithPasskey": {
-    "message": "Log in with passkey"
+    "message": "Logi sisse pääsuvõtmega"
   },
   "useSingleSignOn": {
     "message": "Use single sign-on"
   },
   "welcomeBack": {
-    "message": "Welcome back"
+    "message": "Tere tulemast tagasi"
   },
   "setAStrongPassword": {
     "message": "Määra tugev parool"
@@ -84,7 +84,7 @@
     "message": "Liitu organisatsiooniga"
   },
   "joinOrganizationName": {
-    "message": "Join $ORGANIZATIONNAME$",
+    "message": "Liitu $ORGANIZATIONNAME$ organisatsiooniga",
     "placeholders": {
       "organizationName": {
         "content": "$1",

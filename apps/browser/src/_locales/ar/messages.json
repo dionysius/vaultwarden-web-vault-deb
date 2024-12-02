@@ -7,35 +7,35 @@
     "description": "Extension name, MUST be less than 40 characters (Safari restriction)"
   },
   "extDesc": {
-    "message": "At home, at work, or on the go, Bitwarden easily secures all your passwords, passkeys, and sensitive information",
+    "message": "في المنزل، في العمل، أو في أثناء التنقل، يقوم Bitwarden بتأمين جميع كلمات المرور والمعلومات الحساسة بسهولة",
     "description": "Extension description, MUST be less than 112 characters (Safari restriction)"
   },
   "loginOrCreateNewAccount": {
     "message": "قم بالتسجيل أو إنشاء حساب جديد للوصول إلى خزانتك الآمنة."
   },
   "inviteAccepted": {
-    "message": "Invitation accepted"
+    "message": "تم قَبُول الدعوة"
   },
   "createAccount": {
     "message": "إنشاء حساب"
   },
   "newToBitwarden": {
-    "message": "New to Bitwarden?"
+    "message": "هل أنت جديد على Bitwarden؟"
   },
   "logInWithPasskey": {
-    "message": "Log in with passkey"
+    "message": "تسجيل الدخول باستخدام مفتاح المرور"
   },
   "useSingleSignOn": {
-    "message": "Use single sign-on"
+    "message": "استخدام تسجيل الدخول الأحادي"
   },
   "welcomeBack": {
-    "message": "Welcome back"
+    "message": "مرحبًا بعودتك"
   },
   "setAStrongPassword": {
-    "message": "Set a strong password"
+    "message": "أنشئ كلمة مرور قوية"
   },
   "finishCreatingYourAccountBySettingAPassword": {
-    "message": "Finish creating your account by setting a password"
+    "message": "أكمل إنشاء حسابك عن طريق تعيين كلمة مرور"
   },
   "enterpriseSingleSignOn": {
     "message": "تسجيل الدخول الأُحادي للمؤسسات – SSO"
@@ -62,7 +62,7 @@
     "message": "يمكن أن يساعدك تلميح كلمة المرور الرئيسية في تذكر كلمة المرور الخاصة بك في حال نسيتها."
   },
   "masterPassHintText": {
-    "message": "If you forget your password, the password hint can be sent to your email. $CURRENT$/$MAXIMUM$ character maximum.",
+    "message": "إذا نسيت كلمة المرور الخاصة بك، يمكن إرسال تلميح كلمة المرور إلى بريدك الإلكتروني. الحد الأقصى لعدد الأحرف هو $CURRENT$/$MAXIMUM$.",
     "placeholders": {
       "current": {
         "content": "$1",
@@ -81,7 +81,7 @@
     "message": "تلميح كلمة المرور الرئيسية (إختياري)"
   },
   "joinOrganization": {
-    "message": "Join organization"
+    "message": "انضم إلى المنظمة"
   },
   "joinOrganizationName": {
     "message": "Join $ORGANIZATIONNAME$",
