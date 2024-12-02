@@ -207,6 +207,21 @@
   "sshKeyGenerated": {
     "message": "Byl vygenerován nový SSH klíč"
   },
+  "sshKeyWrongPassword": {
+    "message": "Zadané heslo není správné."
+  },
+  "importSshKey": {
+    "message": "Importovat"
+  },
+  "confirmSshKeyPassword": {
+    "message": "Potvrdit heslo"
+  },
+  "enterSshKeyPasswordDesc": {
+    "message": "Zadejte heslo pro SSH klíč."
+  },
+  "enterSshKeyPassword": {
+    "message": "Zadejte heslo"
+  },
   "sshAgentUnlockRequired": {
     "message": "Pro schválení požadavku na SSH klíč odemkněte Váš trezor."
   },
@@ -1371,12 +1386,30 @@
   "passwordHistory": {
     "message": "Historie hesel"
   },
+  "generatorHistory": {
+    "message": "Historie generátoru"
+  },
+  "clearGeneratorHistoryTitle": {
+    "message": "Vymazat historii generátoru"
+  },
+  "cleargGeneratorHistoryDescription": {
+    "message": "Pokud budete pokračovat, všechny položky budou trvale smazány z historie generátoru. Jste si jisti, že chcete pokračovat?"
+  },
   "clear": {
     "message": "Vymazat",
     "description": "To clear something out. example: To clear browser history."
   },
   "noPasswordsInList": {
     "message": "Nejsou k dispozici žádná hesla."
+  },
+  "clearHistory": {
+    "message": "Vymazat historii"
+  },
+  "nothingToShow": {
+    "message": "Nic k zobrazení"
+  },
+  "nothingGeneratedRecently": {
+    "message": "Nedávno jste nic nevygenerovali"
   },
   "undo": {
     "message": "Zpět"
@@ -2832,6 +2865,9 @@
   "checkForBreaches": {
     "message": "Zkontrolovat heslo, zda nebylo odhaleno"
   },
+  "loggedInExclamation": {
+    "message": "Přihlášeno!"
+  },
   "important": {
     "message": "Důležité:"
   },
@@ -2862,8 +2898,17 @@
   "windowsBiometricUpdateWarningTitle": {
     "message": "Aktualizace doporučených nastavení"
   },
+  "rememberThisDeviceToMakeFutureLoginsSeamless": {
+    "message": "Zapamatovat si toto zařízení pro bezproblémové budoucí přihlášení"
+  },
   "deviceApprovalRequired": {
     "message": "Vyžaduje se schválení zařízení. Vyberte volbu schválení níže:"
+  },
+  "deviceApprovalRequiredV2": {
+    "message": "Vyžaduje se schválení zařízení"
+  },
+  "selectAnApprovalOptionBelow": {
+    "message": "Vyberte volbu schválení níže"
   },
   "rememberThisDevice": {
     "message": "Zapamatovat toto zařízení"
@@ -2916,6 +2961,9 @@
   },
   "userEmailMissing": {
     "message": "Chybí e-mail uživatele"
+  },
+  "activeUserEmailNotFoundLoggingYouOut": {
+    "message": "Aktivní uživatelský e-mail nebyl nalezen. Budete odhlášeni."
   },
   "deviceTrusted": {
     "message": "Zařízení zařazeno mezi důvěryhodné"
