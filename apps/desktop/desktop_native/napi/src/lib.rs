@@ -247,15 +247,15 @@ pub mod sshagent {
 
     #[napi]
     pub async fn serve(
-        callback: ThreadsafeFunction<String, CalleeHandled>,
+        callback: ThreadsafeFunction<(String, bool), CalleeHandled>,
     ) -> napi::Result<SshAgentState> {
-        let (auth_request_tx, mut auth_request_rx) = tokio::sync::mpsc::channel::<(u32, String)>(32);
+        let (auth_request_tx, mut auth_request_rx) = tokio::sync::mpsc::channel::<(u32, (String, bool))>(32);
         let (auth_response_tx, auth_response_rx) = tokio::sync::broadcast::channel::<(u32, bool)>(32);
         let auth_response_tx_arc = Arc::new(Mutex::new(auth_response_tx));
         tokio::spawn(async move {
             let _ = auth_response_rx;
 
-            while let Some((request_id, cipher_uuid)) = auth_request_rx.recv().await {
+            while let Some((request_id, (cipher_uuid, is_list_request))) = auth_request_rx.recv().await {
                 let cloned_request_id = request_id.clone();
                 let cloned_cipher_uuid = cipher_uuid.clone();
                 let cloned_response_tx_arc = auth_response_tx_arc.clone();
@@ -266,7 +266,7 @@ pub mod sshagent {
                     let auth_response_tx_arc = cloned_response_tx_arc;
                     let callback = cloned_callback;
                     let promise_result: Result<Promise<bool>, napi::Error> =
-                        callback.call_async(Ok(cipher_uuid)).await;
+                        callback.call_async(Ok((cipher_uuid, is_list_request))).await;
                     match promise_result {
                         Ok(promise_result) => match promise_result.await {
                             Ok(result) => {
@@ -343,6 +343,12 @@ pub mod sshagent {
         let result = desktop_core::ssh_agent::importer::import_key(encoded_key, password)
             .map_err(|e| napi::Error::from_reason(e.to_string()))?;
         Ok(result.into())
+    }
+
+    #[napi]
+    pub fn clear_keys(agent_state: &mut SshAgentState) -> napi::Result<()> {
+        let bitwarden_agent_state = &mut agent_state.state;
+        bitwarden_agent_state.clear_keys().map_err(|e| napi::Error::from_reason(e.to_string()))
     }
 
     #[napi]

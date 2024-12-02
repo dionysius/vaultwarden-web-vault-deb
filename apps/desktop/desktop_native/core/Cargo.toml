@@ -10,22 +10,22 @@ default = ["sys"]
 manual_test = []
 
 sys = [
-  "dep:widestring",
-  "dep:windows",
-  "dep:core-foundation",
-  "dep:security-framework",
-  "dep:security-framework-sys",
-  "dep:gio",
-  "dep:libsecret",
-  "dep:zbus",
-  "dep:zbus_polkit",
+    "dep:widestring",
+    "dep:windows",
+    "dep:core-foundation",
+    "dep:security-framework",
+    "dep:security-framework-sys",
+    "dep:gio",
+    "dep:libsecret",
+    "dep:zbus",
+    "dep:zbus_polkit",
 ]
 
 [dependencies]
 aes = "=0.8.4"
 anyhow = "=1.0.93"
 arboard = { version = "=3.4.1", default-features = false, features = [
-  "wayland-data-control",
+    "wayland-data-control",
 ] }
 async-stream = "=0.3.6"
 base64 = "=0.22.1"
@@ -50,7 +50,7 @@ ssh-key = { version = "=0.6.7", default-features = false, features = [
     "rsa",
     "getrandom",
 ] }
-bitwarden-russh = { git = "https://github.com/bitwarden/bitwarden-russh.git", branch = "km/pm-10098/clean-russh-implementation" }
+bitwarden-russh = { git = "https://github.com/bitwarden/bitwarden-russh.git", rev = "b4e7f2fedbe3df8c35545feb000176d3e7b2bc32" }
 tokio = { version = "=1.41.1", features = ["io-util", "sync", "macros", "net"] }
 tokio-stream = { version = "=0.1.15", features = ["net"] }
 tokio-util = { version = "=0.7.12", features = ["codec"] }

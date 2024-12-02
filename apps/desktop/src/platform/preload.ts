@@ -56,6 +56,9 @@ const sshAgent = {
   lock: async () => {
     return await ipcRenderer.invoke("sshagent.lock");
   },
+  clearKeys: async () => {
+    return await ipcRenderer.invoke("sshagent.clearkeys");
+  },
   importKey: async (key: string, password: string): Promise<ssh.SshKeyImportResult> => {
     const res = await ipcRenderer.invoke("sshagent.importkey", {
       privateKey: key,
