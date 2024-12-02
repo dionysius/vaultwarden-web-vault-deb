@@ -1786,7 +1786,7 @@
     "message": "Alle Sitzungen wurden abgemeldet"
   },
   "accountIsOwnedMessage": {
-    "message": "This account is owned by $ORGANIZATIONNAME$",
+    "message": "Dieses Konto ist im Besitz von $ORGANIZATIONNAME$",
     "placeholders": {
       "organizationName": {
         "content": "$1",
@@ -9690,7 +9690,7 @@
     "message": "Bist du sicher, dass du diesen Anhang dauerhaft löschen möchtest?"
   },
   "manageSubscriptionFromThe": {
-    "message": "verwalten",
+    "message": "Verwalte das Abonnement von",
     "description": "This represents the beginning of a sentence. The full sentence will be 'Manage subscription from the Provider Portal', but 'Provider Portal' will be a link and thus cannot be included in the translation file."
   },
   "toHostBitwardenOnYourOwnServer": {
