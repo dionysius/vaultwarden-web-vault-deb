@@ -32,11 +32,11 @@ import {
 } from "rxjs/operators";
 
 import {
-  Unassigned,
-  CollectionService,
   CollectionData,
   CollectionDetailsResponse,
+  CollectionService,
   CollectionView,
+  Unassigned,
 } from "@bitwarden/admin-console/common";
 import { SearchPipe } from "@bitwarden/angular/pipes/search.pipe";
 import { ModalService } from "@bitwarden/angular/services/modal.service";
@@ -47,6 +47,7 @@ import { OrganizationApiServiceAbstraction } from "@bitwarden/common/admin-conso
 import { OrganizationService } from "@bitwarden/common/admin-console/abstractions/organization/organization.service.abstraction";
 import { Organization } from "@bitwarden/common/admin-console/models/domain/organization";
 import { AccountService } from "@bitwarden/common/auth/abstractions/account.service";
+import { OrganizationBillingServiceAbstraction } from "@bitwarden/common/billing/abstractions";
 import { BillingAccountProfileStateService } from "@bitwarden/common/billing/abstractions/account/billing-account-profile-state.service";
 import { BillingApiServiceAbstraction } from "@bitwarden/common/billing/abstractions/billing-api.service.abstraction";
 import { EventType } from "@bitwarden/common/enums";
@@ -241,6 +242,7 @@ export class VaultComponent implements OnInit, OnDestroy {
     private organizationApiService: OrganizationApiServiceAbstraction,
     protected billingApiService: BillingApiServiceAbstraction,
     private trialFlowService: TrialFlowService,
+    private organizationBillingService: OrganizationBillingServiceAbstraction,
   ) {}
 
   async ngOnInit() {
@@ -437,13 +439,13 @@ export class VaultComponent implements OnInit, OnDestroy {
             .map((org) =>
               combineLatest([
                 this.organizationApiService.getSubscription(org.id),
-                this.organizationApiService.getBilling(org.id),
+                this.organizationBillingService.getPaymentSource(org.id),
               ]).pipe(
-                map(([subscription, billing]) => {
+                map(([subscription, paymentSource]) => {
                   return this.trialFlowService.checkForOrgsWithUpcomingPaymentIssues(
                     org,
                     subscription,
-                    billing?.paymentSource,
+                    paymentSource,
                   );
                 }),
               ),
