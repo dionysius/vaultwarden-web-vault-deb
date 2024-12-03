@@ -8,6 +8,7 @@ import {
   ViewContainerRef,
 } from "@angular/core";
 import { FormBuilder } from "@angular/forms";
+import { Observable, map } from "rxjs";
 
 import { PolicyApiServiceAbstraction } from "@bitwarden/common/admin-console/abstractions/policy/policy-api.service.abstraction";
 import { PolicyType } from "@bitwarden/common/admin-console/enums";
@@ -42,7 +43,7 @@ export class PolicyEditComponent implements AfterViewInit {
   policyType = PolicyType;
   loading = true;
   enabled = false;
-  saveDisabled = false;
+  saveDisabled$: Observable<boolean>;
   defaultTypes: any[];
   policyComponent: BasePolicyComponent;
 
@@ -73,7 +74,9 @@ export class PolicyEditComponent implements AfterViewInit {
     this.policyComponent.policy = this.data.policy;
     this.policyComponent.policyResponse = this.policyResponse;
 
-    this.saveDisabled = !this.policyResponse.canToggleState;
+    this.saveDisabled$ = this.policyComponent.data.statusChanges.pipe(
+      map((status) => status !== "VALID" || !this.policyResponse.canToggleState),
+    );
 
     this.cdr.detectChanges();
   }
