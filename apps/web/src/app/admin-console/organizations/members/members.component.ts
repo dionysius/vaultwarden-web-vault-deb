@@ -742,7 +742,10 @@ export class MembersComponent extends BaseMembersComponent<OrganizationUserView>
         key: "deleteOrganizationUser",
         placeholders: [this.userNamePipe.transform(user)],
       },
-      content: { key: "deleteOrganizationUserWarning" },
+      content: {
+        key: "deleteOrganizationUserWarningDesc",
+        placeholders: [this.userNamePipe.transform(user)],
+      },
       type: "warning",
       acceptButtonText: { key: "delete" },
       cancelButtonText: { key: "cancel" },
