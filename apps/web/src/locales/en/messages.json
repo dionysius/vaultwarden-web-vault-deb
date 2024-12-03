@@ -1137,6 +1137,12 @@
   "logInToBitwarden": {
     "message": "Log in to Bitwarden"
   },
+  "authenticationTimeout": {
+    "message": "Authentication timeout"
+  },
+  "authenticationSessionTimedOut": {
+    "message": "The authentication session timed out. Please restart the login process."
+  },
   "verifyIdentity": {
     "message": "Verify your Identity"
   },
