@@ -487,6 +487,11 @@ export class MembersComponent extends BaseMembersComponent<OrganizationUserView>
         this.organization.productTierType === ProductTierType.TeamsStarter ||
         this.organization.productTierType === ProductTierType.Families)
     ) {
+      if (!this.organization.canEditSubscription) {
+        await this.showSeatLimitReachedDialog();
+        return;
+      }
+
       const reference = openChangePlanDialog(this.dialogService, {
         data: {
           organizationId: this.organization.id,
