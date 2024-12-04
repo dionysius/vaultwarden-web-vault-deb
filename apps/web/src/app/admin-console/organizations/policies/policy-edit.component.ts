@@ -15,7 +15,6 @@ import { PolicyType } from "@bitwarden/common/admin-console/enums";
 import { PolicyRequest } from "@bitwarden/common/admin-console/models/request/policy.request";
 import { PolicyResponse } from "@bitwarden/common/admin-console/models/response/policy.response";
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
-import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
 import { DialogService, ToastService } from "@bitwarden/components";
 
 import { BasePolicy, BasePolicyComponent } from "../policies";
@@ -25,8 +24,6 @@ export type PolicyEditDialogData = {
   policy: BasePolicy;
   /** Returns a unique organization id  */
   organizationId: string;
-  /** A map indicating whether each policy type is enabled or disabled. */
-  policiesEnabledMap: Map<PolicyType, boolean>;
 };
 
 export enum PolicyEditDialogResult {
@@ -55,7 +52,6 @@ export class PolicyEditComponent implements AfterViewInit {
     @Inject(DIALOG_DATA) protected data: PolicyEditDialogData,
     private policyApiService: PolicyApiServiceAbstraction,
     private i18nService: I18nService,
-    private platformUtilsService: PlatformUtilsService,
     private cdr: ChangeDetectorRef,
     private formBuilder: FormBuilder,
     private dialogRef: DialogRef<PolicyEditDialogResult>,
@@ -99,7 +95,7 @@ export class PolicyEditComponent implements AfterViewInit {
   submit = async () => {
     let request: PolicyRequest;
     try {
-      request = await this.policyComponent.buildRequest(this.data.policiesEnabledMap);
+      request = await this.policyComponent.buildRequest();
     } catch (e) {
       this.toastService.showToast({ variant: "error", title: null, message: e.message });
       return;
