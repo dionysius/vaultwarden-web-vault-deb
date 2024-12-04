@@ -8,14 +8,7 @@ pub mod passwords {
     /// Fetch the stored password from the keychain.
     #[napi]
     pub async fn get_password(service: String, account: String) -> napi::Result<String> {
-        desktop_core::password::get_password(&service, &account)
-            .map_err(|e| napi::Error::from_reason(e.to_string()))
-    }
-
-    /// Fetch the stored password from the keychain that was stored with Keytar.
-    #[napi]
-    pub async fn get_password_keytar(service: String, account: String) -> napi::Result<String> {
-        desktop_core::password::get_password_keytar(&service, &account)
+        desktop_core::password::get_password(&service, &account).await
             .map_err(|e| napi::Error::from_reason(e.to_string()))
     }
 
@@ -26,21 +19,21 @@ pub mod passwords {
         account: String,
         password: String,
     ) -> napi::Result<()> {
-        desktop_core::password::set_password(&service, &account, &password)
+        desktop_core::password::set_password(&service, &account, &password).await
             .map_err(|e| napi::Error::from_reason(e.to_string()))
     }
 
     /// Delete the stored password from the keychain.
     #[napi]
     pub async fn delete_password(service: String, account: String) -> napi::Result<()> {
-        desktop_core::password::delete_password(&service, &account)
+        desktop_core::password::delete_password(&service, &account).await
             .map_err(|e| napi::Error::from_reason(e.to_string()))
     }
 
     // Checks if the os secure storage is available
     #[napi]
     pub async fn is_available() -> napi::Result<bool> {
-        desktop_core::password::is_available().map_err(|e| napi::Error::from_reason(e.to_string()))
+        desktop_core::password::is_available().await.map_err(|e| napi::Error::from_reason(e.to_string()))
     }
 }
 
@@ -81,6 +74,7 @@ pub mod biometrics {
             key_material.map(|m| m.into()),
             &iv_b64,
         )
+        .await
         .map_err(|e| napi::Error::from_reason(e.to_string()))
     }
 
@@ -92,6 +86,7 @@ pub mod biometrics {
     ) -> napi::Result<String> {
         let result =
             Biometric::get_biometric_secret(&service, &account, key_material.map(|m| m.into()))
+                .await
                 .map_err(|e| napi::Error::from_reason(e.to_string()));
         result
     }

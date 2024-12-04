@@ -224,7 +224,7 @@
   },
   "deb": {
     "artifactName": "${productName}-${version}-${arch}.${ext}",
-    "depends": ["libnotify4", "libxtst6", "libnss3", "libsecret-1-0", "libxss1"]
+    "depends": ["libnotify4", "libxtst6", "libnss3", "libxss1"]
   },
   "appImage": {
     "artifactName": "${productName}-${version}-${arch}.${ext}"

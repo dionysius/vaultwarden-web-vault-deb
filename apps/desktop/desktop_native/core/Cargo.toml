@@ -10,15 +10,13 @@ default = ["sys"]
 manual_test = []
 
 sys = [
-    "dep:widestring",
-    "dep:windows",
-    "dep:core-foundation",
-    "dep:security-framework",
-    "dep:security-framework-sys",
-    "dep:gio",
-    "dep:libsecret",
-    "dep:zbus",
-    "dep:zbus_polkit",
+  "dep:widestring",
+  "dep:windows",
+  "dep:core-foundation",
+  "dep:security-framework",
+  "dep:security-framework-sys",
+  "dep:zbus",
+  "dep:zbus_polkit",
 ]
 
 [dependencies]
@@ -85,7 +83,7 @@ security-framework = { version = "=3.0.0", optional = true }
 security-framework-sys = { version = "=2.12.0", optional = true }
 
 [target.'cfg(target_os = "linux")'.dependencies]
-gio = { version = "=0.19.5", optional = true }
-libsecret = { version = "=0.5.0", optional = true }
+oo7 = "=0.3.3"
+
 zbus = { version = "=4.4.0", optional = true }
 zbus_polkit = { version = "=4.0.0", optional = true }
