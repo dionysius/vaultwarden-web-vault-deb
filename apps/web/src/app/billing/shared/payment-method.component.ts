@@ -1,5 +1,5 @@
 import { Location } from "@angular/common";
-import { Component, OnDestroy, OnInit } from "@angular/core";
+import { Component, OnDestroy, OnInit, ViewChild } from "@angular/core";
 import { FormBuilder, FormControl, Validators } from "@angular/forms";
 import { ActivatedRoute, Router } from "@angular/router";
 import { lastValueFrom } from "rxjs";
@@ -14,6 +14,7 @@ import { OrganizationSubscriptionResponse } from "@bitwarden/common/billing/mode
 import { SubscriptionResponse } from "@bitwarden/common/billing/models/response/subscription.response";
 import { VerifyBankRequest } from "@bitwarden/common/models/request/verify-bank.request";
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
+import { LogService } from "@bitwarden/common/platform/abstractions/log.service";
 import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
 import { SyncService } from "@bitwarden/common/platform/sync";
 import { DialogService, ToastService } from "@bitwarden/components";
@@ -26,12 +27,15 @@ import {
   AdjustPaymentDialogResult,
   openAdjustPaymentDialog,
 } from "./adjust-payment-dialog/adjust-payment-dialog.component";
+import { TaxInfoComponent } from "./tax-info.component";
 
 @Component({
   templateUrl: "payment-method.component.html",
 })
 // eslint-disable-next-line rxjs-angular/prefer-takeuntil
 export class PaymentMethodComponent implements OnInit, OnDestroy {
+  @ViewChild(TaxInfoComponent) taxInfo: TaxInfoComponent;
+
   loading = false;
   firstLoaded = false;
   billing: BillingPaymentResponse;
@@ -55,6 +59,7 @@ export class PaymentMethodComponent implements OnInit, OnDestroy {
     ]),
   });
 
+  taxForm = this.formBuilder.group({});
   launchPaymentModalAutomatically = false;
   protected freeTrialData: FreeTrial;
 
@@ -65,6 +70,7 @@ export class PaymentMethodComponent implements OnInit, OnDestroy {
     protected platformUtilsService: PlatformUtilsService,
     private router: Router,
     private location: Location,
+    private logService: LogService,
     private route: ActivatedRoute,
     private formBuilder: FormBuilder,
     private dialogService: DialogService,
@@ -190,6 +196,15 @@ export class PaymentMethodComponent implements OnInit, OnDestroy {
     await this.load();
   };
 
+  submitTaxInfo = async () => {
+    await this.taxInfo.submitTaxInfo();
+    this.toastService.showToast({
+      variant: "success",
+      title: null,
+      message: this.i18nService.t("taxInfoUpdated"),
+    });
+  };
+
   determineOrgsWithUpcomingPaymentIssues() {
     this.freeTrialData = this.trialFlowService.checkForOrgsWithUpcomingPaymentIssues(
       this.organization,
@@ -212,6 +227,10 @@ export class PaymentMethodComponent implements OnInit, OnDestroy {
 
   get forOrganization() {
     return this.organizationId != null;
+  }
+
+  get headerClass() {
+    return this.forOrganization ? ["page-header"] : ["tabbed-header"];
   }
 
   get paymentSourceClasses() {

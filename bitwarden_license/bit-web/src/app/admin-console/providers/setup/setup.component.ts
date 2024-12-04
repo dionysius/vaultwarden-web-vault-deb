@@ -109,7 +109,9 @@ export class SetupComponent implements OnInit, OnDestroy {
     try {
       this.formGroup.markAllAsTouched();
 
-      if (!this.manageTaxInformationComponent.validate() || !this.formGroup.valid) {
+      const formIsValid = this.formGroup.valid && this.manageTaxInformationComponent.touch();
+
+      if (!formIsValid) {
         return;
       }
 
@@ -127,11 +129,14 @@ export class SetupComponent implements OnInit, OnDestroy {
 
       request.taxInfo.country = taxInformation.country;
       request.taxInfo.postalCode = taxInformation.postalCode;
-      request.taxInfo.taxId = taxInformation.taxId;
-      request.taxInfo.line1 = taxInformation.line1;
-      request.taxInfo.line2 = taxInformation.line2;
-      request.taxInfo.city = taxInformation.city;
-      request.taxInfo.state = taxInformation.state;
+
+      if (taxInformation.includeTaxId) {
+        request.taxInfo.taxId = taxInformation.taxId;
+        request.taxInfo.line1 = taxInformation.line1;
+        request.taxInfo.line2 = taxInformation.line2;
+        request.taxInfo.city = taxInformation.city;
+        request.taxInfo.state = taxInformation.state;
+      }
 
       const provider = await this.providerApiService.postProviderSetup(this.providerId, request);
 

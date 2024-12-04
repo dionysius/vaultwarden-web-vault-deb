@@ -5,11 +5,7 @@
   >
     <ng-container bitDialogContent>
       <app-payment [hideBank]="!organizationId" [hideCredit]="true"></app-payment>
-      <app-manage-tax-information
-        *ngIf="taxInformation"
-        [startWith]="taxInformation"
-        (taxInformationChanged)="taxInformationChanged($event)"
-      />
+      <app-tax-info (onCountryChanged)="changeCountry()"></app-tax-info>
     </ng-container>
     <ng-container bitDialogFooter>
       <button type="submit" bitButton bitFormButton buttonType="primary">
