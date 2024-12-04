@@ -27,6 +27,7 @@ anyhow = "=1.0.93"
 arboard = { version = "=3.4.1", default-features = false, features = [
     "wayland-data-control",
 ] }
+argon2 = { version = "=0.5.3", features = ["zeroize"] }
 async-stream = "=0.3.6"
 base64 = "=0.22.1"
 byteorder = "=1.5.0"

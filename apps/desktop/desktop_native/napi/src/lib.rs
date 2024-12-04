@@ -528,3 +528,22 @@ pub mod ipc {
         }
     }
 }
+
+#[napi]
+pub mod crypto {
+    use napi::bindgen_prelude::Buffer;
+
+    #[napi]
+    pub async fn argon2(
+        secret: Buffer,
+        salt: Buffer,
+        iterations: u32,
+        memory: u32,
+        parallelism: u32,
+    ) -> napi::Result<Buffer> {
+        desktop_core::crypto::argon2(&secret, &salt, iterations, memory, parallelism)
+            .map_err(|e| napi::Error::from_reason(e.to_string()))
+            .map(|v| v.to_vec())
+            .map(|v| Buffer::from(v))
+    }
+}

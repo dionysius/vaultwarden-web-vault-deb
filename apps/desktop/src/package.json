@@ -12,7 +12,6 @@
     "url": "git+https://github.com/bitwarden/clients.git"
   },
   "dependencies": {
-    "@bitwarden/desktop-napi": "file:../desktop_native/napi",
-    "argon2": "0.41.1"
+    "@bitwarden/desktop-napi": "file:../desktop_native/napi"
   }
 }
