@@ -5,8 +5,10 @@ import { CollectionAdminService } from "@bitwarden/admin-console/common";
 import { ApiService } from "@bitwarden/common/abstractions/api.service";
 import { OrganizationService } from "@bitwarden/common/admin-console/abstractions/organization/organization.service.abstraction";
 import { PolicyService } from "@bitwarden/common/admin-console/abstractions/policy/policy.service.abstraction";
-import { PolicyType, OrganizationUserStatusType } from "@bitwarden/common/admin-console/enums";
+import { OrganizationUserStatusType, PolicyType } from "@bitwarden/common/admin-console/enums";
+import { Organization } from "@bitwarden/common/admin-console/models/domain/organization";
 import { CipherId } from "@bitwarden/common/types/guid";
+import { CipherService } from "@bitwarden/common/vault/abstractions/cipher.service";
 import { CipherType } from "@bitwarden/common/vault/enums";
 import { CipherData } from "@bitwarden/common/vault/models/data/cipher.data";
 import { Cipher } from "@bitwarden/common/vault/models/domain/cipher";
@@ -25,6 +27,7 @@ export class AdminConsoleCipherFormConfigService implements CipherFormConfigServ
   private organizationService: OrganizationService = inject(OrganizationService);
   private routedVaultFilterService: RoutedVaultFilterService = inject(RoutedVaultFilterService);
   private collectionAdminService: CollectionAdminService = inject(CollectionAdminService);
+  private cipherService: CipherService = inject(CipherService);
   private apiService: ApiService = inject(ApiService);
 
   private allowPersonalOwnership$ = this.policyService
@@ -57,7 +60,6 @@ export class AdminConsoleCipherFormConfigService implements CipherFormConfigServ
     cipherId?: CipherId,
     cipherType?: CipherType,
   ): Promise<CipherFormConfig> {
-    const cipher = await this.getCipher(cipherId);
     const [organization, allowPersonalOwnership, allOrganizations, allCollections] =
       await firstValueFrom(
         combineLatest([
@@ -74,7 +76,7 @@ export class AdminConsoleCipherFormConfigService implements CipherFormConfigServ
     // Only allow the user to assign to their personal vault when cloning and
     // the policies are enabled for it.
     const allowPersonalOwnershipOnlyForClone = mode === "clone" ? allowPersonalOwnership : false;
-
+    const cipher = await this.getCipher(cipherId, organization);
     return {
       mode,
       cipherType: cipher?.type ?? cipherType ?? CipherType.Login,
@@ -89,14 +91,26 @@ export class AdminConsoleCipherFormConfigService implements CipherFormConfigServ
     };
   }
 
-  private async getCipher(id?: CipherId): Promise<Cipher | null> {
+  private async getCipher(id: CipherId | null, organization: Organization): Promise<Cipher | null> {
     if (id == null) {
-      return Promise.resolve(null);
+      return null;
     }
 
-    // Retrieve the cipher through the means of an admin
+    const localCipher = await this.cipherService.get(id);
+
+    // Fetch from the API because we don't need the permissions in local state OR the cipher was not found (e.g. unassigned)
+    if (organization.canEditAllCiphers || localCipher == null) {
+      return await this.getCipherFromAdminApi(id);
+    }
+
+    return localCipher;
+  }
+
+  private async getCipherFromAdminApi(id: CipherId): Promise<Cipher> {
     const cipherResponse = await this.apiService.getCipherAdmin(id);
+    // Ensure admin response includes permissions that allow editing
     cipherResponse.edit = true;
+    cipherResponse.viewPassword = true;
 
     const cipherData = new CipherData(cipherResponse);
     return new Cipher(cipherData);
