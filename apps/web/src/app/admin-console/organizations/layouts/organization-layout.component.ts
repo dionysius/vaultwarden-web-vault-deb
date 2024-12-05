@@ -70,10 +70,6 @@ export class OrganizationLayoutComponent implements OnInit {
   async ngOnInit() {
     document.body.classList.remove("layout_frontend");
 
-    this.isAccessIntelligenceFeatureEnabled = await this.configService.getFeatureFlag(
-      FeatureFlag.AccessIntelligence,
-    );
-
     this.organization$ = this.route.params.pipe(
       map((p) => p.organizationId),
       switchMap((id) => this.organizationService.organizations$.pipe(getById(id))),
