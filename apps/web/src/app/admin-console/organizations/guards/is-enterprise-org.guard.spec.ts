@@ -59,8 +59,14 @@ describe("Is Enterprise Org Guard", () => {
           {
             path: "organizations/:organizationId/enterpriseOrgsOnly",
             component: IsEnterpriseOrganizationComponent,
-            canActivate: [isEnterpriseOrgGuard()],
+            canActivate: [isEnterpriseOrgGuard(true)],
           },
+          {
+            path: "organizations/:organizationId/enterpriseOrgsOnlyNoError",
+            component: IsEnterpriseOrganizationComponent,
+            canActivate: [isEnterpriseOrgGuard(false)],
+          },
+
           {
             path: "organizations/:organizationId/billing/subscription",
             component: OrganizationUpgradeScreenComponent,
@@ -113,6 +119,24 @@ describe("Is Enterprise Org Guard", () => {
     expect(routerHarness.routeNativeElement?.querySelector("h1")?.textContent?.trim() ?? "").toBe(
       "This is the organization upgrade screen!",
     );
+  });
+
+  it.each([
+    ProductTierType.Free,
+    ProductTierType.Families,
+    ProductTierType.Teams,
+    ProductTierType.TeamsStarter,
+  ])("does not proceed with the navigation for productTierType '%s'", async (productTierType) => {
+    const org = orgFactory({
+      type: OrganizationUserType.User,
+      productTierType: productTierType,
+    });
+    organizationService.get.calledWith(org.id).mockResolvedValue(org);
+    await routerHarness.navigateByUrl(`organizations/${org.id}/enterpriseOrgsOnlyNoError`);
+    expect(dialogService.openSimpleDialog).not.toHaveBeenCalled();
+    expect(
+      routerHarness.routeNativeElement?.querySelector("h1")?.textContent?.trim() ?? "",
+    ).not.toBe("This component can only be accessed by a enterprise organization!");
   });
 
   it("proceeds with navigation if the organization in question is a enterprise organization", async () => {
