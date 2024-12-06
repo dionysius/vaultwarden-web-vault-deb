@@ -1,4 +1,4 @@
-import { ErrorHandler, LOCALE_ID, NgModule, NgZone } from "@angular/core";
+import { ErrorHandler, LOCALE_ID, NgModule } from "@angular/core";
 import { Subject } from "rxjs";
 
 import {
@@ -319,7 +319,6 @@ import {
   CLIENT_TYPE,
   REFRESH_ACCESS_TOKEN_ERROR_CALLBACK,
   ENV_ADDITIONAL_REGIONS,
-  AUTHN_SESSION_TIMEOUT_EXECUTOR,
 } from "./injection-tokens";
 import { ModalService } from "./modal.service";
 
@@ -413,11 +412,6 @@ const safeProviders: SafeProvider[] = [
     ],
   }),
   safeProvider({
-    provide: AUTHN_SESSION_TIMEOUT_EXECUTOR,
-    useFactory: (ngZone: NgZone) => (fn: () => void) => ngZone.run(fn),
-    deps: [NgZone],
-  }),
-  safeProvider({
     provide: LoginStrategyServiceAbstraction,
     useClass: LoginStrategyService,
     deps: [
@@ -446,7 +440,6 @@ const safeProviders: SafeProvider[] = [
       VaultTimeoutSettingsServiceAbstraction,
       KdfConfigService,
       TaskSchedulerService,
-      AUTHN_SESSION_TIMEOUT_EXECUTOR,
     ],
   }),
   safeProvider({

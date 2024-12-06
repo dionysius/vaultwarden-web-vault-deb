@@ -7,7 +7,6 @@ import {
   shareReplay,
   Subscription,
   BehaviorSubject,
-  tap,
 } from "rxjs";
 
 import { ApiService } from "@bitwarden/common/abstractions/api.service";
@@ -32,7 +31,6 @@ import { LogService } from "@bitwarden/common/platform/abstractions/log.service"
 import { MessagingService } from "@bitwarden/common/platform/abstractions/messaging.service";
 import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
 import { StateService } from "@bitwarden/common/platform/abstractions/state.service";
-import { Utils } from "@bitwarden/common/platform/misc/utils";
 import { TaskSchedulerService, ScheduledTaskNames } from "@bitwarden/common/platform/scheduling";
 import { GlobalState, GlobalStateProvider } from "@bitwarden/common/platform/state";
 import { DeviceTrustServiceAbstraction } from "@bitwarden/common/src/auth/abstractions/device-trust.service.abstraction";
@@ -73,8 +71,6 @@ import {
 
 const sessionTimeoutLength = 5 * 60 * 1000; // 5 minutes
 
-export type Executor = (fn: () => void) => void;
-
 export class LoginStrategyService implements LoginStrategyServiceAbstraction {
   private sessionTimeoutSubscription: Subscription;
   private currentAuthnTypeState: GlobalState<AuthenticationType | null>;
@@ -83,36 +79,7 @@ export class LoginStrategyService implements LoginStrategyServiceAbstraction {
   private authRequestPushNotificationState: GlobalState<string>;
   private twoFactorTimeoutSubject = new BehaviorSubject<boolean>(false);
 
-  twoFactorTimeout$: Observable<boolean> = this.twoFactorTimeoutSubject.asObservable().pipe(
-    // line 87 is the tap?
-    tap({
-      next: (value) => {
-        this.logService.info(
-          `LoginStrategyService.twoFactorTimeout$ with service id: ${this.id} emmitted value: ${value}`,
-        );
-      },
-      error: (error: unknown) => {
-        this.logService.error(
-          `LoginStrategyService.twoFactorTimeout$ with service id: ${this.id} errored with error: ${JSON.stringify(error)}`,
-        );
-      },
-      finalize: () => {
-        this.logService.info(
-          `LoginStrategyService.twoFactorTimeout$ with service id: ${this.id} finalized`,
-        );
-      },
-      complete: () => {
-        this.logService.info(
-          `LoginStrategyService.twoFactorTimeout$ with service id: ${this.id} completed`,
-        );
-      },
-      subscribe: () => {
-        this.logService.info(
-          `LoginStrategyService.twoFactorTimeout$ with service id: ${this.id} subscribed`,
-        );
-      },
-    }),
-  );
+  twoFactorTimeout$: Observable<boolean> = this.twoFactorTimeoutSubject.asObservable();
 
   private loginStrategy$: Observable<
     | UserApiLoginStrategy
@@ -124,8 +91,6 @@ export class LoginStrategyService implements LoginStrategyServiceAbstraction {
   >;
 
   currentAuthType$: Observable<AuthenticationType | null>;
-
-  id: string = Utils.newGuid();
 
   constructor(
     protected accountService: AccountService,
@@ -153,7 +118,6 @@ export class LoginStrategyService implements LoginStrategyServiceAbstraction {
     protected vaultTimeoutSettingsService: VaultTimeoutSettingsService,
     protected kdfConfigService: KdfConfigService,
     protected taskSchedulerService: TaskSchedulerService,
-    private authnSessionTimeoutExecutor: Executor = (fn) => fn(), // Default to no-op
   ) {
     this.currentAuthnTypeState = this.stateProvider.get(CURRENT_LOGIN_STRATEGY_KEY);
     this.loginStrategyCacheState = this.stateProvider.get(CACHE_KEY);
@@ -164,15 +128,12 @@ export class LoginStrategyService implements LoginStrategyServiceAbstraction {
     this.taskSchedulerService.registerTaskHandler(
       ScheduledTaskNames.loginStrategySessionTimeout,
       async () => {
-        this.logService.info("Timeout executing for LoginStrategyService with id: " + this.id);
-        this.authnSessionTimeoutExecutor(async () => {
-          this.twoFactorTimeoutSubject.next(true);
-          try {
-            await this.clearCache();
-          } catch (e) {
-            this.logService.error("Failed to clear cache during session timeout", e);
-          }
-        });
+        this.twoFactorTimeoutSubject.next(true);
+        try {
+          await this.clearCache();
+        } catch (e) {
+          this.logService.error("Failed to clear cache during session timeout", e);
+        }
       },
     );
 

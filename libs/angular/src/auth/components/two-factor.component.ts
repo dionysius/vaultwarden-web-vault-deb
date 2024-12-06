@@ -102,20 +102,10 @@ export class TwoFactorComponent extends CaptchaProtectedComponent implements OnI
     super(environmentService, i18nService, platformUtilsService, toastService);
     this.webAuthnSupported = this.platformUtilsService.supportsWebAuthn(win);
 
-    this.logService.info(
-      "Subscribing to timeout on LoginStrategyService with service id: " +
-        this.loginStrategyService.id,
-    );
-
     // Add subscription to twoFactorTimeout$ and navigate to twoFactorTimeoutRoute if expired
     this.loginStrategyService.twoFactorTimeout$
       .pipe(takeUntilDestroyed())
       .subscribe(async (expired) => {
-        this.logService.info(
-          "Received emission from  LoginStrategyService.twoFactorTimeout$ with service id: " +
-            this.loginStrategyService.id,
-        );
-
         if (!expired) {
           return;
         }
