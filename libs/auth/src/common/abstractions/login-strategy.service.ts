@@ -14,6 +14,8 @@ import {
 } from "../models/domain/login-credentials";
 
 export abstract class LoginStrategyServiceAbstraction {
+  id: string;
+
   /**
    * The current strategy being used to authenticate.
    * Emits null if the session has timed out.
