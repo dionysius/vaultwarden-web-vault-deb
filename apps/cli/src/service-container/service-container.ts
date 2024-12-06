@@ -17,6 +17,7 @@ import {
   PinService,
   PinServiceAbstraction,
   UserDecryptionOptionsService,
+  Executor,
 } from "@bitwarden/auth/common";
 import { EventCollectionService as EventCollectionServiceAbstraction } from "@bitwarden/common/abstractions/event/event-collection.service";
 import { EventUploadService as EventUploadServiceAbstraction } from "@bitwarden/common/abstractions/event/event-upload.service";
@@ -614,6 +615,11 @@ export class ServiceContainer {
       this.configService,
     );
 
+    // Execute any authn session timeout logic without any wrapping logic.
+    // An executor is required to ensure the logic is executed in an Angular context when it
+    // it is available.
+    const authnSessionTimeoutExecutor: Executor = (fn) => fn();
+
     this.loginStrategyService = new LoginStrategyService(
       this.accountService,
       this.masterPasswordService,
@@ -640,6 +646,7 @@ export class ServiceContainer {
       this.vaultTimeoutSettingsService,
       this.kdfConfigService,
       this.taskSchedulerService,
+      authnSessionTimeoutExecutor,
     );
 
     // FIXME: CLI does not support autofill
