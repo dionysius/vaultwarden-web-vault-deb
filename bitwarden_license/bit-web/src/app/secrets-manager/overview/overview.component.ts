@@ -140,7 +140,7 @@ export class OverviewComponent implements OnInit, OnDestroy {
     });
 
     this.freeTrial$ = org$.pipe(
-      filter((org) => org.isOwner),
+      filter((org) => org.isOwner && org.canViewBillingHistory && org.canViewSubscription),
       switchMap((org) =>
         combineLatest([
           of(org),
