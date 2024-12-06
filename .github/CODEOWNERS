@@ -103,6 +103,8 @@ apps/web/src/app/layouts @bitwarden/team-design-system
 
 ## Desktop native module ##
 apps/desktop/desktop_native @bitwarden/team-platform-dev
+apps/desktop/desktop_native/objc/src/native/autofill @bitwarden/team-autofill-dev
+apps/desktop/desktop_native/core/src/autofill @bitwarden/team-autofill-dev
 
 ## Key management team files ##
 apps/desktop/src/key-management @bitwarden/team-key-management-dev
