@@ -592,7 +592,9 @@ export class VaultComponent implements OnInit, OnDestroy {
       organization$,
       this.hasSubscription$.pipe(filter((hasSubscription) => hasSubscription !== null)),
     ]).pipe(
-      filter(([org, hasSubscription]) => org.isOwner && hasSubscription),
+      filter(
+        ([org, hasSubscription]) => org.isOwner && hasSubscription && org.canViewBillingHistory,
+      ),
       switchMap(([org]) =>
         combineLatest([
           of(org),
