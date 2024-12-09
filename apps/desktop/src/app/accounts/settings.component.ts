@@ -632,43 +632,51 @@ export class SettingsComponent implements OnInit, OnDestroy {
   }
 
   async saveBrowserIntegration() {
-    if (
-      ipc.platform.deviceType === DeviceType.MacOsDesktop &&
-      !this.platformUtilsService.isMacAppStore() &&
-      !ipc.platform.isDev
-    ) {
-      await this.dialogService.openSimpleDialog({
-        title: { key: "browserIntegrationUnsupportedTitle" },
-        content: { key: "browserIntegrationMasOnlyDesc" },
-        acceptButtonText: { key: "ok" },
-        cancelButtonText: null,
-        type: "warning",
-      });
+    const skipSupportedPlatformCheck =
+      ipc.platform.allowBrowserintegrationOverride || ipc.platform.isDev;
 
-      this.form.controls.enableBrowserIntegration.setValue(false);
-      return;
-    } else if (ipc.platform.isWindowsStore) {
-      await this.dialogService.openSimpleDialog({
-        title: { key: "browserIntegrationUnsupportedTitle" },
-        content: { key: "browserIntegrationWindowsStoreDesc" },
-        acceptButtonText: { key: "ok" },
-        cancelButtonText: null,
-        type: "warning",
-      });
+    if (skipSupportedPlatformCheck) {
+      if (
+        ipc.platform.deviceType === DeviceType.MacOsDesktop &&
+        !this.platformUtilsService.isMacAppStore()
+      ) {
+        await this.dialogService.openSimpleDialog({
+          title: { key: "browserIntegrationUnsupportedTitle" },
+          content: { key: "browserIntegrationMasOnlyDesc" },
+          acceptButtonText: { key: "ok" },
+          cancelButtonText: null,
+          type: "warning",
+        });
 
-      this.form.controls.enableBrowserIntegration.setValue(false);
-      return;
-    } else if (ipc.platform.isSnapStore || ipc.platform.isFlatpak) {
-      await this.dialogService.openSimpleDialog({
-        title: { key: "browserIntegrationUnsupportedTitle" },
-        content: { key: "browserIntegrationLinuxDesc" },
-        acceptButtonText: { key: "ok" },
-        cancelButtonText: null,
-        type: "warning",
-      });
+        this.form.controls.enableBrowserIntegration.setValue(false);
+        return;
+      }
 
-      this.form.controls.enableBrowserIntegration.setValue(false);
-      return;
+      if (ipc.platform.isWindowsStore) {
+        await this.dialogService.openSimpleDialog({
+          title: { key: "browserIntegrationUnsupportedTitle" },
+          content: { key: "browserIntegrationWindowsStoreDesc" },
+          acceptButtonText: { key: "ok" },
+          cancelButtonText: null,
+          type: "warning",
+        });
+
+        this.form.controls.enableBrowserIntegration.setValue(false);
+        return;
+      }
+
+      if (ipc.platform.isSnapStore || ipc.platform.isFlatpak) {
+        await this.dialogService.openSimpleDialog({
+          title: { key: "browserIntegrationUnsupportedTitle" },
+          content: { key: "browserIntegrationLinuxDesc" },
+          acceptButtonText: { key: "ok" },
+          cancelButtonText: null,
+          type: "warning",
+        });
+
+        this.form.controls.enableBrowserIntegration.setValue(false);
+        return;
+      }
     }
 
     await this.desktopSettingsService.setBrowserIntegrationEnabled(
