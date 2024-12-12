@@ -1,18 +1,10 @@
 name: Lint
 
 on:
-  pull_request:
-    types: [opened, synchronize]
+  push:
     branches-ignore:
       - 'l10n_master'
       - 'cf-pages'
-    paths-ignore:
-      - '.github/workflows/**'
-  push:
-    branches:
-      - 'main'
-      - 'rc'
-      - 'hotfix-rc-*'
     paths-ignore:
       - '.github/workflows/**'
   workflow_dispatch:
