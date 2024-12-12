@@ -5,9 +5,9 @@ import { mock, MockProxy } from "jest-mock-extended";
 import { FeatureFlag } from "@bitwarden/common/enums/feature-flag.enum";
 import { ConfigService } from "@bitwarden/common/platform/abstractions/config/config.service";
 
-import { unauthUiRefreshRedirect } from "./unauth-ui-refresh-redirect";
+import { extensionRefreshRedirect } from "./extension-refresh-redirect";
 
-describe("unauthUiRefreshRedirect", () => {
+describe("extensionRefreshRedirect", () => {
   let configService: MockProxy<ConfigService>;
   let router: MockProxy<Router>;
 
@@ -23,21 +23,19 @@ describe("unauthUiRefreshRedirect", () => {
     });
   });
 
-  it("returns true when UnauthenticatedExtensionUIRefresh flag is disabled", async () => {
+  it("returns true when ExtensionRefresh flag is disabled", async () => {
     configService.getFeatureFlag.mockResolvedValue(false);
 
     const result = await TestBed.runInInjectionContext(() =>
-      unauthUiRefreshRedirect("/redirect")(),
+      extensionRefreshRedirect("/redirect")(),
     );
 
     expect(result).toBe(true);
-    expect(configService.getFeatureFlag).toHaveBeenCalledWith(
-      FeatureFlag.UnauthenticatedExtensionUIRefresh,
-    );
+    expect(configService.getFeatureFlag).toHaveBeenCalledWith(FeatureFlag.ExtensionRefresh);
     expect(router.parseUrl).not.toHaveBeenCalled();
   });
 
-  it("returns UrlTree when UnauthenticatedExtensionUIRefresh flag is enabled and preserves query params", async () => {
+  it("returns UrlTree when ExtensionRefresh flag is enabled and preserves query params", async () => {
     configService.getFeatureFlag.mockResolvedValue(true);
 
     const urlTree = new UrlTree();
@@ -54,11 +52,9 @@ describe("unauthUiRefreshRedirect", () => {
 
     router.getCurrentNavigation.mockReturnValue(navigation);
 
-    await TestBed.runInInjectionContext(() => unauthUiRefreshRedirect("/redirect")());
+    await TestBed.runInInjectionContext(() => extensionRefreshRedirect("/redirect")());
 
-    expect(configService.getFeatureFlag).toHaveBeenCalledWith(
-      FeatureFlag.UnauthenticatedExtensionUIRefresh,
-    );
+    expect(configService.getFeatureFlag).toHaveBeenCalledWith(FeatureFlag.ExtensionRefresh);
     expect(router.createUrlTree).toHaveBeenCalledWith(["/redirect"], {
       queryParams: urlTree.queryParams,
     });

@@ -659,7 +659,14 @@ const routes: Routes = [
           },
           showReadonlyHostname: true,
           showAcctSwitcher: true,
-        } satisfies ExtensionAnonLayoutWrapperData,
+          elevation: 1,
+          /**
+           * This ensures that in a passkey flow the `/fido2?<queryParams>` URL does not get
+           * overwritten in the `BrowserRouterService` by the `/lockV2` route. This way, after
+           * unlocking, the user can be redirected back to the `/fido2?<queryParams>` URL.
+           */
+          doNotSaveUrl: true,
+        } satisfies ExtensionAnonLayoutWrapperData & RouteDataProperties,
         children: [
           {
             path: "",
