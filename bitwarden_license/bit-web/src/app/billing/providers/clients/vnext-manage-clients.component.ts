@@ -51,15 +51,15 @@ import { vNextNoClientsComponent } from "./vnext-no-clients.component";
   ],
 })
 export class vNextManageClientsComponent {
-  providerId: string;
-  provider: Provider;
+  providerId: string = "";
+  provider: Provider | undefined;
   loading = true;
   isProviderAdmin = false;
   dataSource: TableDataSource<ProviderOrganizationOrganizationDetailsResponse> =
     new TableDataSource();
 
   protected searchControl = new FormControl("", { nonNullable: true });
-  protected plans: PlanResponse[];
+  protected plans: PlanResponse[] = [];
 
   constructor(
     private billingApiService: BillingApiServiceAbstraction,
@@ -76,8 +76,8 @@ export class vNextManageClientsComponent {
       this.searchControl.setValue(queryParams.search);
     });
 
-    this.activatedRoute.parent.params
-      .pipe(
+    this.activatedRoute.parent?.params
+      ?.pipe(
         switchMap((params) => {
           this.providerId = params.providerId;
           return this.providerService.get$(this.providerId).pipe(
@@ -110,12 +110,12 @@ export class vNextManageClientsComponent {
   async load() {
     this.provider = await firstValueFrom(this.providerService.get$(this.providerId));
 
-    this.isProviderAdmin = this.provider.type === ProviderUserType.ProviderAdmin;
+    this.isProviderAdmin = this.provider?.type === ProviderUserType.ProviderAdmin;
 
     const clients = (await this.billingApiService.getProviderClientOrganizations(this.providerId))
       .data;
 
-    clients.forEach((client) => (client.plan = client.plan.replace(" (Monthly)", "")));
+    clients.forEach((client) => (client.plan = client.plan?.replace(" (Monthly)", "")));
 
     this.dataSource.data = clients;
 
@@ -146,7 +146,7 @@ export class vNextManageClientsComponent {
         organization: {
           id: organization.id,
           name: organization.organizationName,
-          seats: organization.seats,
+          seats: organization.seats ? organization.seats : 0,
         },
       },
     });
@@ -164,7 +164,7 @@ export class vNextManageClientsComponent {
     const dialogRef = openManageClientSubscriptionDialog(this.dialogService, {
       data: {
         organization,
-        provider: this.provider,
+        provider: this.provider!,
       },
     });
 
@@ -190,7 +190,7 @@ export class vNextManageClientsComponent {
       await this.webProviderService.detachOrganization(this.providerId, organization.id);
       this.toastService.showToast({
         variant: "success",
-        title: null,
+        title: "",
         message: this.i18nService.t("detachedOrganization", organization.organizationName),
       });
       await this.load();
