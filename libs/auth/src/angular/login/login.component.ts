@@ -228,11 +228,14 @@ export class LoginComponent implements OnInit, OnDestroy {
                 message: this.i18nService.t("invalidMasterPassword"),
               },
             });
+          } else {
+            // Allow other 400 responses to be handled by toast
+            this.validationService.showError(error);
           }
           break;
         }
         default: {
-          // Allow all other errors to be handled by toast
+          // Allow all other error codes to be handled by toast
           this.validationService.showError(error);
         }
       }
