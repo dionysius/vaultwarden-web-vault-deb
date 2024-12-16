@@ -96,7 +96,6 @@ import { MoreFromBitwardenPageV2Component } from "../tools/popup/settings/about-
 import { MoreFromBitwardenPageComponent } from "../tools/popup/settings/about-page/more-from-bitwarden-page.component";
 import { ExportBrowserV2Component } from "../tools/popup/settings/export/export-browser-v2.component";
 import { ImportBrowserV2Component } from "../tools/popup/settings/import/import-browser-v2.component";
-import { ImportBrowserComponent } from "../tools/popup/settings/import/import-browser.component";
 import { SettingsV2Component } from "../tools/popup/settings/settings-v2.component";
 import { SettingsComponent } from "../tools/popup/settings/settings.component";
 import { clearVaultStateGuard } from "../vault/guards/clear-vault-state.guard";
@@ -349,11 +348,12 @@ const routes: Routes = [
     canActivate: [authGuard],
     data: { elevation: 1 } satisfies RouteDataProperties,
   }),
-  ...extensionRefreshSwap(ImportBrowserComponent, ImportBrowserV2Component, {
+  {
     path: "import",
+    component: ImportBrowserV2Component,
     canActivate: [authGuard],
     data: { elevation: 1 } satisfies RouteDataProperties,
-  }),
+  },
   {
     path: "export",
     component: ExportBrowserV2Component,
