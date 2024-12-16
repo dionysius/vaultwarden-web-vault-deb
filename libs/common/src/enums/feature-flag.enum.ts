@@ -42,6 +42,7 @@ export enum FeatureFlag {
   MacOsNativeCredentialSync = "macos-native-credential-sync",
   PM11360RemoveProviderExportPermission = "pm-11360-remove-provider-export-permission",
   PM12443RemovePagingLogic = "pm-12443-remove-paging-logic",
+  PrivateKeyRegeneration = "pm-12241-private-key-regeneration",
 }
 
 export type AllowedFeatureFlagTypes = boolean | number | string;
@@ -94,6 +95,7 @@ export const DefaultFeatureFlagValue = {
   [FeatureFlag.MacOsNativeCredentialSync]: FALSE,
   [FeatureFlag.PM11360RemoveProviderExportPermission]: FALSE,
   [FeatureFlag.PM12443RemovePagingLogic]: FALSE,
+  [FeatureFlag.PrivateKeyRegeneration]: FALSE,
 } satisfies Record<FeatureFlag, AllowedFeatureFlagTypes>;
 
 export type DefaultFeatureFlagValueType = typeof DefaultFeatureFlagValue;
