@@ -46,7 +46,7 @@
         <span class="tw-text-muted">{{ row.remainingSeats }}</span>
       </td>
       <td bitCell class="tw-whitespace-nowrap">
-        <span class="tw-text-muted">{{ row.plan }}</span>
+        <span class="tw-text-muted">{{ row.plan | replace: " (Monthly)" : "" }}</span>
       </td>
       <td bitCell class="tw-text-right">
         <button

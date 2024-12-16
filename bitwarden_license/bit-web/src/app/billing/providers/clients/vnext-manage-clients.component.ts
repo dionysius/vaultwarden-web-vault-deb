@@ -37,6 +37,7 @@ import {
   ManageClientSubscriptionDialogResultType,
   openManageClientSubscriptionDialog,
 } from "./manage-client-subscription-dialog.component";
+import { ReplacePipe } from "./replace.pipe";
 import { vNextNoClientsComponent } from "./vnext-no-clients.component";
 
 @Component({
@@ -48,6 +49,7 @@ import { vNextNoClientsComponent } from "./vnext-no-clients.component";
     HeaderModule,
     SharedOrganizationModule,
     vNextNoClientsComponent,
+    ReplacePipe,
   ],
 })
 export class vNextManageClientsComponent {
@@ -114,8 +116,6 @@ export class vNextManageClientsComponent {
 
     const clients = (await this.billingApiService.getProviderClientOrganizations(this.providerId))
       .data;
-
-    clients.forEach((client) => (client.plan = client.plan?.replace(" (Monthly)", "")));
 
     this.dataSource.data = clients;
 
