@@ -192,6 +192,13 @@
   "autoFillIdentity": {
     "message": "Autoudfyld identitet"
   },
+  "fillVerificationCode": {
+    "message": "Udfyld bekræftelseskode"
+  },
+  "fillVerificationCodeAria": {
+    "message": "Udfyld bekræftelseskode",
+    "description": "Aria label for the heading displayed the inline menu for totp code autofill"
+  },
   "generatePasswordCopied": {
     "message": "Generér adgangskode (kopieret)"
   },
@@ -3174,7 +3181,7 @@
     "message": "Vis alle indlogningsmuligheder"
   },
   "viewAllLoginOptionsV1": {
-    "message": "View all log in options"
+    "message": "Vis alle indlogningsmuligheder"
   },
   "notificationSentDevice": {
     "message": "En notifikation er sendt til din enhed."
@@ -3579,6 +3586,14 @@
   "unlockAccountAria": {
     "message": "Oplås kontoen, åbnes i et nyt vindue",
     "description": "Screen reader text (aria-label) for unlock account button in overlay"
+  },
+  "totpCodeAria": {
+    "message": "Tidsbaseret engangs adgangskodebekræftelseskode",
+    "description": "Aria label for the totp code displayed in the inline menu for autofill"
+  },
+  "totpSecondsSpanAria": {
+    "message": "Resterende tid før udløb af aktuel TOTP",
+    "description": "Aria label for the totp seconds displayed in the inline menu for autofill"
   },
   "fillCredentialsFor": {
     "message": "Angiv legitimationsoplysninger for",

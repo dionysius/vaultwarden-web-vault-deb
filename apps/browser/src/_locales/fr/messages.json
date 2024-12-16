@@ -192,6 +192,13 @@
   "autoFillIdentity": {
     "message": "Saisie automatique de l'identité"
   },
+  "fillVerificationCode": {
+    "message": "Remplir le code de vérification"
+  },
+  "fillVerificationCodeAria": {
+    "message": "Remplir le code de vérification",
+    "description": "Aria label for the heading displayed the inline menu for totp code autofill"
+  },
   "generatePasswordCopied": {
     "message": "Générer un mot de passe (copié)"
   },
@@ -3174,7 +3181,7 @@
     "message": "Afficher toutes les options de connexion"
   },
   "viewAllLoginOptionsV1": {
-    "message": "View all log in options"
+    "message": "Afficher toutes les options de connexion"
   },
   "notificationSentDevice": {
     "message": "Une notification a été envoyée à votre appareil."
@@ -3579,6 +3586,14 @@
   "unlockAccountAria": {
     "message": "Déverrouiller votre compte, s'ouvre dans une nouvelle fenêtre",
     "description": "Screen reader text (aria-label) for unlock account button in overlay"
+  },
+  "totpCodeAria": {
+    "message": "Code de vérification de mot de passe unique basé sur le temps",
+    "description": "Aria label for the totp code displayed in the inline menu for autofill"
+  },
+  "totpSecondsSpanAria": {
+    "message": "Temps restant avant l'expiration du TOTP actuel",
+    "description": "Aria label for the totp seconds displayed in the inline menu for autofill"
   },
   "fillCredentialsFor": {
     "message": "Remplir les identifiants pour",

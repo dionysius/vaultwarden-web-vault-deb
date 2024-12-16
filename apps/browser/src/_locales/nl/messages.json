@@ -192,6 +192,13 @@
   "autoFillIdentity": {
     "message": "Identiteit automatisch invullen"
   },
+  "fillVerificationCode": {
+    "message": "Verificatiecode invullen"
+  },
+  "fillVerificationCodeAria": {
+    "message": "Verificatiecode invullen",
+    "description": "Aria label for the heading displayed the inline menu for totp code autofill"
+  },
   "generatePasswordCopied": {
     "message": "Wachtwoord genereren (op klembord)"
   },
@@ -3579,6 +3586,14 @@
   "unlockAccountAria": {
     "message": "Je account ontgrendelen, opent in een nieuw venster",
     "description": "Screen reader text (aria-label) for unlock account button in overlay"
+  },
+  "totpCodeAria": {
+    "message": "Time-gebaseerde eenmalige wachtwoord verificatiecode",
+    "description": "Aria label for the totp code displayed in the inline menu for autofill"
+  },
+  "totpSecondsSpanAria": {
+    "message": "Resterende tijd voordat de huidige TOTP vervalt",
+    "description": "Aria label for the totp seconds displayed in the inline menu for autofill"
   },
   "fillCredentialsFor": {
     "message": "Inloggegevens invullen voor",

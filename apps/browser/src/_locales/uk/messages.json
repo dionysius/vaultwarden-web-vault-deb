@@ -192,6 +192,13 @@
   "autoFillIdentity": {
     "message": "Автозаповнення посвідчень"
   },
+  "fillVerificationCode": {
+    "message": "Заповнити код підтвердження"
+  },
+  "fillVerificationCodeAria": {
+    "message": "Заповнити код підтвердження",
+    "description": "Aria label for the heading displayed the inline menu for totp code autofill"
+  },
   "generatePasswordCopied": {
     "message": "Генерувати пароль (з копіюванням)"
   },
@@ -3174,7 +3181,7 @@
     "message": "Переглянути всі варіанти входу"
   },
   "viewAllLoginOptionsV1": {
-    "message": "View all log in options"
+    "message": "Переглянути всі варіанти входу"
   },
   "notificationSentDevice": {
     "message": "Сповіщення було надіслано на ваш пристрій."
@@ -3579,6 +3586,14 @@
   "unlockAccountAria": {
     "message": "Розблокування облікового запису – відкриється нове вікно",
     "description": "Screen reader text (aria-label) for unlock account button in overlay"
+  },
+  "totpCodeAria": {
+    "message": "Код підтвердження одноразового пароля",
+    "description": "Aria label for the totp code displayed in the inline menu for autofill"
+  },
+  "totpSecondsSpanAria": {
+    "message": "Час, що залишився до завершення чинного TOTP",
+    "description": "Aria label for the totp seconds displayed in the inline menu for autofill"
   },
   "fillCredentialsFor": {
     "message": "Заповнити облікові дані для",

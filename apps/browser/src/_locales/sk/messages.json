@@ -192,6 +192,13 @@
   "autoFillIdentity": {
     "message": "Automatické vyplnenie identity"
   },
+  "fillVerificationCode": {
+    "message": "Vyplniť overovací kód"
+  },
+  "fillVerificationCodeAria": {
+    "message": "Vyplniť overovací kód",
+    "description": "Aria label for the heading displayed the inline menu for totp code autofill"
+  },
   "generatePasswordCopied": {
     "message": "Vygenerovať heslo (skopírované)"
   },
@@ -3174,7 +3181,7 @@
     "message": "Zobraziť všetky možnosti prihlásenia"
   },
   "viewAllLoginOptionsV1": {
-    "message": "View all log in options"
+    "message": "Zobraziť všetky možnosti prihlásenia"
   },
   "notificationSentDevice": {
     "message": "Do vášho zariadenia bolo odoslané upozornenie."
@@ -3579,6 +3586,14 @@
   "unlockAccountAria": {
     "message": "Odomknúť konto v novom okne",
     "description": "Screen reader text (aria-label) for unlock account button in overlay"
+  },
+  "totpCodeAria": {
+    "message": "Overovací kód TOTP",
+    "description": "Aria label for the totp code displayed in the inline menu for autofill"
+  },
+  "totpSecondsSpanAria": {
+    "message": "Čas zostávajúci do vypršania aktuálneho TOTP",
+    "description": "Aria label for the totp seconds displayed in the inline menu for autofill"
   },
   "fillCredentialsFor": {
     "message": "Vyplňte prihlasovacie údaje pre",
