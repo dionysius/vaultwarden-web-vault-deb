@@ -222,11 +222,11 @@ export class TwoFactorSetupAuthenticatorComponent
     new window.QRious({
       element: document.getElementById("qr"),
       value:
-        "otpauth://totp/Bitwarden:" +
+        "otpauth://totp/Vaultwarden:" +
         Utils.encodeRFC3986URIComponent(email) +
         "?secret=" +
         encodeURIComponent(this.key) +
-        "&issuer=Bitwarden",
+        "&issuer=Vaultwarden",
       size: 160,
     });
   }

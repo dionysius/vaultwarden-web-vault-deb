@@ -55,8 +55,14 @@
       <ng-content select="[slot=environment-selector]"></ng-content>
     </ng-container>
     <ng-container *ngIf="!hideYearAndVersion">
-      <div bitTypography="body2">&copy; {{ year }} Bitwarden Inc.</div>
+      <div bitTypography="body2">Vaultwarden Web</div>
       <div bitTypography="body2">{{ version }}</div>
+      <br />
+      <div bitTypography="helper" id="vw-disclaimer">
+        A modified version of the Bitwarden&reg; Web Vault for Vaultwarden (an unofficial rewrite of
+        the Bitwarden&reg; server).<br />
+        Vaultwarden is not associated with the Bitwarden&reg; project nor Bitwarden Inc.
+      </div>
     </ng-container>
   </footer>
 </main>
