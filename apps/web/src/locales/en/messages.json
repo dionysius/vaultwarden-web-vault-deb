@@ -9969,5 +9969,8 @@
   },
   "domainClaimed": {
     "message": "Domain claimed"
+  },
+  "organizationNameMaxLength": {
+    "message": "Organization name cannot exceed 50 characters."
   }
 }
