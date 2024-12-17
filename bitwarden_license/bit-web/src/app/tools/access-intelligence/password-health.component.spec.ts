@@ -13,7 +13,6 @@ import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.servic
 import { PasswordStrengthServiceAbstraction } from "@bitwarden/common/tools/password-strength";
 import { CipherService } from "@bitwarden/common/vault/abstractions/cipher.service";
 import { TableModule } from "@bitwarden/components";
-import { TableBodyDirective } from "@bitwarden/components/src/table/table.component";
 import { LooseComponentsModule } from "@bitwarden/web-vault/app/shared";
 import { PipesModule } from "@bitwarden/web-vault/app/vault/individual-vault/pipes/pipes.module";
 
@@ -27,7 +26,7 @@ describe("PasswordHealthComponent", () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [PasswordHealthComponent, PipesModule, TableModule, LooseComponentsModule],
-      declarations: [TableBodyDirective],
+      declarations: [],
       providers: [
         { provide: CipherService, useValue: mock<CipherService>() },
         { provide: I18nService, useValue: mock<I18nService>() },

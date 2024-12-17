@@ -31,6 +31,7 @@ const hoverStyles: Record<BadgeVariant, string[]> = {
 @Directive({
   selector: "span[bitBadge], a[bitBadge], button[bitBadge]",
   providers: [{ provide: FocusableElement, useExisting: BadgeDirective }],
+  standalone: true,
 })
 export class BadgeDirective implements FocusableElement {
   @HostBinding("class") get classList() {

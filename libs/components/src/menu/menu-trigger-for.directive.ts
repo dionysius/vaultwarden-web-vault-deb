@@ -19,6 +19,7 @@ import { MenuComponent } from "./menu.component";
 @Directive({
   selector: "[bitMenuTriggerFor]",
   exportAs: "menuTrigger",
+  standalone: true,
 })
 export class MenuTriggerForDirective implements OnDestroy {
   @HostBinding("attr.aria-expanded") isOpen = false;
