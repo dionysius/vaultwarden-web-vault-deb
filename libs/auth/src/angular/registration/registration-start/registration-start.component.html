@@ -53,7 +53,7 @@
       {{ "continue" | i18n }}
     </button>
 
-    <p bitTypography="helper" class="tw-text-main tw-text-xs tw-mb-0">
+    <p bitTypography="helper" class="tw-text-main tw-text-xs tw-mb-0" *ngIf="!isSelfHost">
       {{ "byContinuingYouAgreeToThe" | i18n }}
       <a
         bitLink
