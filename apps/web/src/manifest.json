@@ -1,5 +1,5 @@
 {
-  "name": "Bitwarden Vault",
+  "name": "Vaultwarden Web",
   "icons": [
     {
       "src": "images/icons/android-chrome-192x192.png",
@@ -12,6 +12,6 @@
       "type": "image/png"
     }
   ],
-  "theme_color": "#175DDC",
-  "background_color": "#175DDC"
+  "theme_color": "#FFFFFF",
+  "background_color": "#FFFFFF"
 }
