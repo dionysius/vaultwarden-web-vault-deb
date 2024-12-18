@@ -661,6 +661,10 @@ const routes: Routes = [
            * This ensures that in a passkey flow the `/fido2?<queryParams>` URL does not get
            * overwritten in the `BrowserRouterService` by the `/lockV2` route. This way, after
            * unlocking, the user can be redirected back to the `/fido2?<queryParams>` URL.
+           *
+           * Also, this prevents a routing loop when using biometrics to unlock the vault in MV2 (Firefox),
+           * locking up the browser (https://bitwarden.atlassian.net/browse/PM-16116). This involves the
+           * `popup-router-cache.service` pushing the `lockV2` route to the history.
            */
           doNotSaveUrl: true,
         } satisfies ExtensionAnonLayoutWrapperData & RouteDataProperties,
