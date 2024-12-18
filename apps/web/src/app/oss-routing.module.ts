@@ -534,7 +534,7 @@ const routes: Routes = [
           ],
           data: {
             pageTitle: {
-              key: "yourAccountIsLocked",
+              key: "yourVaultIsLockedV2",
             },
             pageIcon: LockIcon,
             showReadonlyHostname: true,
