@@ -1330,7 +1330,7 @@ export default class MainBackground {
     return new Promise<void>((resolve) => {
       setTimeout(async () => {
         await this.refreshBadge();
-        await this.fullSync(true);
+        await this.fullSync(false);
         this.taskSchedulerService.setInterval(
           ScheduledTaskNames.scheduleNextSyncInterval,
           5 * 60 * 1000, // check every 5 minutes
