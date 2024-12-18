@@ -2,6 +2,7 @@ import { NgModule } from "@angular/core";
 
 import {
   MemberCipherDetailsApiService,
+  RiskInsightsDataService,
   RiskInsightsReportService,
 } from "@bitwarden/bit-common/tools/reports/risk-insights/services";
 import { ApiService } from "@bitwarden/common/abstractions/api.service";
@@ -27,6 +28,10 @@ import { RiskInsightsComponent } from "./risk-insights.component";
         CipherService,
         MemberCipherDetailsApiService,
       ],
+    },
+    {
+      provide: RiskInsightsDataService,
+      deps: [RiskInsightsReportService],
     },
   ],
 })

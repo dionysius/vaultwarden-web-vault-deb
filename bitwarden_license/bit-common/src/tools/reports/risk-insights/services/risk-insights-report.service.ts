@@ -287,6 +287,7 @@ export class RiskInsightsReportService {
         : newUriDetail.cipherMembers,
       atRiskMemberDetails: existingUriDetail ? existingUriDetail.atRiskMemberDetails : [],
       atRiskPasswordCount: existingUriDetail ? existingUriDetail.atRiskPasswordCount : 0,
+      atRiskMemberCount: existingUriDetail ? existingUriDetail.atRiskMemberDetails.length : 0,
     } as ApplicationHealthReportDetail;
 
     if (isAtRisk) {
