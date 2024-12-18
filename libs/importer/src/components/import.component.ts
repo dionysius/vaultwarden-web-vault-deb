@@ -53,6 +53,7 @@ import {
   SectionHeaderComponent,
   SelectModule,
   ToastService,
+  LinkModule,
 } from "@bitwarden/components";
 import { KeyService } from "@bitwarden/key-management";
 
@@ -115,6 +116,7 @@ const safeProviders: SafeProvider[] = [
     ContainerComponent,
     SectionHeaderComponent,
     SectionComponent,
+    LinkModule,
   ],
   providers: safeProviders,
 })
