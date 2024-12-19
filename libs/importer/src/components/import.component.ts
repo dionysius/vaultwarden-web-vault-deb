@@ -290,7 +290,9 @@ export class ImportComponent implements OnInit, OnDestroy, AfterViewInit {
   private async initializeOrganizations() {
     this.organizations$ = concat(
       this.organizationService.memberOrganizations$.pipe(
-        map((orgs) => orgs.filter((org) => org.canAccessImport)),
+        // Import is an alternative way to create collections during onboarding, so import from Password Manager
+        // is available to any user who can create collections in the organization.
+        map((orgs) => orgs.filter((org) => org.canAccessImport || org.canCreateNewCollections)),
         map((orgs) => orgs.sort(Utils.getSortFunction(this.i18nService, "name"))),
       ),
     );
