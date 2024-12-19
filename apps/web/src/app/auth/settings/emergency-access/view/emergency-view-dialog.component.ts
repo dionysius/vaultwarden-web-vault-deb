@@ -40,7 +40,7 @@ export class EmergencyViewDialogComponent {
    * The title of the dialog. Updates based on the cipher type.
    * @protected
    */
-  protected title: string;
+  protected title: string = "";
 
   constructor(
     @Inject(DIALOG_DATA) protected params: EmergencyViewDialogParams,
