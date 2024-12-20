@@ -26,7 +26,6 @@ import { PopupCompactModeService } from "../platform/popup/layout/popup-compact-
 import { PopupWidthService } from "../platform/popup/layout/popup-width.service";
 import { PopupViewCacheService } from "../platform/popup/view-cache/popup-view-cache.service";
 import { initPopupClosedListener } from "../platform/services/popup-view-cache-background.service";
-import { BrowserSendStateService } from "../tools/popup/services/browser-send-state.service";
 import { VaultBrowserStateService } from "../vault/services/vault-browser-state.service";
 
 import { routerTransition } from "./app-routing.animations";
@@ -57,7 +56,6 @@ export class AppComponent implements OnInit, OnDestroy {
     private i18nService: I18nService,
     private router: Router,
     private stateService: StateService,
-    private browserSendStateService: BrowserSendStateService,
     private vaultBrowserStateService: VaultBrowserStateService,
     private cipherService: CipherService,
     private changeDetectorRef: ChangeDetectorRef,
@@ -243,8 +241,6 @@ export class AppComponent implements OnInit, OnDestroy {
     await Promise.all([
       this.vaultBrowserStateService.setBrowserGroupingsComponentState(null),
       this.vaultBrowserStateService.setBrowserVaultItemsComponentState(null),
-      this.browserSendStateService.setBrowserSendComponentState(null),
-      this.browserSendStateService.setBrowserSendTypeComponentState(null),
     ]);
   }
 
