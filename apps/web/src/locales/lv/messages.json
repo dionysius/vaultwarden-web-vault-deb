@@ -9885,22 +9885,22 @@
     "message": "Apraksta kods"
   },
   "importantNotice": {
-    "message": "Important notice"
+    "message": "Svarīgs paziņojums"
   },
   "setupTwoStepLogin": {
-    "message": "Set up two-step login"
+    "message": "Iestatīt divpakāpju pieteikšanos"
   },
   "newDeviceVerificationNoticeContentPage1": {
-    "message": "Bitwarden will send a code to your account email to verify logins from new devices starting in February 2025."
+    "message": "Bitwarden, sākot ar 2025. gada februāri, nosūtīs kodu uz konta e-pasta adresi, lai apliecinātu pieteikšanos no jaunām ierīcēm."
   },
   "newDeviceVerificationNoticeContentPage2": {
-    "message": "You can set up two-step login as an alternative way to protect your account or change your email to one you can access."
+    "message": "Var iestatīt divpakāpju pieteikšanos kā citu veidu, kā aizsargāt savu kontu, vai iestatīt savu e-pasta adresi uz tādu, kurai ir piekļuve."
   },
   "remindMeLater": {
-    "message": "Remind me later"
+    "message": "Atgādināt man vēlāk"
   },
   "newDeviceVerificationNoticePageOneFormContent": {
-    "message": "Do you have reliable access to your email, $EMAIL$?",
+    "message": "Vai ir uzticama piekļuve savai e-pasta adresei $EMAIL$?",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -9909,16 +9909,16 @@
     }
   },
   "newDeviceVerificationNoticePageOneEmailAccessNo": {
-    "message": "No, I do not"
+    "message": "Nē, nav"
   },
   "newDeviceVerificationNoticePageOneEmailAccessYes": {
-    "message": "Yes, I can reliably access my email"
+    "message": "Jā, varu uzticami piekļūt savam e-pastam"
   },
   "turnOnTwoStepLogin": {
-    "message": "Turn on two-step login"
+    "message": "Ieslēgt divpakāpju pieteikšanos"
   },
   "changeAcctEmail": {
-    "message": "Change account email"
+    "message": "Mainīt konta e-pasta adresi"
   },
   "removeMembers": {
     "message": "Noņemt dalībniekus"
