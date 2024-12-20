@@ -56,6 +56,9 @@ describe("DefaultSdkService", () => {
       const userId = "user-id" as UserId;
 
       beforeEach(() => {
+        environmentService.getEnvironment$
+          .calledWith(userId)
+          .mockReturnValue(new BehaviorSubject(mock<Environment>()));
         accountService.accounts$ = of({
           [userId]: { email: "email", emailVerified: true, name: "name" } as AccountInfo,
         });
