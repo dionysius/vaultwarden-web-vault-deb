@@ -1,8 +1,0 @@
-{
-  "extends": "./tsconfig",
-  "compilerOptions": {
-    "moduleResolution": "nodenext",
-    "module": "nodenext"
-  },
-  "include": ["src/entry.ts", "src/global.d.ts"]
-}
