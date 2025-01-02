@@ -713,6 +713,7 @@ const routes: Routes = [
           pageTitle: {
             key: "importantNotice",
           },
+          hideFooter: true,
         },
       },
       {
