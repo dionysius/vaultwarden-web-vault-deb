@@ -1,4 +1,0 @@
-{
-  "extends": "./tsconfig.json",
-  "files": ["../../apps/cli/test.setup.ts"]
-}
