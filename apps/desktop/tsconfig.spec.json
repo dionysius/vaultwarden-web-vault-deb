@@ -1,9 +1,0 @@
-{
-  "extends": "./tsconfig",
-  "compilerOptions": {
-    "isolatedModules": true,
-    "emitDecoratorMetadata": false
-  },
-  "files": ["./test.setup.ts"],
-  "include": ["src/**/*.spec.ts"]
-}

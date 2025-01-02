@@ -1,7 +1,0 @@
-{
-  "extends": "./tsconfig",
-  "angularCompilerOptions": {
-    "strictTemplates": true
-  },
-  "include": ["src/app/main.ts", "src/global.d.ts"]
-}
