@@ -96,7 +96,6 @@ export class BackgroundBrowserBiometricsService extends BiometricsService {
           const userKey = new SymmetricCryptoKey(decodedUserkey) as UserKey;
           if (await this.keyService.validateUserKey(userKey, userId)) {
             await this.biometricStateService.setBiometricUnlockEnabled(true);
-            await this.biometricStateService.setFingerprintValidated(true);
             await this.keyService.setUserKey(userKey, userId);
             // to update badge and other things
             this.messagingService.send("switchAccount", { userId });
@@ -116,7 +115,6 @@ export class BackgroundBrowserBiometricsService extends BiometricsService {
           const userKey = new SymmetricCryptoKey(decodedUserkey) as UserKey;
           if (await this.keyService.validateUserKey(userKey, userId)) {
             await this.biometricStateService.setBiometricUnlockEnabled(true);
-            await this.biometricStateService.setFingerprintValidated(true);
             await this.keyService.setUserKey(userKey, userId);
             // to update badge and other things
             this.messagingService.send("switchAccount", { userId });
