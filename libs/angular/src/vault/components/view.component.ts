@@ -65,7 +65,6 @@ export class ViewComponent implements OnDestroy, OnInit {
   showPrivateKey: boolean;
   canAccessPremium: boolean;
   showPremiumRequiredTotp: boolean;
-  showUpgradeRequiredTotp: boolean;
   totpCode: string;
   totpCodeFormatted: string;
   totpDash: number;
@@ -152,13 +151,10 @@ export class ViewComponent implements OnDestroy, OnInit {
       this.billingAccountProfileStateService.hasPremiumFromAnySource$(activeUserId),
     );
     this.showPremiumRequiredTotp =
-      this.cipher.login.totp && !this.canAccessPremium && !this.cipher.organizationId;
+      this.cipher.login.totp && !this.canAccessPremium && !this.cipher.organizationUseTotp;
     this.canDeleteCipher$ = this.cipherAuthorizationService.canDeleteCipher$(this.cipher, [
       this.collectionId as CollectionId,
     ]);
-
-    this.showUpgradeRequiredTotp =
-      this.cipher.login.totp && this.cipher.organizationId && !this.cipher.organizationUseTotp;
 
     if (this.cipher.folderId) {
       this.folder = await (
@@ -166,11 +162,11 @@ export class ViewComponent implements OnDestroy, OnInit {
       ).find((f) => f.id == this.cipher.folderId);
     }
 
-    const canGenerateTotp = this.cipher.organizationId
-      ? this.cipher.organizationUseTotp
-      : this.canAccessPremium;
-
-    if (this.cipher.type === CipherType.Login && this.cipher.login.totp && canGenerateTotp) {
+    if (
+      this.cipher.type === CipherType.Login &&
+      this.cipher.login.totp &&
+      (cipher.organizationUseTotp || this.canAccessPremium)
+    ) {
       await this.totpUpdateCode();
       const interval = this.totpService.getTimeInterval(this.cipher.login.totp);
       await this.totpTick(interval);
