@@ -46,7 +46,7 @@
     {{ "twoStepLoginPolicyUserWarning" | i18n }}
   </bit-callout>
   <bit-item-group [attr.aria-label]="'providers' | i18n">
-    <bit-item *ngFor="let p of providers" class="tw-py-4">
+    <bit-item *ngFor="let p of providers" class="tw-py-4 providers-2fa-{{ p.type }}">
       <div slot="start" class="tw-min-w-[120px] tw-flex tw-justify-center">
         <auth-two-factor-icon class="tw-flex tw-items-center" [provider]="p.type" [name]="p.name" />
       </div>
