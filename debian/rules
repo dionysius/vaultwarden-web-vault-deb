@@ -24,7 +24,7 @@ override_dh_auto_configure:
 	sed -i 's|^<svg.*|$(shell cat debian/patches/resources/src/images/logo.svg)|' libs/auth/src/angular/icons/bitwarden-logo.icon.ts
 	sed -i 's|^<svg.*|$(shell cat debian/patches/resources/vaultwarden-icon.svg)|' libs/auth/src/angular/icons/bitwarden-shield.icon.ts
 # remove non-free bitwarden_licence/ code
-	test -d apps/web/src/app/tools/access-intelligence && rm -rf apps/web/src/app/tools/access-intelligence
+	if [ -d apps/web/src/app/tools/access-intelligence ]; then rm -rf apps/web/src/app/tools/access-intelligence; fi
 
 override_dh_auto_build:
 # install dependencies
