@@ -51,7 +51,7 @@ export enum FeatureFlag {
   PrivateKeyRegeneration = "pm-12241-private-key-regeneration",
   ResellerManagedOrgAlert = "PM-15814-alert-owners-of-reseller-managed-orgs",
   NewDeviceVerification = "new-device-verification",
-  PM15179_AddExistingOrgsFromProviderPortal = "PM-15179-add-existing-orgs-from-provider-portal",
+  PM15179_AddExistingOrgsFromProviderPortal = "pm-15179-add-existing-orgs-from-provider-portal",
 }
 
 export type AllowedFeatureFlagTypes = boolean | number | string;
