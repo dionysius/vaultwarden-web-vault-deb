@@ -10346,6 +10346,9 @@
       }
     }
   },
+  "accountDeprovisioningNotification" : {
+    "message": "Administrators now have the ability to delete member accounts that belong to a claimed domain."
+  },
   "deleteManagedUserWarningDesc": {
     "message": "This action will delete the member account including all items in their vault. This replaces the previous Remove action."
   },
