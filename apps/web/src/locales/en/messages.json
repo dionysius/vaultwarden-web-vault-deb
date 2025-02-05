@@ -10346,6 +10346,12 @@
       }
     }
   },
+  "deleteManagedUserWarningDesc": {
+    "message": "This action will delete the member account including all items in their vault. This replaces the previous Remove action."
+  },
+  "deleteManagedUserWarning": {
+    "message": "Delete is a new action!"
+  },
   "seatsRemaining": {
     "message": "You have $REMAINING$ seats remaining out of $TOTAL$ seats assigned to this organization. Contact your provider to manage your subscription.",
     "placeholders": {
