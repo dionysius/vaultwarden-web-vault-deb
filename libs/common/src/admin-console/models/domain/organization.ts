@@ -371,6 +371,7 @@ export class Organization {
   }
 
   get canAccessIntegrations() {
+    return false; // disable integrations for Vaultwarden
     return (
       (this.productTierType === ProductTierType.Teams ||
         this.productTierType === ProductTierType.Enterprise) &&
