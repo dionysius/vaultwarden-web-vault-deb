@@ -17,13 +17,14 @@ window.addEventListener("load", () => {
 });
 
 export function initiateWebAppSso(code: string, state: string) {
+  const baseUrl = window.location.href.replace(/\/sso-connector.html.*$/, "");
   // If we've initiated SSO from somewhere other than the SSO component on the web app, the SSO component will add
   // a _returnUri to the state variable. Here we're extracting that URI and sending the user there instead of to the SSO component.
   const returnUri = extractFromRegex(state, "(?<=_returnUri=')(.*)(?=')");
   if (returnUri) {
-    window.location.href = window.location.origin + `/#${returnUri}`;
+    window.location.href = baseUrl + `/#${returnUri}`;
   } else {
-    window.location.href = window.location.origin + "/#/sso?code=" + code + "&state=" + state;
+    window.location.href = baseUrl + "/#/sso?code=" + code + "&state=" + state;
   }
 }
 
