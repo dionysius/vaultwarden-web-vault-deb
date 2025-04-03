@@ -20,8 +20,18 @@
         formControlName="email"
         bitInput
         appAutofocus
+        class="vw-email-continue"
         (input)="onEmailInput($event)"
         (keyup.enter)="continuePressed()"
+      />
+      <input
+        type="email"
+        formControlName="email"
+        bitInput
+        appAutofocus
+        class="vw-email-sso"
+        (input)="onEmailInput($event)"
+        (keyup.enter)="handleSsoClick()"
       />
     </bit-form-field>
 
@@ -37,9 +47,29 @@
     </bit-form-control>
 
     <div class="tw-grid tw-gap-3">
-      <!-- Continue button -->
-      <button type="button" bitButton block buttonType="primary" (click)="continuePressed()">
+      <!-- Continue button (sso is disabled) -->
+      <button
+        type="button"
+        bitButton
+        block
+        buttonType="primary"
+        class="vw-continue-login"
+        (click)="continuePressed()"
+      >
         {{ "continue" | i18n }}
+      </button>
+
+      <!-- SSO button -->
+      <button
+        type="button"
+        bitButton
+        block
+        buttonType="primary"
+        class="vw-sso-login"
+        (click)="handleSsoClick()"
+      >
+        <i class="bwi bwi-provider tw-mr-1" aria-hidden="true"></i>
+        {{ "useSingleSignOn" | i18n }}
       </button>
 
       <div class="tw-text-center vw-or-text">{{ "or" | i18n }}</div>
@@ -59,17 +89,16 @@
         </button>
       </ng-container>
 
-      <!-- Button to Login with SSO -->
+      <!-- Other button (sso enabled and password or device login is still available) -->
       <button
         type="button"
         bitButton
         block
         buttonType="secondary"
-        (click)="handleSsoClick()"
-        class="vw-sso-login"
+        class="vw-other-login"
+        (click)="continuePressed()"
       >
-        <i class="bwi bwi-provider tw-mr-1" aria-hidden="true"></i>
-        {{ "useSingleSignOn" | i18n }}
+        {{ "other" | i18n }}
       </button>
     </div>
   </div>
