@@ -10,8 +10,19 @@
         bitInput
         appAutofocus
         data-testid="login-email-input"
+        class="vw-email-continue"
         (input)="onEmailInput($event)"
-        (keyup.enter)="ssoRequired ? handleSsoClick() : continuePressed()"
+        (keyup.enter)="continuePressed()"
+        [disabled]="ssoRequired"
+      />
+      <input
+        type="email"
+        formControlName="email"
+        bitInput
+        appAutofocus
+        class="vw-email-sso"
+        (input)="onEmailInput($event)"
+        (keyup.enter)="handleSsoClick()"
       />
     </bit-form-field>
 
@@ -28,19 +39,32 @@
     </bit-form-control>
 
     <div class="tw-grid tw-gap-3">
-      <!-- Continue button -->
+      <!-- Continue button (sso is disabled) -->
       <button
         type="button"
         bitButton
         block
         buttonType="primary"
         data-testid="login-continue-button"
+        class="vw-continue-login"
         (click)="continuePressed()"
         [bitTooltip]="ssoRequired ? ('yourOrganizationRequiresSingleSignOn' | i18n) : ''"
         [addTooltipToDescribedby]="ssoRequired"
-        [disabled]="ssoRequired"
       >
         {{ "continue" | i18n }}
+      </button>
+
+      <!-- SSO button -->
+      <button
+        type="button"
+        bitButton
+        block
+        [buttonType]="ssoRequired ? 'primary' : 'secondary'"
+        class="vw-sso-login"
+        (click)="handleSsoClick()"
+      >
+        <bit-icon name="bwi-provider" class="tw-mr-1"></bit-icon>
+        {{ "useSingleSignOn" | i18n }}
       </button>
 
       <div class="tw-text-center vw-or-text">{{ "or" | i18n }}</div>
@@ -64,18 +88,18 @@
         </button>
       </ng-container>
 
-      <!-- Button to Login with SSO -->
+      <!-- Other button (sso enabled and password or device login is still available) -->
       <button
         type="button"
         bitButton
         block
-        [buttonType]="ssoRequired ? 'primary' : 'secondary'"
+        buttonType="secondary"
         data-testid="login-sso-button"
-        (click)="handleSsoClick()"
-        class="vw-sso-login"
+        (click)="continuePressed()"
+        class="vw-other-login"
+        [disabled]="ssoRequired"
       >
-        <bit-icon name="bwi-provider" class="tw-mr-1"></bit-icon>
-        {{ "useSingleSignOn" | i18n }}
+        {{ "other" | i18n }}
       </button>
     </div>
   </div>
