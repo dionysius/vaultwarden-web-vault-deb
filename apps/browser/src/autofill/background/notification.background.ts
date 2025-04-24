@@ -163,6 +163,7 @@ export default class NotificationBackground {
    * Gets the current active tab and retrieves the relevant decrypted cipher
    * for the tab's URL. It constructs and returns an array of `NotificationCipherData` objects or a singular object.
    * If no active tab or URL is found, it returns an empty array.
+   * If new login, returns a preview of the cipher.
    *
    * @returns {Promise<NotificationCipherData[]>}
    */
@@ -175,53 +176,94 @@ export default class NotificationBackground {
       firstValueFrom(this.accountService.activeAccount$.pipe(getOptionalUserId)),
     ]);
 
+    if (!currentTab?.url || !activeUserId) {
+      return [];
+    }
+
     const [decryptedCiphers, organizations] = await Promise.all([
-      this.cipherService.getAllDecryptedForUrl(currentTab?.url, activeUserId),
+      this.cipherService.getAllDecryptedForUrl(currentTab.url, activeUserId),
       firstValueFrom(this.organizationService.organizations$(activeUserId)),
     ]);
 
     const iconsServerUrl = env.getIconsUrl();
 
-    const toNotificationData = (view: CipherView): NotificationCipherData => {
-      const { id, name, reprompt, favorite, login, organizationId } = view;
+    const getOrganizationType = (orgId?: string) =>
+      organizations.find((org) => org.id === orgId)?.productTierType;
 
-      const type = organizations.find((org) => org.id === organizationId)?.productTierType;
+    const cipherQueueMessage = this.notificationQueue.find(
+      (message): message is AddChangePasswordQueueMessage | AddLoginQueueMessage =>
+        message.type === NotificationQueueMessageType.ChangePassword ||
+        message.type === NotificationQueueMessageType.AddLogin,
+    );
 
-      const organizationCategories: OrganizationCategory[] = [];
+    if (cipherQueueMessage) {
+      const cipherView =
+        cipherQueueMessage.type === NotificationQueueMessageType.ChangePassword
+          ? await this.getDecryptedCipherById(cipherQueueMessage.cipherId, activeUserId)
+          : this.convertAddLoginQueueMessageToCipherView(cipherQueueMessage);
+
+      const organizationType = getOrganizationType(cipherView.organizationId);
+      return [
+        this.convertToNotificationCipherData(
+          cipherView,
+          iconsServerUrl,
+          showFavicons,
+          organizationType,
+        ),
+      ];
+    }
+
+    return decryptedCiphers.map((view) =>
+      this.convertToNotificationCipherData(
+        view,
+        iconsServerUrl,
+        showFavicons,
+        getOrganizationType(view.organizationId),
+      ),
+    );
+  }
+
+  /**
+   * Converts a CipherView and organization type into a NotificationCipherData object
+   * for use in the notification bar.
+   *
+   * @returns A NotificationCipherData object containing the relevant cipher information.
+   */
+
+  convertToNotificationCipherData(
+    view: CipherView,
+    iconsServerUrl: string,
+    showFavicons: boolean,
+    organizationType?: ProductTierType,
+  ): NotificationCipherData {
+    const { id, name, reprompt, favorite, login } = view;
+
+    const organizationCategories: OrganizationCategory[] = [];
+
+    if (organizationType != null) {
       if (
         [ProductTierType.Teams, ProductTierType.Enterprise, ProductTierType.TeamsStarter].includes(
-          type,
+          organizationType,
         )
       ) {
         organizationCategories.push(OrganizationCategories.business);
       }
-      if ([ProductTierType.Families, ProductTierType.Free].includes(type)) {
+
+      if ([ProductTierType.Families, ProductTierType.Free].includes(organizationType)) {
         organizationCategories.push(OrganizationCategories.family);
       }
-
-      return {
-        id,
-        name,
-        type: CipherType.Login,
-        reprompt,
-        favorite,
-        ...(organizationCategories.length ? { organizationCategories } : {}),
-        icon: buildCipherIcon(iconsServerUrl, view, showFavicons),
-        login: login && { username: login.username },
-      };
-    };
-
-    const changeItem = this.notificationQueue.find(
-      (message): message is AddChangePasswordQueueMessage =>
-        message.type === NotificationQueueMessageType.ChangePassword,
-    );
-
-    if (changeItem) {
-      const cipherView = await this.getDecryptedCipherById(changeItem.cipherId, activeUserId);
-      return [toNotificationData(cipherView)];
     }
 
-    return decryptedCiphers.map(toNotificationData);
+    return {
+      id,
+      name,
+      type: CipherType.Login,
+      reprompt,
+      favorite,
+      ...(organizationCategories.length ? { organizationCategories } : {}),
+      icon: buildCipherIcon(iconsServerUrl, view, showFavicons),
+      login: login && { username: login.username },
+    };
   }
 
   /**
