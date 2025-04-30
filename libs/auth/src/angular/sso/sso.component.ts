@@ -543,7 +543,7 @@ export class SsoComponent implements OnInit {
     await this.router.navigate(["lock"]);
   }
 
-  private async handleLoginError(e: unknown) {
+  private async handleLoginError(e: any) {
     this.logService.error(e);
 
     // TODO: Key Connector Service should pass this error message to the logout callback instead of displaying here
@@ -553,7 +553,15 @@ export class SsoComponent implements OnInit {
         title: "",
         message: this.i18nService.t("ssoKeyConnectorError"),
       });
+    } else {
+      this.toastService.showToast({
+        variant: "error",
+        title: null,
+        message: e.message,
+      });
     }
+    this.router.routeReuseStrategy.shouldReuseRoute = () => false;
+    await this.router.navigate(["/login"]);
   }
 
   private getOrgIdentifierFromState(state: string): string {
