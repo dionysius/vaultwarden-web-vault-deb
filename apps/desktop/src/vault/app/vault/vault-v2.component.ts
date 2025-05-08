@@ -29,7 +29,7 @@ import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.servic
 import { MessagingService } from "@bitwarden/common/platform/abstractions/messaging.service";
 import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
 import { SyncService } from "@bitwarden/common/platform/sync";
-import { CipherId, CollectionId, UserId } from "@bitwarden/common/types/guid";
+import { CipherId, CollectionId, OrganizationId, UserId } from "@bitwarden/common/types/guid";
 import { CipherService } from "@bitwarden/common/vault/abstractions/cipher.service";
 import { PremiumUpgradePromptService } from "@bitwarden/common/vault/abstractions/premium-upgrade-prompt.service";
 import { TotpService } from "@bitwarden/common/vault/abstractions/totp.service";
@@ -530,8 +530,11 @@ export class VaultV2Component implements OnInit, OnDestroy {
   }
 
   async addCipher(type: CipherType) {
+    if (this.action === "add") {
+      return;
+    }
     this.addType = type || this.activeFilter.cipherType;
-    this.cipherId = null;
+    this.cipher = new CipherView();
     await this.buildFormConfig("add");
     this.action = "add";
     this.prefillCipherFromFilter();
@@ -744,7 +747,7 @@ export class VaultV2Component implements OnInit, OnDestroy {
 
   private prefillCipherFromFilter() {
     if (this.activeFilter.selectedCollectionId != null && this.vaultFilterComponent != null) {
-      const collections = this.vaultFilterComponent.collections.fullList.filter(
+      const collections = this.vaultFilterComponent.collections?.fullList.filter(
         (c) => c.id === this.activeFilter.selectedCollectionId,
       );
       if (collections.length > 0) {
@@ -756,6 +759,13 @@ export class VaultV2Component implements OnInit, OnDestroy {
     }
     if (this.activeFilter.selectedFolderId && this.activeFilter.selectedFolder) {
       this.folderId = this.activeFilter.selectedFolderId;
+    }
+
+    if (this.addOrganizationId && this.config) {
+      this.config.initialValues = {
+        ...this.config.initialValues,
+        organizationId: this.addOrganizationId as OrganizationId,
+      };
     }
   }
 
