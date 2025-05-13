@@ -215,6 +215,7 @@ export class TrialBillingStepComponent implements OnInit, OnDestroy {
     const payment: PaymentInformation = {
       paymentMethod,
       billing: this.getBillingInformationFromTaxInfoComponent(),
+      skipTrial: this.trialLength === 0,
     };
 
     const response = await this.organizationBillingService.purchaseSubscription({
