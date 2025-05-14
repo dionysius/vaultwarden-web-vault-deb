@@ -11,8 +11,8 @@ import {
 import { toSignal } from "@angular/core/rxjs-interop";
 import { FormBuilder, Validators } from "@angular/forms";
 import { Router } from "@angular/router";
-import { catchError, firstValueFrom, merge, of, Subject, takeUntil } from "rxjs";
-import { debounceTime, filter, map, switchMap } from "rxjs/operators";
+import { catchError, firstValueFrom, of, Subject, takeUntil } from "rxjs";
+import { filter, map, switchMap } from "rxjs/operators";
 
 import { ApiService } from "@bitwarden/common/abstractions/api.service";
 import { OrganizationApiServiceAbstraction } from "@bitwarden/common/admin-console/abstractions/organization/organization-api.service.abstraction";
@@ -580,6 +580,7 @@ export class OrganizationPlansComponent implements OnInit, OnDestroy {
 
     this.loading = false;
 
+    /* no sales tax in vaultwarden
     merge(
       this.formGroup.valueChanges,
       this.billingFormGroup.valueChanges,
@@ -600,6 +601,7 @@ export class OrganizationPlansComponent implements OnInit, OnDestroy {
         additionalServiceAccounts: 0,
       });
     }
+    end of sales tax */
   }
 
   ngOnDestroy() {
