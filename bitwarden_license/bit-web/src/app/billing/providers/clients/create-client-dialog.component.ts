@@ -99,6 +99,7 @@ export class PlanCard {
 
 @Component({
   templateUrl: "./create-client-dialog.component.html",
+  standalone: false,
 })
 export class CreateClientDialogComponent implements OnInit {
   protected discountPercentage: number | null | undefined;
