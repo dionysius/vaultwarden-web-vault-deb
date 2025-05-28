@@ -51,7 +51,7 @@
         {{ "continue" | i18n }}
       </button>
 
-      <div class="tw-text-center">{{ "or" | i18n }}</div>
+      <div class="tw-text-center vw-or-text">{{ "or" | i18n }}</div>
 
       <!-- Button to Login with Passkey -->
       <ng-container *ngIf="isLoginWithPasskeySupported()">
@@ -60,6 +60,7 @@
           bitButton
           block
           buttonType="secondary"
+          class="vw-passkey-login"
           (click)="handleLoginWithPasskeyClick()"
           [bitTooltip]="ssoRequired ? ('yourOrganizationRequiresSingleSignOn' | i18n) : ''"
           [addTooltipToDescribedby]="ssoRequired"
@@ -77,6 +78,7 @@
         block
         [buttonType]="ssoRequired ? 'primary' : 'secondary'"
         (click)="handleSsoClick()"
+        class="vw-sso-login"
       >
         <i class="bwi bwi-provider tw-mr-1" aria-hidden="true"></i>
         {{ "useSingleSignOn" | i18n }}
