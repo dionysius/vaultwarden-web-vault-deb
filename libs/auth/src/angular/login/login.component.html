@@ -1,4 +1,4 @@
-<!-- 
+<!--
   # Table of Contents
 
     This file contains a single consolidated template for all visual clients.
@@ -42,7 +42,7 @@
         {{ "continue" | i18n }}
       </button>
 
-      <div class="tw-text-center">{{ "or" | i18n }}</div>
+      <div class="tw-text-center vw-or-text">{{ "or" | i18n }}</div>
 
       <!-- Button to Login with Passkey -->
       <ng-container *ngIf="isLoginWithPasskeySupported()">
@@ -51,6 +51,7 @@
           bitButton
           block
           buttonType="secondary"
+          class="vw-passkey-login"
           (click)="handleLoginWithPasskeyClick()"
         >
           <i class="bwi bwi-passkey tw-mr-1"></i>
@@ -59,7 +60,14 @@
       </ng-container>
 
       <!-- Button to Login with SSO -->
-      <button type="button" bitButton block buttonType="secondary" (click)="handleSsoClick()">
+      <button
+        type="button"
+        bitButton
+        block
+        buttonType="secondary"
+        (click)="handleSsoClick()"
+        class="vw-sso-login"
+      >
         <i class="bwi bwi-provider tw-mr-1"></i>
         {{ "useSingleSignOn" | i18n }}
       </button>
