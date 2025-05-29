@@ -21,6 +21,6 @@ override_dh_auto_build:
 
 # Build the web-vault
 	cd apps/web; npm run dist:oss:selfhost
-	printf '{"version":"%s"}' "$(DEB_VERSION_UPSTREAM)" > apps/web/build/vw-version.json
+	printf '{"version":"%s"}' "$(basename $(DEB_VERSION_UPSTREAM))" > apps/web/build/vw-version.json
 
 	dh_auto_build
