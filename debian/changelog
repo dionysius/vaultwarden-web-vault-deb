@@ -1,3 +1,11 @@
+vaultwarden-web-vault (2025.5.0.0-1) unstable; urgency=medium
+
+  * update node to v20 for building
+  * update year in copyright, wrap-and-sort -at
+  * use vw_web_builds as upstream repo
+
+ -- dionysius <dragon.dionysius@gmail.com>  Thu, 29 May 2025 22:24:59 +0200
+
 vaultwarden-web-vault (2025.1.1-2) unstable; urgency=medium
 
   * add icon patches and remove unwanted code
