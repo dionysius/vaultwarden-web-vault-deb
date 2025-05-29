@@ -15,17 +15,6 @@ endif
 %:
 	dh $@
 
-override_dh_auto_configure:
-# copy images
-	cp -rf debian/patches/resources/src/* apps/web/src/
-# replace inline file contents
-	sed -i 's|^<svg.*|$(shell cat debian/patches/resources/vaultwarden-admin-console-logo.svg)|' apps/web/src/app/admin-console/icons/admin-console-logo.ts
-	sed -i 's|^<svg.*|$(shell cat debian/patches/resources/vaultwarden-password-manager-logo.svg)|' apps/web/src/app/layouts/password-manager-logo.ts
-	sed -i 's|^<svg.*|$(shell cat debian/patches/resources/src/images/logo.svg)|' libs/auth/src/angular/icons/bitwarden-logo.icon.ts
-	sed -i 's|^<svg.*|$(shell cat debian/patches/resources/vaultwarden-icon.svg)|' libs/auth/src/angular/icons/bitwarden-shield.icon.ts
-# remove non-free bitwarden_licence/ code
-	if [ -d apps/web/src/app/tools/access-intelligence ]; then rm -rf apps/web/src/app/tools/access-intelligence; fi
-
 override_dh_auto_build:
 # install dependencies
 	npm ci

@@ -7,8 +7,7 @@ Maintainer: dionysius <dragon.dionysius@gmail.com>
 Standards-Version: 4.6.1
 Vcs-Git: https://github.com/dionysius/vaultwarden-web-vault-deb.git
 Vcs-Browser: https://github.com/dionysius/vaultwarden-web-vault-deb
-Homepage: https://github.com/bitwarden/clients
-XBS-Patches-From: https://github.com/dani-garcia/bw_web_builds
+Homepage: https://github.com/vaultwarden/vw_web_builds
 Rules-Requires-Root: no
 
 Package: vaultwarden-web-vault
