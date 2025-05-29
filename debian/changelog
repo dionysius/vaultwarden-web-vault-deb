@@ -1,3 +1,9 @@
+vaultwarden-web-vault (2025.5.0.0-2) unstable; urgency=medium
+
+  * fix not related ignore in lintian override
+
+ -- dionysius <dragon.dionysius@gmail.com>  Thu, 29 May 2025 22:35:23 +0200
+
 vaultwarden-web-vault (2025.5.0.0-1) unstable; urgency=medium
 
   * update node to v20 for building
