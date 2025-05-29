@@ -1,3 +1,9 @@
+vaultwarden-web-vault (2025.5.0.0-3) unstable; urgency=medium
+
+  * Remove vw_web_vault additional suffix in vw-version.json
+
+ -- dionysius <dragon.dionysius@gmail.com>  Fri, 30 May 2025 00:16:52 +0200
+
 vaultwarden-web-vault (2025.5.0.0-2) unstable; urgency=medium
 
   * fix not related ignore in lintian override
