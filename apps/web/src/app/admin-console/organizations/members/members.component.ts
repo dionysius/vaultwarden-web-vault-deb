@@ -82,7 +82,6 @@ import {
   MemberDialogTab,
   openUserAddEditDialog,
 } from "./components/member-dialog";
-import { isFixedSeatPlan } from "./components/member-dialog/validators/org-seat-limit-reached.validator";
 import {
   ResetPasswordComponent,
   ResetPasswordDialogResult,
@@ -545,6 +544,7 @@ export class MembersComponent extends BaseMembersComponent<OrganizationUserView>
   }
 
   async invite() {
+    /* vaultwarden has no seat limit
     if (this.organization.hasReseller && this.organization.seats === this.occupiedSeatCount) {
       this.toastService.showToast({
         variant: "error",
@@ -562,7 +562,7 @@ export class MembersComponent extends BaseMembersComponent<OrganizationUserView>
       await this.handleSeatLimitForFixedTiers();
 
       return;
-    }
+    } end of ignore seat check */
 
     await this.handleInviteDialog();
   }
