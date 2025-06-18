@@ -64,6 +64,7 @@ import {
   DefaultChangeLoginPasswordService,
   DefaultCipherFormConfigService,
   PasswordRepromptService,
+  CipherFormComponent,
 } from "@bitwarden/vault";
 
 import { NavComponent } from "../../../app/layout/nav.component";
@@ -123,6 +124,8 @@ export class VaultV2Component implements OnInit, OnDestroy {
   vaultFilterComponent: VaultFilterComponent | null = null;
   @ViewChild("folderAddEdit", { read: ViewContainerRef, static: true })
   folderAddEditModalRef: ViewContainerRef | null = null;
+  @ViewChild(CipherFormComponent)
+  cipherFormComponent: CipherFormComponent | null = null;
 
   action: CipherFormMode | "view" | null = null;
   cipherId: string | null = null;
@@ -410,6 +413,26 @@ export class VaultV2Component implements OnInit, OnDestroy {
       result?.action === AttachmentDialogResult.Uploaded
     ) {
       await this.vaultItemsComponent?.refresh().catch(() => {});
+
+      if (this.cipherFormComponent == null) {
+        return;
+      }
+
+      const updatedCipher = await this.cipherService.get(
+        this.cipherId as CipherId,
+        this.activeUserId as UserId,
+      );
+      const updatedCipherView = await this.cipherService.decrypt(
+        updatedCipher,
+        this.activeUserId as UserId,
+      );
+
+      this.cipherFormComponent.patchCipher((currentCipher) => {
+        currentCipher.attachments = updatedCipherView.attachments;
+        currentCipher.revisionDate = updatedCipherView.revisionDate;
+
+        return currentCipher;
+      });
     }
   }
 
