@@ -13,8 +13,6 @@ import { firstValueFrom, Subject, takeUntil, switchMap, lastValueFrom, Observabl
 import { filter, map, take } from "rxjs/operators";
 
 import { CollectionService, CollectionView } from "@bitwarden/admin-console/common";
-import { ModalRef } from "@bitwarden/angular/components/modal/modal.ref";
-import { ModalService } from "@bitwarden/angular/services/modal.service";
 import { VaultViewPasswordHistoryService } from "@bitwarden/angular/services/view-password-history.service";
 import { VaultFilter } from "@bitwarden/angular/vault/vault-filter/models/vault-filter.model";
 import { ApiService } from "@bitwarden/common/abstractions/api.service";
@@ -45,6 +43,8 @@ import {
   DialogService,
   ItemModule,
   ToastService,
+  CopyClickListener,
+  COPY_CLICK_LISTENER,
 } from "@bitwarden/components";
 import { I18nPipe } from "@bitwarden/ui-common";
 import {
@@ -115,9 +115,13 @@ const BroadcasterSubscriptionId = "VaultComponent";
       useClass: DesktopPremiumUpgradePromptService,
     },
     { provide: CipherFormGenerationService, useClass: DesktopCredentialGenerationService },
+    {
+      provide: COPY_CLICK_LISTENER,
+      useExisting: VaultV2Component,
+    },
   ],
 })
-export class VaultV2Component implements OnInit, OnDestroy {
+export class VaultV2Component implements OnInit, OnDestroy, CopyClickListener {
   @ViewChild(VaultItemsV2Component, { static: true })
   vaultItemsComponent: VaultItemsV2Component | null = null;
   @ViewChild(VaultFilterComponent, { static: true })
@@ -161,7 +165,6 @@ export class VaultV2Component implements OnInit, OnDestroy {
     ),
   );
 
-  private modal: ModalRef | null = null;
   private componentIsDestroyed$ = new Subject<boolean>();
   private allOrganizations: Organization[] = [];
   private allCollections: CollectionView[] = [];
@@ -170,7 +173,6 @@ export class VaultV2Component implements OnInit, OnDestroy {
     private route: ActivatedRoute,
     private router: Router,
     private i18nService: I18nService,
-    private modalService: ModalService,
     private broadcasterService: BroadcasterService,
     private changeDetectorRef: ChangeDetectorRef,
     private ngZone: NgZone,
@@ -376,6 +378,13 @@ export class VaultV2Component implements OnInit, OnDestroy {
     if (this.vaultItemsComponent) {
       await this.vaultItemsComponent.reload(this.activeFilter.buildFilter()).catch(() => {});
     }
+  }
+
+  /**
+   * Handler for Vault level CopyClickDirectives to send the minimizeOnCopy message
+   */
+  onCopy() {
+    this.messagingService.send("minimizeOnCopy");
   }
 
   async viewCipher(cipher: CipherView) {
