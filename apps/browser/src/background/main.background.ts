@@ -412,7 +412,7 @@ export default class MainBackground {
   inlineMenuFieldQualificationService: InlineMenuFieldQualificationService;
   taskService: TaskService;
   cipherEncryptionService: CipherEncryptionService;
-  restrictedItemTypesService: RestrictedItemTypesService;
+  private restrictedItemTypesService: RestrictedItemTypesService;
 
   ipcContentScriptManagerService: IpcContentScriptManagerService;
   ipcService: IpcService;
@@ -436,8 +436,6 @@ export default class MainBackground {
   private nativeMessagingBackground: NativeMessagingBackground;
 
   private popupViewCacheBackgroundService: PopupViewCacheBackgroundService;
-
-  private restrictedItemTypesService: RestrictedItemTypesService;
 
   constructor() {
     // Services
@@ -1045,13 +1043,6 @@ export default class MainBackground {
       this.pinService,
       this.accountService,
       this.sdkService,
-    );
-
-    this.restrictedItemTypesService = new RestrictedItemTypesService(
-      this.configService,
-      this.accountService,
-      this.organizationService,
-      this.policyService,
     );
 
     this.individualVaultExportService = new IndividualVaultExportService(
