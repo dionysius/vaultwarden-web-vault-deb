@@ -24,14 +24,12 @@ import {
   DefaultRegistrationFinishService,
   DefaultSetPasswordJitService,
   DefaultTwoFactorAuthComponentService,
-  DefaultTwoFactorAuthEmailComponentService,
   DefaultTwoFactorAuthWebAuthnComponentService,
   LoginComponentService,
   LoginDecryptionOptionsService,
   RegistrationFinishService as RegistrationFinishServiceAbstraction,
   SetPasswordJitService,
   TwoFactorAuthComponentService,
-  TwoFactorAuthEmailComponentService,
   TwoFactorAuthWebAuthnComponentService,
 } from "@bitwarden/auth/angular";
 // This import has been flagged as unallowed for this class. It may be involved in a circular dependency loop.
@@ -1469,11 +1467,6 @@ const safeProviders: SafeProvider[] = [
   safeProvider({
     provide: TwoFactorAuthWebAuthnComponentService,
     useClass: DefaultTwoFactorAuthWebAuthnComponentService,
-    deps: [],
-  }),
-  safeProvider({
-    provide: TwoFactorAuthEmailComponentService,
-    useClass: DefaultTwoFactorAuthEmailComponentService,
     deps: [],
   }),
   safeProvider({
