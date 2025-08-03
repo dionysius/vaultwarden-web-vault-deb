@@ -16,6 +16,28 @@ export class WebCryptoFunctionService implements CryptoFunctionService {
 
   constructor(globalContext: { crypto: Crypto }) {
     if (globalContext?.crypto?.subtle == null) {
+      const warningDiv = document.createElement("div");
+      warningDiv.setAttribute("role", "alert");
+      warningDiv.appendChild(
+        document.createTextNode(
+          "You are not using a secure context " +
+            "which is required for the Subtle Crypto API to work. ",
+        ),
+      );
+      const linkToWiki = document.createElement("a");
+      linkToWiki.appendChild(document.createTextNode("You need to enable HTTPS!"));
+      linkToWiki.href = "https://github.com/dani-garcia/vaultwarden/wiki/Enabling-HTTPS";
+      warningDiv.appendChild(linkToWiki);
+
+      const spinnerDiv = document.getElementsByClassName("spinner-container")[0];
+      spinnerDiv.setAttribute(
+        "class",
+        "toast-center-center tw-fixed tw-w-full tw-max-w-md tw-mx-auto " +
+          "tw-p-2 tw-ps-4 tw-text-main tw-bg-warning-100 " +
+          "tw-border-solid tw-border-2 tw-border-warning-700 tw-rounded-2xl",
+      );
+      spinnerDiv.replaceChild(warningDiv, spinnerDiv.firstChild);
+
       throw new Error(
         "Could not instantiate WebCryptoFunctionService. Could not locate Subtle crypto.",
       );
