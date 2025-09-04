@@ -1,12 +1,12 @@
 import { enableProdMode } from "@angular/core";
 import { platformBrowserDynamic } from "@angular/platform-browser-dynamic";
 
-import { PopupSizeService } from "../platform/popup/layout/popup-size.service";
-import { BrowserPlatformUtilsService } from "../platform/services/platform-utils/browser-platform-utils.service";
+import { PopupSizeService } from "@bitwarden/browser/platform/popup/layout/popup-size.service";
+import { BrowserPlatformUtilsService } from "@bitwarden/browser/platform/services/platform-utils/browser-platform-utils.service";
 
 import { AppModule } from "./app.module";
 
-import "./scss";
+import "@bitwarden/browser/popup/scss";
 
 // We put these first to minimize the delay in window changing.
 PopupSizeService.initBodyWidthFromLocalStorage();
