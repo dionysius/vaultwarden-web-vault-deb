@@ -7437,6 +7437,9 @@
   "off": {
     "message": "Off"
   },
+  "connected": {
+    "message": "Connected"
+  },
   "members": {
     "message": "Members"
   },
@@ -9687,6 +9690,15 @@
   },
   "connectIntegrationButtonDesc": {
     "message": "Connect $INTEGRATION$",
+    "placeholders": {
+      "integration": {
+        "content": "$1",
+        "example": "Crowdstrike"
+      }
+    }
+  },
+  "updateIntegrationButtonDesc": {
+    "message": "Update $INTEGRATION$",
     "placeholders": {
       "integration": {
         "content": "$1",
