@@ -12,9 +12,8 @@ import { OrgKey } from "@bitwarden/common/types/key";
 import { DialogService } from "@bitwarden/components";
 import { EncString } from "@bitwarden/sdk-internal";
 
-import { SharedModule } from "../../../shared";
-
-import { BasePolicy, BasePolicyComponent } from "./base-policy.component";
+import { SharedModule } from "../../../../shared";
+import { BasePolicyEditDefinition, BasePolicyEditComponent } from "../base-policy-edit.component";
 
 interface VNextPolicyRequest {
   policy: PolicyRequest;
@@ -23,26 +22,24 @@ interface VNextPolicyRequest {
   };
 }
 
-export class vNextOrganizationDataOwnershipPolicy extends BasePolicy {
+export class vNextOrganizationDataOwnershipPolicy extends BasePolicyEditDefinition {
   name = "organizationDataOwnership";
   description = "organizationDataOwnershipDesc";
   type = PolicyType.OrganizationDataOwnership;
   component = vNextOrganizationDataOwnershipPolicyComponent;
   showDescription = false;
 
-  override display(organization: Organization, configService: ConfigService): Observable<boolean> {
+  override display$(organization: Organization, configService: ConfigService): Observable<boolean> {
     return configService.getFeatureFlag$(FeatureFlag.CreateDefaultLocation);
   }
 }
 
 @Component({
-  selector: "vnext-policy-organization-data-ownership",
   templateUrl: "vnext-organization-data-ownership.component.html",
-  standalone: true,
   imports: [SharedModule],
 })
 export class vNextOrganizationDataOwnershipPolicyComponent
-  extends BasePolicyComponent
+  extends BasePolicyEditComponent
   implements OnInit
 {
   constructor(
@@ -74,7 +71,7 @@ export class vNextOrganizationDataOwnershipPolicyComponent
     const request: VNextPolicyRequest = {
       policy: {
         type: this.policy.type,
-        enabled: this.enabled.value,
+        enabled: this.enabled.value ?? false,
         data: this.buildRequestData(),
       },
       metadata: {
