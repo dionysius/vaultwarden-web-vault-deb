@@ -562,7 +562,11 @@ export class ServiceContainer {
       this.authService,
     );
 
-    this.domainSettingsService = new DefaultDomainSettingsService(this.stateProvider);
+    this.domainSettingsService = new DefaultDomainSettingsService(
+      this.stateProvider,
+      this.policyService,
+      this.accountService,
+    );
 
     this.fileUploadService = new FileUploadService(this.logService, this.apiService);
 
