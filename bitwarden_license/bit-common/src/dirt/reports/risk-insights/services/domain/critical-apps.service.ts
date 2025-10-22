@@ -1,13 +1,17 @@
 import {
   BehaviorSubject,
+  catchError,
   filter,
   first,
   firstValueFrom,
   forkJoin,
+  from,
   map,
   Observable,
   of,
   switchMap,
+  tap,
+  throwError,
   zip,
 } from "rxjs";
 
@@ -20,9 +24,8 @@ import { KeyService } from "@bitwarden/key-management";
 import {
   PasswordHealthReportApplicationsRequest,
   PasswordHealthReportApplicationsResponse,
-} from "../models/api-models.types";
-
-import { CriticalAppsApiService } from "./critical-apps-api.service";
+} from "../../models/api-models.types";
+import { CriticalAppsApiService } from "../api/critical-apps-api.service";
 
 /* Retrieves and decrypts critical apps for a given organization
  *  Encrypts and saves data for a given organization
@@ -125,9 +128,14 @@ export class CriticalAppsService {
     this.criticalAppsListSubject$.next(updatedList);
   }
 
-  // Drop a critical app for a given organization
-  // Only one app may be dropped at a time
-  async dropCriticalApp(orgId: OrganizationId, selectedUrl: string) {
+  /**
+   * Drop a critical application by url
+   *
+   * @param orgId
+   * @param selectedUrl
+   * @returns
+   */
+  async dropCriticalAppByUrl(orgId: OrganizationId, selectedUrl: string) {
     if (orgId != this.organizationId.value) {
       throw new Error("Organization ID mismatch");
     }
@@ -147,6 +155,31 @@ export class CriticalAppsService {
 
     this.criticalAppsListSubject$.next(
       this.criticalAppsListSubject$.value.filter((f) => f.uri !== selectedUrl),
+    );
+  }
+
+  /**
+   * Drop multiple critical applications by id
+   *
+   * @param orgId
+   * @param ids
+   * @returns
+   */
+  dropCriticalAppsById(orgId: OrganizationId, ids: string[]) {
+    return from(
+      this.criticalAppsApiService.dropCriticalApp({
+        organizationId: orgId,
+        passwordHealthReportApplicationIds: ids,
+      }),
+    ).pipe(
+      tap((response) => {
+        this.criticalAppsListSubject$.next(
+          this.criticalAppsListSubject$.value.filter((f) => ids.some((id) => id === f.id)),
+        );
+      }),
+      catchError((error: unknown) => {
+        return throwError(() => error);
+      }),
     );
   }
 

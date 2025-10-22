@@ -1,7 +1,7 @@
 import { BehaviorSubject } from "rxjs";
 
-import { ApplicationHealthReportDetailEnriched } from "../models";
-import { OrganizationReportSummary } from "../models/report-models";
+import { ApplicationHealthReportDetailEnriched } from "../../models";
+import { OrganizationReportSummary } from "../../models/report-models";
 
 import { RiskInsightsDataService } from "./risk-insights-data.service";
 
@@ -40,7 +40,7 @@ export class AllActivitiesService {
 
   constructor(private dataService: RiskInsightsDataService) {
     // All application summary changes
-    this.dataService.reportResults$.subscribe((report) => {
+    this.dataService.enrichedReportData$.subscribe((report) => {
       if (report) {
         this.setAllAppsReportSummary(report.summaryData);
         this.setAllAppsReportDetails(report.reportData);

@@ -1,12 +1,12 @@
 import { CommonModule } from "@angular/common";
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, ChangeDetectionStrategy } from "@angular/core";
 import { ActivatedRoute } from "@angular/router";
 import { Subject, switchMap, takeUntil, of, BehaviorSubject, combineLatest } from "rxjs";
 
 import { JslibModule } from "@bitwarden/angular/jslib.module";
 import {
   AllActivitiesService,
-  LEGACY_ApplicationHealthReportDetailWithCriticalFlagAndCipher,
+  ApplicationHealthReportDetailEnriched,
   SecurityTasksApiService,
   TaskMetrics,
   OrganizationReportSummary,
@@ -14,17 +14,12 @@ import {
 import { OrganizationId } from "@bitwarden/common/types/guid";
 import { ButtonModule, ProgressModule, TypographyModule } from "@bitwarden/components";
 
-import { DefaultAdminTaskService } from "../../../vault/services/default-admin-task.service";
-import { AccessIntelligenceSecurityTasksService } from "../shared/security-tasks.service";
-
-export const RenderMode = {
-  noCriticalApps: "noCriticalApps",
-  criticalAppsWithAtRiskAppsAndNoTasks: "criticalAppsWithAtRiskAppsAndNoTasks",
-  criticalAppsWithAtRiskAppsAndTasks: "criticalAppsWithAtRiskAppsAndTasks",
-} as const;
-export type RenderMode = (typeof RenderMode)[keyof typeof RenderMode];
+import { DefaultAdminTaskService } from "../../../../vault/services/default-admin-task.service";
+import { RenderMode } from "../../models/activity.models";
+import { AccessIntelligenceSecurityTasksService } from "../../shared/security-tasks.service";
 
 @Component({
+  changeDetection: ChangeDetectionStrategy.OnPush,
   selector: "dirt-password-change-metric",
   imports: [CommonModule, TypographyModule, JslibModule, ProgressModule, ButtonModule],
   templateUrl: "./password-change-metric.component.html",
@@ -34,14 +29,20 @@ export class PasswordChangeMetricComponent implements OnInit {
   protected taskMetrics$ = new BehaviorSubject<TaskMetrics>({ totalTasks: 0, completedTasks: 0 });
   private completedTasks: number = 0;
   private totalTasks: number = 0;
-  private allApplicationsDetails: LEGACY_ApplicationHealthReportDetailWithCriticalFlagAndCipher[] =
-    [];
+  private allApplicationsDetails: ApplicationHealthReportDetailEnriched[] = [];
 
   atRiskAppsCount: number = 0;
   atRiskPasswordsCount: number = 0;
   private organizationId!: OrganizationId;
   private destroyRef = new Subject<void>();
   renderMode: RenderMode = "noCriticalApps";
+
+  constructor(
+    private activatedRoute: ActivatedRoute,
+    private securityTasksApiService: SecurityTasksApiService,
+    private allActivitiesService: AllActivitiesService,
+    protected accessIntelligenceSecurityTasksService: AccessIntelligenceSecurityTasksService,
+  ) {}
 
   async ngOnInit(): Promise<void> {
     combineLatest([this.activatedRoute.paramMap, this.allActivitiesService.taskCreatedCount$])
@@ -82,13 +83,6 @@ export class PasswordChangeMetricComponent implements OnInit {
         );
       });
   }
-
-  constructor(
-    private activatedRoute: ActivatedRoute,
-    private securityTasksApiService: SecurityTasksApiService,
-    private allActivitiesService: AllActivitiesService,
-    protected accessIntelligenceSecurityTasksService: AccessIntelligenceSecurityTasksService,
-  ) {}
 
   private determineRenderMode(
     summary: OrganizationReportSummary,

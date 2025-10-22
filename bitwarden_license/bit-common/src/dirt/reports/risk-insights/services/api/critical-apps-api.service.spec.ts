@@ -7,8 +7,8 @@ import {
   PasswordHealthReportApplicationDropRequest,
   PasswordHealthReportApplicationsRequest,
   PasswordHealthReportApplicationsResponse,
-} from "../models/api-models.types";
-import { PasswordHealthReportApplicationId } from "../models/report-models";
+} from "../../models/api-models.types";
+import { PasswordHealthReportApplicationId } from "../../models/report-models";
 
 import { CriticalAppsApiService } from "./critical-apps-api.service";
 

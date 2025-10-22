@@ -25,8 +25,8 @@ import { HeaderModule } from "@bitwarden/web-vault/app/layouts/header/header.mod
 import { SharedModule } from "@bitwarden/web-vault/app/shared";
 import { PipesModule } from "@bitwarden/web-vault/app/vault/individual-vault/pipes/pipes.module";
 
-import { AppTableRowScrollableComponent } from "./app-table-row-scrollable.component";
-import { ApplicationsLoadingComponent } from "./risk-insights-loading.component";
+import { AppTableRowScrollableComponent } from "../shared/app-table-row-scrollable.component";
+import { ApplicationsLoadingComponent } from "../shared/risk-insights-loading.component";
 
 @Component({
   selector: "dirt-all-applications",
@@ -67,7 +67,7 @@ export class AllApplicationsComponent implements OnInit {
   }
 
   async ngOnInit() {
-    this.dataService.reportResults$.pipe(takeUntilDestroyed(this.destroyRef)).subscribe({
+    this.dataService.enrichedReportData$.pipe(takeUntilDestroyed(this.destroyRef)).subscribe({
       next: (report) => {
         this.applicationSummary = report?.summaryData ?? createNewSummaryData();
         this.dataSource.data = report?.reportData ?? [];

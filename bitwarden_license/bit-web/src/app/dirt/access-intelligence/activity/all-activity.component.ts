@@ -11,16 +11,16 @@ import { OrganizationService } from "@bitwarden/common/admin-console/abstraction
 import { Organization } from "@bitwarden/common/admin-console/models/domain/organization";
 import { AccountService } from "@bitwarden/common/auth/abstractions/account.service";
 import { getUserId } from "@bitwarden/common/auth/services/account.service";
-import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 import { getById } from "@bitwarden/common/platform/misc";
-import { ToastService, DialogService } from "@bitwarden/components";
+import { DialogService } from "@bitwarden/components";
 import { SharedModule } from "@bitwarden/web-vault/app/shared";
+
+import { RiskInsightsTabType } from "../models/risk-insights.models";
+import { ApplicationsLoadingComponent } from "../shared/risk-insights-loading.component";
 
 import { ActivityCardComponent } from "./activity-card.component";
 import { PasswordChangeMetricComponent } from "./activity-cards/password-change-metric.component";
 import { NewApplicationsDialogComponent } from "./new-applications-dialog.component";
-import { ApplicationsLoadingComponent } from "./risk-insights-loading.component";
-import { RiskInsightsTabType } from "./risk-insights.component";
 
 @Component({
   selector: "dirt-all-activity",
@@ -42,6 +42,15 @@ export class AllActivityComponent implements OnInit {
   passwordChangeMetricHasProgressBar = false;
 
   destroyRef = inject(DestroyRef);
+
+  constructor(
+    private accountService: AccountService,
+    protected activatedRoute: ActivatedRoute,
+    protected allActivitiesService: AllActivitiesService,
+    protected dataService: RiskInsightsDataService,
+    private dialogService: DialogService,
+    protected organizationService: OrganizationService,
+  ) {}
 
   async ngOnInit(): Promise<void> {
     const organizationId = this.activatedRoute.snapshot.paramMap.get("organizationId");
@@ -70,17 +79,6 @@ export class AllActivityComponent implements OnInit {
         });
     }
   }
-
-  constructor(
-    protected activatedRoute: ActivatedRoute,
-    private accountService: AccountService,
-    protected organizationService: OrganizationService,
-    protected dataService: RiskInsightsDataService,
-    protected allActivitiesService: AllActivitiesService,
-    private toastService: ToastService,
-    private i18nService: I18nService,
-    private dialogService: DialogService,
-  ) {}
 
   get RiskInsightsTabType() {
     return RiskInsightsTabType;

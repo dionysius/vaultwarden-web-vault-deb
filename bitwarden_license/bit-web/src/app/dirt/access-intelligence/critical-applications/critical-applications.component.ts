@@ -23,11 +23,10 @@ import { HeaderModule } from "@bitwarden/web-vault/app/layouts/header/header.mod
 import { SharedModule } from "@bitwarden/web-vault/app/shared";
 import { PipesModule } from "@bitwarden/web-vault/app/vault/individual-vault/pipes/pipes.module";
 
-import { DefaultAdminTaskService } from "../../vault/services/default-admin-task.service";
-
-import { AppTableRowScrollableComponent } from "./app-table-row-scrollable.component";
-import { RiskInsightsTabType } from "./risk-insights.component";
-import { AccessIntelligenceSecurityTasksService } from "./shared/security-tasks.service";
+import { DefaultAdminTaskService } from "../../../vault/services/default-admin-task.service";
+import { RiskInsightsTabType } from "../models/risk-insights.models";
+import { AppTableRowScrollableComponent } from "../shared/app-table-row-scrollable.component";
+import { AccessIntelligenceSecurityTasksService } from "../shared/security-tasks.service";
 
 @Component({
   selector: "dirt-critical-applications",

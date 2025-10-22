@@ -4,14 +4,18 @@ import { ApiService } from "@bitwarden/common/abstractions/api.service";
 import { ErrorResponse } from "@bitwarden/common/models/response/error.response";
 import { OrganizationId, OrganizationReportId } from "@bitwarden/common/types/guid";
 
-import { EncryptedDataWithKey, OrganizationReportApplication } from "../models";
+import {
+  EncryptedDataWithKey,
+  UpdateRiskInsightsApplicationDataRequest,
+  UpdateRiskInsightsApplicationDataResponse,
+} from "../../models";
 import {
   GetRiskInsightsApplicationDataResponse,
   GetRiskInsightsReportResponse,
   GetRiskInsightsSummaryResponse,
   SaveRiskInsightsReportRequest,
   SaveRiskInsightsReportResponse,
-} from "../models/api-models.types";
+} from "../../models/api-models.types";
 
 export class RiskInsightsApiService {
   constructor(private apiService: ApiService) {}
@@ -102,18 +106,20 @@ export class RiskInsightsApiService {
   }
 
   updateRiskInsightsApplicationData$(
-    applicationData: OrganizationReportApplication,
-    orgId: OrganizationId,
     reportId: OrganizationReportId,
-  ): Observable<void> {
+    orgId: OrganizationId,
+    request: UpdateRiskInsightsApplicationDataRequest,
+  ): Observable<UpdateRiskInsightsApplicationDataResponse> {
     const dbResponse = this.apiService.send(
       "PATCH",
       `/reports/organizations/${orgId.toString()}/data/application/${reportId.toString()}`,
-      applicationData,
+      { ...request.data, id: reportId, organizationId: orgId },
       true,
       true,
     );
 
-    return from(dbResponse as Promise<void>);
+    return from(dbResponse).pipe(
+      map((response) => new UpdateRiskInsightsApplicationDataResponse(response)),
+    );
   }
 }

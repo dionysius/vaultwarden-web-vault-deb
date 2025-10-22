@@ -7,17 +7,16 @@ import { ErrorResponse } from "@bitwarden/common/models/response/error.response"
 import { makeEncString } from "@bitwarden/common/spec";
 import { OrganizationId, OrganizationReportId } from "@bitwarden/common/types/guid";
 
-import { EncryptedDataWithKey } from "../models";
+import { EncryptedDataWithKey } from "../../models";
 import {
   GetRiskInsightsApplicationDataResponse,
   GetRiskInsightsReportResponse,
   GetRiskInsightsSummaryResponse,
   SaveRiskInsightsReportRequest,
   SaveRiskInsightsReportResponse,
-} from "../models/api-models.types";
-import { mockApplicationData, mockReportData, mockSummaryData } from "../models/mock-data";
-
-import { RiskInsightsApiService } from "./risk-insights-api.service";
+} from "../../models/api-models.types";
+import { mockApplicationData, mockReportData, mockSummaryData } from "../../models/mocks/mock-data";
+import { RiskInsightsApiService } from "../api/risk-insights-api.service";
 
 describe("RiskInsightsApiService", () => {
   let service: RiskInsightsApiService;
@@ -229,19 +228,22 @@ describe("RiskInsightsApiService", () => {
 
   it("updateRiskInsightsApplicationData$ should call apiService.send with correct parameters and return an Observable", async () => {
     const reportId = "report123" as OrganizationReportId;
-    const mockApplication = mockApplicationData[0];
+    // TODO Update to be encrypted test
+    const mockApplication = makeEncString("application-data");
 
     mockApiService.send.mockResolvedValueOnce(undefined);
     const result = await firstValueFrom(
-      service.updateRiskInsightsApplicationData$(mockApplication, orgId, reportId),
+      service.updateRiskInsightsApplicationData$(reportId, orgId, {
+        data: { applicationData: mockApplication.encryptedString! },
+      }),
     );
     expect(mockApiService.send).toHaveBeenCalledWith(
       "PATCH",
       `/reports/organizations/${orgId.toString()}/data/application/${reportId.toString()}`,
-      mockApplication,
+      { applicationData: mockApplication.encryptedString!, id: reportId, organizationId: orgId },
       true,
       true,
     );
-    expect(result).toBeUndefined();
+    expect(result).toBeTruthy();
   });
 });

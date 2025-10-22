@@ -3,14 +3,15 @@ import { mock } from "jest-mock-extended";
 import { CipherType } from "@bitwarden/common/vault/enums";
 import { CipherView } from "@bitwarden/common/vault/models/view/cipher.view";
 
-import { MemberCipherDetailsResponse } from "../response/member-cipher-details.response";
-
-import { ApplicationHealthReportDetailEnriched } from "./report-data-service.types";
+import { MemberCipherDetailsResponse } from "..";
+import { ApplicationHealthReportDetailEnriched } from "../report-data-service.types";
 import {
   ApplicationHealthReportDetail,
+  CipherHealthReport,
   OrganizationReportApplication,
   OrganizationReportSummary,
-} from "./report-models";
+  PasswordHealthData,
+} from "../report-models";
 
 const mockApplication1: ApplicationHealthReportDetail = {
   applicationName: "application1.com",
@@ -82,10 +83,12 @@ export const mockApplicationData: OrganizationReportApplication[] = [
   {
     applicationName: "application1.com",
     isCritical: true,
+    reviewedDate: new Date(),
   },
   {
     applicationName: "application2.com",
     isCritical: false,
+    reviewedDate: null,
   },
 ];
 
@@ -138,3 +141,41 @@ export const mockMemberDetails = [
     email: "user3@other.com",
   }),
 ];
+
+export const mockCipherHealthReports: CipherHealthReport[] = [
+  {
+    applications: ["app.com"],
+    cipherMembers: [],
+    healthData: createPasswordHealthData(0),
+    cipher: mockCipherViews[0],
+  },
+  {
+    applications: ["app.com"],
+    cipherMembers: [],
+    healthData: createPasswordHealthData(1),
+    cipher: mockCipherViews[1],
+  },
+  {
+    applications: ["other.com"],
+    cipherMembers: [],
+    healthData: createPasswordHealthData(2),
+    cipher: mockCipherViews[2],
+  },
+];
+
+function createPasswordHealthData(reusedPasswordCount: number | null): PasswordHealthData {
+  return {
+    reusedPasswordCount: reusedPasswordCount ?? 0,
+    weakPasswordDetail: {
+      score: 0,
+      detailValue: {
+        label: "",
+        badgeVariant: "info",
+      },
+    },
+    exposedPasswordDetail: {
+      cipherId: "",
+      exposedXTimes: 0,
+    },
+  };
+}

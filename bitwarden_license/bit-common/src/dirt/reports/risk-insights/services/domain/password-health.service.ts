@@ -10,7 +10,7 @@ import {
   ExposedPasswordDetail,
   WeakPasswordDetail,
   WeakPasswordScore,
-} from "../models/password-health";
+} from "../../models/password-health";
 
 export class PasswordHealthService {
   constructor(
