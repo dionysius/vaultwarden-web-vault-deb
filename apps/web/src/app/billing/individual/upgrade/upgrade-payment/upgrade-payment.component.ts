@@ -80,6 +80,8 @@ export type UpgradePaymentParams = {
   subscriber: BitwardenSubscriber;
 };
 
+// FIXME(https://bitwarden.atlassian.net/browse/CL-764): Migrate to OnPush
+// eslint-disable-next-line @angular-eslint/prefer-on-push-component-change-detection
 @Component({
   selector: "app-upgrade-payment",
   imports: [
@@ -102,7 +104,11 @@ export class UpgradePaymentComponent implements OnInit, AfterViewInit {
   protected selectedPlan: PlanDetails | null = null;
   protected hasEnoughAccountCredit$!: Observable<boolean>;
 
+  // FIXME(https://bitwarden.atlassian.net/browse/CL-903): Migrate to Signals
+  // eslint-disable-next-line @angular-eslint/prefer-signals
   @ViewChild(EnterPaymentMethodComponent) paymentComponent!: EnterPaymentMethodComponent;
+  // FIXME(https://bitwarden.atlassian.net/browse/CL-903): Migrate to Signals
+  // eslint-disable-next-line @angular-eslint/prefer-signals
   @ViewChild(CartSummaryComponent) cartSummaryComponent!: CartSummaryComponent;
 
   protected formGroup = new FormGroup({
