@@ -28,6 +28,7 @@ export class RiskInsightsDataService {
   readonly enrichedReportData$: Observable<RiskInsightsEnrichedData | null> = of(null);
   readonly isGeneratingReport$: Observable<boolean> = of(false);
   readonly criticalReportResults$: Observable<RiskInsightsEnrichedData | null> = of(null);
+  readonly hasVaultItems$: Observable<boolean> = of(false);
 
   // New applications that need review (reviewedDate === null)
   readonly newApplications$: Observable<string[]> = of([]);
@@ -51,6 +52,7 @@ export class RiskInsightsDataService {
     this.organizationDetails$ = this.orchestrator.organizationDetails$;
     this.enrichedReportData$ = this.orchestrator.enrichedReportData$;
     this.criticalReportResults$ = this.orchestrator.criticalReportResults$;
+    this.hasVaultItems$ = this.orchestrator.hasVaultItems$;
     this.newApplications$ = this.orchestrator.newApplications$;
 
     // Expose the loading state
