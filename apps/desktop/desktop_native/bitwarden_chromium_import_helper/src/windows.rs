@@ -1,5 +1,3 @@
-// Hide everything inside a platform specific module to avoid clippy errors on other platforms
-#[cfg(target_os = "windows")]
 mod windows_binary {
     use anyhow::{anyhow, Result};
     use base64::{engine::general_purpose, Engine as _};
@@ -479,7 +477,7 @@ mod windows_binary {
         }
     }
 
-    pub async fn main() {
+    pub(crate) async fn main() {
         if ENABLE_DEVELOPER_LOGGING {
             init_logging(LOG_FILENAME.as_ref(), LevelFilter::DEBUG);
         }
@@ -508,8 +506,4 @@ mod windows_binary {
     }
 }
 
-#[tokio::main]
-async fn main() {
-    #[cfg(target_os = "windows")]
-    windows_binary::main().await;
-}
+pub(crate) use windows_binary::*;
