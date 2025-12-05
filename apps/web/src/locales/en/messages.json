@@ -3062,6 +3062,15 @@
   "premiumSignUpStorage": {
     "message": "1 GB encrypted storage for file attachments."
   },
+  "premiumSignUpStorageV2": {
+    "message": "$SIZE$ encrypted storage for file attachments.",
+    "placeholders": {
+      "size": {
+        "content": "$1",
+        "example": "1 GB"
+      }
+    }
+  },
   "premiumSignUpTwoStepOptions": {
     "message": "Proprietary two-step login options such as YubiKey and Duo."
   },
@@ -11929,8 +11938,8 @@
   "familiesMembership": {
     "message": "Families membership"
   },
-  "planDescPremium": {
-    "message": "Complete online security"
+  "advancedOnlineSecurity": {
+    "message": "Advanced online security"
   },
   "planDescFamiliesV2": {
     "message": "Premium security for your family"
