@@ -405,6 +405,6 @@ export class Organization {
   }
 
   get canUseAccessIntelligence() {
-    return this.productTierType === ProductTierType.Enterprise;
+    return false; // no access intelligence in Vaultwarden
   }
 }
