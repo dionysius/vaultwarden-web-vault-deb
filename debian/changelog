@@ -1,5 +1,6 @@
-vaultwarden-web-vault (2025.12.0.0-1) unstable; urgency=medium
+vaultwarden-web-vault (2025.12.0.0-2) unstable; urgency=medium
 
+  * use nodejs 22.x
   * Update to 2025.12.0.0
 
  -- dionysius <dragon.dionysius@gmail.com>  Mon, 29 Dec 2025 09:59:44 +0100
