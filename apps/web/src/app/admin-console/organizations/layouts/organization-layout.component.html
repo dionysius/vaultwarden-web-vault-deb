@@ -53,7 +53,7 @@
       <bit-nav-item
         [text]="'eventLogs' | i18n"
         route="reporting/events"
-        *ngIf="organization.canAccessEventLogs || organization.isOwner"
+        *ngIf="(organization.canAccessEventLogs || organization.isOwner) && organization.useEvents"
       ></bit-nav-item>
       <bit-nav-item
         [text]="'reports' | i18n"
