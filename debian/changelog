@@ -1,3 +1,10 @@
+vaultwarden-web-vault (2025.12.1.1-2) unstable; urgency=medium
+
+  * add debian oldstable to build pipeline
+  * this is the first build using immutable releases and release attestation!
+
+ -- dionysius <dragon.dionysius@gmail.com>  Thu, 05 Feb 2026 09:40:21 +0100
+
 vaultwarden-web-vault (2025.12.1.1-1) unstable; urgency=medium
 
   * update to 2025.12.1.1
