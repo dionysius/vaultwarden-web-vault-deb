@@ -8,6 +8,10 @@ Head over to [vaultwarden-deb](https://github.com/dionysius/vaultwarden-deb) for
 
 Alternatively, download prebuilt packages from the [releases section](https://github.com/dionysius/immich-deb/releases) and verify signatures with the [signing-key](signing-key.pub). Packages are automatically built in [Github Actions](https://github.com/dionysius/immich-deb/actions). You will also need [vaultwarden-deb](https://github.com/dionysius/vaultwarden-deb).
 
+## Release schedule
+
+This project aims to closely match the releases of upstream. The first release in each minor version series starts as a prerelease with a 7-day waiting period to allow upstream to fix oversights in new features or changes. Subsequent releases follow the same waiting period. After the waiting period has passed, all prereleases are automatically promoted to normal releases including new releases.
+
 ## Build source package
 
 This debian source package builds [Vaultwarden Web Vault](https://github.com/vaultwarden/vw_web_builds) natively on your build environment. No annoying docker! It is managed with [git-buildpackage](https://wiki.debian.org/PackagingWithGit) and aims to be a pretty good quality debian source package. You can find the maintaining command summary in [debian/gbp.conf](debian/gbp.conf).
