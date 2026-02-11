@@ -8,12 +8,15 @@ jobs:
   promote:
     runs-on: ubuntu-latest
     steps:
+      - name: Install yaml package
+        run: npm install yaml
+
       - name: Check version and promote if needed
         uses: actions/github-script@v8
         with:
           script: |
             // Import YAML parser
-            const yaml = await import('yaml');
+            const yaml = require('yaml');
 
             const refType = process.env.GITHUB_REF_TYPE;
             const refName = process.env.GITHUB_REF_NAME;
@@ -66,11 +69,15 @@ jobs:
                 // Extract upstream version from debian tag (debian/1.35.3-1 -> 1.35.3)
                 const upstreamVersion = parentRelease.tag_name.replace(/^debian\/(.+?)-\d+$/, '$1');
 
-                // Fetch DockerSettings.yaml to get required vault version
+                // Fetch DockerSettings.yaml from upstream tag
                 const settingsUrl = `https://raw.githubusercontent.com/dionysius/vaultwarden-deb/${upstreamVersion}/docker/DockerSettings.yaml`;
                 const response = await fetch(settingsUrl);
 
                 if (!response.ok) {
+                  // Skip releases without DockerSettings.yaml (older releases)
+                  if (response.status === 404) {
+                    continue;
+                  }
                   throw new Error(`Failed to fetch DockerSettings.yaml: ${response.status} ${response.statusText}`);
                 }
 
