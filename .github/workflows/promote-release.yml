@@ -1,8 +1,10 @@
-name: Promote Releases
+name: promote release
 
 on:
   workflow_call:
-  workflow_dispatch:
+
+permissions:
+  contents: write
 
 jobs:
   promote:
@@ -103,7 +105,8 @@ jobs:
                       owner: context.repo.owner,
                       repo: context.repo.repo,
                       release_id: prerelease.id,
-                      prerelease: false
+                      prerelease: false,
+                      make_latest: 'legacy'
                     });
 
                     // Remove from list so we don't promote it again

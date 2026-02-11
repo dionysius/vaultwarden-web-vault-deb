@@ -1,4 +1,4 @@
-name: Check for promotable releases
+name: promote releases
 
 on:
   schedule:
