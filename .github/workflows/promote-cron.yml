@@ -1,13 +1,10 @@
-name: Promote Releases
+name: Check for promotable releases
 
 on:
   schedule:
-    - cron: '0 3 * * *' 
+    - cron: '10 3 * * *'
   workflow_dispatch:
 
 jobs:
   promote:
-    uses: dionysius/gbp-gha/.github/workflows/promote-release.yml@main
-    with:
-      in_days: 7
-      release_pattern: '{debian/*.*}.*.*'
+    uses: ./.github/workflows/promote-release.yml

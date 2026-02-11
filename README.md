@@ -10,7 +10,7 @@ Alternatively, download prebuilt packages from the [releases section](https://gi
 
 ## Release schedule
 
-This project aims to closely match the releases of upstream. The first release in each minor version series starts as a prerelease with a 7-day waiting period to allow upstream to fix oversights in new features or changes. Subsequent releases follow the same waiting period. After the waiting period has passed, all prereleases are automatically promoted to normal releases including new releases.
+This project packages the web UI for [vaultwarden-deb](https://github.com/dionysius/vaultwarden-deb). Releases are automatically coordinated with the main vaultwarden package, which release state dictate the release state of the web vault package.
 
 ## Build source package
 

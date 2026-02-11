@@ -35,11 +35,8 @@ jobs:
       publish: true
 
   promote:
-    uses: dionysius/gbp-gha/.github/workflows/promote-release.yml@main
     needs: [release]
-    with:
-      in_days: 7
-      release_pattern: '{debian/*.*}.*.*'
+    uses: ./.github/workflows/promote-release.yml
 
 # TODO: remove after year 2026
   upload-packagecloud:
