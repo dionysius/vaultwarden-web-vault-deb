@@ -1,3 +1,11 @@
+vaultwarden-web-vault (2026.1.1+0-1) unstable; urgency=medium
+
+  * update to 2026.1.1+0
+  * upstream build separator is now +
+  * introduce release schedule, synchronize release with parent project web-vault version reference
+
+ -- dionysius <dragon.dionysius@gmail.com>  Wed, 11 Feb 2026 13:36:24 +0100
+
 vaultwarden-web-vault (2025.12.1.1-2) unstable; urgency=medium
 
   * add debian oldstable to build pipeline
