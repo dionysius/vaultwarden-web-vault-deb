@@ -36,7 +36,7 @@
       "
       #duoComponent
     />
-    <bit-form-control *ngIf="!hideRememberMe()">
+    <bit-form-control *ngIf="!hideRememberMe()" class="vw-remember">
       <bit-label>{{ "dontAskAgainOnThisDeviceFor30Days" | i18n }}</bit-label>
       <input type="checkbox" bitCheckbox formControlName="remember" (change)="onRememberChange()" />
     </bit-form-control>
