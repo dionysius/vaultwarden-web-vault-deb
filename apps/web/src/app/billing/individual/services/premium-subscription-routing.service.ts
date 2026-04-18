@@ -19,6 +19,7 @@ export class PremiumSubscriptionRoutingService {
   ) {}
 
   getSubscriptionRoute$(): Observable<string | null> {
+    return null; // no subscription routes in Vaultwarden
     const hasPremiumFromAnyOrganization$ = this.ifAccountExistsCheck((userId) =>
       this.billingAccountProfileStateService.hasPremiumFromAnyOrganization$(userId),
     );
