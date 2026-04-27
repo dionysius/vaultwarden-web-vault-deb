@@ -67,11 +67,11 @@ jobs:
             // For each parent release, fetch once and check against all our prereleases
             for (const parentRelease of parentFullReleases) {
               try {
-                // Extract upstream version from debian tag (debian/1.35.3-1 -> 1.35.3)
+                // Extract upstream version from debian tag e.g. "debian/1.35.8-1" -> "1.35.8"
                 const upstreamVersion = parentRelease.tag_name.replace(/^debian\/(.+?)-\d+$/, '$1');
 
-                // Fetch DockerSettings.yaml from upstream tag
-                const settingsUrl = `https://raw.githubusercontent.com/dionysius/vaultwarden-deb/${upstreamVersion}/docker/DockerSettings.yaml`;
+                // Fetch DockerSettings.yaml from the upstream tag (upstream source lives on upstream/* tags)
+                const settingsUrl = `https://raw.githubusercontent.com/dionysius/vaultwarden-deb/refs/tags/upstream/${upstreamVersion}/docker/DockerSettings.yaml`;
                 const response = await fetch(settingsUrl);
 
                 if (!response.ok) {
