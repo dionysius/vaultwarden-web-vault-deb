@@ -1,5 +1,6 @@
-vaultwarden-web-vault (2026.3.1+0-1) unstable; urgency=medium
+vaultwarden-web-vault (2026.3.1+0-2) unstable; urgency=medium
 
+  * update workflow
   * debian policy 4.7.2 package updates
   * use upstream-vcs-tag import so upstream git history doesn't get lost
   * update to [2026.3.1+0](https://github.com/vaultwarden/vw_web_builds/releases/tag/v2026.3.1%2B0)
