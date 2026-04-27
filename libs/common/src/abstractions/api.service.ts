@@ -36,8 +36,6 @@ import {
   ProviderUserUserDetailsResponse,
 } from "../admin-console/models/response/provider/provider-user.response";
 import { SelectionReadOnlyResponse } from "../admin-console/models/response/selection-read-only.response";
-import { EmailTokenRequest } from "../auth/models/request/email-token.request";
-import { EmailRequest } from "../auth/models/request/email.request";
 import { PasswordTokenRequest } from "../auth/models/request/identity-token/password-token.request";
 import { SsoTokenRequest } from "../auth/models/request/identity-token/sso-token.request";
 import { UserApiTokenRequest } from "../auth/models/request/identity-token/user-api-token.request";
@@ -77,6 +75,7 @@ import { EventResponse } from "../models/response/event.response";
 import { ListResponse } from "../models/response/list.response";
 import { ProfileResponse } from "../models/response/profile.response";
 import { UserKeyResponse } from "../models/response/user-key.response";
+import { FetchMiddleware } from "../platform/misc/fetch-middleware";
 import { SyncResponse } from "../platform/sync";
 import { UserId } from "../types/guid";
 import { AttachmentRequest } from "../vault/models/request/attachment.request";
@@ -92,6 +91,7 @@ import { CipherRequest } from "../vault/models/request/cipher.request";
 import { AttachmentUploadDataResponse } from "../vault/models/response/attachment-upload-data.response";
 import { AttachmentResponse } from "../vault/models/response/attachment.response";
 import { CipherMiniResponse, CipherResponse } from "../vault/models/response/cipher.response";
+import { DeleteAttachmentResponse } from "../vault/models/response/delete-attachment.response";
 import { OptionalCipherResponse } from "../vault/models/response/optional-cipher.response";
 
 /**
@@ -152,8 +152,6 @@ export abstract class ApiService {
   abstract putProfile(request: UpdateProfileRequest): Promise<ProfileResponse>;
   abstract putAvatar(request: UpdateAvatarRequest): Promise<ProfileResponse>;
   abstract postPrelogin(request: PreloginRequest): Promise<PreloginResponse>;
-  abstract postEmailToken(request: EmailTokenRequest): Promise<any>;
-  abstract postEmail(request: EmailRequest): Promise<any>;
   abstract postSetKeyConnectorKey(request: SetKeyConnectorKeyRequest): Promise<any>;
   abstract postSecurityStamp(request: SecretVerificationRequest): Promise<any>;
   abstract getAccountRevisionDate(): Promise<number>;
@@ -243,8 +241,14 @@ export abstract class ApiService {
     id: string,
     request: AttachmentRequest,
   ): Promise<AttachmentUploadDataResponse>;
-  abstract deleteCipherAttachment(id: string, attachmentId: string): Promise<any>;
-  abstract deleteCipherAttachmentAdmin(id: string, attachmentId: string): Promise<any>;
+  abstract deleteCipherAttachment(
+    id: string,
+    attachmentId: string,
+  ): Promise<DeleteAttachmentResponse>;
+  abstract deleteCipherAttachmentAdmin(
+    id: string,
+    attachmentId: string,
+  ): Promise<DeleteAttachmentResponse>;
   abstract postShareCipherAttachment(
     id: string,
     attachmentId: string,
@@ -455,6 +459,14 @@ export abstract class ApiService {
   abstract getActiveBearerToken(userId: UserId): Promise<string>;
   abstract fetch(request: Request): Promise<Response>;
   abstract nativeFetch(request: Request): Promise<Response>;
+
+  /**
+   * Adds a middleware that wraps the fetch call. Middlewares can modify requests, inspect/modify
+   * responses, retry requests, or short-circuit by returning without calling `next`.
+   * Middlewares execute in the order they are added (first-added is outermost).
+   * @param middleware The middleware function to add
+   */
+  abstract addMiddleware(middleware: FetchMiddleware): void;
 
   abstract preValidateSso(identifier: string): Promise<SsoPreValidateResponse>;
 

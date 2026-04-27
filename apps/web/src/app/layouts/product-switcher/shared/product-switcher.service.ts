@@ -30,6 +30,7 @@ import { ConfigService } from "@bitwarden/common/platform/abstractions/config/co
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
 import { SyncService } from "@bitwarden/common/platform/sync";
+import { BitwardenIcon } from "@bitwarden/components";
 
 export type ProductSwitcherItem = {
   /**
@@ -40,7 +41,7 @@ export type ProductSwitcherItem = {
   /**
    * Displayed icon
    */
-  icon: string;
+  icon: BitwardenIcon;
 
   /**
    * Route for items in the `bentoProducts$` section
@@ -155,16 +156,14 @@ export class ProductSwitcherService {
     this.userHasSingleOrgPolicy$,
     this.route.paramMap,
     this.triggerProductUpdate$,
-    this.configService.getFeatureFlag$(FeatureFlag.SM1719_RemoveSecretsManagerAds),
   ]).pipe(
     map(
-      ([orgs, providers, userHasSingleOrgPolicy, paramMap, , removeSecretsManagerAdsFlag]: [
+      ([orgs, providers, userHasSingleOrgPolicy, paramMap]: [
         Organization[],
         Provider[],
         boolean,
         ParamMap,
         void,
-        boolean,
       ]) => {
         // Sort orgs by name to match the order within the sidebar
         orgs.sort((a, b) => a.name.localeCompare(b.name));
@@ -211,8 +210,8 @@ export class ProductSwitcherService {
             };
 
         // Check if SM ads should be disabled for any organization
-        // SM ads are only disabled if the feature flag is enabled AND
-        // the user is a regular User (not Admin or Owner) in an organization that has useDisableSMAdsForUsers enabled
+        // SM ads are disabled if the user is a regular User (not Admin or Owner)
+        // in an organization that has useDisableSMAdsForUsers enabled
         const shouldDisableSMAds = true; // always hide ads for secret manager in Vaultwarden
 
         const products = {

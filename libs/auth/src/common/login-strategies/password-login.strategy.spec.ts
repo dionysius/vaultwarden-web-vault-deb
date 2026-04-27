@@ -34,7 +34,6 @@ import {
   PasswordStrengthServiceAbstraction,
   PasswordStrengthService,
 } from "@bitwarden/common/tools/password-strength";
-import { CsprngArray } from "@bitwarden/common/types/csprng";
 import { UserId } from "@bitwarden/common/types/guid";
 import { MasterKey, UserKey } from "@bitwarden/common/types/key";
 import { KdfConfigService, KeyService } from "@bitwarden/key-management";
@@ -198,7 +197,7 @@ describe("PasswordLoginStrategy", () => {
   });
 
   it("sets keys after a successful authentication", async () => {
-    const userKey = new SymmetricCryptoKey(new Uint8Array(64).buffer as CsprngArray) as UserKey;
+    const userKey = new SymmetricCryptoKey(new Uint8Array(64)) as UserKey;
 
     masterPasswordService.masterKeySubject.next(masterKey);
     masterPasswordService.mock.decryptUserKeyWithMasterKey.mockResolvedValue(userKey);
@@ -216,7 +215,10 @@ describe("PasswordLoginStrategy", () => {
       userId,
     );
     expect(keyService.setUserKey).toHaveBeenCalledWith(userKey, userId);
-    expect(keyService.setPrivateKey).toHaveBeenCalledWith(tokenResponse.privateKey, userId);
+    expect(accountCryptographicStateService.setAccountCryptographicState).toHaveBeenCalledWith(
+      { V1: { private_key: tokenResponse.privateKey } },
+      userId,
+    );
   });
 
   it("does not force the user to update their master password when there are no requirements", async () => {
@@ -420,7 +422,7 @@ describe("PasswordLoginStrategy", () => {
     apiService.postIdentityToken.mockResolvedValue(tokenResponse);
     masterPasswordService.masterKeySubject.next(masterKey);
     masterPasswordService.mock.decryptUserKeyWithMasterKey.mockResolvedValue(
-      new SymmetricCryptoKey(new Uint8Array(64).buffer as CsprngArray) as UserKey,
+      new SymmetricCryptoKey(new Uint8Array(64)) as UserKey,
     );
 
     await passwordLoginStrategy.logIn(credentials);

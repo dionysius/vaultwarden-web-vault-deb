@@ -1,5 +1,5 @@
 import { CommonModule } from "@angular/common";
-import { Component, computed, input } from "@angular/core";
+import { Component, computed, input, resource } from "@angular/core";
 import { toObservable, toSignal } from "@angular/core/rxjs-interop";
 import { combineLatest, of, switchMap, map, catchError, from, Observable, startWith } from "rxjs";
 
@@ -13,8 +13,6 @@ import { AccountService } from "@bitwarden/common/auth/abstractions/account.serv
 import { getUserId } from "@bitwarden/common/auth/services/account.service";
 import { isCardExpired } from "@bitwarden/common/autofill/utils";
 import { BillingAccountProfileStateService } from "@bitwarden/common/billing/abstractions";
-import { FeatureFlag } from "@bitwarden/common/enums/feature-flag.enum";
-import { ConfigService } from "@bitwarden/common/platform/abstractions/config/config.service";
 import { LogService } from "@bitwarden/common/platform/abstractions/log.service";
 import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
 import { getByIds } from "@bitwarden/common/platform/misc";
@@ -32,7 +30,7 @@ import {
   CalloutModule,
   SearchModule,
   TypographyModule,
-  AnchorLinkDirective,
+  LinkComponent,
 } from "@bitwarden/components";
 
 import { ChangeLoginPasswordService } from "../abstractions/change-login-password.service";
@@ -68,7 +66,7 @@ import { ViewIdentitySectionsComponent } from "./view-identity-sections/view-ide
     ViewIdentitySectionsComponent,
     LoginCredentialsViewComponent,
     AutofillOptionsViewComponent,
-    AnchorLinkDirective,
+    LinkComponent,
     TypographyModule,
   ],
 })
@@ -113,7 +111,6 @@ export class CipherViewComponent {
     private logService: LogService,
     private cipherRiskService: CipherRiskService,
     private billingAccountService: BillingAccountProfileStateService,
-    private configService: ConfigService,
   ) {}
 
   readonly resolvedCollections = toSignal<CollectionView[] | undefined>(
@@ -248,19 +245,9 @@ export class CipherViewComponent {
    * The password is only evaluated when the user is premium and has edit access to the cipher.
    */
   readonly passwordIsAtRisk = toSignal(
-    combineLatest([
-      this.activeUserId$,
-      this.cipher$,
-      this.configService.getFeatureFlag$(FeatureFlag.RiskInsightsForPremium),
-    ]).pipe(
-      switchMap(([userId, cipher, featureEnabled]) => {
-        if (
-          !featureEnabled ||
-          !cipher.hasLoginPassword ||
-          !cipher.edit ||
-          cipher.organizationId ||
-          cipher.isDeleted
-        ) {
+    combineLatest([this.activeUserId$, this.cipher$]).pipe(
+      switchMap(([userId, cipher]) => {
+        if (!cipher.hasLoginPassword || !cipher.edit || cipher.organizationId || cipher.isDeleted) {
           return of(false);
         }
         return this.switchPremium$(
@@ -278,6 +265,28 @@ export class CipherViewComponent {
 
   readonly showChangePasswordLink = computed(() => {
     return this.hasLoginUri() && (this.hadPendingChangePasswordTask() || this.passwordIsAtRisk());
+  });
+
+  protected readonly changePasswordUrl = resource({
+    params: () => ({ cipher: this.cipher(), showPwLink: this.showChangePasswordLink() }),
+    loader: async ({ params }) => {
+      if (!params.showPwLink) {
+        return undefined;
+      }
+      try {
+        return await this.changeLoginPasswordService.getChangePasswordUrl(params.cipher);
+      } catch (e: any) {
+        this.logService.error(e.message);
+        return undefined;
+      }
+    },
+  });
+
+  readonly changePasswordLink = computed(() => {
+    if (this.changePasswordUrl.hasValue()) {
+      return this.changePasswordUrl.value();
+    }
+    return undefined;
   });
 
   launchChangePassword = async () => {

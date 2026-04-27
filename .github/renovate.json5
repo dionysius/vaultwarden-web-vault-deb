@@ -9,7 +9,6 @@
       groupName: "Minor github-actions updates",
       matchManagers: ["github-actions"],
       matchUpdateTypes: ["minor"],
-      addLabels: ["hold"],
     },
     {
       // Enable support for Rust toolchain updates.
@@ -79,7 +78,6 @@
       matchPackageNames: [
         "@emotion/css",
         "@webcomponents/custom-elements",
-        "bitwarden-russh",
         "concurrently",
         "cross-env",
         "del",
@@ -101,6 +99,12 @@
       description: "Autofill owned dependencies",
       commitMessagePrefix: "[deps] Autofill:",
       reviewers: ["team:team-autofill-dev"],
+    },
+    {
+      matchPackageNames: ["mockall"],
+      description: "Autofill-Desktop owned dependencies",
+      commitMessagePrefix: "[deps] Autofill-Desktop:",
+      reviewers: ["team:team-autofill-desktop-dev"],
     },
     {
       matchPackageNames: ["braintree-web-drop-in"],
@@ -187,6 +191,7 @@
         "semver",
         "serde",
         "serde_json",
+        "serde_with",
         "simplelog",
         "style-loader",
         "sysinfo",
@@ -312,7 +317,6 @@
         "@types/inquirer",
         "@types/koa",
         "@types/koa__multer",
-        "@types/koa__router",
         "@types/koa-bodyparser",
         "@types/koa-json",
         "@types/lunr",
@@ -355,6 +359,12 @@
       description: "Key Management owned dependencies",
       commitMessagePrefix: "[deps] KM:",
       reviewers: ["team:team-key-management-dev"],
+    },
+    {
+      matchPackageNames: ["chart.js", "chartjs-adapter-date-fns"],
+      description: "DIRT owned dependencies",
+      commitMessagePrefix: "[deps] DIRT:",
+      reviewers: ["team:team-data-insights-and-reporting-dev"],
     },
 
     // ==================== Grouping Rules ====================
@@ -562,5 +572,6 @@
     "node-ipc",
     "@bitwarden/sdk-internal",
     "@bitwarden/commercial-sdk-internal",
+    "bitwarden-russh",
   ],
 }

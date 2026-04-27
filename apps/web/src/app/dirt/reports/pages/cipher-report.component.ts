@@ -186,13 +186,11 @@ export abstract class CipherReportComponent implements OnDestroy {
     cipher: CipherView,
     activeCollectionId?: CollectionId,
   ) {
-    const disableForm = cipher ? !cipher.edit && !this.organization?.canEditAllCiphers : false;
-
     this.vaultItemDialogRef = VaultItemDialogComponent.open(this.dialogService, {
       mode,
       formConfig,
       activeCollectionId,
-      disableForm,
+      isAdminConsoleAction: this.organization != null,
     });
 
     const result = await lastValueFrom(this.vaultItemDialogRef.closed);
@@ -254,7 +252,7 @@ export abstract class CipherReportComponent implements OnDestroy {
       const index = this.ciphers.findIndex((c) => c.id === updatedCipherView.id);
 
       // the updated cipher does not meet the criteria for the report, it returns a null
-      if (updatedReportResult === null) {
+      if (updatedReportResult === null && index > -1) {
         this.ciphers.splice(index, 1);
       }
 

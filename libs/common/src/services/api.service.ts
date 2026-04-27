@@ -47,8 +47,6 @@ import {
 import { SelectionReadOnlyResponse } from "../admin-console/models/response/selection-read-only.response";
 import { AccountService } from "../auth/abstractions/account.service";
 import { TokenService } from "../auth/abstractions/token.service";
-import { EmailTokenRequest } from "../auth/models/request/email-token.request";
-import { EmailRequest } from "../auth/models/request/email.request";
 import { DeviceRequest } from "../auth/models/request/identity-token/device.request";
 import { PasswordTokenRequest } from "../auth/models/request/identity-token/password-token.request";
 import { SsoTokenRequest } from "../auth/models/request/identity-token/sso-token.request";
@@ -98,6 +96,7 @@ import { AppIdService } from "../platform/abstractions/app-id.service";
 import { Environment, EnvironmentService } from "../platform/abstractions/environment.service";
 import { LogService } from "../platform/abstractions/log.service";
 import { PlatformUtilsService } from "../platform/abstractions/platform-utils.service";
+import { buildFetchPipeline, FetchMiddleware } from "../platform/misc/fetch-middleware";
 import { flagEnabled } from "../platform/misc/flags";
 import { Utils } from "../platform/misc/utils";
 import { SyncResponse } from "../platform/sync";
@@ -115,6 +114,7 @@ import { CipherRequest } from "../vault/models/request/cipher.request";
 import { AttachmentUploadDataResponse } from "../vault/models/response/attachment-upload-data.response";
 import { AttachmentResponse } from "../vault/models/response/attachment.response";
 import { CipherResponse } from "../vault/models/response/cipher.response";
+import { DeleteAttachmentResponse } from "../vault/models/response/delete-attachment.response";
 import { OptionalCipherResponse } from "../vault/models/response/optional-cipher.response";
 
 import { InsecureUrlNotAllowedError } from "./api-errors";
@@ -138,6 +138,12 @@ export class ApiService implements ApiServiceAbstraction {
    */
   private static readonly NEW_DEVICE_VERIFICATION_REQUIRED_MESSAGE =
     "new device verification required";
+
+  /**
+   * Middlewares wrap the fetch call in a chain. Each middleware receives the request and a `next`
+   * function, and can modify requests, inspect/modify responses, retry, or short-circuit.
+   */
+  private middlewares: FetchMiddleware[] = [];
 
   constructor(
     private tokenService: TokenService,
@@ -298,15 +304,6 @@ export class ApiService implements ApiServiceAbstraction {
     );
     return new PreloginResponse(r);
   }
-
-  postEmailToken(request: EmailTokenRequest): Promise<any> {
-    return this.send("POST", "/accounts/email-token", request, true, false);
-  }
-
-  postEmail(request: EmailRequest): Promise<any> {
-    return this.send("POST", "/accounts/email", request, true, false);
-  }
-
   postSetKeyConnectorKey(request: SetKeyConnectorKeyRequest): Promise<any> {
     return this.send("POST", "/accounts/set-key-connector-key", request, true, false);
   }
@@ -590,18 +587,32 @@ export class ApiService implements ApiServiceAbstraction {
     return new AttachmentUploadDataResponse(r);
   }
 
-  deleteCipherAttachment(id: string, attachmentId: string): Promise<any> {
-    return this.send("DELETE", "/ciphers/" + id + "/attachment/" + attachmentId, null, true, true);
+  async deleteCipherAttachment(
+    id: string,
+    attachmentId: string,
+  ): Promise<DeleteAttachmentResponse> {
+    const r = await this.send(
+      "DELETE",
+      "/ciphers/" + id + "/attachment/" + attachmentId,
+      null,
+      true,
+      true,
+    );
+    return new DeleteAttachmentResponse(r);
   }
 
-  deleteCipherAttachmentAdmin(id: string, attachmentId: string): Promise<any> {
-    return this.send(
+  async deleteCipherAttachmentAdmin(
+    id: string,
+    attachmentId: string,
+  ): Promise<DeleteAttachmentResponse> {
+    const r = await this.send(
       "DELETE",
       "/ciphers/" + id + "/attachment/" + attachmentId + "/admin",
       null,
       true,
       true,
     );
+    return new DeleteAttachmentResponse(r);
   }
 
   postShareCipherAttachment(
@@ -1315,6 +1326,10 @@ export class ApiService implements ApiServiceAbstraction {
     return accessToken;
   }
 
+  addMiddleware(middleware: FetchMiddleware): void {
+    this.middlewares.push(middleware);
+  }
+
   async fetch(request: Request): Promise<Response> {
     if (!request.url.startsWith("https://") && !this.platformUtilsService.isDev()) {
       throw new InsecureUrlNotAllowedError();
@@ -1334,7 +1349,9 @@ export class ApiService implements ApiServiceAbstraction {
     if (packageType != null) {
       request.headers.set("Bitwarden-Package-Type", packageType);
     }
-    return this.nativeFetch(request);
+
+    const pipeline = buildFetchPipeline(this.middlewares, (req) => this.nativeFetch(req));
+    return pipeline(request);
   }
 
   nativeFetch(request: Request): Promise<Response> {
@@ -1646,12 +1663,10 @@ export class ApiService implements ApiServiceAbstraction {
   private buildSafeApiRequestUrl(apiUrl: string, path: string): string {
     const pathParts = path.split("?");
 
-    // Check for path traversal patterns from any URL.
+    // Supplementary heuristic: detect common traversal indicators before normalization.
     const fullUrlPath = apiUrl + pathParts[0] + (pathParts.length > 1 ? `?${pathParts[1]}` : "");
-
-    const isInvalidUrl = Utils.invalidUrlPatterns(fullUrlPath);
-    if (isInvalidUrl) {
-      throw new Error("The request URL contains dangerous patterns.");
+    if (Utils.containsTraversalIndicators(fullUrlPath)) {
+      throw new Error("The request URL contains unexpected patterns.");
     }
 
     const requestUrl =

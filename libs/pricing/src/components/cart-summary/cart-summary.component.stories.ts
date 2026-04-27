@@ -57,6 +57,10 @@ export default {
                   return "Your next charge is for";
                 case "dueOn":
                   return "due on";
+                case "premiumSubscriptionCredit":
+                  return "Premium subscription credit";
+                case "discount":
+                  return "discount";
                 default:
                   return key;
               }
@@ -339,5 +343,163 @@ export const WithAmountDiscount: Story = {
       },
       estimatedTax: 95.0,
     } satisfies Cart,
+  },
+};
+
+export const WithHiddenBreakdown: Story = {
+  name: "Hidden Cost Breakdown",
+  args: {
+    cart: {
+      passwordManager: {
+        seats: {
+          quantity: 5,
+          translationKey: "members",
+          cost: 50.0,
+          hideBreakdown: true,
+        },
+        additionalStorage: {
+          quantity: 2,
+          translationKey: "additionalStorageGB",
+          cost: 10.0,
+          hideBreakdown: true,
+        },
+      },
+      secretsManager: {
+        seats: {
+          quantity: 3,
+          translationKey: "members",
+          cost: 30.0,
+          hideBreakdown: true,
+        },
+        additionalServiceAccounts: {
+          quantity: 2,
+          translationKey: "additionalServiceAccountsV2",
+          cost: 6.0,
+          hideBreakdown: true,
+        },
+      },
+      cadence: "monthly",
+      estimatedTax: 19.2,
+    } satisfies Cart,
+  },
+};
+
+export const WithCredit: Story = {
+  name: "With Account Credit",
+  args: {
+    cart: {
+      passwordManager: {
+        seats: {
+          quantity: 5,
+          translationKey: "members",
+          cost: 50.0,
+        },
+      },
+      cadence: "monthly",
+      credit: {
+        translationKey: "premiumSubscriptionCredit",
+        value: 25.0,
+      },
+      estimatedTax: 10.0,
+    } satisfies Cart,
+  },
+};
+
+export const WithDiscountAndCredit: Story = {
+  name: "With Both Discount and Credit",
+  args: {
+    cart: {
+      passwordManager: {
+        seats: {
+          quantity: 5,
+          translationKey: "members",
+          cost: 50.0,
+        },
+        additionalStorage: {
+          quantity: 2,
+          translationKey: "additionalStorageGB",
+          cost: 10.0,
+        },
+      },
+      cadence: "annually",
+      discount: {
+        type: DiscountTypes.PercentOff,
+        value: 15,
+      },
+      credit: {
+        translationKey: "premiumSubscriptionCredit",
+        value: 50.0,
+      },
+      estimatedTax: 15.0,
+    } satisfies Cart,
+  },
+};
+
+export const WithItemDiscount: Story = {
+  name: "With Item-Level Discount (Premium Renewal)",
+  args: {
+    cart: {
+      passwordManager: {
+        seats: {
+          quantity: 1,
+          translationKey: "premiumMembership",
+          cost: 10.0,
+          discount: {
+            type: DiscountTypes.PercentOff,
+            value: 25,
+          },
+        },
+      },
+      cadence: "annually",
+      estimatedTax: 2.03,
+    } satisfies Cart,
+  },
+};
+
+export const WithCartAndItemDiscount: Story = {
+  name: "With Both Cart-Level and Item-Level Discounts",
+  args: {
+    cart: {
+      passwordManager: {
+        seats: {
+          quantity: 5,
+          translationKey: "members",
+          cost: 50.0,
+          discount: {
+            type: DiscountTypes.PercentOff,
+            value: 25,
+          },
+        },
+        additionalStorage: {
+          quantity: 2,
+          translationKey: "additionalStorageGB",
+          cost: 10.0,
+        },
+      },
+      cadence: "monthly",
+      discount: {
+        type: DiscountTypes.PercentOff,
+        value: 10,
+      },
+      estimatedTax: 8.55,
+    } satisfies Cart,
+  },
+};
+
+export const HiddenPricingTerm: Story = {
+  name: "Hidden Pricing Term",
+  args: {
+    cart: {
+      passwordManager: {
+        seats: {
+          quantity: 5,
+          translationKey: "members",
+          cost: 50.0,
+        },
+      },
+      cadence: "monthly",
+      estimatedTax: 9.6,
+    } satisfies Cart,
+    hidePricingTerm: true,
   },
 };

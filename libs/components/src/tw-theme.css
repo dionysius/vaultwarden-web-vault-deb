@@ -96,7 +96,7 @@
   --color-brand-400: #6baefa;
   --color-brand-500: #418bfb;
   --color-brand-600: #2a70f4;
-  --color-brand-700: #175ddc;
+  --color-brand-700: #1252a3;
   --color-brand-800: #0d43af;
   --color-brand-900: #0c3276;
   --color-brand-950: #162455;
@@ -357,10 +357,10 @@
   /**========================================
    * SIDENAV BACKGROUND COLORS (Light mode)
    * ======================================== */
-  --color-sidenav-background: var(--color-brand-800);
+  --color-sidenav-background: #212529;
   --color-sidenav-text: var(--color-white);
-  --color-sidenav-active-item: var(--color-brand-900);
-  --color-sidenav-item-hover: var(--color-brand-900);
+  --color-sidenav-active-item: #101215;
+  --color-sidenav-item-hover: #101215;
 
   --color-admin-sidenav-background: var(--color-gray-100);
   --color-admin-sidenav-text: var(--color-gray-900);
@@ -517,7 +517,7 @@
 
   /* Hover & Overlay */
   --color-bg-hover: rgba(var(--color-white-rgb), 0.05);
-  --color-bg-overlay: rgba(var(--color-gray-950-rgb), 0.85);
+  --color-bg-overlay: rgba(var(--color-gray-950-rgb), 0.65);
 
   /* ========================================
    * SEMANTIC BORDER COLORS (Dark Mode Overrides)
@@ -626,5 +626,9 @@
     position: relative;
     height: 100%;
     overflow: hidden;
+  }
+
+  router-outlet {
+    display: none;
   }
 }

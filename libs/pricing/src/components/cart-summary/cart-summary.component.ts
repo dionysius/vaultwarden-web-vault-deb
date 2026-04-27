@@ -14,8 +14,8 @@ import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.servic
 import { IconButtonModule, TypographyModule } from "@bitwarden/components";
 import { I18nPipe } from "@bitwarden/ui-common";
 
-import { Cart } from "../../types/cart";
-import { DiscountTypes, getLabel } from "../../types/discount";
+import { Cart, CartItem } from "../../types/cart";
+import { getAmount, getLabel } from "../../types/discount";
 
 /**
  * A reusable UI-only component that displays a cart summary with line items.
@@ -29,13 +29,16 @@ import { DiscountTypes, getLabel } from "../../types/discount";
   imports: [TypographyModule, IconButtonModule, CurrencyPipe, I18nPipe, NgTemplateOutlet],
 })
 export class CartSummaryComponent {
-  private i18nService = inject(I18nService);
+  private readonly i18nService = inject(I18nService);
 
   // Required inputs
   readonly cart = input.required<Cart>();
 
   // Optional inputs
   readonly header = input<TemplateRef<{ total: number }>>();
+
+  // Hide pricing term (e.g., "/ month" or "/ year") if true
+  readonly hidePricingTerm = input<boolean>(false);
 
   // UI state
   readonly isExpanded = signal(true);
@@ -48,6 +51,31 @@ export class CartSummaryComponent {
       passwordManager: { seats },
     } = this.cart();
     return seats.quantity * seats.cost;
+  });
+
+  /**
+   * Calculates the discount amount for the Password Manager seats item.
+   * Currently, only PM seats support item-level discounts (PM-33349).
+   * If other cart items gain discount support, add corresponding signals and update total().
+   */
+  readonly passwordManagerSeatsDiscountAmount = computed<number>(() => {
+    const {
+      passwordManager: { seats },
+    } = this.cart();
+    return this.getItemDiscountAmount(seats);
+  });
+
+  /**
+   * Gets the discount label for the Password Manager seats item
+   */
+  readonly passwordManagerSeatsDiscountLabel = computed<string>(() => {
+    const {
+      passwordManager: { seats },
+    } = this.cart();
+    if (!seats.discount) {
+      return "";
+    }
+    return getLabel(this.i18nService, seats.discount);
   });
 
   /**
@@ -112,23 +140,14 @@ export class CartSummaryComponent {
   );
 
   /**
-   * Calculates the discount amount based on the cart discount
+   * Calculates the cart-level discount amount
    */
   readonly discountAmount = computed<number>(() => {
     const { discount } = this.cart();
     if (!discount) {
       return 0;
     }
-
-    const subtotal = this.subtotal();
-    switch (discount.type) {
-      case DiscountTypes.PercentOff: {
-        const percentage = discount.value < 1 ? discount.value : discount.value / 100;
-        return subtotal * percentage;
-      }
-      case DiscountTypes.AmountOff:
-        return discount.value;
-    }
+    return getAmount(discount, this.subtotal());
   });
 
   /**
@@ -143,10 +162,26 @@ export class CartSummaryComponent {
   });
 
   /**
+   * Calculates the credit amount from the cart credit
+   */
+  readonly creditAmount = computed<number>(() => {
+    const { credit } = this.cart();
+    if (!credit) {
+      return 0;
+    }
+    return credit.value;
+  });
+
+  /**
    * Calculates the total of all line items including discount and tax
    */
   readonly total = computed<number>(
-    () => this.subtotal() - this.discountAmount() + this.estimatedTax(),
+    () =>
+      this.subtotal() -
+      this.discountAmount() -
+      this.passwordManagerSeatsDiscountAmount() -
+      this.creditAmount() +
+      this.estimatedTax(),
   );
 
   /**
@@ -155,9 +190,26 @@ export class CartSummaryComponent {
   readonly total$ = toObservable(this.total);
 
   /**
+   * Translates a key with optional parameters
+   */
+  translateWithParams(key: string, params?: Array<string | number>): string {
+    if (!params || params.length === 0) {
+      return this.i18nService.t(key);
+    }
+    return this.i18nService.t(key, ...params);
+  }
+
+  /**
    * Toggles the expanded/collapsed state of the cart items
    */
   toggleExpanded(): void {
     this.isExpanded.update((value: boolean) => !value);
+  }
+
+  private getItemDiscountAmount(item: CartItem): number {
+    if (!item.discount) {
+      return 0;
+    }
+    return getAmount(item.discount, item.quantity * item.cost);
   }
 }
