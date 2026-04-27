@@ -24,9 +24,8 @@ jobs:
             const refName = process.env.GITHUB_REF_NAME;
 
             if (refType === 'tag') {
-              const match = refName.match(releasePattern);
-              if (!match || !match[1]) {
-                console.log(`Tag '${refName}' does not match pattern - skipping`);
+              if (!refName.startsWith('debian/')) {
+                console.log(`Tag '${refName}' is not a debian release tag - skipping`);
                 return;
               }
               console.log(`Tag mode: processing only ${refName}`);
@@ -97,8 +96,8 @@ jobs:
                   const tag = prerelease.tag_name;
                   const ourVersion = tag.replace(/^debian\//, '');
 
-                  // Match if our version starts with parent version (e.g., 2026.1.1.1-1 matches 2026.1.1)
-                  if (ourVersion.startsWith(parentVersion)) {
+                  // Match e.g. ourVersion "2026.3.1+0-2" against parentVersion "2026.3.1" (+ anchors to avoid 2026.3.10 false match)
+                  if (ourVersion.startsWith(parentVersion + '+')) {
                     console.log(`parent ${parentRelease.tag_name} uses web_vault ${parentVersion} -> promoting ${tag}`);
 
                     await github.rest.repos.updateRelease({
