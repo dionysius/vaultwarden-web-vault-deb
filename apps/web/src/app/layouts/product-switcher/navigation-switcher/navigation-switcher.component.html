@@ -1,5 +1,6 @@
 @let accessibleProducts = accessibleProducts$ | async;
 @if (accessibleProducts && accessibleProducts.length > 1) {
+  <bit-nav-divider></bit-nav-divider>
   <!-- [attr.icon] is used to keep the icon attribute on the bit-nav-item after prod mode is enabled. Matches other navigation items and assists in automated testing. -->
   <bit-nav-item
     *ngFor="let product of accessibleProducts"
