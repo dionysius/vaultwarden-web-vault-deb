@@ -1,3 +1,9 @@
+vaultwarden-web-vault (2026.4.1+0-2) unstable; urgency=medium
+
+  * build for ubuntu old lts (current lts is now resolute)
+
+ -- dionysius <dragon.dionysius@gmail.com>  Tue, 19 May 2026 01:02:17 +0200
+
 vaultwarden-web-vault (2026.4.1+0-1) unstable; urgency=medium
 
   * update to [2026.4.1+0](https://github.com/vaultwarden/vw_web_builds/releases/tag/v2026.4.1%2B0)
