@@ -20,9 +20,10 @@ jobs:
       # https://github.com/orgs/community/discussions/26671
       DEBFULLNAME: dionysius (github-actions)
       DEBEMAIL: dragon.dionysius+gha@gmail.com
-      images: '["ubuntu:latest", "debian:stable", "debian:oldstable"]'
+      images: '["debian:stable", "debian:oldstable", "ubuntu:latest", "ubuntu:oldlts"]'
       architectures: '["amd64", "arm64"]'
       before_build_deps_install: |
+        apt-get install -y curl
         curl -fsSL https://deb.nodesource.com/setup_22.x | bash -
         apt-get install -y nodejs
 
