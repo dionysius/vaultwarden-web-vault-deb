@@ -216,7 +216,7 @@ export default tseslint.config(
         {
           // uses negative lookahead to whitelist any class that doesn't start with "tw-"
           // in other words: classnames that start with tw- must be valid TailwindCSS classes
-          whitelist: ["(?!(tw)\\-).*", "tw-app-region-drag", "tw-app-region-no-drag"],
+          whitelist: ["(?!(tw)\\-).*", "tw-app-region-drag", "tw-app-region-no-drag", "vw-.*"],
         },
       ],
       "tailwindcss/enforces-negative-arbitrary-values": "error",
@@ -388,6 +388,7 @@ export default tseslint.config(
             "filter.*", // Temporary until filters are migrated
             "tw-app-region*", // Custom utility for native passkey modals
             "tw-@container",
+            "vw-.*",
           ],
         },
       ],
