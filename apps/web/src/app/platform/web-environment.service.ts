@@ -65,6 +65,9 @@ export class WebEnvironmentService extends DefaultEnvironmentService {
 
     let environment: Environment;
     if (region) {
+      // Plumbings sends from the region config into envUrls so WebCloudEnvironment
+      // doesn't need a special-case patch. Build-pipeline-provided values take priority.
+      envUrls.send = envUrls.send ?? region.urls.send;
       environment = new WebCloudEnvironment(region, envUrls);
     } else {
       environment = new SelfHostedEnvironment(envUrls);
@@ -126,7 +129,9 @@ export class WebEnvironmentService extends DefaultEnvironmentService {
 export class WebCloudEnvironment extends CloudEnvironment {
   constructor(config: RegionConfig, urls: Urls) {
     super(config);
-    // We override the urls to avoid CORS issues
+    // Override with build-time envUrls. The send URL is plumbed in from the region
+    // config in the WebEnvironmentService constructor if not already provided by the
+    // build pipeline, so no special-case patching is needed here.
     this.urls = urls;
   }
 }

@@ -19,10 +19,10 @@ import { OrganizationApiServiceAbstraction } from "@bitwarden/common/admin-conso
 import {
   getOrganizationById,
   OrganizationService,
+  singleOrganizationPolicyApplies$,
 } from "@bitwarden/common/admin-console/abstractions/organization/organization.service.abstraction";
 import { PolicyService } from "@bitwarden/common/admin-console/abstractions/policy/policy.service.abstraction";
 import { ProviderApiServiceAbstraction } from "@bitwarden/common/admin-console/abstractions/provider/provider-api.service.abstraction";
-import { PolicyType } from "@bitwarden/common/admin-console/enums";
 import { Organization } from "@bitwarden/common/admin-console/models/domain/organization";
 import { OrganizationCreateRequest } from "@bitwarden/common/admin-console/models/request/organization-create.request";
 import { OrganizationKeysRequest } from "@bitwarden/common/admin-console/models/request/organization-keys.request";
@@ -58,6 +58,7 @@ import {
   PreviewInvoiceClient,
   SubscriberBillingClient,
 } from "@bitwarden/web-vault/app/billing/clients";
+import { DEFAULT_TRIAL_LENGTH_DAYS } from "@bitwarden/web-vault/app/billing/constants";
 import {
   EnterBillingAddressComponent,
   EnterPaymentMethodComponent,
@@ -125,6 +126,9 @@ export class OrganizationPlansComponent implements OnInit, OnDestroy {
    */
   readonly initialPlan = input<PlanType>(PlanType.Free);
 
+  /** Custom trial length from the URL, overrides the plan's default trialPeriodDays for display and API calls. */
+  readonly trialLength = input<number | undefined>(undefined);
+
   // Derived signals
   readonly hasPremiumPersonally = toSignal(
     this.accountService.activeAccount$.pipe(
@@ -173,7 +177,9 @@ export class OrganizationPlansComponent implements OnInit, OnDestroy {
     this.selectedPlan()?.isAnnual ? "year" : "month",
   );
 
-  readonly freeTrial = computed(() => this.selectedPlan()?.trialPeriodDays != null);
+  readonly freeTrial = computed(
+    () => (this.trialLength() ?? this.selectedPlan()?.trialPeriodDays ?? 0) > 0,
+  );
 
   readonly planOffersSecretsManager = computed(() => this.selectedSecretsManagerPlan() != null);
 
@@ -537,7 +543,7 @@ export class OrganizationPlansComponent implements OnInit, OnDestroy {
       await this.loadPlanData();
     }
 
-    this._familyPlan = await this.determineFamilyPlan();
+    this._familyPlan = PlanType.FamiliesAnnually;
 
     const currentPlan = this.currentPlan();
     if (currentPlan) {
@@ -559,9 +565,7 @@ export class OrganizationPlansComponent implements OnInit, OnDestroy {
     this.accountService.activeAccount$
       .pipe(
         getUserId,
-        switchMap((userId) =>
-          this.policyService.policyAppliesToUser$(PolicyType.SingleOrg, userId),
-        ),
+        switchMap((userId) => singleOrganizationPolicyApplies$(userId, this.policyService)),
         takeUntil(this.destroy$),
       )
       .subscribe((policyAppliesToActiveUser) => {
@@ -665,7 +669,10 @@ export class OrganizationPlansComponent implements OnInit, OnDestroy {
     if (this.acceptingSponsorship()) {
       return this.i18nService.t("paymentSponsored");
     } else if (this.freeTrial() && this.createOrganization() && !this.canUpgradeFromPremium()) {
-      return this.i18nService.t("paymentChargedWithTrial");
+      return this.i18nService.t(
+        "paymentChargedWithTrialSpecificLength",
+        this.trialLength() ?? this.selectedPlan()?.trialPeriodDays ?? DEFAULT_TRIAL_LENGTH_DAYS,
+      );
     } else {
       return this.i18nService.t("paymentCharged", this.i18nService.t(this.selectedPlanInterval()));
     }
@@ -841,6 +848,13 @@ export class OrganizationPlansComponent implements OnInit, OnDestroy {
       this.messagingService.send("organizationCreated", { organizationId });
     } catch (error: unknown) {
       if (error instanceof Error && error.message === "Payment method validation failed") {
+        return;
+      }
+      if (this.premiumOrgUpgradeService.isBankAccountNotSupportedError(error)) {
+        this.toastService.showToast({
+          variant: "error",
+          message: this.i18nService.t("unverifiedBankAccountNotSupportedForUpgrade"),
+        });
         return;
       }
       if (this.subscriptionDiscountService.isDiscountExpiredError(error)) {
@@ -1023,16 +1037,17 @@ export class OrganizationPlansComponent implements OnInit, OnDestroy {
     orgKey: SymmetricCryptoKey;
     activeUserId: UserId;
   }): Promise<string> {
-    const request = new OrganizationCreateRequest();
-    request.key = encryptionData.key;
-    request.collectionName = encryptionData.collectionCt;
+    const request = new OrganizationCreateRequest(
+      encryptionData.key,
+      new OrganizationKeysRequest(
+        encryptionData.orgKeys[0],
+        encryptionData.orgKeys[1].encryptedString as string,
+      ),
+      encryptionData.collectionCt,
+    );
     request.name = this.formGroup.controls.name.value ?? "";
     request.billingEmail = this.formGroup.controls.billingEmail.value ?? "";
     request.initiationPath = "New organization creation in-product";
-    request.keys = new OrganizationKeysRequest(
-      encryptionData.orgKeys[0],
-      encryptionData.orgKeys[1].encryptedString as string,
-    );
     request.planType = PlanType.Free; // always select the free plan in Vaultwarden
 
     /* there is no plan to select in Vaultwarden
@@ -1075,6 +1090,11 @@ export class OrganizationPlansComponent implements OnInit, OnDestroy {
 
     if (this.eligibleCouponIds().length > 0) {
       request.coupons = this.eligibleCouponIds();
+    }
+
+    const trialLength = this.trialLength();
+    if (trialLength !== undefined) {
+      request.trialLength = trialLength;
     }
 
     if (this.hasProvider()) {
@@ -1179,13 +1199,6 @@ export class OrganizationPlansComponent implements OnInit, OnDestroy {
 
   private planIsEnabled(plan: PlanResponse) {
     return !plan.disabled && !plan.legacyYear;
-  }
-
-  private async determineFamilyPlan(): Promise<PlanType> {
-    const milestone3FeatureEnabled = await this.configService.getFeatureFlag(
-      FeatureFlag.PM26462_Milestone_3,
-    );
-    return milestone3FeatureEnabled ? PlanType.FamiliesAnnually : PlanType.FamiliesAnnually2025;
   }
 
   /**
@@ -1328,6 +1341,21 @@ export class OrganizationPlansComponent implements OnInit, OnDestroy {
     const tier = this.premiumOrgUpgradeService.SubscriptionTierIdFromProductTier(
       this.formGroup.controls.productTier.value!,
     );
+
+    const paymentMethod = await this.enterPaymentMethodComponent()?.tokenize();
+    if (!paymentMethod) {
+      throw new Error("Payment method validation failed");
+    }
+
+    await this.subscriberBillingClient.updatePaymentMethod(
+      { type: "account", data: account },
+      paymentMethod,
+      {
+        country: this.billingFormGroup.value.billingAddress?.country ?? "",
+        postalCode: this.billingFormGroup.value.billingAddress?.postalCode ?? "",
+      },
+    );
+
     return await this.premiumOrgUpgradeService.upgradeToOrganization(
       account!,
       organizationName,

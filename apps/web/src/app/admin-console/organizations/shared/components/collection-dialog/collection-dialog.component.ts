@@ -138,7 +138,8 @@ export class CollectionDialogComponent implements OnInit, OnDestroy {
   protected showOrgSelector = false;
   protected formGroup = this.formBuilder.group({
     name: ["", [Validators.required, BitValidators.forbiddenCharacters(["/"])]],
-    externalId: { value: "", disabled: true },
+    // set to readonly in the template
+    externalId: { value: "", disabled: false },
     parent: undefined as string | undefined,
     access: [[] as AccessItemValue[]],
     selectedOrg: "" as OrganizationId,
@@ -528,7 +529,7 @@ export class CollectionDialogComponent implements OnInit, OnDestroy {
   }
 
   private close(action: CollectionDialogAction, collection?: CollectionResponse | CollectionView) {
-    this.dialogRef.close({ action, collection } as CollectionDialogResult);
+    void this.dialogRef.close({ action, collection } as CollectionDialogResult);
   }
 }
 
@@ -626,7 +627,7 @@ function mapUserToAccessItemView(
  */
 export function openCollectionDialog(
   dialogService: DialogService,
-  config: DialogConfig<CollectionDialogParams, DialogRef<CollectionDialogResult>>,
+  config: DialogConfig<CollectionDialogParams, CollectionDialogResult>,
 ) {
   return dialogService.open<CollectionDialogResult>(CollectionDialogComponent, config);
 }

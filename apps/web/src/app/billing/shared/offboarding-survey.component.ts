@@ -172,7 +172,7 @@ export class OffboardingSurveyComponent {
       message: this.i18nService.t("canceledSubscription"),
     });
 
-    this.dialogRef.close(this.ResultType.Submitted);
+    await this.dialogRef.close(this.ResultType.Submitted);
   };
 
   private isBusinessPlan(): boolean {

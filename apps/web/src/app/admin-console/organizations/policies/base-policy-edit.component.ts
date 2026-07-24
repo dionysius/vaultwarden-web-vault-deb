@@ -1,19 +1,25 @@
-import { Directive, Input, OnInit } from "@angular/core";
-import { FormControl, UntypedFormGroup } from "@angular/forms";
-import { Observable, of } from "rxjs";
+import { Directive, OnInit, Signal, inject, input, signal } from "@angular/core";
+import { FormControl, FormGroup } from "@angular/forms";
+import { Observable, firstValueFrom, of, switchMap } from "rxjs";
 import { Constructor } from "type-fest";
 
+import { PolicyApiServiceAbstraction } from "@bitwarden/common/admin-console/abstractions/policy/policy-api.service.abstraction";
 import { PolicyType } from "@bitwarden/common/admin-console/enums";
 import { Organization } from "@bitwarden/common/admin-console/models/domain/organization";
-import { PolicyRequest } from "@bitwarden/common/admin-console/models/request/policy.request";
-import { VNextSavePolicyRequest } from "@bitwarden/common/admin-console/models/request/v-next-save-policy.request";
+import { SavePolicyRequest } from "@bitwarden/common/admin-console/models/request/save-policy.request";
 import { PolicyStatusResponse } from "@bitwarden/common/admin-console/models/response/policy-status.response";
+import { AccountService } from "@bitwarden/common/auth/abstractions/account.service";
+import { getUserId } from "@bitwarden/common/auth/services/account.service";
+import { assertNonNullish } from "@bitwarden/common/auth/utils";
 import { ConfigService } from "@bitwarden/common/platform/abstractions/config/config.service";
+import { OrganizationId } from "@bitwarden/common/types/guid";
 import { OrgKey } from "@bitwarden/common/types/key";
 import { DialogConfig, DialogRef, DialogService } from "@bitwarden/components";
+import { KeyService } from "@bitwarden/key-management";
 
 import { PolicyCategory } from "./pipes/policy-category";
 import type { PolicyEditDialogData, PolicyEditDialogResult } from "./policy-edit-dialog.component";
+import type { PolicyStep, PolicyStepResult } from "./policy-edit-dialogs/models";
 
 /**
  * Interface for policy dialog components.
@@ -24,6 +30,10 @@ export interface PolicyDialogComponent {
     dialogService: DialogService,
     config: DialogConfig<PolicyEditDialogData>,
   ) => DialogRef<PolicyEditDialogResult>;
+  openDrawer?: (
+    dialogService: DialogService,
+    config: DialogConfig<PolicyEditDialogData>,
+  ) => Promise<DialogRef<PolicyEditDialogResult> | undefined>;
 }
 
 /**
@@ -37,9 +47,10 @@ export abstract class BasePolicyEditDefinition {
   abstract name: string;
   /**
    * i18n string for the policy description.
-   * This is shown in the list of policies.
+   * This is shown in the list of policies and in the modal edit dialog.
    */
   abstract description: string;
+
   /**
    * The PolicyType enum that this policy represents.
    */
@@ -72,6 +83,40 @@ export abstract class BasePolicyEditDefinition {
   showDescription: boolean = true;
 
   /**
+   * If true, the dialog header shows an On/Off badge reflecting the saved policy state
+   * and uses the policy name as the sole title (no "Edit policy" label).
+   */
+  showEnabledBadge: boolean = false;
+
+  /**
+   * Optional i18n key for a warning callout rendered by {@link PolicyEditDrawerComponent}
+   * above the policy form.
+   */
+  warningKey?: string;
+
+  /**
+   * Optional drawer-specific configuration for this policy.
+   * When set, {@link PolicyEditDrawerComponent} is used in place of the standard
+   * modal dialog, loading {@link v2.component} and rendering the drawer-specific layout.
+   * Drawer routing is gated globally by {@link FeatureFlag.PolicyDrawers} in
+   * {@link PoliciesComponent} — there is no per-policy flag.
+   */
+  v2?: {
+    /** Component to render inside the drawer instead of {@link component}. */
+    component: Constructor<BasePolicyEditComponent>;
+    /** Drawer-only title. Falls back to {@link name} when not set. */
+    name?: string;
+    /** Drawer-only description. Falls back to {@link description} when not set. */
+    description?: string;
+    /** i18n key for a prerequisite info callout rendered by {@link PolicyEditDrawerComponent} above the policy form. */
+    prerequisiteKey?: string;
+    /** URL for an optional "learn more" link inside the prerequisite callout. */
+    prerequisiteLinkHref?: string;
+    /** i18n key for the text of {@link prerequisiteLinkHref}. */
+    prerequisiteLinkTextKey?: string;
+  };
+
+  /**
    * A method that determines whether to display this policy in the Admin Console Policies page.
    * The default implementation will always display the policy.
    * This can be used to hide the policy based on the organization's plan features or a feature flag value.
@@ -91,12 +136,14 @@ export abstract class BasePolicyEditDefinition {
  */
 @Directive()
 export abstract class BasePolicyEditComponent implements OnInit {
-  // FIXME(https://bitwarden.atlassian.net/browse/CL-903): Migrate to Signals
-  // eslint-disable-next-line @angular-eslint/prefer-signals
-  @Input() policyResponse: PolicyStatusResponse | undefined;
-  // FIXME(https://bitwarden.atlassian.net/browse/CL-903): Migrate to Signals
-  // eslint-disable-next-line @angular-eslint/prefer-signals
-  @Input() policy: BasePolicyEditDefinition | undefined;
+  readonly policyResponse = input<PolicyStatusResponse | undefined>(undefined);
+  readonly policy = input<BasePolicyEditDefinition | undefined>(undefined);
+  readonly currentStep = input<Signal<number>>(signal(0));
+  readonly organizationId = input<string | undefined>(undefined);
+
+  protected readonly accountService = inject(AccountService);
+  protected readonly keyService = inject(KeyService);
+  protected readonly policyApiService = inject(PolicyApiServiceAbstraction);
 
   /**
    * Whether the policy is enabled.
@@ -106,53 +153,70 @@ export abstract class BasePolicyEditComponent implements OnInit {
   /**
    * An optional FormGroup for additional policy configuration. Required for more complex policies only.
    */
-  data: UntypedFormGroup | undefined;
+  data: FormGroup | undefined;
+
+  /**
+   * Optional multi-step configuration for policies that require multiple steps to complete.
+   */
+  policySteps?: PolicyStep[];
 
   ngOnInit(): void {
-    this.enabled.setValue(this.policyResponse?.enabled ?? false);
+    this.enabled.setValue(this.policyResponse()?.enabled ?? false);
 
-    if (this.policyResponse?.data != null) {
+    if (this.policyResponse()?.data != null) {
       this.loadData();
     }
   }
 
-  async buildVNextRequest(orgKey: OrgKey): Promise<VNextSavePolicyRequest> {
-    if (!this.policy) {
+  async buildRequest(orgKey?: OrgKey): Promise<SavePolicyRequest> {
+    if (!this.policy()) {
       throw new Error("Policy was not found");
     }
 
-    const request: VNextSavePolicyRequest = {
-      policy: await this.buildRequest(),
+    return {
+      policy: {
+        enabled: this.enabled.value ?? false,
+        data: this.buildRequestData(),
+      },
       metadata: null,
     };
-
-    return request;
-  }
-
-  buildRequest() {
-    if (!this.policy) {
-      throw new Error("Policy was not found");
-    }
-
-    const request: PolicyRequest = {
-      enabled: this.enabled.value ?? false,
-      data: this.buildRequestData(),
-    };
-
-    return Promise.resolve(request);
   }
 
   /**
-   * This is called before the policy is saved. If it returns false, it will not be saved
-   * and the user will remain on the policy edit dialog.
-   * This can be used to trigger an additional confirmation modal before saving.
-   * */
-  confirm(): Promise<boolean> | boolean {
-    return true;
+   * Saves the policy. Subclasses that require additional steps or side effects
+   * (e.g. enabling a prerequisite policy) should override this method.
+   */
+  protected async savePolicy(): Promise<PolicyStepResult | void> {
+    if (!this.policy()) {
+      throw new Error("Policy was not found");
+    }
+
+    const orgKeys = await firstValueFrom(
+      this.accountService.activeAccount$.pipe(
+        getUserId,
+        switchMap((userId) => this.keyService.orgKeys$(userId)),
+      ),
+    );
+
+    assertNonNullish(orgKeys, "Org keys not provided");
+
+    const orgKey = orgKeys[this.organizationId() as OrganizationId];
+
+    if (orgKey == null) {
+      throw new Error("No encryption key for this organization.");
+    }
+
+    const request = await this.buildRequest(orgKey);
+
+    await this.policyApiService.putPolicy(
+      this.organizationId() ?? "",
+      this.policy()!.type,
+      request,
+    );
   }
 
   protected loadData() {
-    this.data?.patchValue(this.policyResponse?.data ?? {});
+    this.data?.patchValue(this.policyResponse()?.data ?? {});
   }
 
   /**
@@ -160,7 +224,7 @@ export abstract class BasePolicyEditComponent implements OnInit {
    */
   protected buildRequestData() {
     if (this.data != null) {
-      return this.data.value;
+      return this.data.getRawValue();
     }
 
     return null;

@@ -34,16 +34,12 @@ import { CipherView } from "@bitwarden/common/vault/models/view/cipher.view";
 import { FolderView } from "@bitwarden/common/vault/models/view/folder.view";
 import { LoginView } from "@bitwarden/common/vault/models/view/login.view";
 import { AsyncActionsModule, ButtonModule, ItemModule, ToastService } from "@bitwarden/components";
-import {
-  CipherFormConfig,
-  CipherFormGenerationService,
-  PasswordRepromptService,
-} from "@bitwarden/vault";
 // FIXME: remove `/apps` import from `/libs`
 // FIXME: remove `src` and fix import
 // eslint-disable-next-line no-restricted-imports
 import { PreloadedEnglishI18nModule } from "@bitwarden/web-vault/src/app/core/tests";
 
+import { CipherFormConfig, CipherFormGenerationService, PasswordRepromptService } from "..";
 import { SshImportPromptService } from "../services/ssh-import-prompt.service";
 
 import { CipherFormService } from "./abstractions/cipher-form.service";
@@ -151,6 +147,7 @@ export default {
               hasBadgeDismissed: true,
               hasSpotlightDismissed: true,
             } as NudgeStatus),
+            showNudgeSpotlight$: () => new BehaviorSubject(false),
           },
         },
         {
@@ -273,7 +270,7 @@ export default {
         {
           provide: PolicyService,
           useValue: {
-            policiesByType$: new BehaviorSubject([]),
+            policiesByType$: () => new BehaviorSubject([]),
           },
         },
         {

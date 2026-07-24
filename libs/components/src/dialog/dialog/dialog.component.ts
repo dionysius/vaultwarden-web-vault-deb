@@ -3,6 +3,7 @@ import { CdkScrollable } from "@angular/cdk/scrolling";
 import { CommonModule } from "@angular/common";
 import {
   Component,
+  contentChild,
   effect,
   inject,
   viewChild,
@@ -31,6 +32,7 @@ import { DialogRef } from "../dialog.service";
 import { DialogCloseDirective } from "../directives/dialog-close.directive";
 import { DialogTitleContainerDirective } from "../directives/dialog-title-container.directive";
 import { DrawerService } from "../drawer.service";
+import { DialogFooterDirective } from "../simple-dialog/simple-dialog.component";
 
 type DialogSize = "small" | "default" | "large";
 
@@ -101,7 +103,6 @@ export class DialogComponent implements AfterViewInit {
 
   protected dialogRef = inject(DialogRef, { optional: true });
   protected bodyHasScrolledFrom = hasScrolledFrom(this.scrollableBody);
-
   private scrollableBody$ = toObservable(this.scrollableBody);
   private scrollBottom$ = toObservable(this.scrollBottom);
 
@@ -110,6 +111,9 @@ export class DialogComponent implements AfterViewInit {
       hasScrollableContent$(body.getElementRef().nativeElement, bottom.nativeElement),
     ),
   );
+
+  private readonly footerDirective = contentChild(DialogFooterDirective);
+  protected readonly hasFooter = computed(() => !!this.footerDirective());
 
   /** Background color */
   readonly background = input<"default" | "alt">("default");
@@ -128,11 +132,6 @@ export class DialogComponent implements AfterViewInit {
    * Subtitle to show in the dialog's header
    */
   readonly subtitle = input<string>();
-
-  /**
-   * Disable the built-in padding on the dialog, for use with tabbed dialogs.
-   */
-  readonly disablePadding = input(false, { transform: booleanAttribute });
 
   /**
    * Disable animations for the dialog.
@@ -183,7 +182,7 @@ export class DialogComponent implements AfterViewInit {
 
   handleEsc(event: Event) {
     if (!this.dialogRef?.disableClose) {
-      this.dialogRef?.close();
+      void this.dialogRef?.close();
       event.stopPropagation();
     }
   }

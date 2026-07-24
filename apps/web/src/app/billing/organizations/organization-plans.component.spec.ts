@@ -34,6 +34,7 @@ import {
   PreviewInvoiceClient,
   SubscriberBillingClient,
 } from "@bitwarden/web-vault/app/billing/clients";
+import { DEFAULT_TRIAL_LENGTH_DAYS } from "@bitwarden/web-vault/app/billing/constants";
 
 import { OrganizationInformationComponent } from "../../admin-console/organizations/create/organization-information.component";
 import { PremiumOrgUpgradeService } from "../individual/upgrade/premium-org-upgrade-payment/services/premium-org-upgrade.service";
@@ -502,6 +503,12 @@ describe("OrganizationPlansComponent", () => {
         postalCode: "12345",
       }),
       updatePaymentMethod: jest.fn().mockResolvedValue(undefined),
+      getPaymentMethod: jest.fn().mockResolvedValue({
+        type: "card",
+        brand: "visa",
+        last4: "4242",
+        expiration: "12/2025",
+      }),
     } as any;
 
     mockPreviewInvoiceClient = {
@@ -552,6 +559,7 @@ describe("OrganizationPlansComponent", () => {
         }
         throw new Error(`Unsupported product tier: ${productTier}`);
       }),
+      isBankAccountNotSupportedError: jest.fn().mockReturnValue(false),
     } as any;
 
     mockDiscountSubject = new Subject<SubscriptionDiscount[]>();
@@ -731,26 +739,12 @@ describe("OrganizationPlansComponent", () => {
       });
     });
 
-    describe("feature flags", () => {
-      it("should use FamiliesAnnually when PM26462_Milestone_3 is enabled", async () => {
-        mockConfigService.getFeatureFlag.mockResolvedValue(true);
+    it("should use FamiliesAnnually as the family plan", async () => {
+      fixture.detectChanges();
+      await fixture.whenStable();
 
-        fixture.detectChanges();
-        await fixture.whenStable();
-
-        const familyPlan = component["_familyPlan"];
-        expect(familyPlan).toBe(PlanType.FamiliesAnnually);
-      });
-
-      it("should use FamiliesAnnually2025 when feature flag is disabled", async () => {
-        mockConfigService.getFeatureFlag.mockResolvedValue(false);
-
-        fixture.detectChanges();
-        await fixture.whenStable();
-
-        const familyPlan = component["_familyPlan"];
-        expect(familyPlan).toBe(PlanType.FamiliesAnnually2025);
-      });
+      const familyPlan = component["_familyPlan"];
+      expect(familyPlan).toBe(PlanType.FamiliesAnnually);
     });
 
     describe("initialPlan and initialProductTier inputs", () => {
@@ -1685,6 +1679,49 @@ describe("OrganizationPlansComponent", () => {
       });
     });
 
+    it("should include trialLength in org creation request when trialLength input is set", async () => {
+      fixture.componentRef.setInput("trialLength", 14);
+
+      component["formGroup"].patchValue({
+        name: "Trial Org",
+        billingEmail: "trial@example.com",
+        productTier: ProductTierType.Enterprise,
+        plan: PlanType.EnterpriseAnnually,
+        additionalSeats: 10,
+      });
+
+      component["billingFormGroup"].controls.billingAddress.patchValue({
+        country: "US",
+        postalCode: "12345",
+        line1: "123 Street",
+        city: "City",
+        state: "CA",
+      });
+
+      mockKeyService.makeOrgKey.mockResolvedValue([
+        { encryptedString: "mock-key" },
+        {} as any,
+      ] as any);
+
+      mockEncryptService.encryptString.mockResolvedValue({
+        encryptedString: "mock-collection",
+      } as any);
+
+      mockKeyService.makeKeyPair.mockResolvedValue([
+        "public-key",
+        { encryptedString: "private-key" },
+      ] as any);
+
+      mockOrganizationApiService.create.mockResolvedValue({ id: "trial-org-id" } as any);
+
+      setupMockPaymentMethodComponent(component, "mock-token", "mock-type");
+
+      await component.submit();
+
+      const request = mockOrganizationApiService.create.mock.calls[0][0];
+      expect(request.trialLength).toBe(14);
+    });
+
     it("should not navigate away when in trial flow", async () => {
       component["isInTrialFlow"] = true;
 
@@ -1999,6 +2036,67 @@ describe("OrganizationPlansComponent", () => {
 
       expect(typeof paymentDesc).toBe("string");
       expect(paymentDesc.length).toBeGreaterThan(0);
+    });
+
+    it("should use paymentChargedWithTrialSpecificLength with plan's trialPeriodDays when on a trial plan and no custom trialLength", () => {
+      component["formGroup"].controls.productTier.setValue(ProductTierType.Enterprise);
+      component.changedProduct();
+
+      const paymentDesc = component.paymentDesc;
+
+      expect(paymentDesc).not.toBeNull();
+      expect(mockI18nService.t).toHaveBeenCalledWith(
+        "paymentChargedWithTrialSpecificLength",
+        DEFAULT_TRIAL_LENGTH_DAYS,
+      );
+    });
+
+    it("should use paymentChargedWithTrialSpecificLength with custom trialLength when provided", () => {
+      fixture.componentRef.setInput("trialLength", 14);
+      component["formGroup"].controls.productTier.setValue(ProductTierType.Enterprise);
+      component.changedProduct();
+
+      const paymentDesc = component.paymentDesc;
+
+      expect(paymentDesc).not.toBeNull();
+      expect(mockI18nService.t).toHaveBeenCalledWith("paymentChargedWithTrialSpecificLength", 14);
+    });
+
+    it("should not show trial when trialLength input is 0", () => {
+      fixture.componentRef.setInput("trialLength", 0);
+      component["formGroup"].controls.productTier.setValue(ProductTierType.Enterprise);
+      component.changedProduct();
+
+      expect(component.freeTrial()).toBe(false);
+    });
+
+    it("should not show trial when trialPeriodDays is 0", () => {
+      component["passwordManagerPlans"] = [
+        {
+          type: PlanType.EnterpriseAnnually,
+          productTier: ProductTierType.Enterprise,
+          name: "Enterprise",
+          isAnnual: true,
+          canBeUsedByBusiness: true,
+          trialPeriodDays: 0,
+          upgradeSortOrder: 4,
+          displaySortOrder: 4,
+          PasswordManager: {
+            basePrice: 0,
+            seatPrice: 72,
+            hasAdditionalSeatsOption: true,
+            hasAdditionalStorageOption: true,
+            hasPremiumAccessOption: true,
+            baseStorageGb: 1,
+            additionalStoragePricePerGb: 4,
+            premiumAccessOptionPrice: 40,
+          },
+          SecretsManager: null,
+        } as PlanResponse,
+      ];
+      component["formGroup"].controls.plan.setValue(PlanType.EnterpriseAnnually);
+
+      expect(component.freeTrial()).toBe(false);
     });
 
     it("should display tax ID field for business plans", () => {
@@ -2316,10 +2414,16 @@ describe("OrganizationPlansComponent", () => {
       });
 
       it("should call premiumOrgUpgradeService.upgradeToOrganization() instead of create()", async () => {
+        setupMockPaymentMethodComponent(component, "mock_token", "card");
         organizationsSubject.next([{ id: newOrgId, name: newOrgName, isOwner: true } as any]);
 
         await component.submit();
 
+        expect(mockSubscriberBillingClient.updatePaymentMethod).toHaveBeenCalledWith(
+          expect.objectContaining({ type: "account" }),
+          { token: "mock_token", type: "card" },
+          expect.objectContaining({ country: "US", postalCode: "12345" }),
+        );
         expect(mockPremiumOrgUpgradeService.upgradeToOrganization).toHaveBeenCalledWith(
           expect.objectContaining({ id: "user-id" }),
           newOrgName,
@@ -2334,7 +2438,36 @@ describe("OrganizationPlansComponent", () => {
         });
       });
 
+      it("should not call upgradeToOrganization when tokenization fails", async () => {
+        setupMockPaymentMethodComponent(component); // Simulates tokenization failure (returns null)
+
+        await component.submit();
+
+        expect(mockPremiumOrgUpgradeService.upgradeToOrganization).not.toHaveBeenCalled();
+      });
+
+      it("should show an error toast when the service rejects an unverified bank account payment method", async () => {
+        setupMockPaymentMethodComponent(component, "mock_token", "card");
+        organizationsSubject.next([{ id: newOrgId, name: newOrgName, isOwner: true } as any]);
+        const bankAccountError = new Error(
+          "Unverified bank account payment method is not supported for this upgrade",
+        );
+        mockPremiumOrgUpgradeService.upgradeToOrganization.mockRejectedValue(bankAccountError);
+        mockPremiumOrgUpgradeService.isBankAccountNotSupportedError.mockReturnValue(true);
+
+        await component.submit();
+
+        expect(mockPremiumOrgUpgradeService.isBankAccountNotSupportedError).toHaveBeenCalledWith(
+          bankAccountError,
+        );
+        expect(mockToastService.showToast).toHaveBeenCalledWith({
+          variant: "error",
+          message: "unverifiedBankAccountNotSupportedForUpgrade",
+        });
+      });
+
       it("should navigate to the new org and show success toast after premium upgrade", async () => {
+        setupMockPaymentMethodComponent(component, "mock_token", "card");
         organizationsSubject.next([{ id: newOrgId, name: newOrgName, isOwner: true } as any]);
 
         await component.submit();

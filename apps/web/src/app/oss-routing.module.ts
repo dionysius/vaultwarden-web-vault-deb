@@ -73,6 +73,7 @@ import { EmergencyAccessViewComponent } from "./auth/settings/emergency-access/v
 import { SecurityRoutingModule } from "./auth/settings/security/security-routing.module";
 import { VerifyEmailTokenComponent } from "./auth/verify-email-token.component";
 import { VerifyRecoverDeleteComponent } from "./auth/verify-recover-delete.component";
+import { PremiumCheckoutSuccessComponent } from "./billing/individual/premium-checkout/premium-checkout-success.component";
 import { SponsoredFamiliesComponent } from "./billing/settings/sponsored-families.component";
 import { CompleteTrialInitiationComponent } from "./billing/trial-initiation/complete-trial-initiation/complete-trial-initiation.component";
 import { freeTrialTextResolver } from "./billing/trial-initiation/complete-trial-initiation/resolver/free-trial-text.resolver";
@@ -88,6 +89,7 @@ import { SMLandingComponent } from "./secrets-manager/secrets-manager-landing/sm
 import { AppearanceComponent } from "./settings/appearance.component";
 import { DomainRulesComponent } from "./settings/domain-rules.component";
 import { CredentialGeneratorComponent } from "./tools/credential-generator/credential-generator.component";
+import { unsavedSendEditsGuard } from "./tools/guards/unsaved-send-edits.guard";
 import { AccessComponent, SendAccessExplainerComponent } from "./tools/send/send-access";
 import { SendComponent } from "./tools/send/send.component";
 import { BrowserExtensionPromptInstallComponent } from "./vault/components/browser-extension-prompt/browser-extension-prompt-install.component";
@@ -604,6 +606,16 @@ const routes: Routes = [
         ],
       },
       {
+        path: "premium/checkout/success",
+        data: {
+          titleId: "paymentSuccessful",
+          pageIcon: null,
+          doNotSaveUrl: true,
+          maxWidth: "lg",
+        } satisfies RouteDataProperties & AnonLayoutWrapperData,
+        children: [{ path: "", component: PremiumCheckoutSuccessComponent }],
+      },
+      {
         path: AuthRoute.ChangePassword,
         component: ChangePasswordComponent,
         canActivate: [authGuard],
@@ -642,7 +654,7 @@ const routes: Routes = [
         component: SendComponent,
         data: { titleId: "send" } satisfies RouteDataProperties,
         canActivate: [
-          organizationPolicyGuard((userId, configService, policyService) =>
+          organizationPolicyGuard((userId, policyService, configService) =>
             configService
               .getFeatureFlag$(FeatureFlag.SendControls)
               .pipe(
@@ -660,6 +672,7 @@ const routes: Routes = [
               ),
           ),
         ],
+        canDeactivate: [unsavedSendEditsGuard],
       },
       {
         path: "sm-landing",
@@ -697,7 +710,7 @@ const routes: Routes = [
           {
             path: "data-recovery",
             component: DataRecoveryComponent,
-            data: { titleId: "dataRecovery" } satisfies RouteDataProperties,
+            data: { titleId: "troubleshooting" } satisfies RouteDataProperties,
           },
           {
             path: "domain-rules",

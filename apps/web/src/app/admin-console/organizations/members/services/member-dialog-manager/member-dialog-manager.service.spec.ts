@@ -2,10 +2,14 @@ import { mock, MockProxy } from "jest-mock-extended";
 import { of } from "rxjs";
 
 import { UserNamePipe } from "@bitwarden/angular/pipes/user-name.pipe";
-import { OrganizationUserStatusType } from "@bitwarden/common/admin-console/enums";
+import {
+  OrganizationUserStatusType,
+  OrganizationUserType,
+} from "@bitwarden/common/admin-console/enums";
 import { Organization } from "@bitwarden/common/admin-console/models/domain/organization";
 import { ProductTierType } from "@bitwarden/common/billing/enums";
 import { OrganizationBillingMetadataResponse } from "@bitwarden/common/billing/models/response/organization-billing-metadata.response";
+import { ConfigService } from "@bitwarden/common/platform/abstractions/config/config.service";
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 import { DialogService, ToastService } from "@bitwarden/components";
 
@@ -18,6 +22,7 @@ import { BulkEnableSecretsManagerDialogComponent } from "../../components/bulk/b
 import { BulkRemoveDialogComponent } from "../../components/bulk/bulk-remove-dialog.component";
 import { BulkRestoreRevokeComponent } from "../../components/bulk/bulk-restore-revoke.component";
 import { BulkStatusComponent } from "../../components/bulk/bulk-status.component";
+import { EditMemberDialogComponent } from "../../components/edit-member-dialog";
 import {
   MemberDialogComponent,
   MemberDialogResult,
@@ -29,6 +34,7 @@ import { MemberDialogManagerService } from "./member-dialog-manager.service";
 
 describe("MemberDialogManagerService", () => {
   let service: MemberDialogManagerService;
+  let configService: MockProxy<ConfigService>;
   let dialogService: MockProxy<DialogService>;
   let i18nService: MockProxy<I18nService>;
   let toastService: MockProxy<ToastService>;
@@ -40,13 +46,17 @@ describe("MemberDialogManagerService", () => {
   let mockBillingMetadata: OrganizationBillingMetadataResponse;
 
   beforeEach(() => {
+    configService = mock<ConfigService>();
     dialogService = mock<DialogService>();
     i18nService = mock<I18nService>();
     toastService = mock<ToastService>();
     userNamePipe = mock<UserNamePipe>();
     deleteManagedMemberWarningService = mock<DeleteManagedMemberWarningService>();
 
+    configService.getFeatureFlag.mockResolvedValue(false);
+
     service = new MemberDialogManagerService(
+      configService,
       dialogService,
       i18nService,
       toastService,
@@ -65,11 +75,13 @@ describe("MemberDialogManagerService", () => {
       id: "user-id",
       email: "test@example.com",
       name: "Test User",
+      type: OrganizationUserType.User,
       usesKeyConnector: false,
       status: OrganizationUserStatusType.Confirmed,
       hasMasterPassword: true,
       accessSecretsManager: false,
-      managedByOrganization: false,
+      claimedByOrganization: false,
+      twoFactorEnabled: false,
     } as OrganizationUserView;
 
     mockBillingMetadata = {
@@ -146,7 +158,7 @@ describe("MemberDialogManagerService", () => {
       const result = await service.openEditDialog(mockUser, mockOrganization, mockBillingMetadata);
 
       expect(dialogService.open).toHaveBeenCalledWith(
-        MemberDialogComponent,
+        EditMemberDialogComponent,
         expect.objectContaining({
           data: {
             kind: "Edit",
@@ -156,7 +168,7 @@ describe("MemberDialogManagerService", () => {
             usesKeyConnector: false,
             isOnSecretsManagerStandalone: false,
             initialTab: MemberDialogTab.Role,
-            managedByOrganization: false,
+            claimedByOrganization: false,
           },
         }),
       );
@@ -171,14 +183,14 @@ describe("MemberDialogManagerService", () => {
         mockUser,
         mockOrganization,
         mockBillingMetadata,
-        MemberDialogTab.AccountRecovery,
+        MemberDialogTab.Collections,
       );
 
       expect(dialogService.open).toHaveBeenCalledWith(
-        MemberDialogComponent,
+        EditMemberDialogComponent,
         expect.objectContaining({
           data: expect.objectContaining({
-            initialTab: 0, // MemberDialogTab.AccountRecovery is 0
+            initialTab: MemberDialogTab.Collections,
           }),
         }),
       );
@@ -195,7 +207,16 @@ describe("MemberDialogManagerService", () => {
   });
 
   describe("openAccountRecoveryDialog", () => {
-    it("should open account recovery dialog with correct parameters", async () => {
+    const expectedData = {
+      name: "Test User",
+      email: "test@example.com",
+      organizationId: "org-id",
+      organizationUserId: "user-id",
+      organizationUserType: OrganizationUserType.User,
+      twoFactorEnabled: false,
+    };
+
+    it("should open the account recovery dialog", async () => {
       const mockDialogRef = { closed: of("recovered") };
       dialogService.open.mockReturnValue(mockDialogRef as any);
 
@@ -203,14 +224,7 @@ describe("MemberDialogManagerService", () => {
 
       expect(dialogService.open).toHaveBeenCalledWith(
         AccountRecoveryDialogComponent,
-        expect.objectContaining({
-          data: {
-            name: "Test User",
-            email: mockUser.email,
-            organizationId: mockOrganization.id,
-            organizationUserId: mockUser.id,
-          },
-        }),
+        expect.objectContaining({ data: expectedData }),
       );
       expect(result).toBe("recovered");
     });

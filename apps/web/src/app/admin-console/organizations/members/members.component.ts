@@ -26,6 +26,8 @@ import {
   OrganizationUserStatusType,
   OrganizationUserType,
   PolicyType,
+  RevocationReasonMessageMap,
+  RevocationReasonType,
 } from "@bitwarden/common/admin-console/enums";
 import { Organization } from "@bitwarden/common/admin-console/models/domain/organization";
 import { Policy } from "@bitwarden/common/admin-console/models/domain/policy";
@@ -51,7 +53,7 @@ import {
 } from "../../common/people-table-data-source";
 import { OrganizationUserView } from "../core/views/organization-user.view";
 
-import { AccountRecoveryDialogResultType } from "./components/account-recovery/account-recovery-dialog.component";
+import { AccountRecoveryDialogResultType } from "./components/account-recovery";
 import { MemberDialogResult, MemberDialogTab } from "./components/member-dialog";
 import {
   MemberDialogManagerService,
@@ -59,10 +61,8 @@ import {
   OrganizationMembersService,
 } from "./services";
 import { DeleteManagedMemberWarningService } from "./services/delete-managed-member/delete-managed-member-warning.service";
-import {
-  MemberActionsService,
-  MemberActionResult,
-} from "./services/member-actions/member-actions.service";
+import { MemberActionsService } from "./services/member-actions/member-actions.service";
+import { MemberActionResult } from "./services/member-actions/member-actions.types";
 
 interface BulkMemberFlags {
   showBulkRestoreUsers: boolean;
@@ -490,7 +490,7 @@ export class MembersComponent {
     user: OrganizationUserView,
     sideEffect?: () => void | Promise<void>,
   ) {
-    if (result.error != null) {
+    if (result.success === false) {
       this.toastService.showToast({
         variant: "error",
         message: result.error,
@@ -523,9 +523,9 @@ export class MembersComponent {
       showBulkReinviteUsers: members.every((m) => m.status == OrganizationUserStatusType.Invited),
       showBulkRestoreUsers: members.every((m) => m.status == OrganizationUserStatusType.Revoked),
       showBulkRevokeUsers: members.every((m) => m.status != OrganizationUserStatusType.Revoked),
-      showBulkRemoveUsers: members.every((m) => !m.managedByOrganization),
+      showBulkRemoveUsers: members.every((m) => !m.claimedByOrganization),
       showBulkDeleteUsers: members.every(
-        (m) => m.managedByOrganization && validStatuses.includes(m.status),
+        (m) => m.claimedByOrganization && validStatuses.includes(m.status),
       ),
     };
 
@@ -546,4 +546,7 @@ export class MembersComponent {
       this.validationService.showError(result.error.message);
     }
   };
+
+  getRevocationReasonTranslationKey = (reason?: RevocationReasonType) =>
+    RevocationReasonMessageMap[reason || RevocationReasonType.Unknown];
 }

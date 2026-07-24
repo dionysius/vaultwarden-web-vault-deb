@@ -10,6 +10,7 @@ import eslintPluginTailwindCSS from "eslint-plugin-tailwindcss";
 import rxjs from "eslint-plugin-rxjs";
 import angularRxjs from "eslint-plugin-rxjs-angular";
 import storybook from "eslint-plugin-storybook";
+import jest from "eslint-plugin-jest";
 
 import platformPlugins from "./libs/eslint/platform/index.mjs";
 import componentPlugins from "./libs/eslint/components/index.mjs";
@@ -82,6 +83,7 @@ export default tseslint.config(
       "@bitwarden/platform/required-using": "error",
       "@bitwarden/platform/no-enums": "error",
       "@bitwarden/platform/no-page-script-url-leakage": "error",
+      "@bitwarden/platform/no-unawaited-using-return": "error",
       "@bitwarden/components/require-theme-colors-in-svg": "error",
 
       "@typescript-eslint/explicit-member-accessibility": ["error", { accessibility: "no-public" }],
@@ -126,6 +128,11 @@ export default tseslint.config(
               target: ["libs/**/*"],
               from: ["apps/**/*"],
               message: "Libs should not import app-specific code.",
+            },
+            {
+              target: ["libs/**/*"],
+              from: ["bitwarden_license/**/*"],
+              message: "Libs should not import licensed code from bitwarden_license/.",
             },
             {
               // avoid specific frameworks or large dependencies in common
@@ -198,12 +205,18 @@ export default tseslint.config(
     },
     rules: {
       "@angular-eslint/template/button-has-type": "error",
+      "@angular-eslint/template/elements-content": [
+        "error",
+        {
+          allowList: ["bitIconButton", "bit-chip-action", "appA11yTitle", "aria-labelledby"],
+        },
+      ],
       "tailwindcss/no-custom-classname": [
         "error",
         {
           // uses negative lookahead to whitelist any class that doesn't start with "tw-"
           // in other words: classnames that start with tw- must be valid TailwindCSS classes
-          whitelist: ["(?!(tw)\\-).*", "tw-app-region-drag", "tw-app-region-no-drag"],
+          whitelist: ["(?!(tw)\\-).*", "tw-app-region-drag", "tw-app-region-no-drag", "vw-.*"],
         },
       ],
       "tailwindcss/enforces-negative-arbitrary-values": "error",
@@ -215,6 +228,7 @@ export default tseslint.config(
       ],
       "@bitwarden/components/no-bwi-class-usage": "warn",
       "@bitwarden/components/no-icon-children-in-bit-button": "warn",
+      "@bitwarden/components/no-bit-dialog-wrapper": "error",
     },
   },
 
@@ -374,6 +388,7 @@ export default tseslint.config(
             "filter.*", // Temporary until filters are migrated
             "tw-app-region*", // Custom utility for native passkey modals
             "tw-@container",
+            "vw-.*",
           ],
         },
       ],
@@ -626,6 +641,16 @@ export default tseslint.config(
     },
   },
 
+  // Within a package, import sibling code via relative paths rather than the package's own
+  // `@bitwarden/*` alias. Scoped to libs here; the rule self-limits to the file's owning package.
+  // https://contributing.bitwarden.com/contributing/code-style/web/typescript#imports-within-the-same-package
+  {
+    files: ["libs/**/*.ts", "bitwarden_license/bit-common/src/**/*.ts"],
+    rules: {
+      "@bitwarden/platform/no-self-package-import": "error",
+    },
+  },
+
   /// Team overrides
   {
     files: [
@@ -669,6 +694,17 @@ export default tseslint.config(
           ],
         },
       ],
+    },
+  },
+
+  // Jest test files configuration
+  {
+    files: ["**/*.spec.ts", "**/*.spec.js"],
+    plugins: {
+      jest,
+    },
+    rules: {
+      "jest/no-alias-methods": "error",
     },
   },
 
