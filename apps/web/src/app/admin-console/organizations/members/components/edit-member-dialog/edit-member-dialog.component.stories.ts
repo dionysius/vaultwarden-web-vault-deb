@@ -1,6 +1,7 @@
 import { importProvidersFrom } from "@angular/core";
 import { applicationConfig, Meta, moduleMetadata, StoryObj } from "@storybook/angular";
 import { of } from "rxjs";
+import { getByText, userEvent } from "storybook/test";
 
 import { CollectionAdminService } from "@bitwarden/admin-console/common";
 import { OrganizationService } from "@bitwarden/common/admin-console/abstractions/organization/organization.service.abstraction";
@@ -11,9 +12,17 @@ import {
 import { PermissionsApi } from "@bitwarden/common/admin-console/models/api/permissions.api";
 import { Organization } from "@bitwarden/common/admin-console/models/domain/organization";
 import { AccountService } from "@bitwarden/common/auth/abstractions/account.service";
+import { OrganizationMetadataServiceAbstraction } from "@bitwarden/common/billing/abstractions/organization-metadata.service.abstraction";
 import { ProductTierType } from "@bitwarden/common/billing/enums";
+import { ProblemDetailsErrorResponse } from "@bitwarden/common/models/response/problem-details-error.response";
+import { ConfigService } from "@bitwarden/common/platform/abstractions/config/config.service";
+import { LogService } from "@bitwarden/common/platform/abstractions/log.service";
+import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
+import { ValidationService } from "@bitwarden/common/platform/abstractions/validation.service";
 import { OrganizationId, UserId } from "@bitwarden/common/types/guid";
 import { DIALOG_DATA, DialogRef, DialogService, ToastService } from "@bitwarden/components";
+import { Vfo1TerminologyService } from "@bitwarden/vault";
+import { BillingConstraintService } from "@bitwarden/web-vault/app/billing/members/billing-constraint/billing-constraint.service";
 
 import { PreloadedEnglishI18nModule } from "../../../../../core/tests";
 import { GroupApiService, OrganizationUserAdminView, UserAdminService } from "../../../core";
@@ -57,6 +66,7 @@ function mockUserDetails(
     ssoExternalId: "",
     permissions: new PermissionsApi(),
     accessSecretsManager: false,
+    accessPam: false,
     resetPasswordEnrolled: false,
     hasMasterPassword: true,
     claimedByOrganization: false,
@@ -70,10 +80,12 @@ function defaultParams(overrides: Partial<EditMemberDialogParams> = {}): EditMem
     organizationId: ORG_ID,
     organizationUserId: USER_ID,
     name: "Alice Smith",
+    email: "alice@example.com",
+    createdDate: new Date("2026-01-16T10:02:00Z"),
     usesKeyConnector: false,
     claimedByOrganization: false,
     isOnSecretsManagerStandalone: false,
-    initialTab: MemberDialogTab.Role,
+    initialTab: MemberDialogTab.Details,
     ...overrides,
   };
 }
@@ -125,9 +137,42 @@ const mockDeleteManagedMemberWarningService = {
   acknowledgeWarning: () => Promise.resolve(),
 };
 
+const mockBillingConstraintService = {
+  checkSeatLimit: () => ({ canAddUsers: true }),
+  seatLimitReached: () => Promise.resolve(false),
+};
+
+const mockOrganizationMetadataService = {
+  getOrganizationMetadata$: () => of({ organizationOccupiedSeats: 0 } as any),
+  refreshMetadataCache: () => {},
+};
+
+const mockValidationService: Partial<ValidationService> = {
+  showError: () => [],
+};
+
+const mockLogService: Partial<LogService> = {
+  error: () => {},
+};
+
+const mockPlatformUtilsService: Partial<PlatformUtilsService> = {
+  copyToClipboard: () => {},
+};
+
+function makeConfigService() {
+  return {
+    getFeatureFlag: () => Promise.resolve(false),
+  };
+}
+
 function makeOrganizationService(org: Organization) {
   return { organizations$: () => of([org]) };
 }
+
+type StoryArgs = {
+  /** Toggles the vfo1-foundation flag - "Collection" copy becomes "Shared folder" copy. */
+  vfo1FoundationEnabled: boolean;
+};
 
 const sharedDecorators = [
   moduleMetadata({
@@ -145,6 +190,17 @@ const sharedDecorators = [
         provide: DeleteManagedMemberWarningService,
         useValue: mockDeleteManagedMemberWarningService,
       },
+      {
+        provide: OrganizationMetadataServiceAbstraction,
+        useValue: mockOrganizationMetadataService,
+      },
+      {
+        provide: BillingConstraintService,
+        useValue: mockBillingConstraintService,
+      },
+      { provide: ValidationService, useValue: mockValidationService },
+      { provide: LogService, useValue: mockLogService },
+      { provide: PlatformUtilsService, useValue: mockPlatformUtilsService },
     ],
   }),
   applicationConfig({
@@ -156,20 +212,48 @@ export default {
   title: "Admin Console/Organizations/Members/Edit Member Dialog",
   component: EditMemberDialogComponent,
   decorators: sharedDecorators,
-} as Meta;
+  argTypes: {
+    vfo1FoundationEnabled: {
+      control: "boolean",
+      description: 'Toggle the vfo1-foundation flag ("Collection" → "Shared folder" copy).',
+      name: "Shared folder terminology (flag on)",
+    },
+  },
+  args: {
+    vfo1FoundationEnabled: false,
+  },
+} as Meta<StoryArgs>;
 
-type Story = StoryObj<EditMemberDialogComponent>;
+type Story = StoryObj<StoryArgs>;
 
 function makeRender(
   params: EditMemberDialogParams,
   org: Organization,
   userDetails?: OrganizationUserAdminView,
 ): Story["render"] {
-  return () => ({
+  return ({ vfo1FoundationEnabled }) => ({
     moduleMetadata: {
       providers: [
-        { provide: DIALOG_DATA, useValue: params },
+        {
+          provide: DIALOG_DATA,
+          useValue: {
+            ...params,
+            initialTab:
+              params.initialTab !== MemberDialogTab.Groups &&
+              params.initialTab !== MemberDialogTab.Collections
+                ? MemberDialogTab.Details
+                : params.initialTab,
+          },
+        },
         { provide: OrganizationService, useValue: makeOrganizationService(org) },
+        { provide: ConfigService, useValue: makeConfigService() },
+        {
+          provide: Vfo1TerminologyService,
+          useValue: {
+            enabled: () => vfo1FoundationEnabled,
+            iconClass: (icon: string) => icon,
+          },
+        },
         ...(userDetails
           ? [
               {
@@ -185,14 +269,14 @@ function makeRender(
 }
 
 /**
- * Default confirmed member — Role tab, Revoke + Remove buttons in footer.
+ * Default confirmed member.
  */
 export const Default: Story = {
   render: makeRender(defaultParams(), mockOrganization()),
 };
 
 /**
- * Organization with groups enabled — Groups tab is visible between Role and Collections.
+ * Organization with groups enabled — Groups tab visible.
  */
 export const WithGroups: Story = {
   render: makeRender(
@@ -203,14 +287,14 @@ export const WithGroups: Story = {
 };
 
 /**
- * Organization with Secrets Manager — SM access section appears at the bottom of the Role tab.
+ * Organization with Secrets Manager.
  */
 export const WithSecretsManager: Story = {
   render: makeRender(defaultParams(), mockOrganization({ useSecretsManager: true })),
 };
 
 /**
- * Enterprise org with custom permissions enabled — Custom role option is selectable.
+ * Enterprise org with custom permissions enabled.
  */
 export const WithCustomPermissions: Story = {
   render: makeRender(
@@ -220,7 +304,7 @@ export const WithCustomPermissions: Story = {
 };
 
 /**
- * Revoked member — "Revoked" badge appears in the dialog header and the footer shows Restore instead of Revoke.
+ * Revoked member — "Revoked" badge in the header.
  */
 export const RevokedMember: Story = {
   render: makeRender(
@@ -242,6 +326,21 @@ export const ClaimedByOrganization: Story = {
 };
 
 /**
+ * Member provisioned through Directory Connector and SSO — the read-only External ID and
+ * SSO External ID fields are shown on the Details tab.
+ */
+export const WithExternalIds: Story = {
+  render: makeRender(
+    defaultParams(),
+    mockOrganization(),
+    mockUserDetails({
+      externalId: "1308a41a-5c5b-46d3-9573-abad9b0608dc",
+      ssoExternalId: "alice@example.com",
+    }),
+  ),
+};
+
+/**
  * Opens directly on the Collections tab.
  */
 export const CollectionsTab: Story = {
@@ -249,4 +348,100 @@ export const CollectionsTab: Story = {
     defaultParams({ initialTab: MemberDialogTab.Collections }),
     mockOrganization(),
   ),
+};
+
+// ─── Flag ON (vfo1-foundation: "Collection" → "Shared folder" terminology) ───
+
+/**
+ * Collections tab with the vfo1-foundation flag on — renders "Shared folder" terminology,
+ * including the role hint text and the tab/column labels.
+ */
+export const CollectionsTabSharedFolderTerminology: Story = {
+  args: { vfo1FoundationEnabled: true },
+  render: makeRender(
+    defaultParams({ initialTab: MemberDialogTab.Collections }),
+    mockOrganization(),
+  ),
+};
+
+/**
+ * Custom permissions with the vfo1-foundation flag on — the nested-checkbox labels
+ * ("Manage all shared folders", "Create new shared folders", etc.) use the new terminology
+ * while the underlying form-control names are unchanged.
+ */
+export const WithCustomPermissionsSharedFolderTerminology: Story = {
+  args: { vfo1FoundationEnabled: true },
+  render: makeRender(
+    defaultParams(),
+    mockOrganization({ useCustomPermissions: true, productTierType: ProductTierType.Enterprise }),
+  ),
+};
+
+/**
+ * Details tab with email editing enabled — member is claimed by the org and has no master
+ * password, so the email field is editable.
+ */
+export const DetailsTabEditEmail: Story = {
+  render: makeRender(
+    defaultParams({ claimedByOrganization: true, hasMasterPassword: false }),
+    mockOrganization({ productTierType: ProductTierType.Enterprise }),
+    mockUserDetails({ claimedByOrganization: true, hasMasterPassword: false }),
+  ),
+};
+
+/**
+ * Details tab — server rejects the email change with a domain-not-claimed error, showing the
+ * inline field error after submit.
+ */
+export const DetailsTabEditEmailError: Story = {
+  render: () => ({
+    moduleMetadata: {
+      providers: [
+        {
+          provide: DIALOG_DATA,
+          useValue: defaultParams({
+            claimedByOrganization: true,
+            hasMasterPassword: false,
+            initialTab: MemberDialogTab.Details,
+          }),
+        },
+        {
+          provide: OrganizationService,
+          useValue: makeOrganizationService(
+            mockOrganization({ productTierType: ProductTierType.Enterprise }),
+          ),
+        },
+        { provide: ConfigService, useValue: makeConfigService() },
+        {
+          provide: UserAdminService,
+          useValue: {
+            ...mockUserAdminService,
+            get: () =>
+              Promise.resolve(
+                mockUserDetails({ claimedByOrganization: true, hasMasterPassword: false }),
+              ),
+            saveV2: () =>
+              Promise.reject(
+                new ProblemDetailsErrorResponse(
+                  {
+                    errors: {
+                      email: [
+                        { type: "new_email_domain_not_claimed", detail: "Domain not claimed" },
+                      ],
+                    },
+                  },
+                  400,
+                ),
+              ),
+          },
+        },
+      ],
+    },
+    template: `<app-edit-member-dialog></app-edit-member-dialog>`,
+  }),
+  play: async ({ canvasElement }) => {
+    await new Promise((resolve) => setTimeout(resolve, 100));
+    const submitButton = getByText(canvasElement, "Save");
+    await userEvent.click(submitButton);
+  },
 };

@@ -10,12 +10,14 @@ import {
   Observable,
   share,
   switchMap,
+  tap,
 } from "rxjs";
 
 // This import has been flagged as unallowed for this class. It may be involved in a circular dependency loop.
 // eslint-disable-next-line no-restricted-imports
 import { LogoutReason } from "@bitwarden/auth/common";
 import { AutomaticUserConfirmationService } from "@bitwarden/auto-confirm";
+import { PerfTrackGroup } from "@bitwarden/logging";
 
 import { AccountInfo, AccountService } from "../../../auth/abstractions/account.service";
 import { AuthRequestAnsweringService } from "../../../auth/abstractions/auth-request-answering/auth-request-answering.service.abstraction";
@@ -23,7 +25,6 @@ import { AuthService } from "../../../auth/abstractions/auth.service";
 import { AuthenticationStatus } from "../../../auth/enums/authentication-status";
 import { BillingAccountProfileStateService } from "../../../billing/abstractions/account/billing-account-profile-state.service";
 import { NotificationType, PushNotificationLogOutReasonType } from "../../../enums";
-import { FeatureFlag } from "../../../enums/feature-flag.enum";
 import {
   LogOutNotification,
   NotificationResponse,
@@ -35,7 +36,6 @@ import {
 import { UserId } from "../../../types/guid";
 import { SyncService } from "../../../vault/abstractions/sync/sync.service.abstraction";
 import { AppIdService } from "../../abstractions/app-id.service";
-import { ConfigService } from "../../abstractions/config/config.service";
 import { EnvironmentService } from "../../abstractions/environment.service";
 import { LogService } from "../../abstractions/log.service";
 import { MessagingService } from "../../abstractions/messaging.service";
@@ -70,7 +70,6 @@ export class DefaultServerNotificationsService implements ServerNotificationsSer
     private readonly authService: AuthService,
     private readonly webPushConnectionService: WebPushConnectionService,
     private readonly authRequestAnsweringService: AuthRequestAnsweringService,
-    private readonly configService: ConfigService,
     private autoConfirmService: AutomaticUserConfirmationService,
     private readonly billingAccountProfileStateService: BillingAccountProfileStateService,
   ) {
@@ -127,6 +126,9 @@ export class DefaultServerNotificationsService implements ServerNotificationsSer
       supportSwitch({
         supported: (service) => {
           this.logService.info("Using WebPush for server notifications");
+          // Catch up on anything missed before this stream was (re)established
+          // (e.g. an MV3 service worker suspension dropping earlier deliveries).
+          void this.syncOnConnected(userId);
           return service.notifications$.pipe(
             catchError((err: unknown) => {
               this.logService.warning("Issue with web push, falling back to SignalR", err);
@@ -144,9 +146,28 @@ export class DefaultServerNotificationsService implements ServerNotificationsSer
 
   private connectSignalR$(userId: UserId, notificationsUrl: string) {
     return this.signalRConnectionService.connect$(userId, notificationsUrl).pipe(
+      tap((n) => {
+        if (n.type === "Connected") {
+          void this.syncOnConnected(userId);
+        }
+      }),
       filter((n) => n.type === "ReceiveMessage"),
       map((n) => (n as ReceiveMessage).message),
     );
+  }
+
+  private async syncOnConnected(userId: UserId) {
+    try {
+      const activeAccountId = await firstValueFrom(
+        this.accountService.activeAccount$.pipe(map((a) => a?.id)),
+      );
+      if (activeAccountId !== userId) {
+        return;
+      }
+      await this.syncService.fullSync(false);
+    } catch (e) {
+      this.logService.error("Failed to catch-up sync after notifications connected", e);
+    }
   }
 
   private hasAccessToken$(userId: UserId) {
@@ -228,23 +249,11 @@ export class DefaultServerNotificationsService implements ServerNotificationsSer
         this.logService.info("[Notifications Service] Received logout notification");
 
         const logOutNotification = notification.payload as LogOutNotification;
-        const noLogoutOnKdfChange = await firstValueFrom(
-          this.configService.getFeatureFlag$(FeatureFlag.NoLogoutOnKdfChange),
-        );
-        const noLogoutOnKeyUpgradeRotation = await firstValueFrom(
-          this.configService.getFeatureFlag$(FeatureFlag.NoLogoutOnKeyUpgradeRotation),
-        );
-        if (
-          noLogoutOnKdfChange &&
-          logOutNotification.reason === PushNotificationLogOutReasonType.KdfChange
-        ) {
+        if (logOutNotification.reason === PushNotificationLogOutReasonType.KdfChange) {
           this.logService.info(
             "[Notifications Service] Skipping logout due to no logout KDF change",
           );
-        } else if (
-          noLogoutOnKeyUpgradeRotation &&
-          logOutNotification.reason === PushNotificationLogOutReasonType.KeyRotation
-        ) {
+        } else if (logOutNotification.reason === PushNotificationLogOutReasonType.KeyRotation) {
           this.logService.info(
             "[Notifications Service] Skipping logout due to no logout key rotation. Performing full sync.",
           );
@@ -339,6 +348,15 @@ export class DefaultServerNotificationsService implements ServerNotificationsSer
     return this.notifications$
       .pipe(
         mergeMap(async ([notification, userId]) => {
+          // Instant event per incoming notification, e.g. "SyncCipherUpdate"
+          this.logService
+            .startMeasurement(
+              PerfTrackGroup.Notifications,
+              "Incoming",
+              NotificationType[notification.type],
+            )
+            .finishWithDefaultTime();
+
           try {
             await this.processNotification(notification, userId);
           } catch (err: unknown) {

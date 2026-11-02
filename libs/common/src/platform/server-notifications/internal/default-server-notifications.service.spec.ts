@@ -5,6 +5,7 @@ import { BehaviorSubject, bufferCount, firstValueFrom, ObservedValueOf, of, Subj
 // eslint-disable-next-line no-restricted-imports
 import { LogoutReason } from "@bitwarden/auth/common";
 import { AutomaticUserConfirmationService } from "@bitwarden/auto-confirm";
+import { Measurement } from "@bitwarden/logging";
 
 import { awaitAsync, mockAccountInfoWith } from "../../../../spec";
 import { Matrix } from "../../../../spec/matrix";
@@ -17,7 +18,6 @@ import { NotificationType, PushNotificationLogOutReasonType } from "../../../enu
 import { NotificationResponse } from "../../../models/response/notification.response";
 import { UserId } from "../../../types/guid";
 import { AppIdService } from "../../abstractions/app-id.service";
-import { ConfigService } from "../../abstractions/config/config.service";
 import { Environment, EnvironmentService } from "../../abstractions/environment.service";
 import { LogService } from "../../abstractions/log.service";
 import { MessageSender } from "../../messaging";
@@ -43,7 +43,6 @@ describe("NotificationsService", () => {
   let authService: MockProxy<AuthService>;
   let webPushNotificationConnectionService: MockProxy<WebPushConnectionService>;
   let authRequestAnsweringService: MockProxy<AuthRequestAnsweringService>;
-  let configService: MockProxy<ConfigService>;
   let autoConfirmService: MockProxy<AutomaticUserConfirmationService>;
   let billingAccountProfileStateService: MockProxy<BillingAccountProfileStateService>;
 
@@ -74,12 +73,8 @@ describe("NotificationsService", () => {
     authService = mock<AuthService>();
     webPushNotificationConnectionService = mock<WorkerWebPushConnectionService>();
     authRequestAnsweringService = mock<AuthRequestAnsweringService>();
-    configService = mock<ConfigService>();
     autoConfirmService = mock<AutomaticUserConfirmationService>();
     billingAccountProfileStateService = mock<BillingAccountProfileStateService>();
-
-    // For these tests, use the active-user implementation (feature flag disabled)
-    configService.getFeatureFlag$.mockReturnValue(of(true));
 
     activeAccount = new BehaviorSubject<ObservedValueOf<AccountService["activeAccount$"]>>(null);
     accountService.activeAccount$ = activeAccount.asObservable();
@@ -117,7 +112,7 @@ describe("NotificationsService", () => {
     );
 
     sut = new DefaultServerNotificationsService(
-      mock<LogService>(),
+      mock<LogService>({ startMeasurement: () => mock<Measurement>() }),
       syncService,
       appIdService,
       environmentService,
@@ -128,7 +123,6 @@ describe("NotificationsService", () => {
       authService,
       webPushNotificationConnectionService,
       authRequestAnsweringService,
-      configService,
       autoConfirmService,
       billingAccountProfileStateService,
     );
@@ -317,6 +311,72 @@ describe("NotificationsService", () => {
     },
   );
 
+  describe("catch-up sync on SignalR connection established", () => {
+    it("runs a revision-gated fullSync when the connection is established for the active user", async () => {
+      const subscription = sut.notifications$.subscribe();
+      emitActiveUser(mockUser1);
+      emitNotificationUrl("http://test.example.com");
+      authStatusGetter(mockUser1).next(AuthenticationStatus.Unlocked);
+      webPushSupportGetter(mockUser1).next({ type: "not-supported", reason: "test" });
+      await awaitAsync(1);
+
+      signalrNotificationGetter(mockUser1, "http://test.example.com").next({ type: "Connected" });
+      await awaitAsync(1);
+
+      expect(syncService.fullSync).toHaveBeenCalledWith(false);
+      subscription.unsubscribe();
+    });
+
+    it("does not sync when the connection is established for an inactive user", async () => {
+      const subscription = sut.notifications$.subscribe();
+      emitActiveUser(mockUser2);
+      emitActiveUser(mockUser1); // both users in accounts, user1 active
+      emitNotificationUrl("http://test.example.com");
+      authStatusGetter(mockUser1).next(AuthenticationStatus.Unlocked);
+      authStatusGetter(mockUser2).next(AuthenticationStatus.Unlocked);
+      webPushSupportGetter(mockUser1).next({ type: "not-supported", reason: "test" });
+      webPushSupportGetter(mockUser2).next({ type: "not-supported", reason: "test" });
+      await awaitAsync(1);
+
+      signalrNotificationGetter(mockUser2, "http://test.example.com").next({ type: "Connected" });
+      await awaitAsync(1);
+
+      expect(syncService.fullSync).not.toHaveBeenCalled();
+      subscription.unsubscribe();
+    });
+
+    it("runs a revision-gated fullSync when the WebPush stream is established for the active user", async () => {
+      const subscription = sut.notifications$.subscribe();
+      emitActiveUser(mockUser1);
+      emitNotificationUrl("http://test.example.com");
+      authStatusGetter(mockUser1).next(AuthenticationStatus.Unlocked);
+
+      const webPush = mock<WebPushConnector>();
+      webPush.notifications$ = new Subject<NotificationResponse>();
+      webPushSupportGetter(mockUser1).next({ type: "supported", service: webPush });
+      await awaitAsync(1);
+
+      expect(syncService.fullSync).toHaveBeenCalledWith(false);
+      subscription.unsubscribe();
+    });
+
+    it("does not emit Connected events to notification subscribers", async () => {
+      const received: unknown[] = [];
+      const subscription = sut.notifications$.subscribe((n) => received.push(n));
+      emitActiveUser(mockUser1);
+      emitNotificationUrl("http://test.example.com");
+      authStatusGetter(mockUser1).next(AuthenticationStatus.Unlocked);
+      webPushSupportGetter(mockUser1).next({ type: "not-supported", reason: "test" });
+      await awaitAsync(1);
+
+      signalrNotificationGetter(mockUser1, "http://test.example.com").next({ type: "Connected" });
+      await awaitAsync(1);
+
+      expect(received).toHaveLength(0);
+      subscription.unsubscribe();
+    });
+  });
+
   it("does not connect to any notification stream when server notifications are disabled through special url", () => {
     const subscription = sut.notifications$.subscribe();
     emitActiveUser(mockUser1);
@@ -369,38 +429,19 @@ describe("NotificationsService", () => {
     });
 
     describe("NotificationType.LogOut", () => {
-      it.each([
-        { featureFlagEnabled: false, reason: undefined },
-        { featureFlagEnabled: true, reason: undefined },
-        { featureFlagEnabled: false, reason: PushNotificationLogOutReasonType.KdfChange },
-      ])(
-        "should call logout callback when featureFlag=$featureFlagEnabled and reason=$reason",
-        async ({ featureFlagEnabled, reason }) => {
-          configService.getFeatureFlag$.mockReturnValue(of(featureFlagEnabled));
+      it("should call logout callback when no reason is provided", async () => {
+        const notification = new NotificationResponse({
+          type: NotificationType.LogOut,
+          payload: { UserId: mockUser1 },
+          contextId: "different-app-id",
+        });
 
-          const payload: { UserId: UserId; Reason?: PushNotificationLogOutReasonType } = {
-            UserId: mockUser1,
-            Reason: undefined,
-          };
-          if (reason != null) {
-            payload.Reason = reason;
-          }
+        await sut["processNotification"](notification, mockUser1);
 
-          const notification = new NotificationResponse({
-            type: NotificationType.LogOut,
-            payload,
-            contextId: "different-app-id",
-          });
+        expect(logoutCallback).toHaveBeenCalledWith("logoutNotification", mockUser1);
+      });
 
-          await sut["processNotification"](notification, mockUser1);
-
-          expect(logoutCallback).toHaveBeenCalledWith("logoutNotification", mockUser1);
-        },
-      );
-
-      it("should skip logout when receiving KDF change reason with feature flag enabled", async () => {
-        configService.getFeatureFlag$.mockReturnValue(of(true));
-
+      it("should skip logout when receiving KDF change reason", async () => {
         const notification = new NotificationResponse({
           type: NotificationType.LogOut,
           payload: { UserId: mockUser1, Reason: PushNotificationLogOutReasonType.KdfChange },
@@ -412,38 +453,7 @@ describe("NotificationsService", () => {
         expect(logoutCallback).not.toHaveBeenCalled();
       });
 
-      it.each([
-        { featureFlagEnabled: false, reason: undefined },
-        { featureFlagEnabled: true, reason: undefined },
-        { featureFlagEnabled: false, reason: PushNotificationLogOutReasonType.KeyRotation },
-      ])(
-        "should call logout callback when featureFlag=$featureFlagEnabled and reason=$reason",
-        async ({ featureFlagEnabled, reason }) => {
-          configService.getFeatureFlag$.mockReturnValue(of(featureFlagEnabled));
-
-          const payload: { UserId: UserId; Reason?: PushNotificationLogOutReasonType } = {
-            UserId: mockUser1,
-            Reason: undefined,
-          };
-          if (reason != null) {
-            payload.Reason = reason;
-          }
-
-          const notification = new NotificationResponse({
-            type: NotificationType.LogOut,
-            payload,
-            contextId: "different-app-id",
-          });
-
-          await sut["processNotification"](notification, mockUser1);
-
-          expect(logoutCallback).toHaveBeenCalledWith("logoutNotification", mockUser1);
-        },
-      );
-
-      it("should skip logout when receiving key rotation reason with feature flag enabled", async () => {
-        configService.getFeatureFlag$.mockReturnValue(of(true));
-
+      it("should skip logout and perform a full sync when receiving key rotation reason", async () => {
         const notification = new NotificationResponse({
           type: NotificationType.LogOut,
           payload: { UserId: mockUser1, Reason: PushNotificationLogOutReasonType.KeyRotation },
@@ -453,6 +463,7 @@ describe("NotificationsService", () => {
         await sut["processNotification"](notification, mockUser1);
 
         expect(logoutCallback).not.toHaveBeenCalled();
+        expect(syncService.fullSync).toHaveBeenCalledWith(true);
       });
     });
 

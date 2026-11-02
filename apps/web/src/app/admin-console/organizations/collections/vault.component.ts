@@ -46,8 +46,6 @@ import { Organization } from "@bitwarden/common/admin-console/models/domain/orga
 import { AccountService } from "@bitwarden/common/auth/abstractions/account.service";
 import { getUserId } from "@bitwarden/common/auth/services/account.service";
 import { BillingApiServiceAbstraction } from "@bitwarden/common/billing/abstractions/billing-api.service.abstraction";
-import { FeatureFlag } from "@bitwarden/common/enums/feature-flag.enum";
-import { ConfigService } from "@bitwarden/common/platform/abstractions/config/config.service";
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 import { LogService } from "@bitwarden/common/platform/abstractions/log.service";
 import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
@@ -61,7 +59,13 @@ import { CipherType } from "@bitwarden/common/vault/enums";
 import { TreeNode } from "@bitwarden/common/vault/models/domain/tree-node";
 import { CipherView } from "@bitwarden/common/vault/models/view/cipher.view";
 import { RestrictedItemTypesService } from "@bitwarden/common/vault/services/restricted-item-types.service";
-import { BannerModule, DialogService, NoItemsModule, ToastService } from "@bitwarden/components";
+import {
+  BannerModule,
+  DialogService,
+  StatusLockupComponent,
+  ToastService,
+  TooltipDirective,
+} from "@bitwarden/components";
 import { safeProvider } from "@bitwarden/ui-common";
 import {
   AddItemDialogCloseResult,
@@ -78,6 +82,7 @@ import {
   VaultBatchBarService,
   VaultFilterServiceAbstraction as VaultFilterService,
   VaultFilter,
+  Vfo1TerminologyService,
   createFilterFunction,
 } from "@bitwarden/vault";
 import {
@@ -103,7 +108,8 @@ import { DefaultVaultCollectionService } from "./services/default-vault-collecti
 import { VaultCipherActionsService } from "./services/vault-cipher-actions.service";
 import { VaultCollectionActionsService } from "./services/vault-collection-actions.service";
 import { AddAccessStatusType, VaultCollectionService } from "./services/vault-collection.service";
-import { VaultFilterModule } from "./vault-filter/vault-filter.module";
+import { VaultFilterComponent } from "./vault-filter/vault-filter.component";
+import { VaultFilterService as OrganizationVaultFilterService } from "./vault-filter/vault-filter.service";
 import { VaultHeaderComponent } from "./vault-header/vault-header.component";
 
 const SearchTextDebounceInterval = 200;
@@ -115,14 +121,15 @@ const SearchTextDebounceInterval = 200;
   imports: [
     VaultHeaderComponent,
     CollectionAccessRestrictedComponent,
-    VaultFilterModule,
+    VaultFilterComponent,
     VaultItemsModule,
     SharedModule,
     BannerModule,
-    NoItemsModule,
+    StatusLockupComponent,
     OrganizationFreeTrialWarningComponent,
     OrganizationResellerRenewalWarningComponent,
     VaultBatchActionComponent,
+    TooltipDirective,
   ],
   providers: [
     RoutedVaultFilterService,
@@ -132,6 +139,11 @@ const SearchTextDebounceInterval = 200;
     { provide: VaultCollectionService, useClass: DefaultVaultCollectionService },
     VaultCipherActionsService,
     VaultBatchBarService,
+    safeProvider({
+      provide: VaultFilterService,
+      useClass: OrganizationVaultFilterService,
+      useAngularDecorators: true,
+    }),
     safeProvider({
       provide: ASSIGN_COLLECTIONS_DIALOG,
       useClass: AssignCollectionsWebDialogAdapter,
@@ -172,17 +184,7 @@ export class VaultComponent implements OnInit, OnDestroy {
   protected readonly collectionService = inject(VaultCollectionService);
   private readonly cipherActions = inject(VaultCipherActionsService);
   private readonly vaultBatchBarService = inject(VaultBatchBarService);
-  private readonly configService = inject(ConfigService);
-
-  protected readonly btnTextAddCreateFeatureFlag = toSignal(
-    this.configService.getFeatureFlag$(FeatureFlag.PM32380_BtnTextAddCreate),
-    { initialValue: false },
-  );
-
-  protected readonly vaultBatchBarFeatureFlag = toSignal(
-    this.configService.getFeatureFlag$(FeatureFlag.PM37785_VaultBatchBar),
-    { initialValue: false },
-  );
+  private readonly vfo1TerminologyService = inject(Vfo1TerminologyService);
 
   protected readonly Unassigned = Unassigned;
 
@@ -415,14 +417,15 @@ export class VaultComponent implements OnInit, OnDestroy {
     this.vaultBatchBarService.completed$
       .pipe(takeUntil(this.destroy$))
       .subscribe(() => this.refresh());
-    combineLatest([this.organization$, this.allCollections$, this.ciphers$])
+    combineLatest([this.organization$, this.allCollections$, this.ciphers$, this.filter$])
       .pipe(takeUntil(this.destroy$))
-      .subscribe(([organization, allCollections, ciphers]) => {
+      .subscribe(([organization, allCollections, ciphers, filter]) => {
         this.vaultBatchBarService.setConfig({
           isOrgVault: true,
           organization,
           allCollections,
           hasCiphers: ciphers.length > 0,
+          inTrash: filter.type === "trash",
         });
       });
 
@@ -635,9 +638,6 @@ export class VaultComponent implements OnInit, OnDestroy {
             event.initialPermission,
           );
           break;
-        case "bulkEditCollectionAccess":
-          await this.collectionActions.bulkEditCollectionAccess(event.items, organization);
-          break;
         case "assignToCollections":
           await this.cipherActions.bulkAssignToCollections(event.items);
           break;
@@ -663,6 +663,7 @@ export class VaultComponent implements OnInit, OnDestroy {
   protected async openAddItemDialog(): Promise<void> {
     const organization = await firstValueFrom(this.organization$);
     const ref = AddItemDialogComponent.open(this.dialogService, {
+      canCreateCipher: organization?.enabled ?? true,
       canCreateFolder: false,
       canCreateCollection: organization?.canCreateNewCollections ?? false,
       canCreateSshKey: false,
@@ -716,7 +717,7 @@ export class VaultComponent implements OnInit, OnDestroy {
       const activeFilter = this.activeFilter();
       queryParams = {
         type: activeFilter.cipherType,
-        collectionId: activeFilter.collectionId,
+        ...this.vfo1TerminologyService.collectionQueryParams(activeFilter.collectionId),
         deleted: activeFilter.isDeleted || null,
       };
     }

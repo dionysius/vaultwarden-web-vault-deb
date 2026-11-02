@@ -17,7 +17,12 @@ import {
   OrganizationInformation,
   PlanInformation,
 } from "@bitwarden/common/billing/abstractions/organization-billing.service";
-import { PlanType, ProductTierType, ProductType } from "@bitwarden/common/billing/enums";
+import {
+  InitiationPath,
+  PlanType,
+  ProductTierType,
+  ProductType,
+} from "@bitwarden/common/billing/enums";
 import { ConfigService } from "@bitwarden/common/platform/abstractions/config/config.service";
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 import { ValidationService } from "@bitwarden/common/platform/abstractions/validation.service";
@@ -29,9 +34,6 @@ import { Trial } from "@bitwarden/web-vault/app/billing/trial-initiation/trial-b
 import { RouterService } from "../../../core/router.service";
 import { OrganizationCreatedEvent } from "../trial-billing-step/trial-billing-step.component";
 import { VerticalStepperComponent } from "../vertical-stepper/vertical-stepper.component";
-export type InitiationPath =
-  | "Password Manager trial from marketing website"
-  | "Secrets Manager trial from marketing website";
 
 // FIXME(https://bitwarden.atlassian.net/browse/CL-764): Migrate to OnPush
 // eslint-disable-next-line @angular-eslint/prefer-on-push-component-change-detection
@@ -77,6 +79,8 @@ export class CompleteTrialInitiationComponent implements OnInit, OnDestroy {
   email = "";
   /** Token from the backend associated with the email verification */
   emailVerificationToken?: string;
+  /** Present when the trial was set up by sales rather than self-serve email verification */
+  salesAssistedToken?: string;
   loading = false;
   productTierValue?: ProductTierType;
 
@@ -125,6 +129,10 @@ export class CompleteTrialInitiationComponent implements OnInit, OnDestroy {
 
       if (qParams.token != null) {
         this.emailVerificationToken = qParams.token;
+      }
+
+      if (qParams.salesAssistedToken != null) {
+        this.salesAssistedToken = qParams.salesAssistedToken;
       }
 
       const product = parseInt(qParams.product);
@@ -205,14 +213,17 @@ export class CompleteTrialInitiationComponent implements OnInit, OnDestroy {
   /** create an organization on trial without payment method */
   async createOrganizationOnTrial(activeUserId: UserId) {
     this.loading = true;
-    let trialInitiationPath: InitiationPath = "Password Manager trial from marketing website";
+    const trialInitiationPath: InitiationPath = this.salesAssistedToken
+      ? InitiationPath.SalesAssistedTrialFromAdminPortal
+      : this.product === ProductType.SecretsManager
+        ? InitiationPath.SecretsManagerTrialFromMarketingWebsite
+        : InitiationPath.PasswordManagerTrialFromMarketingWebsite;
     let plan: PlanInformation = {
       type: await this.getPlanType(),
       passwordManagerSeats: 1,
     };
 
     if (this.product === ProductType.SecretsManager) {
-      trialInitiationPath = "Secrets Manager trial from marketing website";
       plan = {
         ...plan,
         subscribeToSecretsManager: true,
@@ -314,7 +325,7 @@ export class CompleteTrialInitiationComponent implements OnInit, OnDestroy {
             this.orgInfoFormGroup.value.billingEmail == null
               ? ""
               : this.orgInfoFormGroup.value.billingEmail,
-          initiationPath: "Password Manager trial from marketing website",
+          initiationPath: InitiationPath.PasswordManagerTrialFromMarketingWebsite,
         },
         plan: {
           type: 0,
@@ -352,6 +363,19 @@ export class CompleteTrialInitiationComponent implements OnInit, OnDestroy {
     this.verticalStepper.next();
   }
 
+  /**
+   * Auth team finding:
+   * TODO PM-44167: This does not redirect the user. `setPreviousUrl` only sets an in-memory value that
+   * nothing uses as a post-login redirect, and the next navigation overwrites it. The URL is also
+   * wrong: the families-for-enterprise setup page reads a `token` query param, not `plan`.
+   * Further, no server code sends a `sponsorshipToken` query param to this page: the sponsorship offer
+   * email links to `/accept-families-for-enterprise?token=…` instead. Unsure if an external link
+   * (e.g. the marketing site) could still send it.
+   * Confirm with the Billing team whether this redirect is still needed:
+   * 1. If yes: right before `logIn()`, persist the URL (with `token`) with
+   *    `DeepLinkRedirectService.persistPostLoginRedirectUrl`, so `deepLinkGuard` replays it.
+   * 2. If no: remove this method and the `sponsorshipToken` query param handling.
+   */
   private setupFamilySponsorship(sponsorshipToken: string) {
     if (sponsorshipToken != null) {
       const route = this.router.createUrlTree(["setup/families-for-enterprise"], {
@@ -371,7 +395,17 @@ export class CompleteTrialInitiationComponent implements OnInit, OnDestroy {
   async finishRegistration(passwordInputResult: PasswordInputResult) {
     this.submitting = true;
     return this.registrationFinishService
-      .finishRegistration(this.email, passwordInputResult, this.emailVerificationToken)
+      .finishRegistration(
+        this.email,
+        passwordInputResult,
+        this.emailVerificationToken,
+        undefined,
+        undefined,
+        undefined,
+        undefined,
+        undefined,
+        this.salesAssistedToken,
+      )
       .catch((e: unknown): null => {
         this.validationService.showError(e);
         this.submitting = false;

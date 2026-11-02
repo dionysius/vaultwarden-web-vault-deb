@@ -45,13 +45,15 @@ import { ServiceUtils } from "@bitwarden/common/vault/service-utils";
 import { COLLAPSED_GROUPINGS } from "@bitwarden/common/vault/services/key-state/collapsed-groupings.state";
 import { CipherListView } from "@bitwarden/sdk-internal";
 
+import { VaultFilterService as VaultFilterServiceAbstraction } from "../abstractions/vault-filter.service";
 import {
-  VaultFilterServiceAbstraction,
   CipherTypeFilter,
   CollectionFilter,
   FolderFilter,
   OrganizationFilter,
-} from "..";
+} from "../models/vault-filter.type";
+
+import { Vfo1TerminologyService } from "./vfo1-terminology.service";
 
 const NestingDelimiter = "/";
 
@@ -86,11 +88,19 @@ export class VaultFilterService implements VaultFilterServiceAbstraction {
 
   protected _organizationFilter = new BehaviorSubject<Organization>(null);
 
+  /**
+   * Cipher stream backing the folder tree. Excludes PAM-gated ("partial") rows; the web
+   * individual vault overrides this to include them, matching its list.
+   */
+  protected folderFilterCiphers$(userId: UserId): Observable<CipherView[] | CipherListView[]> {
+    return this.cipherService.cipherListViews$(userId);
+  }
+
   filteredFolders$: Observable<FolderView[]> = this.activeUserId$.pipe(
     switchMap((userId) =>
       combineLatest([
         this.folderService.folderViews$(userId),
-        this.cipherService.cipherListViews$(userId),
+        this.folderFilterCiphers$(userId),
         this._organizationFilter,
       ]),
     ),
@@ -211,6 +221,7 @@ export class VaultFilterService implements VaultFilterServiceAbstraction {
     protected collectionService: CollectionService,
     protected accountService: AccountService,
     protected configService: ConfigService,
+    protected vfo1TerminologyService: Vfo1TerminologyService,
   ) {}
 
   async getCollectionNodeFromTree(id: string) {
@@ -340,8 +351,9 @@ export class VaultFilterService implements VaultFilterServiceAbstraction {
         const collectionCopy = cloneCollection(
           new CollectionView({ ...c, name: c.name }),
         ) as CollectionFilter;
-        collectionCopy.icon =
-          c.type === CollectionTypes.DefaultUserCollection ? "bwi-user" : "bwi-collection-shared";
+        collectionCopy.icon = this.vfo1TerminologyService.iconClass(
+          c.type === CollectionTypes.DefaultUserCollection ? "bwi-user" : "bwi-collection-shared",
+        );
         const parts = c.name ? c.name.replace(/^\/+|\/+$/g, "").split(NestingDelimiter) : [];
         ServiceUtils.nestedTraverse(nodes, 0, parts, collectionCopy, undefined, NestingDelimiter);
       }
@@ -358,7 +370,8 @@ export class VaultFilterService implements VaultFilterServiceAbstraction {
 
   protected getCollectionFilterHead(): TreeNode<CollectionFilter> {
     const head = CollectionView.vaultFilterHead() as CollectionFilter;
-    return new TreeNode<CollectionFilter>(head, null, "collections", "AllCollections");
+    const name = this.vfo1TerminologyService.enabled() ? "sharedFolders" : "collections";
+    return new TreeNode<CollectionFilter>(head, null, name, "AllCollections");
   }
 
   protected async filterFolders(
@@ -401,7 +414,8 @@ export class VaultFilterService implements VaultFilterServiceAbstraction {
 
   protected getFolderFilterHead(): TreeNode<FolderFilter> {
     const head = new FolderView() as FolderFilter;
-    return new TreeNode<FolderFilter>(head, null, "folders", "AllFolders");
+    const name = this.vfo1TerminologyService.enabled() ? "myFolders" : "folders";
+    return new TreeNode<FolderFilter>(head, null, name, "AllFolders");
   }
 
   protected buildCipherTypeTree(): Observable<TreeNode<CipherTypeFilter>> {

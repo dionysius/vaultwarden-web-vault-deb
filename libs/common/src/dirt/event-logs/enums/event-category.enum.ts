@@ -61,6 +61,7 @@ export const EventCategoryEventTypes: Record<EventCategory, EventType[]> = {
     EventType.Cipher_ClientToggledIbanVisible,
     EventType.Cipher_ClientCopiedSwiftCode,
     EventType.Cipher_ClientToggledSwiftCodeVisible,
+    EventType.Cipher_ClientHttpAuthReleased,
   ],
   [EventCategory.CollectionEvents]: [
     EventType.Collection_Created,
@@ -95,6 +96,7 @@ export const EventCategoryEventTypes: Record<EventCategory, EventType[]> = {
     EventType.OrganizationUser_Revoked_TwoFactorNonCompliance,
     EventType.OrganizationUser_Revoked_SingleOrganizationNonCompliance,
     EventType.OrganizationUser_NotificationBannerActionClicked,
+    EventType.OrganizationUser_AdminChangedEmail,
   ],
   [EventCategory.OrganizationEvents]: [
     EventType.Organization_Updated,

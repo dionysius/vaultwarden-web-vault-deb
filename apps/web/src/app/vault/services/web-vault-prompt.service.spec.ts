@@ -1,3 +1,4 @@
+import { signal } from "@angular/core";
 import { fakeAsync, TestBed, tick } from "@angular/core/testing";
 import { BehaviorSubject, of } from "rxjs";
 
@@ -11,12 +12,17 @@ import { Account, AccountService } from "@bitwarden/common/auth/abstractions/acc
 import { ConfigService } from "@bitwarden/common/platform/abstractions/config/config.service";
 import { ServerSettings } from "@bitwarden/common/platform/models/domain/server-settings";
 import { UserId } from "@bitwarden/common/types/guid";
-import { DialogRef, DialogService } from "@bitwarden/components";
+import { DialogRef, DialogService, SideNavService } from "@bitwarden/components";
 import { LogService } from "@bitwarden/logging";
-import { VaultItemsTransferService } from "@bitwarden/vault";
+import {
+  CoachmarkService,
+  NewExperienceDialogService,
+  VaultItemsTransferService,
+} from "@bitwarden/vault";
 
 import {
-  MultiStepPolicyEditDialogComponent,
+  AutoConfirmPolicy,
+  MultiStepPolicyEditModalComponent,
   PolicyEditDialogResult,
 } from "../../admin-console/organizations/policies";
 import { UnifiedUpgradePromptService } from "../../billing/individual/upgrade/services";
@@ -45,6 +51,9 @@ describe("WebVaultPromptService", () => {
   const conditionallyShowWelcomeDialog = jest.fn().mockResolvedValue(false);
   const logError = jest.fn();
   const conditionallyPromptUserForExtension = jest.fn().mockResolvedValue(false);
+  const conditionallyOpenNewExperience = jest.fn().mockResolvedValue(false);
+  const sideNavOpen = signal(false);
+  const tourRunning = signal(false);
 
   let serverSettings$: BehaviorSubject<ServerSettings | null>;
   let activeAccount$: BehaviorSubject<Account | null>;
@@ -59,6 +68,7 @@ describe("WebVaultPromptService", () => {
 
   beforeEach(() => {
     jest.clearAllMocks();
+    tourRunning.set(false);
 
     activeAccount$ = new BehaviorSubject<Account | null>(createAccount());
     serverSettings$ = new BehaviorSubject<ServerSettings | null>(new ServerSettings());
@@ -86,6 +96,12 @@ describe("WebVaultPromptService", () => {
           provide: WelcomeDialogService,
           useValue: { conditionallyShowWelcomeDialog, conditionallyPromptUserForExtension },
         },
+        {
+          provide: NewExperienceDialogService,
+          useValue: { conditionallyOpen: conditionallyOpenNewExperience },
+        },
+        { provide: SideNavService, useValue: { open: sideNavOpen } },
+        { provide: CoachmarkService, useValue: { isRunning: tourRunning.asReadonly() } },
       ],
     });
 
@@ -125,7 +141,70 @@ describe("WebVaultPromptService", () => {
       expect(enforceOrganizationDataOwnership).toHaveBeenCalledWith(mockUserId);
       expect(displayUpgradePromptConditionally).not.toHaveBeenCalled();
       expect(conditionallyShowWelcomeDialog).not.toHaveBeenCalled();
+      expect(conditionallyOpenNewExperience).not.toHaveBeenCalled();
       expect(conditionallyPromptUserForExtension).not.toHaveBeenCalled();
+    });
+
+    it("skips onboarding prompts but not policy flows while a tour is running", async () => {
+      tourRunning.set(true);
+
+      await service.conditionallyPromptUser();
+
+      expect(enforceOrganizationDataOwnership).toHaveBeenCalledWith(mockUserId);
+      expect(displayUpgradePromptConditionally).not.toHaveBeenCalled();
+      expect(conditionallyShowWelcomeDialog).not.toHaveBeenCalled();
+      expect(conditionallyOpenNewExperience).not.toHaveBeenCalled();
+      expect(conditionallyPromptUserForExtension).not.toHaveBeenCalled();
+    });
+  });
+
+  describe("new experience dialog", () => {
+    it("offers it the redesigned vault screenshots", async () => {
+      await service.conditionallyPromptUser();
+
+      expect(conditionallyOpenNewExperience).toHaveBeenCalledWith(mockUserId, {
+        lightImgSrc: "images/new-experience/new-experience.light.png",
+        darkImgSrc: "images/new-experience/new-experience.dark.png",
+      });
+    });
+
+    it("skips it for a user who was just welcomed to Bitwarden", async () => {
+      conditionallyShowWelcomeDialog.mockResolvedValueOnce(true);
+
+      await service.conditionallyPromptUser();
+
+      expect(conditionallyOpenNewExperience).not.toHaveBeenCalled();
+    });
+
+    it("opens the side nav once it has opened, so the tour callout is visible", async () => {
+      sideNavOpen.set(false);
+      conditionallyOpenNewExperience.mockResolvedValueOnce(true);
+
+      await service.conditionallyPromptUser();
+
+      expect(sideNavOpen()).toBe(true);
+    });
+
+    it("leaves the side nav alone when it did not open", async () => {
+      sideNavOpen.set(false);
+
+      await service.conditionallyPromptUser();
+
+      expect(sideNavOpen()).toBe(false);
+    });
+
+    it("holds back the extension prompt when it opened, so the two do not stack", async () => {
+      conditionallyOpenNewExperience.mockResolvedValueOnce(true);
+
+      await service.conditionallyPromptUser();
+
+      expect(conditionallyPromptUserForExtension).not.toHaveBeenCalled();
+    });
+
+    it("lets the extension prompt through when it did not open", async () => {
+      await service.conditionallyPromptUser();
+
+      expect(conditionallyPromptUserForExtension).toHaveBeenCalledWith(mockUserId);
     });
   });
 
@@ -149,7 +228,7 @@ describe("WebVaultPromptService", () => {
       } as unknown as DialogRef<PolicyEditDialogResult>;
 
       const openSpy = jest
-        .spyOn(MultiStepPolicyEditDialogComponent, "open")
+        .spyOn(MultiStepPolicyEditModalComponent, "open")
         .mockReturnValue(dialogRefMock);
 
       void service.conditionallyPromptUser();
@@ -164,6 +243,7 @@ describe("WebVaultPromptService", () => {
       });
 
       const passedPolicy = openSpy.mock.calls[0][1].data.policy;
+      expect(passedPolicy).toBeInstanceOf(AutoConfirmPolicy);
       expect(passedPolicy.firstTimeDialog).toBe(true);
 
       dialogClosedSubject.next(null);
@@ -185,7 +265,7 @@ describe("WebVaultPromptService", () => {
       } as Organization;
       organizations$.mockReturnValueOnce(of([mockOrg]));
 
-      const openSpy = jest.spyOn(MultiStepPolicyEditDialogComponent, "open");
+      const openSpy = jest.spyOn(MultiStepPolicyEditModalComponent, "open");
 
       void service.conditionallyPromptUser();
 
@@ -205,7 +285,7 @@ describe("WebVaultPromptService", () => {
       } as Organization;
       organizations$.mockReturnValueOnce(of([mockOrg]));
 
-      const openSpy = jest.spyOn(MultiStepPolicyEditDialogComponent, "open");
+      const openSpy = jest.spyOn(MultiStepPolicyEditModalComponent, "open");
 
       void service.conditionallyPromptUser();
 
@@ -221,7 +301,7 @@ describe("WebVaultPromptService", () => {
       policies$.mockReturnValueOnce(of([]));
       organizations$.mockReturnValueOnce(of([]));
 
-      const openSpy = jest.spyOn(MultiStepPolicyEditDialogComponent, "open");
+      const openSpy = jest.spyOn(MultiStepPolicyEditModalComponent, "open");
 
       void service.conditionallyPromptUser();
 
@@ -243,7 +323,7 @@ describe("WebVaultPromptService", () => {
 
       organizations$.mockReturnValueOnce(of([mockOrg]));
 
-      const openSpy = jest.spyOn(MultiStepPolicyEditDialogComponent, "open");
+      const openSpy = jest.spyOn(MultiStepPolicyEditModalComponent, "open");
 
       void service.conditionallyPromptUser();
 
