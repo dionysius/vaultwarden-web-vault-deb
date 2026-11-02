@@ -1,8 +1,9 @@
-vaultwarden-web-vault (2026.10.1+0-1) unstable; urgency=medium
+vaultwarden-web-vault (2026.10.1+0-2) unstable; urgency=medium
 
   * update to [2026.10.1+0](https://github.com/vaultwarden/vw_web_builds/releases/tag/v2026.10.1%2B0)
+  * build with nodejs 24 as required by upstream
 
- -- dionysius <dragon.dionysius@gmail.com>  Mon, 02 Nov 2026 14:57:18 +0100
+ -- dionysius <dragon.dionysius@gmail.com>  Mon, 02 Nov 2026 15:39:44 +0100
 
 vaultwarden-web-vault (2026.7.0+0-1) unstable; urgency=medium
 
